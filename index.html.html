@@ -1,0 +1,1230 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>Apex Wx Fort Kent, Maine</title>
+    <meta http-equiv="Expires" content="Sun, 31 Dec 2000 08:00:00 GMT">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <script src="https://cdnres.willyweather.com/widget/warning/loadView.html?id=125218"
+type="application/javascript"></script>
+  </head>
+  <body class="">
+    <p><br>
+    </p>
+    <p>
+      <meta name="viewport" content="width=device-width">
+      <title></title>
+      <style>
+      /* -------------------------------------
+          GLOBAL RESETS
+      ------------------------------------- */
+      
+      /*All the styling goes here*/
+      
+      img {
+        border: none;
+        -ms-interpolation-mode: bicubic;
+        max-width: 100%; 
+      }
+
+      body {
+        background-color: #f6f6f6;
+        font-family: sans-serif;
+        -webkit-font-smoothing: antialiased;
+        font-size: 14px;
+        line-height: 1.4;
+        margin: 0;
+        padding: 0;
+        -ms-text-size-adjust: 100%;
+        -webkit-text-size-adjust: 100%; 
+      }
+
+      table {
+        border-collapse: separate;
+        mso-table-lspace: 0pt;
+        mso-table-rspace: 0pt;
+        width: 100%; }
+        table td {
+          font-family: sans-serif;
+          font-size: 14px;
+          vertical-align: top; 
+      }
+
+      /* -------------------------------------
+          BODY & CONTAINER
+      ------------------------------------- */
+
+      .body {
+        background-color: #f6f6f6;
+        width: 100%; 
+      }
+
+      /* Set a max-width, and make it display as block so it will automatically stretch to that width, but will also shrink down on a phone or something */
+      .container {
+        display: block;
+        margin: 0 auto !important;
+        /* makes it centered */
+        max-width: 580px;
+        padding: 10px;
+        width: 580px; 
+      }
+
+      /* This should also be a block element, so that it will fill 100% of the .container */
+      .content {
+        box-sizing: border-box;
+        display: block;
+        margin: 0 auto;
+        max-width: 580px;
+        padding: 10px; 
+      }
+
+      /* -------------------------------------
+          HEADER, FOOTER, MAIN
+      ------------------------------------- */
+      .main {
+        background: #ffffff;
+        border-radius: 3px;
+        width: 100%; 
+      }
+
+      .wrapper {
+        box-sizing: border-box;
+        padding: 20px; 
+      }
+
+      .content-block {
+        padding-bottom: 10px;
+        padding-top: 10px;
+      }
+
+      .footer {
+        clear: both;
+        margin-top: 10px;
+        text-align: center;
+        width: 100%; 
+      }
+        .footer td,
+        .footer p,
+        .footer span,
+        .footer a {
+          color: #3d3d3d;
+          font-size: 12px;
+          text-align: center; 
+      }
+
+      /* -------------------------------------
+          TYPOGRAPHY
+      ------------------------------------- */
+      h1,
+      h2,
+      h3,
+      h4 {
+        color: #000000;
+        font-family: sans-serif;
+        font-weight: 400;
+        line-height: 1.4;
+        margin: 0;
+        margin-bottom: 30px; 
+      }
+
+      h1 {
+        font-size: 35px;
+        font-weight: 300;
+        text-align: center;
+        text-transform: capitalize; 
+      }
+
+      p,
+      ul,
+      ol {
+        font-family: sans-serif;
+        font-size: 14px;
+        font-weight: normal;
+        margin: 0;
+        margin-bottom: 15px; 
+      }
+        p li,
+        ul li,
+        ol li {
+          list-style-position: inside;
+          margin-left: 5px; 
+      }
+
+      a {
+        color: #1855d9;
+        text-decoration: underline; 
+      }
+
+      /* -------------------------------------
+          BUTTONS
+      ------------------------------------- */
+      .btn {
+        box-sizing: border-box;
+        width: 100%; }
+        .btn > tbody > tr > td {
+          padding-bottom: 15px; }
+        .btn table {
+          width: auto; 
+      }
+        .btn table td {
+          background-color: #ffffff;
+          border-radius: 5px;
+          text-align: center; 
+      }
+        .btn a {
+          background-color: #ffffff;
+          border: solid 1px #3498db;
+          border-radius: 5px;
+          box-sizing: border-box;
+          color: #3498db;
+          cursor: pointer;
+          display: inline-block;
+          font-size: 14px;
+          font-weight: bold;
+          margin: 0;
+          padding: 12px 25px;
+          text-decoration: none;
+          text-transform: capitalize; 
+      }
+
+      .btn-primary table td {
+        background-color: #3498db; 
+      }
+
+      .btn-primary a {
+        background-color: #3498db;
+        border-color: #3498db;
+        color: #ffffff; 
+      }
+
+      /* -------------------------------------
+          OTHER STYLES THAT MIGHT BE USEFUL
+      ------------------------------------- */
+      .last {
+        margin-bottom: 0; 
+      }
+
+      .first {
+        margin-top: 0; 
+      }
+
+      .align-center {
+        text-align: center; 
+      }
+
+      .align-right {
+        text-align: right; 
+      }
+
+      .align-left {
+        text-align: left; 
+      }
+
+      .clear {
+        clear: both; 
+      }
+
+      .mt0 {
+        margin-top: 0; 
+      }
+
+      .mb0 {
+        margin-bottom: 0; 
+      }
+
+      .preheader {
+        color: transparent;
+        display: none;
+        height: 0;
+        max-height: 0;
+        max-width: 0;
+        opacity: 0;
+        overflow: hidden;
+        mso-hide: all;
+        visibility: hidden;
+        width: 0; 
+      }
+
+      .powered-by a {
+        text-decoration: none; 
+      }
+
+      hr {
+        border: 0;
+        border-bottom: 1px solid #f6f6f6;
+        margin: 20px 0; 
+      }
+
+      /* -------------------------------------
+          RESPONSIVE AND MOBILE FRIENDLY STYLES
+      ------------------------------------- */
+      @media only screen and (max-width: 620px) {
+        table[class=body] h1 {
+          font-size: 28px !important;
+          margin-bottom: 10px !important; 
+        }
+        table[class=body] p,
+        table[class=body] ul,
+        table[class=body] ol,
+        table[class=body] td,
+        table[class=body] span,
+        table[class=body] a {
+          font-size: 16px !important; 
+        }
+        table[class=body] .wrapper,
+        table[class=body] .article {
+          padding: 10px !important; 
+        }
+        table[class=body] .content {
+          padding: 0 !important; 
+        }
+        table[class=body] .container {
+          padding: 0 !important;
+          width: 100% !important; 
+        }
+        table[class=body] .main {
+          border-left-width: 0 !important;
+          border-radius: 0 !important;
+          border-right-width: 0 !important; 
+        }
+        table[class=body] .btn table {
+          width: 100% !important; 
+        }
+        table[class=body] .btn a {
+          width: 100% !important; 
+        }
+        table[class=body] .img-responsive {
+          height: auto !important;
+          max-width: 100% !important;
+          width: auto !important; 
+        }
+      }
+
+      /* -------------------------------------
+          PRESERVE THESE STYLES IN THE HEAD
+      ------------------------------------- */
+      @media all {
+        .ExternalClass {
+          width: 100%; 
+        }
+        .ExternalClass,
+        .ExternalClass p,
+        .ExternalClass span,
+        .ExternalClass font,
+        .ExternalClass td,
+        .ExternalClass div {
+          line-height: 100%; 
+        }
+        .apple-link a {
+          color: inherit !important;
+          font-family: inherit !important;
+          font-size: inherit !important;
+          font-weight: inherit !important;
+          line-height: inherit !important;
+          text-decoration: none !important; 
+        }
+        #MessageViewBody a {
+          color: inherit;
+          text-decoration: none;
+          font-size: inherit;
+          font-family: inherit;
+          font-weight: inherit;
+          line-height: inherit;
+        }
+        .btn-primary table td:hover {
+          background-color: #34495e !important; 
+        }
+        .btn-primary a:hover {
+          background-color: #34495e !important;
+          border-color: #34495e !important; 
+        } 
+      }
+
+    </style> </p>
+    <table role="presentation" class="body" cellspacing="0" cellpadding="0" border="0">
+      <tbody>
+        <tr>
+          <td>&nbsp;</td>
+          <td class="container">
+            <div class="content">
+              <!-- START CENTERED WHITE CONTAINER -->
+              <table role="presentation" class="main">
+                <!-- START MAIN CONTENT AREA -->
+                <tbody>
+                  <tr>
+                    <td class="wrapper">
+                      <table role="presentation" cellspacing="0" cellpadding="0"
+                        border="0">
+                        <tbody>
+                          <tr>
+                            <td><img src="http://academic.umfk.maine.edu/jbecker/Apex%20banner.jpg"
+                                alt="Apex Wx Banner">
+                              <table role="presentation" class="btn btn-primary"
+                                cellspacing="0" cellpadding="0" border="0">
+                                <tbody>
+                                  <tr>
+                                    <td align="left"><br>
+                                    </td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                              <h2 style="color: black; font-family: sans-serif; font-weight: 400; line-height: 1.4; margin: 0px 0px 30px; text-align: center;"><strong>Fort
+                                  Kent &amp; the Upper Saint John Valley, Maine<br>
+                                  Weather Forecast</strong></h2>
+                              <div style="text-align: center;">
+                                <div style="text-align: center;"><iframe src="http://free.timeanddate.com/clock/i7apmdyt/n23/ftb/tt0/ts1/ta1"
+                                    height="19" frameborder="0" width="343"></iframe>
+                                  <br>
+                                </div>
+                              </div>
+                              <div style="text-align: center;"><em>Forecast
+                                  Updated at 9:50 am Wed. May 27, 2020</em><em>
+                                </em></div>
+                              <strong><br>
+                              </strong>
+                              <div style="text-align: center;">
+                                <div style="text-align: center;"><span style="color: red;"><strong><span
+                                        style="color: black;">Jump To&nbsp; </span></strong></span><br>
+                                  <span style="color: red;"><strong><span style="color: black;">
+                                      </span></strong></span> </div>
+                                <div style="text-align: center;"><span style="color: red;"><strong><span
+                                        style="color: black;"><a href="#Short" title="Short Term Forecasts">Short-Term
+                                          Forecast</a> | <a href="#Further%20Ahead"
+                                          title="Medium-Range Forecast">Medium-Range
+                                          Forecast</a> | <a href="#Long" title="Long-Range Trends">Long-Range
+                                          Trends</a><br>
+                                        <br>
+                                        <a href="#Fort%20Kent" title="Fort Kent Weather Data">Fort
+                                          Kent Weather Data</a> | <a href="#Outlooks"
+                                          title="National Outlooks">National
+                                          Outlooks</a> | <a href="#Maps" title="Maps &amp; Charts">Maps
+                                          &amp; Charts</a></span><br>
+                                    </strong></span></div>
+                                <div style="text-align: center;"><span style="color: red;"><strong><br>
+                                    </strong></span></div>
+                              </div>
+                              <div style="text-align: center;"><strong>Maine
+                                  Official Government Forecasts<em><br>
+                                  </em></strong><a href="https://www.weather.gov/car/"
+                                  title="NWS Caribou (northern and eastern Maine">NWS
+                                  Caribou</a> | <a href="https://www.weather.gov/gyx/"
+                                  title="NWS Gray/Portland, ME (SW Maine and most of New Hampshire)">NWS
+                                  Gray/Portland</a></div>
+                              <div style="text-align: center;"><strong><br>
+                                </strong></div>
+                              <div style="text-align: center;"><strong>Current
+                                  Conditions in Fort Kent, Maine</strong></div>
+                              <div style="text-align: center;"><a title="Apex Wx on Weather Underground"
+                                  href="https://www.wunderground.com/dashboard/pws/KMEFORTK7">Apex
+                                  Wx on Weather Underground</a><strong>&nbsp; </strong>|<strong>
+                                </strong><a title="Personal Weather Station Dashboard"
+                                  href="https://ambientweather.net/dashboard/16e0681b266993eb92230c42d89f3fd5">Personal
+                                  Weather Station Dashboard</a></div>
+                              <br>
+                              <div style="text-align: center;">
+                                <div style="text-align: center;"><a href="https://newengland511.org/"
+                                    title="New England Road Conditions">New
+                                    England Road Conditions</a><strong><em>&nbsp;</em></strong><em>
+                                  </em>|<em>&nbsp; </em><a href="http://www.weather.gov/nerfc/"
+                                    title="Northeast River Forecast Center">Northeast
+                                    River Forecast Center</a><strong><em><br>
+                                    </em></strong></div>
+                                <div style="text-align: center;"><strong><em><br>
+                                    </em></strong></div>
+                                <div style="text-align: center;"><a href="https://www.maine.gov/dacf/mfs/wildfire_danger_report/index.html"
+                                    title="Wildfire Danger Report">Maine
+                                    Wildfire Danger Report</a><strong><em><br>
+                                    </em></strong></div>
+                                <em></em>
+                                <div style="text-align: center;"><em><a title="View E-mail in Browser"
+                                      href="http://academic.umfk.maine.edu/jbecker/apexwx.html">
+                                      <br>
+                                    </a></em></div>
+                                <div style="text-align: center;"><u><strong><a name="#Short Term"
+                                        id="Short"></a>Short-Term Outlook:
+                                      Wednesday - Friday</strong></u><br>
+                                  <u><strong></strong></u></div>
+                                <u><strong><br>
+                                  </strong></u>
+                                <div style="text-align: left;"><u><strong> </strong></u>A
+                                  strong upper-ridge anchored off the
+                                  Southeastern US coast will bring warmer and
+                                  more humid than normal conditions to the
+                                  Valley through the late week period. The
+                                  upper-ridge will shift to to the
+                                  east/northeast and move away from the US
+                                  through the late week period while the surface
+                                  high pressure well offshore in the Atlantic
+                                  will weaken allowing a strong cold front to
+                                  approach Friday. Moisture is also being
+                                  channeled northeast from the circulation
+                                  around an upper-level closed-low over the
+                                  Lower Mississippi Valley / Southern Plains,
+                                  and this moisture will provide fuel as a
+                                  disturbance moves across northern Maine this
+                                  afternoon. Instability aloft will allow for
+                                  thunderstorm activity including a marginal
+                                  risk for some isolated strong to severe
+                                  thunderstorms across the Valley with large
+                                  hail and a few strong wind gusts being the
+                                  primary threat this afternoon. The disturbance
+                                  will move east of the region this evening with
+                                  the high-pressure ridge continuing to bring
+                                  partly cloudy skies tonight and Thursday. <br>
+                                  <br>
+                                  Thursday will be quite hot and humid with
+                                  temperatures pushing the 90F mark in Fort Kent
+                                  and surrounding areas. Another weak
+                                  disturbance is expected to move across the
+                                  region Thursday afternoon; however, current
+                                  model runs indicate less robust atmospheric
+                                  dynamics Thursday afternoon, so only a slight
+                                  chance for afternoon showers/thunderstorms and
+                                  thunderstorms is expected. <br>
+                                  <br>
+                                  Clouds will increase Thursday night as a
+                                  strong cold front approaches from the west
+                                  ahead of a notably cooler air mass for
+                                  northern Maine. A warm front ahead of the
+                                  system will produce a chance for showers after
+                                  midnight Thursday night with a greater chance
+                                  for showers and thunderstorms by mid-morning
+                                  Friday ahead of the main cold front. Showers
+                                  and thunderstorms are expected to continue
+                                  Friday afternoon into the overnight hours with
+                                  a steadier rain, possibly heavy at times,
+                                  likely as the cold front moves through. Some
+                                  strong storms may be possible; however,
+                                  variances in forecast models create some
+                                  uncertainty regarding any severe weather as of
+                                  this Wednesday morning.</div>
+                                <p style="text-align: left;"><br>
+                                  <strong>Today &amp; Tonight<br>
+                                  </strong>Partly sunny&nbsp; and humid with a
+                                  60 percent chance for afternoon/evening
+                                  showers and thunderstorms. Isolated
+                                  strong/severe storms are possible with large
+                                  hail the primary threat across the Valley.
+                                  Rainfall in the 1/10 to 1/4-inch range
+                                  expected with higher amounts in any storms.
+                                  High in the middle 80s with south/southwest
+                                  winds 0 to 5 mph.<br>
+                                  <br>
+                                  Tonight, partly cloudy with a 20 percent
+                                  chance for showers and thunderstorms before
+                                  midnight. Low in the middle 60s with
+                                  south/southwest winds 0 to 5 mph.<strong><br>
+                                    <br>
+                                    Thursday, May 28<br>
+                                  </strong>Partly cloudy, hot, and humid with a
+                                  20 percent chance for afternoon showers and
+                                  thunderstorms. High in the upper 80s with
+                                  west/southwest winds 5 to 10 mph.<br>
+                                  <br>
+                                  Thursday night, partly cloudy with a 20
+                                  percent chance for showers after midnight. Low
+                                  in the mid-60s with southwest winds 0 to 5
+                                  mph.<strong><br>
+                                    <br>
+                                    Friday, May 29<br>
+                                  </strong>Partly sunny with a high in the
+                                  middle 80s. A 50 percent chance for showers
+                                  and thunderstorms with some strong storms
+                                  possible. Rainfall between 1/100 and 1/10-inch
+                                  with higher totals possible in storms.
+                                  Southwest winds 5 to 10 mph.<br>
+                                  <br>
+                                  Friday night, partly cloudy with an 80% for
+                                  rain, showers, and thunderstorms. Low in the
+                                  low 60s. Southwest winds 0 to 7 mph.</p>
+                                <div style="text-align: left;">
+                                  <div style="text-align: center;"><strong><u><a
+                                          name="#Further Ahead" id="Further Ahead"></a>Medium-Range:
+Saturday
+                                        - Tuesday</u></strong></div>
+                                  <strong></strong></div>
+                                <strong><br>
+                                </strong>
+                                <div style="text-align: left;"><strong> </strong>The
+                                  cold front moves through Saturday with rain
+                                  tapering to showers in the afternoon. A slight
+                                  chance for afternoon thunderstorms is
+                                  possible. Showers continue overnight into
+                                  Sunday morning as the front moves east. Much
+                                  cooler Sunday as high-pressure centered over
+                                  the Upper Mississippi Valley/Great Lakes
+                                  builds east into New England. Skies become
+                                  partly cloudy Sunday afternoon with a slight
+                                  chance for shower activity over the course of
+                                  the day. High-pressure will slide over the
+                                  Ohio Valley early next week with partly
+                                  cloudy/mostly clear skies, drier conditions,
+                                  and below normal temperatures for the SJV.
+                                  Indeed, some areas of frost may be possible
+                                  across the region Sunday night and Monday
+                                  night.<br>
+                                  <br>
+                                  <strong>Saturday, May 30</strong><br>
+                                  Mostly cloudy with a 60 percent chance for
+                                  rain tapering to showers along with a slight
+                                  chance for afternoon thunderstorms. High in
+                                  the middle 70s with west winds 8 to 14 mph.<br>
+                                  <br>
+                                  Saturday night, partly cloudy with a low in
+                                  the middle 40s and a 20 percent chance for
+                                  showers. Northwest winds 0 to 7 mph.<br>
+                                  <br>
+                                  <strong>Sunday, May 31</strong><br>
+                                  Partly cloudy with a 20 percent chance
+                                  for&nbsp; showers. High in the upper 50s/low
+                                  60s with northwest winds 8 to 14 mph. <br>
+                                  <br>
+                                  Sunday night, partly cloudy to mostly clear
+                                  with a low in the upper 30s. Slight chance for
+                                  showers. Northwest winds 0 to 7 mph.<br>
+                                  <br>
+                                  <strong>Monday, June 1</strong><br>
+                                  Partly cloudy with a slight chance for
+                                  showers. High in the upper low 60s. Northwest
+                                  winds 8 to 14 mph.<br>
+                                  <br>
+                                  Partly cloudy with a slight chance for
+                                  showers. Low in the mid-top-upper 30s.
+                                  Northwest winds 0 to 7 mph.<br>
+                                  <br>
+                                  <strong>Tuesday, June 2</strong><br>
+                                  Partly cloudy with a 20% chance for afternoon
+                                  showers. High in the low 60s with north winds
+                                  8 to 14 mph.<br>
+                                  <br>
+                                  Tuesday night, partly cloudy with a slight
+                                  chance for showers. Low in the upper 30s/low
+                                  40s. North/northwest winds 0 to 7 mph.</div>
+                                <br>
+                                <div style="text-align: left;">
+                                  <div style="text-align: center;"><u><strong><a
+                                          name="Long" id="Long"></a>Regional
+                                        Long-Range Trends: Wed. June 3 - Tue.
+                                        June 9<br>
+                                      </strong></u></div>
+                                </div>
+                                <u><strong><br>
+                                  </strong></u>
+                                <div style="text-align: left;">Slightly below
+                                  normal temperatures and near normal
+                                  precipitation</div>
+                                <p style="text-align: left;"><br>
+                                  ---------------------------<br>
+                                  <br>
+                                  <strong><a name="#Fort Kent" id="Fort Kent"></a>Fort
+                                    Kent, Maine Weather Records for May 27</strong></p>
+                                <p style="text-align: left;">Record High: 85°
+                                  (1950) / Normal: 66°<br>
+                                  Record Low:&nbsp; 26° (1956) / Normal: 41°<br>
+                                  Record Precipitation: 1.19 in (1939) / Normal:
+                                  0.11 in<br>
+                                  Record Snowfall: 0.5 in (1994)</p>
+                                <p style="text-align: left;"><em>NWS Caribou
+                                    Climate Data</em><a href="https://w2.weather.gov/climate/xmacis.php?wfo=car"><br>
+https://w2.weather.gov/climate/xmacis.php?wfo=car</a> <br>
+                                  ---------------------------<br>
+                                  <br>
+                                  <strong>Personal Weather Station Data Summary
+                                    for Tuesday, May 26, 2020<br>
+                                  </strong>High: 89° at 3:39 pm<br>
+                                  Low:&nbsp; 57° at 5:25 am<br>
+                                  Peak Wind Gust: 14 mph from Northwest at 12:27
+                                  pm<br>
+                                  <br>
+                                  Precipitation: 0.00 in<br>
+                                  month: 1.70 in (norm: 2.69 in)<br>
+                                  year: 14.04 in (norm: 12.33 in)<br>
+                                  <br>
+                                  Snowfall 2019-2020<br>
+                                  day: 0.0 in<br>
+                                  month: 2.0 in (norm: 0.1 in)<br>
+                                  year: 130.0 in (norm: 97.1 in)<br>
+                                  <br>
+                                  <em>Public PWS Dashboard Link</em><br>
+                                  <a href="https://ambientweather.net/dashboard/16e0681b266993eb92230c42d89f3fd5">https://ambientweather.net/dashboard/16e0681b266993eb92230c42d89f3fd5</a><br>
+                                  <br>
+                                  ---------------------------<br>
+                                  <br>
+                                  <strong><a name="#National" id="Outlooks"></a>NWS
+                                    National Outlook</strong><br>
+                                  <a href="https://www.weather.gov/">https://www.weather.gov/</a><br>
+                                  <br>
+                                  Tropical Storm Bertha will move across the
+                                  Carolinas and into Virginia while weakening
+                                  into tonight; heavy rain and flooding are
+                                  likely. Severe thunderstorms with all hazards
+                                  are likely in central Texas later today.
+                                  Finally, the sweltering heat wave will
+                                  continue the rest of the week across the West,
+                                  expanding across the Rockies by the weekend.<br>
+                                  <br>
+                                  <strong>SPC National Thunderstorm/Severe
+                                    Weather Outlook</strong><br>
+                                  <a href="https://www.spc.noaa.gov/">https://www.spc.noaa.gov/</a><br>
+                                  <br>
+                                  The main severe-weather threat today will be
+                                  over central Texas and vicinity, where very
+                                  large hail, severe wind, and a few tornadoes
+                                  are possible..<br>
+                                  ---------------------------<br>
+                                  <br>
+                                  <strong>National Hurricane Center Atlantic
+                                    Tropical Weather Outlook</strong><br>
+                                  <a href="https://www.nhc.noaa.gov/">https://www.nhc.noaa.gov/</a><br>
+                                  <br>
+                                  Tropical Storm Bertha<br>
+                                  At 830 AM EDT (1230 UTC), the center of
+                                  Tropical Storm Bertha was located near
+                                  latitude 32.7 North, longitude 79.4 West.
+                                  Bertha is moving toward the northwest near 9
+                                  mph (15 km/h) and this motion is expected to
+                                  continue through tonight. On the forecast
+                                  track the&nbsp; center of Bertha will move
+                                  onshore in the warning area in the next few
+                                  hours and the move inland across eastern and
+                                  northern South Carolina later today and into
+                                  west-central North Carolina by tonight.
+                                  Maximum sustained winds are near 45 mph (75
+                                  km/h) with higher gusts. Bertha is expected to
+                                  weaken to a tropical depression after moving
+                                  inland and become a remnant low tonight. <em></em><br>
+                                  <br>
+                                  ---------------------------<br>
+                                  <br>
+                                  <strong>Yesterday's National High and Low
+                                    Temperatures for the contiguous US</strong><br>
+                                  (Weather Prediction Center data at 2 AM EDT
+                                  today)<br>
+                                  <br>
+                                  <em>High Temperature for Tuesday, May 26, 2020<br>
+                                  </em>113 at Death Valley, CA<em><br>
+                                    <br>
+                                    Low Temperature for Tuesday, May 26, 2020<br>
+                                  </em> 21 at 8 miles northeast of Toponas, CO</p>
+                              </div>
+                              <div style="text-align: center;"><a href="https://www.weather.gov/SKYWARN"
+                                  title="NWS Skywarn Storm Spotters"><img src="http://academic.umfk.maine.edu/jbecker/SkywarnLogoTxtOutln2.png"
+                                    alt="Skywarn Storm Spotters" style="width: 70px; height: 97px; padding: 10px;"></a><a
+                                  href="https://www.weather.gov/safety/flood-turn-around-dont-drown"
+                                  title="NWS Flood Safety"><img src="http://academic.umfk.maine.edu/jbecker/TADDHighRes-sm.gif"
+                                    alt="Turn Around Dont' Drown" style="width: 97px; height: 97px; padding: 10px;"></a><a
+                                  href="https://www.weather.gov/learning" title="NWS Educational Resources"><img
+                                    src="http://academic.umfk.maine.edu/jbecker/learning-thumbnail.png"
+                                    alt="NWS Educational Resources" style="width: 95px; height: 95px; padding: 10px;"><br>
+                                </a></div>
+                              <div style="text-align: center;"><a href="https://www.weather.gov/learning"
+                                  title="NWS Educational Resources"><br>
+                                </a></div>
+                              <div style="text-align: center;">
+                                <h2 style="color: black; font-family: sans-serif; font-weight: 400; line-height: 1.4; margin: 0px 0px 30px; text-align: center;"><a
+                                    id="Maps"></a><strong>Maps &amp; Charts</strong></h2>
+                                <div style="text-align: left;"><em>Click maps
+                                    and charts for larger versions, loops, etc.
+                                    Graphics update automatically--check
+                                    timestamps for currency. During updates,
+                                    maintenance, etc., graphics may be
+                                    temporarily unavailable. </em><br>
+                                  <em> </em></div>
+                                <p style="font-family: sans-serif; font-size: 14px; font-weight: normal; margin: 0px 0px 15px; text-align: left;"><br>
+                                  <em><u>Note</u>: For US Eastern Time on maps
+                                    and charts, subtract 4 hours (daylight time)
+                                    or 5 hours (standard time) from UTC / Z /
+                                    GMT timestamp on the maps and charts. Visit
+                                    <a title="timeanddate.com" href="https://www.timeanddate.com/">timeanddate.com</a>
+                                    for more time zone conversion information
+                                    and additional time-related data.<br>
+                                  </em></p>
+                                <p style="font-family: sans-serif; font-size: 14px; font-weight: normal; margin: 0px 0px 15px; text-align: center;"><u><strong>Current
+                                      Time 24-Hour Clock</strong></u><em><br>
+                                  </em></p>
+                                <p style="font-family: sans-serif; font-size: 14px; font-weight: normal; margin: 0px 0px 15px; text-align: center;"><em><iframe
+                                      src="http://free.timeanddate.com/clock/i7athxrb/n5278/th1/ts1/ta1"
+                                      height="19" frameborder="0" width="69"></iframe>&nbsp;&nbsp;
+                                    &nbsp; <iframe src="http://free.timeanddate.com/clock/i7allsch/th1/ts1/ta1"
+                                      height="19" frameborder="0" width="70"></iframe>
+                                  </em></p>
+                                <div style="text-align: left;"><strong>In <u>Maps
+                                      &amp; Charts</u> Jump To:</strong><strong>
+                                  </strong></div>
+                                <div style="text-align: left;"><span style="color: #3333ff;"><strong><a
+                                        href="#Regional">Regional Weather<br>
+                                      </a></strong></span></div>
+                                <span style="color: #3333ff;"><strong> </strong></span>
+                                <div style="text-align: left;"><span style="color: #3333ff;"><strong><a
+                                        href="#River">Area River Gauges</a></strong></span></div>
+                                <span style="color: #3333ff;"><strong> </strong></span>
+                                <div style="text-align: left;"><span style="color: #3333ff;"><strong><a
+                                        href="#National">National Weather<br>
+                                      </a></strong></span></div>
+                                <span style="color: #3333ff;"><strong> </strong></span>
+                                <div style="text-align: left;"><span style="color: #3333ff;"><strong><a
+                                        href="#Tropical">Atlantic Tropical
+                                        Weather<br>
+                                      </a></strong></span></div>
+                                <span style="color: #3333ff;"><strong> </strong></span>
+                                <div style="text-align: left;"><span style="color: #3333ff;"><strong><a
+                                        href="#Climate">National Climate Trends<br>
+                                      </a></strong></span></div>
+                                <span style="color: #3333ff;"> </span>
+                                <div style="text-align: center;"><u><strong><br>
+                                    </strong></u></div>
+                                <div style="text-align: center;"><u><strong><br>
+                                    </strong></u></div>
+                                <div style="text-align: center;"><a id="Regional"></a><u><strong>Regional
+                                      Weather</strong></u></div>
+                              </div>
+                              <br>
+                              <strong><strong><em>Northeast Weather Chart<br>
+                                  </em></strong> <a style="color: #3498db; text-decoration: underline;"
+                                  title="Click for larger image" href="https://www.wpc.ncep.noaa.gov/sfc/namnesfcwbg.gif"><img
+                                    style="max-width: 100%; width: 516px;" src="https://www.wpc.ncep.noaa.gov/sfc/namnesfcwbg.gif"
+                                    alt="Northeast Weather Chart"><br>
+                                </a></strong><em><a title="Full Resolution North America Weather Chart"
+                                  href="https://www.wpc.ncep.noaa.gov/html/sfc-zoom.php">Full
+                                  Resolution</a> North America Weather Chart</em><strong><em></em></strong><br>
+                              <br>
+                              <em><strong>Northeast Thunderstorm / Severe
+                                  Weather Outlook</strong></em><br>
+                              <strong><strong><em><a title="Click for larger image"
+                                      href="https://www.weather.gov/images/erh/gis/NE_convectiveoutlook_day1.png"><img
+                                        style="width: 534px; height: 397px;" src="https://www.weather.gov/images/erh/gis/NE_convectiveoutlook_day1.png"
+                                        alt="Today's Severe Weather Outlook"></a><br>
+                                  </em></strong> </strong><strong><strong><strong><em><br>
+                                    </em></strong></strong></strong><strong><em><strong>Northeast</strong></em>
+                                <strong><em>Radar</em></strong><br>
+                                <a style="color: #3498db; text-decoration: underline;"
+                                  title="Northeast Radar Mosaic Loop--Click for larger version"
+                                  href="https://radar.weather.gov/Conus/northeast_loop.php"><img
+                                    style="max-width: 100%; width: 521px; height: 495px;"
+                                    src="https://radar.weather.gov/Conus/Loop/northeast_loop.gif"
+                                    alt="Northeast Radar Mosaic"></a><br>
+                              </strong><em><a title="Full Resolution National Radar Loop"
+                                  href="https://radar.weather.gov/Conus/full_loop.php">Full
+                                  resolution national loop</a> (3400x1700 pixels
+                                - 2.2mb)</em><strong><em><strong><br>
+                                    <br>
+                                  </strong></em></strong><strong><em><strong><strong><strong><strong><em><strong><em>Regional
+                                                Doppler Radar<br>
+                                              </em></strong><strong><strong><strong><em><a
+                                                      title="Click for larger image"
+                                                      href="https://radar.weather.gov/ridge/radar_lite.php?rid=CBW&amp;product=NCR&amp;overlay=11101111&amp;loop=yes"><img
+                                                        style="width: 534px; height: 397px;"
+                                                        src="https://radar.weather.gov/lite/NCR/CBW_loop.gif"
+                                                        alt="Regional Doppler Radar"></a></em></strong></strong></strong></em></strong></strong></strong><br>
+                                    <br>
+                                    Forecast Highs</strong></em><br>
+                                <a style="color: #3498db; text-decoration: underline;"
+                                  title="Click for larger image" href="https://www.weather.gov/images/erh/gis/CAR_maxt_Day1.png"><img
+                                    style="max-width: 100%; width: 525px; height: 390px;"
+                                    src="https://www.weather.gov/images/erh/gis/CAR_maxt_Day1.png"
+                                    alt="Today's HIghs"></a><br>
+                              </strong><em><strong><br>
+                                  <br>
+                                  24-Hour Heat Index Values<br>
+                                </strong></em><strong><a style="color: #3498db; text-decoration: underline;"
+                                  title="Click for larger image" href="https://www.weather.gov/images/erh/gis/CAR_AptMax.png"><img
+                                    style="max-width: 100%; width: 525px; height: 390px;"
+                                    src="https://www.weather.gov/images/erh/gis/CAR_AptMax.png"
+                                    alt="Heat Index"></a></strong> <strong><em><strong
+                                    style="font-size: 10px;"><em><strong>Heat
+                                        Index is calculated for temperatures
+                                        above 80°F</strong></em> when relative
+                                    humidity is combined with air temp.<br>
+                                  </strong></em><br>
+                                <em>Forecast Lows</em><br>
+                                <a style="color: #3498db; text-decoration: underline;"
+                                  title="Click for larger image" href="https://www.weather.gov/images/erh/gis/CAR_mint_Day1.png"><img
+                                    style="max-width: 100%; width: 530px; height: 393px;"
+                                    src="https://www.weather.gov/images/erh/gis/CAR_mint_Day1.png"
+                                    alt="Tonight's Overnight Lows"></a><strong><em><br>
+                                    24-Hour Wind Chill Values<br>
+                                  </em></strong></strong><strong><strong><em><strong><a
+                                        style="color: #3498db; text-decoration: underline;"
+                                        title="Click for larger image" href="https://www.weather.gov/images/erh/gis/CAR_AptMin.png"><img
+                                          style="max-width: 100%; width: 530px; height: 393px;"
+                                          src="https://www.weather.gov/images/erh/gis/CAR_AptMin.png"
+                                          alt="24-Hour Wind Chill Values"></a></strong><br>
+                                  </em></strong></strong><em><em style="font-size: 10px;"><strong>Wind
+                                    chill values are calculated below 50°F with
+                                    wind over 3 mph</strong><br>
+                                </em></em><strong><strong><em><br>
+                                    24-Hour Precipitation Outlook<br>
+                                    <a title="Click for larger image" href="https://www.weather.gov/images/erh/gis/CAR_QPF24.png"><img
+                                        style="max-width: 100%; width: 535px; height: 398px;"
+                                        src="https://www.weather.gov/images/erh/gis/CAR_QPF24.png"
+                                        alt="Today's Precipitation Outlook"></a><br>
+                                    <br>
+                                    3-Day Snowfall Outlook</em></strong><br>
+                                <strong><em><a title="Click for larger image" href="https://www.weather.gov/images/erh/gis/CAR_Snow.png"><strong><em><img
+                                            style="max-width: 100%; width: 535px; height: 398px;"
+                                            src="https://www.weather.gov/images/erh/gis/CAR_Snow.png"
+                                            alt="Snowfall Outlook"></em></strong></a><br>
+                                    <br>
+                                    3-Day Ice Accumulation Outlook</em></strong><br>
+                                <strong><em><strong><em><a title="Click for larger image"
+                                          href="https://www.weather.gov/images/erh/gis/CAR_Ice.png"><strong><em><img
+                                                style="max-width: 100%; width: 535px; height: 398px;"
+                                                src="https://www.weather.gov/images/erh/gis/CAR_Ice.png"
+                                                alt="Ice Accumulation Outlook"></em></strong></a></em></strong><br>
+                                  </em><u><br>
+                                  </u></strong><em>Total Recorded Monthly
+                                  Precipitation to Date</em></strong><br>
+                              <strong><strong><u><strong><strong><em><strong><em><a
+                                                title="Click for larger image" href="https://www.weather.gov/images/erh/gis/CAR_MTDobs_precip.png"><strong><em><img
+                                                      style="max-width: 100%; width: 535px; height: 398px;"
+                                                      src="https://www.weather.gov/images/erh/gis/CAR_MTDobs_precip.png"
+                                                      alt="Month Total Precipitation Recorded "></em></strong></a></em></strong></em></strong></strong><br>
+                                  </u></strong></strong>
+                              <div style="text-align: center;"><u><strong><strong><br>
+                                    </strong></strong></u></div>
+                              <div style="text-align: center;"><u><strong><strong><a
+                                        name="River" id="River"></a>Area River
+                                      Gauges</strong></strong></u></div>
+                              <div style="text-align: center;"><span style="font-size: 10px;"><strong><em><span
+                                        style="color: red;">Gauges may be
+                                        affected by ice.</span></em></strong><br>
+                                </span><u><strong><strong style="font-size: 10px;">
+                                      <br>
+                                    </strong></strong></u></div>
+                              <div style="text-align: center;"><em>Click for
+                                  more <a href="https://water.weather.gov/ahps/region.php?state=me"
+                                    title="NWS Maine River Observations">Maine
+                                    River Observations</a></em><u><strong><strong><br>
+                                    </strong></strong></u></div>
+                              <strong><strong><em><br>
+                                  </em></strong></strong><strong><strong><em><strong><strong><em><strong><em><a
+                                                title="Click for larger image" href="https://water.weather.gov/ahps2/hydrograph.php?wfo=car&amp;gage=ftkm1"><strong><em><img
+                                                      style="max-width: 100%; width: 535px; height: 398px;"
+                                                      src="https://water.weather.gov/resources/hydrographs/ftkm1_hg.png"
+                                                      alt="Saint John River at Fort Kent Gauge"></em></strong></a></em></strong></em></strong></strong><br>
+                                  </em></strong></strong><span style="color: rgb(0, 0, 0); font-family: Arial, Helvetica, &quot;San Serif&quot;; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(222, 222, 222); text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;">Forecasts
+                                for the St. John River at Fort Kent are issued
+                                routinely year-round.<br>
+                                <br>
+                              </span><strong><em></em><strong><em><br>
+                                  </em></strong></strong><strong><strong><em><strong><strong><em><strong><strong><em><strong><em><a
+                                                      title="Click for larger image"
+                                                      href="https://water.weather.gov/ahps2/hydrograph.php?wfo=car&amp;gage=fihm1"><strong><em><img
+                                                            style="max-width: 100%; width: 535px; height: 398px;"
+                                                            src="https://water.weather.gov/resources/hydrographs/fihm1_hg.png"
+                                                            alt="Fish River at Fort Kent Gauge"></em></strong></a></em></strong></em></strong></strong></em></strong></strong><br>
+                                  </em></strong><em></em><em><span style="color: rgb(0, 0, 0); font-family: Arial, Helvetica, &quot;San Serif&quot;; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(222, 222, 222); text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;">Forecasts
+                                    for the Fish River at Fort Kent are issued
+                                    as needed during times of high water, but
+                                    are not routinely available</span></em><em><span
+                                    style="color: rgb(0, 0, 0); font-family: Arial, Helvetica, &quot;San Serif&quot;; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(222, 222, 222); text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;">.</span></em><em></em><strong><em><br>
+                                    <br>
+                                  </em></strong></strong><br>
+                              <strong><strong><em><strong><strong><em><strong><strong><em><strong><strong><em><strong><em><a
+                                                            title="Click for larger image"
+                                                            href="https://water.weather.gov/ahps2/hydrograph.php?wfo=car&amp;gage=dicm1"><strong><em><img
+                                                                  style="max-width: 100%; width: 535px; height: 398px;"
+                                                                  src="https://water.weather.gov/resources/hydrographs/dicm1_hg.png"
+                                                                  alt="Saint John River at Dickey"></em></strong></a></em></strong></em></strong></strong></em></strong></strong></em></strong></strong><br>
+                                  </em></strong></strong><strong><strong><em><span
+                                      style="color: rgb(0, 0, 0); font-family: Arial, Helvetica, &quot;San Serif&quot;; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(222, 222, 222); text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;">Forecasts
+                                      for the St. John River at Dickey are
+                                      issued routinely year-round.</span><br>
+                                    <br>
+                                  </em></strong></strong><strong><strong><em><strong><strong><em><strong><strong><em><strong><strong><em><strong><strong><em><strong><em><a
+                                                                  title="Click for larger image"
+                                                                  href="https://water.weather.gov/ahps2/hydrograph.php?wfo=car&amp;gage=allm1"><strong><em><img
+                                                                  style="max-width: 100%; width: 535px; height: 398px;"
+                                                                  src="https://water.weather.gov/resources/hydrographs/allm1_hg.png"
+                                                                  alt="Allagash River above Allagash, ME"></em></strong></a></em></strong></em></strong></strong></em></strong></strong></em></strong></strong><br>
+                                        </em></strong></strong><strong><strong><em><span
+                                            style="color: rgb(0, 0, 0); font-family: Arial, Helvetica, &quot;San Serif&quot;; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(222, 222, 222); text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;"></span></em></strong></strong></em></strong></strong><strong><strong><em><strong><strong><em><span
+                                            style="color: rgb(0, 0, 0); font-family: Arial, Helvetica, &quot;San Serif&quot;; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(222, 222, 222); text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;"><span
+                                              style="color: rgb(0, 0, 0); font-family: Arial, Helvetica, &quot;San Serif&quot;; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(222, 222, 222); text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;">Forecasts
+                                              for the Allagash River above
+                                              Allagash are issued as needed
+                                              during times of high water, but
+                                              are not routinely available.</span></span></em></strong></strong><br>
+                                    <br>
+                                  </em></strong></strong>
+                              <div style="text-align: center;"><strong><a id="National"></a><u>National
+                                    Weather</u><strong><em></em></strong></strong><br>
+                                <strong><strong><em></em></strong></strong></div>
+                              <strong><strong><em><br>
+                                    National Forecast Map<br>
+                                    <a style="color: #3498db; text-decoration: underline;"
+                                      title="Click for interactive version" href="https://www.wpc.ncep.noaa.gov/NationalForecastChart/map.php"><img
+                                        style="border: none; -ms-interpolation-mode: bicubic; max-width: 100%;"
+                                        src="https://www.wpc.ncep.noaa.gov/NationalForecastChart/staticmaps/noaad1.png"
+                                        alt="Today's National Forecast Map"></a></em></strong><br>
+                                &nbsp; </strong><strong><em><strong><br>
+                                    National Composite Satellite</strong></em><em><strong><br>
+                                    <a title="Click for large looping image" href="https://www.ssec.wisc.edu/data/us_comp/large"><img
+                                        style="border: none; -ms-interpolation-mode: bicubic; max-width: 100%;"
+                                        src="https://www.ssec.wisc.edu/data/us_comp/image7.jpg"
+                                        alt="National Composite Satellite Image"></a><br>
+                                    <br>
+                                  </strong></em></strong><em><strong>National
+                                  Hazards Map</strong></em><br>
+                              <strong><em><strong><strong><em><strong><a title="Click for larger image"
+                                            href="https://www.weather.gov/"><img
+                                              style="border: none; -ms-interpolation-mode: bicubic; max-width: 100%;"
+                                              src="https://forecast.weather.gov/wwamap/png/US.png"
+                                              alt="National Hazards Map"></a></strong></em></strong><br>
+                                  </strong></em></strong><strong><em><strong><a
+                                      href="http://academic.umfk.maine.edu/jbecker/legendfull.png"
+                                      title="Click for larger image of legend"><strong><em><strong><strong><em><strong><img
+                                                    style="border: none; -ms-interpolation-mode: bicubic; max-width: 100%;"
+                                                    src="legendfull.png" alt="National Hazards Legend"></strong></em></strong></strong></em></strong></a></strong></em></strong><br>
+                              <br>
+                              <strong><em><strong>National Thunderstorm / Severe
+                                    Weather Outlook<br>
+                                  </strong></em> <strong><a style="color: #3498db; text-decoration: underline;"
+                                    title="Current Severe Weather Outlook--Click for more"
+                                    href="https://www.spc.noaa.gov/products/outlook/day1otlk.html"><img
+                                      style="border: none; -ms-interpolation-mode: bicubic; max-width: 100%;"
+                                      src="https://www.weather.gov/images/erh/gis/CONUS_convoutlook_day1.png"
+                                      alt="Current Severe Weather Outlook"></a><br>
+                                </strong> <em><strong><br>
+                                    National Fire Weather Outlook</strong></em></strong><br>
+                              <strong><em><strong><strong><strong><a style="color: #3498db; text-decoration: underline;"
+                                          title="Fire Weather Outlook--Click for more information"
+                                          href="https://www.spc.noaa.gov/products/fire_wx/fwdy1.html"><img
+                                            style="border: none; -ms-interpolation-mode: bicubic; max-width: 100%;"
+                                            src="https://www.spc.noaa.gov/products/fire_wx/day1otlk_fire.gif"
+                                            alt="National Fire Weather Outlook"></a></strong></strong><br>
+                                    <br>
+                                    National Precipitation Outlook<br>
+                                    <a title="Click for larger image" href="https://www.weather.gov/images/erh/gis/CONUS_QPF24.png"><img
+                                        style="border: none; -ms-interpolation-mode: bicubic; max-width: 100%;"
+                                        src="https://www.weather.gov/images/erh/gis/CONUS_QPF24.png"
+                                        alt="Today' National Precipitation Outlook"></a><br>
+                                  </strong></em><strong><em><br>
+                                    National Excessive Rainfall Outlook<br>
+                                  </em> <a style="color: #3498db; text-decoration: underline;"
+                                    title="Click for larger image" href="https://www.wpc.ncep.noaa.gov/qpf/94ewbg.gif"><img
+                                      style="border: none; -ms-interpolation-mode: bicubic; max-width: 100%;"
+                                      src="https://www.wpc.ncep.noaa.gov/qpf/94ewbg.gif"
+                                      alt="Today's Excessive Rainfall Outlook"></a><br>
+                                </strong><br>
+                                <strong><em><strong>National Snowfall Outlook<br>
+                                      <a title="Click for larger image" href="https://www.weather.gov/images/erh/gis/CONUS_Snow.png"><img
+                                          style="border: none; -ms-interpolation-mode: bicubic; max-width: 100%;"
+                                          src="https://www.weather.gov/images/erh/gis/CONUS_Snow.png"
+                                          alt="National Snowfall Outlook"></a><br>
+                                    </strong></em> <br>
+                                  <em>National Ice Accumulation Outlook<br>
+                                  </em></strong><strong><em><a title="Click for larger image"
+                                      href="https://www.weather.gov/images/erh/gis/CONUS_Ice.png"><strong><em><strong><img
+                                              style="border: none; -ms-interpolation-mode: bicubic; max-width: 100%;"
+                                              src="https://www.weather.gov/images/erh/gis/CONUS_Ice.png"
+                                              alt="National Ice Accumulation Outlook"></strong></em></strong></a><br>
+                                    <br>
+                                    National Wind Gust Outlook<br>
+                                  </em></strong><strong><em> <strong><em><a title="Click for larger image"
+                                          href="https://www.weather.gov/images/erh/gis/CONUS_WGust.png"><strong><em><strong><img
+                                                  style="border: none; -ms-interpolation-mode: bicubic; max-width: 100%;"
+                                                  src="https://www.weather.gov/images/erh/gis/CONUS_WGust.png"
+                                                  alt="National Ice Accumulation Outlook"></strong></em></strong></a><br>
+                                      </em></strong></em></strong></strong><br>
+                              <strong><strong><em><strong><em><strong><strong><em>National
+                                              High Temperature Forecast<br>
+                                            </em></strong><strong><em> <strong><em><a
+                                                    title="Click for larger image"
+                                                    href="https://www.weather.gov/images/erh/gis/CONUS_maxt_Day1.png"><strong><em><strong><img
+                                                            style="border: none; -ms-interpolation-mode: bicubic; max-width: 100%;"
+                                                            src="https://www.weather.gov/images/erh/gis/CONUS_maxt_Day1.png"
+                                                            alt="National High Temperature Forecast"></strong></em></strong></a></em></strong></em></strong></strong><br>
+                                      </em></strong><br>
+                                    National Low Temperature Forecast<br>
+                                  </em></strong></strong><strong><strong><strong><em><strong><strong><em><strong><em><strong><strong><em><strong><em><a
+                                                            title="Click for larger image"
+                                                            href="https://www.weather.gov/images/erh/gis/CONUS_mint_Day1.png"><strong><em><strong><img
+                                                                  style="border: none; -ms-interpolation-mode: bicubic; max-width: 100%;"
+                                                                  src="https://www.weather.gov/images/erh/gis/CONUS_mint_Day1.png"
+                                                                  alt="National Low Temperature Forecast"></strong></em></strong></a></em></strong></em></strong></strong></em></strong></em></strong></strong><br>
+                                      <br>
+                                    </em></strong></strong></strong>
+                              <div style="text-align: center;"><strong><a id="Tropical"></a><u>Atlantic
+                                    Tropical Weather</u><em></em></strong><br>
+                                <strong><strong><strong><em></em></strong></strong></strong></div>
+                              <strong><strong><strong><em><br>
+                                      NHC Atlantic 2-Day Tropical Weather
+                                      Outlook<br>
+                                      <a style="color: #3498db; text-decoration: underline;"
+                                        title="NHC Atlantic 2-Day Tropical Weather Outlook"
+                                        href="https://www.nhc.noaa.gov/gtwo.php?basin=atlc&amp;fdays=2"><img
+                                          style="border: none; -ms-interpolation-mode: bicubic; max-width: 100%;"
+                                          src="https://www.nhc.noaa.gov/xgtwo/two_atl_2d0.png"
+                                          alt="NHC Atlantic 2-Day Hurricane Outlook"></a><br>
+                                    </em></strong></strong></strong><em><strong><br>
+                                  NHC Atlantic 5-Day Tropical Weather Outlook</strong></em><br>
+                              <strong><strong><strong><em><strong><strong><strong><em><a
+                                                style="color: #3498db; text-decoration: underline;"
+                                                title="NHC Atlantic 5-Day Tropical Weather Outlook"
+                                                href="https://www.nhc.noaa.gov/gtwo.php?basin=atlc&amp;fdays=5"><img
+                                                  style="border: none; -ms-interpolation-mode: bicubic; max-width: 100%;"
+                                                  src="https://www.nhc.noaa.gov/xgtwo/two_atl_5d0.png"
+                                                  alt="NHC Atlantic 5-Day Hurricane Outlook"></a></em></strong></strong></strong>
+                                      <br>
+                                      <br>
+                                      Atlantic Infrared Satellite</em></strong><br>
+                                  <strong><em><a style="color: #3498db; text-decoration: underline;"
+                                        title="Click for larger 2-Day Loop" href="http://tropic.ssec.wisc.edu/real-time/atlantic/movies/g8irbbm/g8irbbm_loop.html"><img
+                                          style="border: none; -ms-interpolation-mode: bicubic; max-width: 100%;"
+                                          src="http://tropic.ssec.wisc.edu/real-time/atlantic/images/xxirg8bbm.jpg"
+                                          alt="Current Atlantic Infrared Satellite"></a><br>
+                                      <u><strong><br>
+                                        </strong></u></em></strong></strong></strong>
+                              <div style="text-align: center;"><strong><strong><strong><u><strong><a
+                                            name="Climate" id="Climate"></a></strong></u></strong></strong></strong><strong><u>Continental
+                                    US Climate Trends</u></strong><br>
+                                <strong><strong><strong><em></em></strong></strong></strong></div>
+                              <strong><strong><strong><em><br>
+                                    </em></strong><em><strong>8-14 Day
+                                      Temperature Trends Continental US</strong></em><br>
+                                  <em><strong><a title="Click for larger image"
+                                        href="https://www.cpc.ncep.noaa.gov/products/predictions/814day/814temp.new.gif"><img
+                                          style="border: none; -ms-interpolation-mode: bicubic; max-width: 100%;"
+                                          src="https://www.cpc.ncep.noaa.gov/products/predictions/814day/814temp.new.gif"
+                                          alt="8-14 Day Temperature Trends"></a></strong></em><br>
+                                  <br>
+                                </strong><strong><em><strong><em><em><strong>8-14
+                                            Day Precipitation Trends Continental
+                                            US</strong></em><br>
+                                        <em><strong><a title="Click for larger image"
+                                              href="https://www.cpc.ncep.noaa.gov/products/predictions/814day/814prcp.new.gif"><img
+                                                style="border: none; -ms-interpolation-mode: bicubic; max-width: 100%;"
+                                                src="https://www.cpc.ncep.noaa.gov/products/predictions/814day/814prcp.new.gif"
+                                                alt="8-14 Day Precipitation Trends"></a></strong></em></em></strong><br>
+                                  </em></strong></strong><em><strong>One Month
+                                  Temperature Trends Continental US</strong></em><br>
+                              <strong><strong><strong><em><strong><strong><strong><em><strong><em><em><strong><a
+                                                        title="Click for larger image"
+                                                        href="https://www.cpc.ncep.noaa.gov/products/predictions/long_range/lead14/off14_temp.gif"><img
+                                                          style="border: none; -ms-interpolation-mode: bicubic; max-width: 100%;"
+                                                          src="https://www.cpc.ncep.noaa.gov/products/predictions/long_range/lead14/off14_temp.gif"
+                                                          alt="One Month Temperature Trends"></a></strong></em></em></strong></em></strong></strong></strong><br>
+                                      <br>
+                                    </em></strong></strong></strong><em><strong>One
+                                  Month Precipitation Trends Continental US</strong></em><br>
+                              <strong><strong><strong><em><strong><strong><strong><em><strong><strong><strong><em><strong><em><em><strong><a
+                                                                title="Click for larger image"
+                                                                href="https://www.cpc.ncep.noaa.gov/products/predictions/long_range/lead14/off14_prcp.gif"><img
+                                                                  style="border: none; -ms-interpolation-mode: bicubic; max-width: 100%;"
+                                                                  src="https://www.cpc.ncep.noaa.gov/products/predictions/long_range/lead14/off14_prcp.gif"
+                                                                  alt="One Month Precipitation Trends"></a></strong></em></em></strong></em></strong></strong></strong></em></strong></strong></strong><br>
+                                      <br>
+                                      <br>
+                                    </em></strong></strong></strong><strong><strong><strong><em><strong><strong><strong><em><strong><strong><strong><em><strong><strong><strong><em><strong><em><em><strong><a
+                                                                  title="Click for more information"
+                                                                  href="https://www.cpc.ncep.noaa.gov/products/expert_assessment/mdo_summary.php"><img
+                                                                  style="border: none; -ms-interpolation-mode: bicubic; max-width: 100%;"
+                                                                  src="https://www.cpc.ncep.noaa.gov/products/expert_assessment/month_drought.png"
+                                                                  alt="One Month Drought Outlook"></a></strong></em></em></strong></em></strong></strong></strong></em></strong></strong></strong></em></strong></strong></strong><br>
+                                      <br>
+                                      Day &amp; Night World Map</em></strong></strong></strong><br>
+                              <strong><strong><strong><em><a style="color: #3498db; text-decoration: underline;"
+                                        title="Click for larger image" href="https://www.timeanddate.com/worldclock/sunearth.html?earth=1"><img
+                                          style="border: none; -ms-interpolation-mode: bicubic; max-width: 100%;"
+                                          src="https://www.timeanddate.com/scripts/sunmap.php?&amp;earth=1"
+                                          alt="Sun and Moon Map"></a></em></strong></strong></strong>
+                              <div style="text-align: center;"><strong></strong></div>
+                              <div style="text-align: center;"><br>
+                              </div>
+                              <div style="text-align: center;"> </div>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </td>
+                  </tr>
+                  <!-- END MAIN CONTENT AREA -->
+                </tbody>
+              </table>
+              <!-- END CENTERED WHITE CONTAINER -->
+              <!-- START FOOTER -->
+              <div class="footer">
+                <table role="presentation" cellspacing="0" cellpadding="0" border="0">
+                  <tbody>
+                    <tr>
+                      <td class="content-block"> <span class="apple-link"></span><em><em>Disclaimer</em></em><br>
+                        <em><em> </em> </em>
+                        <div style="text-align: left;"><em>Forecasts are written
+                            and compiled by Joseph E. Becker, <a title="University of Maine at Fort Kent"
+                              href="https://www.umfk.edu/">UMFK</a> Professor,
+                            who earned a certificate in weather forecasting from
+                            <a title="Penn State World Campus" href="https://www.worldcampus.psu.edu/">Penn
+                              State University</a>. Weather information is for
+                            general informational purposes only and based on
+                            computer weather models, personal weather station
+                            data, and information from NOAA, the National
+                            Weather Service, and other weather data providers
+                            available at time of posting. No guarantees or
+                            warranties, expressed or implied, are provided due
+                            to inaccuracies, errors, and/or defects in data
+                            feeds, instruments, and computer weather models that
+                            are beyond the forecaster's control.The accuracy,
+                            relevance, timeliness, or completeness of any
+                            information on linked external websites is not
+                            guaranteed. When severe weather threatens or is
+                            occurring, obtain the latest weather information
+                            from the National Weather Service/NOAA Radio,
+                            commercial television/radio, and/or local emergency
+                            service providers to ensure access to the most
+                            current information. </em><em>NOAA Warning Banner
+                            (may appear during severe weather) provided by <a href="https://www.willyweather.com">WillyWeather.com</a>.
+                            Apex Wx logo by Joanna Becker </em><em>© 2016
+                            (Visit <a title="Bushi and Brush Arts Dojo" href="https://www.bushiandbrush.com/">Bushi
+                              and Brush Arts Dojo</a>)<span style="color: #0000ee;">.</span></em>
+                          <table width="100%" cellspacing="0" cellpadding="0" border="0">
+                            <tbody>
+                              <tr>
+                                <td style="font-family: sans-serif; vertical-align: top; padding-bottom: 10px; padding-top: 10px; color: #999999; font-size: 12px; text-align: center;"
+                                  align="center" valign="top"><br>
+                                  <img src="http://academic.umfk.maine.edu/jbecker//academic/ApexWxlogo75px.jpg"
+                                    alt="Apex Wx Logo" style="width: 75px; height: 75px;"
+                                    title="Apex Wx Logo"><br>
+                                  <div style="text-align: center;"><em style="color: black;"><br>
+                                    </em></div>
+                                  <div style="text-align: center;"><em style="color: black;">Archived
+                                      Apex Wx Data at</em><br>
+                                    <em><a title="Apex Wx Data at MesoWest" href="https://mesowest.utah.edu/cgi-bin/droman/meso_base_dyn.cgi?stn=E0429&amp;unit=0&amp;timetype=LOCAL"><img
+                                          src="http://academic.umfk.maine.edu/jbecker//academic/mesowest%20116x30px.png"
+                                          alt="MesoWest"></a></em></div>
+                                  <div style="text-align: center;"><em><br>
+                                    </em></div>
+                                  <a style="text-decoration: underline; color: #999999; font-size: 12px; text-align: center;"
+                                    href="https://www.facebook.com/ApexWx/"><img
+                                      style="border: none; -ms-interpolation-mode: bicubic; max-width: 100%;"
+                                      title="Apex Wx on Facebook" src="http://academic.umfk.maine.edu/jbecker//academic/outline-dark-facebook-48.png"
+                                      alt="Apex Wx on Facebook"></a> <a style="text-decoration: underline; color: #999999; font-size: 12px; text-align: center;"
+                                    title="Apex Wx on Twitter" href="https://twitter.com/apexwx"><img
+                                      style="border: none; -ms-interpolation-mode: bicubic; max-width: 100%;"
+                                      title="Apex Wx on Twitter" src="http://academic.umfk.maine.edu/jbecker//academic/outline-dark-twitter-48.png"
+                                      alt="Apex Wx on Twitter"></a></td>
+                              </tr>
+                            </tbody>
+                          </table>
+                          <em><span style="color: #0000ee;"></span></em></div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="content-block powered-by"> Powered by <a href="http://htmlemail.io">HTMLemail</a>.<br>
+                        This page was last modified
+                        <script type="text/javascript">document.write (document.lastModified);</script></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <!-- END FOOTER --> </div>
+          </td>
+          <td>&nbsp;</td>
+        </tr>
+      </tbody>
+    </table>
+    <br>
+    <p></p>
+  </body>
+</html>
