@@ -370,15 +370,15 @@ type="application/javascript"></script>
                               <h2 style="color: black; font-family: sans-serif; font-weight: 400; line-height: 1.4; margin: 0px 0px 30px; text-align: center;"><strong>Fort
                                   Kent &amp; the Upper Saint John Valley, Maine<br>
                                   Weather Forecast</strong></h2>
-                              <div style="text-align: center;">
+                              <div style="text-align: center;"> <label id="lblGreetings"></label><br>
                                 <div style="text-align: center;"><iframe src="https://freesecure.timeanddate.com/clock/i7aykgoq/n23/ftb/tt0/ts1/ta1"
                                     height="19" frameborder="0" width="343"></iframe>
                                   <br>
                                 </div>
                               </div>
                               <div style="text-align: center;"><em>Forecast
-                                  Updated at 10:20 am Thu. May 28, 2020</em><em>
-                                </em></div>
+                                  Updated&nbsp; at 10:20 am </em><em>Thursday,
+                                  May 28, 2020</em><em> </em></div>
                               <strong><br>
                               </strong>
                               <div style="text-align: center;">
@@ -1215,5 +1215,21 @@ https://w2.weather.gov/climate/xmacis.php?wfo=car</a> <br>
     </table>
     <br>
     <p></p>
+    <script>
+    var myDate = new Date();
+    var hrs = myDate.getHours();
+
+    var greet;
+
+    if (hrs < 12)
+        greet = 'Good Morning';
+    else if (hrs >= 12 && hrs <= 17)
+        greet = 'Good Afternoon';
+    else if (hrs >= 17 && hrs <= 24)
+        greet = 'Good Evening';
+
+    document.getElementById('lblGreetings').innerHTML =
+        '<b>' + greet + '</b>';
+</script>
   </body>
 </html>
