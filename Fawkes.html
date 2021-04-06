@@ -1,1005 +1,1048 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8">
-    <meta content="width=device-width" name="viewport">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width">
     <title>Fawkes House Weather Forecast Lancaster, Pennsylvania</title>
-    <style>
-	     /* -------------------------------------
-	         GLOBAL RESETS
-	     ------------------------------------- */
-	     
-	     /*All the styling goes here*/
-	     
-	     img {
-	       border: none;
-	       -ms-interpolation-mode: bicubic;
-	       max-width: 100%; 
-	     }
-
-	     body {
-	       background-color: #f6f6f6;
-	       font-family: sans-serif;
-	       -webkit-font-smoothing: antialiased;
-	       font-size: 14px;
-	       line-height: 1.4;
-	       margin: 0;
-	       padding: 0;
-	       -ms-text-size-adjust: 100%;
-	       -webkit-text-size-adjust: 100%; 
-	     }
-
-	     table {
-	       border-collapse: separate;
-	       mso-table-lspace: 0pt;
-	       mso-table-rspace: 0pt;
-	       width: 100%; }
-	       table td {
-	         font-family: sans-serif;
-	         font-size: 14px;
-	         vertical-align: top; 
-	     }
-
-	     /* -------------------------------------
-	         BODY & CONTAINER
-	     ------------------------------------- */
-
-	     .body {
-	       background-color: #f6f6f6;
-	       width: 100%; 
-	     }
-
-	     /* Set a max-width, and make it display as block so it will automatically stretch to that width, but will also shrink down on a phone or something */
-	     .container {
-	       display: block;
-	       margin: 0 auto !important;
-	       /* makes it centered */
-	       max-width: 580px;
-	       padding: 10px;
-	       width: 580px; 
-	     }
-
-	     /* This should also be a block element, so that it will fill 100% of the .container */
-	     .content {
-	       box-sizing: border-box;
-	       display: block;
-	       margin: 0 auto;
-	       max-width: 580px;
-	       padding: 10px; 
-	     }
-
-	     /* -------------------------------------
-	         HEADER, FOOTER, MAIN
-	     ------------------------------------- */
-	     .main {
-	       background: #ffffff;
-	       border-radius: 3px;
-	       width: 100%; 
-	     }
-
-	     .wrapper {
-	       box-sizing: border-box;
-	       padding: 20px; 
-	     }
-
-	     .content-block {
-	       padding-bottom: 10px;
-	       padding-top: 10px;
-	     }
-
-	     .footer {
-	       clear: both;
-	       margin-top: 10px;
-	       text-align: center;
-	       width: 100%; 
-	     }
-	       .footer td,
-	       .footer p,
-	       .footer span,
-	       .footer a {
-	         color: #999999;
-	         font-size: 12px;
-	         text-align: center; 
-	     }
-
-	     /* -------------------------------------
-	         TYPOGRAPHY
-	     ------------------------------------- */
-	     h1,
-	     h2,
-	     h3,
-	     h4 {
-	       color: #000000;
-	       font-family: sans-serif;
-	       font-weight: 400;
-	       line-height: 1.4;
-	       margin: 0;
-	       margin-bottom: 30px; 
-	     }
-
-	     h1 {
-	       font-size: 35px;
-	       font-weight: 300;
-	       text-align: center;
-	       text-transform: capitalize; 
-	     }
-
-	     p,
-	     ul,
-	     ol {
-	       font-family: sans-serif;
-	       font-size: 14px;
-	       font-weight: normal;
-	       margin: 0;
-	       margin-bottom: 15px; 
-	     }
-	       p li,
-	       ul li,
-	       ol li {
-	         list-style-position: inside;
-	         margin-left: 5px; 
-	     }
-
-	     a {
-	       color: #000080;
-	       text-decoration: underline; 
-	     }
-
-	     /* -------------------------------------
-	         BUTTONS
-	     ------------------------------------- */
-	     .btn {
-	       box-sizing: border-box;
-	       width: 100%; }
-	       .btn > tbody > tr > td {
-	         padding-bottom: 15px; }
-	       .btn table {
-	         width: auto; 
-	     }
-	       .btn table td {
-	         background-color: #ffffff;
-	         border-radius: 5px;
-	         text-align: center; 
-	     }
-	       .btn a {
-	         background-color: #ffffff;
-	         border: solid 1px #3498db;
-	         border-radius: 5px;
-	         box-sizing: border-box;
-	         color: #3498db;
-	         cursor: pointer;
-	         display: inline-block;
-	         font-size: 14px;
-	         font-weight: bold;
-	         margin: 0;
-	         padding: 12px 25px;
-	         text-decoration: none;
-	         text-transform: capitalize; 
-	     }
-
-	     .btn-primary table td {
-	       background-color: #3498db; 
-	     }
-
-	     .btn-primary a {
-	       background-color: #3498db;
-	       border-color: #3498db;
-	       color: #ffffff; 
-	     }
-
-	     /* -------------------------------------
-	         OTHER STYLES THAT MIGHT BE USEFUL
-	     ------------------------------------- */
-	     .last {
-	       margin-bottom: 0; 
-	     }
-
-	     .first {
-	       margin-top: 0; 
-	     }
-
-	     .align-center {
-	       text-align: center; 
-	     }
-
-	     .align-right {
-	       text-align: right; 
-	     }
-
-	     .align-left {
-	       text-align: left; 
-	     }
-
-	     .clear {
-	       clear: both; 
-	     }
-
-	     .mt0 {
-	       margin-top: 0; 
-	     }
-
-	     .mb0 {
-	       margin-bottom: 0; 
-	     }
-
-	     .preheader {
-	       color: transparent;
-	       display: none;
-	       height: 0;
-	       max-height: 0;
-	       max-width: 0;
-	       opacity: 0;
-	       overflow: hidden;
-	       mso-hide: all;
-	       visibility: hidden;
-	       width: 0; 
-	     }
-
-	     .powered-by a {
-	       text-decoration: none; 
-	     }
-
-	     hr {
-	       border: 0;
-	       border-bottom: 1px solid #f6f6f6;
-	       margin: 20px 0; 
-	     }
-
-	     /* -------------------------------------
-	         RESPONSIVE AND MOBILE FRIENDLY STYLES
-	     ------------------------------------- */
-	     @media only screen and (max-width: 620px) {
-	       table[class=body] h1 {
-	         font-size: 28px !important;
-	         margin-bottom: 10px !important; 
-	       }
-	       table[class=body] p,
-	       table[class=body] ul,
-	       table[class=body] ol,
-	       table[class=body] td,
-	       table[class=body] span,
-	       table[class=body] a {
-	         font-size: 16px !important; 
-	       }
-	       table[class=body] .wrapper,
-	       table[class=body] .article {
-	         padding: 10px !important; 
-	       }
-	       table[class=body] .content {
-	         padding: 0 !important; 
-	       }
-	       table[class=body] .container {
-	         padding: 0 !important;
-	         width: 100% !important; 
-	       }
-	       table[class=body] .main {
-	         border-left-width: 0 !important;
-	         border-radius: 0 !important;
-	         border-right-width: 0 !important; 
-	       }
-	       table[class=body] .btn table {
-	         width: 100% !important; 
-	       }
-	       table[class=body] .btn a {
-	         width: 100% !important; 
-	       }
-	       table[class=body] .img-responsive {
-	         height: auto !important;
-	         max-width: 100% !important;
-	         width: auto !important; 
-	       }
-	     }
-
-	     /* -------------------------------------
-	         PRESERVE THESE STYLES IN THE HEAD
-	     ------------------------------------- */
-	     @media all {
-	       .ExternalClass {
-	         width: 100%; 
-	       }
-	       .ExternalClass,
-	       .ExternalClass p,
-	       .ExternalClass span,
-	       .ExternalClass font,
-	       .ExternalClass td,
-	       .ExternalClass div {
-	         line-height: 100%; 
-	       }
-	       .apple-link a {
-	         color: inherit !important;
-	         font-family: inherit !important;
-	         font-size: inherit !important;
-	         font-weight: inherit !important;
-	         line-height: inherit !important;
-	         text-decoration: none !important; 
-	       }
-	       #MessageViewBody a {
-	         color: inherit;
-	         text-decoration: none;
-	         font-size: inherit;
-	         font-family: inherit;
-	         font-weight: inherit;
-	         line-height: inherit;
-	       }
-	       .btn-primary table td:hover {
-	         background-color: #34495e !important; 
-	       }
-	       .btn-primary a:hover {
-	         background-color: #34495e !important;
-	         border-color: #34495e !important; 
-	       } 
-	     }
-
-	</style>
     <script src="https://cdnres.willyweather.com/widget/warning/loadView.html?id=126547"
-type="application/javascript">
-	</script>
+type="application/javascript"></script>
+    <style>
+      /* -------------------------------------
+          GLOBAL RESETS
+      ------------------------------------- */
+      
+      /*All the styling goes here*/
+      
+      img {
+        border: none;
+        -ms-interpolation-mode: bicubic;
+        max-width: 100%; 
+      }
+
+      body {
+        background-color: #f6f6f6;
+        font-family: sans-serif;
+        -webkit-font-smoothing: antialiased;
+        font-size: 14px;
+        line-height: 1.4;
+        margin: 0;
+        padding: 0;
+        -ms-text-size-adjust: 100%;
+        -webkit-text-size-adjust: 100%; 
+      }
+
+      table {
+        border-collapse: separate;
+        mso-table-lspace: 0pt;
+        mso-table-rspace: 0pt;
+        width: 100%; }
+        table td {
+          font-family: sans-serif;
+          font-size: 14px;
+          vertical-align: top; 
+      }
+
+      /* -------------------------------------
+          BODY & CONTAINER
+      ------------------------------------- */
+
+      .body {
+        background-color: #f6f6f6;
+        width: 100%; 
+      }
+
+      /* Set a max-width, and make it display as block so it will automatically stretch to that width, but will also shrink down on a phone or something */
+      .container {
+        display: block;
+        margin: 0 auto !important;
+        /* makes it centered */
+        max-width: 580px;
+        padding: 10px;
+        width: 580px; 
+      }
+
+      /* This should also be a block element, so that it will fill 100% of the .container */
+      .content {
+        box-sizing: border-box;
+        display: block;
+        margin: 0 auto;
+        max-width: 580px;
+        padding: 10px; 
+      }
+
+      /* -------------------------------------
+          HEADER, FOOTER, MAIN
+      ------------------------------------- */
+      .main {
+        background: #ffffff;
+        border-radius: 3px;
+        width: 100%; 
+      }
+
+      .wrapper {
+        box-sizing: border-box;
+        padding: 20px; 
+      }
+
+      .content-block {
+        padding-bottom: 10px;
+        padding-top: 10px;
+      }
+
+      .footer {
+        clear: both;
+        margin-top: 10px;
+        text-align: center;
+        width: 100%; 
+      }
+        .footer td,
+        .footer p,
+        .footer span,
+        .footer a {
+          color: #999999;
+          font-size: 12px;
+          text-align: center; 
+      }
+
+      /* -------------------------------------
+          TYPOGRAPHY
+      ------------------------------------- */
+      h1,
+      h2,
+      h3,
+      h4 {
+        color: #000000;
+        font-family: sans-serif;
+        font-weight: 400;
+        line-height: 1.4;
+        margin: 0;
+        margin-bottom: 30px; 
+      }
+
+      h1 {
+        font-size: 35px;
+        font-weight: 300;
+        text-align: center;
+        text-transform: capitalize; 
+      }
+
+      p,
+      ul,
+      ol {
+        font-family: sans-serif;
+        font-size: 14px;
+        font-weight: normal;
+        margin: 0;
+        margin-bottom: 15px; 
+      }
+        p li,
+        ul li,
+        ol li {
+          list-style-position: inside;
+          margin-left: 5px; 
+      }
+
+      a {
+        color: #3498db;
+        text-decoration: underline; 
+      }
+
+      /* -------------------------------------
+          BUTTONS
+      ------------------------------------- */
+      .btn {
+        box-sizing: border-box;
+        width: 100%; }
+        .btn > tbody > tr > td {
+          padding-bottom: 15px; }
+        .btn table {
+          width: auto; 
+      }
+        .btn table td {
+          background-color: #ffffff;
+          border-radius: 5px;
+          text-align: center; 
+      }
+        .btn a {
+          background-color: #ffffff;
+          border: solid 1px #3498db;
+          border-radius: 5px;
+          box-sizing: border-box;
+          color: #3498db;
+          cursor: pointer;
+          display: inline-block;
+          font-size: 14px;
+          font-weight: bold;
+          margin: 0;
+          padding: 12px 25px;
+          text-decoration: none;
+          text-transform: capitalize; 
+      }
+
+      .btn-primary table td {
+        background-color: #3498db; 
+      }
+
+      .btn-primary a {
+        background-color: #3498db;
+        border-color: #3498db;
+        color: #ffffff; 
+      }
+
+      /* -------------------------------------
+          OTHER STYLES THAT MIGHT BE USEFUL
+      ------------------------------------- */
+      .last {
+        margin-bottom: 0; 
+      }
+
+      .first {
+        margin-top: 0; 
+      }
+
+      .align-center {
+        text-align: center; 
+      }
+
+      .align-right {
+        text-align: right; 
+      }
+
+      .align-left {
+        text-align: left; 
+      }
+
+      .clear {
+        clear: both; 
+      }
+
+      .mt0 {
+        margin-top: 0; 
+      }
+
+      .mb0 {
+        margin-bottom: 0; 
+      }
+
+      .preheader {
+        color: transparent;
+        display: none;
+        height: 0;
+        max-height: 0;
+        max-width: 0;
+        opacity: 0;
+        overflow: hidden;
+        mso-hide: all;
+        visibility: hidden;
+        width: 0; 
+      }
+
+      .powered-by a {
+        text-decoration: none; 
+      }
+
+      hr {
+        border: 0;
+        border-bottom: 1px solid #f6f6f6;
+        margin: 20px 0; 
+      }
+
+      /* -------------------------------------
+          RESPONSIVE AND MOBILE FRIENDLY STYLES
+      ------------------------------------- */
+      @media only screen and (max-width: 620px) {
+        table[class=body] h1 {
+          font-size: 28px !important;
+          margin-bottom: 10px !important; 
+        }
+        table[class=body] p,
+        table[class=body] ul,
+        table[class=body] ol,
+        table[class=body] td,
+        table[class=body] span,
+        table[class=body] a {
+          font-size: 16px !important; 
+        }
+        table[class=body] .wrapper,
+        table[class=body] .article {
+          padding: 10px !important; 
+        }
+        table[class=body] .content {
+          padding: 0 !important; 
+        }
+        table[class=body] .container {
+          padding: 0 !important;
+          width: 100% !important; 
+        }
+        table[class=body] .main {
+          border-left-width: 0 !important;
+          border-radius: 0 !important;
+          border-right-width: 0 !important; 
+        }
+        table[class=body] .btn table {
+          width: 100% !important; 
+        }
+        table[class=body] .btn a {
+          width: 100% !important; 
+        }
+        table[class=body] .img-responsive {
+          height: auto !important;
+          max-width: 100% !important;
+          width: auto !important; 
+        }
+      }
+
+      /* -------------------------------------
+          PRESERVE THESE STYLES IN THE HEAD
+      ------------------------------------- */
+      @media all {
+        .ExternalClass {
+          width: 100%; 
+        }
+        .ExternalClass,
+        .ExternalClass p,
+        .ExternalClass span,
+        .ExternalClass font,
+        .ExternalClass td,
+        .ExternalClass div {
+          line-height: 100%; 
+        }
+        .apple-link a {
+          color: inherit !important;
+          font-family: inherit !important;
+          font-size: inherit !important;
+          font-weight: inherit !important;
+          line-height: inherit !important;
+          text-decoration: none !important; 
+        }
+        #MessageViewBody a {
+          color: inherit;
+          text-decoration: none;
+          font-size: inherit;
+          font-family: inherit;
+          font-weight: inherit;
+          line-height: inherit;
+        }
+        .btn-primary table td:hover {
+          background-color: #34495e !important; 
+        }
+        .btn-primary a:hover {
+          background-color: #34495e !important;
+          border-color: #34495e !important; 
+        } 
+      }
+
+    </style>
   </head>
   <body class="">
-    <table class="body" role="presentation" style="width: 1452px; height: 17756px;"
-      cellspacing="0" cellpadding="0" border="0">
+    <table role="presentation" class="body" cellspacing="0" cellpadding="0" border="0">
       <tbody>
         <tr>
-          <td><br>
-            <br>
-          </td>
+          <td>&nbsp;</td>
           <td class="container">
             <div class="content">
               <!-- START CENTERED WHITE CONTAINER -->
-              <table class="main" role="presentation" style="width: 560px; height: 16865px;">
+              <table role="presentation" class="main">
                 <!-- START MAIN CONTENT AREA -->
                 <tbody>
                   <tr>
-                    <td class="wrapper" style="text-align: center; vertical-align: middle; background-color: white;">
-                      <div> <img alt="Apex Wx Banner" src="https://raw.githubusercontent.com/ApexWx/ApexWx.github.io/master/Apex%20banner.jpg">
-                        <h2 style="color: black; font-family: sans-serif; font-weight: 400; line-height: 1.4; margin: 0px 0px 30px;"><strong>Fawkes
-                            House, Lancaster, Pennsylvania<br>
-                            Weather Forecast</strong> </h2>
-                      </div>
-                      <div> <label id="lblGreetings"></label><br>
-                        <div> <em></em>
-                          <div style="text-align: center;"> <em><iframe src="https://freesecure.timeanddate.com/clock/i7aykgoq/n23/ftb/tt0/ts1/ta1"
-                                height="19" frameborder="0" width="343">&amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;lt;em&amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;gt;&amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;lt;/em&amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;gt;&amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;lt;br&amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;gt;</iframe></em>
-                          </div>
-                        </div>
-                        <div>
-                          <div> <em>Forecast Updated at 1:00 pm Mon. Apr. 5,
-                              2021</em><em></em><em></em> </div>
-                        </div>
-                        <div> <em><br>
-                          </em> </div>
-                        <div> <em>Optimized for tablets and mobile devices.<br>
-                          </em> <span style="color: red;"><span style="color: black;"><em>Always
-                                consult your local NWS office in making
-                                weather-related decisions.</em></span></span><em></em>
-                        </div>
-                        <div style="text-align: center;"> <br>
-                          <div style="text-align: center;"> <strong>Official
-                              Government Forecasts<em></em></strong><em><br>
+                    <td class="wrapper">
+                      <table role="presentation" cellspacing="0" cellpadding="0"
+                        border="0">
+                        <tbody>
+                          <tr>
+                            <td>
+                              <h2 style="color: black; font-family: sans-serif; font-weight: 400; line-height: 1.4; margin: 0px 0px 30px; text-align: center;"><strong><img
+                                    alt="Apex Wx Banner" src="https://raw.githubusercontent.com/ApexWx/ApexWx.github.io/master/Apex%20banner.jpg">Fawkes
+                                  House, Lancaster, Pennsylvania<br>
+                                  Weather Forecast</strong> </h2>
                               <br>
-                            </em> <a href="https://forecast.weather.gov/MapClick.php?x=302&amp;y=230&amp;site=ctp&amp;zmx=&amp;zmy=&amp;map_x=302&amp;map_y=230"
-                              title="NWS State College Lancaster, PA Forecast">NWS
-                              State College Lancaster, PA Forecast<br>
-                            </a>
-                            <p> </p>
-                            <div style="text-align: center;"> <span style="color: red;"><strong><span
-                                    style="color: black;"><br>
-                                  </span></strong></span> </div>
-                            <div style="text-align: center;"> <span style="color: red;"><strong><span
-                                    style="color: black;">Go To<br>
-                                  </span></strong></span> </div>
-                            <div style="text-align: center;"> <span style="color: red;"><span
-                                  style="color: black;"><a href="#Short" title="Short Term Forecasts">Short-Term
-                                    Forecast</a> | <a href="#Further%20Ahead" title="Medium-Range Forecast">Medium-Range
-                                    Forecast</a> | <a href="#Long" title="Long-Range Trends">Long-Range
-                                    Trends</a></span></span> </div>
-                            <div style="text-align: center;"> <span style="color: red;"><span
-                                  style="color: black;"><br>
-                                </span></span> </div>
-                            <div style="text-align: center;"> <span style="color: red;"><span
-                                  style="color: black;"><a href="#PWS">PWS</a> |
-                                  <a href="#Outlooks" title="National Outlooks">National
-                                    Outlooks</a> | <a href="#Maps" title="Maps &amp; Charts">Maps
-                                    &amp; Charts</a></span></span> </div>
-                            <div style="text-align: center;"> <strong></strong>
-                            </div>
-                            <div style="text-align: center;">
-                              <div> <span style="color: red;"><strong><br>
-                                  </strong></span> </div>
-                            </div>
-                            <div style="text-align: center;"> <strong><br>
-                                Current Conditions in Lancaster, Pennsylvania<br>
-                                <br>
-                              </strong> </div>
-                            <div style="text-align: center;"> <a href="https://www.wunderground.com/weather/us/pa/lancaster/KPALANCA37"
-                                title="Grundy Observatory on Weather Underground">Grundy
-                                Observatory on Weather Underground</a><strong>&nbsp;</strong>
-                              | <strong></strong><a href="https://ambientweather.net/dashboard/d142d34ffae0897e50f77f8aca19bdec"
-                                title="Ambient Weather Station Dashboard">AMLoR
-                                Weather (PWS)<br>
-                              </a> </div>
-                            <div style="text-align: center;"> <br>
-                            </div>
-                            <div style="text-align: center;"> <strong><br>
-                                Other Regional Resources<br>
-                                <br>
-                              </strong> </div>
-                            <div style="text-align: center;">
-                              <div style="text-align: center;"> <a href="https://www.511pa.com/"
-                                  title="Pennsylvania Road Conditions">Pennsylvania
-                                  Road Conditions</a><strong><em>&nbsp;</em></strong>
-                                <em></em>|<em>&nbsp;</em> <a href="https://water.weather.gov/ahps/region.php?state=pa"
-                                  title="Pennsylvania River Forecast Center">Pennsylvania
-                                  River Forecast Center</a><strong><em><br>
-                                  </em></strong> </div>
-                              <div style="text-align: center;"> <a href="https://www.timeanddate.com/astronomy/usa/lancaster-pa"
-                                  title="Lancaster Sun and Moon Times"><br>
-                                </a> </div>
-                              <div style="text-align: center;"> <a href="https://www.timeanddate.com/astronomy/usa/lancaster-pa"
-                                  title="Lancaster Sun and Moon Times">Lancaster
-                                  Sun and Moon Times</a> </div>
-                              <div style="text-align: left;"> </div>
-                              <div style="text-align: left;"> <br>
-                              </div>
-                              <div style="text-align: left;">
-                                <div style="text-align: left;">
-                                  <div style="text-align: left;">
-                                    <div style="text-align: left;"> <u><strong><a
-                                            id="Short" name="Short"></a>Short-Term
-                                          Outlook:</strong> <strong>Monday</strong>
-                                        <strong>- Wednesday<br>
-                                        </strong></u> </div>
-                                  </div>
-                                  <div style="text-align: left;"> <br>
-                                    An upper-level ridge will build in over the
-                                    next several days. However, a weak frontal
-                                    boundary to the west will keep and cyclonic
-                                    flow over New England will channel&nbsp;
-                                    moisture over the Lower Susquehanna Valley
-                                    producing varying degrees of cloudiness and
-                                    occasional shower activity for the period. </div>
-                                </div>
-                                <br>
-                                <strong>Today &amp; Tonight</strong>
-                                <div>
-                                  <div style="text-align: left;"> <strong></strong>Mostly
-                                    sunny in the morning then increasingly
-                                    cloudy in the afternoon. High near 68°F with
-                                    northwest winds 10 to 15 mph. </div>
-                                  <div style="text-align: left;"> <br>
-                                  </div>
-                                  <div style="text-align: left;"> Tonight,
-                                    partly cloudy with a 20% chance for showers.
-                                    Precipitation totals around 0.03-inch. Low
-                                    near 43°F with north winds falling to 0 to 2
-                                    mph. </div>
-                                  <div style="text-align: left;"> <br>
-                                  </div>
-                                  <div style="text-align: left;"> <strong>Tuesday,
-                                      April 6</strong> </div>
-                                  <div style="text-align: left;"> Partly cloudy
-                                    to mostly sunny with a 5% chance for showers
-                                    in the afternoon and a high around 68°F.
-                                    Northwest winds 5 to 10 mph with gusts
-                                    around 20 mph. </div>
-                                  <div style="text-align: left;"> <br>
-                                  </div>
-                                  <div style="text-align: left;"> Tuesday night,
-                                    partly cloudy with a 30% chance for showers.
-                                    Precipitation totals between 0.01 and
-                                    0.09-inch. Low near 46° with north/northeast
-                                    winds 0 to 5 mph.<br>
-                                    <strong><br>
-                                      Wednesday, April 7</strong>
-                                    <div> Partly sunny with a 20% chance for
-                                      showers. Precipitation totals between 0.01
-                                      and 0.09-inch. High around 67°F.&nbsp;
-                                      North winds shift to the east at 0 to 5
-                                      mph. </div>
-                                    <div> <br>
-                                    </div>
-                                    Wednesday night, partly cloudy with a 10%
-                                    chance for showers. Low near 48°F. Southeast
-                                    winds 0 to 7 mph. </div>
-                                </div>
-                                <div>
+                              <div style="text-align: center;">
+                                <div> <label id="lblGreetings"></label><br>
                                   <div>
-                                    <div> </div>
-                                    <div> <br>
+                                    <div style="text-align: center;"> <iframe src="https://freesecure.timeanddate.com/clock/i7aykgoq/n23/ftb/tt0/ts1/ta1"
+                                        height="19" frameborder="0" width="343">&amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;lt;em&amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;gt;&amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;lt;/em&amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;gt;&amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;lt;br&amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;gt;</iframe>
                                     </div>
-                                    <u><strong><a id="Medium" name="Medium"></a>Medium
-                                        Range Outlook: Thursday - Sunday</strong></u><br>
-                                    <br>
-                                    Chance for rain increases by late week, as
-                                    an upper low migrates east from the
-                                    Mississippi Valley with a good chance for
-                                    rain by Friday. Considerable cloudiness and
-                                    a chance for showers continues through the
-                                    weekend as an upper-level low tracks from
-                                    the Great Lakes across western Pennsylvania
-                                    as the weekend progresses. </div>
-                                </div>
-                                <div> <br>
-                                </div>
-                                <div> <strong>Thursday, April 8</strong> </div>
-                                <div> Partly sunny with a 20% chance for
-                                  showers. High around 65° with southeast winds
-                                  8&nbsp; to 14 mph. </div>
-                                <div> <br>
-                                </div>
-                                <div> Thursday night, mostly cloudy with a 50%
-                                  chance for showers. Low around 49° with
-                                  southeast winds 8 to 14 mph. </div>
-                                <div> <br>
-                                </div>
-                                <div> <strong>Friday, April 9<br>
-                                  </strong> Mostly cloudy with a 60% chance for
-                                  showers, mainly in the afternoon. High around
-                                  60°F. Southeast winds 8 to 14 mph. </div>
-                                <div> <strong><br>
-                                  </strong> </div>
-                                <div> Friday night, mostly cloudy with a 40%
-                                  chance for showers. Low near 49° with east
-                                  winds 0 to 7 mph. </div>
-                                <div> <strong><br>
-                                  </strong> </div>
-                                <div> <strong>Saturday, April 10<br>
-                                  </strong> Mostly cloudy with a 40% chance for
-                                  showers. High around 61°F with east winds 8 to
-                                  14 mph. </div>
-                                <div> <br>
-                                </div>
-                                <div> Saturday night, mostly cloudy with a low
-                                  around 47°F. Chance for showers 40% with east
-                                  winds 0 to 7 mph. </div>
-                                <div> <br>
-                                </div>
-                                <div> <strong>Sunday, April 11</strong> </div>
-                                <div> Mostly cloudy with a 40% chance for
-                                  showers. High near 60°F with east winds 8 to
-                                  14 mph. </div>
-                                <div> <br>
-                                </div>
-                                <div> Sunday night, mostly cloudy with a 40%
-                                  chance for showers. Low near 45° with
-                                  east/northeast winds 0 to 7 mph. </div>
-                                <br>
-                                <u><strong><a id="Long" name="Long"></a>Long-Range
-                                    Trends: Mon. Apr. 12 -&nbsp; Sun. Apr. 18</strong></u><br>
-                                <br>
-                                Above normal temperatures &nbsp; /&nbsp; Near
-                                normal precipitation
-                                <div> <br>
+                                  </div>
                                 </div>
                                 <div>
-                                  --------------------------------------------------------------------------------------------------------------
+                                  <div style="text-align: center;"> <em>Forecast
+                                      Updated at 1:00 pm Mon. Apr. 5, 2021</em><em></em><em></em>
                                   </div>
-                                <div> <br>
                                 </div>
-                                <div> <strong><a id="Outlooks" name="#Outlooks"></a>NWS
-                                    National Weather Outlook</strong><br>
-                                  <a href="https://www.weather.gov/">https://www.weather.gov/<br>
-                                    <br>
-                                  </a> </div>
-                                <a href="https://www.weather.gov/" style="color: rgb(0, 0, 128); text-decoration: underline;"></a><strong>Severe
-                                  Thunderstorms in the Central U.S.; Critical
-                                  Fire Weather in the Southwest</strong><br>
-                                Isolated severe thunderstorms are possible
-                                across parts of the upper Mississippi Valley
-                                into Nebraska late this afternoon and evening.
-                                The severe thunderstorm threat shifts to the
-                                central Plains for Tuesday. Elevated to critical
-                                fire weather conditions are forecast over
-                                portions of the Southwest, Northeast and South
-                                Dakota today then over the southern High Plains
-                                and southern Rockies on Tuesday.<br>
-                                <div> <a href="https://www.wpc.ncep.noaa.gov/discussions/hpcdiscussions.php?disc=pmdspd"
-                                    title="Short Range Discussion">Short Range
-                                    National Forecast Discussion</a> (Day ½ -
-                                  2½) </div>
-                                <div> <a href="https://www.wpc.ncep.noaa.gov/discussions/hpcdiscussions.php?disc=pmdepd"
-                                    title="Medium Range Discussion">Medium Range
-                                    National Forecast Discussion</a> (Day 3 - 7)
+                                <div> <em><br>
+                                  </em> </div>
+                                <div style="text-align: center;"> <em>Optimized
+                                    for tablets and mobile devices.<br>
+                                  </em> <span style="color: red;"><span style="color: black;"><em>Always
+                                        consult your local NWS office in making
+                                        weather-related decisions.</em></span></span><em></em>
                                 </div>
-                                <div> <br>
-                                </div>
-                                <div> --------------------------- </div>
-                                <div> <br>
-                                </div>
-                                <div> <strong>SPC National Thunderstorm/Severe
-                                    Weather Outlook</strong><br>
-                                  <a href="https://www.spc.noaa.gov/">https://www.spc.noaa.gov/&gt;</a><br>
-                                  <br>
-                                </div>
-                                <div> Isolated severe thunderstorms are possible
-                                  across parts of the Upper Midwest into
-                                  Nebraska late this afternoon and evening. </div>
-                                <br>
-                                <div> --------------------------- </div>
-                                <br>
-                                <div> <strong>National Hurricane Center
-                                    Atlantic Tropical Weather Outlook<br>
-                                  </strong> </div>
-                                <a href="https://www.nhc.noaa.gov/">https://www.nhc.noaa.gov/</a><br>
-                                <br>
-                                <div> <em>The Atlantic hurricane season runs
-                                    from June 1st through November 30th.</em><br>
-                                </div>
-                                <br>
-                                <div> <a href="https://www.nhc.noaa.gov/gtwo.php?basin=atlc&amp;fdays=2"
-                                    style="color: rgb(0, 0, 128); text-decoration: underline;"
-                                    title="Atlantic 2-Day Graphical Tropical Weather Outlook">Atlantic
-                                    2-Day Graphical Tropical Weather Outlook</a>
-                                </div>
-                                <div> <strong><a href="https://www.nhc.noaa.gov/gtwo.php?basin=atlc&amp;fdays=5"
-                                      title="Atlantic 5-Day Graphical Tropical Weather Outlook"></a></strong><a
-                                    href="https://www.nhc.noaa.gov/gtwo.php?basin=atlc&amp;fdays=5"
-                                    title="Atlantic 5-Day Graphical Tropical Weather Outlook">Atlantic
-                                    5-Day Graphical Tropical Weather Outlook</a>
-                                </div>
-                                <strong></strong>
-                                <div style="text-align: left;"> <strong><a href="https://www.nhc.noaa.gov/gtwo.php?basin=atlc&amp;fdays=5"
-                                      title="Atlantic 5-Day Graphical Tropical Weather Outlook"><br>
-                                    </a></strong> </div>
-                                <strong></strong>
-                                <div> --------------------------- </div>
-                                <div> <br>
-                                </div>
-                                <div> <strong>National High and Low
-                                    Temperatures</strong><br>
-                                  (excluding Alaska and Hawaii) </div>
-                                <div> <br>
-                                </div>
-                                <strong>High Temperature for Sunday, April&nbsp;
-                                  4, 2021</strong><br>
-                                103 at Ocotillo Wells, CA<br>
-                                <br>
-                                <strong>Low Temperature for Sunday, April&nbsp;
-                                  4, 2021</strong><br>
-                                5 at Estcourt Station, ME<span style="color: black;"><strong></strong></span>
-                                <span style="color: rgb(0, 0, 153);"></span>
-                                <div style="text-align: center;"> <span style="color: rgb(0, 0, 153);"></span>
-                                </div>
-                                <div style="text-align: left;"> <br>
-                                </div>
-                                <div> <em><strong></strong></em> <span style="color: rgb(0, 0, 153);"><span
-                                      style="color: rgb(0, 0, 153);"><span style="color: rgb(0, 0, 153);"></span></span></span>
-                                  <div> <span style="color: rgb(0, 0, 153);"><span
-                                        style="color: rgb(0, 0, 153);"></span></span>
-                                    <div style="text-align: center;"> <span style="color: rgb(0, 0, 153);"></span>
-                                      <div style="text-align: left;"> <span style="color: rgb(0, 0, 153);"><span
-                                            style="color: black;"></span></span>
-                                      </div>
+                                <div style="text-align: center;">
+                                  <div style="text-align: center;"><br>
+                                  </div>
+                                  <div style="text-align: center;"> <strong>Official
+                                      Government Forecasts<em></em></strong><em><br>
+                                      <br>
+                                    </em> <a href="https://forecast.weather.gov/MapClick.php?x=302&amp;y=230&amp;site=ctp&amp;zmx=&amp;zmy=&amp;map_x=302&amp;map_y=230"
+                                      title="NWS State College Lancaster, PA Forecast">NWS
+                                      State College Lancaster, PA Forecast<br>
+                                    </a>
+                                    <p> </p>
+                                    <div style="text-align: center;"> <span style="color: red;"><strong><span
+                                            style="color: black;"><br>
+                                          </span></strong></span> </div>
+                                    <div style="text-align: center;"> <span style="color: red;"><strong><span
+                                            style="color: black;">Go To<br>
+                                          </span></strong></span> </div>
+                                    <div style="text-align: center;"> <span style="color: red;"><span
+                                          style="color: black;"><a href="#Short"
+                                            title="Short Term Forecasts">Short-Term
+                                            Forecast</a> | <a href="#Medium" title="Medium-Range Forecast">Medium-Range
+                                            Forecast</a> | <a href="#Long" title="Long-Range Trends">Long-Range
+                                            Trends</a></span></span> </div>
+                                    <div style="text-align: center;"> <span style="color: red;"><span
+                                          style="color: black;"><br>
+                                        </span></span> </div>
+                                    <div style="text-align: center;">&nbsp;<span
+                                        style="color: red;"><span style="color: black;"><a
+                                            href="#Outlooks" title="National Outlooks">National
+                                            Outlooks</a> | <a href="#Maps" title="Maps &amp; Charts">Maps
+                                            &amp; Charts</a></span></span> </div>
+                                    <div style="text-align: center;"> <strong></strong>
                                     </div>
-                                  </div>
-                                  <div>
-                                    <table style="width: 90%; text-align: center; margin-left: auto; margin-right: auto;"
-                                      border="0">
-                                      <tbody>
-                                        <tr>
-                                          <td style="text-align: center; width: 153px;"><a
-                                              href="https://www.weather.gov/SKYWARN"
-                                              title="NWS Skywarn Storm Spotters"
-                                              style="color: #1855d9; text-decoration: underline;"><img
-                                                src="https://raw.githubusercontent.com/ApexWx/ApexWx.github.io/master/SkywarnLogoTxtOutln2.png"
-                                                alt="Skywarn Storm Spotters" style="border: none; -ms-interpolation-mode: bicubic; max-width: 100%; width: 70px; height: 97px; padding: 10px;"
-                                                height="97" width="70"></a></td>
-                                          <td style="text-align: center; width: 201px;"><a
-                                              href="https://www.weather.gov/safety/flood-turn-around-dont-drown"
-                                              title="NWS Flood Safety"><img src="https://raw.githubusercontent.com/ApexWx/ApexWx.github.io/master/TADDHighRes-sm.gif"
-                                                alt="Turn Around Dont' Drown" style="border: none; -ms-interpolation-mode: bicubic; max-width: 100%; width: 97px; height: 97px; padding: 10px;"
-                                                height="97" width="97"></a></td>
-                                          <td style="text-align: center; width: 147px;"><a
-                                              href="https://www.weather.gov/learning"
-                                              title="NWS Educational Resources"
-                                              style="color: #1855d9; text-decoration: underline;"><img
-                                                src="https://raw.githubusercontent.com/ApexWx/ApexWx.github.io/master/learning-thumbnail.png"
-                                                alt="NWS Educational Resources"
-                                                style="border: none; -ms-interpolation-mode: bicubic; max-width: 100%; width: 95px; height: 95px; padding: 10px;"
-                                                height="95" width="95"></a></td>
-                                        </tr>
-                                      </tbody>
-                                    </table>
-                                    <div> <br>
-                                      <div style="text-align: center; font-size: 24px;"><a
-                                          name="Maps" id="Maps"></a><strong>Maps
-                                          &amp; Charts</strong></div>
-                                      <br>
-                                      Click maps and charts for larger versions,
-                                      loops, etc. Most graphics update
-                                      automatically--check timestamps for
-                                      currency. During updates, maintenance,
-                                      network outages, etc., graphics may be
-                                      temporarily unavailable. Graphic sources
-                                      include NOAA, NWS, University of
-                                      Wisconsin, and various other
-                                      organizations. All products produced by
-                                      the US government or affiliated
-                                      organizations are public domain unless
-                                      otherwise labeled.<br>
-                                      <div style="text-align: center;"> </div>
-                                      <br>
-                                      <u>Note</u>: For US Eastern Time on maps
-                                      and charts, subtract 4 hours (Daylight
-                                      Saving Time) or 5 hours (Standard Time)
-                                      from UTC / Z* timestamp on the maps and
-                                      charts. Visit <a title="timeanddate.com"
-                                        href="https://www.timeanddate.com/">timeanddate.com</a>
-                                      for more time zone conversion information
-                                      and additional time-related data.
-                                      <p></p>
-                                      <div style="margin: 0px 0px 15px 40px; font-size: 12px">
-                                        *UTC / Z / GMT = Coordinated Universal
-                                        Time / Zulu Time / Greenwich Mean Time
-                                        -- Time is based on 0° longitude running
-                                        through the Royal Observatory in
-                                        Greenwich, London, UK. It is the same
-                                        all year round and is not affected by
-                                        Daylight Saving Time (aka Summer Time)
-                                        clock changes. Using UTC allows weather
-                                        services and others to avoid time zone
-                                        conversions. </div>
-                                      <br>
-                                      <table style="width: 90%; text-align: left; margin-left: auto; margin-right: auto;"
-                                        border="0">
-                                        <tbody>
-                                          <tr align="center">
-                                            <td rowspan="1" colspan="3"><strong>Current
-                                                Time US Eastern and UTC / Z</strong></td>
-                                          </tr>
-                                          <tr>
-                                            <td style="text-align: center;"><strong>ET
-                                                12-Hour</strong></td>
-                                            <td style="text-align: center;"><strong>ET
-                                                24-Hour</strong></td>
-                                            <td style="text-align: center;"><strong>UTC
-                                                / Z</strong></td>
-                                          </tr>
-                                          <tr>
-                                            <td style="text-align: center; width: 181px;"><br>
-                                              <iframe src="https://freesecure.timeanddate.com/clock/i7b14drd/n5278/ts1/ta1"
-                                                height="19" frameborder="0" width="126"></iframe><br>
-                                            </td>
-                                            <td style="text-align: center; width: 146px;"><br>
-                                              <iframe src="https://freesecure.timeanddate.com/clock/i7athxrb/n5278/th1/ts1/ta1"
-                                                height="19" frameborder="0" width="69"></iframe><br>
-                                            </td>
-                                            <td style="text-align: center; width: 167px;"><br>
-                                              <iframe src="https://freesecure.timeanddate.com/clock/i7allsch/th1/ts1/ta1"
-                                                height="19" frameborder="0" width="70"></iframe><br>
-                                            </td>
-                                          </tr>
-                                        </tbody>
-                                      </table>
-                                      <br>
-                                      <br>
-                                      <div style="text-align: left;"><strong> In
-                                          Maps &amp; Charts Go To:</strong>
-                                        <div style="text-align: left;"><strong><a
-                                              href="#Regional">Regional Weather<br>
-                                            </a></strong> </div>
-                                        <div style="text-align: left;"><strong><a
-                                              href="#National">National Weather<br>
-                                            </a></strong> </div>
-                                        <div style="text-align: left;"> <span style="color: #3333ff;"><strong><a
-                                                href="#Tropical">Atlantic
-                                                Tropical Weather</a></strong></span>
-                                        </div>
-                                      </div>
-                                      <div style="text-align: left;"> Visit <a
-                                          href="https://apexwx.github.io/">Apex
-                                          Wx</a> for more maps &amp; charts.<br>
+                                    <div style="text-align: center;">
+                                      <div> <span style="color: red;"><strong><br>
+                                          </strong></span> </div>
+                                    </div>
+                                    <div style="text-align: center;"> <strong><br>
+                                        Current Conditions in Lancaster,
+                                        Pennsylvania<br>
                                         <br>
+                                      </strong> </div>
+                                    <div style="text-align: center;"> <strong></strong><a
+                                        href="https://ambientweather.net/dashboard/f2d6a870a62ed991d4ac0bf1d0482a3f"
+                                        title="Ambient Weather Station Dashboard">AMLoR
+                                        Weather (PWS)<br>
+                                      </a> </div>
+                                    <div style="text-align: center;"> <br>
+                                    </div>
+                                    <div style="text-align: center;"> <strong><br>
+                                        Other Regional Resources<br>
                                         <br>
+                                      </strong> </div>
+                                    <div style="text-align: center;">
+                                      <div style="text-align: center;"> <a href="https://www.511pa.com/"
+                                          title="Pennsylvania Road Conditions">Pennsylvania
+                                          Road Conditions</a><strong><em>&nbsp;</em></strong>
+                                        <em></em>|<em>&nbsp;</em> <a href="https://water.weather.gov/ahps/region.php?state=pa"
+                                          title="Pennsylvania River Forecast Center">Pennsylvania
+                                          River Forecast Center</a><strong><em><br>
+                                          </em></strong> </div>
+                                      <div style="text-align: center;"> <a href="https://www.timeanddate.com/astronomy/usa/lancaster-pa"
+                                          title="Lancaster Sun and Moon Times"><br>
+                                        </a> </div>
+                                      <div style="text-align: center;"> <a href="https://www.timeanddate.com/astronomy/usa/lancaster-pa"
+                                          title="Lancaster Sun and Moon Times">Lancaster
+                                          Sun and Moon Times</a> </div>
+                                      <div style="text-align: left;"> </div>
+                                      <div style="text-align: left;"> <br>
                                       </div>
                                       <div style="text-align: left;">
-                                        <div style="text-align: center;"> <strong
-                                            style="font-size: 24px;"><a id="Regional"
-                                              name="Regional"></a>Regional<br>
-                                          </strong> </div>
-                                        <span style="color: #3333ff;"><strong></strong></span>
-                                        <div style="text-align: center;">
+                                        <div style="text-align: left;">
                                           <div style="text-align: left;">
-                                            <div style="text-align: center;"> <strong><br>
-                                                Northeast Weather Chart</strong>
+                                            <div style="text-align: left;"> <u><strong><a
+                                                    id="Short" name="Short"></a>Short-Term
+                                                  Outlook:</strong> <strong>Monday</strong>
+                                                <strong>- Wednesday<br>
+                                                </strong></u> </div>
+                                          </div>
+                                          <div style="text-align: left;"> <br>
+                                            An upper-level ridge will build in
+                                            over the next several days. However,
+                                            a weak frontal boundary to the west
+                                            will keep and cyclonic flow over New
+                                            England will channel&nbsp; moisture
+                                            over the Lower Susquehanna Valley
+                                            producing varying degrees of
+                                            cloudiness and occasional shower
+                                            activity for the period. </div>
+                                        </div>
+                                        <br>
+                                        <strong>Today &amp; Tonight</strong>
+                                        <div>
+                                          <div style="text-align: left;"> <strong></strong>Mostly
+                                            sunny in the morning then
+                                            increasingly cloudy in the
+                                            afternoon. High near 68°F with
+                                            northwest winds 10 to 15 mph. </div>
+                                          <div style="text-align: left;"> <br>
+                                          </div>
+                                          <div style="text-align: left;">
+                                            Tonight, partly cloudy with a 20%
+                                            chance for showers. Precipitation
+                                            totals around 0.03-inch. Low near
+                                            43°F with north winds falling to 0
+                                            to 2 mph. </div>
+                                          <div style="text-align: left;"> <br>
+                                          </div>
+                                          <div style="text-align: left;"> <strong>Tuesday,
+                                              April 6</strong> </div>
+                                          <div style="text-align: left;"> Partly
+                                            cloudy to mostly sunny with a 5%
+                                            chance for showers in the afternoon
+                                            and a high around 68°F. Northwest
+                                            winds 5 to 10 mph with gusts around
+                                            20 mph. </div>
+                                          <div style="text-align: left;"> <br>
+                                          </div>
+                                          <div style="text-align: left;">
+                                            Tuesday night, partly cloudy with a
+                                            30% chance for showers.
+                                            Precipitation totals between 0.01
+                                            and 0.09-inch. Low near 46° with
+                                            north/northeast winds 0 to 5 mph.<br>
+                                            <strong><br>
+                                              Wednesday, April 7</strong>
+                                            <div> Partly sunny with a 20% chance
+                                              for showers. Precipitation totals
+                                              between 0.01 and 0.09-inch. High
+                                              around 67°F.&nbsp; North winds
+                                              shift to the east at 0 to 5 mph. </div>
+                                            <div> <br>
                                             </div>
-                                            <div style="text-align: center;"> <strong><a
-                                                  href="https://www.wpc.ncep.noaa.gov/sfc/namnesfcwbg.gif"
-                                                  title="Click for larger image"><img
-                                                    alt="Northeast Weather Chart"
-                                                    src="https://www.wpc.ncep.noaa.gov/sfc/namnesfcwbg.gif"
-                                                    style="border-style: solid; border-width: 1px; max-width: 525px;"></a></strong><br>
+                                            Wednesday night, partly cloudy with
+                                            a 10% chance for showers. Low near
+                                            48°F. Southeast winds 0 to 7 mph. </div>
+                                        </div>
+                                        <div>
+                                          <div>
+                                            <div> </div>
+                                            <div> <br>
                                             </div>
-                                            <div style="text-align: center;"> <a
-                                                href="https://www.wpc.ncep.noaa.gov/html/sfc-zoom.php"
-                                                title="Full Resolution North America Weather Chart">Full
-                                                Resolution</a> North America
-                                              Weather Chart </div>
-                                            <div style="text-align: center;"> <br>
-                                              <a href="#Tropical"></a><br>
-                                              <a href="#Tropical"></a> </div>
-                                            <div style="text-align: center;"> <strong>Pennsylvania
-                                                Thunderstorm / Severe Weather
-                                                Outlook<br>
-                                              </strong>
-                                              <div style="text-align: center;">
-                                                <a href="https://www.spc.noaa.gov/public/state/images/PA_swody1.png"
-                                                  title="Click for larger image"><img
-                                                    alt="Today's Severe Weather Outlook"
-                                                    max-width="525px;" src="https://www.spc.noaa.gov/public/state/images/PA_swody1.png"
-                                                    style="max-width: 525px;"></a><br>
-                                                <br>
-                                                <br>
-                                                <br>
-                                                <div> <strong>Regional Doppler
-                                                    Radar</strong><br>
-                                                  <a href="https://www.wunderground.com/wundermap?lat=37.7&amp;lon=-92.7&amp;zoom=4&amp;radar=1&amp;wxstn=0"><img
-                                                      alt="Regional Doppler Radar"
-                                                      src="https://s.w-x.co/staticmaps/wu/wu/wxtype1200_cur/usbgm/current.png"
-                                                      style="max-width: 525px; height: 405px;"
-                                                      title="Regional Doppler Radar"></a><br>
+                                            <u><strong><a id="Medium" name="Medium"></a>Medium
+                                                Range Outlook: Thursday - Sunday</strong></u><br>
+                                            <br>
+                                            Chance for rain increases by late
+                                            week, as an upper low migrates east
+                                            from the Mississippi Valley with a
+                                            good chance for rain by Friday.
+                                            Considerable cloudiness and a chance
+                                            for showers continues through the
+                                            weekend as an upper-level low tracks
+                                            from the Great Lakes across western
+                                            Pennsylvania as the weekend
+                                            progresses. </div>
+                                        </div>
+                                        <div> <br>
+                                        </div>
+                                        <div> <strong>Thursday, April 8</strong>
+                                        </div>
+                                        <div> Partly sunny with a 20% chance for
+                                          showers. High around 65° with
+                                          southeast winds 8&nbsp; to 14 mph. </div>
+                                        <div> <br>
+                                        </div>
+                                        <div> Thursday night, mostly cloudy with
+                                          a 50% chance for showers. Low around
+                                          49° with southeast winds 8 to 14 mph.
+                                        </div>
+                                        <div> <br>
+                                        </div>
+                                        <div> <strong>Friday, April 9<br>
+                                          </strong> Mostly cloudy with a 60%
+                                          chance for showers, mainly in the
+                                          afternoon. High around 60°F. Southeast
+                                          winds 8 to 14 mph. </div>
+                                        <div> <strong><br>
+                                          </strong> </div>
+                                        <div> Friday night, mostly cloudy with a
+                                          40% chance for showers. Low near 49°
+                                          with east winds 0 to 7 mph. </div>
+                                        <div> <strong><br>
+                                          </strong> </div>
+                                        <div> <strong>Saturday, April 10<br>
+                                          </strong> Mostly cloudy with a 40%
+                                          chance for showers. High around 61°F
+                                          with east winds 8 to 14 mph. </div>
+                                        <div> <br>
+                                        </div>
+                                        <div> Saturday night, mostly cloudy with
+                                          a low around 47°F. Chance for showers
+                                          40% with east winds 0 to 7 mph. </div>
+                                        <div> <br>
+                                        </div>
+                                        <div> <strong>Sunday, April 11</strong>
+                                        </div>
+                                        <div> Mostly cloudy with a 40% chance
+                                          for showers. High near 60°F with east
+                                          winds 8 to 14 mph. </div>
+                                        <div> <br>
+                                        </div>
+                                        <div> Sunday night, mostly cloudy with a
+                                          40% chance for showers. Low near 45°
+                                          with east/northeast winds 0 to 7 mph.
+                                        </div>
+                                        <br>
+                                        <u><strong><a id="Long" name="Long"></a>Long-Range
+                                            Trends: Mon. Apr. 12 -&nbsp; Sun.
+                                            Apr. 18</strong></u><br>
+                                        <br>
+                                        Above normal temperatures &nbsp; /&nbsp;
+                                        Near normal precipitation </div>
+                                      <div style="text-align: left;"><br>
+                                      </div>
+                                      <div style="text-align: left;"><strong><a
+                                            id="Outlooks" name="#Outlooks"></a>NWS
+                                          National Weather Outlook</strong><br>
+                                        <a href="https://www.weather.gov/">https://www.weather.gov/<br>
+                                          <br>
+                                        </a> <strong>Severe Thunderstorms in
+                                          the Central U.S.; Critical Fire
+                                          Weather in the Southwest</strong><br>
+                                        Isolated severe thunderstorms are
+                                        possible across parts of the upper
+                                        Mississippi Valley into Nebraska late
+                                        this afternoon and evening. The severe
+                                        thunderstorm threat shifts to the
+                                        central Plains for Tuesday. Elevated to
+                                        critical fire weather conditions are
+                                        forecast over portions of the Southwest,
+                                        Northeast and South Dakota today then
+                                        over the southern High Plains and
+                                        southern Rockies on Tuesday.<br>
+                                        <div> <a href="https://www.wpc.ncep.noaa.gov/discussions/hpcdiscussions.php?disc=pmdspd"
+                                            title="Short Range Discussion">Short
+                                            Range National Forecast Discussion</a>
+                                          (Day ½ - 2½) </div>
+                                        <div> <a href="https://www.wpc.ncep.noaa.gov/discussions/hpcdiscussions.php?disc=pmdepd"
+                                            title="Medium Range Discussion">Medium
+                                            Range National Forecast Discussion</a>
+                                          (Day 3 - 7) </div>
+                                        <div> <br>
+                                        </div>
+                                        <div> --------------------------- </div>
+                                        <div> <br>
+                                        </div>
+                                        <div> <strong>SPC National
+                                            Thunderstorm/Severe Weather Outlook</strong><br>
+                                          <a href="https://www.spc.noaa.gov/">https://www.spc.noaa.gov/&gt;</a><br>
+                                          <br>
+                                        </div>
+                                        <div> Isolated severe thunderstorms are
+                                          possible across parts of the Upper
+                                          Midwest into Nebraska late this
+                                          afternoon and evening. </div>
+                                        <br>
+                                        <div> --------------------------- </div>
+                                        <br>
+                                        <div> <strong>National Hurricane Center
+                                            Atlantic Tropical Weather Outlook<br>
+                                          </strong> </div>
+                                        <a href="https://www.nhc.noaa.gov/">https://www.nhc.noaa.gov/</a><br>
+                                        <br>
+                                        <div> <em>The Atlantic hurricane season
+                                            runs from June 1st through November
+                                            30th.</em><br>
+                                        </div>
+                                        <br>
+                                        <div> <a href="https://www.nhc.noaa.gov/gtwo.php?basin=atlc&amp;fdays=2"
+                                            style="color: rgb(0, 0, 128); text-decoration: underline;"
+                                            title="Atlantic 2-Day Graphical Tropical Weather Outlook">Atlantic
+                                            2-Day Graphical Tropical Weather
+                                            Outlook</a> </div>
+                                        <div> <strong></strong><a href="https://www.nhc.noaa.gov/gtwo.php?basin=atlc&amp;fdays=5"
+                                            title="Atlantic 5-Day Graphical Tropical Weather Outlook">Atlantic
+                                            5-Day Graphical Tropical Weather
+                                            Outlook</a> </div>
+                                        <strong></strong>
+                                        <div style="text-align: left;"> <strong><a
+                                              href="https://www.nhc.noaa.gov/gtwo.php?basin=atlc&amp;fdays=5"
+                                              title="Atlantic 5-Day Graphical Tropical Weather Outlook"><br>
+                                            </a></strong> </div>
+                                        <strong></strong>
+                                        <div> --------------------------- </div>
+                                        <div> <br>
+                                        </div>
+                                        <div> <strong>National High and Low
+                                            Temperatures</strong><br>
+                                          (excluding Alaska and Hawaii) </div>
+                                        <div> <br>
+                                        </div>
+                                        <strong>High Temperature for Sunday,
+                                          April&nbsp; 4, 2021</strong><br>
+                                        103 at Ocotillo Wells, CA<br>
+                                        <br>
+                                        <strong>Low Temperature for Sunday,
+                                          April&nbsp; 4, 2021</strong><br>
+                                        5 at Estcourt Station, ME</div>
+                                      <div style="text-align: left;"><br>
+                                      </div>
+                                      <br>
+                                      <div>
+                                        <table style="width: 90%; text-align: center; margin-left: auto; margin-right: auto;"
+                                          border="0">
+                                          <tbody>
+                                            <tr>
+                                              <td style="text-align: center; width: 153px;"><a
+                                                  href="https://www.weather.gov/SKYWARN"
+                                                  title="NWS Skywarn Storm Spotters"
+                                                  style="color: #1855d9; text-decoration: underline;"><img
+                                                    src="https://raw.githubusercontent.com/ApexWx/ApexWx.github.io/master/SkywarnLogoTxtOutln2.png"
+                                                    alt="Skywarn Storm Spotters"
+                                                    style="border: none; -ms-interpolation-mode: bicubic; max-width: 100%; width: 70px; height: 97px; padding: 10px;"
+                                                    height="97" width="70"></a></td>
+                                              <td style="text-align: center; width: 201px;"><a
+                                                  href="https://www.weather.gov/safety/flood-turn-around-dont-drown"
+                                                  title="NWS Flood Safety"><img
+                                                    src="https://raw.githubusercontent.com/ApexWx/ApexWx.github.io/master/TADDHighRes-sm.gif"
+                                                    alt="Turn Around Dont' Drown"
+                                                    style="border: none; -ms-interpolation-mode: bicubic; max-width: 100%; width: 97px; height: 97px; padding: 10px;"
+                                                    height="97" width="97"></a></td>
+                                              <td style="text-align: center; width: 147px;"><a
+                                                  href="https://www.weather.gov/learning"
+                                                  title="NWS Educational Resources"
+                                                  style="color: #1855d9; text-decoration: underline;"><img
+                                                    src="https://raw.githubusercontent.com/ApexWx/ApexWx.github.io/master/learning-thumbnail.png"
+                                                    alt="NWS Educational Resources"
+                                                    style="border: none; -ms-interpolation-mode: bicubic; max-width: 100%; width: 95px; height: 95px; padding: 10px;"
+                                                    height="95" width="95"></a></td>
+                                            </tr>
+                                          </tbody>
+                                        </table>
+                                        <div> <br>
+                                          <br>
+                                          <div style="text-align: center; font-size: 24px;"><a
+                                              name="Maps" id="Maps"></a><strong>Maps
+                                              &amp; Charts</strong></div>
+                                          <br>
+                                          <div style="text-align: left;"> Click
+                                            maps and charts for larger versions,
+                                            loops, etc. Most graphics update
+                                            automatically--check timestamps for
+                                            currency. During updates,
+                                            maintenance, network outages, etc.,
+                                            graphics may be temporarily
+                                            unavailable. Graphic sources include
+                                            NOAA, NWS, University of Wisconsin,
+                                            and various other organizations. All
+                                            products produced by the US
+                                            government or affiliated
+                                            organizations are public domain
+                                            unless otherwise labeled. </div>
+                                        </div>
+                                        <div style="text-align: left;"> <br>
+                                          <u>Note</u>: For US Eastern Time on
+                                          maps and charts, subtract 4 hours
+                                          (Daylight Saving Time) or 5 hours
+                                          (Standard Time) from UTC / Z*
+                                          timestamp on the maps and charts.
+                                          Visit <a title="timeanddate.com" href="https://www.timeanddate.com/">timeanddate.com</a>
+                                          for more time zone conversion
+                                          information and additional
+                                          time-related data. <br>
+                                          <br>
+                                          <div align="left;"> *UTC / Z / GMT =
+                                            Coordinated Universal Time / Zulu
+                                            Time / Greenwich Mean Time -- Time
+                                            is based on 0° longitude running
+                                            through the Royal Observatory in
+                                            Greenwich, London, UK. It is the
+                                            same all year round and is not
+                                            affected by Daylight Saving Time
+                                            (aka Summer Time) clock changes.
+                                            Using UTC allows weather services
+                                            and others to avoid time zone
+                                            conversions. </div>
+                                          <br>
+                                          <table style="width: 90%; text-align: center; margin-left: auto; margin-right: auto;"
+                                            border="0">
+                                            <tbody>
+                                              <tr align="center">
+                                                <td rowspan="1" colspan="3"><strong>Current
+                                                    Time US Eastern and UTC / Z</strong></td>
+                                              </tr>
+                                              <tr>
+                                                <td style="text-align: center;"><strong>ET
+                                                    12-Hour</strong></td>
+                                                <td style="text-align: center;"><strong>ET
+                                                    24-Hour</strong></td>
+                                                <td style="text-align: center;"><strong>UTC
+                                                    / Z</strong></td>
+                                              </tr>
+                                              <tr>
+                                                <td style="text-align: center; width: 181px;"><br>
+                                                  <iframe src="https://freesecure.timeanddate.com/clock/i7b14drd/n5278/ts1/ta1"
+                                                    height="19" frameborder="0"
+                                                    width="126"></iframe><br>
                                                   <br>
-                                                  <br>
-                                                  <strong>NWS State College
-                                                    Weather Briefing</strong><br>
-                                                  <img alt="NWS State College Weather Story;"
-                                                    max-width="525px;" src="https://www.weather.gov/images/ctp/weatherstory.gif"
-                                                    style="border-width: 1px; border-style: solid; max-width: 525px;"
-                                                    border="1px;"><br>
-                                                  <br>
-                                                </div>
-                                                <br>
-                                                <strong>Northeast Satellite</strong><br>
-                                                <a href="https://www.star.nesdis.noaa.gov/GOES/sector_band.php?sat=G16&amp;sector=ne&amp;band=GEOCOLOR&amp;length=24"
-                                                  style="border-width: 1px; border-style: solid; max-width: 525px;"
-                                                  title="Click for looping image"><img
-                                                    alt="New England Satellite"
-                                                    src="https://cdn.star.nesdis.noaa.gov/GOES16/ABI/SECTOR/ne/GEOCOLOR/600x600.jpg"
-                                                    style="max-width: 525px;"></a><br>
-                                                <br>
+                                                </td>
+                                                <td style="text-align: center; width: 146px;"><br>
+                                                  <iframe src="https://freesecure.timeanddate.com/clock/i7athxrb/n5278/th1/ts1/ta1"
+                                                    height="19" frameborder="0"
+                                                    width="69"></iframe> <br>
+                                                </td>
+                                                <td style="text-align: center; width: 167px;"><br>
+                                                  <iframe src="https://freesecure.timeanddate.com/clock/i7allsch/th1/ts1/ta1"
+                                                    height="19" frameborder="0"
+                                                    width="70"></iframe> <br>
+                                                </td>
+                                              </tr>
+                                            </tbody>
+                                          </table>
+                                          <br>
+                                          <strong><br>
+                                            In Maps &amp; Charts Go To:</strong>
+                                          <div style="text-align: left;"><strong><a
+                                                href="#Regional">Regional
+                                                Weather<br>
+                                              </a></strong> </div>
+                                          <div style="text-align: left;"><strong><a
+                                                href="#National">National
+                                                Weather<br>
+                                              </a></strong> </div>
+                                          <div style="text-align: left;"> <span
+                                              style="color: #3333ff;"><strong><a
+                                                  href="#Tropical">Atlantic
+                                                  Tropical Weather</a></strong></span>
+                                          </div>
+                                          <div style="text-align: left;"> Visit
+                                            <a href="https://apexwx.github.io/">Apex
+                                              Wx</a> for more maps &amp; charts.</div>
+                                          <br>
+                                          <div style="text-align: center;"><strong
+                                              style="font-size: 24px;"><a id="Regional"
+                                                name="Regional"></a>Regional<br>
+                                            </strong> <span style="color: #3333ff;"><strong></strong></span>
+                                            <div style="text-align: center;">
+                                              <div style="text-align: left;">
                                                 <div style="text-align: center;">
-                                                  <br>
+                                                  <strong><br>
+                                                    Northeast Weather Chart</strong>
                                                 </div>
                                                 <div style="text-align: center;">
-                                                  <br>
-                                                </div>
-                                                <div style="text-align: center;">
-                                                  <strong>Northeast Metro Area
-                                                    12-Hour Probability of
-                                                    Precipitation (%)</strong><br>
-                                                  <div> <a href="https://graphical.weather.gov/images/nemetro/PoP121_nemetro.png"
-                                                      title="Click to view image "><img
-                                                        alt="Northeast Metro Area 12-Hour Probability of Precipitation"
-                                                        src="https://graphical.weather.gov/images/nemetro/PoP121_nemetro.png"
-                                                        style="border-width: thin; border-style: solid; max-width: 525px;"></a><br>
-                                                  </div>
-                                                  <br>
-                                                  <br>
-                                                  <br>
-                                                  <div> <strong>Forecast Highs</strong><br>
-                                                    <a href="https://www.weather.gov/images/erh/gis/CTP_maxt_Day1.png"
-                                                      style="color: #3498db; text-decoration: underline;"
+                                                  <strong><a href="https://www.wpc.ncep.noaa.gov/sfc/namnesfcwbg.gif"
                                                       title="Click for larger image"><img
-                                                        alt="Today's Highs" src="https://www.weather.gov/images/erh/gis/CTP_maxt_Day1.png"
-                                                        style="max-width: 525px;"></a>
-                                                  </div>
-                                                  <div> </div>
-                                                  <div> <br>
+                                                        alt="Northeast Weather Chart"
+                                                        src="https://www.wpc.ncep.noaa.gov/sfc/namnesfcwbg.gif"
+                                                        style="border-style: solid; border-width: 1px; max-width: 525px;"></a></strong><br>
+                                                </div>
+                                                <div style="text-align: center;">
+                                                  <a href="https://www.wpc.ncep.noaa.gov/html/sfc-zoom.php"
+                                                    title="Full Resolution North America Weather Chart">Full
+                                                    Resolution</a> North America
+                                                  Weather Chart </div>
+                                                <div style="text-align: center;">
+                                                  <br>
+                                                  <br>
+                                                </div>
+                                                <div style="text-align: center;">
+                                                  <strong>Pennsylvania
+                                                    Thunderstorm / Severe
+                                                    Weather Outlook<br>
+                                                  </strong>
+                                                  <div style="text-align: center;">
+                                                    <a href="https://www.spc.noaa.gov/public/state/images/PA_swody1.png"
+                                                      title="Click for larger image"><img
+                                                        alt="Today's Severe Weather Outlook"
+                                                        src="https://www.spc.noaa.gov/public/state/images/PA_swody1.png"
+                                                        style="max-width: 525px;"></a><br>
                                                     <br>
-                                                    <strong>Heat Index</strong><br>
-                                                    <strong><a href="https://www.weather.gov/images/erh/gis/CTP_AptMax.png"
-                                                        style="color: #3498db; text-decoration: underline;"
-                                                        title="Click for larger image"><img
-                                                          alt="Heat Index" src="https://www.weather.gov/images/erh/gis/CTP_AptMax.png"
-                                                          style="max-width: 525px;"></a></strong>
-                                                  </div>
-                                                  <div style="font-size: 12px;">
-                                                    Heat Index is typically
-                                                    calculated for temperatures
-                                                    above 80°F when relative
-                                                    humidity is factored with
-                                                    the actual air temperature.
-                                                  </div>
-                                                  <br>
-                                                  <br>
-                                                  <br>
-                                                  <div> <strong>Forecast Lows</strong><br>
-                                                    <div> <a href="https://www.weather.gov/images/erh/gis/CTP_mint_Day1.png"
-                                                        style="color: #3498db; text-decoration: underline;"
-                                                        title="Click for larger image"><img
-                                                          alt="Tonight's Lows" src="https://www.weather.gov/images/erh/gis/CTP_mint_Day1.png"
-                                                          style="max-width: 525px;"></a><br>
+                                                    <br>
+                                                    <br>
+                                                    <div> <strong>Regional
+                                                        Doppler Radar</strong><br>
+                                                      <a href="https://www.wunderground.com/wundermap?lat=37.7&amp;lon=-92.7&amp;zoom=4&amp;radar=1&amp;wxstn=0"><img
+                                                          alt="Regional Doppler Radar"
+                                                          src="https://s.w-x.co/staticmaps/wu/wu/wxtype1200_cur/usbgm/current.png"
+                                                          style="max-width: 525px; height: 405px;"
+                                                          title="Regional Doppler Radar"></a><br>
+                                                      <br>
+                                                      <br>
+                                                      <br>
+                                                      <strong>NWS State College
+                                                        Weather Briefing</strong><br>
+                                                      <img alt="NWS State College Weather Story;"
+                                                        src="https://www.weather.gov/images/ctp/weatherstory.gif"
+                                                        style="border-width: 1px; border-style: solid; max-width: 525px;"
+                                                        border="1px;"><br>
+                                                      <br>
+                                                      <br>
                                                     </div>
-                                                    <div> <br>
+                                                    <br>
+                                                    <strong>Northeast Satellite</strong><br>
+                                                    <a href="https://www.star.nesdis.noaa.gov/GOES/sector_band.php?sat=G16&amp;sector=ne&amp;band=GEOCOLOR&amp;length=24"
+                                                      style="border-width: 1px; border-style: solid; max-width: 525px;"
+                                                      title="Click for looping image"><img
+                                                        alt="New England Satellite"
+                                                        src="https://cdn.star.nesdis.noaa.gov/GOES16/ABI/SECTOR/ne/GEOCOLOR/600x600.jpg"
+                                                        style="max-width: 525px;"></a><br>
+                                                    <br>
+                                                    <div style="text-align: center;">
+                                                      <br>
                                                     </div>
-                                                    <div> <br>
+                                                    <div style="text-align: center;">
+                                                      <br>
                                                     </div>
-                                                    <div> <strong>Wind Chill<br>
-                                                      </strong> <a href="https://www.weather.gov/images/erh/gis/CTP_AptMin.png"
-                                                        style="color: #3498db; text-decoration: underline;"
-                                                        title="Click for larger image"><img
-                                                          alt="24-Hour Wind Chill Values"
-                                                          max-width="525px;" src="https://www.weather.gov/images/erh/gis/CTP_AptMin.png"
-                                                          style="border: medium none; max-width: 525px;"></a>
-                                                      <div>
-                                                        <div style="font-size: 12px;">
-                                                          Wind chill values are
-                                                          calculated at or below
-                                                          50°F with wind speeds
-                                                          over 3 mph.<strong><br>
-                                                          </strong> </div>
-                                                        <br>
-                                                        <br>
-                                                        <div> <strong>24-Hour
-                                                            Precipitation
-                                                            Outlook</strong> </div>
-                                                        <a href="https://www.weather.gov/images/erh/gis/CTP_QPF24.png"
+                                                    <div style="text-align: center;">
+                                                      <strong>Northeast Metro
+                                                        Area 12-Hour Probability
+                                                        of Precipitation (%)</strong><br>
+                                                      <div> <a href="https://graphical.weather.gov/images/nemetro/PoP121_nemetro.png"
+                                                          title="Click to view image "><img
+                                                            alt="Northeast Metro Area 12-Hour Probability of Precipitation"
+                                                            src="https://graphical.weather.gov/images/nemetro/PoP121_nemetro.png"
+                                                            style="border-width: thin; border-style: solid; max-width: 525px;"></a><br>
+                                                      </div>
+                                                      <br>
+                                                      <br>
+                                                      <br>
+                                                      <div> <strong>Forecast
+                                                          Highs</strong><br>
+                                                        <a href="https://www.weather.gov/images/erh/gis/CTP_maxt_Day1.png"
+                                                          style="color: #3498db; text-decoration: underline;"
                                                           title="Click for larger image"><img
-                                                            alt="Today's Precipitation Outlook"
-                                                            src="https://www.weather.gov/images/erh/gis/CTP_QPF24.png"
-                                                            style="max-width: 525px;"></a><br>
+                                                            alt="Today's Highs"
+                                                            src="https://www.weather.gov/images/erh/gis/CTP_maxt_Day1.png"
+                                                            style="max-width: 525px;"></a>
+                                                      </div>
+                                                      <div> </div>
+                                                      <div> <br>
                                                         <br>
                                                         <br>
-                                                        <div style="text-align: center;">
-                                                          <strong>3-Day Snowfall
-                                                            Outlook<br>
-                                                          </strong> <a href="https://www.weather.gov/images/erh/gis/CTP_Snow.png"
-                                                            style="color: #1855d9; text-decoration: underline;"
+                                                        <strong>Heat Index</strong><br>
+                                                        <strong><a href="https://www.weather.gov/images/erh/gis/CTP_AptMax.png"
+                                                            style="color: #3498db; text-decoration: underline;"
                                                             title="Click for larger image"><img
-                                                              alt="Snowfall Outlook"
-                                                              src="https://www.weather.gov/images/erh/gis/CTP_Snow.png"
-                                                              style="border: medium none; max-width: 525px;"
-                                                              height="398" width="535"></a><br>
+                                                              alt="Heat Index" src="https://www.weather.gov/images/erh/gis/CTP_AptMax.png"
+                                                              style="max-width: 525px;"></a></strong>
+                                                      </div>
+                                                      <div style="font-size: 12px;">
+                                                        Heat Index is typically
+                                                        calculated for
+                                                        temperatures above 80°F
+                                                        when relative humidity
+                                                        is factored with the
+                                                        actual air temperature.
+                                                      </div>
+                                                      <br>
+                                                      <br>
+                                                      <br>
+                                                      <div> <strong>Forecast
+                                                          Lows</strong><br>
+                                                        <div> <a href="https://www.weather.gov/images/erh/gis/CTP_mint_Day1.png"
+                                                            style="color: #3498db; text-decoration: underline;"
+                                                            title="Click for larger image"><img
+                                                              alt="Tonight's Lows"
+                                                              src="https://www.weather.gov/images/erh/gis/CTP_mint_Day1.png"
+                                                              style="max-width: 525px;"></a><br>
+                                                        </div>
+                                                        <div> <br>
                                                           <br>
-                                                          <br>
-                                                          <div> <strong>3-Day
-                                                              Ice Accumulation
-                                                              Outlook</strong><br>
-                                                            <a href="https://www.weather.gov/images/erh/gis/CTP_Ice.png"
-                                                              style="color: #1855d9; text-decoration: underline;"
+                                                        </div>
+                                                        <div> <br>
+                                                        </div>
+                                                        <div> <strong>Wind
+                                                            Chill<br>
+                                                          </strong> <a href="https://www.weather.gov/images/erh/gis/CTP_AptMin.png"
+                                                            style="color: #3498db; text-decoration: underline;"
+                                                            title="Click for larger image"><img
+                                                              alt="24-Hour Wind Chill Values"
+                                                              src="https://www.weather.gov/images/erh/gis/CTP_AptMin.png"
+                                                              style="border: medium none; max-width: 525px;"></a>
+                                                          <div>
+                                                            <div style="font-size: 12px;">
+                                                              Wind chill values
+                                                              are calculated at
+                                                              or below 50°F with
+                                                              wind speeds over 3
+                                                              mph.<strong><br>
+                                                              </strong> </div>
+                                                            <br>
+                                                            <br>
+                                                            <br>
+                                                            <div> <strong>24-Hour
+                                                                Precipitation
+                                                                Outlook</strong>
+                                                            </div>
+                                                            <a href="https://www.weather.gov/images/erh/gis/CTP_QPF24.png"
                                                               title="Click for larger image"><img
-                                                                alt="Ice Accumulation Outlook"
-                                                                src="https://www.weather.gov/images/erh/gis/CTP_Ice.png"
-                                                                style="border: medium none; max-width: 525px;"
-                                                                height="398" width="535"></a><br>
+                                                                alt="Today's Precipitation Outlook"
+                                                                src="https://www.weather.gov/images/erh/gis/CTP_QPF24.png"
+                                                                style="max-width: 525px;"></a><br>
                                                             <br>
                                                             <br>
-                                                            <div> <strong>3-Day
-                                                                Wind Gust
-                                                                Outlook</strong><br>
-                                                              <a href="https://www.weather.gov/images/erh/gis/CTP_WGust.png"
+                                                            <br>
+                                                            <div style="text-align: center;">
+                                                              <strong>3-Day
+                                                                Snowfall Outlook<br>
+                                                              </strong> <a href="https://www.weather.gov/images/erh/gis/CTP_Snow.png"
+                                                                style="color: #1855d9; text-decoration: underline;"
                                                                 title="Click for larger image"><img
+                                                                  alt="Snowfall Outlook"
+                                                                  src="https://www.weather.gov/images/erh/gis/CTP_Snow.png"
+                                                                  style="border: medium none; max-width: 525px;"
+                                                                  height="398" width="535"></a><br>
+                                                              <br>
+                                                              <br>
+                                                              <br>
+                                                              <div> <strong>3-Day
+                                                                  Ice
+                                                                  Accumulation
+                                                                  Outlook</strong><br>
+                                                                <a href="https://www.weather.gov/images/erh/gis/CTP_Ice.png"
+                                                                  style="color: #1855d9; text-decoration: underline;"
+                                                                  title="Click for larger image"><img
+                                                                  alt="Ice Accumulation Outlook"
+                                                                  src="https://www.weather.gov/images/erh/gis/CTP_Ice.png"
+                                                                  style="border: medium none; max-width: 525px;"
+                                                                  height="398" width="535"></a><br>
+                                                                <br>
+                                                                <br>
+                                                                <br>
+                                                                <div> <strong>3-Day
+                                                                  Wind Gust
+                                                                  Outlook</strong><br>
+                                                                  <a href="https://www.weather.gov/images/erh/gis/CTP_WGust.png"
+                                                                  title="Click for larger image"><img
                                                                   alt="3-Day Wind Gust Outlook"
                                                                   src="https://www.weather.gov/images/erh/gis/CTP_WGust.png"
                                                                   style="max-width: 525px;"></a><br>
-                                                              <br>
-                                                              <br>
-                                                              <div> <strong>Month's
+                                                                  <br>
+                                                                  <br>
+                                                                  <br>
+                                                                  <div> <strong>Month's
                                                                   Precipitation
                                                                   to Date<br>
-                                                                </strong> <a href="https://www.weather.gov/images/erh/gis/CTP_MTDobs_precip.png"
+                                                                  </strong> <a
+                                                                  href="https://www.weather.gov/images/erh/gis/CTP_MTDobs_precip.png"
                                                                   style="color: #1855d9; text-decoration: underline;"
                                                                   title="Click for larger image"><img
                                                                   alt="Month-to-Date Total Precipitation Recorded "
                                                                   src="https://www.weather.gov/images/erh/gis/CTP_MTDobs_precip.png"
                                                                   style="border: medium none; max-width: 525px;"
                                                                   height="398"></a><br>
-                                                                <br>
-                                                                <br>
-                                                                <div style="text-align: center;"><strong>Pennsylvania
+                                                                  <br>
+                                                                  <br>
+                                                                  <br>
+                                                                  <br>
+                                                                  <div style="text-align: center;"><strong>Pennsylvania
                                                                   Drought
                                                                   Monitor</strong><br>
                                                                   <img alt="Current PA Drought Monitor"
                                                                   src="https://droughtmonitor.unl.edu/data/png/current/current_pa_trd.png"
                                                                   style="border-style: solid; border-width: thin; max-width: 525px;">
-                                                                </div>
-                                                                <br>
-                                                                <br>
-                                                                <strong>Conestoga
+                                                                  </div>
+                                                                  <br>
+                                                                  <br>
+                                                                  <br>
+                                                                  <br>
+                                                                  <strong>Conestoga
                                                                   River at
                                                                   Lancaster,
                                                                   Pennsylvania<br>
-                                                                </strong> <a href="https://water.weather.gov/ahps2/hydrograph.php?gage=lncp1&amp;wfo=ctp"
+                                                                  </strong> <a
+                                                                  href="https://water.weather.gov/ahps2/hydrograph.php?gage=lncp1&amp;wfo=ctp"
                                                                   style="color: #1855d9; text-decoration: underline;"
                                                                   title="Click for larger image"><img
                                                                   alt="Conestoga River at Lancaster, PA"
@@ -1007,7 +1050,7 @@ type="application/javascript">
                                                                   style="border: medium none; max-width: 525px;"
                                                                   title="Conestoga River at Lancaster, PA"
                                                                   height="398" width="535"></a><br>
-                                                                <div style="font-size: 12px;">
+                                                                  <div style="font-size: 12px;">
                                                                   Forecasts for
                                                                   the Conestoga
                                                                   River at
@@ -1015,9 +1058,10 @@ type="application/javascript">
                                                                   issued
                                                                   routinely
                                                                   year-round. </div>
-                                                                <br>
-                                                                <br>
-                                                                <div style="font-size: 24px;">
+                                                                  <br>
+                                                                  <br>
+                                                                  <br>
+                                                                  <div style="font-size: 24px;">
                                                                   <strong></strong>
                                                                   <div style="font-size: 24px;">
                                                                   <strong></strong>
@@ -1025,8 +1069,8 @@ type="application/javascript">
                                                                   <strong><a id="National"
                                                                   name="National"></a>National
                                                                   Weather</strong>
-                                                                </div>
-                                                                <div>
+                                                                  </div>
+                                                                  <div>
                                                                   <div> <br>
                                                                   <div> <strong>US
                                                                   Forecast Map</strong><br>
@@ -1038,6 +1082,7 @@ type="application/javascript">
                                                                   style="border: medium none; max-width: 525px;"></a><br>
                                                                   <br>
                                                                   <div style="text-align: center;">
+                                                                  <br>
                                                                   <br>
                                                                   </div>
                                                                   <div style="text-align: center;">
@@ -1052,6 +1097,7 @@ type="application/javascript">
                                                                   <div> <br>
                                                                   </div>
                                                                   <div> <br>
+                                                                  <br>
                                                                   </div>
                                                                   <div> <strong>24-Hour
                                                                   Forecast Map</strong>
@@ -1065,6 +1111,7 @@ type="application/javascript">
                                                                   <div> <br>
                                                                   </div>
                                                                   <div> <br>
+                                                                  <br>
                                                                   </div>
                                                                   <div> <strong>36-Hour
                                                                   Forecast Map</strong><br>
@@ -1077,6 +1124,7 @@ type="application/javascript">
                                                                   <div> <br>
                                                                   </div>
                                                                   <div> <br>
+                                                                  <br>
                                                                   </div>
                                                                   <div> <strong>48-Hour
                                                                   Forecast Map</strong>
@@ -1090,6 +1138,7 @@ type="application/javascript">
                                                                   <div style="text-align: center;">
                                                                   <br>
                                                                   <br>
+                                                                  <br>
                                                                   <strong>Continental
                                                                   US Satellite</strong><br>
                                                                   <div style="text-align: center;">
@@ -1098,6 +1147,7 @@ type="application/javascript">
                                                                   alt="National Satellite: True Color (Day) Infrared (Night)"
                                                                   src="https://cdn.star.nesdis.noaa.gov/GOES16/ABI/CONUS/GEOCOLOR/625x375.jpg"
                                                                   style="max-width: 525px;"></a><br>
+                                                                  <br>
                                                                   <br>
                                                                   <br>
                                                                   <br>
@@ -1111,6 +1161,7 @@ type="application/javascript">
                                                                   alt="Current Severe Weather Outlook"
                                                                   src="https://www.weather.gov/images/erh/gis/CONUS_convoutlook_day1.png"
                                                                   style="border: medium none; max-width: 525px;"></a></strong><br>
+                                                                  <br>
                                                                   <br>
                                                                   <br>
                                                                   <div style="font-size: 12px;">
@@ -1154,6 +1205,7 @@ type="application/javascript">
                                                                   style="border: thin solid; max-width: 525px;"></a><br>
                                                                   <br>
                                                                   <br>
+                                                                  <br>
                                                                   <div> <strong>NHC
                                                                   Atlantic
                                                                   Tropical 5-Day
@@ -1164,6 +1216,7 @@ type="application/javascript">
                                                                   alt="5-Day Tropical Atlantic Outlook"
                                                                   src="https://www.nhc.noaa.gov/xgtwo/two_atl_5d0.png"
                                                                   style="max-width: 525px; border-width: thin; border-style: solid;"></a><br>
+                                                                  <br>
                                                                   <br>
                                                                   <br>
                                                                   <strong>Tropical
@@ -1177,66 +1230,50 @@ type="application/javascript">
                                                                   style="border: 1px solid; max-width: 525px;"></a><br>
                                                                   <br>
                                                                   <br>
+                                                                  <br>
                                                                   <strong>US
                                                                   Atlantic Coast</strong>
                                                                   <div> <a href="https://www.star.nesdis.noaa.gov/GOES/sector_band.php?sat=G16&amp;sector=eus&amp;band=GEOCOLOR&amp;length=24"
                                                                   title="Click for looping image"><img
                                                                   alt="US Atlantic Coast"
                                                                   src="https://cdn.star.nesdis.noaa.gov/GOES16/ABI/SECTOR/eus/GEOCOLOR/500x500.jpg"
-                                                                  style="border: 1px solid; max-width: 525px; width: 537px; height: 537px;"></a>
-                                                                  </div>
-                                                                  <em></em><strong><em
-                                                                  style="font-size: 12px;"></em></strong>
+                                                                  style="border: 1px solid; max-width: 525px; width: 537px; height: 537px;"></a></div>
+                                                                  <br>
                                                                   </div>
                                                                   </div>
-                                                                  <div style="text-align: left;">
                                                                   </div>
                                                                   </div>
-                                                                  <strong><strong></strong></strong>
                                                                   </div>
-                                                                  <strong><strong></strong></strong>
+                                                                  </div>
                                                                 </div>
-                                                                <strong><strong><strong><strong></strong></strong></strong></strong>
                                                               </div>
-                                                              <strong><strong><strong></strong>
-                                                                  <strong></strong></strong></strong>
                                                             </div>
-                                                            <strong><strong><strong></strong></strong></strong>
                                                           </div>
-                                                          <strong><strong><strong></strong></strong></strong>
                                                         </div>
-                                                        <strong><strong><strong></strong></strong></strong>
                                                       </div>
-                                                      <strong><strong><strong></strong></strong></strong>
                                                     </div>
-                                                    <strong><strong><strong></strong></strong></strong>
                                                   </div>
-                                                  <strong><strong><strong></strong></strong></strong>
                                                 </div>
-                                                <strong><strong><strong></strong></strong></strong>
                                               </div>
-                                              <strong></strong> </div>
+                                            </div>
                                           </div>
                                         </div>
                                       </div>
                                     </div>
                                   </div>
-                                  <div>
-                                    <div style="text-align: left;"> </div>
-                                  </div>
                                 </div>
                               </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
                     </td>
                   </tr>
                   <!-- END MAIN CONTENT AREA -->
                 </tbody>
               </table>
               <!-- END CENTERED WHITE CONTAINER -->
-              <!-- START FOOTER --><!-- START FOOTER -->
+              <!-- START FOOTER -->
               <div class="footer">
                 <table role="presentation" cellspacing="0" cellpadding="0" border="0">
                   <tbody>
@@ -1274,11 +1311,8 @@ type="application/javascript">
                             Wx logo by Joanna Becker</span> <span style="color: #666666;">©
                             2016 (Visit <a href="https://www.bushiandbrush.com/"
                               title="Bushi and Brush Arts Dojo">Bushi and Brush
-                              Arts Dojo</a>)</span>. </div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td class="content-block powered-by">
+                              Arts Dojo</a>)</span>. <br>
+                        </div>
                         <table border="0">
                           <tbody>
                             <tr>
@@ -1329,40 +1363,40 @@ type="application/javascript">
                         </table>
                         <br>
                         Template by <a href="http://htmlemail.io">HTMLemail</a><br>
-                        This page was last modified
-                        <script type="text/javascript">
-											//<![CDATA[
-											           document.write (document.lastModified);
-											           //]]>
-											</script> </td>
+                        This page was last modified 04/05/2021 14:54:23 </td>
+                    </tr>
+                    <tr>
+                      <td class="content-block powered-by"><br>
+                      </td>
                     </tr>
                   </tbody>
                 </table>
               </div>
-              <!-- END FOOTER --><br>
-              <script type="text/javascript">
-						//<![CDATA[
-						var myDate = new Date();
-						var hrs = myDate.getHours();
-
-						var greet;
-
-						if (hrs < 12 && hrs >= 3) 
-						  greet = 'Good Morning';
-						else if (hrs >= 12 && hrs <= 17)
-						  greet = 'Good Afternoon';
-						else if (hrs >= 17 && hrs <= 24)
-						  greet = 'Good Evening';
-						else if (hrs >=0 && hrs <= 3)
-						  greet = 'Greetings...Up with the Elves and Wizards, eh?';
-
-						document.getElementById('lblGreetings').innerHTML =
-						  '<b>' + greet + '<\/b>';
-						//]]>
-						</script> </div>
+            </div>
           </td>
+          <td>&nbsp;</td>
         </tr>
       </tbody>
     </table>
+    <script type="text/javascript">
+//<![CDATA[
+    var myDate = new Date();
+    var hrs = myDate.getHours();
+
+    var greet;
+
+    if (hrs < 12 && hrs >= 3) 
+        greet = 'Good Morning';
+    else if (hrs >= 12 && hrs <= 17)
+        greet = 'Good Afternoon';
+    else if (hrs >= 17 && hrs <= 24)
+        greet = 'Good Evening';
+    else if (hrs >=0 && hrs <= 3)
+        greet = 'Greetings...Up with the Elves and Wizards, eh?';
+
+    document.getElementById('lblGreetings').innerHTML =
+        '<b>' + greet + '<\/b>';
+  //]]>
+  </script>
   </body>
 </html>
