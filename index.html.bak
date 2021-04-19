@@ -99,7 +99,7 @@ type="application/javascript">
     }
     </style>
   </head>
-  <body class="" style="                                                                                                                                                                                     background-color: #f6f6f6; font-family: sans-serif; -webkit-font-smoothing: antialiased; font-size: 14px; line-height: 1.4; margin: 0; padding: 0; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;">
+  <body class="" style="                                                                                                                                                                                    background-color: #f6f6f6; font-family: sans-serif; -webkit-font-smoothing: antialiased; font-size: 14px; line-height: 1.4; margin: 0; padding: 0; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;">
     <table class="body" style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%; background-color: #f6f6f6;"
       cellspacing="0" cellpadding="0" border="0">
       <tbody>
@@ -117,8 +117,7 @@ type="application/javascript">
                         <tbody>
                           <tr>
                             <td style="font-family: sans-serif; font-size: 14px; vertical-align: top; border-width: 1px; text-align: center;">
-                              <div style="text-align: center;"><br>
-                                <img src="https://raw.githubusercontent.com/ApexWx/ApexWx.github.io/master/Apex%20banner.jpg"
+                              <div style="text-align: center;"><img src="https://raw.githubusercontent.com/ApexWx/ApexWx.github.io/master/Apex%20banner.jpg"
                                   alt="Apex Wx Banner" style="border: none; -ms-interpolation-mode: bicubic; max-width: 525px;"><br>
                               </div>
                               <h2 style="text-align: center;">Fort Kent &amp;
@@ -129,7 +128,7 @@ type="application/javascript">
                                     height="19" frameborder="0" width="343"></iframe></div>
                               </div>
                               <div style="text-align: center;"> <em>Forecast
-                                  Updated at 10:15 am Mon. Apr. 19, 2021</em><em></em></div>
+                                  Updated at 10:30 am Mon. Apr. 19, 2021</em><em></em></div>
                               <div style="text-align: center;">
                                 <div style="text-align: center;"><strong><br>
                                   </strong></div>
@@ -221,8 +220,8 @@ type="application/javascript">
                                             <div>
                                               <div style="text-align: left;"><u><strong><a
                                                       name="short" id="short"></a>Short-Range
-                                                    Outlook: Monday - Wednesday<br>
-                                                    <br>
+                                                    Outlook: Monday - Wednesday</strong></u></div>
+                                              <div style="text-align: left;"><u><strong><br>
                                                   </strong></u></div>
                                               <div style="text-align: left;">A
                                                 weak ridge of high pressure will
@@ -283,10 +282,11 @@ type="application/javascript">
                                                     </div>
                                                     <div>Tuesday night, mostly
                                                       cloudy with a 20% chance
-                                                      for rain showers. Low near
-                                                      33° with west/southwest
-                                                      winds around 5 to 10 mph
-                                                      gusting 15 to 20 mph.</div>
+                                                      for
+                                                      rain showers. Low near 33°
+                                                      with west/southwest winds
+                                                      around 5 to 10 mph gusting
+                                                      15 to 20 mph.</div>
                                                     <div><br>
                                                     </div>
                                                     <div><strong>Wednesday,
@@ -485,7 +485,8 @@ type="application/javascript">
                                                   Tropical Weather Outlook<br>
                                                 </strong></div>
                                               <div style="text-align: left;"><a
-                                                  href="https://www.nhc.noaa.gov/">https://www.nhc.noaa.gov/</a></div>
+                                                  href="https://www.nhc.noaa.gov/">https://www.nhc.noaa.gov/</a><br>
+                                              </div>
                                               <div style="text-align: left;"><em>The
                                                   Atlantic hurricane season runs
                                                   from June 1st through November
