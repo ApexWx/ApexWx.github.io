@@ -355,12 +355,12 @@ type="application/javascript"></script>
                               <h2 style="color: black; font-family: sans-serif; font-weight: 400; line-height: 1.4; margin: 0px 0px 30px; text-align: center;"><strong><img
                                     alt="Apex Wx Banner" src="https://raw.githubusercontent.com/ApexWx/ApexWx.github.io/master/Apex%20banner.jpg">Fawkes
                                   House, Lancaster, Pennsylvania<br>
-                                  Weather Forecast</strong></h2>
+                                  Weather Information</strong></h2>
                               <div style="text-align: center;">
                                 <div> <label id="lblGreetings"></label><br>
                                   <div>
                                     <div style="text-align: center;"> <iframe src="https://freesecure.timeanddate.com/clock/i7aykgoq/n23/ftb/tt0/ts1/ta1"
-                                        height="19" frameborder="0" width="343">&amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;lt;em&amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;gt;&amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;lt;/em&amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;gt;&amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;lt;br&amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;gt;</iframe>
+                                        height="19" frameborder="0" width="343">&amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;lt;em&amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;gt;&amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;lt;/em&amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;gt;&amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;lt;br&amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;gt;</iframe>
                                     </div>
                                   </div>
                                 </div>
@@ -448,103 +448,105 @@ type="application/javascript"></script>
                                           Sun and Moon Times</a> </div>
                                       <div style="text-align: left;"> </div>
                                       <div style="text-align: left;">&nbsp;</div>
-                                      <div style="text-align: left;"><strong>FREEZE
-                                          WARNING IN EFFECT FROM 1 AM TO 9 AM
-                                          EDT THURSDAY</strong></div>
-                                      <div style="text-align: left;">Sub-freezing
-                                        temperatures as low as 30 expected.
-                                        Rural valley locations and sheltered
-                                        areas will experience the coldest
-                                        temperatures.</div>
-                                      <div style="text-align: left;"><br>
-                                      </div>
                                       <div style="text-align: left;">
                                         <div style="text-align: left;">
                                           <div style="text-align: left;">
                                             <div style="text-align: left;"> <u><strong><a
                                                     id="Short" name="Short"></a>Short-Term
-                                                  Outlook: Wednesday </strong><strong>-
-                                                  Friday<br>
+                                                  Outlook: Friday </strong><strong>-
+                                                  Sunday<br>
                                                 </strong></u></div>
                                             <div style="text-align: left;"><u><strong><br>
                                                 </strong></u> </div>
                                           </div>
                                         </div>
-                                        <div style="text-align: left;">Low
-                                          pressure will move northeast away from
-                                          the Lower Susquehanna Valley with
-                                          atmospheric instability producing a
-                                          chance for showers, especially this
-                                          afternoon along with some afternoon
-                                          thunderstorms--isolated severe storms
-                                          may occur. Today will be increasingly
-                                          windy. High pressure will bring mostly
-                                          clear conditions tonight and
-                                          partly cloudy skies Thursday and windy
-                                          conditions will persist across the
-                                          Lancaster region Thursday afternoon.
-                                          Mostly clear and less breezy
-                                          conditions are on tap Thursday night
-                                          and mostly sunny skies with continued
-                                          breezy west winds Friday and clear
-                                          skies Friday night.<br>
-                                          <div style="text-align: left;"><br>
+                                        <div style="text-align: left;">High
+                                          pressure off the Southeast coast will
+                                          bring mostly sunny skies today and
+                                          mostly clear skies tonight. Low
+                                          pressure tracking east across the
+                                          Tennessee River Valley will bring
+                                          increasing clouds Saturday morning
+                                          with overcast skies in the afternoon
+                                          and overnight periods. Rain is
+                                          expected to overspread the Lancaster
+                                          region Saturday afternoon with rain
+                                          likely Saturday night. Rain tapers off
+                                          Sunday morning as the low moves out to
+                                          sea with partly sunny skies Sunday
+                                          morning becoming mostly clear by
+                                          Sunday afternoon. Mostly clear skies
+                                          with breezy northwest winds ar
+                                          expected Sunday night.<br>
+                                          <div style="text-align: left;">
                                             <div style="text-align: left;">
                                               <div>
-                                                <div><strong>Today &amp; Tonight</strong>
-                                                  <div>Mostly cloudy with an 80%
-                                                    chance for showers and a
-                                                    chance for thunderstorms in
-                                                    the afternoon. Isolated
-                                                    strong-to-severe storms
-                                                    possible. Rainfall totals
-                                                    between 1/10 and 1/4-inch.
-                                                    High around 63° with south
-                                                    winds 10 to 15 mph in the
-                                                    morning becoming
-                                                    west/northwest in the
-                                                    afternoon 15 to 25 mph with
-                                                    gusts in the 25 to 35 mph
-                                                    range.<br>
-                                                  </div>
-                                                  <div><br>
-                                                  </div>
-                                                  <div>Tonight, partly cloudy to
-                                                    mostly clear with a 5%
-                                                    chance for showers. Low near
-                                                    33° with northwest winds
-                                                    becoming westerly 10 to 15
-                                                    mph gusting 25 to 30 mph.<br>
-                                                    <div><br>
-                                                    </div>
-                                                    <div><strong>Thursday, April
-                                                        22 / Earth Day</strong></div>
-                                                    <div>Partly cloudy and windy
-                                                      with 5% chance for
-                                                      showers. High near 51°F.
-                                                      West winds 15 to 22 mph
-                                                      gusting 25 to 40 mph.</div>
-                                                    <div><br>
-                                                    </div>
-                                                    <div>Thursday night, mostly
-                                                      clear with a low around
-                                                      35°F. West winds 10 to 15
-                                                      mph in the evening
-                                                      diminishing to 5 to 10 mph
-                                                      overnight.</div>
+                                                <div>
+                                                  <div>
                                                     <div> <br>
                                                       <div><strong>Friday, April
                                                           23</strong></div>
                                                       <div>Mostly sunny with a
-                                                        high near 63°F. West
+                                                        high near 64°F. West
                                                         winds around 10 to 15
+                                                        mph gusting to around 25
                                                         mph. <br>
                                                       </div>
                                                       <div><br>
                                                       </div>
                                                       Friday night, mostly clear
                                                       with a low near 41°F. West
-                                                      winds 0 to 7 mph.</div>
+                                                      southwest winds 5 to 10
+                                                      mph in the evening then
+                                                      near calm after midnight.
+                                                      <br>
+                                                      <div><strong><br>
+                                                        </strong></div>
+                                                      <div><strong>Saturday,
+                                                          April 24</strong></div>
+                                                      <div>Partly sunny in the
+                                                        morning then cloudy in
+                                                        the afternoon with a 50%
+                                                        chance for rain.
+                                                        Rainfall totals between
+                                                        0.01 and 0.09-inch. High
+                                                        near 67° with south
+                                                        winds 5 to 10 mph.</div>
+                                                      <div><br>
+                                                      </div>
+                                                      <div>Saturday night,
+                                                        cloudy with rain likely.
+                                                        Chance for precipitation
+                                                        100%. Rainfall totals
+                                                        1/2 to 3/4-inch. Low
+                                                        around 50° with
+                                                        southeast winds 5 to 10
+                                                        mph in the evening
+                                                        becoming east/northeast
+                                                        after midnight.<br>
+                                                      </div>
+                                                      <div><strong><br>
+                                                        </strong></div>
+                                                      <div><strong>Sunday, April
+                                                          25</strong></div>
+                                                      <div>Mostly cloudy to
+                                                        partly sunny in the
+                                                        morning then partly
+                                                        cloudy in the afternoon
+                                                        with a 20% chance for
+                                                        rain, tapering off in
+                                                        the morning. Rainfall
+                                                        totals less than
+                                                        1/10-inch. High near 67°
+                                                        with northwest winds 10
+                                                        to 15 mph gusting 25 to
+                                                        30 mph.</div>
+                                                      <div><br>
+                                                      </div>
+                                                      Sunday night, mostly
+                                                      clear. Low around 40° with
+                                                      northwest winds 8 to 14
+                                                      mph.</div>
                                                   </div>
                                                 </div>
                                                 <strong></strong></div>
@@ -554,50 +556,22 @@ type="application/javascript"></script>
                                               <div><br>
                                               </div>
                                               <u><strong><a name="Medium" id="Medium"></a>Medium
-                                                  Range Outlook: Friday - Monday<br>
+                                                  Range Outlook: Sunday -
+                                                  Thursday<br>
                                                 </strong></u></div>
                                             <div><br>
                                             </div>
-                                            &nbsp;Showers are expected Saturday
-                                            night and Sunday as a cold front
-                                            moves through. High pressure builds
-                                            in later Sunday with partly cloudy
-                                            skies developing overnight and
-                                            mostly sunny skies expected Monday
-                                            and Tuesday.<br>
-                                            <div><strong><br>
-                                              </strong></div>
-                                            <div><strong>Saturday, April 24</strong></div>
-                                            <div>Mostly clear early then
-                                              becoming increasingly cloudy in
-                                              the afternoon with a 40% chance
-                                              for afternoon showers. Rainfall
-                                              less than 1/10-inch. High near 67°
-                                              with south winds 8 to 14 mph.</div>
-                                            <div><br>
-                                            </div>
-                                            <div>Saturday night, mostly cloudy
-                                              to cloudy with showers likely.
-                                              Chance for precipitation 80%.
-                                              Rainfall totals 1/2 to 3/4-inch.
-                                              Low around 49° with east winds 8
-                                              to 14 mph.<br>
-                                            </div>
-                                            <div><strong><br>
-                                              </strong></div>
-                                            <div><strong>Sunday, April 25</strong></div>
-                                            <div>Mostly cloudy in the morning
-                                              then partly cloudy in the
-                                              afternoon with a 30% chance for
-                                              showers, especially in the
-                                              morning. Rainfall totals less than
-                                              1/10-inch. High near 65° with
-                                              northwest winds 15 to 22 mph.</div>
-                                            <div><br>
-                                            </div>
-                                            <div>Sunday night, partly cloudy to
-                                              mostly clear. Low around 41° with
-                                              northwest winds 8 to 14 mph.</div>
+                                            High pressure will dominate the
+                                            Lower Susquehanna Valley's weather
+                                            Monday through Wednesday. Partly
+                                            sunny skies develop Thursday with a
+                                            chance for scattered showers
+                                            Thursday afternoon as a low pressure
+                                            area tracking towards New England
+                                            draws a cold front across
+                                            Pennsylvania. A chance for showers
+                                            continues Thursday night into
+                                            Friday.<br>
                                             <div><br>
                                             </div>
                                             <div><strong>Monday, April 26</strong></div>
@@ -606,27 +580,51 @@ type="application/javascript"></script>
                                             <div><br>
                                             </div>
                                             <div>Monday night, mostly clear with
-                                              a low near 43°F. Northwest winds 0
-                                              to 7 mph.</div>
+                                              a low near 42°F. North winds 0 to
+                                              7 mph.</div>
                                             <div><br>
                                             </div>
                                             <div><strong>Tuesday, April 27</strong></div>
                                             <div>Mostly sunny with a high around
-                                              71°F. West winds 0 to 7 mph.</div>
+                                              75°F. South winds 0 to 7 mph.</div>
                                             <div><br>
                                             </div>
                                             <div>Tuesday night, partly cloudy
                                               with a 5% chance for showers. Low
-                                              near 52° with southeast winds 0 to
-                                              7 mph.</div>
+                                              near 54° with south winds 0 to 7
+                                              mph.</div>
+                                            <div><br>
+                                              <strong>Wednesday, April 28<br>
+                                              </strong></div>
+                                            <div>Partly cloudy with a 10% chance
+                                              for isolated showers. High near
+                                              82° with southwest winds 8 to 14
+                                              mph.<br>
+                                              <br>
+                                              Wednesday night, partly cloudy
+                                              with a 10% chance for isolated
+                                              shower activity. Low around 58°
+                                              with south winds 0 to 7 mph.<br>
+                                              <br>
+                                              <strong>Thursday, April 29</strong></div>
+                                            <div>Partly sunny with a 20% chance
+                                              for scattered afternoon showers.
+                                              High around 81° with south winds 8
+                                              to 14 mph.</div>
                                             <div><br>
                                             </div>
+                                            <div>Thursday night, partly cloudy
+                                              with a 20% chance for showers. Low
+                                              near 61° with south winds 8 to 14
+                                              mph.<br>
+                                              <br>
+                                            </div>
                                             <div><u><strong><a name="Long" id="Long"></a>Long-Range
-                                                  Trends: Wed</strong></u><u><strong>.
-                                                  Apr. 28 -&nbsp; Tue. May 4</strong></u><br>
+                                                  Trends: Fri</strong></u><u><strong>.
+                                                  Apr. 30 -&nbsp; Thu. May 6</strong></u><br>
                                               <br>
                                               Above normal temperatures &nbsp;
-                                              /&nbsp; Above normal precipitation</div>
+                                              /&nbsp; Near normal precipitation</div>
                                             <div><br>
                                             </div>
                                             <div style="text-align: left;">
@@ -638,21 +636,20 @@ type="application/javascript"></script>
                                                 <a href="https://www.weather.gov/">https://www.weather.gov/</a></div>
                                               <div><a href="https://www.weather.gov/"><br>
                                                 </a></div>
-                                              <strong>Below Normal Temperatures
-                                                Continue</strong><br>
-                                              A strong cold front will sweep
-                                              through the East on Wednesday with
-                                              heavy wet snow from the eastern
-                                              Great Lakes into northern New
-                                              England and strong thunderstorms
-                                              with damaging winds in the
-                                              Mid-Atlantic and Northeast. The
-                                              big story though will continue to
-                                              be the well below average
-                                              temperatures behind this storm
-                                              system or east of the Rockies, as
-                                              numerous record low temperatures
-                                              are likely
+                                              <strong> Severe Weather and Heavy
+                                                Rain for the Southern U.S.</strong><br>
+                                              A potent storm system will roll
+                                              across the Southern tier of the
+                                              U.S. over the next two days. As a
+                                              result, severe thunderstorms with
+                                              large hail, damaging winds and a
+                                              few tornadoes are possible from
+                                              the southern Plains and Lower
+                                              Mississippi Valley into the South
+                                              and Southeast. Also, heavy rain
+                                              from these thunderstorms may cause
+                                              some flood concerns, especially in
+                                              the Lower Mississippi Valley.
                                               <div style="text-align: left;"><br>
                                               </div>
                                               <div style="text-align: left;"><a
@@ -677,12 +674,13 @@ type="application/javascript"></script>
                                                   https://www.spc.noaa.gov/&gt;</a><br>
                                                 <br>
                                               </div>
-                                              <div style="text-align: left;">Isolated
-                                                to scattered damaging winds are
-                                                possible across the coastal
-                                                Mid-Atlantic States into
-                                                southern New England between 1
-                                                to 6 PM EDT.</div>
+                                              <div style="text-align: left;">Severe
+                                                wind, large to very large and
+                                                destructive hail, and a few
+                                                tornadoes are possible today and
+                                                tonight across parts of the
+                                                southern Plains to lower
+                                                Mississippi Valley.</div>
                                               <div style="text-align: left;"><br>
                                               </div>
                                               <div style="text-align: left;">---------------------------
@@ -732,13 +730,17 @@ type="application/javascript"></script>
                                                 (excluding Alaska and Hawaii)</div>
                                               <div style="text-align: left;"><br>
                                                 <strong>High Temperature for
-                                                  Tuesday, April 20, 2021</strong><br>
-                                                100 at Death Valley, CA<br>
+                                                  Thursday, April 22, 2021</strong><br>
+                                                (as received by 2 am EDT April
+                                                23)<br>
+                                                97 at Death Valley, CA<br>
                                                 <br>
                                                 <strong>Low Temperature for
-                                                  Tuesday, April 20, 2021</strong><br>
-                                                -22 at 9 miles south of Albany,
-                                                WY</div>
+                                                  Thursday, April 22, 2021</strong><br>
+                                                (as received by 2 am EDT April
+                                                23)<br>
+                                                -7 at Peter Sinks, UT<br>
+                                                -7 at Climax, CO</div>
                                             </div>
                                           </div>
                                           <div style="text-align: left;"><br>
