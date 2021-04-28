@@ -1501,7 +1501,7 @@ type="application/javascript">
                                                                   Satellite<br>
                                                                   </strong><a href="https://www.star.nesdis.noaa.gov/GOES/sector_band.php?sat=G16&amp;sector=taw&amp;band=Sandwich&amp;length=24"
                                                                   title="Click for looping image"><img
-                                                                  src="https://cdn.star.nesdis.noaa.gov/GOES16/ABI/SECTOR/taw/Sandwich/20211171910_GOES16-ABI-taw-Sandwich-3600x2160.jpg"
+                                                                  src="https://cdn.star.nesdis.noaa.gov/GOES16/ABI/SECTOR/taw/Sandwich/1800x1080.jpg"
                                                                   alt="Tropical Atlantic Satellite Composite"
                                                                   style="max-width: 525px; border-width: 1px; border-style: solid;"></a></div>
                                                                   <br>
@@ -1539,7 +1539,7 @@ type="application/javascript">
                                                                   Satellite</strong><br>
                                                                   <a href="https://www.star.nesdis.noaa.gov/GOES/sector_band.php?sat=G16&amp;sector=eus&amp;band=Sandwich&amp;length=24"
                                                                   title="Click for looping image">
-                                                                  <img src="https://cdn.star.nesdis.noaa.gov/GOES16/ABI/SECTOR/eus/Sandwich/20211171926_GOES16-ABI-eus-Sandwich-2000x2000.jpg"
+                                                                  <img src="https://cdn.star.nesdis.noaa.gov/GOES16/ABI/SECTOR/eus/Sandwich/2000x2000.jpg"
                                                                   alt="US Atlantic Coast IR Satellite"
                                                                   style="max-width: 525px;"></a>
                                                                   <br>
