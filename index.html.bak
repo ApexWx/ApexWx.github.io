@@ -1414,8 +1414,8 @@ type="application/javascript">
                                                                   may not update
                                                                   out-of-season--check
                                                                   date stamp for
-                                                                  currency.<br>
-                                                                  </div>
+                                                                  currency.</div>
+                                                                  <br>
                                                                   <br>
                                                                   <strong> 5-Day
                                                                   Tropical
@@ -1511,9 +1511,9 @@ type="application/javascript">
                                                                   of Mexico
                                                                   Composite
                                                                   Satellite</strong><br>
-                                                                  <a href="https://www.star.nesdis.noaa.gov/GOES/sector_band.php?sat=G16&amp;sector=gm&amp;band=Sandwich&amp;length=24"
+                                                                  <a href="https://cdn.star.nesdis.noaa.gov/GOES16/ABI/SECTOR/gm/Sandwich/2000x2000.jpg"
                                                                   title="Click for looping image"><img
-                                                                  src="https://cdn.star.nesdis.noaa.gov/GOES16/ABI/SECTOR/gm/Sandwich/20211171926_GOES16-ABI-gm-Sandwich-2000x2000.jpg"
+                                                                  src="https://cdn.star.nesdis.noaa.gov/GOES16/ABI/SECTOR/gm/Sandwich/2000x2000.jpg"
                                                                   alt="Gulf of Mexico Composite Satellite"
                                                                   style="max-width: 525px;"></a>
                                                                   </div>
@@ -1526,7 +1526,7 @@ type="application/javascript">
                                                                   Satellite </strong>
                                                                   <div><a href="https://www.star.nesdis.noaa.gov/GOES/sector_band.php?sat=G16&amp;sector=car&amp;band=13&amp;length=24"
                                                                   title="Click for looping image">
-                                                                  <img src="https://cdn.star.nesdis.noaa.gov/GOES16/ABI/SECTOR/car/Sandwich/20211171910_GOES16-ABI-car-Sandwich-2000x2000.jpg"
+                                                                  <img src="https://cdn.star.nesdis.noaa.gov/GOES16/ABI/SECTOR/car/Sandwich/2000x2000.jpg"
                                                                   alt="Caribbean Composite Satellite"
                                                                   style="border: none; -ms-interpolation-mode: bicubic; max-width: 525px;"></a><br>
                                                                   </div>
