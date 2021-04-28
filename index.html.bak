@@ -128,7 +128,7 @@ type="application/javascript">
                                     height="19" frameborder="0" width="343"></iframe></div>
                               </div>
                               <div style="text-align: center;"> <em>Forecast
-                                  Updated at 9:30 am Mon. Apr. 25, 2021</em><em></em></div>
+                                  Updated at 8:30 am Wed. Apr. 28, 2021</em><em></em></div>
                               <div style="text-align: center;">
                                 <div style="text-align: center;"><strong><br>
                                   </strong></div>
@@ -492,8 +492,7 @@ type="application/javascript">
                                               <br>
                                               <strong>Low Temperature for
                                                 Tuesday, April 27, 2021</strong><br>
-                                              11 at Wild Horse, NV<br>
-                                            </div>
+                                              11 at Wild Horse, NV</div>
                                           </div>
                                           <div style="text-align: left;"><br>
                                           </div>
@@ -1404,11 +1403,19 @@ type="application/javascript">
                                                                   src="https://www.nhc.noaa.gov/xgtwo/two_atl_2d0.png"
                                                                   alt="NHC Atlantic 2-Day Hurricane Outlook"></a></div>
                                                                   <div style="font-size: 12px;">
-                                                                  Graphic may
-                                                                  not update
+                                                                  This product
+                                                                  is updated at
+                                                                  approximately
+                                                                  2 AM, 8 AM, 2
+                                                                  PM, and 8 PM
+                                                                  EDT from May
+                                                                  15 to November
+                                                                  30. Graphic
+                                                                  may not update
                                                                   out-of-season--check
                                                                   date stamp for
-                                                                  currency. </div>
+                                                                  currency.<br>
+                                                                  </div>
                                                                   <br>
                                                                   <strong> 5-Day
                                                                   Tropical
@@ -1421,8 +1428,15 @@ type="application/javascript">
                                                                   style="border-width: thin; border-style: solid; width: 548px; height: 405px; max-width:525px;"></a>
                                                                   </div>
                                                                   <div style="font-size: 12px;">
-                                                                  Graphic may
-                                                                  not update
+                                                                  This product
+                                                                  is updated at
+                                                                  approximately
+                                                                  2 AM, 8 AM, 2
+                                                                  PM, and 8 PM
+                                                                  EDT from May
+                                                                  15 to November
+                                                                  30. Graphic
+                                                                  may not update
                                                                   out-of-season--check
                                                                   date stamp for
                                                                   currency. </div>
