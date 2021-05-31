@@ -9,6 +9,21 @@
     <title>Apex Wx Weather Information for Fort Kent, Maine &amp; Vicinity</title>
     <script src="https://cdnres.willyweather.com/widget/warning/loadView.html?id=125218"
 type="application/javascript">
+</script> <script>
+    var myDate = new Date();
+    var hrs = myDate.getHours();
+
+    var greet;
+
+    if (hrs < 12)
+        greet = 'Good Morning';
+    else if (hrs >= 12 && hrs <= 17)
+        greet = 'Good Afternoon';
+    else if (hrs >= 17 && hrs <= 24)
+        greet = 'Good Evening';
+
+    document.getElementById('lblGreetings').innerHTML =
+        '<b>' + greet + '</b> ;
 </script> <style>
     /* -------------------------------------
         INLINED WITH htmlemail.io/inline
@@ -99,7 +114,7 @@ type="application/javascript">
     }
     </style>
   </head>
-  <body class="" style="                                                                                                                                                                                       background-color: #f6f6f6; font-family: sans-serif; -webkit-font-smoothing: antialiased; font-size: 14px; line-height: 1.4; margin: 0; padding: 0; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;">
+  <body class="" style="                                                                                                                                                                                          background-color: #f6f6f6; font-family: sans-serif; -webkit-font-smoothing: antialiased; font-size: 14px; line-height: 1.4; margin: 0; padding: 0; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;">
     <table class="body" style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%; background-color: #f6f6f6;"
       cellspacing="0" cellpadding="0" border="0">
       <tbody>
@@ -123,12 +138,12 @@ type="application/javascript">
                               <h2 style="text-align: center;">Fort Kent &amp;
                                 the Upper Saint John Valley, Maine<br>
                                 Weather Information</h2>
-                              <div style="text-align: center;"> <label id="lblGreetings"></label><br>
+                              <div style="text-align: center;"><label id="lblGreetings"></label><br>
                                 <div> <iframe src="https://freesecure.timeanddate.com/clock/i7aykgoq/n23/ftb/tt0/ts1/ta1"
                                     height="19" frameborder="0" width="343"></iframe></div>
                               </div>
                               <div style="text-align: center;"> <em>Forecast
-                                  Updated at 10:30 am Sun. May 30, 2021</em><em></em></div>
+                                  Updated at 11:30 am Mon. May 31, 2021</em><em></em></div>
                               <div style="text-align: center;">
                                 <div style="text-align: center;"><strong><br>
                                   </strong></div>
@@ -223,56 +238,60 @@ type="application/javascript">
                                                   <div>
                                                     <div style="text-align: left;"><u><strong><a
                                                             name="short" id="short"></a>Short-Term
-                                                          Outlook: </strong></u><u><strong>Sunday
-                                                          -&nbsp; Tuesday</strong></u>
+                                                          Outlook: </strong></u><u><strong>Monday
+                                                          -&nbsp; Wednesday</strong></u>
                                                       <div style="text-align: left;">
                                                         <div style="text-align: left;"><br>
                                                         </div>
-                                                        High clouds will begin
-                                                        to move in this morning
-                                                        with mostly sunny skies
-                                                        becoming partly cloudy
-                                                        by this afternoon.
-                                                        Cloudy skies overspread
-                                                        the area tonight as a
-                                                        low pressure area tracks
-                                                        into the Gulf from the
-                                                        Mid-Atlantic region. </div>
-                                                      <div style="text-align: left;"><br>
-                                                      </div>
-                                                      <div style="text-align: left;">The
-                                                        low will move across
-                                                        east central portions of
-                                                        Maine Memorial Day
+                                                        The low will move across
+                                                        the east central
+                                                        portions of Maine today
                                                         before tracking into the
-                                                        Maritimes tomorrow
-                                                        evening. This system
-                                                        will bring widespread
-                                                        and much needed soaking
-                                                        rainfall to the state
-                                                        albeit at the expense of
-                                                        some Memorial Day
-                                                        holiday outdoor
-                                                        activities.</div>
+                                                        Maritimes this evening.
+                                                        So far, 0.61-inch of
+                                                        needed rainfall has been
+                                                        recorded by the PWS.
+                                                        Fort Kent, Frenchville,
+                                                        and Madawaska look to
+                                                        pick up between 0.50 and
+                                                        0.99-inch of rainfall
+                                                        with a swath from south
+                                                        central portions of the
+                                                        County and along the
+                                                        eastern border look to
+                                                        receive around 1 to
+                                                        1.5-inches of rain.</div>
                                                       <div style="text-align: left;"><br>
                                                       </div>
                                                       <div style="text-align: left;">
                                                         Rain will taper to
-                                                        showers Monday night as
-                                                        it moves into the
-                                                        Maritimes with showers
-                                                        expected to linger
-                                                        through Tuesday
-                                                        afternoon as a couple of
-                                                        weak troughs move across
-                                                        the Valley. Depending on
-                                                        the amount of daytime
-                                                        heating and atmospheric
-                                                        instability, an isolated
-                                                        thunderstorm or two
-                                                        could occur over
-                                                        northern Maine Tuesday
-                                                        afternoon.<br>
+                                                        showers
+                                                        after midnight as the
+                                                        low moves into the
+                                                        Maritimes and tracks
+                                                        away from the region. A
+                                                        weak trough is expected
+                                                        to cross the SJV Tuesday
+                                                        producing a chance for
+                                                        afternoon showers and
+                                                        some isolated
+                                                        thunderstorms. </div>
+                                                      <div style="text-align: left;"><br>
+                                                      </div>
+                                                      <div style="text-align: left;">High
+                                                        pressure southeast of
+                                                        Cape Cod will bring
+                                                        partly cloudy skies
+                                                        Tuesday night. A warm
+                                                        front will lift towards
+                                                        the region Wednesday
+                                                        bringing partly sunny
+                                                        skies and a chance for
+                                                        some scattered showers
+                                                        over the course of the
+                                                        day and isolated
+                                                        thunderstorm activity in
+                                                        the afternoon.<br>
                                                         <div style="text-align: left;"><br>
                                                           <div style="text-align: left;">
                                                             <div style="text-align: left;">
@@ -285,92 +304,54 @@ type="application/javascript">
                                                                   <div>
                                                                   <div>
                                                                   <div><strong>Today
-                                                                  &amp; Tonight</strong>
+                                                                  &amp; Tonight</strong><strong>
+                                                                  / Memorial Day</strong>
                                                                   <div>
-                                                                  <div>Mostly
-                                                                  sunny in the
-                                                                  morning then
-                                                                  becoming
-                                                                  partly cloudy
-                                                                  in the
-                                                                  afternoon with
-                                                                  a high around
-                                                                  64°. 40%
-                                                                  chance for
-                                                                  rain in the
-                                                                  afternoon.
-                                                                  Rainfall
-                                                                  totals less
-                                                                  than
-                                                                  1/10-inch.
-                                                                  East winds
-                                                                  this morning
-                                                                  becoming
-                                                                  southeast in
-                                                                  the afternoon
-                                                                  5 to 10 mph.</div>
-                                                                  <div><br>
-                                                                  </div>
-                                                                  Tonight,
-                                                                  cloudy with a
-                                                                  low near 44°.
-                                                                  Rain likely
-                                                                  with a 100%
-                                                                  chance for
-                                                                  precipitation.
-                                                                  Rainfall
-                                                                  totals close
-                                                                  to 1/2-inch.
-                                                                  East winds 0
-                                                                  to 5 mph.<br>
-                                                                  <div><br>
-                                                                  </div>
-                                                                  <div><strong>Monday,
-                                                                  May 31 /
-                                                                  Memorial Day</strong></div>
                                                                   <div>Cloudy
                                                                   with a 100%
                                                                   chance for
                                                                   rain. Rainfall
                                                                   amounts
-                                                                  between 1/4
-                                                                  and 1/2-inch.
-                                                                  High around
-                                                                  54° with east
+                                                                  around
+                                                                  1/4-inch. High
+                                                                  around 50°
+                                                                  with northeast
                                                                   winds 0 to 5
                                                                   mph shifting
-                                                                  to the
-                                                                  north-northwest
+                                                                  to the north
                                                                   in the
-                                                                  afternoon.</div>
+                                                                  afternoon
+                                                                  around 5 mph.</div>
                                                                   <div><br>
                                                                   <strong></strong></div>
-                                                                  Monday night,
+                                                                  Tonight,
                                                                   cloudy with a
                                                                   100% chance
                                                                   for rain
                                                                   tapering to
                                                                   showers after
                                                                   midnight.
+                                                                  Decreasing
+                                                                  cloudiness
+                                                                  after
+                                                                  midnight.
                                                                   Rainfall
-                                                                  totals close
-                                                                  to 1/4-inch.
-                                                                  Low around 44°
-                                                                  with northwest
-                                                                  winds 0 to 5
-                                                                  mph becoming
-                                                                  west after
-                                                                  midnight.<br>
+                                                                  totals around
+                                                                  1/4-inch or
+                                                                  so. Low around
+                                                                  44° with north
+                                                                  winds becoming
+                                                                  northwest0 to
+                                                                  5 mph.<br>
                                                                   <div><br>
                                                                   </div>
                                                                   <div><strong>Tuesday,
                                                                   June 1</strong></div>
-                                                                  <div>Mostly
+                                                                  <div>Partly
                                                                   cloudy in the
-                                                                  morning then
-                                                                  becoming
-                                                                  partly cloudy
-                                                                  in the
+                                                                  morning then a
+                                                                  mix of clouds
+                                                                  and sun in the
                                                                   afternoon with
                                                                   a 40% chance
                                                                   for showers
@@ -391,68 +372,12 @@ type="application/javascript">
                                                                   </div>
                                                                   Tuesday night,
                                                                   partly cloudy
-                                                                  with a 10%
+                                                                  with a 20%
                                                                   chance for
                                                                   showers. Low
                                                                   near 49° with
                                                                   west winds 0
-                                                                  to 5 mph.</div>
-                                                                  </div>
-                                                                  <div><br>
-                                                                  </div>
-                                                                  <div><u><strong><a
-                                                                  name="Medium"
-                                                                  id="Medium"></a>
-                                                                  Medium-Range
-                                                                  Outlook:
-                                                                  Wednesday
-                                                                  -&nbsp;
-                                                                  Saturday<br>
-                                                                  </strong></u></div>
-                                                                  </div>
-                                                                  </div>
-                                                                  </div>
-                                                                  </div>
-                                                                  </div>
-                                                                  </div>
-                                                                </div>
-                                                                <div style="text-align: left;">High
-                                                                  pressure to
-                                                                  the south will
-                                                                  build across
-                                                                  the area
-                                                                  Wednesday then
-                                                                  move east
-                                                                  Thursday. Low
-                                                                  pressure south
-                                                                  of the Great
-                                                                  Lakes will
-                                                                  track into New
-                                                                  England
-                                                                  Thursday into
-                                                                  Friday with
-                                                                  showers
-                                                                  expected
-                                                                  across the
-                                                                  Valley.
-                                                                  Showers taper
-                                                                  off in
-                                                                  frequency
-                                                                  Friday night
-                                                                  with partly
-                                                                  cloudy to
-                                                                  mostly cloudy
-                                                                  skies expected
-                                                                  Saturday along
-                                                                  with some
-                                                                  isolated
-                                                                  shower
-                                                                  activity as
-                                                                  high pressure
-                                                                  gradually
-                                                                  builds in from
-                                                                  the southwest.<br>
-                                                                  <div style="text-align: left;">
+                                                                  to 5 mph.<br>
                                                                   <div><br>
                                                                   </div>
                                                                   <div><strong>Wednesday,
@@ -463,39 +388,107 @@ type="application/javascript">
                                                                   mix of clouds
                                                                   and sun in the
                                                                   afternoon with
-                                                                  a 20% chance
-                                                                  for
+                                                                  a 40% chance
+                                                                  for shower and
+                                                                  some isolated
                                                                   afternoon
-                                                                  showers. High
-                                                                  around 75°
-                                                                  with west
+                                                                  thunderstorms.
+                                                                  Less than
+                                                                  1/10-inch rain
+                                                                  expected for
+                                                                  most
+                                                                  locations.
+                                                                  High around
+                                                                  75° with west
                                                                   winds 5 to 10
                                                                   mph.</div>
                                                                   <div><br>
                                                                   </div>
-                                                                  <div>Wednesday
+                                                                  Wednesday
                                                                   night, partly
                                                                   cloudy with a
-                                                                  30% chance for
+                                                                  20% chance for
                                                                   showers. Low
-                                                                  near 50° with
+                                                                  near 52° with
                                                                   southwest
                                                                   winds 0 to 5
                                                                   mph.</div>
+                                                                  </div>
+                                                                  <div><br>
+                                                                  </div>
+                                                                  <div><u><strong><a
+                                                                  name="Medium"
+                                                                  id="Medium"></a>
+                                                                  Medium-Range
+                                                                  Outlook:
+                                                                  Thursday
+                                                                  -&nbsp;Sunday<br>
+                                                                  </strong></u></div>
+                                                                  <div><u><strong><br>
+                                                                  </strong></u></div>
+                                                                  </div>
+                                                                  </div>
+                                                                  </div>
+                                                                  </div>
+                                                                  </div>
+                                                                  </div>
+                                                                </div>
+                                                                <div style="text-align: left;">A
+                                                                  warm front
+                                                                  will lift
+                                                                  across the
+                                                                  region
+                                                                  Thursday with
+                                                                  a chance for
+                                                                  showers,
+                                                                  especially in
+                                                                  the
+                                                                  afternoon.&nbsp;
+                                                                  A weakening
+                                                                  cold front
+                                                                  will approach
+                                                                  Friday and the
+                                                                  region will be
+                                                                  on the
+                                                                  backside of a
+                                                                  Bermuda high
+                                                                  in the
+                                                                  Atlantic. This
+                                                                  will result in
+                                                                  plenty of
+                                                                  moisture aloft
+                                                                  along with
+                                                                  increasing
+                                                                  temperatures
+                                                                  and humidity.
+                                                                  Fort Kent and
+                                                                  vicinity will
+                                                                  see plenty of
+                                                                  clouds,
+                                                                  showers, and a
+                                                                  chance for
+                                                                  isolated
+                                                                  afternoon
+                                                                  thunderstorms
+                                                                  through the
+                                                                  weekend.
+                                                                  <div style="text-align: left;">
                                                                   <div><br>
                                                                   </div>
                                                                   <div><strong>Thursday,
                                                                   June 3</strong></div>
                                                                   <div>Partly
-                                                                  cloudy in the
+                                                                  sunny in the
                                                                   morning then
                                                                   mostly cloudy
                                                                   in the
                                                                   afternoon with
-                                                                  a 40% chance
-                                                                  for showers.
-                                                                  High near 77°
-                                                                  with southwest
+                                                                  a 50% chance
+                                                                  for mainly
+                                                                  afternoon
+                                                                  showers. High
+                                                                  near 75° with
+                                                                  southwest
                                                                   winds 5 to 10
                                                                   mph.</div>
                                                                   <div><br>
@@ -504,9 +497,11 @@ type="application/javascript">
                                                                   night, mostly
                                                                   cloudy to
                                                                   overcast with
-                                                                  a 50% chance
-                                                                  for showers.
-                                                                  Low around 56°
+                                                                  a 60% chance
+                                                                  for showers
+                                                                  and isolated
+                                                                  thunderstorms.
+                                                                  Low around 57°
                                                                   with southwest
                                                                   winds 0 to 5
                                                                   mph.</div>
@@ -514,28 +509,31 @@ type="application/javascript">
                                                                   </div>
                                                                   <div><strong>Friday,
                                                                   June 4</strong></div>
-                                                                  <div>Partly
-                                                                  cloudy in the
-                                                                  morning then
-                                                                  mostly cloudy
-                                                                  in the
-                                                                  afternoon with
-                                                                  a 40% chance
-                                                                  for showers.
+                                                                  <div>Mostly
+                                                                  cloudy with a
+                                                                  50% chance for
+                                                                  showers and
+                                                                  isolated
+                                                                  afternoon
+                                                                  thunderstorms.
                                                                   High around
-                                                                  78° with
-                                                                  southwest
+                                                                  80° with west
                                                                   winds 5 to 10
                                                                   mph.</div>
                                                                   <div><br>
                                                                   </div>
                                                                   <div>Friday
-                                                                  night, partly
-                                                                  cloudy with a
-                                                                  20% chance for
-                                                                  showers. Low
-                                                                  near 58° with
-                                                                  southwest
+                                                                  night, mostly
+                                                                  cloudy early
+                                                                  then becoming
+                                                                  partly cloudy
+                                                                  with a 30%
+                                                                  chance for
+                                                                  showers and
+                                                                  isolated
+                                                                  thunderstorms.
+                                                                  Low near 58°
+                                                                  with southwest
                                                                   winds 0 to 5
                                                                   mph.<strong><br>
                                                                   </strong></div>
@@ -546,11 +544,14 @@ type="application/javascript">
                                                                   <div>Partly
                                                                   cloudy in the
                                                                   morning then
-                                                                  mostly cloudy
+                                                                  partly sunny
                                                                   in the
                                                                   afternoon with
-                                                                  a 20% chance
-                                                                  for showers.
+                                                                  a 40% chance
+                                                                  for showers
+                                                                  and isolated
+                                                                  afternoon
+                                                                  thunderstorms.
                                                                   High near 81°
                                                                   with southwest
                                                                   winds 10 to 15
@@ -562,17 +563,39 @@ type="application/javascript">
                                                                   cloudy with a
                                                                   30% chance for
                                                                   showers. Low
-                                                                  around 60°
-                                                                  with southwest
+                                                                  around 61°
+                                                                  with west
                                                                   winds 5 to 10
+                                                                  mph.</div>
+                                                                  <div><br>
+                                                                  </div>
+                                                                  <div><strong>Sunday,
+                                                                  June 6</strong></div>
+                                                                  <div>Partly
+                                                                  sunny with a
+                                                                  30% chance for
+                                                                  showers. High
+                                                                  around 85°
+                                                                  with west wind
+                                                                  s5 to 10 mph.</div>
+                                                                  <div><br>
+                                                                  </div>
+                                                                  <div>Sunday
+                                                                  night, partly
+                                                                  cloudy with a
+                                                                  20% chance for
+                                                                  showers. Low
+                                                                  around 65°
+                                                                  with southwest
+                                                                  winds 0 to 5
                                                                   mph.</div>
                                                                   <div><br>
                                                                   </div>
                                                                   <div><u><strong><a
                                                                   name="Long" id="Long"></a>Long-Range
-                                                                  Trends: Sun</strong></u><u><strong>.
-                                                                  June 6 -&nbsp;
-                                                                  Sat. June 12</strong></u><br>
+                                                                  Trends: Mon</strong></u><u><strong>.
+                                                                  June 7 -&nbsp;
+                                                                  Sun. June 13</strong></u><br>
                                                                   <br>
                                                                   Above normal
                                                                   temperatures
@@ -595,49 +618,48 @@ type="application/javascript">
                                                                   <div><strong><br>
                                                                   </strong> </div>
                                                                   <strong> </strong>
-                                                                  <div><em><strong>Severe
-                                                                  Thunderstorm
-                                                                  and Flooding
-                                                                  Threats
-                                                                  Continue in
-                                                                  the Southern
-                                                                  Plains; Heat
-                                                                  Wave Begins in
-                                                                  the West</strong></em><br>
-                                                                  Widely
-                                                                  scattered
+                                                                  <div><strong>Soggy
+                                                                  and Stormy in
+                                                                  the South
+                                                                  Plains; Summer
+                                                                  Heat in the
+                                                                  West</strong><br>
+                                                                  Strong to
                                                                   severe
                                                                   thunderstorms
-                                                                  and heavy
-                                                                  rains capable
-                                                                  of large hail,
-                                                                  severe gusts,
-                                                                  and flash
-                                                                  flooding are
-                                                                  possible
-                                                                  through
-                                                                  Memorial Day
-                                                                  over portions
-                                                                  of the
-                                                                  southern High
-                                                                  Plains. An
-                                                                  early-season
-                                                                  heat event
-                                                                  will begin to
-                                                                  impact
+                                                                  with damaging
+                                                                  winds, large
+                                                                  hail, and
+                                                                  heavy rain
+                                                                  will persist
+                                                                  in the South
+                                                                  Plains.
+                                                                  Additional
+                                                                  rain on
+                                                                  saturated
+                                                                  soils may
+                                                                  produce flash
+                                                                  flooding,
+                                                                  especially,
+                                                                  across
+                                                                  north-central
+                                                                  Texas. A heat
+                                                                  wave in the
+                                                                  West will
+                                                                  reach
+                                                                  dangerous
+                                                                  levels into
+                                                                  the triple
+                                                                  digits for
+                                                                  some
+                                                                  locations.
+                                                                  Elevated fire
+                                                                  weather
+                                                                  threats are in
+                                                                  place for
                                                                   portions of
                                                                   interior
-                                                                  California.
-                                                                  Well below
-                                                                  average
-                                                                  temperatures
-                                                                  will continue
-                                                                  across the
-                                                                  central/southern
-                                                                  Plains, as
-                                                                  well as the
-                                                                  Mid-Atlantic
-                                                                  and Northeast.</div>
+                                                                  California.</div>
                                                                   <div><br>
                                                                   </div>
                                                                   <div><a href="https://www.wpc.ncep.noaa.gov/discussions/hpcdiscussions.php?disc=pmdspd"
@@ -666,21 +688,21 @@ type="application/javascript">
 https://www.spc.noaa.gov/</a></div>
                                                                   <div><a href="https://www.spc.noaa.gov/"><br>
                                                                   </a></div>
-                                                                  Scattered
-                                                                  severe hail
-                                                                  and wind,
-                                                                  along with a
-                                                                  few tornadoes
-                                                                  are possible
-                                                                  across the
-                                                                  southern High
-                                                                  Plains. These
-                                                                  hazards are
-                                                                  expected to
-                                                                  peak during
-                                                                  the late
-                                                                  afternoon and
-                                                                  evening.<br>
+                                                                  A threat for
+                                                                  very large
+                                                                  hail and a few
+                                                                  tornadoes
+                                                                  should be
+                                                                  focused across
+                                                                  the Permian
+                                                                  Basin and
+                                                                  Pecos Valley
+                                                                  vicinity of
+                                                                  southeast New
+                                                                  Mexico and
+                                                                  west Texas
+                                                                  through about
+                                                                  sunset.<br>
                                                                   <div> <br>
                                                                   </div>
                                                                   <div>---------------------------
@@ -743,19 +765,21 @@ https://www.spc.noaa.gov/</a></div>
                                                                   </div>
                                                                   <em>High
                                                                   Temperature
-                                                                  for Saturday,
-                                                                  May 29, 2021</em><br>
-                                                                  107 at Death
+                                                                  for Sunday,
+                                                                  May 30, 2021</em><br>
+                                                                  115 at Death
                                                                   Valley, CA<br>
                                                                   <br>
                                                                   <em>Low
                                                                   Temperature
-                                                                  for Saturday,
-                                                                  May 29, 2021</em><br>
-                                                                  16 at Peter
-                                                                  Sinks, UT<br>
-                                                                  16 at Copper
-                                                                  Basin, ID</div>
+                                                                  for Sunday,
+                                                                  May 30, 2021</em><br>
+                                                                  22 at Stanley,
+                                                                  ID<br>
+                                                                  22 at 13 miles
+                                                                  north of White
+                                                                  Sulphur
+                                                                  Springs, MT</div>
                                                                 </div>
                                                               </div>
                                                             </div>
