@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Forecast Wall</title>
+    <script src="https://cdnres.willyweather.com/widget/warning/loadView.html?id=125218"
+type="application/javascript"></script>
+    <style>
+* {
+  box-sizing: border-box;
+}
+
+.column {
+  float: left;
+  width: 50%;
+  padding: 5px;
+}
+
+/* Clearfix (clear floats) */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 500px) {
+  .column {
+    width: 100%;
+  }
+}
+  }
+  
+  /* navigation bar */
+  .nav{
+    border:1px solid #ccc;
+    border-width:1px 0;
+    list-style:none;
+    margin:0;
+    padding:0;
+    text-align:center;
+}
+.nav li{
+    display:inline;
+}
+.nav a{
+    display:inline-block;
+    padding:10px;
+}
+      
+body {
+	font-family: Arial, Helvetica, sans-serif ;
+	background-color: #F8F8F8;
+}
+img {
+	max-width: 100% ;
+	width: auto ;
+	height: auto ;
+}
+input, select, button, textarea {
+	max-width: 100% ;
+}
+meter, progress, output {
+	max-width: 100% ;
+}
+       div.a {
+  font-size: 15px;
+}    
+</style> </head>
+  <body>
+    <h2 style="text-align: center;">Forecast Charts</h2>
+    <p></p>
+    <p></p>
+    <div style="text-align: center;">
+      <ul class="nav">
+        <li style="text-align: center;"><a href="https://apexwx.github.io/">Main
+            Page</a></li>
+        <li style="text-align: center;"><a href="#48">48-Hour</a></li>
+        <li style="text-align: center;"><a href="#Day3-7">Days 3-7</a></li>
+        <li style="text-align: center;"><a href="#ocean">48-96hr Ocean</a></li>
+        <li style="text-align: center;"><a href="#Temp7">7-Day Temperatures</a></li>
+        <li style="text-align: center;"><a href="#Precip7">7-Day Precipitation</a>
+        </li>
+        <li><a href="#severe8">Severe Weather</a></li>
+        <li><a href="#snow7">7-Day Snowfall</a></li>
+        <li><a href="#climo">6-10 / 8-14-Day Climate Outlooks</a></li>
+      </ul>
+    </div>
+    <br>
+    <div class="a"> Click maps and charts for larger versions, loops, etc. Most
+      graphics update automatically--check timestamps for currency. During
+      updates, maintenance, network outages, etc., graphics may be temporarily
+      unavailable. Graphic sources include NOAA, NWS, University of Wisconsin,
+      Weather Underground, and various other organizations. All products
+      produced by the US government or affiliated organizations are public
+      domain unless otherwise labeled.<br>
+      <br>
+      <u>Note</u>: For US Eastern Time on maps and charts, subtract 4 hours
+      (Daylight Saving Time) or 5 hours (Standard Time) from UTC / Z timestamp
+      on the maps and charts. UTC / Z / GMT = Coordinated Universal Time / Zulu
+      Time / Greenwich Mean Time -- Time is based on 0° longitude running
+      through the Royal Observatory in Greenwich, London, UK. It is the same all
+      year round and is not affected by Daylight Saving Time (aka Summer Time)
+      clock changes. Using UTC allows weather services and others to avoid time
+      zone conversions. Visit <a title="timeanddate.com" href="https://www.timeanddate.com/">timeanddate.com</a>
+      for more time zone conversion information and additional time-related
+      data.</div>
+    <br>
+    <br>
+    <table style="width: 50%; text-align: left; margin-left: auto; margin-right: auto;"
+      border="0">
+      <tbody>
+        <tr align="center">
+          <td rowspan="1" colspan="3"><strong>Current Time US Eastern and UTC /
+              Z</strong></td>
+        </tr>
+        <tr>
+          <td style="text-align: center;"><strong>ET 12-Hour</strong></td>
+          <td style="text-align: center;"><strong>ET 24-Hour</strong></td>
+          <td style="text-align: center;"><strong>UTC / Z</strong></td>
+        </tr>
+        <tr>
+          <td style="text-align: center; width: 181px;"><br>
+            <iframe src="https://freesecure.timeanddate.com/clock/i7b14drd/n5278/ts1/ta1"
+              height="19" frameborder="0" width="126"></iframe><br>
+          </td>
+          <td style="text-align: center; width: 146px;"><br>
+            <iframe src="https://freesecure.timeanddate.com/clock/i7athxrb/n5278/th1/ts1/ta1"
+              height="19" frameborder="0" width="69"></iframe><br>
+          </td>
+          <td style="text-align: center; width: 167px; border-style: none;"><br>
+            <iframe src="https://freesecure.timeanddate.com/clock/i7allsch/th1/ts1/ta1"
+              height="19" frameborder="0" width="70"></iframe><br>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <br>
+    <br>
+    <div class="row">
+      <div class="column">
+        <div style="text-align: center;"><strong><a name="48" id="48"></a>WPC/NDFD
+            Surface Forecast 12hr</strong></div>
+        <a href="https://www.wpc.ncep.noaa.gov/basicwx/94fndfd.gif" title="Click for larger image"><img
+            src="https://www.wpc.ncep.noaa.gov/basicwx/94fndfd.gif" alt="WPC/NDFD Surface Forecast 12hr"
+            style="width: 100%; border-width: 1px; border-style: solid;"></a> </div>
+      <div class="column" style="text-align: center;"><strong>WPC/NDFD Surface
+          Forecast 24hr</strong><a href="https://www.wpc.ncep.noaa.gov/basicwx/96fndfd.gif"
+          title="Click for larger image"><img src="https://www.wpc.ncep.noaa.gov/basicwx/96fndfd.gif"
+            alt="WPC/NDFD Surface Forecast 24hr" style="width: 100%; border-width: 1px; border-style: solid;"></a>
+      </div>
+    </div>
+    <br>
+    <br>
+    <a href="#top"><i>Top of Page</i><br>
+    </a><br>
+    <div class="row">
+      <div class="column">
+        <div style="text-align: center;"><strong>WPC/NDFD Surface Forecast 36hr</strong></div>
+        <a href="https://www.wpc.ncep.noaa.gov/basicwx/98fndfd.gif" title="Click for larger image"><img
+            src="https://www.wpc.ncep.noaa.gov/basicwx/98fndfd.gif" alt="WPC/NDFD Surface Forecast 36hr"
+            style="width: 100%; border-width: 1px; border-style: solid;"></a> </div>
+      <div class="column" style="text-align: center;"><strong>WPC/NDFD Surface
+          Forecast 48hr</strong><a href="https://www.wpc.ncep.noaa.gov/basicwx/96fndfd.gif"
+          title="Click for larger image"><img src="https://www.wpc.ncep.noaa.gov/basicwx/96fndfd.gif"
+            alt="WPC/NDFD Surface Forecast 24hr" style="width: 100%; border-width: 1px; border-style: solid;"></a>
+      </div>
+    </div>
+    <br>
+    <br>
+    <a href="#top"><i>Top of Page</i><br>
+    </a><br>
+    <div class="row">
+      <div class="column">
+        <div style="text-align: center;"><strong><a name="Day3-7" id="Day3-7"></a>NOAA
+            500MB Map Forecast Day 3</strong></div>
+        <a href="https://www.wpc.ncep.noaa.gov/medr/d3500wbg.gif" title="Click for larger image"><img
+            src="https://www.wpc.ncep.noaa.gov/medr/d3500wbg.gif" alt="NOAA 500MB Map Forecast Day 3"
+            style="width: 100%; border-width: 1px; border-style: solid;"></a> </div>
+      <div class="column" style="text-align: center;"><strong>NOAA Surface Map
+          Forecast Day 3</strong><a href="https://www.wpc.ncep.noaa.gov/medr/9jhwbg_conus.gif"
+          title="Click for larger image"><img src="https://www.wpc.ncep.noaa.gov/medr/9jhwbg_conus.gif"
+            alt="NOAA Surface Map Forecast Day 3" style="width: 100%; border-width: 1px; border-style: solid;"></a>
+      </div>
+    </div>
+    <br>
+    <br>
+    <a href="#top"><i>Top of Page</i><br>
+    </a><br>
+    <div class="row">
+      <div class="column">
+        <div style="text-align: center;"><strong>NOAA 500MB Map Forecast Day 4<br>
+          </strong></div>
+        <a href="https://www.wpc.ncep.noaa.gov/medr/d4500wbg.gif" title="Click for larger image"><img
+            src="https://www.wpc.ncep.noaa.gov/medr/d4500wbg.gif" alt="NOAA 500MB Map Forecast Day 4"
+            style="width: 100%; border-width: 1px; border-style: solid;"></a> </div>
+      <div class="column" style="text-align: center;"><strong>NOAA Surface Map
+          Forecast Day 4</strong><a href="https://www.wpc.ncep.noaa.gov/medr/9jhwbg_conus.gif"
+          title="Click for larger image"><img src="https://www.wpc.ncep.noaa.gov/medr/9khwbg_conus.gif"
+            alt="NOAA Surface Map Forecast Day 4" style="width: 100%; border-width: 1px; border-style: solid;"></a>
+      </div>
+    </div>
+    <br>
+    <br>
+    <a href="#top"><i>Top of Page</i><br>
+    </a><br>
+    <div class="row">
+      <div class="column">
+        <div style="text-align: center;"><strong>NOAA 500MB Map Forecast Day 5<br>
+          </strong></div>
+        <a href="https://www.wpc.ncep.noaa.gov/medr/d5500wbg.gif" title="Click for larger image"><img
+            src="https://www.wpc.ncep.noaa.gov/medr/d5500wbg.gif" alt="NOAA 500MB Map Forecast Day 5"
+            style="width: 100%; border-width: 1px; border-style: solid;"></a> </div>
+      <div class="column" style="text-align: center;"><strong>NOAA Surface Map
+          Forecast Day 5</strong><a href="https://www.wpc.ncep.noaa.gov/medr/9jhwbg_conus.gif"
+          title="Click for larger image"><img src="https://www.wpc.ncep.noaa.gov/medr/9lhwbg_conus.gif"
+            alt="NOAA Surface Map Forecast Day 5" style="width: 100%; border-width: 1px; border-style: solid;"></a>
+      </div>
+    </div>
+    <br>
+    <br>
+    <a href="#top"><i>Top of Page</i><br>
+    </a><br>
+    <div class="row">
+      <div class="column">
+        <div style="text-align: center;"><strong>NOAA 500MB Map Forecast Day 6<br>
+          </strong></div>
+        <a href="https://www.wpc.ncep.noaa.gov/medr/d5500wbg.gif" title="Click for larger image"><img
+            src="https://www.wpc.ncep.noaa.gov/medr/d6500wbg.gif" alt="NOAA 500MB Map Forecast Day 6"
+            style="width: 100%; border-width: 1px; border-style: solid;"></a> </div>
+      <div class="column" style="text-align: center;"><strong>NOAA Surface Map
+          Forecast Day 6</strong><a href="https://www.wpc.ncep.noaa.gov/medr/9mhwbg_conus.gif"
+          title="Click for larger image"><img src="https://www.wpc.ncep.noaa.gov/medr/9mhwbg_conus.gif"
+            alt="NOAA Surface Map Forecast Day 6" style="width: 100%; border-width: 1px; border-style: solid;"></a>
+      </div>
+    </div>
+    <br>
+    <br>
+    <a href="#top"><i>Top of Page</i><br>
+    </a><br>
+    <div class="row">
+      <div class="column">
+        <div style="text-align: center;"><strong>NOAA 500MB Map Forecast Day 7<br>
+          </strong></div>
+        <a href="https://www.wpc.ncep.noaa.gov/medr/d5500wbg.gif" title="Click for larger image"><img
+            src="https://www.wpc.ncep.noaa.gov/medr/d7500wbg.gif" alt="NOAA 500MB Map Forecast Day 7"
+            style="width: 100%; border-width: 1px; border-style: solid;"></a> </div>
+      <div class="column" style="text-align: center;"><strong>NOAA Surface Map
+          Forecast Day 7</strong><a href="https://www.wpc.ncep.noaa.gov/medr/9nhwbg_conus.gif"
+          title="Click for larger image"><img src="https://www.wpc.ncep.noaa.gov/medr/9nhwbg_conus.gif"
+            alt="NOAA Surface Map Forecast Day 7" style="width: 100%; border-width: 1px; border-style: solid;"></a>
+      </div>
+    </div>
+    <br>
+    <br>
+    <a href="#top"><i>Top of Page</i><br>
+    </a><br>
+    <div class="row">
+      <div class="column">
+        <div style="text-align: center;"><strong><a name="ocean" id="ocean"></a>OPC
+            48HR Forecast Pacific</strong> </div>
+        <a href="https://ocean.weather.gov/shtml/P_48hrsfc.gif" title="Click for larger image"><img
+            src="https://ocean.weather.gov/shtml/P_48hrsfc.gif" alt="OPC 48HR Forecast Pacific"
+            style="width: 100%; border-width: 1px; border-style: solid;"></a> </div>
+      <div class="column" style="text-align: center;"><strong>OPC 48HR Forecast
+          Atlantic</strong><a href="https://www.wpc.ncep.noaa.gov/medr/9nhwbg_conus.gif"
+          title="Click for larger image"><img src="https://ocean.weather.gov/shtml/A_48hrsfc.gif"
+            alt="OPC 48HR Forecast Atlantic" style="width: 100%; border-width: 1px; border-style: solid;"></a>
+      </div>
+    </div>
+    <br>
+    <br>
+    <a href="#top"><i>Top of Page</i><br>
+    </a><br>
+    <div class="row">
+      <div class="column">
+        <div style="text-align: center;"><strong>OPC 96HR Forecast Pacific</strong>
+        </div>
+        <a href="https://ocean.weather.gov/shtml/P_96hrsfc.gif" title="Click for larger image"><img
+            src="https://ocean.weather.gov/shtml/P_96hrsfc.gif" alt="OPC 96HR Forecast Pacific"
+            style="width: 100%; border-width: 1px; border-style: solid;"></a> </div>
+      <div class="column" style="text-align: center;"><strong>OPC 96HR Forecast
+          Atlantic</strong><a href="https://ocean.weather.gov/shtml/A_96hrsfc.gif"
+          title="Click for larger image"><img src="https://ocean.weather.gov/shtml/A_96hrsfc.gif"
+            alt="OPC 96HR Forecast Atlantic" style="width: 100%; border-width: 1px; border-style: solid;"></a>
+      </div>
+    </div>
+    <br>
+    <br>
+    <a href="#top"><i>Top of Page</i><br>
+    </a>
+    <p><a href="#top"> </a></p>
+    <em>Depending on time of day and product release these High/Low images may
+      misalign at times</em><br>
+    <div class="row">
+      <div class="column">
+        <div style="text-align: left;"><strong></strong><strong><br>
+          </strong>
+          <div style="text-align: center;"><strong><a name="Temp7" id="Temp7"></a>NWS
+              Forecast High Temperatures Day 1</strong><a href="https://graphical.weather.gov/images/conus/MaxT1_conus.png"
+              title="Click for larger image"><img src="https://graphical.weather.gov/images/conus/MaxT1_conus.png"
+                alt="NWS Forecast High Temperatures Day 1" style="width: 100%; border-width: 1px; border-style: solid;"></a></div>
+        </div>
+      </div>
+      <div class="column" style="text-align: center;"><strong></strong>
+        <center><strong><br>
+            NWS Forecast Low Temperatures Day 1</strong><a href="https://ocean.weather.gov/shtml/A_96hrsfc.gif"
+            title="Click for larger image"><img src="https://graphical.weather.gov/images/conus/MinT1_conus.png"
+              alt="NWS Forecast Low Temperatures Day 1" style="width: 100%; border-width: 1px; border-style: solid;"></a>
+        </center>
+      </div>
+    </div>
+    <br>
+    <br>
+    <a href="#top"><i>Top of Page</i><br>
+    </a><br>
+    <div class="row">
+      <div class="column">
+        <div style="text-align: center;"><strong>NWS Forecast High Temperatures
+            Day 2</strong> </div>
+        <a href="https://graphical.weather.gov/images/conus/MaxT2_conus.png" title="Click for larger image"><img
+            src="https://graphical.weather.gov/images/conus/MaxT2_conus.png" alt="NWS Forecast High Temperatures Day 2"
+            style="width: 100%; border-width: 1px; border-style: solid;"></a> </div>
+      <div class="column" style="text-align: center;"><strong></strong>
+        <center><strong>NWS Forecast Low Temperatures Day 2</strong><a href="https://graphical.weather.gov/images/conus/MinT2_conus.png"
+            title="Click for larger image"><img src="https://graphical.weather.gov/images/conus/MinT2_conus.png"
+              alt="NWS Forecast Low Temperatures Day 2" style="width: 100%; border-width: 1px; border-style: solid;"></a>
+        </center>
+      </div>
+    </div>
+    <br>
+    <br>
+    <a href="#top"><i>Top of Page</i><br>
+    </a><br>
+    <div class="row">
+      <div class="column">
+        <div style="text-align: center;"><strong>NWS Forecast High Temperatures
+            Day 3</strong> </div>
+        <a href="https://graphical.weather.gov/images/conus/MaxT3_conus.png" title="Click for larger image"><img
+            src="https://graphical.weather.gov/images/conus/MaxT3_conus.png" alt="NWS Forecast High Temperatures Day 3"
+            style="width: 100%; border-width: 1px; border-style: solid;"></a> </div>
+      <div class="column" style="text-align: center;"><strong></strong>
+        <center><strong>NWS Forecast Low Temperatures Day 3</strong><a href="https://graphical.weather.gov/images/conus/MinT3_conus.png"
+            title="Click for larger image"><img src="https://graphical.weather.gov/images/conus/MinT3_conus.png"
+              alt="NWS Forecast Low Temperatures Day 3" style="width: 100%; border-width: 1px; border-style: solid;"></a>
+        </center>
+      </div>
+    </div>
+    <br>
+    <br>
+    <a href="#top"><i>Top of Page</i><br>
+    </a><br>
+    <div class="row">
+      <div class="column">
+        <div style="text-align: center;"><strong>NWS Forecast High Temperatures
+            Day 4</strong> </div>
+        <a href="https://graphical.weather.gov/images/conus/MaxT4_conus.png" title="Click for larger image"><img
+            src="https://graphical.weather.gov/images/conus/MaxT4_conus.png" alt="NWS Forecast High Temperatures Day 4"
+            style="width: 100%; border-width: 1px; border-style: solid;"></a> </div>
+      <div class="column" style="text-align: center;"><strong></strong>
+        <center><strong>NWS Forecast Low Temperatures Day 4</strong><a href="https://graphical.weather.gov/images/conus/MinT4_conus.png"
+            title="Click for larger image"><img src="https://graphical.weather.gov/images/conus/MinT4_conus.png"
+              alt="NWS Forecast Low Temperatures Day 4" style="width: 100%; border-width: 1px; border-style: solid;"></a>
+        </center>
+      </div>
+    </div>
+    <br>
+    <br>
+    <a href="#top"><i>Top of Page</i><br>
+    </a><br>
+    <div class="row">
+      <div class="column">
+        <div style="text-align: center;"><strong>NWS Forecast High Temperatures
+            Day 5</strong> </div>
+        <a href="https://graphical.weather.gov/images/conus/MaxT5_conus.png" title="Click for larger image"><img
+            src="https://graphical.weather.gov/images/conus/MaxT5_conus.png" alt="NWS Forecast High Temperatures Day 5"
+            style="width: 100%; border-width: 1px; border-style: solid;"></a> </div>
+      <div class="column" style="text-align: center;"><strong></strong>
+        <center><strong>NWS Forecast Low Temperatures Day 5</strong><a href="https://graphical.weather.gov/images/conus/MinT5_conus.png"
+            title="Click for larger image"><img src="https://graphical.weather.gov/images/conus/MinT5_conus.png"
+              alt="NWS Forecast Low Temperatures Day 5" style="width: 100%; border-width: 1px; border-style: solid;"></a>
+        </center>
+      </div>
+    </div>
+    <br>
+    <br>
+    <a href="#top"><i>Top of Page</i><br>
+    </a><br>
+    <div class="row">
+      <div class="column">
+        <div style="text-align: center;"><strong>NWS Forecast High Temperatures
+            Day 6</strong> </div>
+        <a href="https://graphical.https://graphical.weather.gov/images/conus/MaxT6_conus.png.gov/images/conus/MaxT5_conus.png"
+          title="Click for larger image"><img src="https://graphical.weather.gov/images/conus/MaxT6_conus.png"
+            alt="NWS Forecast High Temperatures Day 6" style="width: 100%; border-width: 1px; border-style: solid;"></a>
+      </div>
+      <div class="column" style="text-align: center;"><strong></strong>
+        <center><strong>NWS Forecast Low Temperatures Day 6</strong><a href="https://graphical.weather.gov/images/conus/MinT6_conus.png"
+            title="Click for larger image"><img src="https://graphical.weather.gov/images/conus/MinT6_conus.png"
+              alt="NWS Forecast Low Temperatures Day 6" style="width: 100%; border-width: 1px; border-style: solid;"></a>
+        </center>
+      </div>
+    </div>
+    <br>
+    <br>
+    <a href="#top"><i>Top of Page</i><br>
+    </a><br>
+    <div class="row">
+      <div class="column">
+        <div style="text-align: center;"><strong>NWS Forecast High Temperatures
+            Day 7</strong> </div>
+        <a href="https://graphical.weather.gov/images/conus/MaxT7_conus.png" title="Click for larger image"><img
+            src="https://graphical.weather.gov/images/conus/MaxT7_conus.png" alt="NWS Forecast High Temperatures Day 7"
+            style="width: 100%; border-width: 1px; border-style: solid;"></a> </div>
+      <div class="column" style="text-align: center;"><strong></strong>
+        <center><strong>NWS Forecast Low Temperatures Day 7</strong><a href="https://graphical.weather.gov/images/conus/MinT7_conus.png"
+            title="Click for larger image"><img src="https://graphical.weather.gov/images/conus/MinT7_conus.png"
+              alt="NWS Forecast Low Temperatures Day 7" style="width: 100%; border-width: 1px; border-style: solid;"></a>
+        </center>
+      </div>
+    </div>
+    <br>
+    <br>
+    <a href="#top"><i>Top of Page</i><br>
+    </a><br>
+    <div class="row">
+      <div class="column">
+        <div style="text-align: center;"><strong><a name="Precip7" id="Precip7"></a>NOAA
+            Precipitation Forecast Day 1</strong> </div>
+        <a href="https://www.wpc.ncep.noaa.gov/qpf/fill_94qwbg.gif" title="Click for larger image"><img
+            src="https://www.wpc.ncep.noaa.gov/qpf/fill_94qwbg.gif" alt="NOAA QPF Forecasts Day 1"
+            style="width: 100%; border-width: 1px; border-style: solid;"></a> </div>
+      <div class="column" style="text-align: center;"><strong></strong>
+        <center><strong>NOAA Precipitation Forecast Day 2</strong><a href="https://www.wpc.ncep.noaa.gov/qpf/fill_98qwbg.gif"
+            title="Click for larger image"><img src="https://www.wpc.ncep.noaa.gov/qpf/fill_98qwbg.gif"
+              alt="NOAA Precipitation Forecasts Day 2" style="width: 100%; border-width: 1px; border-style: solid;"></a>
+        </center>
+      </div>
+    </div>
+    <br>
+    <br>
+    <a href="#top"><i>Top of Page</i><br>
+    </a><br>
+    <div class="row">
+      <div class="column">
+        <div style="text-align: center;"><strong>NOAA Precipitation Forecast Day
+            3</strong> </div>
+        <a href="https://www.wpc.ncep.noaa.gov/qpf/fill_94qwbg.gif" title="Click for larger image"><img
+            src="https://www.wpc.ncep.noaa.gov/qpf/fill_99qwbg.gif" alt="NOAA QPF Forecasts Day 3"
+            style="width: 100%; border-width: 1px; border-style: solid;"></a> </div>
+      <div class="column" style="text-align: center;"><strong></strong>
+        <center><strong>NOAA Precipitation Forecast Day 4 &amp; 5</strong><a href="https://www.wpc.ncep.noaa.gov/qpf/95ep48iwbg_fill.gif"
+            title="Click for larger image"><img src="https://www.wpc.ncep.noaa.gov/qpf/95ep48iwbg_fill.gif"
+              alt="NOAA Precipitation Forecasts Day 4 &amp; 5" style="width: 100%; border-width: 1px; border-style: solid;"></a>
+        </center>
+      </div>
+    </div>
+    <br>
+    <br>
+    <a href="#top"><i>Top of Page</i><br>
+    </a><br>
+    <div class="row">
+      <div class="column">
+        <div style="text-align: center;"><strong>NOAA Precipitation Forecast Day
+            6 &amp; 7</strong> </div>
+        <a href="https://www.wpc.ncep.noaa.gov/qpf/97ep48iwbg_fill.gif" title="Click for larger image"><img
+            src="https://www.wpc.ncep.noaa.gov/qpf/97ep48iwbg_fill.gif" alt="NOAA QPF Forecasts Day 6 &amp; 7"
+            style="width: 100%; border-width: 1px; border-style: solid;"></a> </div>
+      <div class="column" style="text-align: center;"><strong></strong>
+        <center><strong>NOAA Precipitation Forecast Day 7 Total</strong><a href="mailto:https://www.wpc.ncep.noaa.gov/qpf/p168i.gif"
+            title="Click for larger image"><img src="https://www.wpc.ncep.noaa.gov/qpf/p168i.gif"
+              alt="NOAA Precipitation Forecasts Day 7 Total" style="width: 100%; border-width: 1px; border-style: solid;"></a>
+        </center>
+      </div>
+    </div>
+    <br>
+    <br>
+    <a href="#top"><i>Top of Page</i><br>
+    </a><br>
+    <div class="row">
+      <div class="column">
+        <div style="text-align: center;"><strong>WPC Excessive Rainfall Outlook
+            Day 1</strong> </div>
+        <a href="https://www.wpc.ncep.noaa.gov/qpf/94ewbg.gif" title="Click for larger image"><img
+            src="https://www.wpc.ncep.noaa.gov/qpf/94ewbg.gif" alt="WPC Excessive Rainfall Outlook Day 1"
+            style="width: 100%; border-width: 1px; border-style: solid;"></a> </div>
+      <div class="column" style="text-align: center;"><strong></strong>
+        <center><strong>WPC Excessive Rainfall Outlook Day 2</strong><a href="mailto:https://www.wpc.ncep.noaa.gov/qpf/98ewbg.gif"
+            title="Click for larger image"><img src="https://www.wpc.ncep.noaa.gov/qpf/98ewbg.gif"
+              alt="WPC Excessive Rainfall Outlook Day 2" style="width: 100%; border-width: 1px; border-style: solid;"></a>
+        </center>
+      </div>
+    </div>
+    <br>
+    <br>
+    <a href="#top"><i>Top of Page</i><br>
+    </a><br>
+    <div class="row">
+      <div class="column">
+        <div style="text-align: center;"><strong><a name="severe8" id="severe8"></a>SPC
+            Severe Thunderstorm Outlook Day 1</strong> </div>
+        <a href="https://www.spc.noaa.gov/products/outlook/day1otlk.gif" title="Click for larger image"><img
+            src="https://www.spc.noaa.gov/products/outlook/day1otlk.gif" alt="SPC Severe Thunderstorm Outlook Day 1"
+            style="width: 100%; border-width: 1px; border-style: solid;"></a> </div>
+      <div class="column" style="text-align: center;"><strong></strong>
+        <center><strong>SPC Severe Thunderstorm Outlook Day 2</strong><a href="mailto:https://www.spc.noaa.gov/products/outlook/day2otlk.gif"
+            title="Click for larger image"><img src="https://www.spc.noaa.gov/products/outlook/day2otlk.gif"
+              alt="SPC Severe Thunderstorm Outlook Day 2" style="width: 100%; border-width: 1px; border-style: solid;"></a>
+        </center>
+      </div>
+    </div>
+    <br>
+    <br>
+    <a href="#top"><i>Top of Page</i><br>
+    </a><br>
+    <div class="row">
+      <div class="column">
+        <div style="text-align: center;"><strong>SPC Severe Thunderstorm Outlook
+            Day 3</strong> </div>
+        <a href="https://www.spc.noaa.gov/products/outlook/day3otlk.gif" title="Click for larger image"><img
+            src="https://www.spc.noaa.gov/products/outlook/day3otlk.gif" alt="SPC Severe Thunderstorm Outlook Day 3"
+            style="width: 100%; border-width: 1px; border-style: solid;"></a> </div>
+      <div class="column" style="text-align: center;"><strong></strong>
+        <center><strong>SPC Severe Thunderstorm Outlook Day 4</strong><a href="mailto:https://www.spc.noaa.gov/products/exper/day4-8/day4prob.gif"
+            title="Click for larger image"><img src="https://www.spc.noaa.gov/products/exper/day4-8/day4prob.gif"
+              alt="SPC Severe Thunderstorm Outlook Day 4" style="width: 100%; border-width: 1px; border-style: solid;"></a>
+        </center>
+      </div>
+    </div>
+    <br>
+    <br>
+    <a href="#top"><i>Top of Page</i><br>
+    </a><br>
+    <div class="row">
+      <div class="column">
+        <div style="text-align: center;"><strong>SPC Severe Thunderstorm Outlook
+            Day 5</strong> </div>
+        <a href="https://www.spc.noaa.gov/products/exper/day4-8/day5prob.gif" title="Click for larger image"><img
+            src="https://www.spc.noaa.gov/products/exper/day4-8/day5prob.gif" alt="SPC Severe Thunderstorm Outlook Day 5"
+            style="width: 100%; border-width: 1px; border-style: solid;"></a> </div>
+      <div class="column" style="text-align: center;"><strong></strong>
+        <center><strong>SPC Severe Thunderstorm Outlook Day 6</strong><a href="mailto:https://www.spc.noaa.gov/products/exper/day4-8/day4prob.gif"
+            title="Click for larger image"><img src="https://www.spc.noaa.gov/products/exper/day4-8/day6prob.gif"
+              alt="SPC Severe Thunderstorm Outlook Day 6" style="width: 100%; border-width: 1px; border-style: solid;"></a>
+        </center>
+      </div>
+    </div>
+    <br>
+    <br>
+    <a href="#top"><i>Top of Page</i><br>
+    </a><br>
+    <div class="row">
+      <div class="column">
+        <div style="text-align: center;"><strong>SPC Severe Thunderstorm Outlook
+            Day 7</strong> </div>
+        <a href="https://www.spc.noaa.gov/products/exper/day4-8/day7prob.gif" title="Click for larger image"><img
+            src="https://www.spc.noaa.gov/products/exper/day4-8/day7prob.gif" alt="SPC Severe Thunderstorm Outlook Day 7"
+            style="width: 100%; border-width: 1px; border-style: solid;"></a> </div>
+      <div class="column" style="text-align: center;"><strong></strong>
+        <center><strong>SPC Severe Thunderstorm Outlook Day 8</strong><a href="mailto:https://www.spc.noaa.gov/products/exper/day4-8/day8prob.gif"
+            title="Click for larger image"><img src="https://www.spc.noaa.gov/products/exper/day4-8/day8prob.gif"
+              alt="SPC Severe Thunderstorm Outlook Day 8" style="width: 100%; border-width: 1px; border-style: solid;"></a>
+        </center>
+      </div>
+    </div>
+    <br>
+    <br>
+    <a href="#top"><i>Top of Page</i><br>
+    </a><br>
+    <div class="row">
+      <div class="column">
+        <div style="text-align: center;"><strong><a name="snow7" id="snow7"></a>NOAA
+            Winter Outlook Day 1 Snow &gt; 4"</strong> </div>
+        <a href="https://www.wpc.ncep.noaa.gov/wwd/day1_psnow_gt_04.gif" title="Click for larger image"><img
+            src="https://www.wpc.ncep.noaa.gov/wwd/day1_psnow_gt_04.gif" alt="NOAA Winter Outlook Day 1 Snow &gt; 4&quot;"
+            style="width: 100%; border-width: 1px; border-style: solid;"></a> </div>
+      <div class="column" style="text-align: center;"><strong></strong>
+        <center><strong>NOAA Winter Outlook Day 1 Ice &gt; 0.25"</strong><a href="mailto:https://www.wpc.ncep.noaa.gov/wwd/day1_pice_gt_25.gif"
+            title="Click for larger image"><img src="https://www.wpc.ncep.noaa.gov/wwd/day1_pice_gt_25.gif"
+              alt="NOAA Winter Outlook Day 1 Ice &gt; 0.25&quot;" style="width: 100%; border-width: 1px; border-style: solid;"></a>
+        </center>
+      </div>
+    </div>
+    <br>
+    <br>
+    <a href="#top"><i>Top of Page</i><br>
+    </a><br>
+    <div class="row">
+      <div class="column">
+        <div style="text-align: center;"><strong>NOAA Winter Outlook Day 2 Snow
+            &gt; 4"</strong> </div>
+        <a href="https://www.wpc.ncep.noaa.gov/wwd/day2_psnow_gt_04.gif" title="Click for larger image"><img
+            src="https://www.wpc.ncep.noaa.gov/wwd/day2_psnow_gt_04.gif" alt="NOAA Winter Outlook Day 2 Snow &gt; 4&quot;"
+            style="width: 100%; border-width: 1px; border-style: solid;"></a> </div>
+      <div class="column" style="text-align: center;"><strong></strong>
+        <center><strong>NOAA Winter Outlook Day 3 Snow &gt; 4"</strong> <a href="mailto:https://www.wpc.ncep.noaa.gov/wwd/day3_psnow_gt_04.gif"
+            title="Click for larger image"><img src="https://www.wpc.ncep.noaa.gov/wwd/day3_psnow_gt_04.gif"
+              alt="NOAA Winter Outlook Day 3 Snow &gt; 4&quot; " style="width: 100%; border-width: 1px; border-style: solid;"></a>
+        </center>
+      </div>
+    </div>
+    <br>
+    <br>
+    <a href="#top"><i>Top of Page</i><br>
+    </a><br>
+    <div class="row">
+      <div class="column">
+        <div style="text-align: center;"><strong>NOAA Winter Outlook Day 4 Snow</strong>
+        </div>
+        <a href="https://www.wpc.ncep.noaa.gov/wwd/pwpf_d47/gif/prbww_sn25_f096.gif"
+          title="Click for larger image"><img src="https://www.wpc.ncep.noaa.gov/wwd/pwpf_d47/gif/prbww_sn25_f096.gif"
+            alt="NOAA Winter Outlook Day 4 Snow &gt; 4&quot;" style="width: 100%; border-width: 1px; border-style: solid;"></a>
+      </div>
+      <div class="column" style="text-align: center;"><strong></strong>
+        <center><strong>NOAA Winter Outlook Day 5 Snow</strong> <a href="mailto:https://www.wpc.ncep.noaa.gov/wwd/pwpf_d47/gif/prbww_sn25_f120.gif"
+            title="Click for larger image"><img src="https://www.wpc.ncep.noaa.gov/wwd/pwpf_d47/gif/prbww_sn25_f120.gif"
+              alt="NOAA Winter Outlook Day 5 Snow &gt; 4&quot; " style="width: 100%; border-width: 1px; border-style: solid;"></a>
+        </center>
+      </div>
+    </div>
+    <br>
+    <br>
+    <a href="#top"><i>Top of Page</i><br>
+    </a><br>
+    <div class="row">
+      <div class="column">
+        <div style="text-align: center;"><strong>NOAA Winter Outlook Day 6 Snow</strong>
+        </div>
+        <a href="https://www.wpc.ncep.noaa.gov/wwd/pwpf_d47/gif/prbww_sn25_f144.gif"
+          title="Click for larger image"><img src="https://www.wpc.ncep.noaa.gov/wwd/pwpf_d47/gif/prbww_sn25_f144.gif"
+            alt="NOAA Winter Outlook Day 6 Snow &gt; 4&quot;" style="width: 100%; border-width: 1px; border-style: solid;"></a>
+      </div>
+      <div class="column" style="text-align: center;"><strong></strong>
+        <center><strong>NOAA Winter Outlook Day 7 Snow</strong> <a href="mailto:https://www.wpc.ncep.noaa.gov/wwd/pwpf_d47/gif/prbww_sn25_f168.gif"
+            title="Click for larger image"><img src="https://www.wpc.ncep.noaa.gov/wwd/pwpf_d47/gif/prbww_sn25_f168.gif"
+              alt="NOAA Winter Outlook Day 7 Snow &gt; 4&quot; " style="width: 100%; border-width: 1px; border-style: solid;"></a>
+        </center>
+      </div>
+    </div>
+    <br>
+    <br>
+    <a href="#top"><i>Top of Page</i><br>
+    </a><br>
+    <div class="row">
+      <div class="column">
+        <div style="text-align: center;"><strong><a name="climo" id="climo"></a>CPC
+            Day 6-10 Temperature</strong> </div>
+        <a href="https://www.cpc.ncep.noaa.gov/products/predictions/610day/610temp.new.gif"
+          title="Click for larger image"><img src="https://www.cpc.ncep.noaa.gov/products/predictions/610day/610temp.new.gif"
+            alt="CPC Day 6-10 Temperature" style="width: 100%; border-width: 1px; border-style: solid;"></a>
+      </div>
+      <div class="column" style="text-align: center;"><strong></strong>
+        <center><strong>CPC Day 8-14 Temperature</strong> <a href="mailto:https://www.cpc.ncep.noaa.gov/products/predictions/814day/814temp.new.gif"
+            title="Click for larger image"><img src="https://www.cpc.ncep.noaa.gov/products/predictions/814day/814temp.new.gif"
+              alt="CPC Day 8-14 Temperature" style="width: 100%; border-width: 1px; border-style: solid;"></a>
+        </center>
+      </div>
+    </div>
+    <br>
+    <br>
+    <a href="#top"><i>Top of Page</i><br>
+    </a><br>
+    <div class="row">
+      <div class="column">
+        <div style="text-align: center;"><strong>CPC Day 6-10 Precipitation</strong>
+        </div>
+        <a href="https://www.cpc.ncep.noaa.gov/products/predictions/610day/610prcp.new.gif"
+          title="Click for larger image"><img src="https://www.cpc.ncep.noaa.gov/products/predictions/610day/610prcp.new.gif"
+            alt="CPC Day 6-10 Precipitation" style="width: 100%; border-width: 1px; border-style: solid;"></a>
+      </div>
+      <div class="column" style="text-align: center;"><strong></strong>
+        <center><strong>CPC Day 8-14 Temperature</strong> <a href="mailto:https://www.cpc.ncep.noaa.gov/products/predictions/814day/814prcp.new.gif"
+            title="Click for larger image"><img src="https://www.cpc.ncep.noaa.gov/products/predictions/814day/814prcp.new.gif"
+              alt="CPC Day 8-14 Precipitation" style="width: 100%; border-width: 1px; border-style: solid;"></a>
+        </center>
+      </div>
+    </div>
+    <br>
+    <br>
+    <a href="#top"><i>Top of Page</i><br>
+    </a><br>
+  </body>
+</html>
