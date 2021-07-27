@@ -10,6 +10,10 @@
     <meta http-equiv="Cache-Control" content="no-cache">
     <link rel="stylesheet" type="text/css" media="all" href="styles.css">
     <link rel="stylesheet" type="text/css" href="tswnavbar.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
     <script src="https://cdnres.willyweather.com/widget/warning/loadView.html?id=126547"
 type="application/javascript"></script>
   </head>
@@ -42,8 +46,8 @@ type="application/javascript"></script>
           </div>
           <em></em><em></em>
           <div style="text-align: center; font-size: 14px;">
-            <div style="text-align: center;"> <em>Forecast updated at 10:15 am
-                Sun. July 11, 2021</em><em></em></div>
+            <div style="text-align: center;"> <em>Forecast updated at 11:30 am
+                Tue. July 27, 2021</em><em></em></div>
           </div>
           <div style="text-align: center;">
             <div style="text-align: center;"><strong><br>
@@ -76,204 +80,196 @@ type="application/javascript"></script>
                           <div style="text-align: left;">
                             <div>
                               <div>
-                                <div><u><strong>Short-Term Outlook: Sunday -
-                                      Tuesday<br>
+                                <div style="text-align: left;"><u><strong>Short-Term
+                                      Outlook: Tuesday </strong></u><u><strong>-
+                                      Thursday<br>
                                     </strong></u></div>
-                                <div><u><strong><br>
-                                    </strong></u></div>
-                                <div><em>NWS State College Hazardous Weather
-                                    Outlook<br>
-                                  </em>Strong to severe thunderstorms with gusty
-                                  winds are possible late today and tonight.</div>
-                                <div><em><u><strong><br>
-                                      </strong></u></em></div>
-                                A warm front will drift slowly north into the
-                                state on Sunday, ushering in higher humidity and
-                                hotter temperatures. This will also increase the
-                                chance of mainly afternoon and early evening
-                                showers and thunderstorms from Sunday through
-                                Tuesday, some of which could contain gusty winds
-                                and locally heavy rain.<br>
-                                <div>
-                                  <div style="text-align: left;"><br>
-                                  </div>
-                                  <div><strong>Today &amp; Tonight</strong>
-                                    <div>
-                                      <div>
-                                        <div>Cloudy to mostly cloudy this
-                                          morning then partly cloudy this
-                                          afternoon with a chance for isolated
-                                          showers this morning then scattered
-                                          showers and thunderstorms this
-                                          afternoon. Stronger storms could
-                                          contain small hail and gusty winds.
-                                          Rainfall totals between 0.10 and
-                                          0.25-inch with higher amounts possible
-                                          in thunderstorms. High near 85° with
-                                          east-southeast winds 5 to 10 mph with
-                                          gusts to 20 mph this afternoon.</div>
-                                        <div><br>
-                                        </div>
-                                        Tonight, a chance of showers and
-                                        thunderstorms in the evening then a
-                                        chance for showers overnight.Rainfall
-                                        totals between 0.10 and 0.25-inch with
-                                        higher amounts possible in
-                                        thunderstorms. Chance for precipitation
-                                        is 60%. Low around 73° with southeast
-                                        winds 0 to 5 mph.<br>
-                                        <div><br>
-                                        </div>
-                                        <div><strong>Monday, July 12</strong></div>
-                                        <div>Partly cloudy to partly sunny with
-                                          a chance for showers and thunderstorms
-                                          in the morning then showers and
-                                          thunderstorms likely in the afternoon.
-                                          Chance for precipitation 60. Rainfall
-                                          totals around 0.25-inch possible with
-                                          higher amounts in thunderstorms. High
-                                          near 91° with southwest winds 0 to 5
-                                          mph.</div>
-                                        <div><br>
-                                        </div>
-                                        Monday night, partly cloudy with a 40%
-                                        chance for showers and thunderstorms in
-                                        the evening. Rainfall amounts in the
-                                        0.25 to 0.50-inch range. Low near 73°
-                                        with south winds 0 to 5 mph.
-                                        <div><br>
-                                          <strong>Tuesday, July 13<br>
-                                          </strong>Partly cloudy early then
-                                          becoming partly sunny with a chance
-                                          for isolated showers in the morning
-                                          then a chance for afternoon showers
-                                          and thunderstorms. rainfall totals
-                                          less than 0.10-inch. High around 90°
-                                          with south winds 5 to 10 mph.</div>
-                                        <div><br>
-                                          Tuesday night, partly cloudy with a
-                                          50% chance for showers and
-                                          thunderstorms. Low around 72° with
-                                          south winds 0 to 7 mph.</div>
-                                      </div>
-                                      <div><br>
-                                      </div>
-                                      <div><u><strong>Medium-Range Outlook:
-                                            Wednesday </strong></u><u><strong>-
-                                            Saturday<br>
-                                            <br>
-                                          </strong></u></div>
+                                <div style="text-align: left;"><u><strong></strong></u><em></em><em></em><u><strong></strong></u>
+                                </div>
+                                <div style="text-align: left;"><u><br>
+                                  </u></div>
+                                <div style="text-align: left;">High pressure
+                                  will build across southern PA today with
+                                  sunny, hot, and humid conditions. A cold front
+                                  will drop south across the Commonwealth
+                                  Wednesday with mainly afternoon showers and
+                                  thunderstorms possible in Lancaster and
+                                  vicinity. The front slowly moves south of the
+                                  state Thursday with a continued chance for
+                                  mainly afternoon showers and thunderstorms for
+                                  Lancaster.<br>
+                                  <div>
+                                    <div style="text-align: left;"><br>
                                     </div>
-                                  </div>
-                                  <div style="text-align: left;">
-                                    <div style="text-align: left;">
-                                      <div style="text-align: left;">
+                                    <div><strong>Today &amp; Tonight</strong>
+                                      <div>
                                         <div>
                                           <div>
                                             <div>
-                                              <div>
-                                                <div> </div>
+                                              <div>Mostly sunny with a 5% chance
+                                                for precipitation. High around
+                                                91° with west winds around 5
+                                                mph.</div>
+                                              <div><br>
                                               </div>
+                                              Tonight, mostly clear with a 20%
+                                              chance for isolated evening
+                                              showers and thunderstorms. Low
+                                              near 69° with north winds 0-5 mph.<br>
+                                              <div><br>
+                                              </div>
+                                              <div><strong>Wednesday, July 28</strong></div>
+                                              <div>Partly cloudy with a chance
+                                                for isolated showers and
+                                                thunderstorms in the morning
+                                                then a chance for scattered
+                                                afternoon&nbsp; showers and
+                                                thunderstorms. Chance for
+                                                precipitation 40%.&nbsp; Less
+                                                than 0.10-inch precipitation
+                                                except for higher totals
+                                                possible in storms. High near
+                                                88° with north-northwest winds
+                                                5-10 mph.</div>
+                                              <div><br>
+                                              </div>
+                                              <div>Wednesday night, partly
+                                                cloudy with a 10% chance for
+                                                precipitation. Low near 68° with
+                                                north winds becoming southeast
+                                                0-5 mph.</div>
+                                              <div> <br>
+                                                <div><strong>Thursday, July 29</strong></div>
+                                                <div>Partly sunny to mostly
+                                                  cloudy with a slight chance
+                                                  for showers and thunderstorms
+                                                  in teh morning then a chance
+                                                  for scattered afternoon
+                                                  showers and thunderstorms.
+                                                  Chance for precipitation 50%.
+                                                  Less than 0.10-inch
+                                                  precipitation except for
+                                                  higher totals possible in
+                                                  storms. High near 85° with
+                                                  southwest winds 5-10 mph.</div>
+                                                <div><br>
+                                                </div>
+                                                Thursday night, partly cloudy
+                                                with a 40% chance for scattered
+                                                showers and evening
+                                                thunderstorms then scattered
+                                                showers and isolated
+                                                thunderstorms overnight. Low
+                                                around 67° with west winds 0-7
+                                                mph.</div>
                                             </div>
-                                          </div>
-                                          Large scale upper level ridge across
-                                          the western states will keep a
-                                          weakness in the upper level flow over
-                                          the eastern states for the new week.
-                                          Showers and storms will occur from
-                                          time to time over the course of the
-                                          week, it will not be raining all the
-                                          time, given how warm aloft it will be.
-                                          Main chance for rain will be later in
-                                          the afternoon and early evening for
-                                          the period. Thursday looks to be the
-                                          driest day of the upcoming week so
-                                          far.</div>
+                                            <strong></strong></div>
+                                        </div>
                                         <div><br>
                                         </div>
-                                        <div><strong>Wednesday, July 14</strong></div>
-                                        <div>Partly sunny with a 60% chance for
-                                          afternoon showers and thunderstorms.
-                                          High around 89° with southwest winds 0
-                                          to 7 mph.</div>
-                                        <div><br>
+                                        <div style="text-align: left;"><u><strong>Medium-Range
+                                              Outlook:
+                                              Friday - Monday</strong></u><u><strong><br>
+                                            </strong></u></div>
+                                        <div style="text-align: left;"><u><strong></strong></u><br>
                                         </div>
-                                        <div>Wednesday night, partly cloudy with
-                                          a 20% chance for isolated showers. Low
-                                          around 70° with west winds 0 to 7 mph.</div>
-                                        <div><br>
-                                        </div>
-                                        <div><strong>Thursday, July 15</strong></div>
-                                        <div>Partly cloudy with a high near 91°.
-                                          20% chance for isolated afternoon
-                                          showers and thunderstorms. West winds
-                                          0 to 7 mph.</div>
-                                        <div><br>
-                                        </div>
-                                        <div>Thursday night, partly cloudy early
-                                          then mostly clear with a low near 72°.
-                                          20% chance for isolated showers. South
-                                          winds 0 to 7 mph.</div>
-                                        <div><br>
-                                        </div>
-                                        <div><strong>Friday, July 16</strong></div>
-                                        <div>Mostly sunny with a high near 93°.
-                                          40% chance for scattered afternoon
-                                          showers and thunderstorms. Southwest
-                                          winds 0 to 7 mph.</div>
-                                        <div><br>
-                                        </div>
-                                        <div>Friday night, partly cloudy with a
-                                          20% chance for isolated showers and
-                                          thunderstorms. Low around 70° with
-                                          south winds 0 to 7 mph.</div>
-                                        <div><br>
-                                        </div>
-                                        <div><strong>Saturday, July 17</strong></div>
-                                        <div>Partly cloudy with a 50% chance for
-                                          afternoon showers and isolated
-                                          thunderstorms. High near 89° with
-                                          southwest wind 0 to 7 mph.</div>
-                                        <div><br>
-                                        </div>
-                                        <div>Saturday night, partly cloudy with
-                                          a 30% chance for scattered showers and
-                                          thunderstorms. Low around 70° with
-                                          southwest winds 0 to 7 mph.</div>
-                                        <div><br>
-                                          <strong> </strong></div>
-                                        <div><u><strong>Long-Range Trends: Sun</strong></u><u><strong>.
-                                              July 18 -&nbsp; Sat. July 24</strong></u><u><strong><br>
-                                              <br>
-                                            </strong></u><u><strong> </strong></u></div>
-                                        <div>Near normal temperatures &nbsp;
-                                          /&nbsp; Near normal precipitation</div>
-                                        <div><br>
-                                        </div>
-                                        <div style="text-align: left;">
-                                          <div>------------------------------------------------------------------------------------------------------------</div>
+                                        <div style="text-align: left;">The
+                                          weather pattern from Friday through
+                                          Sunday favors mainly dry conditions. A
+                                          weakening frontal boundary will bring
+                                          low chance of showers and
+                                          thunderstorms on Sunday. Below normal
+                                          precipitable water levels aloft are a
+                                          persistent feature with high pressure
+                                          setting up some cool nights and
+                                          comfortable days heading into the
+                                          first week of August.
+                                          <div><strong><br>
+                                              Friday, July 30</strong></div>
+                                          <div>Partly cloudy to mostly sunny
+                                            with a 10% chance for isolated
+                                            morning showers. High around 84°
+                                            with northwest winds 8-14 mph.</div>
+                                          <div><br>
+                                            Friday night, partly cloudy early
+                                            then mostly clear with a 5% chance
+                                            for precipitation. Low near 57° with
+                                            northwest winds 0-7 mph.</div>
                                           <div><br>
                                           </div>
-                                          <div><strong> <a name="Outlooks"></a>NWS
-                                              National Weather Outlook</strong><br>
-                                            <a href="https://www.weather.gov/">https://www.weather.gov/</a></div>
-                                          <em><strong> </strong></em></div>
-                                        <div style="text-align: left;"><br>
-                                          <span style="font-family: Arial,Helvetica,Geneva,sans-serif;"><em><strong>Heat
-                                                Wave Continues in the West;
-                                                Storms and Heavy Rainfall for
-                                                the South and Northeast</strong></em><br>
-                                            A dangerous heat wave will affect
-                                            much of the Western U.S. with
-                                            record-breaking temperatures likely,
-                                            before easing slightly Monday into
-                                            Tuesday. Elsewhere, strong to severe
-                                            thunderstorms and locally heavy
-                                            rainfall are possible from the
-                                            southern Rockies into the lower
-                                            Mississippi Valley and portions of
-                                            the Ohio Valley and Northeast.</span><span
-                                            style="color: #135897;"><span style="font-family: Arial,Helvetica,Geneva,sans-serif;"><br>
+                                          <div><strong>Saturday, July 31</strong></div>
+                                          <div>Mostly sunny with a 5% chance for
+                                            precipitation. High near 80° with
+                                            west winds 0-7 mph.</div>
+                                          <div><br>
+                                          </div>
+                                          <div>Saturday night, partly
+                                            cloudy&nbsp; with a 10% chance for
+                                            precipitation. Low near 62° with
+                                            southwest winds 0-7 mph.</div>
+                                          <div><br>
+                                          </div>
+                                          <div><strong>Sunday, August 1 / 22nd
+                                              Birthday of Joanna E. C. Becker</strong></div>
+                                          <div>Partly cloudy with a 20% chance
+                                            for isolated afternoon showers. High
+                                            around 85° with west winds 8-14 mph.</div>
+                                          <div><br>
+                                          </div>
+                                          <div>Sunday night, partly cloudy with
+                                            a 20% chance for isolated showers.
+                                            Low near 61° with west winds 0-7
+                                            mph.</div>
+                                          <div><br>
+                                          </div>
+                                          <div><strong>Monday, August 2</strong></div>
+                                          <div>Partly cloudy with a 20% chance
+                                            for isolated afternoon showers. High
+                                            around 83° with northwest winds 8-14
+                                            mph.</div>
+                                          <div><br>
+                                          </div>
+                                          <div>Monday night, mostly clear with a
+                                            10% chance for precipitation. Low
+                                            near 61° with northwest winds 0-7
+                                            mph.</div>
+                                          <div><br>
+                                          </div>
+                                          <div><u><strong>Long-Range Trends:</strong></u><u><strong>
+                                                Tue. Aug. 3 -&nbsp; Mon. Aug. 9</strong></u><u></u></div>
+                                          <div><u><strong><br>
+                                              </strong><strong> </strong><strong>
+                                              </strong></u></div>
+                                          <div>Below normal temperatures &nbsp;
+                                            /&nbsp; Near normal precipitation</div>
+                                          <div><br>
+                                          </div>
+                                          <div style="text-align: left;">
+                                            <div>------------------------------------------------------------------------------------------------------------</div>
+                                            <div><br>
+                                            </div>
+                                            <div><strong> <a name="Outlooks"></a>NWS
+                                                National Weather Outlook</strong><br>
+                                              <a href="https://www.weather.gov/">https://www.weather.gov/</a></div>
+                                            <em><strong> </strong></em></div>
+                                          <div style="text-align: left;"><span style="font-family: Arial,Helvetica,Geneva,sans-serif;"><em><strong><br>
+                                                </strong></em></span></div>
+                                          <span style="font-family: Arial,Helvetica,Geneva,sans-serif;"><em><strong></strong></em></span><span
+                                            style="font-family: Arial,Helvetica,Geneva,sans-serif;"><em><strong>Heat
+                                                Wave from Montana to the South</strong></em><br>
+                                            An extensive heat wave will consume
+                                            the Central half of the U.S for the
+                                            next few days. Widespread excessive
+                                            heat warnings and heat advisories
+                                            stretch from Montana into the South
+                                            with the potential for a few record
+                                            high temperatures in the
+                                            north-central High Plains. Also,
+                                            severe thunderstorms with hail and
+                                            damaging winds are expected the next
+                                            couple of days in the Upper Midwest
+                                            and Great Lakes. </span><span style="color: #135897;"><span
+                                              style="font-family: Arial,Helvetica,Geneva,sans-serif;"><br>
                                               <br>
                                             </span></span>
                                           <div>
@@ -299,12 +295,12 @@ type="application/javascript"></script>
                                             </div>
                                             <div style="text-align: left;"><br>
                                             </div>
-                                            <div style="text-align: left;">Strong
-                                              to severe thunderstorms may impact
-                                              a corridor from the southern
-                                              Rockies into the lower Mississippi
-                                              Valley, and over parts of the Ohio
-                                              Valley and Northeast.<br>
+                                            <div style="text-align: left;">Severe
+                                              thunderstorms are possible today
+                                              from western New York across parts
+                                              of New England, and mainly tonight
+                                              over portions of the upper
+                                              Mississippi Valley region.<br>
                                               <br>
                                               <div>--------------------------- </div>
                                               <br>
@@ -320,6 +316,11 @@ type="application/javascript"></script>
                                               <div><em>See more graphics on the
                                                   <a href="https://apexwx.github.io/trop.html">Apex
                                                     Wx Tropical Wall</a>.</em></div>
+                                              <div><em><br>
+                                                  Active System:</em><a href="https://www.nhc.noaa.gov/gtwo.php?basin=atlc&amp;fdays=2"
+                                                  title="Active Tropical System"><span
+                                                    style="color: black;"> </span>Invest
+                                                  90L</a></div>
                                               <div><em><br>
                                                 </em></div>
                                               <div><a href="https://www.nhc.noaa.gov/gtwo.php?basin=atlc&amp;fdays=2"
@@ -353,17 +354,21 @@ type="application/javascript"></script>
                                             </div>
                                             <div style="text-align: left;">
                                               <div style="text-align: left;"><em></em><br>
-                                                <em>High Temperature for
-                                                  Saturday, July 10, 2021</em><br>
-                                                129 at Death Valley, CA<br>
+                                              </div>
+                                              <div style="text-align: left;"><em>High
+                                                  Temperature for Monday, July
+                                                  26, 2021</em><br>
+                                                109 at Rio Grande Village, TX<br>
                                                 <br>
-                                                <em>Low Temperature for
-                                                  Saturday, July 10, 2021</em><br>
-                                                22 at Peter Sinks, UT</div>
+                                                <em>Low Temperature for Monday,
+                                                  July 26, 2021</em><br>
+                                                26 at Peter Sinks, UT</div>
                                             </div>
                                           </div>
-                                        </div>
-                                        <div style="text-align: left;"><br>
+                                          <div style="text-align: left;"><br>
+                                          </div>
+                                          <div> </div>
+                                          <br>
                                           <em></em>
                                           <div style="text-align: left;">
                                             <div style="text-align: left;">
@@ -392,6 +397,14 @@ type="application/javascript"></script>
                                         </div>
                                       </div>
                                     </div>
+                                    <div style="text-align: left;">
+                                      <div style="text-align: left;"> </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div>
+                                  <div style="text-align: left;">
+                                    <div style="text-align: left;"> </div>
                                   </div>
                                 </div>
                               </div>
@@ -577,13 +590,13 @@ document.write("This webpage was last modified " + " " +document.lastModified);
     var greet;
 
     if (hrs < 12 && hrs >= 3) 
-        greet = 'Good Morning';
+        greet = 'Good Morning!';
     else if (hrs >= 12 && hrs <= 17)
-        greet = 'Good Afternoon';
+        greet = 'Good Afternoon!';
     else if (hrs >= 17 && hrs <= 24)
-        greet = 'Good Evening';
+        greet = 'Good Evening!';
     else if (hrs >=0 && hrs <= 3)
-        greet = 'Good Early Morning';
+        greet = 'Up with the Elves and Wizards, eh?';
 
     document.getElementById('lblGreetings').innerHTML =
         '<b>' + greet + '<\/b>';
