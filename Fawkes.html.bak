@@ -5,9 +5,6 @@
     <title>Fawkes House Weather Information</title>
     <meta name="generator" content="thesitewizard.com's Layout Wizard 3.0.1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="Expires" content="Sun, 31 Dec 2000 08:00:00 GMT">
-    <meta http-equiv="Pragma" content="no-cache">
-    <meta http-equiv="Cache-Control" content="no-cache">
     <link rel="stylesheet" type="text/css" media="all" href="styles.css">
     <link rel="stylesheet" type="text/css" href="tswnavbar.css">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -16,6 +13,9 @@
     <link rel="manifest" href="/site.webmanifest">
     <script src="https://cdnres.willyweather.com/widget/warning/loadView.html?id=126547"
 type="application/javascript"></script>
+    <meta http-equiv="Expires" content="Sun, 31 Dec 2000 08:00:00 GMT">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache">
   </head>
   <body>
     <div id="tswcontainer">
@@ -31,13 +31,10 @@ type="application/javascript"></script>
             <!-- start of content column: insert your content here -->
             <h2 style="text-align: center;">Apex Wx</h2>
             <h2 style="color: black; font-family: sans-serif; font-weight: 400; line-height: 1.4; margin: 0px 0px 30px; text-align: center;"><strong>Fawkes
-                House <br>
-              </strong></h2>
-            <h2 style="color: black; font-family: sans-serif; font-weight: 400; line-height: 1.4; margin: 0px 0px 30px; text-align: center;"><strong>Lancaster,
-                Pennsylvania<br>
-                Weather Information</strong></h2>
-            <h2 style="text-align: center;"></h2>
-            <br>
+                House<br>
+                Lancaster, Pennsylvania<br>
+                Weather Information</strong><br>
+            </h2>
             <div style="text-align: center;"><label id="lblGreetings"></label></div>
             <br>
             <div style="text-align: center;"> <iframe src="https://free.timeanddate.com/clock/i7v10lju/n198/tct/pct/ftb/tt0/ts1/ta1"
@@ -46,8 +43,8 @@ type="application/javascript"></script>
           </div>
           <em></em><em></em>
           <div style="text-align: center; font-size: 14px;">
-            <div style="text-align: center;"> <em>Forecast updated at 11:30 am
-                Tue. July 27, 2021</em><em></em></div>
+            <div style="text-align: center;"> <em>Forecast updated at 8:30 am
+                Fri. Oct. 22, 2021</em><em></em></div>
           </div>
           <div style="text-align: center;">
             <div style="text-align: center;"><strong><br>
@@ -62,8 +59,18 @@ type="application/javascript"></script>
                 making important weather-related decisions.</span></div>
             <div style="text-align: center;"><span style="font-size: 14px;"><br>
               </span></div>
-            <em style="font-size: 13px;"><strong>NWS State College Watches,
-                Warnings, and Advisories</strong></em><br>
+            <div style="text-align: center;"><br>
+              <span style="font-size: 14px;"><em><strong>Current Weather Chart</strong></em></span><a
+                href="https://s.w-x.co/staticmaps/WEB_Current_Weather_Map_1280x720.jpg?crop=16:9&amp;width=800&amp;format=pjpg&amp;auto=webp&amp;quality=60"><br>
+              </a><a href="https://s.w-x.co/staticmaps/WEB_Current_Weather_Map_1280x720.jpg?crop=16:9&amp;width=800&amp;format=pjpg&amp;auto=webp&amp;quality=60"
+                title="Click for larger image"><img src="https://s.w-x.co/staticmaps/WEB_Current_Weather_Map_1280x720.jpg?crop=16:9&amp;width=800&amp;format=pjpg&amp;auto=webp&amp;quality=60"
+                  alt="Current Surface Map (TWC)" style="width: 450px; height: 253px;"></a></div>
+            <em style="font-size: 13px;"><strong><br>
+              </strong></em></div>
+          <div style="text-align: center;"><em style="font-size: 13px;"><strong><br>
+              </strong></em></div>
+          <div style="text-align: center;"><em style="font-size: 13px;"><strong>NWS
+                State College Watches, Warnings, and Advisories</strong></em><br>
             <a href="https://www.weather.gov/ctp/" title="Click for more information"><img
                 src="https://www.weather.gov/wwamap/png/ctp.png" alt="NWS State College Watches and Warnings"
                 style="border-width: 1px; border-style: solid;"></a><br>
@@ -79,229 +86,250 @@ type="application/javascript"></script>
                         <div>
                           <div style="text-align: left;">
                             <div>
-                              <div>
-                                <div style="text-align: left;"><u><strong>Short-Term
-                                      Outlook: Tuesday </strong></u><u><strong>-
-                                      Thursday<br>
-                                    </strong></u></div>
-                                <div style="text-align: left;"><u><strong></strong></u><em></em><em></em><u><strong></strong></u>
+                              <div><u><strong>Three-Day Outlook: </strong></u><u><strong>Monday
+                                    - Wednesday</strong></u></div>
+                            </div>
+                          </div>
+                          <div style="text-align: left;">A slow-moving low
+                            pressure system will approach from the west later
+                            today with showers and thunderstorms overspreading
+                            the Lower Susquehanna Valley this evening and
+                            continuing overnight. A chance for rain is expected
+                            tomorrow as the low move across Pennsylvania. Rain
+                            tapers off tomorrow night with mostly cloudy skies
+                            giving way to partly sunny to partly cloudy
+                            conditions Wednesday as high pressure builds into
+                            the region.</div>
+                          <div style="text-align: left;"><strong></strong><br>
+                            <strong></strong>
+                            <div>
+                              <div style="text-align: left;"><strong> Today
+                                  &amp; Tonight</strong>
+                                <div style="text-align: left;">Partly
+                                  cloudy with increasing clouds in the
+                                  afternoon. 20% chance for showers. High around
+                                  74° with south winds 5-10 mph.</div>
+                                <div style="text-align: left;"><br>
                                 </div>
-                                <div style="text-align: left;"><u><br>
-                                  </u></div>
+                                <div style="text-align: left;">Tonight, cloudy
+                                  with a 70% chance for showers and
+                                  thunderstorms. Rainfall totals in the&nbsp; to
+                                  -inch range. Low near 56° with east winds 5-10
+                                  mph.</div>
+                                <div style="text-align: left;"><br>
+                                </div>
+                                <div style="text-align: left;"><strong>Tuesday,
+                                    October 26</strong></div>
+                                <div style="text-align: left;">Mostly cloudy
+                                  with a 50% chance for showers. Rainfall
+                                  amounts between 0.10 and 0.25-inch expected.
+                                  High around 63° with
+                                  north-northwest winds 10-15 mph.</div>
+                                <div style="text-align: left;"><br>
+                                </div>
+                                <div style="text-align: left;">Tuesday night,
+                                  cloudy early then mostly cloudy with a 20%
+                                  chance for showers in the evening. Low near
+                                  52° with northwest winds 10-15 mph gusting to
+                                  25 mph.<strong><br>
+                                  </strong></div>
+                                <strong><br>
+                                  Wednesday, October 27</strong>
+                                <div style="text-align: left;">Partly sunny
+                                  early then becoming mostly clear in the
+                                  afternoon with a high around 66°. Northeast
+                                  winds 10-15 mph gusting to around 25 mph in
+                                  the morning.</div>
+                                <div style="text-align: left;"><br>
+                                </div>
+                                <div style="text-align: left;">Wednesday night,
+                                  mostly clear with a low near 47°.
+                                  North winds 0-7 mph.</div>
+                                <div style="text-align: left;"><br>
+                                </div>
+                                <div style="text-align: left;"><u><strong>Days 4
+                                      to 7: </strong></u><u><strong>Thursday -
+                                      Sunday<br>
+                                    </strong></u> <u><strong> </strong></u></div>
+                                <div style="text-align: left;"><u><strong></strong></u><br>
+                                </div>
                                 <div style="text-align: left;">High pressure
-                                  will build across southern PA today with
-                                  sunny, hot, and humid conditions. A cold front
-                                  will drop south across the Commonwealth
-                                  Wednesday with mainly afternoon showers and
-                                  thunderstorms possible in Lancaster and
-                                  vicinity. The front slowly moves south of the
-                                  state Thursday with a continued chance for
-                                  mainly afternoon showers and thunderstorms for
-                                  Lancaster.<br>
-                                  <div>
+                                  brings mostly sunny to partly cloudy skies
+                                  Thursday. Clouds increase Thursday night as
+                                  another slow-moving low pressure system
+                                  approaches from the southwest. Rain is likely
+                                  Friday afternoon into Saturday morning with
+                                  showers Saturday afternoon through Sunday
+                                  morning before tapering off Sunday afternoon.</div>
+                                <div style="text-align: left;"><br>
+                                  <div style="text-align: left;">
+                                    <div style="text-align: left;"><strong>Thursday,
+                                        October 28</strong></div>
+                                    <div style="text-align: left;">Mostly
+                                      clear with increasing clouds in the
+                                      afternoon. 5% chance for showers. High
+                                      near 63°. East winds 0-7 mph.</div>
                                     <div style="text-align: left;"><br>
                                     </div>
-                                    <div><strong>Today &amp; Tonight</strong>
-                                      <div>
-                                        <div>
-                                          <div>
-                                            <div>
-                                              <div>Mostly sunny with a 5% chance
-                                                for precipitation. High around
-                                                91° with west winds around 5
-                                                mph.</div>
-                                              <div><br>
+                                    <div style="text-align: left;">Thursday
+                                      night, mostly cloudy with a 50% chance for
+                                      showers. Low around 49° with east winds
+                                      8-14 mph.</div>
+                                    <div style="text-align: left;"><br>
+                                      <div style="text-align: left;"><strong>Friday,
+                                          October 29</strong></div>
+                                      <div style="text-align: left;">Mostly
+                                        cloudy with a 70% chance for rain,
+                                        especially in the afternoon. High around
+                                        58°. East winds 8-14 mph.</div>
+                                      <div style="text-align: left;"><br>
+                                      </div>
+                                      <div style="text-align: left;">Friday
+                                        night, mostly cloudy with a 60% chance
+                                        for rain. Low near 51°. East winds 0-7
+                                        mph.</div>
+                                      <div style="text-align: left;"><br>
+                                      </div>
+                                      <div style="text-align: left;"><strong>Saturday,
+                                          October 39</strong></div>
+                                      <div style="text-align: left;">Mostly
+                                        cloudy&nbsp; with rain in the morning
+                                        then with decreasing clouds with showers
+                                        in the afternoon. 50% chance for rain.
+                                        High near 62°. South winds 0-7 mph.</div>
+                                      <div style="text-align: left;"><br>
+                                      </div>
+                                      <div style="text-align: left;">Saturday
+                                        night, partly cloudy with a 40% chance
+                                        for showers. Low near 47°. West winds
+                                        0-7 mph.</div>
+                                      <div style="text-align: left;"><br>
+                                      </div>
+                                      <div style="text-align: left;"><strong>Sunday,
+                                          October 31 / Halloween</strong></div>
+                                      <div style="text-align: left;">Partly
+                                        sunny with with a chance for showers in
+                                        the morning and a slight chance for
+                                        showers in the afternoon. Chance for
+                                        precipitation 20%. High near 62°.
+                                        Northwest winds 8-14 mph.</div>
+                                      <div style="text-align: left;"><br>
+                                      </div>
+                                      <div style="text-align: left;">Sunday
+                                        night, mostly clear with a low near 41°.
+                                        Northwest winds 0-7 mph.</div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div style="text-align: left;">
+                            <div>
+                              <div>
+                                <div style="text-align: left;">
+                                  <div>
+                                    <div>
+                                      <div style="text-align: left;">
+                                        <div style="text-align: left;"> </div>
+                                      </div>
+                                      <div style="text-align: left;">
+                                        <div style="text-align: left;">
+                                          <div style="text-align: left;">
+                                            <div style="text-align: left;">
+                                              <div style="text-align: left;">
+                                                <div>
+                                                  <div style="text-align: left;">
+                                                    <div style="text-align: left;">
+                                                      <div style="text-align: left;">
+                                                        <div style="text-align: left;">
+                                                          <div style="text-align: left;">
+                                                            <div style="text-align: left;">
+                                                              <div style="text-align: left;">
+                                                                <div style="text-align: left;">
+                                                                </div>
+                                                              </div>
+                                                            </div>
+                                                          </div>
+                                                        </div>
+                                                      </div>
+                                                    </div>
+                                                  </div>
+                                                  <div style="text-align: left;"><br>
+                                                  </div>
+                                                  <div style="text-align: left;"><strong><u>
+                                                        8 to 14 Day Trends: </u><u><u>Mon.
+                                                          Nov. 1</u><u> - Sun.
+                                                          Nov. 7</u> </u></strong><u><strong><br>
+                                                      </strong></u> <u><strong></strong></u><u><strong></strong></u><u><strong></strong></u><u><strong></strong></u><u><strong></strong></u><u><strong>
+                                                      </strong></u></div>
+                                                  <u><strong></strong></u><u><strong></strong></u><u><strong></strong></u></div>
                                               </div>
-                                              Tonight, mostly clear with a 20%
-                                              chance for isolated evening
-                                              showers and thunderstorms. Low
-                                              near 69° with north winds 0-5 mph.<br>
-                                              <div><br>
-                                              </div>
-                                              <div><strong>Wednesday, July 28</strong></div>
-                                              <div>Partly cloudy with a chance
-                                                for isolated showers and
-                                                thunderstorms in the morning
-                                                then a chance for scattered
-                                                afternoon&nbsp; showers and
-                                                thunderstorms. Chance for
-                                                precipitation 40%.&nbsp; Less
-                                                than 0.10-inch precipitation
-                                                except for higher totals
-                                                possible in storms. High near
-                                                88° with north-northwest winds
-                                                5-10 mph.</div>
-                                              <div><br>
-                                              </div>
-                                              <div>Wednesday night, partly
-                                                cloudy with a 10% chance for
-                                                precipitation. Low near 68° with
-                                                north winds becoming southeast
-                                                0-5 mph.</div>
-                                              <div> <br>
-                                                <div><strong>Thursday, July 29</strong></div>
-                                                <div>Partly sunny to mostly
-                                                  cloudy with a slight chance
-                                                  for showers and thunderstorms
-                                                  in teh morning then a chance
-                                                  for scattered afternoon
-                                                  showers and thunderstorms.
-                                                  Chance for precipitation 50%.
-                                                  Less than 0.10-inch
-                                                  precipitation except for
-                                                  higher totals possible in
-                                                  storms. High near 85° with
-                                                  southwest winds 5-10 mph.</div>
-                                                <div><br>
-                                                </div>
-                                                Thursday night, partly cloudy
-                                                with a 40% chance for scattered
-                                                showers and evening
-                                                thunderstorms then scattered
-                                                showers and isolated
-                                                thunderstorms overnight. Low
-                                                around 67° with west winds 0-7
-                                                mph.</div>
                                             </div>
-                                            <strong></strong></div>
+                                          </div>
                                         </div>
-                                        <div><br>
-                                        </div>
-                                        <div style="text-align: left;"><u><strong>Medium-Range
-                                              Outlook:
-                                              Friday - Monday</strong></u><u><strong><br>
-                                            </strong></u></div>
-                                        <div style="text-align: left;"><u><strong></strong></u><br>
-                                        </div>
-                                        <div style="text-align: left;">The
-                                          weather pattern from Friday through
-                                          Sunday favors mainly dry conditions. A
-                                          weakening frontal boundary will bring
-                                          low chance of showers and
-                                          thunderstorms on Sunday. Below normal
-                                          precipitable water levels aloft are a
-                                          persistent feature with high pressure
-                                          setting up some cool nights and
-                                          comfortable days heading into the
-                                          first week of August.
-                                          <div><strong><br>
-                                              Friday, July 30</strong></div>
-                                          <div>Partly cloudy to mostly sunny
-                                            with a 10% chance for isolated
-                                            morning showers. High around 84°
-                                            with northwest winds 8-14 mph.</div>
-                                          <div><br>
-                                            Friday night, partly cloudy early
-                                            then mostly clear with a 5% chance
-                                            for precipitation. Low near 57° with
-                                            northwest winds 0-7 mph.</div>
-                                          <div><br>
-                                          </div>
-                                          <div><strong>Saturday, July 31</strong></div>
-                                          <div>Mostly sunny with a 5% chance for
-                                            precipitation. High near 80° with
-                                            west winds 0-7 mph.</div>
-                                          <div><br>
-                                          </div>
-                                          <div>Saturday night, partly
-                                            cloudy&nbsp; with a 10% chance for
-                                            precipitation. Low near 62° with
-                                            southwest winds 0-7 mph.</div>
-                                          <div><br>
-                                          </div>
-                                          <div><strong>Sunday, August 1 / 22nd
-                                              Birthday of Joanna E. C. Becker</strong></div>
-                                          <div>Partly cloudy with a 20% chance
-                                            for isolated afternoon showers. High
-                                            around 85° with west winds 8-14 mph.</div>
-                                          <div><br>
-                                          </div>
-                                          <div>Sunday night, partly cloudy with
-                                            a 20% chance for isolated showers.
-                                            Low near 61° with west winds 0-7
-                                            mph.</div>
-                                          <div><br>
-                                          </div>
-                                          <div><strong>Monday, August 2</strong></div>
-                                          <div>Partly cloudy with a 20% chance
-                                            for isolated afternoon showers. High
-                                            around 83° with northwest winds 8-14
-                                            mph.</div>
-                                          <div><br>
-                                          </div>
-                                          <div>Monday night, mostly clear with a
-                                            10% chance for precipitation. Low
-                                            near 61° with northwest winds 0-7
-                                            mph.</div>
-                                          <div><br>
-                                          </div>
-                                          <div><u><strong>Long-Range Trends:</strong></u><u><strong>
-                                                Tue. Aug. 3 -&nbsp; Mon. Aug. 9</strong></u><u></u></div>
+                                      </div>
+                                      <div>
+                                        <div style="text-align: left;">
                                           <div><u><strong><br>
-                                              </strong><strong> </strong><strong>
                                               </strong></u></div>
-                                          <div>Below normal temperatures &nbsp;
-                                            /&nbsp; Near normal precipitation</div>
+                                          <div>Below normal temperatures&nbsp; /
+                                            Below normal precipitation</div>
                                           <div><br>
                                           </div>
                                           <div style="text-align: left;">
                                             <div>------------------------------------------------------------------------------------------------------------</div>
                                             <div><br>
                                             </div>
-                                            <div><strong> <a name="Outlooks"></a>NWS
-                                                National Weather Outlook</strong><br>
+                                            <div><strong> NWS National Weather
+                                                Outlook</strong><br>
                                               <a href="https://www.weather.gov/">https://www.weather.gov/</a></div>
-                                            <em><strong> </strong></em></div>
-                                          <div style="text-align: left;"><span style="font-family: Arial,Helvetica,Geneva,sans-serif;"><em><strong><br>
-                                                </strong></em></span></div>
-                                          <span style="font-family: Arial,Helvetica,Geneva,sans-serif;"><em><strong></strong></em></span><span
-                                            style="font-family: Arial,Helvetica,Geneva,sans-serif;"><em><strong>Heat
-                                                Wave from Montana to the South</strong></em><br>
-                                            An extensive heat wave will consume
-                                            the Central half of the U.S for the
-                                            next few days. Widespread excessive
-                                            heat warnings and heat advisories
-                                            stretch from Montana into the South
-                                            with the potential for a few record
-                                            high temperatures in the
-                                            north-central High Plains. Also,
-                                            severe thunderstorms with hail and
-                                            damaging winds are expected the next
-                                            couple of days in the Upper Midwest
-                                            and Great Lakes. </span><span style="color: #135897;"><span
-                                              style="font-family: Arial,Helvetica,Geneva,sans-serif;"><br>
-                                              <br>
-                                            </span></span>
-                                          <div>
-                                            <div style="text-align: left;">
-                                              <div><a href="https://www.wpc.ncep.noaa.gov/discussions/hpcdiscussions.php?disc=pmdspd"
-                                                  title="Short Range Discussion">Short
-                                                  Range National Forecast
-                                                  Discussion</a> (Day ½ - 2½)</div>
-                                              <div><a href="https://www.wpc.ncep.noaa.gov/discussions/hpcdiscussions.php?disc=pmdepd"
-                                                  title="Medium Range Discussion">Medium
-                                                  Range National Forecast
-                                                  Discussion</a> (Day 3 - 7)</div>
-                                              <div><br>
-                                              </div>
-                                              <div>---------------------------</div>
-                                              <div><br>
-                                              </div>
-                                              <div><strong>SPC National
-                                                  Thunderstorm/Severe Weather
-                                                  Outlook</strong><br>
-                                                <a href="https://www.spc.noaa.gov/">
-                                                  https://www.spc.noaa.gov/</a></div>
-                                            </div>
+                                            <br>
+                                            <div style="text-align: left;"><em><strong>Heavy
+                                                  Precipitation and Strong Winds
+                                                  in the West; Locally Severe
+                                                  Weather in the East</strong></em><br>
+                                              Several atmospheric river events
+                                              will bring widespread moderate to
+                                              heavy precipitation and strong
+                                              winds to much of the Pacific
+                                              Northwest and California through
+                                              early next week. A few storms
+                                              might produce locally strong to
+                                              damaging wind gusts over a portion
+                                              of eastern North Carolina on
+                                              Friday. </div>
                                             <div style="text-align: left;"><br>
-                                            </div>
-                                            <div style="text-align: left;">Severe
-                                              thunderstorms are possible today
-                                              from western New York across parts
-                                              of New England, and mainly tonight
-                                              over portions of the upper
-                                              Mississippi Valley region.<br>
-                                              <br>
+                                              <div style="text-align: left;">
+                                                <div><a href="https://www.wpc.ncep.noaa.gov/discussions/hpcdiscussions.php?disc=pmdspd"
+                                                    title="Short Range Discussion">Short
+                                                    Range National Forecast
+                                                    Discussion</a> (Day ½ - 2½)</div>
+                                                <div><a href="https://www.wpc.ncep.noaa.gov/discussions/hpcdiscussions.php?disc=pmdepd"
+                                                    title="Medium Range Discussion">Medium
+                                                    Range National Forecast
+                                                    Discussion</a> (Day 3 - 7)</div>
+                                                <div><br>
+                                                </div>
+                                                <div>---------------------------</div>
+                                                <div><br>
+                                                </div>
+                                                <div><strong>SPC National
+                                                    Thunderstorm/Severe Weather
+                                                    Outlook</strong><br>
+                                                  <a href="https://www.spc.noaa.gov/">
+                                                    https://www.spc.noaa.gov/</a></div>
+                                              </div>
+                                              <div style="text-align: left;"><br>
+                                              </div>
+                                              Thunderstorms associated with
+                                              strong wind gusts and a brief
+                                              tornado will be possible this
+                                              evening in parts of the central
+                                              Appalachians, and from parts of
+                                              north-central Alabama into the
+                                              southern Appalachians.</div>
+                                            <div style="text-align: left;"><br>
                                               <div>--------------------------- </div>
                                               <br>
                                               <div><strong>National Hurricane
@@ -310,26 +338,23 @@ type="application/javascript"></script>
                                                 </strong></div>
                                               <a href="https://www.nhc.noaa.gov/">https://www.nhc.noaa.gov/</a><br>
                                               <br>
-                                              <div><em>The Atlantic hurricane
-                                                  season runs from June 1st
-                                                  through November 30th.</em></div>
-                                              <div><em>See more graphics on the
-                                                  <a href="https://apexwx.github.io/trop.html">Apex
-                                                    Wx Tropical Wall</a>.</em></div>
-                                              <div><em><br>
-                                                  Active System:</em><a href="https://www.nhc.noaa.gov/gtwo.php?basin=atlc&amp;fdays=2"
-                                                  title="Active Tropical System"><span
-                                                    style="color: black;"> </span>Invest
-                                                  90L</a></div>
-                                              <div><em><br>
-                                                </em></div>
+                                              <em>The Atlantic hurricane season
+                                                runs from June 1st through
+                                                November 30th.</em></div>
+                                            <div style="text-align: left;">
                                               <div><a href="https://www.nhc.noaa.gov/gtwo.php?basin=atlc&amp;fdays=2"
                                                   title="Atlantic 2-Day Graphical Tropical
                                                                                 Weather Outlook"
                                                   style="color: rgb(0, 0,
-                                                                                128); text-decoration: underline;">
-                                                  Atlantic 2-Day Graphical
-                                                  Tropical Weather Outlook</a></div>
+                                                                                128); text-decoration: underline;"><br>
+                                                </a></div>
+                                              <div><a href="https://www.nhc.noaa.gov/gtwo.php?basin=atlc&amp;fdays=2"
+                                                  title="Atlantic 2-Day Graphical Tropical
+                                                                                Weather Outlook"
+                                                  style="color: rgb(0, 0,
+                                                                                128); text-decoration: underline;">Atlantic
+                                                  2-Day Graphical Tropical
+                                                  Weather Outlook</a></div>
                                               <div><strong><a href="https://www.nhc.noaa.gov/gtwo.php?basin=atlc&amp;fdays=5"
                                                     title="Atlantic 5-Day Graphical
                                                                                   Tropical Weather Outlook">
@@ -338,6 +363,9 @@ type="application/javascript"></script>
                                                                                 Outlook">Atlantic
                                                   5-Day Graphical Tropical
                                                   Weather Outlook</a></div>
+                                              <div><a href="https://www.nhc.noaa.gov/gtwo.php?basin=atlc&amp;fdays=5"
+                                                  title="Atlantic 5-Day Graphical Tropical Weather
+                                                                                Outlook"></a><strong></strong></div>
                                               <strong>
                                                 <div style="text-align: left;"><a
                                                     href="https://www.nhc.noaa.gov/gtwo.php?basin=atlc&amp;fdays=5"
@@ -352,23 +380,19 @@ type="application/javascript"></script>
                                                   Temperatures</strong><br>
                                                 (excluding Alaska and Hawaii)</div>
                                             </div>
-                                            <div style="text-align: left;">
-                                              <div style="text-align: left;"><em></em><br>
-                                              </div>
-                                              <div style="text-align: left;"><em>High
-                                                  Temperature for Monday, July
-                                                  26, 2021</em><br>
-                                                109 at Rio Grande Village, TX<br>
-                                                <br>
-                                                <em>Low Temperature for Monday,
-                                                  July 26, 2021</em><br>
-                                                26 at Peter Sinks, UT</div>
+                                            <em></em><br>
+                                            High Temperature for Thursday,
+                                            October 21, 2021<br>
+                                            96 at Zapata, TX<br>
+                                            96 at 8 miles southeast of Pharr, TX<br>
+                                            96 at Falcon Lake, TX<br>
+                                            <br>
+                                            Low Temperature for Thursday,
+                                            October 21, 2021<br>
+                                            10 at Angel Fire, NM
+                                            <div style="text-align: left;"><br>
                                             </div>
                                           </div>
-                                          <div style="text-align: left;"><br>
-                                          </div>
-                                          <div> </div>
-                                          <br>
                                           <em></em>
                                           <div style="text-align: left;">
                                             <div style="text-align: left;">
@@ -420,7 +444,9 @@ type="application/javascript"></script>
           </div>
         </div>
         <div><br>
-          <!-- end of content column: put your content above this line --> </div>
+          &nbsp; </div>
+        <div> 0.50 to 0.75-inch &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+        </div>
       </div>
       <div id="tswsidecol">
         <div id="tswsideproper">
@@ -454,9 +480,9 @@ type="application/javascript"></script>
                 Regional Climate Data</a><br>
               <div style="font-size: 12px;"><em>regional weather records,
                   averages, etc.</em></div>
-              <div style="font-size: 12px;"><strong><em><br>
-                  </em></strong></div>
-              <strong></strong></div>
+              <div style="font-size: 12px;"><em><br>
+                </em></div>
+            </div>
             <br>
             <div style="text-align: center;">
               <div style="text-align: left;">
@@ -478,16 +504,19 @@ type="application/javascript"></script>
                     Atlantic<br>
                   </a><a href="https://www.weather.gov/marfc/" title="Middle Atlantic River Forecast Center">River
                     </a><a href="https://www.weather.gov/marfc/" title="Middle Atlantic River Forecast Center">Forecast
-                    Center</a> </div>
+                    Center</a><br>
+                  <br>
+                  <a href="https://www.wrh.noaa.gov/mesowest/getobext.php?sid=KLNS&amp;wfo=LNS&amp;num=72"
+                    title="KLNS Current Conditions">Current Conditions Lancaster
+                    Airport<br>
+                    (KLNS)</a></div>
                 <div style="text-align: center;">
                   <div></div>
                   <div><a href="https://xmountwashington.appspot.com/csc.html?data=more"
                       title="Mount Washington Observatory (New Hampshire)"><br>
                     </a></div>
                   <div><a href="https://www.weather.gov/learning" title="NWS Educational Resources"
-                      style="color: #1855d9; text-decoration: underline;"><img src="https://raw.githubusercontent.com/ApexWx/ApexWx.github.io/master/SkywarnLogoTxtOutln2.png"
-                        alt="Skywarn Storm Spotters" style="border: none; -ms-interpolation-mode: bicubic; max-width: 100%; width: 70px; height: 97px; padding: 10px;"
-                        height="97" width="70"><img src="https://raw.githubusercontent.com/ApexWx/ApexWx.github.io/master/learning-thumbnail.png"
+                      style="color: #1855d9; text-decoration: underline;"><img src="https://raw.githubusercontent.com/ApexWx/ApexWx.github.io/master/learning-thumbnail.png"
                         alt="NWS Educational Resources" style="border: none; -ms-interpolation-mode: bicubic; max-width: 100%; width: 95px; height: 95px; padding: 10px;"
                         height="95" width="95"><br>
                     </a></div>
