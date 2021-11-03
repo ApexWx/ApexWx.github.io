@@ -5,9 +5,6 @@
     <title>Apex Wx Weather Information for Fort Kent, Maine &amp; Vicinity</title>
     <meta name="generator" content="thesitewizard.com's Layout Wizard 3.0.1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="Expires" content="Sun, 31 Dec 2000 08:00:00 GMT">
-    <meta http-equiv="Pragma" content="no-cache">
-    <meta http-equiv="Cache-Control" content="no-cache">
     <link rel="stylesheet" type="text/css" media="all" href="styles.css">
     <link rel="stylesheet" type="text/css" href="tswnavbar.css">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -16,6 +13,9 @@
     <link rel="manifest" href="/site.webmanifest">
     <script src="https://cdnres.willyweather.com/widget/warning/loadView.html?id=125218"
 type="application/javascript"></script>
+    <meta http-equiv="Expires" content="Sun, 31 Dec 2000 08:00:00 GMT">
+    <meta http-equiv="Pragma" content="no-store">
+    <meta http-equiv="Cache-Control" content="no-store" max-age="0">
   </head>
   <body>
     <div id="tswcontainer">
@@ -42,8 +42,8 @@ type="application/javascript"></script>
           </div>
           <em></em><em></em>
           <div style="text-align: center; font-size: 14px;">
-            <div style="text-align: center;"> <em>Forecast updated at 8:30 am
-                Wed. Aug. 18, 2021</em><em></em></div>
+            <div style="text-align: center;"> <em>Forecast updated at 10:15 am
+                Mon. Nov. 1, 2021</em><em></em></div>
           </div>
           <div style="text-align: center;">
             <div style="text-align: center;"><strong><br>
@@ -59,9 +59,21 @@ type="application/javascript"></script>
                 <br>
                 <strong> </strong>Apex Wx is a private weather information
                 service unaffiliated with NOAA/NWS.<br>
-                Always consult your local NWS and/or Environment Canada office
-                in making important weather-related decisions.<br>
+                Forecasts are informational only. Always consult your local NWS
+                and/or Environment Canada office in making important
+                weather-related decisions.</span></div>
+            <div style="text-align: center;"><span style="font-size: 14px;"><br>
               </span></div>
+            <div style="text-align: center;"><span style="font-size: 14px;"><em><strong>Current
+                    Weather Chart</strong></em></span><a href="https://s.w-x.co/staticmaps/WEB_Current_Weather_Map_1280x720.jpg?crop=16:9&amp;width=800&amp;format=pjpg&amp;auto=webp&amp;quality=60"><br>
+              </a></div>
+            <a href="https://s.w-x.co/staticmaps/WEB_Current_Weather_Map_1280x720.jpg?crop=16:9&amp;width=800&amp;format=pjpg&amp;auto=webp&amp;quality=60"
+              title="Click for larger image"><img src="https://s.w-x.co/staticmaps/WEB_Current_Weather_Map_1280x720.jpg?crop=16:9&amp;width=800&amp;format=pjpg&amp;auto=webp&amp;quality=60"
+                alt="Current Surface Map (TWC)" style="width: 450px; height: 253px;"></a>
+            <div style="text-align: center;"><a href="https://s.w-x.co/staticmaps/WEB_Current_Weather_Map_1280x720.jpg?crop=16:9&amp;width=800&amp;format=pjpg&amp;auto=webp&amp;quality=60"><br>
+              </a></div>
+            <div style="text-align: center;"><a href="https://s.w-x.co/staticmaps/WEB_Current_Weather_Map_1280x720.jpg?crop=16:9&amp;width=800&amp;format=pjpg&amp;auto=webp&amp;quality=60"><br>
+              </a></div>
             <div style="text-align: center;"><span style="font-size: 14px;"><br>
               </span></div>
             <em style="font-size: 13px;"><strong>NWS Caribou Watches, Warnings,
@@ -69,65 +81,72 @@ type="application/javascript"></script>
             <a href="https://www.weather.gov/car/" title="Click for more information"><img
                 src="https://www.weather.gov/wwamap/png/car.png" alt="NWS Caribou Watches and Warnings"
                 style="border-width: 1px; border-style: solid;"></a><br>
-            <em style="font-size: 12px;">Click map for more information</em><br>
+            <em style="font-size: 12px;">Click map for more information</em><em
+              style="font-size: 12px;"></em><br>
             <div style="text-align: center;"><strong></strong>
               <div style="text-align: center;">
                 <div style="text-align: center;">
                   <div>
-                    <div style="text-align: center;">
+                    <div style="text-align: left;">
                       <div style="text-align: left;">
-                        <div>
-                          <div>
-                            <div style="text-align: left;"><u><strong><br>
-                                </strong></u></div>
-                            <u><strong></strong></u></div>
-                          <u><strong>Short-Term Outlook: Wednesday -&nbsp;
-                              Friday<br>
+                        <div><br>
+                        </div>
+                        <div><u><strong>Three-Day Outlook: Wednesday - Friday<br>
                             </strong></u></div>
                       </div>
-                      <div style="text-align: left;"><br>
-                      </div>
-                      <div style="text-align: left;">Southwest flow across the
-                        region behind high pressure centered southeast of the
-                        state today will channel plenty of moisture across the
-                        region increasing both clouds and humidity levels. A
-                        weak upper-level trough will approach today and cross
-                        the region tonight. Valley residents can expect some
-                        isolated morning showers with more widespread showers
-                        activity along with some isolated thunderstorms this
-                        afternoon. With generally light winds aloft, storms will
-                        move slowly and may feature heavy downpours. Dew points
-                        will rise into the middle 60s and remain there through
-                        Friday morning creating muggy conditions across the
-                        Valley.</div>
-                      <div style="text-align: left;"><br>
-                      </div>
-                      <div style="text-align: left;">Thursday will be hot and
-                        muggy with partly cloudy to mostly sunny skies across
-                        much of the SJV. The remnants of Fred are expected to
-                        slide across southern/coastal Maine with little impact
-                        on the Valley currently anticipated. Indeed, aside from
-                        an isolated shower, no significant precipitation is
-                        expected. </div>
-                      <div style="text-align: left;"><br>
-                      </div>
-                      <div style="text-align: left;">A cold front will slide
-                        down from the north Friday with partly cloudy skies and
-                        a chance for some scattered showers as it moves across
-                        the SJV. Little precipitation is associated with this
-                        system, and it will drop to the coast with high pressure
-                        building down from the north producing mostly clear
-                        skies across the region overnight into Saturday morning.</div>
                     </div>
                   </div>
                   <div style="text-align: left;"><br>
                   </div>
+                  <div style="text-align: left;">An upper-level trough will move
+                    across the Valley today with partly cloudy skies and a
+                    slight chance for precipitation. Mostly clear skies develop
+                    tonight as a ridge of high pressure builds in. A weak trough
+                    keep partly cloudy to partly sunny skies over the SJV
+                    Thursday with partly cloudy to mostly clear skies Thursday
+                    night. Partly cloudy skies continue Friday and Friday night
+                    as high pressure remains over the region.</div>
+                  <div style="text-align: left;"><br>
+                  </div>
                   <div style="text-align: left;">
-                    <div>
+                    <div style="text-align: left;">
                       <div>
                         <div style="text-align: left;">
                           <div style="text-align: left;"><strong>Today &amp;
                               Tonight</strong>
+                            <div style="text-align: left;">Partly cloudy with a
+                              5% chance for precipitation. High near 44°. West
+                              winds 4-6 mph.</div>
+                            <div style="text-align: left;"><br>
+                            </div>
+                            Tonight, mostly clear with a 5% chance for
+                            precipitation. Patchy fog overnight. Low near 23°.
+                            West winds st 4 mph.
+                            <div style="text-align: left;"><br>
+                            </div>
+                            <div style="text-align: left;"><strong>Thursday,
+                                November 4</strong></div>
+                            <div style="text-align: left;">Partly cloudy to
+                              partly sunny with a high near 41°. 5% chance for
+                              precipitation. West winds 3-4 mph.</div>
+                            <div style="text-align: left;"><br>
+                            </div>
+                            <div style="text-align: left;">Thursday night,
+                              partly cloudy with a 10% chance for precipitation.
+                              Patchy fog overnight. Low near 22°. Southwest
+                              winds near calm.</div>
+                            <div style="text-align: left;"><br>
+                            </div>
+                            <div style="text-align: left;"><strong>Friday,
+                                November 5</strong></div>
+                            <div style="text-align: left;">Partly cloudy with a
+                              10% chance for precipitation. High around 41°.
+                              West winds 5-6 mph.</div>
+                            <div style="text-align: left;"><br>
+                            </div>
+                            Friday night, partly cloudy with a 5% chance for
+                            precipitation. Low near 26°. West winds 0-7 mph.</div>
+                          <div style="text-align: left;"> <strong></strong>
                             <div style="text-align: left;">
                               <div style="text-align: left;">
                                 <div style="text-align: left;">
@@ -138,59 +157,9 @@ type="application/javascript"></script>
                                           <div style="text-align: left;">
                                             <div style="text-align: left;">
                                               <div style="text-align: left;">
-                                                <div style="text-align: left;">Partly
-                                                  sunny with a chance for
-                                                  isolated morning showers then
-                                                  scattered&nbsp; afternoon
-                                                  showers with isolated
-                                                  thunderstorms. Chance for
-                                                  precipitation 50%.
-                                                  Precipitation totals less than
-                                                  0.10-inch with higher totals
-                                                  possible in any storms. High
-                                                  near 81° with southwest winds
-                                                  6-9 mph.</div>
-                                                <div style="text-align: left;"><br>
-                                                </div>
-                                                Wednesday night, partly cloudy
-                                                with a 40% chance for scattered
-                                                showers and isolated
-                                                thunderstorms, mainly in the
-                                                evening. Low around 64° with
-                                                southwest winds
-                                                2-3 mph.
-                                                <div style="text-align: left;"><br>
-                                                </div>
-                                                <div style="text-align: left;"><strong>Thursday,
-                                                    August 19</strong></div>
-                                                <div style="text-align: left;">Partly
-                                                  cloudy with a 5% chance for
-                                                  isolated showers. High near
-                                                  88° with west winds 4-5 mph.</div>
-                                                <div style="text-align: left;"><br>
-                                                </div>
-                                                <div style="text-align: left;">Thursday
-                                                  night, partly cloudy with a
-                                                  10% chance for isolated
-                                                  showers. Low near 63° with
-                                                  west winds 3-4 mph.
-                                                  <div style="text-align: left;"><br>
+                                                <div style="text-align: left;">
+                                                  <div style="text-align: left;">
                                                   </div>
-                                                  <div style="text-align: left;"><strong>Friday,
-                                                      August 20</strong></div>
-                                                  <div style="text-align: left;">Partly
-                                                    cloudy with a 30% chance for
-                                                    isolated to scattered,
-                                                    mainly afternoon showers.
-                                                    High around 83° with
-                                                    northwest winds 6-10 mph.</div>
-                                                  <div style="text-align: left;"><br>
-                                                  </div>
-                                                  <div style="text-align: left;">Friday
-                                                    night, partly cloudy with a
-                                                    low near 55°. 10% chance for
-                                                    isolated showers with
-                                                    northeast winds near calm.</div>
                                                 </div>
                                               </div>
                                             </div>
@@ -205,100 +174,75 @@ type="application/javascript"></script>
                           </div>
                           <div style="text-align: left;"><br>
                           </div>
-                          <u><strong> Medium-Range Outlook: Saturday - Tuesday<br>
-                            </strong></u></div>
-                        <div style="text-align: left;"><u><strong></strong></u><em></em><br>
+                          <div style="text-align: left;"><u><strong> Days 4 to
+                                7: Saturday - Tuesday<br>
+                              </strong></u></div>
                         </div>
-                        <div style="text-align: left;">High pressure to the
-                          north/northeast will bring partly cloudy to mostly
-                          sunny skies and lower humidity Saturday with mostly
-                          clear skies overnight into Sunday. A weak trough
-                          brings a chance for mainly afternoon showers Sunday
-                          with a chance for scattered showers overnight into
-                          Monday. </div>
-                        <div style="text-align: left;"><br>
-                        </div>
-                        <div style="text-align: left;">Forecast uncertainty
-                          increases due to the ultimate track of Henri. Models
-                          vary with the track of the tropical system due to the
-                          location of an upper-trough to the west/northwest of
-                          the Valley late in the weekend. Depending on where
-                          this trough is located early next week, Henri could be
-                          pulled close to Downeast Maine as&nbsp; Hurricane or
-                          strong Tropical Storm. </div>
-                        <div style="text-align: left;"><br>
-                        </div>
-                        <div style="text-align: left;">Other models keep the
-                          storm weaker and further out to sea with high pressure
-                          suppressing the storms track southwards with little
-                          impact on the state and/or New England in general. Due
-                          to considerable uncertainty at this time, updates on
-                          Henri should be monitored as the week progresses.</div>
-                        <div style="text-align: left;"><br>
-                        </div>
-                        <div style="text-align: left;"><strong>Saturday, August
-                            21</strong></div>
-                        <div style="text-align: left;">Partly cloudy to mostly
-                          sunny with a 10% chance for isolated showers. High
-                          near 80° with southeast winds around 4 mph.</div>
-                        <div style="text-align: left;"><br>
-                        </div>
-                        <div style="text-align: left;">Saturday night, partly
-                          cloudy with a 20% chance for isolated showers. Low
-                          near 57° with southeast winds around 4 mph.</div>
-                        <div style="text-align: left;"><br>
-                        </div>
-                        <div style="text-align: left;"><strong>Sunday, August 22</strong></div>
-                        <div style="text-align: left;">Partly cloudy with a 30%
-                          chance for scattered showers, mainly in the afternoon.
-                          High near 81° with south winds around 7 mph.</div>
-                        <div style="text-align: left;"><br>
-                        </div>
-                        <div style="text-align: left;">Sunday night, partly
-                          cloudy with a 20% chance for isolated showers. Low
-                          near 61° with south winds around 3-4 mph.</div>
-                        <div style="text-align: left;"><br>
-                        </div>
-                        <div style="text-align: left;"><strong>Monday, August 23</strong></div>
-                        <div style="text-align: left;">Partly sunny with a 50%
-                          chance for showers and isolated afternoon
-                          thunderstorms. High around 81° with southwest winds
-                          around 5-6 mph.</div>
-                        <div style="text-align: left;"><br>
-                        </div>
-                        <div style="text-align: left;">Monday night, partly
-                          cloudy with a 40% chance for scattered showers and
-                          isolated thunderstorms. Low near 60° with northwest
-                          winds around 3-4 mph.</div>
-                        <div style="text-align: left;"><br>
-                        </div>
-                        <div style="text-align: left;"><strong>Tuesday, August
-                            24</strong></div>
-                        <div style="text-align: left;">Partly sunny with a 30%
-                          chance for scattered showers, mainly in the morning.
-                          High near 79° with northwest winds 5-6 mph.</div>
-                        <div style="text-align: left;"><br>
-                        </div>
-                        <div style="text-align: left;">Tuesday night, partly
-                          cloudy with a 10% chance for isolated showers. Low
-                          near 57° with north winds around 3 mph.</div>
-                        <div style="text-align: left;"><br>
-                        </div>
-                        <div style="text-align: left;"><u><strong> Long-Range
-                              Trends: Wed. </strong></u><u><strong>Aug. 25
-                              -&nbsp; Tue. Aug. 31<br>
+                      </div>
+                      <div><br>
+                      </div>
+                      High pressure will remain over the eastern US through the
+                      period with partly cloudy skies Saturday and Sunday and
+                      partly sunny skies expected Monday and Tuesday with partly
+                      cloudy skies overnight.</div>
+                    <div style="text-align: left;"><br>
+                    </div>
+                    <div style="text-align: left;"><strong>Saturday, November 6</strong></div>
+                    <div style="text-align: left;">Partly cloudy with a high
+                      near 48°. Southwest winds 8-14 mph.</div>
+                    <div style="text-align: left;"><br>
+                    </div>
+                    <div style="text-align: left;">Saturday night, partly cloudy
+                      with a low near 30°. Southwest winds 0-7 mph.</div>
+                    <div style="text-align: left;"><br>
+                    </div>
+                    <div style="text-align: left;"><strong>Sunday, November 7</strong></div>
+                    <div style="text-align: left;">Partly cloudy with a 5%
+                      chance for precipitation. High around 50°. Southwest winds
+                      0-7 mph.</div>
+                    <div style="text-align: left;"><br>
+                    </div>
+                    <div style="text-align: left;">Sunday night, partly cloudy
+                      with a 5% chance for precipitation. Low around 30°. West
+                      winds 0-7 mph.</div>
+                    <div style="text-align: left;"><br>
+                    </div>
+                    <div style="text-align: left;"><strong>Monday, November 8</strong></div>
+                    <div style="text-align: left;">Partly sunny with a high near
+                      48°. 10% chance for precipitation. Northwest winds 0-7
+                      mph.</div>
+                    <div style="text-align: left;"><br>
+                    </div>
+                    <div style="text-align: left;">Monday night, partly cloudy
+                      with a 10% chance for precipitation. Low near 31°. West
+                      winds 0-7 mph.</div>
+                    <div style="text-align: left;"><br>
+                    </div>
+                    <div style="text-align: left;"><strong>Tuesday, November 9</strong></div>
+                    <div style="text-align: left;">Partly sunny with a high
+                      around 48°. 10% chance for precipitation. West winds 0-7
+                      mph.</div>
+                    <div style="text-align: left;"><br>
+                    </div>
+                    <div style="text-align: left;">Tuesday night, partly cloudy
+                      with a 20% chance for precipitation. Low near 32°. West
+                      winds 0-7 mph.</div>
+                    <div style="text-align: left;"><br>
+                    </div>
+                    <div>
+                      <div>
+                        <div style="text-align: left;"><u><strong> 8 to 14 Day
+                              Trends: Mon. Nov. 8 - Sun. Nov. 14</strong></u><u><strong><br>
                             </strong></u></div>
                         <div style="text-align: left;"><u><strong></strong></u><strong></strong><br>
-                          Near normal temperatures&nbsp;&nbsp; / Near normal
-                          precipitation<u><strong><br>
+                          Above normal temperatures / Near normal precipitation<u><strong><br>
                               <br>
                             </strong></u>
                           <div>
                             <div>------------------------------------------------------------------------------------------------------------</div>
                             <div><br>
                             </div>
-                            <div><strong> <a name="Outlooks"></a>NWS National
-                                Weather Outlook</strong><br>
+                            <div><strong> NWS National Weather Outlook</strong><br>
                               <a href="https://www.weather.gov/">https://www.weather.gov/</a></div>
                             <strong></strong><strong></strong></div>
                           <em><strong></strong></em></div>
@@ -318,187 +262,116 @@ type="application/javascript"></script>
                                               <div> </div>
                                             </div>
                                             <div style="text-align: left;"> </div>
-                                            <div style="text-align: left;">
-                                              <div><em><strong></strong></em><br>
+                                            <br>
+                                            <div style="text-align: left;"><em><strong>Below
+                                                  Normal Temperatures; Heavy
+                                                  Rain in Texas; Unsettled
+                                                  Northwest</strong></em><br>
+                                              Below normal temperatures will
+                                              persist through late week into the
+                                              weekend from portions of the
+                                              Central U.S. into the East.
+                                              Meanwhile, locally heavy rain with
+                                              some thunderstorms are possible in
+                                              parts of Texas today. Finally, a
+                                              series for storm systems will keep
+                                              the Pacific Northwest unsettled
+                                              for the next several days.</div>
+                                            <div style="text-align: left;"><br>
+                                              <div style="text-align: left;">
+                                                <div><a href="https://www.wpc.ncep.noaa.gov/discussions/hpcdiscussions.php?disc=pmdspd"
+                                                    title="Short Range Discussion">Short
+                                                    Range National Forecast
+                                                    Discussion</a> (Day ½ - 2½)</div>
+                                                <div><a href="https://www.wpc.ncep.noaa.gov/discussions/hpcdiscussions.php?disc=pmdepd"
+                                                    title="Medium Range Discussion">Medium
+                                                    Range National Forecast
+                                                    Discussion</a> (Day 3 - 7)</div>
+                                                <div><br>
+                                                </div>
+                                                <div>---------------------------</div>
+                                                <div><br>
+                                                </div>
+                                                <div><strong>SPC National
+                                                    Thunderstorm/Severe Weather
+                                                    Outlook</strong><br>
+                                                  <a href="https://www.spc.noaa.gov/">
+                                                    https://www.spc.noaa.gov/</a></div>
                                               </div>
-                                              <div><span style="font-family: Arial,Helvetica,Geneva,sans-serif;"><em><strong>Heavy
-                                                      Rain from Fred and the
-                                                      Western Monsoon Continues
-                                                      Wednesday</strong></em><br>
-                                                  Post-Tropical Cyclone Fred
-                                                  will bring heavy rain which
-                                                  may lead to significant flash
-                                                  flooding, gusty winds and a
-                                                  few tornadoes as it tracks
-                                                  north from the upper Ohio
-                                                  Valley into New England
-                                                  Wednesday and Thursday.
-                                                  Monsoonal activity across
-                                                  portions of Arizona and Utah
-                                                  may cause flash and urban
-                                                  flooding impacts, especially
-                                                  in the vicinity of slot
-                                                  canyons, arroyos, and dry
-                                                  washes.</span><span style="color: #135897;"><span
-                                                    style="font-family: Arial,Helvetica,Geneva,sans-serif;"><br>
-                                                    <br>
-                                                  </span></span>
-                                                <div>
-                                                  <div style="text-align: left;">
-                                                    <div><a href="https://www.wpc.ncep.noaa.gov/discussions/hpcdiscussions.php?disc=pmdspd"
-                                                        title="Short Range Discussion">Short
-                                                        Range National Forecast
-                                                        Discussion</a> (Day ½ -
-                                                      2½)</div>
-                                                    <div><a href="https://www.wpc.ncep.noaa.gov/discussions/hpcdiscussions.php?disc=pmdepd"
-                                                        title="Medium Range Discussion">Medium
-                                                        Range National Forecast
-                                                        Discussion</a> (Day 3 -
-                                                      7)</div>
-                                                    <div><br>
-                                                    </div>
-                                                    <div>---------------------------</div>
-                                                    <div><br>
-                                                    </div>
-                                                    <div><strong>SPC National
-                                                        Thunderstorm/Severe
-                                                        Weather Outlook</strong><br>
-                                                      <a href="https://www.spc.noaa.gov/">
-https://www.spc.noaa.gov/</a></div>
-                                                  </div>
-                                                  <div style="text-align: left;"><br>
-                                                  </div>
-                                                  <div style="text-align: left;">A
-                                                    few tornadoes will be
-                                                    possible today across
-                                                    portions of the central
-                                                    Appalachians and
-                                                    Mid-Atlantic. Thunderstorms
-                                                    associated with strong winds
-                                                    and hail may also occur
-                                                    across parts of the
-                                                    Intermountain West, and over
-                                                    portions of the
-                                                    Mid-South/Tennessee Valley.<br>
-                                                    <br>
-                                                    <div>---------------------------
-                                                      </div> <br>
-                                                    <div><strong>National
-                                                        Hurricane Center
-                                                        Atlantic Tropical
-                                                        Weather Outlook<br>
-                                                      </strong></div>
-                                                    <a href="https://www.nhc.noaa.gov/">https://www.nhc.noaa.gov/</a><br>
-                                                    <br>
-                                                    <div><em>The Atlantic
-                                                        hurricane season runs
-                                                        from June 1st through
-                                                        November 30th.</em></div>
-                                                    <div><em>See more graphics
-                                                        on the <a href="https://apexwx.github.io/trop.html">Apex
-                                                          Wx Tropical Wall</a>.</em></div>
-                                                    <div><em><br>
-                                                      </em></div>
-                                                    <a href="https://www.nhc.noaa.gov/graphics_at1.shtml?start#contents"
-                                                      title="Click for more information"><img
-                                                        src="https://www.nhc.noaa.gov/storm_graphics/AT06/refresh/AL062021_key_messages+png/"
-                                                        alt="Key Messages" style="border-style: solid; border-width: 1.5px; max-width: 525px;"></a>
-                                                    <div><em><br>
-                                                      </em></div>
-                                                    <div><em><br>
-                                                      </em></div>
-                                                    <a href="https://www.nhc.noaa.gov/graphics_at2.shtml?start#contents"
-                                                      title="Click for more information"><img
-                                                        src="https://www.nhc.noaa.gov/storm_graphics/AT07/refresh/AL072021_key_messages+png/145644_key_messages_sm.png"
-                                                        alt="Key Messages--TCAL07"
-                                                        style="max-width: 525px; border-width: 1px; border-style: solid;"><br>
-                                                    </a></div>
-                                                  <div style="text-align: left;"><a
-                                                      href="https://www.nhc.noaa.gov/graphics_at2.shtml?start#contents"
-                                                      title="Click for more information"><br>
-                                                    </a></div>
-                                                  <div style="text-align: left;"><a
-                                                      href="https://www.nhc.noaa.gov/graphics_at2.shtml?start#contents"
-                                                      title="Click for more information"><br>
-                                                    </a></div>
-                                                  <div style="text-align: left;"><a
-                                                      href="https://www.nhc.noaa.gov/graphics_at2.shtml?start#contents"
-                                                      title="Click for more information"><img
-                                                        src="https://www.nhc.noaa.gov/storm_graphics/AT08/refresh/AL082021_5day_cone_no_line_and_wind+png/113828_5day_cone_no_line_and_wind.png"
-                                                        alt="TD08 Forecast Track"
-                                                        style="max-width: 525px; width: 536px; height: 440px;"></a>
-                                                    <div><em><br>
-                                                      </em></div>
-                                                    <div><a href="https://www.nhc.noaa.gov/gtwo.php?basin=atlc&amp;fdays=2"
-                                                        title="Atlantic 2-Day Graphical Tropical
+                                              <div style="text-align: left;"><br>
+                                              </div>
+                                              Severe thunderstorms are not
+                                              currently forecast across the
+                                              contiguous United States today and
+                                              tonight.</div>
+                                            <div style="text-align: left;"><br>
+                                              <div>--------------------------- </div>
+                                              <br>
+                                              <div><strong>National Hurricane
+                                                  Center Atlantic Tropical
+                                                  Weather Outlook<br>
+                                                </strong></div>
+                                              <a href="https://www.nhc.noaa.gov/">https://www.nhc.noaa.gov/</a><br>
+                                              <br>
+                                              <em>The Atlantic hurricane season
+                                                runs from June 1st through
+                                                November 30th.</em></div>
+                                            <div style="text-align: left;"><em><br>
+                                              </em></div>
+                                            <a href="https://www.nhc.noaa.gov/graphics_at1.shtml?start#contents"
+                                              title="Click for more information."><img
+                                                src="https://www.nhc.noaa.gov/storm_graphics/AT21/refresh/AL212021_5day_cone_no_line_and_wind+png/092845_5day_cone_no_line_and_wind.png"
+                                                alt="Wanda" style="max-width: 525px;"></a>
+                                            <div style="text-align: left;">
+                                              <div><a href="https://www.nhc.noaa.gov/gtwo.php?basin=atlc&amp;fdays=2"
+                                                  title="Atlantic 2-Day Graphical Tropical
                                                                                 Weather Outlook"
-                                                        style="color: rgb(0, 0,
-                                                                                128); text-decoration: underline;">
-                                                        Atlantic 2-Day Graphical
-                                                        Tropical Weather Outlook</a></div>
-                                                    <div><strong><a href="https://www.nhc.noaa.gov/gtwo.php?basin=atlc&amp;fdays=5"
-                                                          title="Atlantic 5-Day Graphical
+                                                  style="color: rgb(0, 0,
+                                                                                128); text-decoration: underline;"><br>
+                                                </a></div>
+                                              <div><a href="https://www.nhc.noaa.gov/gtwo.php?basin=atlc&amp;fdays=2"
+                                                  title="Atlantic 2-Day Graphical Tropical
+                                                                                Weather Outlook"
+                                                  style="color: rgb(0, 0,
+                                                                                128); text-decoration: underline;">Atlantic
+                                                  2-Day Graphical Tropical
+                                                  Weather Outlook</a></div>
+                                              <div><strong><a href="https://www.nhc.noaa.gov/gtwo.php?basin=atlc&amp;fdays=5"
+                                                    title="Atlantic 5-Day Graphical
                                                                                   Tropical Weather Outlook">
-                                                        </a></strong><a href="https://www.nhc.noaa.gov/gtwo.php?basin=atlc&amp;fdays=5"
-                                                        title="Atlantic 5-Day Graphical Tropical Weather
+                                                  </a></strong><a href="https://www.nhc.noaa.gov/gtwo.php?basin=atlc&amp;fdays=5"
+                                                  title="Atlantic 5-Day Graphical Tropical Weather
                                                                                 Outlook">Atlantic
-                                                        5-Day Graphical Tropical
-                                                        Weather Outlook</a></div>
-                                                    <strong>
-                                                      <div style="text-align: left;"><a
-                                                          href="https://www.nhc.noaa.gov/gtwo.php?basin=atlc&amp;fdays=5"
-                                                          title="Atlantic 5-Day Graphical
+                                                  5-Day Graphical Tropical
+                                                  Weather Outlook</a></div>
+                                              <div><a href="https://www.nhc.noaa.gov/gtwo.php?basin=atlc&amp;fdays=5"
+                                                  title="Atlantic 5-Day Graphical Tropical Weather
+                                                                                Outlook"></a><strong></strong></div>
+                                              <strong>
+                                                <div style="text-align: left;"><a
+                                                    href="https://www.nhc.noaa.gov/gtwo.php?basin=atlc&amp;fdays=5"
+                                                    title="Atlantic 5-Day Graphical
                                                                                   Tropical Weather Outlook"><br>
-                                                        </a></div>
-                                                    </strong>
-                                                    <div>
-                                                      ---------------------------</div>
-                                                    <div><br>
-                                                    </div>
-                                                    <div><strong>National High
-                                                        and Low Temperatures</strong><br>
-                                                      (excluding Alaska and
-                                                      Hawaii)</div>
-                                                  </div>
-                                                  <div style="text-align: left;">
-                                                    <div style="text-align: left;"><em><br>
-                                                        High Temperature for
-                                                        Tuesday, August 17, 2021</em><br>
-                                                      118 at Stovepipe Wells, CA<br>
-                                                      <br>
-                                                      <em>Low Temperature for
-                                                        Tuesday, August 17, 2021</em><br>
-                                                      34 at Bodie, CA<br>
-                                                    </div>
-                                                    <div style="text-align: left;"><br>
-                                                    </div>
-                                                  </div>
-                                                </div>
+                                                  </a></div>
+                                              </strong>
+                                              <div> ---------------------------</div>
+                                              <div><br>
                                               </div>
+                                              <div><strong>National High and Low
+                                                  Temperatures</strong><br>
+                                                (excluding Alaska and Hawaii)</div>
                                             </div>
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                          <em></em>
-                          <div style="text-align: left;">
-                            <div style="text-align: left;">
-                              <div style="text-align: left;">
-                                <div style="text-align: left;">
-                                  <div>
-                                    <div style="text-align: left;">
-                                      <div style="text-align: left;">
-                                        <div style="text-align: left;">
-                                          <div style="text-align: left;">
                                             <div style="text-align: left;">
-                                              <div>
-                                                <div style="text-align: left;">
-                                                </div>
+                                              <div style="text-align: left;"><em></em><br>
+                                                High Temperature for Tuesday,
+                                                November&nbsp; 2, 2021<br>
+                                                92 at Falcon Lake, TX<br>
+                                                92 at Zapata, TX<br>
+                                                <br>
+                                                Low Temperature for Tuesday,
+                                                November&nbsp; 2, 2021<br>
+                                                5 at Burgess Junction, WY</div>
+                                              <div style="text-align: left;"><br>
                                               </div>
                                             </div>
                                           </div>
@@ -513,13 +386,37 @@ https://www.spc.noaa.gov/</a></div>
                         </div>
                       </div>
                     </div>
+                    <em></em>
+                    <div style="text-align: left;">
+                      <div style="text-align: left;">
+                        <div style="text-align: left;">
+                          <div style="text-align: left;">
+                            <div>
+                              <div style="text-align: left;">
+                                <div style="text-align: left;">
+                                  <div style="text-align: left;">
+                                    <div style="text-align: left;">
+                                      <div style="text-align: left;">
+                                        <div>
+                                          <div style="text-align: left;"> </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                </div>
-                <div style="text-align: left;">
-                  <div> </div>
                 </div>
               </div>
             </div>
+          </div>
+          <div style="text-align: left;">
+            <div> </div>
           </div>
         </div>
       </div>
@@ -564,8 +461,18 @@ https://www.spc.noaa.gov/</a></div>
                 averages, etc.</em></div>
             <br>
             <a href="https://www.weather.gov/car/recreation" title="Recreation Forecasts">Recreation
-              Forecast for Northern &amp; Eastern Maine</a><br>
+              Forecast for Northern &amp; Eastern Maine</a></div>
+          <div style="text-align: center;"><br>
+          </div>
+          <div style="text-align: center;"><a href="https://www.wrh.noaa.gov/mesowest/getobext.php?sid=KFVE&amp;wfo=FVE&amp;num=72"
+              title="KFVE Current Conditions">Current Conditions<br>
+              Frenchville Airport<br>
+              (KFVE)</a><br>
             <br>
+            <a href="https://www.wrh.noaa.gov/mesowest/timeseries.php?sid=E0429&amp;num=72"
+              title="3-Day PWS Observations">3-Day PWS Observations</a><br>
+          </div>
+          <div style="text-align: center;"><br>
             <strong></strong></div>
           <div style="text-align: center;"><a href="https://weather.gc.ca/canada_e.html"><strong>
                 <u>Environmental Canada</u></strong></a></div>
@@ -616,13 +523,14 @@ https://www.spc.noaa.gov/</a></div>
                 <div><a href="https://xmountwashington.appspot.com/csc.html?data=more"
                     title="Mount Washington Observatory (New Hampshire)"><br>
                   </a></div>
+                <a href="https://www.weather.gov/learning" title="NWS Educational Resources"
+                  style="color: #1855d9; text-decoration: underline;"><img src="https://raw.githubusercontent.com/ApexWx/ApexWx.github.io/master/learning-thumbnail.png"
+                    alt="NWS Educational Resources" style="border: none; -ms-interpolation-mode: bicubic; max-width: 100%; width: 95px; height: 95px; padding: 10px;"
+                    height="95" width="95"><br>
+                </a>
                 <div><a href="https://www.weather.gov/safety/flood-turn-around-dont-drown"
                     title="NWS Flood Safety" style="color: #1855d9; text-decoration: underline;"><img
-                      src="https://raw.githubusercontent.com/ApexWx/ApexWx.github.io/master/SkywarnLogoTxtOutln2.png"
-                      alt="Skywarn Storm Spotters" style="border: none; -ms-interpolation-mode: bicubic; max-width: 100%; width: 70px; height: 97px; padding: 10px;"
-                      height="97" width="70"><img src="https://raw.githubusercontent.com/ApexWx/ApexWx.github.io/master/learning-thumbnail.png"
-                      alt="NWS Educational Resources" style="border: none; -ms-interpolation-mode: bicubic; max-width: 100%; width: 95px; height: 95px; padding: 10px;"
-                      height="95" width="95"><img src="https://raw.githubusercontent.com/ApexWx/ApexWx.github.io/master/TADDHighRes-sm.gif"
+                      src="https://raw.githubusercontent.com/ApexWx/ApexWx.github.io/master/TADDHighRes-sm.gif"
                       alt="Turn Around Dont' Drown" style="border: none; -ms-interpolation-mode: bicubic; max-width: 100%; width: 97px; height: 97px; padding: 10px;"
                       height="97" width="97"><br>
                   </a></div>
@@ -644,8 +552,8 @@ https://www.spc.noaa.gov/</a></div>
                       style="font-size: 12px; text-align: center;"><img src="https://raw.githubusercontent.com/ApexWx/ApexWx.github.io/master/mesowest%20116x30px.png"
                         alt="MesoWest" style="border: none; -ms-interpolation-mode: bicubic; max-width: 100%;"><br>
                     </a><a title="Apex Wx Data at MesoWest" href="https://mesowest.utah.edu/cgi-bin/droman/meso_base_dyn.cgi?stn=E0429&amp;unit=0&amp;timetype=LOCAL"
-                      style="font-size: 12px; text-align: center;"><span style="color: black;">Archived
-                        Apex Wx Data<br>
+                      style="font-size: 12px; text-align: center;"><span style="color: black;">Apex
+                        Wx Data<br>
                         <br>
                       </span></a></em><a href="http://apod.nasa.gov/" title="Astronomy Picture of the Day"><img
                       src="https://apexwx.github.io/apod.png" alt="Astrnomy Picture of the Day"
@@ -670,8 +578,9 @@ https://www.spc.noaa.gov/</a></div>
       <div style="clear: both;"></div>
     </div>
     <p></p>
-    <!-- end of side column: put your navigation menu, etc, above this line -->
+    <br>
     <div style="clear: both;"></div>
+    <!-- start  of footer section: insert your copyright notice, etc, below this line -->
     <div id="tswfooter" style="font-size: 12px;">
       <div>
         <div style="text-align: center;"><u>Credits</u></div>
