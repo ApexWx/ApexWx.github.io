@@ -42,8 +42,8 @@ type="application/javascript"></script>
             </div>
           </div>
           <div style="text-align: center; font-size: 14px;">
-            <div style="text-align: center;"> <em>Forecast updated at 1:15 pm
-                Monday, January 17, 2022</em></div>
+            <div style="text-align: center;"> <em>Forecast updated at 9:15 am
+                Tuesday, January 25, 2022</em></div>
           </div>
           <div style="text-align: center;">
             <div style="text-align: center;"><strong><br>
@@ -73,7 +73,7 @@ type="application/javascript"></script>
             <a href="https://www.weather.gov/ctp/" title="Click for more information"><img
                 src="https://www.weather.gov/wwamap/png/ctp.png" alt="NWS State College Watches and Warnings"
                 style="border-width: 1px; border-style: solid; width: 394px; height: 306px;"></a><br>
-            <span style="font-size: 12px;">Click map for more information</span></div>
+            <em> <span style="font-size: 12px;">Click map for more information</span></em></div>
           <div style="text-align: center;"><span style="font-size: 12px;"><br>
             </span></div>
           <div style="text-align: center;"><span style="font-size: 12px;"></span><br>
@@ -88,8 +88,8 @@ type="application/javascript"></script>
                           title="Click to visit webpage" style="font-size: 12px;"><img
                             src="https://images.webcamgalore.com/webcamimages/webcam-022456.jpg"
                             alt="Lancaster Weather Cam" style="border-width: 1px; border-style: solid; width: 385px; height: 217px;"><br>
-                        </a><span style="font-size: 12px;">Location: The Holiday
-                          Inn in downtown Lancaster, PA</span><br>
+                        </a><em><span style="font-size: 12px;">Location: The
+                            Holiday Inn in downtown Lancaster, PA</span></em><br>
                       </div>
                       <div style="text-align: center;"><br>
                       </div>
@@ -101,182 +101,226 @@ type="application/javascript"></script>
                       <a href="https://images.ambientweather.net/F4CFA279EC77/latest.jpg"
                         title="Click for larger image"><img src="https://images.ambientweather.net/F4CFA279EC77/latest.jpg"
                           alt="AMLoR Weather Lancaster" style="width: 402px; height: 226px;"></a></div>
-                    <div style="text-align: center; font-size: 12px;">Located on
-                      State Street just west of F&amp;M College, Lancaster, PA</div>
+                    <div style="text-align: center; font-size: 12px;"><em>Located
+                        on State Street just west of F&amp;M College, Lancaster,
+                        PA</em></div>
                     <div style="text-align: center;"><br>
                     </div>
-                    <u><strong><br>
-                      </strong></u></div>
-                  <div><u><strong>3-Day Outlook: Tuesday </strong></u><u><strong>-
-                        Thursday</strong></u><br>
+                    <strong><u>Fawkes House Almanac</u><br>
+                      <br>
+                    </strong>
+                    <div style="text-align: left;"><strong>Tuesday, January 25</strong><br>
+                      <u>Temperature</u>: <u>High</u>: 38° at 10:55 am / <u>Low</u>:
+                      22° at 11:59 pm<br>
+                      <u>Wind</u>: <u>Avg. Direction</u>: NE /&nbsp; <u>Avg.
+                        Speed</u>: 1 mph / <u>Peak Gust</u>: 16 mph<br>
+                      <u>Precipitation</u>: 0.00" / <u>Snow</u>: 0.0"</div>
+                    <div style="text-align: left;"><br>
+                    </div>
+                    <div style="text-align: left;"><strong>Wednesday, January 26<br>
+                      </strong><u>Avg. High</u>: 40° / <u>Avg. Low</u>: 21°</div>
+                    <div style="text-align: left;"><u>Record High</u>: 55°
+                      (2002) / <u>Record Low</u>: 8° (1987)</div>
+                    <div style="text-align: left;"><u>Year-to-Date Precipitation</u>:
+                      2.00" (avg. 2.52") | <u>Snow</u>: 3.5" (avg. 8.9")*</div>
+                    <div style="text-align: left; font-size: 12px;">*<em>Snow
+                        totals measured from July 1.</em></div>
+                    <div style="text-align: left;"><u><strong><br>
+                        </strong></u></div>
+                    <div style="text-align: left;"><u><strong></strong>Moon<strong></strong>
+                        Phase</u>: 🌘 Waning Crescent → 🌑 New Moon 12:46 am
+                      Feb. 1</div>
+                  </div>
+                  <div><br>
+                  </div>
+                  <div><u><strong>3-Day Outlook: Wednesday - Friday</strong></u><br>
                     <u><strong> </strong></u>
                     <div style="text-align: center;">
                       <div>
-                        <div>
+                        <div><br>
                           <div style="text-align: left;">
                             <div> </div>
                           </div>
-                          <div style="text-align: left;"><br>
-                          </div>
-                          <div style="text-align: left;">An upper trough over
-                            Pennsylvania will lift out tonight and Tuesday, as
-                            surface high pressure builds in from the Great
-                            Lakes. An Alberta Clipper will track north of
-                            Pennsylvania on Wednesday, the trailing cold front
-                            sweeping through the area Wednesday<br>
-                            evening. High pressure will build in from the
-                            northwest Thursday.</div>
-                          <div style="text-align: left;"><br>
-                          </div>
-                          <div style="text-align: left;">Yesterday's high was
-                            39° at 4:04 am and the low was 30° at 6:18 pm. 0.67"
-                            rain was recorded.<br>
-                          </div>
-                          <ul>
-                          </ul>
-                          <div style="text-align: left;">
-                            <div style="text-align: left;"><strong>Today &amp;
-                                Tonight&nbsp;</strong>
-                              <div style="text-align: left;"><em>Sunrise at 7:23
-                                  am / Sunset at 5:07 pm / Waning Gibbous Moon</em></div>
-                              <div style="text-align: left;"><strong><br>
-                                </strong></div>
-                              <div style="text-align: left;">Partly cloudy with
-                                a high near 35°. West wind 13-16 mph gusting
-                                25-35 mph. Wind chills values in the low 20s.</div>
-                              <div style="text-align: left;"><br>
-                              </div>
-                              Tonight, partly cloudy and cold with a low near
-                              24°. Wind becomes SE at 0-5 mph.
-                              <div style="text-align: left;"><br>
-                              </div>
-                              <div style="text-align: left;"><strong>Wednesday,
-                                  January 19</strong><br>
-                                <strong><strong></strong></strong><em>Sunrise at
-                                  7:23 am / Sunset at 5:08 pm / Waning Gibbous
-                                  Moon</em></div>
-                              <div style="text-align: left;"><em><br>
-                                </em></div>
-                              <div style="text-align: left;">Mostly cloudy with
-                                a 5% chance for rain in the afternoon. High near
-                                44°. Wind becomes SW at 5-8 mph.</div>
-                              <div style="text-align: left;"><br>
-                              </div>
-                              Wednesday night, cloudy with a 100% chance for
-                              rain changing to snow overnight. Precipitation
-                              between 0.25-0.50". Low near 28°. SW wind at 5 mph
-                              shifts to the NW at 5 mph.<br>
-                              <div style="text-align: left;"><br>
-                              </div>
-                              <div style="text-align: left;"><strong>Thursday,
-                                  January 20</strong><br>
-                                <strong><strong></strong></strong><em>Sunrise at
-                                  7:22 am / Sunset at 5:10 pm / Waning Gibbous
-                                  Moon</em></div>
-                              <div style="text-align: left;"><em><br>
-                                </em></div>
-                              <div style="text-align: left;">Cloudy in the
-                                morning with a chance for snow tapering off by
-                                the afternoon. Chance for precipitation 40% with
-                                &lt; 0.10". Cold with a high near 33°. NW wind
-                                10-12 mph.</div>
-                              <div style="text-align: left;"><br>
-                              </div>
-                              Thursday night, partly cloudy and cold with a low
-                              near 12°. 5% chance for precipitation. N wind 8-14
-                              mph. </div>
+                        </div>
+                        <div>
+                          <div style="text-align: left;">Arctic high pressure
+                            will control the Lancaster region's weather today
+                            and tomorrow. Clouds increase tomorrow night as a
+                            warm front approaches followed by a cold front
+                            Friday. The cold front will move offshore Friday and
+                            interact with a strengthening winter storm in the
+                            western Atlantic with a chance for snow as the cold
+                            front moves through Friday with snow likely Friday
+                            evening into Saturday morning as the coastal low
+                            tracks towards New England.</div>
+                          <div>
+                            <ul>
+                            </ul>
                             <div style="text-align: left;">
-                              <div style="text-align: left;"> </div>
-                            </div>
-                            <div style="text-align: left;"><u><strong><br>
-                                </strong></u></div>
-                            <div style="text-align: left;"><u><strong>Days 4 to
-                                  7: Friday </strong></u><u><strong>- Monday</strong></u></div>
-                            <div style="text-align: left;"><em><br>
-                              </em></div>
-                            <div style="text-align: left;">High pressure Friday
-                              moves away as a coastal low tracks near or just
-                              offshore with a chance for snow Saturday. High
-                              pressure builds back in for Sunday and Monday with
-                              partly cloudy, dry, and cold conditions.
+                              <div style="text-align: left;"><strong>Today &amp;
+                                  Tonight</strong><strong></strong><br>
+                                <div style="text-align: left;"> <em>Sunrise:
+                                    7:18 am / Sunset: 5:17 pm | Moonrise: 1:29
+                                    am / Moonset: 11:55 am</em></div>
+                                <div style="text-align: left;"><em><br>
+                                  </em></div>
+                                <div style="text-align: left;">Mostly sunny in
+                                  the morning then becoming partly cloudy in the
+                                  afternoon with a high near 27°. Northwest wind
+                                  8-10 mph.</div>
+                                <div style="text-align: left;"><br>
+                                </div>
+                                Tonight, mostly clear with a low around 10°.
+                                Light variable wind.<br>
+                                <div style="text-align: left;"><br>
+                                </div>
+                                <div style="text-align: left;"><strong>Thursday,
+                                    January 27 </strong><br>
+                                  <em>Sunrise: 7:18 am / Sunset: 5:18 pm |
+                                    Moonrise: 2:43 am / Moonset: 12:33 pm<br>
+                                    <br>
+                                  </em></div>
+                                <div style="text-align: left;">Mostly sunny with
+                                  a high around 30°. South wind 4-8 mph.</div>
+                                <div style="text-align: left;"><br>
+                                </div>
+                                Thursday night, partly cloudy early then cloudy
+                                with a low near 23°. 20% chance for snow after
+                                midnight. South wind 0-5 mph.
+                                <div style="text-align: left;"><br>
+                                </div>
+                                <div style="text-align: left;"><strong>Friday,
+                                    January 28 </strong><br>
+                                  <em>Sunrise: 7:17 am / Sunset: 5:19 pm |
+                                    Moonrise: 3:59 am / Moonset: 1:19 pm</em></div>
+                                <div style="text-align: left;"><em><br>
+                                  </em></div>
+                                <div style="text-align: left;">Cloudy with a
+                                  chance for snow in the morning with increasing
+                                  chances for snow in the afternoon. Chance for
+                                  precipitation 50% with between 0.01 and
+                                  0.09-inch expected. High around 34°. South
+                                  wind 0-5 mph.</div>
+                                <div style="text-align: left;"><br>
+                                </div>
+                                Friday night, cloudy with a 60% chance for snow.
+                                Low around 21°. North wind 8-14 mph. </div>
                               <div style="text-align: left;">
+                                <div style="text-align: left;"> </div>
+                              </div>
+                              <div style="text-align: left;"><u><strong><br>
+                                  </strong></u></div>
+                              <div style="text-align: left;"><u><strong>4 to 7
+                                    Day</strong></u><u><strong> Outlook:
+                                    Saturday - Tuesday<br>
+                                  </strong></u></div>
+                              <div style="text-align: left;"><em><br>
+                                </em></div>
+                              <div style="text-align: left;">Snow Saturday
+                                morning tapers off in the afternoon with high
+                                pressure building in with cold, dry, and windy
+                                conditions Sunday with less wind Monday and
+                                Tuesday.<br>
                                 <div style="text-align: left;">
                                   <div style="text-align: left;">
                                     <div style="text-align: left;">
                                       <div style="text-align: left;">
-                                        <div style="text-align: left;"><strong><br>
-                                          </strong></div>
-                                        <div style="text-align: left;"><strong>Friday,
-                                            January 21</strong><br>
-                                          Partly cloudy and cold with a high
-                                          near 24°. 10% chance for
-                                          precipitation.
-                                          N wind 0-7 mph.</div>
-                                        <div style="text-align: left;"><br>
-                                        </div>
-                                        <div style="text-align: left;">Friday
-                                          night, partly cloudy and cold with a
-                                          low around 12°. 30% chance for snow. N
-                                          wind 0-7 mph.
-                                          <div style="text-align: left;"><br>
-                                          </div>
-                                          <div style="text-align: left;"><strong>Saturday,
-                                              January 22</strong></div>
-                                          <div style="text-align: left;">Partly
-                                            cloudy and cold with a 30% chance
-                                            for snow tapering off by evening.
-                                            High around 27°.
-                                            N wind 0-7 mph.</div>
-                                          <div style="text-align: left;"><br>
-                                          </div>
-                                          <div style="text-align: left;">Saturday
-                                            night, partly cloudy with a 10%
-                                            chance for snow. Low near 17°. W
-                                            wind 0-7 mph.</div>
-                                          <div style="text-align: left;"><br>
-                                          </div>
-                                          <div style="text-align: left;"><strong>Sunday,
-                                              January 23</strong></div>
-                                          <div style="text-align: left;">Partly
-                                            sunny with a 5% chance for
-                                            precipitation. High around 33°. W
-                                            wind 8-14 mph.</div>
-                                          <div style="text-align: left;"><br>
-                                          </div>
-                                          <div style="text-align: left;">Sunday
-                                            night, partly cloudy with a low near
-                                            15°. 5% chance for precipitation.
-                                            NW wind 0-7 mph.
-                                            <div style="text-align: left;"><br>
+                                        <div style="text-align: left;">
+                                          <div style="text-align: left;">
+                                            <div style="text-align: left;">
+                                              <div style="text-align: left;">
+                                                <div style="text-align: left;">
+                                                  <div style="text-align: left;">
+                                                    <div style="text-align: left;"><br>
+                                                    </div>
+                                                    <div style="text-align: left;"><strong>Saturday,
+                                                        January 29</strong></div>
+                                                    <div style="text-align: left;">Mostly
+                                                      cloudy with snow likely in
+                                                      the morning then a chance
+                                                      for snow in the afternoon.
+                                                      Chance for precipitation
+                                                      40%. High near 24°.
+                                                      Northwest wind 15-22 mph.</div>
+                                                    <div style="text-align: left;"><br>
+                                                    </div>
+                                                    <div style="text-align: left;">Saturday
+                                                      night, partly cloudy with
+                                                      a low near 11°. 5% chance
+                                                      for precipitation.
+                                                      Northwest wind 15-22 mph.
+                                                      <div style="text-align: left;"><br>
+                                                      </div>
+                                                      <div style="text-align: left;"><strong>Sunday,
+                                                          January 30</strong></div>
+                                                      <div style="text-align: left;"><strong></strong>Mostly
+                                                        sunny in the morning
+                                                        then becoming partly
+                                                        cloudy in the afternoon
+                                                        with a high near 25°.
+                                                        Northwest wind 8-14 mph.</div>
+                                                      <div style="text-align: left;"><br>
+                                                      </div>
+                                                      <div style="text-align: left;">Sunday
+                                                        night, partly cloudy
+                                                        with a low near 14°.
+                                                        West wind 0-7 mph.
+                                                        <div style="text-align: left;"><br>
+                                                        </div>
+                                                        <div style="text-align: left;"><strong>Monday,
+                                                            January 31</strong></div>
+                                                        <div style="text-align: left;">Partly
+                                                          cloudy with a high
+                                                          near 32°. West wind
+                                                          0-7 mph.</div>
+                                                        <div style="text-align: left;"><br>
+                                                        </div>
+                                                        <div style="text-align: left;">Partly
+                                                          cloudy with a low
+                                                          around 19°.&nbsp;
+                                                          Southeast wind 0-7
+                                                          mph.
+                                                          <div style="text-align: left;"><br>
+                                                          </div>
+                                                          <div style="text-align: left;"><strong>Tuesday,
+                                                              February 1</strong></div>
+                                                          <div style="text-align: left;">Partly
+                                                            cloudy with a high
+                                                            near 38° . South
+                                                            wind 0-7 mph.</div>
+                                                          <div style="text-align: left;"><br>
+                                                          </div>
+                                                          <div style="text-align: left;">Tuesday
+                                                            night, mostly cloudy
+                                                            with a low near 27°.
+                                                            5% chance for
+                                                            precipitation.
+                                                            Southeast wind 0-7
+                                                            mph.</div>
+                                                          <div style="text-align: left;"><br>
+                                                          </div>
+                                                          <u><strong>8 to 14 Day
+                                                              Trends: Tue. Feb.
+                                                              1 - Mon. Feb. 7</strong></u><u><strong></strong></u><u><strong></strong></u><u><strong></strong></u><u><strong></strong></u><u><strong></strong></u><u><strong></strong></u><u><strong></strong></u></div>
+                                                      </div>
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                              </div>
                                             </div>
-                                            <div style="text-align: left;"><strong>Monday,
-                                                January 24</strong></div>
-                                            <div style="text-align: left;"><strong></strong>Partly
-                                              cloudy with a high around 30°. W
-                                              wind 0-7 mph.</div>
-                                            <div style="text-align: left;"><br>
-                                            </div>
-                                            <div style="text-align: left;">Monday
-                                              night, partly cloudy with a low
-                                              around 17°. W wind 0-7 mph.</div>
-                                            <div style="text-align: left;"><br>
-                                            </div>
-                                            <u><strong>8 to 14 Day Trends: Tue.
-                                                Jan. 25 - Mon. Jan. 31</strong></u><u><strong></strong></u></div>
-                                        </div>
-                                        <u><strong></strong></u><u><strong></strong></u><u><strong></strong></u><u><strong></strong></u><u><strong></strong></u><u><strong></strong></u><u><strong></strong></u><u><strong></strong></u><u><strong></strong></u><u><strong></strong></u><u><strong></strong></u><u><strong></strong></u></div>
+                                          </div>
+                                          <u><strong></strong></u><u><strong></strong></u><u><strong></strong></u><u><strong></strong></u><u><strong></strong></u><u><strong></strong></u><u><strong></strong></u><u><strong></strong></u><u><strong></strong></u><u><strong></strong></u><u><strong></strong></u><u><strong></strong></u></div>
+                                      </div>
                                     </div>
                                   </div>
                                 </div>
                               </div>
-                            </div>
-                            <div style="text-align: left;"> </div>
-                            <div style="text-align: left;">
+                              <div style="text-align: left;"> </div>
                               <div style="text-align: left;">
-                                <div style="text-align: left;"> </div>
+                                <div style="text-align: left;">
+                                  <div style="text-align: left;"> </div>
+                                </div>
                               </div>
-                            </div>
-                            <div style="text-align: left;">
                               <div style="text-align: left;">
                                 <div style="text-align: left;">
                                   <div style="text-align: left;">
@@ -288,56 +332,56 @@ type="application/javascript"></script>
                                               <div style="text-align: left;">
                                                 <div style="text-align: left;">
                                                   <div style="text-align: left;">
+                                                    <div style="text-align: left;">
+                                                    </div>
                                                   </div>
-                                                </div>
-                                                <u><strong></strong></u><u><strong></strong></u><u><strong></strong></u><u><strong></strong></u><u><strong></strong></u><u><strong></strong></u></div>
+                                                  <u><strong></strong></u><u><strong></strong></u><u><strong></strong></u><u><strong></strong></u><u><strong></strong></u><u><strong></strong></u></div>
+                                              </div>
                                             </div>
                                           </div>
                                         </div>
                                       </div>
-                                    </div>
-                                    <u><strong></strong></u></div>
-                                  <u><strong> </strong></u><a href="https://www.cpc.ncep.noaa.gov/"
-                                    title="Climate Predication Center">Climate
-                                    Prediction Center</a></div>
-                                <div>
+                                      <u><strong></strong></u></div>
+                                    <u><strong> </strong></u><a href="https://www.cpc.ncep.noaa.gov/"
+                                      title="Climate Predication Center">Climate
+                                      Prediction Center</a></div>
                                   <div>
-                                    <div style="text-align: left;"><u><strong></strong></u><strong></strong><br>
-                                      Below normal temperatures / Below normal
-                                      precipitation</div>
+                                    <div>
+                                      <div style="text-align: left;"><u><strong></strong></u><strong></strong><br>
+                                        Above normal temperatures / Above normal
+                                        precipitation</div>
+                                    </div>
                                   </div>
                                 </div>
                               </div>
                             </div>
-                          </div>
-                          <div style="text-align: left;">
-                            <div>
-                              <div style="text-align: left;">
+                            <div style="text-align: left;">
+                              <div>
                                 <div style="text-align: left;">
+                                  <div style="text-align: left;">
+                                    <div style="text-align: left;"> </div>
+                                  </div>
                                   <div style="text-align: left;"> </div>
-                                </div>
-                                <div style="text-align: left;"> </div>
-                                <div style="text-align: left;">
-                                  <div style="text-align: left;"> </div>
+                                  <div style="text-align: left;">
+                                    <div style="text-align: left;"> </div>
+                                  </div>
                                 </div>
                               </div>
                             </div>
-                          </div>
-                          <div style="text-align: left;">
-                            <div>
+                            <div style="text-align: left;">
                               <div>
-                                <div style="text-align: left;">
-                                  <div>
+                                <div>
+                                  <div style="text-align: left;">
                                     <div>
-                                      <div style="text-align: left;">
-                                        <div style="text-align: left;"> </div>
-                                      </div>
-                                      <div style="text-align: left;">
+                                      <div>
+                                        <div style="text-align: left;">
+                                          <div style="text-align: left;"> </div>
+                                        </div>
                                         <div style="text-align: left;">
                                           <div style="text-align: left;">
                                             <div style="text-align: left;">
-                                              <div>
-                                                <div style="text-align: left;">
+                                              <div style="text-align: left;">
+                                                <div>
                                                   <div style="text-align: left;">
                                                     <div style="text-align: left;">
                                                       <div style="text-align: left;">
@@ -346,6 +390,8 @@ type="application/javascript"></script>
                                                             <div style="text-align: left;">
                                                               <div style="text-align: left;">
                                                                 <div style="text-align: left;">
+                                                                  <div style="text-align: left;">
+                                                                  </div>
                                                                 </div>
                                                               </div>
                                                             </div>
@@ -353,35 +399,33 @@ type="application/javascript"></script>
                                                         </div>
                                                       </div>
                                                     </div>
-                                                  </div>
-                                                  <div><br>
-                                                  </div>
-                                                  <div style="text-align: left;">
-                                                    <div>------------------------------------------------------------------------------------------------------------</div>
                                                     <div><br>
                                                     </div>
-                                                    <div style="text-align: left;"><strong>
-                                                        NWS National Weather
-                                                        Outlook</strong><br>
-                                                      <a href="https://www.weather.gov/">https://www.weather.gov/</a></div>
+                                                    <div style="text-align: left;">
+                                                      <div>------------------------------------------------------------------------------------------------------------</div>
+                                                      <div><br>
+                                                      </div>
+                                                      <div style="text-align: left;"><strong>
+                                                          NWS National Weather
+                                                          Outlook</strong><br>
+                                                        <a href="https://www.weather.gov/">https://www.weather.gov/</a></div>
+                                                      <em><strong> </strong></em></div>
                                                     <em><strong> </strong></em></div>
-                                                  <em><strong> </strong></em></div>
-                                                <a href="https://www.weather.gov/"></a>
-                                                <strong></strong><strong></strong>
-                                                <em><strong></strong></em>
-                                                <div style="text-align: left;">
-                                                  <div>
-                                                    <div> </div>
+                                                  <strong></strong><strong></strong>
+                                                  <em><strong></strong></em>
+                                                  <div style="text-align: left;">
                                                     <div>
-                                                      <div style="text-align: left;">
+                                                      <div> </div>
+                                                      <div>
                                                         <div style="text-align: left;">
                                                           <div style="text-align: left;">
                                                             <div style="text-align: left;">
                                                               <div style="text-align: left;">
-                                                                <div>
+                                                                <div style="text-align: left;">
+                                                                  <div>
                                                                   <div style="text-align: left;">
                                                                   <div style="text-align: left;">
-                                                                  <div style="text-align: left;"></div>
+                                                                  </div>
                                                                   </div>
                                                                   </div>
                                                                 </div>
@@ -393,30 +437,28 @@ type="application/javascript"></script>
                                                     </div>
                                                   </div>
                                                 </div>
-                                              </div>
-                                              <div style="text-align: left;">
                                                 <div style="text-align: left;">
-                                                </div>
-                                                <div style="text-align: left;"><br>
-                                                  <em><strong>Major Winter Storm
-                                                      Impacting the Eastern U.S.
-                                                      Through Today</strong></em><br>
-                                                  <div style="text-align: left;">A
-                                                    major winter storm will
-                                                    continue heavy snow and
-                                                    strong winds today from the
-                                                    central Appalachians into
-                                                    Upstate New York and the
-                                                    higher elevations of New
-                                                    England with dangerous
-                                                    travel, power outages, and
-                                                    coastal flooding. Strong
-                                                    winds are expected behind
-                                                    the storm as far south as
-                                                    Georgia which could lead to
-                                                    additional power outages and
-                                                    tree damage, especially in
-                                                    areas with significant ice.</div>
+                                                  <div style="text-align: left;">
+                                                  </div>
+                                                  <br>
+                                                  <div style="text-align: left;"><em><strong>Calm
+                                                        Midweek, Before Weekend
+                                                        Winter Storm?</strong></em><br>
+                                                    The weather pattern remains
+                                                    mostly quiet midweek but
+                                                    this may change by the
+                                                    weekend as confidence is
+                                                    increasing on a winter storm
+                                                    along the East Coast. On
+                                                    Wednesday, expect below
+                                                    normal temperatures for the
+                                                    Eastern half of the U.S.,
+                                                    locally heavy snow in the
+                                                    southern Rockies and High
+                                                    Plains, showers and isolated
+                                                    thunderstorms in Florida and
+                                                    air stagnation issues in the
+                                                    Northwest.</div>
                                                   <div style="text-align: left;"><br>
                                                     <div>
                                                       <div style="text-align: left;">
@@ -446,8 +488,17 @@ https://www.spc.noaa.gov/</a></div>
                                                   </div>
                                                   <div style="text-align: left;"><br>
                                                   </div>
-                                                  <div>Severe thunderstorms are
-                                                    not forecast today.</div>
+                                                  <div>Isolated thunderstorms
+                                                    are possible across portions
+                                                    of southern Florida today
+                                                    through early evening,
+                                                    although severe storms are
+                                                    not expected.</div>
+                                                  <div><br>
+                                                  </div>
+                                                  <div><em>&nbsp;<a href="https://www.spc.noaa.gov/media/year-in-review/"
+                                                        title="2021 in Review">SPC
+                                                        2021 in Review</a></em></div>
                                                   <br>
                                                   <div style="text-align: left;">
                                                     <div>---------------------------
@@ -498,26 +549,28 @@ https://www.spc.noaa.gov/</a></div>
                                                     (excluding Alaska and
                                                     Hawaii)</div>
                                                   <br>
-                                                  High Temperature for Sunday,
-                                                  January 16, 2022<br>
-                                                  80 at Boca Chica, FL<br>
+                                                  High Temperature for Tuesday,
+                                                  January 25, 2022<br>
+                                                  81 at Boca Chica Key, FL<br>
                                                   <br>
-                                                  Low Temperature for Sunday,
-                                                  January 16, 2022<br>
-                                                  -29 at Averill, VT<br>
-                                                  <em></em>
-                                                  <div style="text-align: left;">
+                                                  Low Temperature for Tuesday,
+                                                  January 25, 2022<br>
+                                                  -33 at Crane Lake, MN
+                                                  <div style="text-align: left;"><br>
+                                                    <em></em>
                                                     <div style="text-align: left;">
                                                       <div style="text-align: left;">
                                                         <div style="text-align: left;">
-                                                          <div>
-                                                            <div style="text-align: left;">
+                                                          <div style="text-align: left;">
+                                                            <div>
                                                               <div style="text-align: left;">
                                                                 <div style="text-align: left;">
                                                                   <div style="text-align: left;">
                                                                   <div style="text-align: left;">
+                                                                  <div style="text-align: left;">
                                                                   <div>
                                                                   <div style="text-align: left;">
+                                                                  </div>
                                                                   </div>
                                                                   </div>
                                                                   </div>
@@ -535,17 +588,17 @@ https://www.spc.noaa.gov/</a></div>
                                             </div>
                                           </div>
                                         </div>
+                                        <div> </div>
                                       </div>
-                                      <div> </div>
+                                      <div style="text-align: left;">
+                                        <div style="text-align: left;"> </div>
+                                      </div>
                                     </div>
+                                  </div>
+                                  <div>
                                     <div style="text-align: left;">
                                       <div style="text-align: left;"> </div>
                                     </div>
-                                  </div>
-                                </div>
-                                <div>
-                                  <div style="text-align: left;">
-                                    <div style="text-align: left;"> </div>
                                   </div>
                                 </div>
                               </div>
@@ -692,7 +745,7 @@ https://www.spc.noaa.gov/</a></div>
       </div>
     </div>
     <div style="clear: both;"></div>
-    <div id="tswfooter" style="font-size: 12px;"><!-- start of footer section: insert your copyright notice, etc, here -->
+    <div style="font-size: 12px;" id="tswfooter"><!-- start of footer section: insert your copyright notice, etc, here -->
       <div>
         <div style="text-align: center;"><u>Credits</u></div>
         <div style="text-align: center;"><span style="font-size: 12px;"><br>
