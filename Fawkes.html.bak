@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-    <title>Fawkes House Weather Information</title>
+    <title>Fawkes House &amp; Lower Susquehanna Valley, PA Weather Information</title>
     <meta name="generator" content="thesitewizard.com's Layout Wizard 3.0.1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="all" href="styles.css">
@@ -11,713 +11,382 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
-    <script src="https://cdnres.willyweather.com/widget/warning/loadView.html?id=126547"
-type="application/javascript"></script>
-    <meta http-equiv="Expires" content="Sun, 31 Dec 2000 08:00:00 GMT">
-    <meta http-equiv="Pragma" content="no-cache">
-    <meta http-equiv="Cache-Control" content="no-cache">
+    <script src="https://cdnres.willyweather.com/widget/warning/loadView.html?id=126547"></script>
   </head>
   <body>
-    <div id="tswcontainer">
+    <div id="tswcontainer"> <br>
+    </div>
+    <div><!-- start of header section: insert your logo, etc, here -->
       <div id="tswheader">
-        <!-- start of header section: insert your logo, etc, here -->
-        <p style="text-align: center;"><a href="#top" id="top"><img src="https://raw.githubusercontent.com/ApexWx/ApexWx.github.io/master/Apex%20banner.jpg"
+        <p style="text-align: center;"><a id="top"><img src="https://raw.githubusercontent.com/ApexWx/ApexWx.github.io/master/Apex%20banner.jpg"
               alt="Apex Wx Banner" style="border: medium none; max-width: 525px;"></a></p>
         <p>&nbsp;</p>
         <!-- end of header section: insert your logo, etc, above this line --> </div>
+      <!-- start of content column: insert your content here -->:
       <div id="tswcentrecombo">
         <div id="tswcontent">
           <div id="tswcontproper">
-            <!-- start of content column: insert your content here -->
-            <h2 style="text-align: center;">Apex Wx</h2>
-            <h2 style="color: black; font-family: sans-serif; font-weight: 400; line-height: 1.4; margin: 0px 0px 30px; text-align: center;"><strong>Fawkes
-                House<br>
-                Lancaster, Pennsylvania<br>
-                Weather Information</strong><br>
-            </h2>
-            <div style="text-align: center;"><label id="lblGreetings"></label></div>
-            <br>
-            <div style="text-align: center;"> <iframe src="https://free.timeanddate.com/clock/i7v10lju/n198/tct/pct/ftb/tt0/ts1/ta1"
-                allowtransparency="true" height="19" frameborder="0" width="343"></iframe>
+            <div style="text-align:center">
+              <h2 style="text-align: center;">Apex Wx<br>
+              </h2>
+              <h2 style="color: black; font-family: sans-serif; font-weight: 400; line-height: 1.4; margin: 0px 0px 30px; text-align: center;"><strong>Fawkes
+                  House &amp; </strong><strong>Lower Susquehanna Valley, PA<br>
+                  Weather Information</strong> </h2>
             </div>
-          </div>
-          <div style="text-align: center; font-size: 14px;">
-            <div style="text-align: center;"> <em>Forecast updated at 8:45 am
-                Wednesday, February 23, 2022</em></div>
-          </div>
-          <div style="text-align: center;">
-            <div style="text-align: center;"><strong><br>
-              </strong></div>
-            <div style="text-align: center;"><span style="font-size: 14px;">Optimized
-                for tablets and other mobile devices.</span></div>
-            <div style="text-align: center;"><span style="font-size: 14px;">Orient
-                to portrait for the best experience on small screens.<br>
+            <div style="text-align: center;"><br>
+            </div>
+            <div style="text-align: center;"><label id="lblGreetings"><b>Good
+                  Afternoon!</b></label> </div>
+            <br>
+            <div style="text-align: center;"> <iframe src="https://free.timeanddate.com/clock/i8busqju/n23/ftb/tt0/ts1"
+                style="border: none;" height="18" width="311"></iframe>
+              <div style="text-align: center; font-size:12px;">
+                <div style="font-size: 14px; text-align: center;">
+                  <div style="font-size: 12px;">
+                    <div style="text-align: center;">
+                      <div style="text-align: center; font-size:12px;"><em>
+                          Weather information updated at 9:00 am Sunday, 16
+                          October 2022</em> </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <p> </p>
+            <div style="text-align: center; font-size: 14px;">
+              <p>Units US standard unless otherwise noted.<br>
+                Optimized for tablets and other mobile devices.<br>
                 Apex Wx is a private weather information service unaffiliated
                 with NOAA/NWS.<br>
-                Always consult your local NWS or Environment Canada office in
-                making important weather-related decisions.</span></div>
-            <div style="text-align: center;"><span style="font-size: 14px;"><br>
-              </span></div>
-            <div style="text-align: center;"><br>
-              <span style="font-size: 14px;"><strong>Current Weather Chart</strong></span><a
-                href="https://s.w-x.co/staticmaps/WEB_Current_Weather_Map_1280x720.jpg?crop=16:9&amp;width=800&amp;format=pjpg&amp;auto=webp&amp;quality=60"><br>
-              </a><a href="https://s.w-x.co/staticmaps/WEB_Current_Weather_Map_1280x720.jpg?crop=16:9&amp;width=800&amp;format=pjpg&amp;auto=webp&amp;quality=60"
-                title="Click for larger image"><img src="https://s.w-x.co/staticmaps/WEB_Current_Weather_Map_1280x720.jpg?crop=16:9&amp;width=800&amp;format=pjpg&amp;auto=webp&amp;quality=60"
-                  alt="Current Surface Map (TWC)" style="width: 450px; height: 253px;"></a></div>
-            <span style="font-size: 13px;"><strong><br>
-              </strong></span></div>
-          <div style="text-align: center;"><span style="font-size: 13px;"><strong><br>
-              </strong></span></div>
-          <div style="text-align: center;"><span style="font-size: 14px;"><strong>NWS
-                State College Watches, Warnings, and Advisories</strong></span><br>
-            <a href="https://www.weather.gov/ctp/" title="Click for more information"><img
-                src="https://www.weather.gov/wwamap/png/ctp.png" alt="NWS State College Watches and Warnings"
-                style="border-width: 1px; border-style: solid; width: 394px; height: 306px;"></a><br>
-            <em> <span style="font-size: 12px;">Click map for more information</span></em></div>
-          <div style="text-align: center;"><span style="font-size: 12px;"><br>
-            </span></div>
-          <div style="text-align: center;"><span style="font-size: 12px;"></span><br>
-            <div style="text-align: center;"><strong></strong>
-              <div style="text-align: center;">
-                <div style="text-align: left;">
-                  <div>
-                    <div style="text-align: center;">
-                      <div style="text-align: center;"><span style="font-size: 14px;"><strong>Lancaster
-                            Weather Cam</strong></span></div>
-                      <div style="text-align: center;"><a href="https://www.webcamgalore.com/webcam/USA/Lancaster-Pennsylvania/22456.html"
-                          title="Click to visit webpage" style="font-size: 12px;"><img
-                            src="https://images.webcamgalore.com/webcamimages/webcam-022456.jpg"
-                            alt="Lancaster Weather Cam" style="border-width: 1px; border-style: solid; width: 385px; height: 217px;"><br>
-                        </a><em><span style="font-size: 12px;">Location: The
-                            Holiday Inn in downtown Lancaster, PA</span></em><br>
-                      </div>
-                      <div style="text-align: center;"><br>
-                      </div>
-                      <div style="text-align: center;"><br>
-                      </div>
-                      <div style="text-align: center;"><strong style="font-size: 14px;">AMLoR
-                          PWS Weather Cam<br>
-                        </strong></div>
-                      <a href="https://images.ambientweather.net/F4CFA279EC77/latest.jpg"
-                        title="Click for larger image"><img src="https://images.ambientweather.net/F4CFA279EC77/latest.jpg"
-                          alt="AMLoR Weather Lancaster" style="width: 402px; height: 226px;"></a></div>
-                    <div style="text-align: center; font-size: 12px;"><em>Located
-                        on State Street just west of F&amp;M College, Lancaster,
-                        PA</em></div>
-                    <div style="text-align: center;"><br>
+                Always consult your local government weather office for the
+                latest official weather updates and information. </p>
+              <p><em style="font-size: 13px;"><strong>NWS State College Watches,
+                    Warnings, and Advisories<br>
+                  </strong></em><a href="https://www.weather.gov/ctp/"><img src="https://www.weather.gov/wwamap/png/ctp.png"
+                    alt="NWS State College Watches, Warnings, and Advisories" title="Clidk for more information"
+                    style="border-width: 1px; border-style: solid;"></a><br>
+                <em style="font-size: 12px;">Click map for more information</em><br>
+              </p>
+            </div>
+            <p> </p>
+            <br>
+            <div style="text-align: center;"><em style="color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: 14px; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"><strong>Lancaster
+                  48-Hour NWS Graphical Weather Forecast</strong></em><br style="color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+              <a href="https://forecast.weather.gov/meteograms/Plotter.php?lat=40.0418&amp;lon=-76.3012&amp;wfo=CTP&amp;zcode=PAZ066&amp;gset=20&amp;gdiff=5&amp;unit=0&amp;tinfo=EY5&amp;ahour=0&amp;pcmd=11101111110000000000000000000000000000000000000000000000000&amp;lg=en&amp;indu=1%211%211%21&amp;dd=&amp;bw=&amp;hrspan=48&amp;pqpfhr=6&amp;psnwhr=6"
+                title="Click for larger image" style="font-family: Arial, Helvetica, sans-serif; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255);"><img
+                  src="https://forecast.weather.gov/meteograms/Plotter.php?lat=40.0418&amp;lon=-76.3012&amp;wfo=CTP&amp;zcode=PAZ066&amp;gset=20&amp;gdiff=5&amp;unit=0&amp;tinfo=EY5&amp;ahour=0&amp;pcmd=11101111110000000000000000000000000000000000000000000000000&amp;lg=en&amp;indu=1%211%211%21&amp;dd=&amp;bw=&amp;hrspan=48&amp;pqpfhr=6&amp;psnwhr=6"
+                  alt="48-Hour Weather Forecast" style="max-width: 100%; width: 384px; height: 288px; border-width: 1px; border-style: solid;"></a><br>
+              <a href="https://forecast.weather.gov/meteograms/Plotter.php?lat=40.0418&amp;lon=-76.3012&amp;wfo=CTP&amp;zcode=PAZ066&amp;gset=20&amp;gdiff=5&amp;unit=0&amp;tinfo=EY5&amp;ahour=0&amp;pcmd=11101111110000000000000000000000000000000000000000000000000&amp;lg=en&amp;indu=1%211%211%21&amp;dd=&amp;bw=&amp;hrspan=48&amp;pqpfhr=6&amp;psnwhr=6"
+                title="Click for larger image" style="font-family: Arial, Helvetica, sans-serif; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255);"><em
+                  style="font-size: 12px;">Click for larger image</em></a></div>
+          </div>
+          <div><strong><u><br>
+              </u></strong></div>
+          <div><strong><u>Fawkes House Almanac</u></strong>
+            <div style="text-align: left;"> <em style="font-size: 12px;">Data
+                valid for Lancaster &amp; vicinity. All times are local time for
+                Lancaster, PA.<br>
+              </em><em style="font-size: 12px; width: 251px; height: 171px;">Source:
+                Personal Weather Station near F&amp;M College on State Street /
+                Data period: 12:00 am - 11:59 pm daily</em><br>
+              <div> <strong></strong><br>
+                <u><strong>Saturday, October 15</strong></u><br>
+                <div style="color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: medium; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"><strong>Temperature:
+                    High</strong>: 73° at 1:38 pm /<span>&nbsp;</span><strong>Low</strong>:
+                  42° at 5:50 am<br>
+                  <strong>Wind:<span>&nbsp;</span></strong><u>Avg. Direction</u>:
+                  ENE /&nbsp;<span>&nbsp;</span><u>Avg. Speed</u>: &lt; 1 mph /<span>&nbsp;</span><u>Peak
+                    Gust</u>: 8 mph<strong><span>&nbsp;</span></strong>at 11:28
+                  am</div>
+                <div style="color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: medium; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"><strong>Precipitation</strong>:
+                  0.00"</div>
+                <div style="color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: medium; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"><strong>Snow</strong>:
+                  0.0"</div>
+              </div>
+              <div style="font-size: 12px;"> <em style="font-size: 12px; width: 251px; height: 171px;"><br>
+                </em></div>
+              <u><strong>Sunday, October 16</strong></u><br>
+              <u><strong></strong></u>
+              <div><em style="font-size: 12px;">Source: NWS State College
+                  weather records since 1948/49.</em><br>
+                <strong><br>
+                  Avg. High</strong>: 66° / <strong>Avg. Low:</strong> 44°<br>
+                <strong>Record High</strong>: 86° (2021) / <strong>Record Low</strong>:
+                31° (1999)</div>
+              <div><br>
+                <strong>Year-to-Date Precipitation</strong>: 32.96" (avg.
+                35.54") = 2.58" below average<br>
+                <strong>Snow</strong>: 0.0" (avg. 0.0")<br>
+                <em style="font-size: 12px;">Snow totals measured from July 1</em><br>
+                <br>
+                <a href="https://www.timeanddate.com/moon/phases/usa/lancaster-pa"
+                  title="Click for more information">Moon Phase</a>: 🌖 Waning
+                Gibbous → 🌗 Last Quarter at 1:15 pm Mon. 17 Oct.<br>
+                <br>
+                <a href="https://www.timeanddate.com/astronomy/usa/lancaster-pa">Lancaster,
+                  PA, USA — Sunrise, Sunset, and Moon Times for Today</a><br>
+                <br>
+                <u><strong>3-Day Outlook: Sunday - Tuesday</strong></u> </div>
+            </div>
+          </div>
+          <div style="text-align: left;"><br>
+          </div>
+          High pressure will produce partly cloudy skies across the Lower
+          Susquehanna Valley today. Clouds increase tonight as a weak frontal
+          system moves towards the region with a chance for showers after
+          midnight as the fronts move through the Lancaster region. Partly sunny
+          skies with isolated showers are expected Monday behind the front.
+          Clouds decrease tomorrow night with mostly sunny to partly cloudy
+          skies expected Tuesday. Clear and cold conditions are expected Tuesday
+          night with overnight lows dipping into the middle 30s.<br>
+          <div style="text-align: left;"><br>
+            <div><strong>Today &amp; Tonight</strong><strong></strong>
+              <div>Partly cloudy with a high around 68°. Northwest wind 3-5 mph
+                becoming.</div>
+              <div><strong><br>
+                </strong></div>
+              <div>Tonight, becoming mostly cloudy with a 40% chance for
+                showers. Less than 0.10-inch rainfall expected. Low near 51°.
+                Southeast wind around 3 mph. </div>
+              <div> <br>
+                <div><strong>Monday, October 17<br>
+                  </strong></div>
+                <div>Partly sunny with a 20% chance for isolated showers. High
+                  around 66°. West wind 10-15 mph.</div>
+                <div><br>
+                </div>
+                Monday night, partly cloudy in the evening then mostly clear
+                after midnight with a low near 38°. West wind at 6 mph.&nbsp; <br>
+                <div><br>
+                </div>
+                <div><strong>Tuesday, October 18</strong></div>
+                <div>Mostly sunny with a high near 53°. West wind 11-12 mph.</div>
+                <div><br>
+                </div>
+                Tuesday night, clear with a low near 35°. West wind 0-7 mph. </div>
+              <strong></strong></div>
+            <div>
+              <div><br>
+              </div>
+              <div> <u> </u><strong><u>4 to 7 Day: Wednesday - Saturday</u><br>
+                </strong>
+                <div><strong></strong><br>
+                </div>
+                <em></em></div>
+              <div>High pressure will build across the Lancaster region for the
+                period with partly cloudy skies Wednesday and mostly clear skies
+                Thursday through Saturday.<br>
+                <div>
+                  <div><br>
+                  </div>
+                  <div><strong>Wednesday, October 19</strong></div>
+                  <div>Mostly sunny in the morning then partly cloudy in the
+                    afternoon with a high around 53­°. West wind 8-14 mph.</div>
+                  <div><br>
+                  </div>
+                  <div>Wednesday night, partly cloudy to mostly clear with a low
+                    near 35°. West wind 0-7 mph.
+                    <div><br>
                     </div>
-                    <strong><u>Fawkes House Almanac</u></strong></div>
-                  <div><em style="font-size: 12px;">Data for Lancaster &amp;
-                      vicinity. All times are local time for Lancaster.</em>
-                    <div style="text-align: left;"><strong><br>
-                      </strong><strong>Tuesday, February 22</strong><strong></strong><strong><br>
-                      </strong>
-                      <div style="text-align: left;"> <u>Temperature</u>: <u>High</u>:
-                        60° at 11:29 pm / <u>Low</u>: 37° at 2:43 am<br>
-                        <u>Wind</u>: <u>Avg. Direction</u>: E /&nbsp; <u>Avg.
-                          Speed</u>: 1 mph / <u>Peak Gust</u>: 14 mph<br>
-                        <u>Precipitation</u>: 0.00" / <u>Snow</u>: 0.0"</div>
+                    <div><strong>Thursday, October 20</strong></div>
+                    <div>Mostly sunny with a high around 56°. Southwest wind
+                      8-14 mph.</div>
+                    <div><br>
                     </div>
-                    <div style="text-align: left;"><br>
+                    <div>Thursday night, mostly clear to partly cloudy with a
+                      low near 38°. Southwest wind 0-7 mph.
+                      <div><br>
+                      </div>
+                      <div><strong>Friday, October 21</strong></div>
+                      <div>Mostly sunny with a high around 62°. Southwest wind
+                        0-7 mph.</div>
+                      <div><br>
+                      </div>
+                      <div>Friday night, mostly clear with a low near 41°. South
+                        wind 0-7 mph.
+                        <p><strong>Saturday, October 22<br>
+                          </strong>Mostly sunny with a high near 66°. South wind
+                          0-7 mph.</p>
+                        <p>Saturday night, partly cloudy with a low near 45°.
+                          Calm winds.</p>
+                        <p><u><strong>8 to 14 Day Trends: Sun. Oct. 23 - Sat.
+                              Oct. 29</strong></u><br>
+                          <br>
+                          Above normal temperatures / Near normal precipitation<br>
+                        </p>
+                        <p>------------------------------------------------------------------------------------------------------------<br>
+                          <br>
+                          <strong><a href="https://www.weather.gov/">US National
+                              Weather Service</a></strong><br>
+                        </p>
+                        <p><em><strong>Flood Threat For Areas of the Southwest;
+                              Much Colder Temperatures Arrive for Midwest</strong></em></p>
+                        <p>High moisture content continues for areas of the
+                          Southwest into Texas through Sunday with the threat of
+                          flash flooding. Meanwhile, dry weather, air quality,
+                          fire weather concerns and record high temperatures are
+                          forecast for portions of the Pacific Northwest. A
+                          strong cold front will sweep southward across the
+                          Midwest where much colder temperatures and some snow
+                          are expected near the Great Lakes.</p>
+                        <p> <a href="https://www.wpc.ncep.noaa.gov/NationalForecastChart/staticmaps/noaad1.png"><img
+                              src="https://www.wpc.ncep.noaa.gov/NationalForecastChart/staticmaps/noaad1.png"
+                              alt="National Forecast Chart" style="width: 528px; height: 380px;">
+                          </a></p>
+                        <ul>
+                          <li><a href="https://www.wpc.ncep.noaa.gov/discussions/hpcdiscussions.php?disc=pmdspd">Short
+                              Range National Forecast Discussion</a> (Day ½ -
+                            2½)</li>
+                          <li> <a href="https://www.wpc.ncep.noaa.gov/discussions/hpcdiscussions.php?disc=pmdepd">Medium
+                              Range National Forecast Discussion</a> (Day 3 - 7)</li>
+                          <li><a href="https://www.wpc.ncep.noaa.gov/discussions/hpcdiscussions.php?disc=nathilo&amp;version=0&amp;fmt=reg">National
+                              High and Low Temperature</a> (excluding Alaska
+                            &amp; Hawaii)</li>
+                        </ul>
+                        <p> ---------------------------</p>
+                        <p><strong><a href="spc.noaa.gov/">Storm Prediction
+                              Center </a></strong></p>
+                        <em><strong>Today's Severe Weather Outlook</strong></em><br>
+                        Isolated severe thunderstorms are possible from
+                        southeast New Mexico across far west to southwest Texas,
+                        beginning in the mid-afternoon and continuing through
+                        tonight. Locally damaging winds are also possible across
+                        parts of the southern Appalachians, mainly in the&nbsp;
+                        late afternoon to early evening.</div>
                     </div>
-                    <div style="text-align: left;"><strong>Wednesday, February
-                        23</strong><strong><br>
-                      </strong><u>Avg. High</u>: 45° / <u>Avg. Low</u>: 25°</div>
-                    <div style="text-align: left;"><u>Record High</u>: 73°
-                      (2017) / <u>Record Low</u>: 6° (2011)</div>
-                    <div style="text-align: left;"><u>Year-to-Date Precipitation</u>:
-                      3.88" (avg. 5.10")</div>
-                    <div style="text-align: left;"><u>Year-to-Date Snow</u>:
-                      4.0" (avg. 16.8")</div>
-                    <div style="text-align: left; font-size: 12px;"><em>Snow
-                        totals measured from July 1.</em></div>
-                    <div style="text-align: left;"><u><strong><br>
-                        </strong></u></div>
-                    <div style="text-align: left;"><u><strong></strong>Moon<strong></strong>
-                        Phase</u>: 🌗 Last Quarter at 5:32 pm Wed. Feb. 23</div>
                   </div>
                   <div><br>
                   </div>
-                  <div><u><strong>3-Day Outlook: Wednesday -&nbsp; Friday</strong></u><br>
-                    <u><strong> </strong></u>
-                    <div style="text-align: center;">
-                      <div> <em></em><em></em></div>
+                  <div><a href="https://www.spc.noaa.gov/products/outlook/day1otlk.html">
+                      <img src="https://www.spc.noaa.gov/products/outlook/day1otlk_1300.gif"
+                        alt="Current Day One Severe Weather Outlook" style="width: 531px; height: 361px;"></a></div>
+                  <div><em style="font-size: 12px;">Learn more about <a href="https://www.spc.noaa.gov/new/images/SPC_outlook_final_updated.png"
+                        title="Click for more information">Severe Thunderstorm
+                        Outlooks</a><br>
+                    </em></div>
+                  <div><br>
+                    <em style="font-size: 12px;"></em> </div>
+                </div>
+              </div>
+              <div>
+                <div>
+                  <div>
+                    <div>
                       <div>
-                        <div style="text-align: left;"><br>
-                        </div>
-                        <div style="text-align: left;">A cold front traversing
-                          Pennsylvania early Wednesday will move east of the
-                          region this afternoon .An area of low pressure will
-                          track north from the lower Mississippi Valley and up
-                          the western side of the Appalachian mountains Thursday
-                          night and Friday and generate wintry precipitation for
-                          the Lower Susquehanna Valley. Precipitation will taper
-                          to rain ending Friday afternoon as a new ridge of high
-                          pressure builds in on gusty northwest winds.</div>
-                        <div style="text-align: left;">
+                        <div>
                           <div>
                             <div> </div>
                           </div>
                         </div>
+                        <div>---------------------------<br>
+                          <div> <br>
+                            <strong> <a href="https://www.nhc.noaa.gov/">National
+                                Hurricane Center</a> <br>
+                            </strong></div>
+                          <div><strong><br>
+                            </strong></div>
+                          <div><strong>Atlantic Tropical Weather Outlook <br>
+                            </strong>
+                            <div><strong></strong><em style="font-size: 12px;">The
+                                Atlantic hurricane season runs from June 1st
+                                through November 30th.</em></div>
+                            <div><em style="font-size: 12px;"> Special updates
+                                are issued, as warranted, Dec. 1 through May 31.</em></div>
+                            <br>
+                            <div><a href="https://www.nhc.noaa.gov/gtwo.php?basin=atlc&amp;fdays=2"
+                                title="Atlantic 2-Day Graphical Tropical Weather Outlook">Atlantic
+                                2-Day Graphical Tropical Weather Outlook</a></div>
+                            <div><a href="https://www.nhc.noaa.gov/gtwo.php?basin=atlc&amp;fdays=2"
+                                title="Atlantic 2-Day Graphical Tropical Weather Outlook"></a><br>
+                              <a href="https://www.nhc.noaa.gov/gtwo.php?basin=atlc&amp;fdays=5"
+                                title="Atlantic 5-Day Graphical Tropical Weather Outlook">
+                                Atlantic 5-Day Graphical Tropical Weather
+                                Outlook</a><br>
+                            </div>
+                            <div><br>
+                            </div>
+                            <a href="https://www.nhc.noaa.gov/gtwo.php?basin=atlc&amp;fdays=5"></a>
+                            <a href="https://www.nhc.noaa.gov/gtwo.php?basin=atlc&amp;fdays=5"><img
+                                src="https://www.nhc.noaa.gov/xgtwo/two_atl_5d0.png"
+                                alt="5-Day Tropical Atlantic Outlook" style="width: 532px; height: 392px; border-width: 1px; border-style: solid;"></a></div>
+                        </div>
+                        <div><em style="font-size: 12px;"> Graphic may not
+                            update out-of-season (Nov-May) unless special
+                            updates are issued.</em> </div>
+                        <div><br>
+                        </div>
+                        <div>---------------------------<br>
+                          <p><a href="https://www.cpc.ncep.noaa.gov/"><strong>Climate
+                                Prediction Center</strong></a></p>
+                          <a href="https://www.cpc.ncep.noaa.gov/products/predictions/long_range/lead01/off01_temp.gif"><img
+                              src="https://www.cpc.ncep.noaa.gov/products/predictions/long_range/lead01/off01_temp.gif"
+                              alt="Seasonal Temperature Outlook" style="width: 527px; height: 406px; border-width: 1px; border-style: solid;"></a><br>
+                          <a href="https://www.cpc.ncep.noaa.gov/products/predictions/long_range/lead01/off01_prcp.gif"><br>
+                          </a></div>
+                        <a href="https://www.cpc.ncep.noaa.gov/products/predictions/long_range/lead01/off01_prcp.gif"><img
+                            src="https://www.cpc.ncep.noaa.gov/products/predictions/long_range/lead01/off01_prcp.gif"
+                            alt="Seasonal Precipitation Outlook" style="border-width: 1px; border-style: solid; width: 526px; height: 406px;"></a><br>
+                        <div style="text-align: left;"><br>
+                        </div>
+                        <div style="text-align: left;"><a href="https://droughtmonitor.unl.edu/data/png/current/current_pa_trd.png"><img
+                              src="https://droughtmonitor.unl.edu/data/png/current/current_pa_trd.png"
+                              alt="PA Drouht Monitor" style="width: 527px; height: 406px; border-width: 1px; border-style: solid;"></a><br>
+                        </div>
+                        <br>
+                        <strong>Longer-Range Outlooks</strong><br>
+                        <ul>
+                          <li><a href="https://www.cpc.ncep.noaa.gov/products/predictions/610day/">6-10
+                              Day Outlook</a> </li>
+                          <li> <a href="https://www.cpc.ncep.noaa.gov/products/predictions/814day/">8-14
+                              Day Outlook</a></li>
+                          <li> <a href="https://www.cpc.ncep.noaa.gov/products/predictions/WK34/">Week
+                              3-4 Outlook</a> </li>
+                          <li><a href="https://www.cpc.ncep.noaa.gov/products/predictions/30day/">30-Day
+                              Outlook </a></li>
+                          <li> <a href="https://www.cpc.ncep.noaa.gov/products/predictions/long_range/seasonal.php?lead=01">Seasonal
+                              Outlook</a></li>
+                        </ul>
+                        ---------------------------</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <div>
+                  <div>
+                    <div>
+                      <div>
                         <div>
                           <div>
-                            <ul>
-                            </ul>
-                            <div style="text-align: left;"><strong>Today &amp;
-                                Tonight</strong><br>
-                              <div style="text-align: left;">
-                                <div style="text-align: left;"> <em>Sunrise:
-                                    6:47 am / Sunset: 5:50 pm | / </em><em>Moonrise:
-                                    12:33 am / </em><em>Moonset: 10:31 am <br>
-                                  </em></div>
-                                <div style="text-align: left;"><em><br>
-                                  </em></div>
-                                <div style="text-align: left;">Cloudy with a 20%
-                                  chance for rain in the morning then decreasing
-                                  clouds in the afternoon. Little precipitation
-                                  expected. High near 62°. West/northwest wind
-                                  10-20 mph with gusts to 30 mph.</div>
-                                <div style="text-align: left;"><br>
-                                </div>
-                                Tonight, partly cloud with a low near 29°.
-                                Northwest wind 10-15 mph in the evening then
-                                becoming north after midnight 4-6 mph. <br>
-                                <div style="text-align: left;"><br>
-                                </div>
-                                <div style="text-align: left;"><strong>Thursday,
-                                    February 24 </strong><br>
-                                  <em>Sunrise: 6:45 am / Sunset: 5:51 pm | / </em><em>Moonrise:
-                                    1:47 am / </em><em>Moonset: 11:31 am <br>
-                                  </em></div>
-                                <div style="text-align: left;"><em><br>
-                                  </em></div>
-                                <div style="text-align: left;">Cloudy with a 20%
-                                  chance for sleet and snow in the afternoon.
-                                  High near 36°. North wind becoming northeast
-                                  wind 5-6 mph.</div>
-                                <div style="text-align: left;"><br>
-                                </div>
-                                Thursday night, cloudy with a 100% chance for a
-                                wintry mix. Precipitation totals in the 0.50 to
-                                0.75-inch range. Sleet accumulation of less than
-                                one inch possible. Low near 32°. East wind 4-6
-                                mph. <br>
-                                <div style="text-align: left;"><br>
-                                </div>
-                                <div style="text-align: left;"><strong>Friday,
-                                    February 25 </strong><br>
-                                  <em>Sunrise: 6:44 am / Sunset: 5:52 pm | / </em><em>Moonrise:
-                                    2:58 am / </em><em>Moonset: 12:05 pm<br>
-                                    <br>
-                                  </em></div>
-                                <div style="text-align: left;">Cloudy in the
-                                  morning then decreasing clouds in the
-                                  afternoon with a wintry mix likely through the
-                                  morning before changing to rain and ending by
-                                  the evening. 90% chance for precipitation with
-                                  between 0.25 and 0.50-inch. High around 44°.
-                                  South/southwest wind 5-10 mph in the morning
-                                  becoming west/northwest in the afternoon 10-15
-                                  mph gusting to 30 mph.</div>
-                                <div style="text-align: left;"><br>
-                                </div>
-                                Friday night, partly cloudy with a low near 23°.
-                                Northwest wind 8-14 mph. </div>
-                              <div style="text-align: left;">
-                                <div style="text-align: left;"> </div>
-                              </div>
-                              <div style="text-align: left;"><u><strong><br>
-                                  </strong></u></div>
-                              <div style="text-align: left;"><u><strong>4 to 7
-                                    Day</strong></u><u><strong> Outlook:
-                                    Saturday - Tuesday<br>
-                                  </strong></u></div>
-                              <div style="text-align: left;"><br>
-                                <em></em></div>
-                              <div style="text-align: left;">Partly cloudy,
-                                cold, breezy, and dry conditions are expected
-                                Saturday. Mostly sunny skies Sunday morning
-                                become partly cloudy in the afternoon as a dry
-                                cold front approaches. Partly cloudy and windy
-                                conditions are expected Monday as the front
-                                departs and a new ridge of high pressure builds
-                                down form the Northern Plains. with mostly clear
-                                skies Monday afternoon into Monday night and
-                                partly cloudy skies Tuesday for the start of
-                                meteorological spring (March 1 - May 31).<br>
-                                <div style="text-align: left;">
-                                  <div style="text-align: left;">
-                                    <div style="text-align: left;">
-                                      <div style="text-align: left;">
-                                        <div style="text-align: left;">
-                                          <div style="text-align: left;"><br>
-                                          </div>
-                                          <div style="text-align: left;"><strong>Saturday,
-                                              February 26</strong></div>
-                                          <div style="text-align: left;"><strong></strong>Partly
-                                            cloudy with a high near 37°. West
-                                            wind 8-14 mph.</div>
-                                          <div style="text-align: left;"><br>
-                                          </div>
-                                          <div style="text-align: left;">Saturday
-                                            night, partly cloudy with a low near
-                                            24°. West wind 0-7 mph.
-                                            <div style="text-align: left;"><br>
-                                            </div>
-                                            <div style="text-align: left;"><strong>Sunday,
-                                                February 27</strong></div>
-                                            <div style="text-align: left;">Mostly
-                                              sunny in the morning then becoming
-                                              partly cloudy with a 5% chance for
-                                              precipitation. High near 44°.
-                                              West wind 8-14 mph.</div>
-                                            <div style="text-align: left;"><br>
-                                            </div>
-                                            <div style="text-align: left;">Sunday
-                                              night, partly cloudy with a low
-                                              around 20°. Northwest wind 8-14
-                                              mph.
-                                              <div style="text-align: left;"><br>
-                                              </div>
-                                              <div style="text-align: left;"><strong>Monday,
-                                                  February 28</strong></div>
-                                              <div style="text-align: left;"><strong></strong>Partly
-                                                cloudy with a high near 34°.
-                                                Northwest wind 8-14 mph.</div>
-                                              <div style="text-align: left;"><br>
-                                              </div>
-                                              <div style="text-align: left;">Monday
-                                                night, partly cloudy with a low
-                                                near 22°. West wind 0-7 mph.
-                                                <div style="text-align: left;"><br>
-                                                </div>
-                                                <div style="text-align: left;"><strong>Tuesday,
-                                                    March 1</strong></div>
-                                                <div style="text-align: left;"><strong></strong>Partly
-                                                  cloudy with a 5% chance for
-                                                  precipitation. High near 45°.
-                                                  Southwest wind 0-7 mph.</div>
-                                                <div style="text-align: left;"><br>
-                                                </div>
-                                                <div style="text-align: left;">Tuesday
-                                                  night, partly cloudy with a
-                                                  10% chance for precipitation.
-                                                  Low near 32°. Southwest wind
-                                                  0-7 mph.</div>
-                                                <div style="text-align: left;"><br>
-                                                </div>
-                                                <u><strong>8 to 14 Day Trends:
-                                                    Wed. Mar. 2 - Tue. Mar. 8</strong></u><u><strong></strong></u><u><strong></strong></u><u><strong></strong></u><u><strong></strong></u><u><strong></strong></u><u><strong></strong></u><u><strong></strong></u><u><strong></strong></u><u><strong></strong></u><u><strong></strong></u><u><strong></strong></u><u><strong></strong></u></div>
-                                            </div>
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                            <div style="text-align: left;">
-                              <div style="text-align: left;">
-                                <div style="text-align: left;"> </div>
-                              </div>
-                            </div>
-                            <div style="text-align: left;">
-                              <div style="text-align: left;">
-                                <div style="text-align: left;">
-                                  <div style="text-align: left;">
-                                    <div style="text-align: left;">
-                                      <div style="text-align: left;">
-                                        <div style="text-align: left;">
-                                          <div style="text-align: left;">
-                                            <div style="text-align: left;">
-                                              <div style="text-align: left;">
-                                                <div style="text-align: left;">
-                                                  <div style="text-align: left;">
-                                                  </div>
-                                                  <u><strong></strong></u><u><strong></strong></u><u><strong></strong></u><u><strong></strong></u><u><strong></strong></u><u><strong></strong></u><u><strong></strong></u><u><strong></strong></u><u><strong></strong></u><u><strong></strong></u><u><strong></strong></u><u><strong></strong></u><u><strong></strong></u><u><strong></strong></u><u><strong></strong></u><u><strong></strong></u><u><strong></strong></u><u><strong></strong></u><u><strong></strong></u><u><strong></strong></u><u><strong></strong></u><u><strong></strong></u></div>
-                                              </div>
-                                            </div>
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                              <div style="text-align: left;">
-                                <div style="text-align: left;"> </div>
-                              </div>
-                              <div style="text-align: left;"> </div>
-                              <div style="text-align: left;">
-                                <div style="text-align: left;"> </div>
-                              </div>
-                              <div style="text-align: left;">
-                                <div style="text-align: left;">
-                                  <div style="text-align: left;">
-                                    <div style="text-align: left;">
-                                      <div style="text-align: left;">
-                                        <div style="text-align: left;">
-                                          <div style="text-align: left;">
-                                            <div style="text-align: left;">
-                                              <div style="text-align: left;">
-                                                <div style="text-align: left;">
-                                                  <div style="text-align: left;">
-                                                    <div style="text-align: left;">
-                                                      <div style="text-align: left;">
-                                                      </div>
-                                                    </div>
-                                                  </div>
-                                                </div>
-                                              </div>
-                                            </div>
-                                          </div>
-                                          <u><strong></strong></u><u><strong></strong></u><u><strong></strong></u><u><strong></strong></u><u><strong></strong></u><u><strong></strong></u><u><strong></strong></u><u><strong></strong></u><u><strong></strong></u><u><strong></strong></u><u><strong></strong></u><u><strong></strong></u></div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                              <div style="text-align: left;"> </div>
-                              <div style="text-align: left;">
-                                <div style="text-align: left;">
-                                  <div style="text-align: left;"> </div>
-                                </div>
-                              </div>
-                              <div style="text-align: left;">
-                                <div style="text-align: left;">
-                                  <div style="text-align: left;">
-                                    <div style="text-align: left;">
-                                      <div style="text-align: left;">
-                                        <div style="text-align: left;">
-                                          <div style="text-align: left;">
-                                            <div style="text-align: left;">
-                                              <div style="text-align: left;">
-                                                <div style="text-align: left;">
-                                                  <div style="text-align: left;">
-                                                    <div style="text-align: left;">
-                                                    </div>
-                                                  </div>
-                                                  <u><strong></strong></u><u><strong></strong></u><u><strong></strong></u><u><strong></strong></u><u><strong></strong></u><u><strong></strong></u></div>
-                                              </div>
-                                            </div>
-                                          </div>
-                                        </div>
-                                      </div>
-                                      <u><strong></strong></u></div>
-                                    <u><strong> </strong></u><a href="https://www.cpc.ncep.noaa.gov/"
-                                      title="Climate Predication Center">Climate
-                                      Prediction Center</a></div>
-                                  <div>
-                                    <div>
-                                      <div style="text-align: left;"><u><strong></strong></u><strong></strong><br>
-                                        Below normal temperatures / Near normal
-                                        precipitation</div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                            <div style="text-align: left;">
-                              <div>
-                                <div style="text-align: left;">
-                                  <div style="text-align: left;">
-                                    <div style="text-align: left;"> </div>
-                                  </div>
-                                  <div style="text-align: left;"> </div>
-                                  <div style="text-align: left;">
-                                    <div style="text-align: left;"> </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                            <div style="text-align: left;">
+                            <div> </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <div> </div>
+              </div>
+              <div>
+                <div>
+                  <div> </div>
+                </div>
+              </div>
+            </div>
+            <div>
+              <div>
+                <div>
+                  <div>
+                    <div>
+                      <div>
+                        <div>
+                          <div>
+                            <div>
                               <div>
                                 <div>
-                                  <div style="text-align: left;">
-                                    <div>
-                                      <div>
-                                        <div style="text-align: left;">
-                                          <div style="text-align: left;"> </div>
-                                        </div>
-                                        <div style="text-align: left;">
-                                          <div style="text-align: left;">
-                                            <div style="text-align: left;">
-                                              <div style="text-align: left;">
-                                                <div>
-                                                  <div style="text-align: left;">
-                                                    <div style="text-align: left;">
-                                                      <div style="text-align: left;">
-                                                        <div style="text-align: left;">
-                                                          <div style="text-align: left;">
-                                                            <div style="text-align: left;">
-                                                              <div style="text-align: left;">
-                                                                <div style="text-align: left;">
-                                                                  <div style="text-align: left;">
-                                                                  </div>
-                                                                </div>
-                                                              </div>
-                                                            </div>
-                                                          </div>
-                                                        </div>
-                                                      </div>
-                                                    </div>
-                                                    <div><br>
-                                                    </div>
-                                                    <div style="text-align: left;">
-                                                      <div>------------------------------------------------------------------------------------------------------------</div>
-                                                      <div><br>
-                                                      </div>
-                                                      <div style="text-align: left;"><strong>
-                                                          NWS National Weather
-                                                          Outlook</strong><br>
-                                                        <a href="https://www.weather.gov/">https://www.weather.gov/<br>
-                                                        </a><a href="https://www.weather.gov/"></a>
-                                                        <strong></strong><strong></strong>
-                                                        <em><strong></strong></em>
-                                                        <div style="text-align: left;">
-                                                          <div>
-                                                            <div> </div>
-                                                            <div>
-                                                              <div style="text-align: left;">
-                                                                <div style="text-align: left;">
-                                                                  <div style="text-align: left;">
-                                                                  <div style="text-align: left;">
-                                                                  <div style="text-align: left;">
-                                                                  <div>
-                                                                  <div style="text-align: left;">
-                                                                  <div style="text-align: left;">
-                                                                  <div style="text-align: left;">
-                                                                  <div style="text-align: left;"><br>
-                                                                  <div style="text-align: left;"><em><strong>Second
-                                                                  Winter Storm
-                                                                  To Impact
-                                                                  Central to
-                                                                  Eastern U.S.
-                                                                  This Week</strong></em><br>
-                                                                  A significant
-                                                                  winter storm
-                                                                  will bring
-                                                                  snow and ice
-                                                                  from the
-                                                                  southern
-                                                                  Plains to the
-                                                                  Ohio Valley
-                                                                  Wednesday
-                                                                  through
-                                                                  Thursday
-                                                                  night, and the
-                                                                  Northeast U.S.
-                                                                  Thursday night
-                                                                  through
-                                                                  Friday.
-                                                                  Freezing rain
-                                                                  and sleet is
-                                                                  expected from
-                                                                  north Texas
-                                                                  through the
-                                                                  Mid-Mississippi
-                                                                  Valley and
-                                                                  eastern Ohio
-                                                                  Valley through
-                                                                  the central
-                                                                  Appalachians
-                                                                  which could
-                                                                  bring
-                                                                  dangerous
-                                                                  travel and
-                                                                  power outages.</div>
-                                                                  <div style="text-align: left;"><br>
-                                                                  <div>
-                                                                  <div style="text-align: left;">
-                                                                  <div><a href="https://www.wpc.ncep.noaa.gov/discussions/hpcdiscussions.php?disc=pmdspd"
-                                                                  title="Short Range Discussion">Short
-                                                                  Range National
-                                                                  Forecast
-                                                                  Discussion</a>
-                                                                  (Day ½ - 2½)</div>
-                                                                  <div><a href="https://www.wpc.ncep.noaa.gov/discussions/hpcdiscussions.php?disc=pmdepd"
-                                                                  title="Medium Range Discussion">Medium
-                                                                  Range National
-                                                                  Forecast
-                                                                  Discussion</a>
-                                                                  (Day 3 - 7)</div>
-                                                                  <div><br>
-                                                                  </div>
-                                                                  <div>---------------------------</div>
-                                                                  <div><br>
-                                                                  </div>
-                                                                  <div><strong>SPC
-                                                                  National
-                                                                  Thunderstorm/Severe
-                                                                  Weather
-                                                                  Outlook</strong><br>
-                                                                  <a href="https://www.spc.noaa.gov/">
-https://www.spc.noaa.gov/</a></div>
-                                                                  </div>
-                                                                  </div>
-                                                                  </div>
-                                                                  <div style="text-align: left;"><br>
-                                                                  </div>
-                                                                  <div>Severe
-                                                                  thunderstorms
-                                                                  are not
-                                                                  expected today
-                                                                  or tonight.</div>
-                                                                  <br>
-                                                                  <div style="text-align: left;">
-                                                                  <div>---------------------------
-                                                                  </div> <br>
-                                                                  <div><strong>National
-                                                                  Hurricane
-                                                                  Center
-                                                                  Atlantic
-                                                                  Tropical
-                                                                  Weather
-                                                                  Outlook<br>
-                                                                  </strong></div>
-                                                                  <a href="https://www.nhc.noaa.gov/">https://www.nhc.noaa.gov/</a><br>
-                                                                  </div>
-                                                                  <div style="text-align: left; font-size: 12px;"><em><br>
-                                                                  The Atlantic
-                                                                  hurricane
-                                                                  season runs
-                                                                  from June 1st
-                                                                  through
-                                                                  November 30th.
-                                                                  <br>
-                                                                  </em> <em>Special
-                                                                  updates are
-                                                                  issued, as
-                                                                  warranted,
-                                                                  Dec. 1 through
-                                                                  May 31.</em></div>
-                                                                  <div style="text-align: left;"><em><br>
-                                                                  </em></div>
-                                                                  <div style="text-align: left;">
-                                                                  <div><a href="https://www.nhc.noaa.gov/gtwo.php?basin=atlc&amp;fdays=2"
-                                                                  title="Atlantic 2-Day Graphical Tropical
-                                                                                Weather Outlook"
-                                                                  style="color: rgb(0, 0,
-                                                                                128); text-decoration: underline;">
-                                                                  Atlantic 2-Day
-                                                                  Graphical
-                                                                  Tropical
-                                                                  Weather
-                                                                  Outlook</a></div>
-                                                                  <div><strong><a
-                                                                  href="https://www.nhc.noaa.gov/gtwo.php?basin=atlc&amp;fdays=5"
-                                                                  title="Atlantic 5-Day Graphical
-                                                                                  Tropical Weather Outlook">
-                                                                  </a></strong><a
-                                                                  href="https://www.nhc.noaa.gov/gtwo.php?basin=atlc&amp;fdays=5"
-                                                                  title="Atlantic 5-Day Graphical Tropical Weather
-                                                                                Outlook">Atlantic
-                                                                  5-Day
-                                                                  Graphical
-                                                                  Tropical
-                                                                  Weather
-                                                                  Outlook</a></div>
-                                                                  <div><strong></strong></div>
-                                                                  <strong>
-                                                                  <div style="text-align: left;"><a
-                                                                  href="https://www.nhc.noaa.gov/gtwo.php?basin=atlc&amp;fdays=5"
-                                                                  title="Atlantic 5-Day Graphical
-                                                                                  Tropical Weather Outlook"><br>
-                                                                  </a></div>
-                                                                  </strong>
-                                                                  <div>
-                                                                  ---------------------------</div>
-                                                                  <div><br>
-                                                                  </div>
-                                                                  <div><strong>National
-                                                                  High and Low
-                                                                  Temperatures</strong><br>
-                                                                  (excluding
-                                                                  Alaska and
-                                                                  Hawaii)</div>
-                                                                  </div>
-                                                                  <div style="text-align: left;"><br>
-                                                                  </div>
-                                                                  <br>
-                                                                  High
-                                                                  Temperature
-                                                                  for Tuesday,
-                                                                  February 22,
-                                                                  2022<br>
-                                                                  101 at Falcon
-                                                                  Lake, TX<br>
-                                                                  <br>
-                                                                  Low
-                                                                  Temperature
-                                                                  for Tuesday,
-                                                                  February 22,
-                                                                  2022<br>
-                                                                  -27 at Crosby,
-                                                                  ND<br>
-                                                                  -27 at Scobey,
-                                                                  MT</div>
-                                                                  </div>
-                                                                  </div>
-                                                                  </div>
-                                                                  </div>
-                                                                  </div>
-                                                                  </div>
-                                                                  </div>
-                                                                </div>
-                                                              </div>
-                                                            </div>
-                                                          </div>
-                                                        </div>
-                                                        <div style="text-align: left;">
-                                                        </div>
-                                                        <div style="text-align: left;"><br>
-                                                          <em></em>
-                                                          <div style="text-align: left;">
-                                                            <div style="text-align: left;">
-                                                              <div style="text-align: left;">
-                                                                <div style="text-align: left;">
-                                                                  <div>
-                                                                  <div style="text-align: left;">
-                                                                  <div style="text-align: left;">
-                                                                  <div style="text-align: left;">
-                                                                  <div style="text-align: left;">
-                                                                  <div style="text-align: left;">
-                                                                  <div>
-                                                                  <div style="text-align: left;">
-                                                                  </div>
-                                                                  </div>
-                                                                  </div>
-                                                                  </div>
-                                                                  </div>
-                                                                  </div>
-                                                                  </div>
-                                                                  </div>
-                                                                </div>
-                                                              </div>
-                                                            </div>
-                                                          </div>
-                                                        </div>
-                                                      </div>
-                                                    </div>
-                                                  </div>
-                                                </div>
-                                              </div>
-                                            </div>
-                                          </div>
-                                        </div>
-                                        <div> </div>
-                                      </div>
-                                      <div style="text-align: left;">
-                                        <div style="text-align: left;"> </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                  <div>
-                                    <div style="text-align: left;">
-                                      <div style="text-align: left;"> </div>
-                                    </div>
-                                  </div>
+                                  <div> </div>
                                 </div>
                               </div>
                             </div>
@@ -729,19 +398,136 @@ https://www.spc.noaa.gov/</a></div>
                 </div>
               </div>
             </div>
+            <div>
+              <div> </div>
+            </div>
+            <div style="text-align: left;">
+              <div>
+                <div>
+                  <div> </div>
+                </div>
+              </div>
+              <div style="text-align: center;"><br>
+                <u style="font-size: 12px;"><br>
+                  Credits</u></div>
+              <div style="text-align: center;"><u style="font-size: 12px;"><br>
+                </u></div>
+              <div> </div>
+            </div>
+          </div>
+          <div>
+            <div style="font-size:12px;">
+              <div style="text-align: center;"> Almanac data from Davis <a href="https://www.davisinstruments.com/pages/vantage-pro2">Vantage
+                  Pro 2 PWS</a> and <a href="https://scacis.rcc-acis.org/">NOAA
+                  SC-ACIS</a> information. Sun/Moon data from <a href="https://www.timeanddate.com/">timeanddate.com</a>.<br>
+                <br>
+                NOAA Warning Banner (may appear during severe weather) provided
+                by <a href="https://www.willyweather.com/">WillyWeather.com</a>.<br>
+                <br>
+                Apex Wx logo by Joanna Becker ©2016 (Visit <a href="https://www.bushiandbrush.com/">Bushi
+                  and Brush Arts Dojo</a>). </div>
+              <br>
+              <div style="text-align: center;">
+                <script>
+                           document.write("This webpage was last modified " + " " +document.lastModified);
+                        </script> </div>
+              <br>
+              <br>
+              <div style="text-align: center;"><a href="#top"><img src="ApexWxlogo75px.jpg"
+                    alt="Logo"></a><br>
+                <br>
+              </div>
+              <div style="text-align: center;"><a style="font-size: 12px; text-align: center;"
+                  href="https://www.facebook.com/ApexWx/"><img style="border: medium none; max-width: 100%; padding-right: 10px; margin: 5px;"
+                    title="Apex Wx on Facebook" src="https://raw.githubusercontent.com/ApexWx/ApexWx.github.io/master/outline-dark-facebook-48.png"
+                    alt="Apex Wx on Facebook"></a><a style="font-size: 12px; text-align: center;"
+                  title="Apex Wx on Twitter" href="https://twitter.com/apexwx"><img
+                    style="border: medium none; max-width: 100%; width: 48px; height: 48px; padding: 5px;"
+                    title="Apex Wx on Twitter" src="https://raw.githubusercontent.com/ApexWx/ApexWx.github.io/master/outline-dark-twitter-48.png"
+                    alt="Apex Wx on Twitter"></a>&nbsp; <a href="https://www.instagram.com/apexwx/"
+                  title="Apex Wx on Instagram"><img src="instagram48.png" alt="Instagram"
+                    style="width: 47px; height: 47px; padding: 5px;"></a></div>
+            </div>
+            <!-- end of content column: put your content above this line --> </div>
+        </div>
+        <div id="tswothersidecol">
+          <div id="tswothersideproper">
+            <!-- start of right side column: insert your navigation menu, etc, here -->
+            <p> </p>
+            <div style="font-size: 16px; text-align: center;"><strong>Current
+                Weather<br>
+              </strong> </div>
+            <div style="font-size: 14px; text-align: left;"><em><strong><br>
+                </strong></em> </div>
+            <div style="font-size: 14px; text-align: left;"><em><strong>Current
+                  US Weather Chart</strong></em> </div>
+            <a href="https://s.w-x.co/staticmaps/WEB_Current_Weather_Map_1280x720.jpg?crop=16:9&amp;width=800&amp;format=pjpg&amp;auto=webp&amp;quality=60">
+            </a> <a href="https://s.w-x.co/staticmaps/WEB_Current_Weather_Map_1280x720.jpg?crop=16:9&amp;width=800&amp;format=pjpg&amp;auto=webp&amp;quality=60"
+              title="Click for larger image"><img src="https://s.w-x.co/staticmaps/WEB_Current_Weather_Map_1280x720.jpg?crop=16:9&amp;width=800&amp;format=pjpg&amp;auto=webp&amp;quality=60"
+                alt="Current Surface Map (TWC)" style="width: 251px; height: 141px;"></a>
+            <br>
+            <div style="font-size: 14px; text-align: left;"><em><strong><br>
+                  Current US Composite Satellite</strong></em> </div>
+            <a href="https://www.ssec.wisc.edu/data/us_comp/"><img src="https://www.ssec.wisc.edu/data/us_comp/image7.jpg"
+                title="Click for larger image" alt="Real-Time US Composite Satellite Image"
+                style="width: 251px; height: 141px;"></a> <br>
+            <div style="font-size: 14px; text-align: left;"><em><strong></strong></em>
+              <br>
+            </div>
+            <div style="font-size: 14px; text-align: left;"><em><strong><br>
+                  PA Thunderstorm/Severe Weather<br>
+                </strong></em> </div>
+            <a href="https://www.spc.noaa.gov/public/state/images/PA_swody1.png"><img
+                src="https://www.spc.noaa.gov/public/state/images/PA_swody1.png"
+                title="Click for larger image" alt="Pennsylvania Thunderstorm/Severe Weather Outlook"
+                style="width: 251px; height: 188px;"><br>
+            </a> <br>
+          </div>
+          <div style="font-size: 14px; text-align: left;"> <em><strong>Local
+                Radar from NWS State College<br>
+              </strong></em> <a href="https://radar.weather.gov/?settings=v1_eyJhZ2VuZGEiOnsiaWQiOiJsb2NhbCIsImNlbnRlciI6Wy03OC4wMDMsNDAuOTI0XSwibG9jYXRpb24iOm51bGwsInpvb20iOjgsImZpbHRlciI6IldTUi04OEQiLCJsYXllciI6ImJyZWZfcmF3Iiwic3RhdGlvbiI6IktDQ1gifSwiYW5pbWF0aW5nIjpmYWxzZSwiYmFzZSI6InN0YW5kYXJkIiwiYXJ0Y2MiOmZhbHNlLCJjb3VudHkiOmZhbHNlLCJjd2EiOmZhbHNlLCJyZmMiOmZhbHNlLCJzdGF0ZSI6ZmFsc2UsIm1lbnUiOnRydWUsInNob3J0RnVzZWRPbmx5Ijp0cnVlLCJvcGFjaXR5Ijp7ImFsZXJ0cyI6MC44LCJsb2NhbCI6MC42LCJsb2NhbFN0YXRpb25zIjowLjgsIm5hdGlvbmFsIjowLjZ9fQ%3D%3D#/"
+              title="Current Local Radar"><img src="https://radar.weather.gov/ridge/lite/KCCX_loop.gif"
+                title="Click for larger image" alt="Local Radar" style="width: 251px; height: 230px; border-width: 1px; border-style: solid;"></a><br>
+            <br>
+            <em><strong>Regional Satellite<br>
+              </strong></em> <a href="https://www.star.nesdis.noaa.gov/GOES/sector.php?sat=G16&amp;sector=ne"
+              title="Regional Satellite"><img src="https://cdn.star.nesdis.noaa.gov/GOES16/ABI/SECTOR/ne/GEOCOLOR/thumbnail.jpg"
+                title="Click for larger image" alt="Regional Satellite" style="width: 251px; height: 251px; border-width: 1px; border-style: solid;"></a></div>
+          <em><span style="font-size: 14px;"><strong><em style="font-size: 12px;"></em></strong></span></em><em><span
+              style="font-size: 14px;"><strong><em style="font-size: 12px;"></em></strong></span></em>
+          <div style="font-size: 14px; text-align: left;"><em><span style="font-size: 14px;"><strong><em
+                    style="font-size: 12px;"> </em></strong></span></em><em><span
+                style="font-size: 14px;"><strong><br>
+                  <br>
+                  Lancaster Weather Cam</strong></span></em> <a href="https://images.webcamgalore.com/webcamimages/webcam-022456.jpg"
+              title="Current Local Radar"><img src="https://images.webcamgalore.com/webcamimages/webcam-022456.jpg"
+                title="Click for larger image" alt="Local Radar" style="width: 251px; height: 141px;"></a>
+          </div>
+          <div style="font-size: 14px; text-align: left;"><em><span style="font-size: 12px;">The
+                Holiday Inn in downtown Lancaster, PA</span></em> </div>
+          <div style="font-size: 14px; text-align: left;"><strong style="font-size: 14px;"><em><br>
+              </em></strong></div>
+          <div style="font-size: 14px; text-align: left;"><strong style="font-size: 14px;"><em><br>
+              </em></strong></div>
+          <div style="font-size: 14px; text-align: left;"><strong style="font-size: 14px;"><em>AMLoR
+                PWS Weather Cam</em></strong> <a href="https://images.ambientweather.net/F4CFA279EC77/latest.jpg"
+              title="Click for larger image"><img src="https://images.ambientweather.net/F4CFA279EC77/latest.jpg"
+                title="Click for larger image" alt="AmLOR PWS Lancaster" style="width: 251px; height: 141px;"></a><br>
+            <em style="font-size: 12px;">Located on State Street just west of
+              F&amp;M College, Lancaster, PA</em>
+            <p></p>
+            <!-- end of right side column: put your navigation menu, etc, above this line -->
           </div>
         </div>
-        <div><br>
-          &nbsp; </div>
-        <div><br>
-        </div>
+        <div style="clear: both;"></div>
       </div>
       <div id="tswsidecol">
         <div id="tswsideproper">
-          <!-- start of side column: insert your navigation menu, etc, here -->
-          <p> </p>
-          <p> </p>
-          <div id="tswcssbuttons"> <b>Website Menu</b>
+          <!-- start of left side column: insert your navigation menu, etc, here -->
+          <div id="tswcssbuttons"> <b><br>
+              Website Menu<br>
+              <br>
+            </b>
             <ul>
               <li><a href="pareg.html">Regional Wall</a></li>
               <li><a href="nat.html">National Wall</a></li>
@@ -751,7 +537,7 @@ https://www.spc.noaa.gov/</a></div>
               <li><a href="https://ambientweather.net/dashboard/f2d6a870a62ed991d4ac0bf1d0482a3f"
                   title="AMLoR Weather Lancaster, PA">PWS Dashboard</a></li>
               <li><a href="https://www.wunderground.com/dashboard/pws/KPALANCA102?cm_ven=localwx_pwsdash">Lancaster
-                  Wx on WU</a></li>
+                  Wx on WU</a> </li>
               <li><a href="dis.html">Disclaimer</a></li>
             </ul>
             <p><a href="https://www.weather.gov/"><strong>Official <br>
@@ -761,15 +547,15 @@ https://www.spc.noaa.gov/</a></div>
                 College</a> </div>
             <div style="text-align: center;"><a href="https://www.weather.gov/gyx/"
                 title="NWS Gray/Portland, ME (SW Maine and most of New Hampshire)"><br>
-              </a></div>
-            <div style="text-align: center;"><a href="https://w2.weather.gov/climate/xmacis.php?wfo=ctp"
+              </a> </div>
+            <div style="text-align: center;"> <a href="https://w2.weather.gov/climate/xmacis.php?wfo=ctp"
                 title="NWS State College Regional Climate Data">NWS State
                 College<br>
                 Regional Climate Data</a><br>
               <div style="font-size: 12px;"><em>regional weather records,
-                  averages, etc.</em></div>
+                  averages, etc.</em> </div>
               <div style="font-size: 12px;"><em><br>
-                </em></div>
+                </em> </div>
             </div>
             <br>
             <div style="text-align: center;">
@@ -777,16 +563,16 @@ https://www.spc.noaa.gov/</a></div>
                 <div style="text-align: center;"><strong>Other <br>
                     Regional Resources</strong><a href="https://newengland511.org/"
                     title="New England Road Conditions"><br>
-                  </a></div>
+                  </a> </div>
                 <div style="text-align: center;"><a href="https://newengland511.org/"
                     title="New England Road Conditions"><br>
-                  </a></div>
+                  </a> </div>
                 <div style="text-align: center;"><a href="https://www.511pa.com/"
                     title="Pennsylvania Road Conditions">Pennsylvania <br>
-                    Road Conditions</a></div>
+                    Road Conditions</a> </div>
                 <div style="text-align: center;"><a href="https://www.weather.gov/nerfc/"
                     title="Northeast River Forecast Center"><br>
-                  </a></div>
+                  </a> </div>
                 <div style="text-align: center;"><a href="https://www.weather.gov/marfc/"
                     title="Middle Atlantic River Forecast Center">Middle
                     Atlantic<br>
@@ -797,137 +583,103 @@ https://www.spc.noaa.gov/</a></div>
                   <a href="https://www.wrh.noaa.gov/mesowest/getobext.php?sid=KLNS&amp;wfo=LNS&amp;num=72"
                     title="KLNS Current Conditions">Current Conditions Lancaster
                     Airport<br>
-                    (KLNS)</a></div>
+                    (KLNS)</a> </div>
                 <div style="text-align: center;">
                   <div></div>
                   <div><a href="https://xmountwashington.appspot.com/csc.html?data=more"
                       title="Mount Washington Observatory (New Hampshire)"><br>
-                    </a></div>
+                    </a> </div>
                   <div><a href="https://www.weather.gov/learning" title="NWS Educational Resources"
                       style="color: #1855d9; text-decoration: underline;"><img src="https://raw.githubusercontent.com/ApexWx/ApexWx.github.io/master/learning-thumbnail.png"
-                        alt="NWS Educational Resources" style="border: none; -ms-interpolation-mode: bicubic; max-width: 100%; width: 95px; height: 95px; padding: 10px;"
+                        alt="NWS Educational Resources" style="border: none; max-width: 100%; width: 95px; height: 95px; padding: 10px;"
                         height="95" width="95"><br>
-                    </a></div>
+                    </a> </div>
                   <div><a href="https://www.weather.gov/safety/flood-turn-around-dont-drown"
                       title="NWS Flood Safety" style="color: #1855d9; text-decoration: underline;"><img
                         src="https://raw.githubusercontent.com/ApexWx/ApexWx.github.io/master/TADDHighRes-sm.gif"
-                        alt="Turn Around Dont' Drown" style="border: none; -ms-interpolation-mode: bicubic; max-width: 100%; width: 97px; height: 97px; padding: 10px;"
+                        alt="Turn Around Dont' Drown" style="border: none; max-width: 100%; width: 97px; height: 97px; padding: 10px;"
                         height="97" width="97"><br>
-                    </a></div>
+                    </a> </div>
                   <div><br>
                   </div>
                   <div><a href="https://www.weather.gov/SKYWARN" title="NWS Skywarn Storm Spotter"><img
                         src="https://raw.githubusercontent.com/ApexWx/ApexWx.github.io/master/nws%20skywarn%20storm%20spotter%20logo.jpg"
                         alt="NWS Skywarn Storm Spotter" style="width: 124px; height: 72px; max-width: 100%;"><br>
-                    </a></div>
+                    </a> </div>
                   <div><a href="https://www.weather.gov/SKYWARN" title="NWS Skywarn Storm Spotter"><br>
-                    </a></div>
+                    </a> </div>
                   <div><a href="http://wxqa.com/" title="Citizen Weather Observation Program (CWOP)"><img
                         src="https://raw.githubusercontent.com/ApexWx/ApexWx.github.io/master/cwp_logo%20200pxtrans.gif"
                         alt="Citizens Weather Observation Program" style="width: 93px; height: 93px; border-width: thin;"><br>
-                    </a></div>
+                    </a> </div>
                   <div><br>
                   </div>
-                  <div><em><a title="Apex Wx Data at MesoWest" href="https://mesowest.utah.edu/cgi-bin/droman/meso_base_dyn.cgi?stn=E0429&amp;unit=0&amp;timetype=LOCAL"
+                  <div><em><a title="PWS Data at MesoWest" href="https://mesowest.utah.edu/cgi-bin/droman/meso_base_dyn.cgi?stn=D7011&amp;unit=0&amp;timetype=LOCAL"
                         style="font-size: 12px; text-align: center;"><img src="https://raw.githubusercontent.com/ApexWx/ApexWx.github.io/master/mesowest%20116x30px.png"
-                          alt="MesoWest" style="border: none; -ms-interpolation-mode: bicubic; max-width: 100%;"><br>
+                          alt="MesoWest" style="border: none; max-width: 100%;"><br>
                       </a><a title="DW7011 West Lancaster Data at MesoWest" href="https://mesowest.utah.edu/cgi-bin/droman/meso_base_dyn.cgi?stn=D7011&amp;unit=0&amp;timetype=LOCAL"
                         style="font-size: 12px; text-align: center;"><span style="color: black;">DW7011
                           West Lancaster Data<br>
                           <br>
                         </span></a></em><a href="http://apod.nasa.gov/" title="Astronomy Picture of the Day"><img
                         src="https://apexwx.github.io/apod.png" alt="Astrnomy Picture of the Day"
-                        style="width: 75px; height: 75px;"></a><a title="Apex Wx Data at MesoWest"
-                      href="https://mesowest.utah.edu/cgi-bin/droman/meso_base_dyn.cgi?stn=E0429&amp;unit=0&amp;timetype=LOCAL"
-                      style="font-size: 12px; text-align: center;"></a></div>
+                        style="width: 75px; height: 75px;"><br>
+                    </a> </div>
+                  <div><br>
+                    <a href="https://www.thesitewizard.com/" target="_top"> <img
+                        src="https://www.thesitewizard.com/images/tsw88x31pow.gif"
+                        alt="Get free CGI scripts, PHP scripts, web pages at thesitewizard.com"
+                        style="border: none;" height="31" width="88"></a> <br>
+                  </div>
+                  <div><br>
+                    <a href="http://apod.nasa.gov/" title="Astronomy Picture of the Day"></a>
+                  </div>
                 </div>
               </div>
             </div>
-            <ul>
-            </ul>
-          </div>
-          <div id="tswothersidecol">
-            <div id="tswothersideproper">
-              <!-- start of side column: insert your navigation menu, etc, here --><br>
-              <div style="text-align: center;">
-                <div style="text-align: left;"> </div>
+            <div style="text-align: center;">
+              <div style="text-align: left;">
+                <div style="text-align: center;">
+                  <div><a href="http://jigsaw.w3.org/css-validator/validator?lang=en&amp;profile=css3svg&amp;uri=https%3A%2F%2Fapexwx.github.io%2FFawkes&amp;usermedium=all&amp;vextwarning=&amp;warning=1"><img
+                        style="border:0;width:88px;height:31px" src="https://jigsaw.w3.org/css-validator/images/vcss-blue"
+                        alt="Valid CSS!"></a><a href="https://html5.validator.nu/?doc=https%3A%2F%2Fhttps://apexwx.github.io/"><br>
+                      <br>
+                    </a> </div>
+                </div>
+                <div style="text-align: center;"><a href="https://html5.validator.nu/?doc=https%3A%2F%2Fapexwx.github.io%2FFawkes">
+                    <img src="validhtml5.png" alt="W3C Validated HTML 5" style="width: 112px; height: 49px;"
+                      title="Click for more information"></a> </div>
               </div>
-              <p> </p>
-              <!-- end of side column: put your navigation menu, etc, above this line -->
+              <!-- end of left side column: put your navigation menu, etc, above this line -->
+            </div>
+            <div id="tswfooter">
+              <!-- start of footer section: insert your copyright notice, etc, here -->
+              <!-- end of footer section: insert your copyright notice, etc, above this line --><!-- end of footer section: insert your copyright notice, etc, above this line -->
             </div>
           </div>
-          <div style="clear: both;"></div>
-        </div>
-        <p></p>
-        <!-- end of side column: put your navigation menu, etc, above this line -->
+          <a href="https://jigsaw.w3.org/css-validator/check/referer">
+            <script>
+                     //<![CDATA[
+                         var myDate = new Date();
+                         var hrs = myDate.getHours();
+                     
+                         var greet;
+                     
+                         if (hrs < 12 && hrs >= 3) 
+                             greet = 'Good Morning!';
+                         else if (hrs >= 12 && hrs <= 17)
+                             greet = 'Good Afternoon!';
+                         else if (hrs >= 17 && hrs <= 24)
+                             greet = 'Good Evening!';
+                         else if (hrs >=0 && hrs <= 3)
+                             greet = 'Good Early Morning!';
+                     
+                         document.getElementById('lblGreetings').innerHTML =
+                             '<b>' + greet + '<\/b>';
+                       //]]>
+                       
+                  </script> </a> </div>
       </div>
     </div>
-    <div style="clear: both;"></div>
-    <div style="font-size: 12px;" id="tswfooter"><br>
-      <!-- start of footer section: insert your copyright notice, etc, here --></div>
-    <div style="font-size: 12px;">
-      <div>
-        <div style="text-align: center;"><u>Credits</u></div>
-        <div style="text-align: center;"><span style="font-size: 12px;"><br>
-          </span></div>
-        <div style="text-align: center;"><span style="font-size: 12px;">Almanac
-            data from<span style="color: #0000ee;"> a local PWS</span> and <a href="https://scacis.rcc-acis.org/"
-              title="SCACIS">NOAA SC-ACIS</a> information. </span><span style="font-size: 12px;">Sun/Moon
-            data from <a href="https://www.timeanddate.com/" title="timeanddate.com">timeanddate</a>.
-          </span></div>
-        <div style="text-align: center;"><br>
-        </div>
-        <div style="text-align: center;">NOAA Warning Banner (may appear during
-          severe weather) provided by <a href="https://www.willyweather.com" style="text-decoration: underline; font-size: 12px; text-align: center; color: #3d3d3d;">WillyWeather.com</a></div>
-      </div>
-      <div style="text-align: center;"> </div>
-      <div style="text-align: center;"> <br>
-        Apex Wx logo by Joanna Becker ©2016 (Visit <a title="Bushi and Brush Arts Dojo"
-          href="https://www.bushiandbrush.com/" style="text-decoration: underline; font-size: 12px; text-align: center; color: #3d3d3d;">Bushi
-          and Brush Arts Dojo</a>)</div>
-      <div style="text-align: center;"><br>
-      </div>
-      <div style="text-align: center;">Initial basic layout from <a href="https://www.thesitewizard.com/wizards/layout.shtml"
-          target="_top">thesitewizard.com</a> <br>
-      </div>
-      <div style="text-align: center;"> </div>
-      <div style="text-align: center;"> <br>
-        <script>
-document.write("This webpage was last modified " + " " +document.lastModified);
-</script></div>
-      <div style="text-align: center;"><br>
-        <a href="#top"><img src="ApexWxlogo75px.jpg" alt="Logo"></a><br>
-        <br>
-      </div>
-      <div style="text-align: center;"><a style="font-size: 12px; text-align: center;"
-          href="https://www.facebook.com/ApexWx/"><img style="border: medium none; max-width: 100%; padding-right: 10px;"
-            title="Apex Wx on Facebook" src="https://raw.githubusercontent.com/ApexWx/ApexWx.github.io/master/outline-dark-facebook-48.png"
-            alt="Apex Wx on Facebook"></a><a style="font-size: 12px; text-align: center;"
-          title="Apex Wx on Twitter" href="https://twitter.com/apexwx"><img style="border: none; -ms-interpolation-mode: bicubic; max-width: 100%;"
-            title="Apex Wx on Twitter" src="https://raw.githubusercontent.com/ApexWx/ApexWx.github.io/master/outline-dark-twitter-48.png"
-            alt="Apex Wx on Twitter"></a></div>
-      <br>
-      <!-- end of footer section: insert your copyright notice, etc, above this line --><!-- end of footer section: insert your copyright notice, etc, above this line -->
-    </div>
-    <script type="text/javascript">
-//<![CDATA[
-    var myDate = new Date();
-    var hrs = myDate.getHours();
-
-    var greet;
-
-    if (hrs < 12 && hrs >= 3) 
-        greet = 'Good Morning!';
-    else if (hrs >= 12 && hrs <= 17)
-        greet = 'Good Afternoon!';
-    else if (hrs >= 17 && hrs <= 24)
-        greet = 'Good Evening!';
-    else if (hrs >=0 && hrs <= 3)
-        greet = 'Up with the Elves and Wizards, eh?';
-
-    document.getElementById('lblGreetings').innerHTML =
-        '<b>' + greet + '<\/b>';
-  //]]>
-  </script>
   </body>
 </html>
