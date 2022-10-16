@@ -4,11 +4,14 @@
 */
 body {
 	font-family: Arial, Helvetica, sans-serif ;
+	background-image: url('seamless-background-simply-sky.jpg');
+	style="background-color: transparent;"
 }
 img {
 	max-width: 100% ;
 	width: auto ;
 	height: auto ;
+	padding: 5px ;
 }
 input, select, button, textarea {
 	max-width: 100% ;
@@ -20,26 +23,27 @@ div#tswcentrecombo {
 	float: right ;
 	width: 80% ;
 	color: inherit ;
-	background-color: #fff ;
+	background-image: url('seamless-background-simply-sky.jpg') ;
 }
 div#tswothersidecol {
 	float: left ;
 	width: 25% ;
 	color: #000 ;
-	background-color: #fff ;
+	background-image: url('seamless-background-simply-sky.jpg');
+	
 }
 div#tswsidecol {
 	float: right ;
 	width: 20% ;
 	color: #000 ;
-	background-color: #fff ;
+	background-image: url('seamless-background-simply-sky.jpg');
 }
 div#tswcontent {
 	float: left ;
 	width: 75% ;
 	color: #000 ;
-	background-color: #fff ;
-}
+	background-image: url('seamless-background-simply-sky.jpg') ;
+	
 @media only screen and (max-width: 629px) {
 	div#tswsidecol {
 		float: none ;
@@ -69,6 +73,8 @@ div#tswcontainer {
 div#tswsideproper, div#tswothersideproper {
 	padding-left: 5px ;
 	padding-right: 5px ;
+	
+	
 }
 div#tswheader {
 	color: #000 ;
