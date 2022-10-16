@@ -7,14 +7,13 @@ body {
 	background-image: url('seamless-background-simply-sky.jpg');
 	background-color: transparent;
 }
- iframe {
+iframe {
         border: none;
     }
 img {
 	max-width: 100% ;
 	width: auto ;
 	height: auto ;
-	padding: 5px ;
 }
 input, select, button, textarea {
 	max-width: 100% ;
@@ -26,14 +25,13 @@ div#tswcentrecombo {
 	float: right ;
 	width: 80% ;
 	color: inherit ;
-	background-image: url('seamless-background-simply-sky.jpg') ;
+	background-image: url('seamless-background-simply-sky.jpg');
 }
 div#tswothersidecol {
 	float: left ;
 	width: 25% ;
 	color: #000 ;
 	background-image: url('seamless-background-simply-sky.jpg');
-	
 }
 div#tswsidecol {
 	float: right ;
@@ -44,9 +42,8 @@ div#tswsidecol {
 div#tswcontent {
 	float: left ;
 	width: 75% ;
-	color: #000 ;
-	background-image: url('seamless-background-simply-sky.jpg') ;
-	
+	background-image: url('seamless-background-simply-sky.jpg');
+}
 @media only screen and (max-width: 629px) {
 	div#tswsidecol {
 		float: none ;
@@ -64,26 +61,24 @@ div#tswcontent {
 		float: none ;
 		width: 100% ;
 	}
-	
+}
 div#tswcontproper {
 	padding-left: 5px ;
 	padding-right: 5px ;
 }
 div#tswcontainer {
 	color: inherit ;
-	background-color: #fff ;
+	background-image: url('seamless-background-simply-sky.jpg');
 }
 div#tswsideproper, div#tswothersideproper {
 	padding-left: 5px ;
 	padding-right: 5px ;
-	
-	
 }
 div#tswheader {
 	color: #000 ;
-	background-color: #fff ;
+	background-image: url('seamless-background-simply-sky.jpg');
 }
 div#tswfooter {
 	color: #000 ;
-	background-color: #fff ;
+	background-image: url('seamless-background-simply-sky.jpg');
 }
