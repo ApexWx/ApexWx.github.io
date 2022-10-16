@@ -7,6 +7,9 @@ body {
 	background-image: url('seamless-background-simply-sky.jpg');
 	style="background-color: transparent;"
 }
+ iframe {
+        border: none;
+    }
 img {
 	max-width: 100% ;
 	width: auto ;
