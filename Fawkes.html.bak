@@ -38,14 +38,14 @@
             <div style="text-align: center;"><label id="lblGreetings"><b>Good
                   Afternoon!</b></label> </div>
             <br>
-            <div style="text-align: center;"> <iframe src="https://free.timeanddate.com/clock/i8busqju/n23/ftb/tt0/ts1"
-                style="border: none;" height="18" width="311"></iframe>
+            <div style="text-align: center;"> <iframe src="https://free.timeanddate.com/clock/i8jrr8ph/n198/tct/pct/ftb/tt0/ts1"
+                style="background-color:transparent;" height="18" width="311"></iframe>
               <div style="text-align: center; font-size:12px;">
                 <div style="font-size: 14px; text-align: center;">
                   <div style="font-size: 12px;">
                     <div style="text-align: center;">
                       <div style="text-align: center; font-size:12px;"><em>
-                          Weather information updated at 9:00 am Sunday, 16
+                          Weather information updated at 8:20 am Thursday, 20
                           October 2022</em> </div>
                     </div>
                   </div>
@@ -53,13 +53,10 @@
               </div>
             </div>
             <p> </p>
-            <div style="text-align: center; font-size: 14px;">
-              <p>Units US standard unless otherwise noted.<br>
-                Optimized for tablets and other mobile devices.<br>
-                Apex Wx is a private weather information service unaffiliated
-                with NOAA/NWS.<br>
-                Always consult your local government weather office for the
-                latest official weather updates and information. </p>
+            <div style="text-align: center; font-size: 14px;">Apex Wx is a
+              private weather information service unaffiliated with NOAA/NWS.<br>
+              Always consult your local government weather office for the latest
+              official weather updates and information.
               <p><em style="font-size: 13px;"><strong>NWS State College Watches,
                     Warnings, and Advisories<br>
                   </strong></em><a href="https://www.weather.gov/ctp/"><img src="https://www.weather.gov/wwamap/png/ctp.png"
@@ -69,193 +66,173 @@
               </p>
             </div>
             <p> </p>
-            <br>
-            <div style="text-align: center;"><em style="color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: 14px; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"><strong>Lancaster
-                  48-Hour NWS Graphical Weather Forecast</strong></em><br style="color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
-              <a href="https://forecast.weather.gov/meteograms/Plotter.php?lat=40.0418&amp;lon=-76.3012&amp;wfo=CTP&amp;zcode=PAZ066&amp;gset=20&amp;gdiff=5&amp;unit=0&amp;tinfo=EY5&amp;ahour=0&amp;pcmd=11101111110000000000000000000000000000000000000000000000000&amp;lg=en&amp;indu=1%211%211%21&amp;dd=&amp;bw=&amp;hrspan=48&amp;pqpfhr=6&amp;psnwhr=6"
+            <em style="color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: 14px; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"><strong></strong></em><br>
+            <div style="text-align: center;"><em style="font-size: 14px;"><strong>Lancaster
+                  48-Hour NWS Graphical Weather Forecast</strong></em></div>
+            <div style="text-align: center;"> <a href="https://forecast.weather.gov/meteograms/Plotter.php?lat=40.0418&amp;lon=-76.3012&amp;wfo=CTP&amp;zcode=PAZ066&amp;gset=20&amp;gdiff=5&amp;unit=0&amp;tinfo=EY5&amp;ahour=0&amp;pcmd=11101111110000000000000000000000000000000000000000000000000&amp;lg=en&amp;indu=1%211%211%21&amp;dd=&amp;bw=&amp;hrspan=48&amp;pqpfhr=6&amp;psnwhr=6"
                 title="Click for larger image" style="font-family: Arial, Helvetica, sans-serif; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255);"><img
                   src="https://forecast.weather.gov/meteograms/Plotter.php?lat=40.0418&amp;lon=-76.3012&amp;wfo=CTP&amp;zcode=PAZ066&amp;gset=20&amp;gdiff=5&amp;unit=0&amp;tinfo=EY5&amp;ahour=0&amp;pcmd=11101111110000000000000000000000000000000000000000000000000&amp;lg=en&amp;indu=1%211%211%21&amp;dd=&amp;bw=&amp;hrspan=48&amp;pqpfhr=6&amp;psnwhr=6"
                   alt="48-Hour Weather Forecast" style="max-width: 100%; width: 384px; height: 288px; border-width: 1px; border-style: solid;"></a><br>
-              <a href="https://forecast.weather.gov/meteograms/Plotter.php?lat=40.0418&amp;lon=-76.3012&amp;wfo=CTP&amp;zcode=PAZ066&amp;gset=20&amp;gdiff=5&amp;unit=0&amp;tinfo=EY5&amp;ahour=0&amp;pcmd=11101111110000000000000000000000000000000000000000000000000&amp;lg=en&amp;indu=1%211%211%21&amp;dd=&amp;bw=&amp;hrspan=48&amp;pqpfhr=6&amp;psnwhr=6"
+              <em style="font-size: 12px;">Click for larger image</em><a href="https://forecast.weather.gov/meteograms/Plotter.php?lat=40.0418&amp;lon=-76.3012&amp;wfo=CTP&amp;zcode=PAZ066&amp;gset=20&amp;gdiff=5&amp;unit=0&amp;tinfo=EY5&amp;ahour=0&amp;pcmd=11101111110000000000000000000000000000000000000000000000000&amp;lg=en&amp;indu=1%211%211%21&amp;dd=&amp;bw=&amp;hrspan=48&amp;pqpfhr=6&amp;psnwhr=6"
                 title="Click for larger image" style="font-family: Arial, Helvetica, sans-serif; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255);"><em
-                  style="font-size: 12px;">Click for larger image</em></a></div>
+                  style="font-size: 12px;"><br>
+                </em></a></div>
           </div>
           <div><strong><u><br>
               </u></strong></div>
           <div><strong><u>Fawkes House Almanac</u></strong>
             <div style="text-align: left;"> <em style="font-size: 12px;">Data
                 valid for Lancaster &amp; vicinity. All times are local time for
-                Lancaster, PA.<br>
-              </em><em style="font-size: 12px; width: 251px; height: 171px;">Source:
-                Personal Weather Station near F&amp;M College on State Street /
-                Data period: 12:00 am - 11:59 pm daily</em><br>
-              <div> <strong></strong><br>
-                <u><strong>Saturday, October 15</strong></u><br>
-                <div style="color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: medium; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"><strong>Temperature:
-                    High</strong>: 73° at 1:38 pm /<span>&nbsp;</span><strong>Low</strong>:
-                  42° at 5:50 am<br>
-                  <strong>Wind:<span>&nbsp;</span></strong><u>Avg. Direction</u>:
-                  ENE /&nbsp;<span>&nbsp;</span><u>Avg. Speed</u>: &lt; 1 mph /<span>&nbsp;</span><u>Peak
-                    Gust</u>: 8 mph<strong><span>&nbsp;</span></strong>at 11:28
-                  am</div>
-                <div style="color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: medium; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"><strong>Precipitation</strong>:
-                  0.00"</div>
-                <div style="color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: medium; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"><strong>Snow</strong>:
-                  0.0"</div>
-              </div>
+                Lancaster, PA. </em><em style="font-size: 12px;"><br>
+                Measurements in US units unless otherwise noted.</em>
+              <div><br>
+                <u><strong>Friday, October 21</strong></u><strong><br>
+                  Temperature: High</strong>: 66° at 2:36 pm / <strong>Low</strong>:
+                33° at 7:24 am
+                <div style="text-align: left;"><strong>Wind: Direction</strong>:
+                  NE / <strong>Avg. Speed</strong>: &lt; 1 mph / <strong>Peak
+                    Gust</strong>:
+                  5 mph at 12:52 pm</div>
+                <div style="text-align: left;"><strong>Precipitation:&nbsp; </strong>0.00"<br>
+                  <strong>Snow: </strong>0.0"</div>
+                <u><strong></strong></u><em style="font-size: 12px; width: 251px; height: 171px;">Source:
+                  Personal Weather Station near F&amp;M College on State Street
+                  / Data period: 12:00 am - 11:59 pm daily</em></div>
               <div style="font-size: 12px;"> <em style="font-size: 12px; width: 251px; height: 171px;"><br>
                 </em></div>
-              <u><strong>Sunday, October 16</strong></u><br>
+              <u><strong>Friday, October 21</strong></u><br>
               <u><strong></strong></u>
-              <div><em style="font-size: 12px;">Source: NWS State College
-                  weather records since 1948/49.</em><br>
-                <strong><br>
-                  Avg. High</strong>: 66° / <strong>Avg. Low:</strong> 44°<br>
-                <strong>Record High</strong>: 86° (2021) / <strong>Record Low</strong>:
-                31° (1999)</div>
-              <div><br>
-                <strong>Year-to-Date Precipitation</strong>: 32.96" (avg.
-                35.54") = 2.58" below average<br>
+              <div><strong>Avg. High</strong>: 64° / <strong>Record High</strong>:
+                82° (1979) <br>
+                <strong>Avg. Low:</strong> 41° /&nbsp; <strong>Record Low</strong>:
+                29° (1991)<br>
+                <strong>Year-to-Date Precipitation</strong>: 32.98" (avg.
+                36.36") = 3.38" below average<br>
                 <strong>Snow</strong>: 0.0" (avg. 0.0")<br>
-                <em style="font-size: 12px;">Snow totals measured from July 1</em><br>
+                <em style="font-size: 12px;">Snow totals measured from July 1 /
+                </em><em style="font-size: 12px;">Source: NWS State College
+                  weather records since 1948/49.</em><br>
                 <br>
                 <a href="https://www.timeanddate.com/moon/phases/usa/lancaster-pa"
-                  title="Click for more information">Moon Phase</a>: 🌖 Waning
-                Gibbous → 🌗 Last Quarter at 1:15 pm Mon. 17 Oct.<br>
+                  title="Click for more information">Moon Phase</a>: 🌘 Waning
+                Crescent → 🌑 New Moon at 6:49 am Tue. 25 Oct. <br>
                 <br>
                 <a href="https://www.timeanddate.com/astronomy/usa/lancaster-pa">Lancaster,
                   PA, USA — Sunrise, Sunset, and Moon Times for Today</a><br>
                 <br>
-                <u><strong>3-Day Outlook: Sunday - Tuesday</strong></u> </div>
+                <u><strong>3-Day Outlook: Saturday - Monday</strong></u> </div>
             </div>
           </div>
           <div style="text-align: left;"><br>
           </div>
-          High pressure will produce partly cloudy skies across the Lower
-          Susquehanna Valley today. Clouds increase tonight as a weak frontal
-          system moves towards the region with a chance for showers after
-          midnight as the fronts move through the Lancaster region. Partly sunny
-          skies with isolated showers are expected Monday behind the front.
-          Clouds decrease tomorrow night with mostly sunny to partly cloudy
-          skies expected Tuesday. Clear and cold conditions are expected Tuesday
-          night with overnight lows dipping into the middle 30s.<br>
+          <div>High pressure will bring sunny skies today. An area of low
+            pressure moving north up the coast will bring increased cloudiness
+            tonight and mostly cloudy to overcast skies Sunday with scattered
+            showers across the Lancaster region. The low will move away tomorrow
+            night with partly cloudy skies expected after midnight tomorrow
+            night and Monday.</div>
+          <br>
+          <div style="text-align: left;"><strong>Today &amp; Tonight</strong><br>
+            Mostly sunny with a high near 70°. South-southeast wind 3-5 mph.</div>
           <div style="text-align: left;"><br>
-            <div><strong>Today &amp; Tonight</strong><strong></strong>
-              <div>Partly cloudy with a high around 68°. Northwest wind 3-5 mph
-                becoming.</div>
-              <div><strong><br>
-                </strong></div>
-              <div>Tonight, becoming mostly cloudy with a 40% chance for
-                showers. Less than 0.10-inch rainfall expected. Low near 51°.
-                Southeast wind around 3 mph. </div>
-              <div> <br>
-                <div><strong>Monday, October 17<br>
-                  </strong></div>
-                <div>Partly sunny with a 20% chance for isolated showers. High
-                  around 66°. West wind 10-15 mph.</div>
-                <div><br>
-                </div>
-                Monday night, partly cloudy in the evening then mostly clear
-                after midnight with a low near 38°. West wind at 6 mph.&nbsp; <br>
-                <div><br>
-                </div>
-                <div><strong>Tuesday, October 18</strong></div>
-                <div>Mostly sunny with a high near 53°. West wind 11-12 mph.</div>
-                <div><br>
-                </div>
-                Tuesday night, clear with a low near 35°. West wind 0-7 mph. </div>
+            <div>
+              <div> Tonight, partly cloudy in the evening then becoming mostly
+                cloudy overnight with a low near 43°. Near calm wind.<br>
+                <p><strong>Sunday, October 23</strong><br>
+                  Mostly cloudy to overcast with a high around 64°. 30% chance
+                  for showers, mainly in the afternoon. Northeast wind 5-6 mph.</p>
+                Sunday night, mostly cloudy with a low near 50°. 30% chance for
+                rain, mainly in the evening then becoming partly cloudy
+                overnight. North wind 3-5 mph.<br>
+                <p><strong>Monday, October 24<br>
+                  </strong>Partly cloudy with a high around 72°. North&nbsp;
+                  wind near 5 mph becoming east in the afternoon 3-5 mph.</p>
+                Monday night, partly cloudy with a low near 52°. East wind 0-5
+                mph. </div>
               <strong></strong></div>
             <div>
               <div><br>
               </div>
-              <div> <u> </u><strong><u>4 to 7 Day: Wednesday - Saturday</u><br>
+              <div> <u> </u><strong><u>4 to 7 Day: Tuesday - Friday</u><br>
                 </strong>
                 <div><strong></strong><br>
                 </div>
                 <em></em></div>
-              <div>High pressure will build across the Lancaster region for the
-                period with partly cloudy skies Wednesday and mostly clear skies
-                Thursday through Saturday.<br>
+              <div>Partly sunny skies Tuesday give way to mostly cloudy skies
+                Wednesday as a&nbsp; cold front approaches and moves across the
+                Lower Susquehanna Valley with a slight chance for isolated
+                showers Monday into Monday night. Partly cloudy skies develop
+                Thursday into Friday morning as high pressure overspreads the
+                region. Low pressure off the East Coast brings partly sunny
+                skies to Lancaster by Friday afternoon.<br>
+                <p><strong>Tuesday, October 25<br>
+                  </strong>Partly sunny with a high near 72°. Southeast wind 0-7
+                  mph.</p>
+                <p>Tuesday night, partly cloudy with a low near 56°. 20% chance
+                  for showers after midnight. Southeast wind 0-5 mph. </p>
+                <p><strong>Wednesday, October 26<br>
+                  </strong>Partly sunny with a 20% chance for showers. High
+                  around 71°. South 5-10 mph.</p>
+                <p>Wednesday night, partly cloudy with a 20% chance for showers.
+                  Low near 53°. Northwest wind 0-5 mph. </p>
+                <p><strong>Thursday, October 27<br>
+                  </strong>Partly cloudy with a high near 68°. Northwest wind
+                  5-10 mph.</p>
+                <p>Thursday night, partly cloudy with a low near 48°. Northwest
+                  wind 0-5 mph.
+                </p>
+                <p><strong>Friday, October 28<br>
+                  </strong>Partly cloudy in the morning then becoming partly
+                  sunny with a high around 65°. Northwest wind 0-7 mph.</p>
+                <p>Friday night, mostly cloudy with a low near 48°. 30% chance
+                  for showers. Northeast wind 0-5 mph.</p>
+                <p><u><strong>8 to 14 Day Trends: Sat. Oct. 29 - Fri. Nov. 4</strong></u><br>
+                  <br>
+                  Above normal temperatures / Above normal precipitation<br>
+                </p>
+                <p>------------------------------------------------------------------------------------------------------------<br>
+                  <br>
+                  <strong><a href="https://www.weather.gov/">US National Weather
+                      Service</a></strong><br>
+                </p>
+                <em><strong>Major Storm System To Impact The West This Weekend</strong></em><br>
+                <p>A significant pattern change will take place in the West this
+                  weekend with a major storm system digging and carving through
+                  the region. A number of weather hazards are expected from high
+                  winds for a large chunk of the West to the first heavy
+                  mountain snowfall of the season for the northern and central
+                  Rockies. Also, temperatures are likely to be well below normal
+                  this weekend and all of next week.</p>
+                <p> <a href="https://www.wpc.ncep.noaa.gov/NationalForecastChart/staticmaps/noaad1.png"><img
+                      src="https://www.wpc.ncep.noaa.gov/NationalForecastChart/staticmaps/noaad1.png"
+                      alt="National Forecast Chart" style="width: 528px; height: 380px;">
+                  </a></p>
+                <ul>
+                  <li><a href="https://www.wpc.ncep.noaa.gov/discussions/hpcdiscussions.php?disc=pmdspd">Short
+                      Range National Forecast Discussion</a> (Day ½ - 2½)</li>
+                  <li> <a href="https://www.wpc.ncep.noaa.gov/discussions/hpcdiscussions.php?disc=pmdepd">Medium
+                      Range National Forecast Discussion</a> (Day 3 - 7)</li>
+                  <li><a href="https://www.wpc.ncep.noaa.gov/discussions/hpcdiscussions.php?disc=nathilo&amp;version=0&amp;fmt=reg">National
+                      High and Low Temperature</a> (excluding Alaska &amp;
+                    Hawaii)</li>
+                </ul>
+                <p><a href="https://www.ncei.noaa.gov/access/monitoring/monthly-report/national/202209"><strong>September
+                      2022 US National Climate Summary</strong></a><u><strong><br>
+                    </strong></u><em style="font-size: 12px;">Source: NOAA
+                    National Centers for Environmental Information</em></p>
+                <ul>
+                </ul>
+                <p> ---------------------------</p>
+                <p><strong><a href="https://www.spc.noaa.gov/">Storm Prediction
+                      Center </a></strong></p>
+                <em><strong>Today's Severe Weather Outlook</strong></em><br>
+                Severe thunderstorms are not expected today and tonight.
+                <p></p>
+              </div>
+              <div>
                 <div>
-                  <div><br>
-                  </div>
-                  <div><strong>Wednesday, October 19</strong></div>
-                  <div>Mostly sunny in the morning then partly cloudy in the
-                    afternoon with a high around 53­°. West wind 8-14 mph.</div>
-                  <div><br>
-                  </div>
-                  <div>Wednesday night, partly cloudy to mostly clear with a low
-                    near 35°. West wind 0-7 mph.
-                    <div><br>
-                    </div>
-                    <div><strong>Thursday, October 20</strong></div>
-                    <div>Mostly sunny with a high around 56°. Southwest wind
-                      8-14 mph.</div>
-                    <div><br>
-                    </div>
-                    <div>Thursday night, mostly clear to partly cloudy with a
-                      low near 38°. Southwest wind 0-7 mph.
-                      <div><br>
-                      </div>
-                      <div><strong>Friday, October 21</strong></div>
-                      <div>Mostly sunny with a high around 62°. Southwest wind
-                        0-7 mph.</div>
-                      <div><br>
-                      </div>
-                      <div>Friday night, mostly clear with a low near 41°. South
-                        wind 0-7 mph.
-                        <p><strong>Saturday, October 22<br>
-                          </strong>Mostly sunny with a high near 66°. South wind
-                          0-7 mph.</p>
-                        <p>Saturday night, partly cloudy with a low near 45°.
-                          Calm winds.</p>
-                        <p><u><strong>8 to 14 Day Trends: Sun. Oct. 23 - Sat.
-                              Oct. 29</strong></u><br>
-                          <br>
-                          Above normal temperatures / Near normal precipitation<br>
-                        </p>
-                        <p>------------------------------------------------------------------------------------------------------------<br>
-                          <br>
-                          <strong><a href="https://www.weather.gov/">US National
-                              Weather Service</a></strong><br>
-                        </p>
-                        <p><em><strong>Flood Threat For Areas of the Southwest;
-                              Much Colder Temperatures Arrive for Midwest</strong></em></p>
-                        <p>High moisture content continues for areas of the
-                          Southwest into Texas through Sunday with the threat of
-                          flash flooding. Meanwhile, dry weather, air quality,
-                          fire weather concerns and record high temperatures are
-                          forecast for portions of the Pacific Northwest. A
-                          strong cold front will sweep southward across the
-                          Midwest where much colder temperatures and some snow
-                          are expected near the Great Lakes.</p>
-                        <p> <a href="https://www.wpc.ncep.noaa.gov/NationalForecastChart/staticmaps/noaad1.png"><img
-                              src="https://www.wpc.ncep.noaa.gov/NationalForecastChart/staticmaps/noaad1.png"
-                              alt="National Forecast Chart" style="width: 528px; height: 380px;">
-                          </a></p>
-                        <ul>
-                          <li><a href="https://www.wpc.ncep.noaa.gov/discussions/hpcdiscussions.php?disc=pmdspd">Short
-                              Range National Forecast Discussion</a> (Day ½ -
-                            2½)</li>
-                          <li> <a href="https://www.wpc.ncep.noaa.gov/discussions/hpcdiscussions.php?disc=pmdepd">Medium
-                              Range National Forecast Discussion</a> (Day 3 - 7)</li>
-                          <li><a href="https://www.wpc.ncep.noaa.gov/discussions/hpcdiscussions.php?disc=nathilo&amp;version=0&amp;fmt=reg">National
-                              High and Low Temperature</a> (excluding Alaska
-                            &amp; Hawaii)</li>
-                        </ul>
-                        <p> ---------------------------</p>
-                        <p><strong><a href="spc.noaa.gov/">Storm Prediction
-                              Center </a></strong></p>
-                        <em><strong>Today's Severe Weather Outlook</strong></em><br>
-                        Isolated severe thunderstorms are possible from
-                        southeast New Mexico across far west to southwest Texas,
-                        beginning in the mid-afternoon and continuing through
-                        tonight. Locally damaging winds are also possible across
-                        parts of the southern Appalachians, mainly in the&nbsp;
-                        late afternoon to early evening.</div>
-                    </div>
-                  </div>
-                  <div><br>
+                  <div>
+                    <div> </div>
                   </div>
                   <div><a href="https://www.spc.noaa.gov/products/outlook/day1otlk.html">
                       <img src="https://www.spc.noaa.gov/products/outlook/day1otlk_1300.gif"
@@ -486,7 +463,7 @@
           <div style="font-size: 14px; text-align: left;"> <em><strong>Local
                 Radar from NWS State College<br>
               </strong></em> <a href="https://radar.weather.gov/?settings=v1_eyJhZ2VuZGEiOnsiaWQiOiJsb2NhbCIsImNlbnRlciI6Wy03OC4wMDMsNDAuOTI0XSwibG9jYXRpb24iOm51bGwsInpvb20iOjgsImZpbHRlciI6IldTUi04OEQiLCJsYXllciI6ImJyZWZfcmF3Iiwic3RhdGlvbiI6IktDQ1gifSwiYW5pbWF0aW5nIjpmYWxzZSwiYmFzZSI6InN0YW5kYXJkIiwiYXJ0Y2MiOmZhbHNlLCJjb3VudHkiOmZhbHNlLCJjd2EiOmZhbHNlLCJyZmMiOmZhbHNlLCJzdGF0ZSI6ZmFsc2UsIm1lbnUiOnRydWUsInNob3J0RnVzZWRPbmx5Ijp0cnVlLCJvcGFjaXR5Ijp7ImFsZXJ0cyI6MC44LCJsb2NhbCI6MC42LCJsb2NhbFN0YXRpb25zIjowLjgsIm5hdGlvbmFsIjowLjZ9fQ%3D%3D#/"
-              title="Current Local Radar"><img src="https://radar.weather.gov/ridge/lite/KCCX_loop.gif"
+              title="Current Local Radar"><img src="https://radar.weather.gov/ridge/standard/KCCX_loop.gif"
                 title="Click for larger image" alt="Local Radar" style="width: 251px; height: 230px; border-width: 1px; border-style: solid;"></a><br>
             <br>
             <em><strong>Regional Satellite<br>
