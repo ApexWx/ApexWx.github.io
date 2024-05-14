@@ -79,7 +79,7 @@ meter, progress, output {
       <li><a href="#severe">Severe Weather Outlook</a></li>
       <li><a href="#sat">Satellite</a></li>
       <li><a href="#temp">Temperature</a></li>
-      <li><a href="#feel">Hazards</a></li>
+      <li><a href="#feel">Feels Like</a></li>
       <li><a href="#precip">Precipitation</a></li>
       <li><a href="#river">Area Rivers</a></li>
       <li><a href="#coast">Coastal Conditions</a></li>
