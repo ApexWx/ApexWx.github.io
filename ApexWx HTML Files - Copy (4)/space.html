@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Space Weather</title>
+    <style>
+* {
+  box-sizing: border-box;
+}
+
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 5px;
+}
+
+/* Clearfix (clear floats) */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 500px) {
+  .column {
+    width: 100%;
+  }
+}
+  
+  /* navigation bar */
+  .nav{
+    border:1px solid #ccc;
+    border-width:1px 0;
+    list-style:none;
+    margin:0;
+    padding:0;
+    text-align:center;
+}
+.nav li{
+    display:inline;
+}
+.nav a{
+    display:inline-block;
+    padding:10px;
+}
+      
+body {
+	font-family: Arial, Helvetica, sans-serif ;
+	background-color: #F8F8F8;
+}
+img {
+	max-width: 100% ;
+	width: auto ;
+	height: auto ;
+}
+input, select, button, textarea {
+	max-width: 100% ;
+}
+meter, progress, output {
+	max-width: 100% ;
+}
+ div.a {
+  font-size: 15px;
+}      
+  
+</style> </head>
+  <body>
+    <h2 style="text-align: center;">Space Weather</h2>
+    <p></p>
+    <p></p>
+    <ul class="nav">
+      <li><a href="https://apexwx.github.io/">Main Page</a></li>
+      <li><a href="#cur">Today's Sun</a></li>
+      <li><a href="#flare">Solar Flare Activity</a></li>
+      <li><a href="#act">Solar Radiation and Aurora</a></li>
+    </ul>
+    <br>
+    <div class="a"> Click maps and charts for larger versions, etc. Most
+      graphics update automatically--check timestamps for currency. During
+      updates, maintenance, network outages, etc., graphics may be temporarily
+      unavailable. Graphic sources include NOAA, NWS, University of Wisconsin,
+      Weather Underground, and various other organizations. All products
+      produced by the US government or affiliated organizations are public
+      domain unless otherwise labeled.<br>
+      <p> <u>Note</u>: For US Eastern Time on maps and charts, subtract 4 hours
+        (Daylight Saving Time) or 5 hours (Standard Time) from UTC / Z timestamp
+        on the maps and charts. UTC / Z / GMT = Coordinated Universal Time /
+        Zulu Time / Greenwich Mean Time -- Time is based on 0° longitude running
+        through the Royal Observatory in Greenwich, London, UK. It is the same
+        all year round and is not affected by Daylight Saving Time (aka Summer
+        Time) clock changes. Using UTC allows weather services and others to
+        avoid time zone conversions. Visit <a title="timeanddate.com" href="https://www.timeanddate.com/">timeanddate.com</a>
+        for more time zone conversion information and additional time-related
+        data. </p>
+      <p>For more information regarding solar activity, visit the <strong>Space
+          Weather Prediction Center</strong> at <a href="https://www.swpc.noaa.gov/">https://www.swpc.noaa.gov/</a>.
+        See also the current <a href="https://www.swpc.noaa.gov/products/forecast-discussion">NOAA
+          Space Weather Forecast Discussion</a></p>
+      <p>More solar activity information can also be found at Solar Ham.com: <a
+          href="https://www.solarham.net/">https://www.solarham.net/</a></p>
+      <p><u><strong>Caution</strong></u>: Enjoy the solar images on this and
+        other web pages. <strong><u>Never attempt to look directly at the
+            sun--permanent eye damage can result from UV radiation</u>.<br>
+          <br>
+        </strong><strong></strong><br>
+        <strong></strong></p>
+    </div>
+    <p></p>
+    <table style="width: 50%; text-align: left; margin-left: auto; margin-right: auto;"
+      border="0">
+      <tbody>
+        <tr align="center">
+          <td rowspan="1" colspan="3"><strong>Current Time US Eastern and UTC /
+              Z</strong></td>
+        </tr>
+        <tr>
+          <td style="text-align: center;"><strong>ET 12-Hour</strong></td>
+          <td style="text-align: center;"><strong>ET 24-Hour</strong></td>
+          <td style="text-align: center;"><strong>UTC / Z</strong></td>
+        </tr>
+        <tr>
+          <td style="text-align: center; width: 181px;"><br>
+            <iframe src="https://freesecure.timeanddate.com/clock/i7b14drd/n5278/ts1/ta1"
+              height="19" frameborder="0" width="126"></iframe><br>
+          </td>
+          <td style="text-align: center; width: 146px;"><br>
+            <iframe src="https://freesecure.timeanddate.com/clock/i7athxrb/n5278/th1/ts1/ta1"
+              height="19" frameborder="0" width="69"></iframe><br>
+          </td>
+          <td style="text-align: center; width: 167px;"><br>
+            <iframe src="https://freesecure.timeanddate.com/clock/i7allsch/th1/ts1/ta1"
+              height="19" frameborder="0" width="70"></iframe><br>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <br>
+    <br>
+    <div class="row">
+      <div class="column" style="text-align: center;"> <strong><a name="cur" id="cur"></a>Today's
+          Sun</strong><a href="https://sdo.gsfc.nasa.gov/assets/img/latest/latest_1024_HMIIF.jpg"
+          title="Click for larger image"><img src="https://www.spaceweatherlive.com/images/SDO/SDO_HMIIF_512.jpg"
+            style="width: 100%; border-width: 1px; border-style: solid;" alt="Today's Sun"></a><br>
+        <span style="font-size: 12px;"> Visit NASA's <a href="https://sdo.gsfc.nasa.gov/">Solar
+            Dynamics Observatory</a> (SDO) for more images and information.<br>
+          Sunspots are areas that appear dark on the surface of the Sun. They
+          appear dark because they are cooler than other parts of the Sun’s
+          surface. Solar flares are a sudden explosion of energy caused by
+          tangling, crossing or reorganizing of magnetic field lines near
+          sunspots. Numbers are the current </span><span style="font-size: 12px;"><span>NOAA/SWPC
+            s</span>unspot regions.<br>
+        </span></div>
+      <div class="column" style="text-align: center;"><strong>Coronal Holes</strong>
+        <strong></strong> <strong> </strong> <a href="https://sdo.gsfc.nasa.gov/assets/img/latest/latest_1024_0193.jpg"
+          title="Click for larger image"><img src="https://sdo.gsfc.nasa.gov/assets/img/latest/latest_1024_0193.jpg"
+            style="width: 100%; border-width: 1px; border-style: solid;" alt="Coronal Holes"></a><br>
+        <span style="font-size: 12px;">View <a href="https://sdo.gsfc.nasa.gov/data/latest48.php?q=0193"
+            title="48-hour coronal hole video" style="color: #1855d9; text-decoration: underline;">48-hour
+            video</a>. Coronal holes are the primary solar wind source.</span> </div>
+      <div class="column">
+        <div style="text-align: center;"><strong>Filaments and prominences</strong></div>
+        <strong></strong> <strong> </strong> <a href="https://sdo.gsfc.nasa.gov/assets/img/latest/latest_1024_0304.jpg"
+          title="Click for larger image"><img src="https://sdo.gsfc.nasa.gov/assets/img/latest/latest_1024_0304.jpg"
+            style="width: 100%; border-width: 1px; border-style: solid;" alt="Filaments and prominences"><br>
+        </a>
+        <div style="text-align: center;"><a href="https://sdo.gsfc.nasa.gov/assets/img/latest/latest_1024_0304.jpg"
+            title="Click for larger image"></a> <span style="font-size: 12px;">View
+            <a href="https://sdo.gsfc.nasa.gov/data/latest48.php?q=0304" title="48-hour video">48-hour
+              video</a></span></div>
+      </div>
+    </div>
+    <br>
+    <br>
+    <p> <a href="#top"><i>Top of Page</i><br>
+      </a></p>
+    <br>
+    <div class="row">
+      <div class="column" style="text-align: center;"> <strong><a name="flare"
+            id="flare"></a>Planetary K Index</strong><a href="https://www.swpc.noaa.gov/products/planetary-k-index"
+          title="Click for larger image"><img src="https://services.swpc.noaa.gov/images/station-k-index.png?time=1715018409000"
+            style="width: 100%; border-width: 1px; border-style: solid;" alt="Planetary K-Index"></a><br>
+        <div style="text-align: center; font-size: 12px;">The K-index, and by
+          extension the Planetary K-index, are used to characterize the
+          magnitude of geomagnetic storms. Kp is an excellent indicator of
+          disturbances in the Earth's magnetic field and is used by SWPC to
+          decide whether geomagnetic alerts and warnings need to be issued for
+          users who are affected by these disturbances.<br>
+          <a href="https://sunearthday.nasa.gov/swac/tutorials/mag_kp.php">Click
+            for a tutorial</a>.<span style="font-size: 12px;"> </span></div>
+      </div>
+      <div class="column" style="text-align: center;"><strong>SOHO LASCO C2
+          Coronagraph</strong> <strong></strong> <strong> </strong> <a href="https://iswa.ccmc.gsfc.nasa.gov/iswa_data_tree/observation/solar/soho/lasco-c2/2021/06/20210604_1727_c2.png"
+          title="Click for larger image"><img src="https://iswa.ccmc.gsfc.nasa.gov/iswa_data_tree/observation/solar/soho/lasco-c2/2021/06/20210604_1727_c2.png"
+            style="width: 100%; border-width: 1px; border-style: solid;" alt="Coronal Holes"></a><br>
+        <span style="font-size: 12px;">The LASCO C2 coronagraph monitors the
+          corona and can detect the emergence of coronal mass ejections.. White
+          circle indicates the occluded solar disk.</span> </div>
+      <div class="column">
+        <div style="text-align: center;"><strong>SOHO LASCO C3 Coronagraph<br>
+          </strong></div>
+        <strong></strong> <strong> </strong> <a href="https://iswa.ccmc.gsfc.nasa.gov/iswa_data_tree/observation/solar/soho/lasco-c3-roll-corrected/2021/06/20210604_1731_c3.png"
+          title="Click for larger image"><img src="https://iswa.ccmc.gsfc.nasa.gov/iswa_data_tree/observation/solar/soho/lasco-c3-roll-corrected/2021/06/20210604_1731_c3.png"
+            style="width: 100%; border-width: 1px; border-style: solid;" alt="SOHO LASCO C3 Coronagraph"><br>
+        </a>
+        <div style="text-align: center;"><a href="https://sdo.gsfc.nasa.gov/assets/img/latest/latest_1024_0304.jpg"
+            title="Click for larger image"></a> <span style="font-size: 12px;">The
+            Large Angle and Spectrometric Coronagraph (LASCO) C3 coronagraph
+            monitors the inner heliosphere from from and can track the
+            propagation of coronal mass ejections previously seen by LASCO C2.
+            White cirle denotes the occluded solar disk.<a href="https://sdo.gsfc.nasa.gov/data/latest48.php?q=0304"
+              title="48-hour video"></a></span></div>
+      </div>
+    </div>
+    <br>
+    <br>
+    <p> <a href="#top"><i>Top of Page</i><br>
+      </a></p>
+    <br>
+    <div class="row">
+      <div class="column" style="text-align: center;"> <a name="act" id="act"></a><strong>Solar
+          Radiation Activity</strong> <a href="https://cdn.star.nesdis.noaa.gov/GOES16/ABI/SECTOR/ne/Sandwich/20211511811_GOES16-ABI-ne-Sandwich-2400x2400.jpg"
+          title="Click for larger image"> </a>
+        <div style="text-align: center;"><a href="https://services.swpc.noaa.gov/images/swx-overview-small.gif"
+            title="Click for larger image"><img src="https://services.swpc.noaa.gov/images/swx-overview-small.gif"
+              style="width: 100%; border-width: 1px; border-style: solid;" alt="Solar Radiation Activity"><br>
+          </a>
+          <div style="text-align: center;"><span style="font-size: 12px;">Visit
+              <a href="https://www.swpc.noaa.gov/noaa-scales-explanation" title="NOAA Space Weather Scales Key"
+                style="color: #1855d9; text-decoration: underline;">NOAA Space
+                Weather Scales</a> for an explanation of the intensity scales
+              used in the graphs</span><em><strong style="font-size: 12px;">.</strong></em></div>
+          <a href="https://www.psl.noaa.gov/map/images/sst/sst.daily.gif" title="Click for larger image"></a></div>
+      </div>
+      <div class="column">
+        <div style="text-align: center;"><strong>Sunspot Regions Chart</strong><a
+            href="https://www.swpc.noaa.gov/products/solar-synoptic-map" title="Click for larger image"><img
+              src="https://services.swpc.noaa.gov/images/synoptic-map.jpg" style="width: 100%; border-width: 1px; border-style: solid;"
+              alt="Daily Sunspot Analysis"></a></div>
+        <div><span style="font-size: 12px;">Click image for more information (on
+            website click "Details" for explanation of chart markings).</span></div>
+        <a href="https://www.weather.gov/images/car/WeatherStory.gif" title="Click for larger image"></a>
+      </div>
+      <div class="column">
+        <div style="text-align: center;">
+          <div><strong><a name="aurora" id="aurora">Aurora Forecast</a></strong></div>
+          <strong></strong></div>
+        <strong> </strong> <a href="https://services.swpc.noaa.gov/images/animations/ovation/north/latest.jpg"
+          title="Click for larger image"><img src="https://services.swpc.noaa.gov/images/animations/ovation/north/latest.jpg"
+            style="width: 100%; border-width: 1px; border-style: solid;" alt="Aurora Forecast"></a><br>
+        <div style="text-align: center;"><span style="font-size: 12px;">The <a
+              href="https://www.swpc.noaa.gov/products/aurora-30-minute-forecast">Aurora
+              Forecast Model</a> shows the intensity and location of predicted
+            auroras.</span></div>
+      </div>
+    </div>
+    <br>
+    <br>
+    <a href="#top"><i>Top of Page</i></a><br>
+  </body>
+</html>

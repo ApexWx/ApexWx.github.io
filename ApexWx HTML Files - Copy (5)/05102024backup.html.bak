@@ -22,7 +22,8 @@
       <div id="tswheader">
         <p style="text-align: center;"><img src="https://raw.githubusercontent.com/ApexWx/ApexWx.github.io/master/Apex%20banner.jpg"
             alt="Apex Wx Banner"></p>
-        <p>&nbsp;-</p>
+        <p>&nbsp;</p>
+        <div style="text-align: center;"><!-- end of header section: insert your logo, etc, above this line --></div>
       </div>
       <div id="tswcentrecombo" style="text-align: center;">
         <div id="tswcontent">
@@ -81,105 +82,65 @@
                     <em>Click "AirNow" for more information.</em></em></em></p>
               <p style="font-size: 14px;"><em style="font-size: 13px;"><em style="font-size: 13px;"><em><br>
                     </em></em></em></p>
-              <p><span style="font-size: 13px;"><strong>NWS Caribou Watches,
-                    Warnings, and Advisories</strong></span><em style="font-size: 13px;"><strong><br>
+              <p style="font-size: 14px;"><em style="font-size: 13px;"><strong>NWS
+                    Caribou Watches, Warnings, and Advisories<br>
                   </strong></em><a href="https://www.weather.gov/car/"><img src="https://www.weather.gov/wwamap/png/car.png"
                     alt="NWS Caribou Watches, Warnings, and Advisories" title="Clidk for more information"
-                    style="border-width: 1px; border-style: solid; width: 465px; height: 359.915px;"></a><br>
+                    style="border-width: 1px; border-style: solid; width: 405px; height: 313px;"></a><br>
                 <em style="font-size: 12px;">Click map for more information</em><br>
               </p>
             </div>
             <p> </p>
             <div><br>
-            </div>
-            <div><br>
-              <strong><span style="font-size: 14px;">NE Weather Chart</span><br>
+              <strong><em style="font-size: 14px;">NE Weather Chart</em><br>
               </strong><a href="https://www.wpc.ncep.noaa.gov/sfc/namnesfcwbg.gif"
                 title="Click for larger image"><img src="https://www.wpc.ncep.noaa.gov/sfc/namnesfcwbg.gif"
-                  style="width: 465px; border-width: 1px; border-style: solid; height: 349.372px;"
+                  style="width: 413px; border-width: 1px; border-style: solid; height: 310px;"
                   alt="Northeast Weather Chart" title="Click for larger image"></a><br>
               <em style="font-size: 11px;">Updates every 3 hours.<br>
               </em></div>
-            <div style="width: 100%;"><em style="font-size: 11px;"></em>
-              <div><br>
-              </div>
+            <div><em style="font-size: 11px;"></em>
               <div><br>
               </div>
               <div><strong>Québec &amp; Northern New England Visible Satellite</strong></div>
               <a href="https://weather.cod.edu/data/satellite/subregional/Quebec/current/Quebec.02.jpg"
-                title="Click for larger image"><img src="https://weather.cod.edu/data/satellite/subregional/Quebec/current/Quebec.truecolor.jpg"
-                  alt="Québec &amp; Northern New England Visible Satellite" style="width: 465px; height: 261.563px;"></a>
+                title="Click for larger image"><img src="https://weather.cod.edu/data/satellite/subregional/Quebec/current/Quebec.02.jpg"
+                  alt="Québec &amp; Northern New England Visible Satellite" style="width: 418px; height: 234px;"></a>
               <div><em style="font-size: 12px;">Click for larger image / Credit:
-                  NEXLAB College of DuPage</em></div>
-              <div><br>
-                <em style="font-size: 12px;"></em></div>
-              <div><em style="font-size: 12px;"><br>
-                </em></div>
-              <div><strong>Maine. New Brunswick, &amp; Nova Scotia<br>
-                </strong></div>
-              <div><strong></strong> <a href="https://weather.cod.edu/data/satellite/subregional/St_Lawrence/current/St_Lawrence.truecolor.jpg"
-                  title="Click for larger image"><img src="https://weather.cod.edu/data/satellite/subregional/St_Lawrence/current/St_Lawrence.truecolor.jpg"
-                    alt="Maine, New Brunswick, Nova Scotia" style="width: 465px; height: 261.563px;"></a>
-                <div><em style="font-size: 12px;">Click for larger image /
-                    Credit: NEXLAB College of DuPage</em></div>
+                  NEXLAB College of DuPage</em><br>
                 <strong></strong></div>
               <div><br>
               </div>
               <div><br>
               </div>
-              <div><strong>Today's High Temperature<br>
-                </strong></div>
-              <a href="https://www.weather.gov/images/erh/gis/CAR_maxt_Day1.png"
-                title="Click for larger image"><img src="https://www.weather.gov/images/erh/gis/CAR_maxt_Day1.png"
-                  alt="Today's High" style="width: 50%; height: 50%;"></a><br>
-              <div style="width: 100%;"><br>
-              </div>
-              <div style="width: 100%;"><br>
-              </div>
-              <div><strong style="width: 100%; height: 100%;">Tonight's Low
-                  Temperature</strong></div>
-              <a href="https://www.weather.gov/images/erh/gis/CAR_mint_Day2.png"
-                title="Click for larger image"><img src="https://www.weather.gov/images/erh/gis/CAR_mint_Day2.png"
-                  alt="Tonight's Low Temperature" style="width: 50%; height: 50%;"></a>
-              <br>
+              <div><em style="font-size: 14px;"><strong>3-Day Snow Outlook</strong></em><br>
+                <a href="https://www.weather.gov/car/winter" title="Click for more information"><img
+                    src="https://www.weather.gov/images/erh/gis/CAR_Snow.png" alt="Snow Outlook"
+                    style="width: 384px; height: 288px; border-width: 1px; border-style: solid;"></a></div>
               <div><br>
               </div>
               <div><br>
               </div>
-              &nbsp; <strong>Liquid Precipitation Outlook</strong><br>
-              <a href="https://www.weather.gov/images/erh/gis/CAR_QPF24.png" title="Click for larger image"><img
-                  src="https://www.weather.gov/images/erh/gis/CAR_QPF24.png" alt="Today's Precipitation Outlook"
-                  style="width: 50%; height: 50%;"></a>
-              <div><em style="font-size: 14px;"><strong><br>
+              <div><em><strong>24-Hour Precipitation Outlook</strong></em><br>
+                <em style="font-size: 14px;"><strong><a href="https://www.weather.gov/images/erh/gis/CAR_QPF24.png"
+                      title="Click for larger image"><img src="https://www.weather.gov/images/erh/gis/CAR_QPF24.png"
+                        alt="24-Hour Precipitation Outlook" style="width: 385px; height: 285px;"
+                        title="Click for larger image"></a><br>
                   </strong></em></div>
               <div><em style="font-size: 14px;"><strong><br>
                   </strong></em></div>
-              <div><span style="font-size: 14px;"><strong>Snowfall Outlook</strong></span></div>
-              <a href="https://www.weather.gov/images/erh/gis/CAR_Snow.png" title="Click for larger image"><img
-                  src="https://www.weather.gov/images/erh/gis/CAR_Snow.png" alt="Snowfall Outlook"
-                  style="width: 50%; height: 50%;"></a>
-              <div><strong><br>
-                </strong></div>
               <div><br>
-              </div>
-              <strong>Today's Thunderstorm/Severe Weather Outlook</strong><em><br>
-                <strong></strong></em>
-              <div><em><strong> </strong> </em><a href="https://www.spc.noaa.gov/partners/outlooks/state/images/ME_swody1.png"
-                  title="Click for larger image" style="width: 50%;"><img src="https://www.spc.noaa.gov/partners/outlooks/state/images/ME_swody1.png?1713099229"
+                <em><strong>Maine Thunderstorm/Severe Weather<br>
+                  </strong></em> <a href="https://www.spc.noaa.gov/partners/outlooks/state/ME/"
+                  title="Click for larger image"><img src="https://www.spc.noaa.gov/partners/outlooks/state/images/ME_swody1.png?1713099229"
                     title="Click for larger image" alt="Maine Thunderstorm/Severe Weather Outlook"
-                    style="width: 50%; height: 50%;"></a></div>
+                    style="width: 398px; height: 297px;"></a></div>
               <div><em style="font-size: 14px;"><span style="font-size: 12px;"><a
                       href="https://www.spc.noaa.gov/new/images/SPC_outlook_final_updated.png">Understanding
                       Severe Thunderstorm Outlook Categories</a></span><strong style="font-size: 12px;"></strong></em><br>
                 <a href="https://forecast.weather.gov/meteograms/Plotter.php?lat=47.2632&amp;lon=-68.5774&amp;wfo=CAR&amp;zcode=MEZ001&amp;gset=15&amp;gdiff=10&amp;unit=0&amp;tinfo=EY5&amp;ahour=0&amp;pcmd=11101111110000100000000000000000000000000000000000000000000&amp;lg=en&amp;indu=1%211%211%21&amp;dd=&amp;bw=&amp;hrspan=48&amp;pqpfhr=6&amp;psnwhr=6"
                   title="Click for larger image"> </a><em style="font-size: 11px;"></em></div>
             </div>
-            <div style="text-align: left;"><strong><u><br>
-                </u></strong></div>
-            <div style="text-align: center;"><strong>WeatherStory<u><br>
-                </u></strong></div>
-            <a href="https://www.weather.gov/images/car/WeatherStory.gif"><img src="https://www.weather.gov/images/car/WeatherStory.gif"
-                alt="WeatherStory" style="width: 50%; height: 50%;" title="Click for larger image"></a>
             <div style="text-align: left;"><strong><u><br>
                 </u></strong></div>
             <div style="text-align: left;"><strong><u>Current <a href="https://en.wikipedia.org/wiki/METAR">METAR
@@ -196,15 +157,8 @@
               <div data-type="METAR" data-station="KFVE"></div>
               <br>
               <strong></strong></div>
-            <div style="text-align: left;"><strong></strong><a href="https://forecast.weather.gov/MapClick.php?lat=47.2632&amp;lon=-68.5774&amp;FcstType=text&amp;unit=1&amp;lg=en">Fort
-                Kent's Forecast in the International System of Units <br>
-              </a>
-              <div style="text-align: left; font-size: 12px;"><em>In degrees
-                  Celsius, kph</em>, etc.</div>
-            </div>
-            <div style="text-align: left;"><strong><u><br>
-                </u></strong></div>
-            <div style="text-align: left;"><strong><u>Fort Kent Weather Almanac</u></strong><br>
+            <div style="text-align: left;"><strong><u></u></strong><strong><u>Fort
+                  Kent Weather Almanac</u></strong><br>
               <strong> </strong> </div>
             <div style="text-align: left;">
               <div>
@@ -215,16 +169,15 @@
                 <strong style="font-size: 12px;"> </strong></div>
               <div>
                 <div><em style="font-size: 12px;"></em><br>
-                  <strong><u>Thursday, May 30</u></strong><strong><u><br>
+                  <strong><u>Thursday, May 9</u></strong><strong><u><br>
                     </u></strong>
                   <div>
-                    <div style="width: 830px;"><b><u>High</u></b>: 63° at 1:56
-                      pm / <b><u>Low</u></b>: 39° at 6:48 am</div>
-                    <div><b><u>Precipitation</u></b>: 0.00 in (<a href="https://www.cocorahs.org/">Cocorahs</a>
-                      manual gauge--last 24 hours)</div>
+                    <div style="width: 830px;"><b><u>High</u></b>: 55° at 3:05
+                      pm / <b><u>Low</u></b>: 36° at 11:59 pm</div>
+                    <div><b><u>Precipitation</u></b>: 0.00 in</div>
                     <div><strong><u>Snow</u></strong>: 0.0 in</div>
-                    <div><b><u>Daily Wind</u>: </b><u>Avg Dir/Speed</u>: N @ 3
-                      mph / <u>Max. Gust</u>: 19 mph at 2:33 pm<br>
+                    <div><b><u>Daily Wind</u>: </b><u>Avg Dir/Speed</u>: N @ 1
+                      mph / <u>Max. Gust</u>: 15 mph at 12:22 am<br>
                       <em style="font-size: 12px;"><em style="font-size: 12px;">Source:
                           </em></em><em style="font-size: 12px;"><em style="font-size: 12px;">Davis
                           Instruments <a href="https://www.davisinstruments.com/collections/vantage-pro2/products/vantage-pro2-groweather-wireless-integrated-sensor-suite">Vantage
@@ -234,15 +187,15 @@
                 </div>
                 <div><strong><br>
                   </strong></div>
-                <div><strong><u>Friday, May 31<br>
+                <div><strong><u>Friday, May 10<br>
                     </u></strong></div>
-                <div style="width: 810px;"><strong>Normal High: </strong>67° /<strong>&nbsp;
-                    Record High</strong>: 88° in 1937<br>
-                  <strong> Normal Low:&nbsp; </strong>42° /&nbsp; <strong>Record
-                    Low</strong>:&nbsp; 29° in 1964<strong><br>
-                    Year-to-Date Precipitation</strong><strong>:</strong> 11.72
-                  in / <u>avg</u>. 14.35 in = <span style="color: red;">-2.63
-                  </span><span style="color: red;">in</span><br>
+                <div style="width: 810px;"><strong>Normal High: </strong>59° /<strong>&nbsp;
+                    Record High</strong>: 88° in 1953<br>
+                  <strong> Normal Low:&nbsp; </strong>36° /&nbsp; <strong>Record
+                    Low</strong>:&nbsp; 20° in 1956<strong><br>
+                    Year-to-Date Precipitation</strong><strong>:</strong> 10.19
+                  in / <u>avg</u>. 12.11 in = <span style="color: red;">-1.</span><span
+                    style="color: red;">92 in</span><br>
                   <strong>Year-to-Date Snowfall</strong><strong>: </strong>75.6
                   in<strong> </strong>/ <u>avg</u>. 99.3 in = <span style="color: red;">-23.43
                     in</span><em></em><u><strong></strong></u></div>
@@ -258,8 +211,8 @@
                   <div><a href="https://www.timeanddate.com/moon/phases/@4964627"><br>
                     </a></div>
                   <div><a href="https://www.timeanddate.com/moon/phases/@4964627">Moon
-                      Phase</a>: 🌘 Waning Crescent → 🌑 New Moon June 6 @ 8:38
-                    am</div>
+                      Phase</a>: 🌒 Waxing Crescent → 🌓 First Quarter 7:48 am
+                    Wed. May 15</div>
                   <div><br>
                   </div>
                 </div>
@@ -271,54 +224,52 @@
                         Ahead for Fort Kent &amp; the Upper Saint John Valley of
                         Maine by Apex Wx</span></strong></u></div>
                 <div>
-                  <div><strong><span style="font-size: 12px;"><u>Updated</u>:
-                        May 31, 2024 at 7:48 am EDT </span></strong>→ <span style="font-size: 12px;">Visiting
-                      later? Check for <a href="#wxupdate">updates</a>.</span><strong><em
-                        style="font-size: 12px;"></em></strong></div>
+                  <div style="font-size: 12px;"><strong><em style="font-size: 12px;"><u>Updated</u>:
+                        May 10, 2024 at 8:20 am EDT </em></strong>→ Visiting
+                    after this time? Check for an <a href="#wxupdate">update</a>
+                    from NWS Caribou, Maine. <strong><em style="font-size: 12px;"></em></strong></div>
                 </div>
                 <div><u><strong><br>
                     </strong></u></div>
-                <div><u><strong>3-Day Outlook: Fri. May 31- Sun. June 2 </strong></u><a
+                <div><u><strong>3-Day Outlook: Fri. May 10 - Sun. May 12</strong></u><a
                     href="https://forecast.weather.gov/showsigwx.php?warnzone=MEZ001&amp;warncounty=MEC003&amp;firewxzone=MEZ001&amp;local_place1=Fort%20Kent%20ME&amp;product1=Winter+Weather+Advisory&amp;lat=47.2632&amp;lon=-68.5774#.YbS2er1Ki3A"
                     style="font-size: 14px;"><br>
                     <br>
                     Current NWS Caribou, ME Hazardous Weather Outlook</a><em style="font-size: 12px;"><br>
                     Click for the latest information</em>. </div>
               </div>
-            </div>
-            <div style="text-align: left;"><em><strong><br>
-                </strong></em></div>
-            <div style="text-align: left;"><em><strong>Note</strong>: The Davis
-                Vantage Pro 2 weather station rain gauge has failed after 15
-                years of service. A scientifically calibrated manual rain gauge
-                will be utilized until a replacement sensor can be installed in
-                approximately a week.<br>
-              </em></div>
-            <div style="text-align: left;"><br>
-            </div>
-            <div style="text-align: left;">Temperatures remained above frost
-              conditions, so only isolated patches of frost occurred this
-              morning across the northern portions of the County. Today, surface
-              high pressure moves over the Mid-Atlantic/Ohio Valley , and the
-              upper trough begins to shift further east over the course of the
-              day. Mostly sunny skies are expected for much of the day, though
-              some cumulus may develop in the afternoon, as it did yesterday,
-              producing partly cloudy/partly sunny skies this afternoon. Highs
-              top out in the upper 60s with clear skies Friday night and lows in
-              the lower 40s.</div>
-            <div style="text-align: left;"><br>
-            </div>
-            <div style="text-align: left;">For Saturday, high pressure across
-              the region will maintain mostly clear skies Saturday and Saturday
-              night with daytime highs climbing into the low 70s and overnight
-              lows dipping into the upper 40s.</div>
-            <div style="text-align: left;"><br>
-            </div>
-            <div style="text-align: left;">High pressure continues to spread
-              across the SJV Sunday with mostly sunny skies and daytime highs
-              climbing into the upper 70s. Mostly clear skies are expected
-              Sunday night with overnight lows in the lower 50s.</div>
-            <div style="text-align: left;">
+              <div><br>
+              </div>
+              <div>Friday: High pressure will build across the area today with
+                mostly sunny skies this morning (with some patchy fog about)
+                giving way to a cumulus cloud field developing around midday
+                continuing into the afternoon thanks to some moisture at about
+                6400 feet (based on 6 am EDT Bufkit <a href="https://en.wikipedia.org/wiki/Atmospheric_sounding">atmospheric
+                  sounding</a> analysis). An isolated shower cannot be ruled
+                out, but widespread precipitation is not anticipated. Highs look
+                to reach the upper-50s to lower 60s. Mostly clear to partly
+                cloudy skies are expected overnight with temperatures in the
+                mid-to-upper 30s.</div>
+              <div><br>
+              </div>
+              <div>Saturday will see the upper-level trough beginning to shift
+                eastwards, though mostly sunny skies with a slight chance for
+                afternoon showers (thanks to daytime heating) will remain
+                possible for Fort Kent and other Valley locations. Cool air
+                aloft along with some moisture will once again allow clouds to
+                form over the SJV and keep daytime highs in the mid-50s for Fort
+                Kent and vicinity. Partly cloudy skies Saturday night with a
+                slight chance for an isolated showers as an upper-level trough
+                near the Great Lakes begins to shift east. Overnight lows look
+                to remain in the mid-to-upper 30s.</div>
+              <div><br>
+              </div>
+              <div>For Sunday, the trough moves closer the region with skies
+                increasingly cloudy which will keep highs mostly in the mid-50s.
+                A slight chance for daytime heating-driven showers is possible
+                in the afternoon. Sunday night remains partly-to-mostly cloudy
+                with a slight chance for showers in Fort Kent and vicinity. Lows
+                dip into the upper 30s/lower 40s.</div>
               <div><br>
               </div>
               <div> </div>
@@ -327,25 +278,24 @@
                   <div><u><strong>Daily Summary</strong></u></div>
                   <div><u><strong><br>
                       </strong></u></div>
-                  <strong>Today: </strong>Patchy fog before 8am. Otherwise,
-                  mostly sunny, with a high near 68. Northwest wind 6 to 10 mph,
-                  with gusts as high as 21 mph.<strong><br>
+                  <strong>Today: </strong>Patchy fog before 9am. Otherwise,
+                  mostly sunny, with a high near 60. Northeast wind 3 to 6 mph.<strong><br>
                     <br>
-                    Tonight:</strong> Mostly clear, with a low around 40. Calm
-                  wind.<br>
+                    Tonight: </strong>Partly cloudy, with a low around 37.
+                  Southeast wind 3 to 5 mph.<strong><br>
+                    <br>
+                    Saturday: </strong>Mostly sunny, with a high near 56. East
+                  wind 3 to 6 mph.<strong><br>
+                    <br>
+                    Saturday Night: </strong>Partly cloudy, with a low around
+                  38. East wind 3 to 6 mph.<strong><br>
+                    <br>
+                    Sunday: </strong>Partly sunny, with a high near 57. East
+                  wind around 6 mph.<br>
                   <strong><br>
-                    Saturday: </strong>Sunny, with a high near 72. North wind 3
-                  to 7 mph.<br>
-                  <strong><br>
-                    Saturday Night: </strong>Mostly clear, with a low around
-                  43. Calm wind.<strong><br>
-                    <br>
-                    Sunday: </strong>Sunny, with a high near 79. Calm wind
-                  becoming east around 5 mph in the afternoon.<strong><br>
-                    <br>
-                    Sunday Night: </strong>Partly cloudy, with a low around 51.
-                  Light and variable wind.<br>
-                  <strong> </strong><strong></strong>
+                    Sunday Night: </strong>Mostly cloudy, with a low around 39.
+                  South wind 3 to 5 mph.<strong><br>
+                  </strong><strong></strong>
                   <p><strong></strong></p>
                   <p><strong></strong></p>
                 </div>
@@ -375,116 +325,104 @@
                   </div>
                   <p> </p>
                   <p>------------------------------------</p>
-                  <p><u><strong>4-7 Day Outlook: Mon. June 3 - Thu. June 6<br>
+                  <p><u><strong>4-7 Day Outlook: Mon. May 13 - Thu. May 16<br>
                       </strong></u></p>
                 </div>
               </div>
             </div>
-            <div style="text-align: left;">High pressure looks to dominate for
-              much of the period with mostly sunny skies Sunday and Monday then
-              partly sunny skies Tuesday and Wednesday as the high pressure
-              ridge begins to break down and a warm front lifts towards the
-              region Tuesday - Wednesday bringing increasing chances of
-              scattered showers Tuesday evening through Thursday with a cold
-              front dropping across the region Wednesday into Thursday.</div>
+            <div style="text-align: left;">An occluding low near James Bay
+              Monday will pull a triple point low across the region Tuesday into
+              Wednesday with increasing chances for showers Monday
+              afternoon/evening. Showers are possible Monday night into Tuesday
+              with showers likely Tuesday afternoon as the region will be in the
+              warm sector of this system.</div>
+            <div style="text-align: left;"><br>
+            </div>
+            <div style="text-align: left;"> A chance for showers continues
+              Tuesday night into Wednesday with scattered showers and partly
+              sunny skies. While there may be enough energy aloft to produce
+              thunderstorms, uncertainty with the timing of frontal passage
+              makes any convection uncertain at this time. </div>
+            <div style="text-align: left;"><br>
+            </div>
+            <div style="text-align: left;">High pressure looks to build east out
+              of Ontario/Québec by Thursday with isolated showers activity
+              possible under partly cloudy skies. Partly cloudy skies with a
+              slight chance for showers continues Thursday night into Friday
+              morning. </div>
             <div style="text-align: left;">
               <div>
                 <div>
                   <p><u><strong>Daily Summary</strong></u><strong><br>
                     </strong></p>
-                  <strong>Monday: </strong>Mostly sunny, with a high near 75.
-                  Calm wind becoming north 5 to 7 mph in the morning.<strong><br>
-                    <br>
-                    Monday Night: </strong>Partly cloudy, with a low around 52.<br>
+                  <strong>Monday: </strong>A slight chance of showers after
+                  2pm. Partly sunny, with a high near 65. South wind 6 to 10
+                  mph, with gusts as high as 20 mph. Chance of precipitation is
+                  20%.<br>
                   <strong><br>
-                    Tuesday: </strong>Mostly sunny, with a high near 77.<strong><br>
+                    Monday Night: </strong>A chance of showers. Mostly cloudy,
+                  with a low around 45. Chance of precipitation is 40%.<br>
+                  <strong><br>
+                    Tuesday: </strong>Showers likely, mainly after 10am. Mostly
+                  cloudy, with a high near 65. Chance of precipitation is 60%.<strong><br>
                     <br>
-                    Tuesday Night: </strong>A slight chance of showers before
-                  10pm, then a slight chance of showers after midnight. Partly
-                  cloudy, with a low around 54. Chance of precipitation is 20%.<strong><br>
+                    Tuesday Night: </strong>A chance of showers. Mostly cloudy,
+                  with a low around 45. Chance of precipitation is 50%.<strong><br>
                     <br>
                     Wednesday: </strong>A chance of showers. Partly sunny, with
-                  a high near 79. Chance of precipitation is 30%.<strong><br>
-                    <br>
+                  a high near 66. Chance of precipitation is 40%.<br>
+                  <strong><br>
                     Wednesday Night: </strong>A chance of showers. Partly
-                  cloudy, with a low around 55. Chance of precipitation is 30%.<strong><br>
+                  cloudy, with a low around 41. Chance of precipitation is 30%.<strong><br>
                     <br>
-                    Thursday: </strong>A chance of showers. Mostly sunny, with
-                  a high near 82. Chance of precipitation is 30%.<strong></strong></div>
-                <div><strong><br>
-                  </strong></div>
-                <div><strong>Thursday Night</strong>: A chance of showers.
-                  Partly cloudy with a low around 56. Chance of precipitation is
-                  40%.<br>
+                    Thursday: </strong>A slight chance of showers. Mostly
+                  sunny, with a high near 67. Chance of precipitation is 20%.</div>
+                <div><br>
                 </div>
+                <div><strong>Thursday Night</strong>: A few clouds. Low near 40.
+                  Chance of precipitation is 20%.</div>
                 <div><br>
                 </div>
                 <div>------------------------------------</div>
                 <div><br>
-                  <div><strong><u>8-14 Day Regional Climate Trends: Thu. June 6
-                        - Tue. </u><u>June 11<br>
-                      </u></strong></div>
-                  <p>Near normal temperatures / Above normal precipitation</p>
-                  <a href="https://www.ncei.noaa.gov/news/national-climate-202404"
-                    title="April 2024 National Climate Report">April 2024
-                    National Climate Report</a><em style="font-size: 12px;"><br>
-                    Issued around the 10th of each month for the preceding month</em></div>
-                <div><br>
-                </div>
-                <div><em style="font-size: 12px;">Notice</em><br>
-                  <em style="font-size: 12px;"> Weather information compiled by
-                    Apex Wx is based on computer weather models, personal
-                    weather station data, and information from NOAA, the
-                    National Weather Service, and other weather data providers
-                    available at time of update and may not reflect current
-                    conditions or later forecast updates</em><em><span style="font-size: 12px;">.</span></em><em><span
-                      style="font-size: 12px;"> Visit <a href="https://www.weather.gov/car/%20"
-                        title="NWS Caribou, Maine">NWS Caribou</a> for the
-                      latest official watches, warnings, and advisories for
-                      northern Maine.</span></em>
+                  <div><strong><u>8-14 Day Regional Climate Trends: Fri. May 17
+                        - Thu. </u><u>May 23</u></strong></div>
+                  <p>Above normal temperatures / Above normal precipitation</p>
+                  <strong><a href="https://www.ncei.noaa.gov/access/monitoring/monthly-report/national/202403#national-overview"
+                      title="March 2024 National Climate Report">March 2024
+                      National Climate Report</a></strong><em style="font-size: 12px;"><br>
+                    Issued around the 10th of each month for the preceding month</em>
                   <p>------------------------------------</p>
                   <p><a href="https://forecast.weather.gov/MapClick.php?CityName=Fort+Kent&amp;state=ME&amp;site=CAR&amp;textField1=47.2632&amp;textField2=-68.5774&amp;e=1#.YcNGUWhKi3A"><span
                         style="color: #3498db;"><strong><span style="color: black;">US
                             National Weather Service Office, Caribou, Maine</span></strong><br>
                       </span> </a></p>
-                  <a href="https://forecast.weather.gov/MapClick.php?CityName=Fort+Kent&amp;state=ME&amp;site=CAR&amp;textField1=47.2632&amp;textField2=-68.5774&amp;e=1#.UzCiuVf-6Sp">7-Day
-                    Forecast for Fort Kent, Maine</a><br>
-                  <em style="font-size: 12px;"> Click for the latest official
-                    forecast information. Updated regularly 24/7</em><a href="https://forecast.weather.gov/MapClick.php?zoneid=MEZ001"></a></div>
-                <div><a href="https://forecast.weather.gov/MapClick.php?zoneid=MEZ001"><br>
-                  </a></div>
-                <div><a href="https://forecast.weather.gov/MapClick.php?zoneid=MEZ001">Zone
-                    Area Forecast for Northwest Aroostook<br>
-                  </a>
-                  <div style="text-align: left; font-size: 12px;"><em>MEZ001:
-                      Includes Allagash &amp; North Woods</em><br>
-                    <a href="https://forecast.weather.gov/MapClick.php?zoneid=MEZ001"></a><em
-                      style="font-size: 12px;"></em></div>
-                  <div style="text-align: left;"><em style="font-size: 12px;"></em><br>
-                    <a href="https://forecast.weather.gov/MapClick.php?zoneid=MEZ002">Zone
-                      Area Forecast for Northeast Aroostook<br>
-                    </a></div>
-                  <div style="text-align: left; font-size: 12px;"><em>MEZ002:
-                      Includes Van Buren, Caribou, Presque Isle, Stockholm, and
-                      Mars Hill<br>
+                  <div style="text-align: left;"><a href="https://forecast.weather.gov/MapClick.php?CityName=Fort+Kent&amp;state=ME&amp;site=CAR&amp;textField1=47.2632&amp;textField2=-68.5774&amp;e=1">7-Day
+                      Forecast</a><br>
+                    <em style="font-size: 12px;"> Click for the latest official
+                      forecast information. Updated 24/7<br>
                     </em></div>
                   <div style="text-align: left;"><br>
                   </div>
-                  <div style="text-align: left;"><a href="https://www.weather.gov/car/winter">NWS
-                      Caribou Winter Weather Forecasts</a><br>
+                  <div style="text-align: left;"><a href="https://www.weather.gov/car/winter">&nbsp;Winter
+                      Weather Forecasts</a><br>
                     <em style="font-size: 12px;">Click for the latest official
                       forecast details</em><em style="font-size: 12px;"></em><br>
                     <em style="font-size: 12px;"> </em><br>
-                    <a href="https://forecast.weather.gov/product.php?site=CAR&amp;issuedby=CAR&amp;product=AFD&amp;format=CI&amp;version=1&amp;glossary=1">NWS
-                      Caribou Area Forecast Discussion</a><em style="font-size: 12px;"></em><em
+                    <a href="https://forecast.weather.gov/product.php?site=CAR&amp;issuedby=CAR&amp;product=AFD&amp;format=CI&amp;version=1&amp;glossary=1">Area
+                      Forecast Discussion</a><em style="font-size: 12px;"></em><em
                       style="font-size: 12px;"></em><br>
                     <em style="font-size: 12px;"> NWS forecasters' technical
                       discussion with glossary</em></div>
+                  <div style="text-align: left;"><br>
+                    <a href="https://www.nws.noaa.gov/wtf/udaf/MapClick.php?lel=no&amp;uel=no&amp;polygon=47.356%2C-68.236%2C47.057%2C-67.791%2C46.879%2C-68.552%2C47.151%2C-68.625%2C47.133%2C-68.745%2C47.361%2C-68.279%2C47.185%2C-68.868%2C47.164%2C-68.927%2C47.133%2C-68.743%2C47.132%2C-68.747%2C&amp;area=628">Saint
+                      John Valley Forecast</a> (user area defined) via NWS
+                    Caribou </div>
                   <div style="text-align: left;"><em style="font-size: 12px;"><br>
                     </em></div>
-                  <div style="text-align: left; font-size: 12px;"><strong style="font-size: 16px;"><a
-                        name="wxupdate" id="wxupdate"></a>Current Forecast from
-                      National Weather Service, Caribou Maine </strong><br>
+                  <div style="text-align: left; font-size: 14px;"><strong><a name="wxupdate"
+                        id="wxupdate"></a>Current 7-Day Forecast from National
+                      Weather Service, Caribou Maine </strong><br>
                     (updated regularly 24/7 -- box scrolls on right)</div>
                   <div style="text-align: left; font-size: 14px;"><br>
                   </div>
@@ -498,22 +436,32 @@
                 </div>
               </div>
             </div>
+            <div style="text-align: left;"> </div>
+            <div style="text-align: left;"><em style="font-size: 12px;">Notice</em><br>
+              <em style="font-size: 12px;"> Weather information compiled by Apex
+                Wx is based on computer weather models, personal weather station
+                data, and information from NOAA, the National Weather Service,
+                and other weather data providers available at time of update and
+                may not reflect current conditions or later forecast updates</em><em><span
+                  style="font-size: 12px;">.</span></em><em><span style="font-size: 12px;">
+                  Visit <a href="https://www.weather.gov/car/%20" title="NWS Caribou, Maine">NWS
+                    Caribou</a> for the latest official watches, warnings, and
+                  advisories for northern Maine.</span></em><em style="font-size: 12px;"></em><em><strong></strong></em></div>
             <div style="text-align: left;">--------------------------------------------------------------------------------------------------------
               </div>
             <p></p>
             <div style="text-align: left;"><a href="https://www.weather.gov/"><u><strong>NOAA
                     / NWS National Outlook</strong></u></a><br>
               <br>
-              <strong>May 31: Severe Storms Across the Southern Plains and Gulf
-                Coast; Continued Active Pattern in the Central U.S. Over the
-                Weekend<br>
-              </strong>Strong to severe thunderstorms are expected across parts
-              of the Southern Plains into the Lower Mississippi Valley and Gulf
-              Coast Friday afternoon and evening. Large hail and severe wind
-              gusts are the primary threats. Additional storms are expected in
-              the Central High Plains and the Mid-Mississippi Valley Friday. An
-              approaching system on Sunday for Pacific Northwest may bring heavy
-              rain and winds.<strong><br>
+              <strong>May 10: Severe Thunderstorm and Excessive Rain Expected in
+                the Southeast and Hawaii<br>
+              </strong>Severe thunderstorms and excessive rainfall threats
+              continue in the Southeast through Friday. Heavy snow will continue
+              over the higher elevations of the Central Rockies. A storm system
+              moving over Hawaii will bring strong to severe thunderstorms,
+              localized intense rainfall and flash flooding through Saturday.
+              Above average high temperatures expected in California and the
+              Pacific Northwest.<strong><br>
               </strong></div>
             <div style="text-align: left;"><strong><br>
               </strong>
@@ -539,13 +487,12 @@
                     Prediction Center</a> <br>
                 </strong> </p>
               <strong> </strong><strong>National Thunderstorm/Severe Weather
-                Outlook for May 31</strong><br>
-              Scattered severe storms, associated with a wind-damage and
-              isolated tornado threat are expected today from parts of the
-              southern Plains into the Ark-La-Tex and lower Mississippi Valley.
-              A severe threat is also expected to develop over the High Plains
-              late this afternoon and early this evening, where isolated large
-              hail and severe wind gusts will be possible.<br>
+                Outlook for May 10</strong><br>
+              Severe thunderstorms capable of producing damaging wind are
+              possible today across parts of south Georgia into north Florida. A
+              few severe storms capable of producing damaging wind and hail are
+              also possible across northeast South Carolina into southeast North
+              Carolina.<br>
               <br>
               <div>
                 <div>
@@ -640,8 +587,12 @@
                     alt="Seasonal Precipitation Outlook" style="border-width: 1px; border-style: solid; width: 526px; height: 406px;"></a><br>
                 <div><br>
                 </div>
-                <strong>Longer-Range Climatological Outlooks</strong><br>
-                <div>
+                <div><a href="https://droughtmonitor.unl.edu/CurrentMap/StateDroughtMonitor.aspx?ME"
+                    title="Click for more information"><img src="https://droughtmonitor.unl.edu/data/png/current/current_me_trd.png"
+                      alt="Maine Drouht Monitor" style="width: 527px; height: 406px; border-width: 1px; border-style: solid;"></a><br>
+                </div>
+                <div><br>
+                  <strong>Longer-Range Climatological Outlooks</strong><br>
                   <ul>
                     <li><a href="https://www.cpc.ncep.noaa.gov/products/predictions/610day/">6-10
                         Day Outlook</a> </li>
@@ -657,23 +608,7 @@
                 </div>
               </div>
             </div>
-            <strong><br>
-            </strong></div>
-          <div style="text-align: left;">
-            <div style="text-align: center;">
-              <div style="text-align: left;"><strong style="font-size: 14.5px;">Current
-                  Skew-T Chart for Caribou, Maine (Weather Balloon Sounding
-                  Data)</strong></div>
-              <strong></strong></div>
-            <strong><a href="https://weather.rap.ucar.edu/upper/displayUpper.php?img=KCAR.png&amp;endDate=-1&amp;endTime=-1&amp;duration=0"
-                title="Click for larger image."><img src="https://weather.rap.ucar.edu/upper/displayUpper.php?img=KCAR.png&amp;endDate=-1&amp;endTime=-1&amp;duration=0"
-                  alt="Skew-T Chart for Caribou, ME" style="width: 523px; height: 489px;"></a><br>
-            </strong></div>
-          <div style="text-align: left; font-size: 14px;"><em><a href="https://www.youtube.com/watch?v=rruiv5eSBro">Video</a>
-              on interpreting a Skew-T diagrams. <a href="https://www.noaa.gov/jetstream/upperair/skew-t-plots">More
-                information</a> on Skew-T plots.</em><strong><br>
-            </strong></div>
-          <div style="text-align: left;"><strong>---------------------------</strong></div>
+            <strong>---------------------------</strong></div>
           <div style="text-align: left;"><strong><br>
             </strong></div>
           <div style="font-size: 12px;">
@@ -770,18 +705,7 @@
                 title="Current Local Radar"><img src="https://radar.weather.gov/ridge/standard/KCBW_loop.gif"
                   title="Click for larger image" alt="Local Radar" style="width: 251px; height: 228px; border-width: 1px; border-style: solid;"></a><br>
               <br>
-              <em><strong><br>
-                </strong></em></div>
-            <div style="font-size: 14px;"><strong>Maine Drought Monitor</strong><br>
-              <a href="https://droughtmonitor.unl.edu/CurrentMap/StateDroughtMonitor.aspx?ME"
-                title="Click for more information"><img src="https://droughtmonitor.unl.edu/data/png/current/current_me_trd.png"
-                  alt="Maine Drouht Monitor" style="width: 253px; height: 220px; border-width: 1px; border-style: solid;"></a></div>
-            <div style="font-size: 12px;"><em>Click for larger image</em></div>
-            <div style="font-size: 14px;"><em><strong><br>
-                </strong></em></div>
-            <div style="font-size: 14px;"><em><strong><br>
-                </strong></em></div>
-            <div style="font-size: 14px;"><em><strong>Regional Satellite<br>
+              <em><strong>Regional Satellite<br>
                 </strong></em> <a href="https://www.star.nesdis.noaa.gov/GOES/sector.php?sat=G16&amp;sector=ne"
                 title="Regional Satellite"><img src="https://cdn.star.nesdis.noaa.gov/GOES16/ABI/SECTOR/ne/GEOCOLOR/thumbnail.jpg"
                   alt="Regional Satellite" style="width: 251px; height: 251px; border-width: 1px; border-style: solid;"></a><br>
