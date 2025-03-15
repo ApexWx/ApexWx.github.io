@@ -9,7 +9,7 @@
     <link rel="stylesheet" type="text/css" href="tswnavbar.css">
     <script src="https://cdnres.willyweather.com/widget/warning/loadView.html?id=126547"></script>
   </head>
-  <body>
+  <body><br>
     <div id="tswcontainer">
       <div><!-- start of header section: insert your logo, etc, here --> <br class="Apple-interchange-newline">
         <p style="text-align: center;"><img src="https://raw.githubusercontent.com/ApexWx/ApexWx.github.io/master/Apex%20banner.jpg"
@@ -30,7 +30,7 @@
                     Weather Information</strong></h2>
                 <a href="https://en.wikipedia.org/wiki/Pennsylvania"><img src="https://apexwx.github.io/pa.png"
                     alt="Pennsylvania State Flag" style="width: 144px; height: 108px;"></a></div>
-              <div><span style="font-size: 12px;">Weather information for the
+              <div><span style="font-size: 12px;">Weather information for
                   Lancaster, PA since 2017</span></div>
               <a href="https://en.wikipedia.org/wiki/Pennsylvania"></a></div>
           </div>
@@ -54,7 +54,7 @@
           </div>
           <div style="font-size: 16px;"><br>
           </div>
-          <div style="font-size: 16px;">
+          <div>
             <div style="text-align: center;"><strong><span style="font-size: 16px;">College
                   Park Personal Weather Station Cam</span><span style="font-size: 16px;"></span></strong>
               <strong style="font-size: 16px;"></strong> <strong style="font-size: 16px;"><span
@@ -71,240 +71,330 @@
                 style="font-size: 12px;"></strong></em>
             <div style="text-align: left;"><strong><u><br>
                 </u></strong></div>
-            <div style="text-align: left;"><strong><u>Lancaster Wx Almanac</u><br>
-              </strong>
+            <div style="text-align: left;"><strong><strong>🗓️ </strong><u>Apex
+                  Wx Lancaster Weather Almanac</u> </strong><strong>🗓️</strong>
               <div style="text-align: left;"><span style="font-size: 12px;"><em>Measurements
                     in United States customary units unless otherwise indicated.</em></span><strong
                   style="font-size: 12px;"><em></em></strong></div>
-              <div style="text-align: left;"><br>
+              <div style="text-align: left;"><em style="font-size: 12px;"></em></div>
+            </div>
+            <div style="text-align: left;"><strong></strong><em style="font-size: 12px;"></em><strong></strong>
+            </div>
+          </div>
+          <div style="color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: medium; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"><strong><u><br>
+              </u></strong><strong></strong></div>
+          <strong><u>Thursday, March 13</u></strong>
+          <div style="color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: medium; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+            <div>
+              <div>
+                <div style="width: 830px;"><b>High</b>: 59° at 4:50 pm /&nbsp;<span>&nbsp;</span><b>Low</b>:
+                  39° at 6:46 am</div>
+                <div><b>Precipitation:<span>&nbsp;</span></b>0.0" /<strong><span>&nbsp;</span>Snow</strong>:
+                  0.0"</div>
+                <div><b>Daily Wind:<span>&nbsp;</span></b><u>Avg. Dir. &amp;
+                    Speed</u>: SE @ 2 mph&nbsp; /<span>&nbsp;</span><u>Max. Gust</u>:
+                  15 mph at 9:31 am<br>
+                  <em style="font-size: 12px;"><em style="font-size: 12px;">Source:
+                      College Park personal weather station</em></em><em style="font-size: 12px;"><em
+                      style="font-size: 12px;"></em></em></div>
               </div>
-              <strong><u>Monday, October 14</u></strong> </div>
-            <strong></strong><strong><u> </u></strong><strong><u> </u></strong>
-            <div style="text-align: left;"><b><u>High</u></b>: 69° at 12:00
-              am&nbsp; <b><u>Low</u></b>: 43° at 11:47 pm
-              <div style="text-align: left;"><b><u>Precipitation</u>: </b>0.00"
-                /&nbsp; <strong><u>Snow</u></strong>: 0.0"</div>
-              <div style="text-align: left;"><b><u>Daily Wind</u>: </b><u>Avg
-                  Dir/Speed</u>: SE @ 3 mph / <u>Max. Gust</u>: 25 mph at 12:07
-                pm</div>
-              <div style="text-align: left;"> <em style="font-size: 12px;"><em
-                    style="font-size: 12px;">Source: </em>Personal Weather
-                  Station on State Street west of F&amp;M College</em></div>
-              <div style="text-align: left;"> <em style="font-size: 12px;"><br>
-                </em></div>
-              <strong><u> </u></strong></div>
-            <div><strong><u>Tuesday, October 15</u></strong>
-              <div style="text-align: left;">
-                <div style="text-align: left;"><strong>Normal High: </strong>67°&nbsp;
-                  /<strong> Record High</strong>: 86° in 2021<strong><br>
-                    Normal Low:&nbsp; </strong>44° /&nbsp; <strong>Record Low</strong>:&nbsp;
-                  30° in 2006<strong><br>
-                    Year-to-Date Precipitation:</strong> 33.87" / <u>avg</u>.
-                  35.40" = <span style="color: red;">-1.53"</span></div>
-                <div style="text-align: left;"><strong>Year-to-Date Snowfall: </strong>0.0"
-                  / <u>avg</u>. 0.0"</div>
-                <div style="text-align: left;"><strong>2023 -2024 Snowfall:</strong>
-                  13.1" / <u>avg</u>. 21.4"= <span style="color: red;">-8.3"<br>
-                  </span></div>
-                <div style="text-align: left;"> <em style="font-size: 12px;">Annual
-                    snowfall measured from July 1-June 30<br>
-                  </em><em style="font-size: 12px;">Source: </em><em style="font-size: 12px;"><em
-                      style="font-size: 12px;"><a href="https://scacis.rcc-acis.org/">NOAA
-                        SC-ACIS</a> </em>climate data collected since 1948</em></div>
-                <div style="text-align: left;"><strong></strong><br>
-                  <a href="https://www.timeanddate.com/astronomy/usa/lancaster-pa">Lancaster,
-                    PA, USA</a> — Sun and Moon Times</div>
-                <div style="text-align: left;"><br>
-                </div>
-                <div style="text-align: left;"><a href="https://www.timeanddate.com/moon/phases/@4964627">Moon
-                    Phase</a>: 🌔 Waxing Gibbous → 🌕 Full "Hunter's" Moon 7:26
-                  am Thu. 17 October</div>
-                <div style="text-align: left;"><br>
-                </div>
-                <div style="text-align: left;">
+            </div>
+            <div><strong><br>
+              </strong></div>
+            <div><strong><u>Friday, March 14<br>
+                </u></strong></div>
+            <div style="width: 810px;"><strong>Normal High:<span>&nbsp;</span></strong>51°
+              /<strong>&nbsp; Record High</strong>: 84° in 1990<br>
+              <strong>Normal Low:&nbsp;<span>&nbsp;</span></strong>30° /&nbsp;<span>&nbsp;</span><strong>Record
+                Low:<span>&nbsp;</span></strong>16° in 1993<strong><br>
+                Year-to-Date Precipitation</strong><strong>:</strong><span>&nbsp;</span>3.94"
+              /<span>&nbsp;</span><u>avg</u>. 6.95" =<span>&nbsp;</span><span style="color: red;">-3.01"</span><span
+                style="color: rgb(0, 153, 0);"></span><br>
+              <strong>2024 - 2025 Snowfall</strong><strong>:<span>&nbsp;</span></strong>16.0"
+              /<span>&nbsp;</span><u>avg</u>. 19.9" =<span>&nbsp;</span><span style="color: red;">-3.9"</span><br>
+              <strong>2023 - 2024 Snowfall:</strong><span>&nbsp;</span>13.1" /<span>&nbsp;</span><u>avg</u>.
+              21.4"=<span>&nbsp;</span><span style="color: red;">-8.3"</span><span
+                style="color: red;"></span></div>
+            <div><em style="font-size: 12px;">Annual snowfall measured from July
+                1 - June 30 /<span>&nbsp;</span></em><em style="font-size: 12px;">Source:<span>&nbsp;</span></em><em
+                style="font-size: 12px;"><em style="font-size: 12px;"><a href="https://scacis.rcc-acis.org/">NOAA
+                    SC-ACIS</a><span>&nbsp;</span></em>NWS State College data<br>
+              </em></div>
+            <div><br>
+            </div>
+            <div><em style="font-size: 12px;"></em><a href="https://www.timeanddate.com/astronomy/usa/lancaster-pa">Lancaster,
+                Pennsylvania, USA</a><span>&nbsp;</span>— Sun and Moon Times</div>
+            <div><a href="https://www.timeanddate.com/moon/phases/@4964627"><br>
+              </a></div>
+            <div><a href="https://www.timeanddate.com/moon/phases/usa/lancaster-pa">Moon
+                Phase</a>: 🌕 Full "Worm" Moon at 2:55 am ET Fri. Mar. 14</div>
+            <div>
+              <div>
+                <hr style="margin-left: 0px; margin-right: auto;"><u><strong><span
+                      style="font-variant: small-caps;"><br>
+                      The Week Ahead for Lancaster &amp; the Lower Susquehanna
+                      Valley by Apex Wx</span></strong></u><br>
+                <u><strong><span style="font-variant: small-caps;"></span></strong></u>
+                <div>
+                  <div><strong><span style="font-size: 12px;"><u>Forecast
+                          updated</u>:<span>&nbsp;</span><span style="color: rgb(51, 51, 255);">March
+                          14, 2025 at 9:01 am EDT</span><span>&nbsp;</span></span></strong>→<span>&nbsp;</span><span
+                      style="font-size: 12px;">Viewing later?<span>&nbsp;</span><strong>Check
+                        for<span>&nbsp;</span><a href="https://forecast.weather.gov/MapClick.php?CityName=Fort+Kent&amp;state=ME&amp;site=CAR&amp;textField1=47.2632&amp;textField2=-68.5774&amp;e=1#.UzCiuVf-6Sp">updates</a>.</strong></span></div>
+                  <div style="text-align: left;"><span style="font-size: 12px;"><strong><br>
+                      </strong></span></div>
                   <div style="text-align: left;">
-                    <hr><br>
+                    <div style="text-align: center;"><span style="font-size: 12px;"><strong></strong></span><strong>⚠️<span>&nbsp;</span><a
+                          href="https://forecast.weather.gov/product.php?site=NWS&amp;issuedby=CTP&amp;product=HWO">Current
+                          NWS State College Hazardous Weather Outlook</a></strong><span>&nbsp;</span>⚠️</div>
                   </div>
                 </div>
-              </div>
-              <strong><u style="font-variant: small-caps;">The Week Ahead for
-                  Lancaster, Pennsylvania by Apex Wx</u></strong>
-              <div>
-                <div style="text-align: left;">
-                  <div style="text-align: left;"><strong><span style="font-size: 12px;"><u>Updated</u>:</span></strong><strong><span
-                        style="font-size: 12px;"><span style="color: #3333ff;">
-                          October 15,</span></span><span style="font-size: 12px;"><span
-                          style="color: #3333ff;"> 2024 at 2:30 pm EDT</span> </span></strong><strong><span
-                        style="font-size: 12px;">→ </span></strong><span style="font-size: 12px;">Visiting
-                      later? <strong>Check for <a href="https://forecast.weather.gov/MapClick.php?CityName=Lancaster&amp;state=PA&amp;site=CTP&amp;textField1=40.0418&amp;textField2=-76.3012&amp;e=1#.Y8FkkXbMK38">updates</a></strong></span><strong>.<br>
-                    </strong></div>
-                  <strong> </strong>
-                  <div style="text-align: left;"><strong><br>
-                    </strong></div>
-                </div>
-                <a href="https://forecast.weather.gov/showsigwx.php?warnzone=PAZ066&amp;warncounty=PAC071&amp;firewxzone=PAZ066&amp;local_place1=Lancaster+PA&amp;product1=Hazardous+Weather+Outlook"
-                  style="font-size: 14px;">Current NWS State College, PA
-                  Hazardous Weather Outlook</a></div>
-              <strong></strong></div>
-            <u><strong></strong></u><u><strong></strong></u>
+                <div><strong><em style="font-size: 12px;"></em></strong><strong></strong></div>
+                <strong></strong></div>
+            </div>
             <div><u><strong><br>
                 </strong></u></div>
-            <div><u><strong>3-Day Outlook: Tue. Oct. 15 - Thu. Oct. 17</strong></u></div>
-          </div>
-          <div style="font-size: 16px;"><br>
-          </div>
-          An upper-level trough will pivot over Pennsylvania today into
-          Wednesday. High pressure ridging at the surface and aloft will then
-          build into the region late week. There is a chance of frost overnight
-          tonight as temperatures dip in to the middle 30s with dew points in
-          the lower 30s. <br>
-          <div style="font-size: 16px;"><br>
+            <div><u><strong>3-Day Outlook: Fri. Mar. 14 - Sun. Mar. 16</strong></u><br>
+              <strong></strong></div>
             <div>
               <div>
                 <div>
-                  <div>
-                    <div><u><strong>Daily Summary</strong></u></div>
+                  <div><br>
                   </div>
+                  <div>Becoming partly cloudy to mostly sunny today with light
+                    southeast winds developing. Clouds increase tonight as a low
+                    pressure system moving east from the Plains tracks across
+                    the Great Lakes into Canada as the weekend progresses. </div>
+                  <div><br>
+                  </div>
+                  <div>Mostly cloudy to overcast skies are expected Saturday.
+                    Saturday night, mostly cloudy to overcast skies with gusty
+                    south/southeast winds are expected along with a slight
+                    chance of rain after midnight as a warm front lifts across
+                    the Lower Susquehanna Valley. </div>
+                  <div><br>
+                  </div>
+                  <div>A cold front slowly approaches Sunday and moves through
+                    Sunday night into early Monday with rain expected along with
+                    a chance of isolated afternoon thunderstorms for Lancaster
+                    and vicinity. South winds remain gusty through the
+                    afternoon. Showers are likely Sunday night with isolated
+                    thunderstorms into Monday morning.</div>
+                  <div><br>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <u><strong>Daily Summary</strong></u><u><strong></strong></u>
+            <div>
+              <div><u><strong></strong></u><strong></strong><u><strong></strong></u>
+                <div><u><strong></strong></u><br>
+                  <div><strong>Today:<span>&nbsp;</span></strong>Partly cloudy
+                    to mostly sunny with a high around 60°. East wind becoming
+                    southeast 5-8 mph.</div>
                   <div><strong><br>
                     </strong></div>
-                  <strong>This Afternoon: </strong>Partly sunny, with a high
-                  near 58. Northwest wind around 10 mph.<br>
-                  <strong><br>
-                    Tonight: </strong>Mostly clear, with a low around 36. West
-                  wind 3 to 5 mph.<br>
-                  <strong><br>
-                    Wednesday: </strong>Patchy frost before 9am. Otherwise,
-                  sunny, with a high near 56. Northwest wind 5 to 13 mph, with
-                  gusts as high as 20 mph.<strong><br>
-                    <br>
-                    Wednesday Night: </strong>Mostly clear, with a low around
-                  34. North wind 3 to 6 mph.<br>
-                  <strong><br>
-                    Thursday: </strong>Sunny, with a high near 60. North wind 5
-                  to 10 mph.</div>
-                <div><br>
-                </div>
-                <div> <strong>Thursday Night</strong>: Mostly clear, with a low
-                  around 38.</div>
-                <div><br>
-                  <hr></div>
-                <div style="text-align: left;"><br>
-                  <u><strong> </strong></u><u><strong> </strong></u></div>
-                <div style="text-align: left;"><u><strong>4-7 Day Outlook: Fri.
-                      Oct. 18 - Mon. Oct. 21</strong></u></div>
-              </div>
-            </div>
-            <div><br>
-            </div>
-            All medium range guidance supports fair and warmer weather late week
-            into next weekend, as an&nbsp; upper trough lifts out and is
-            replaced by a building ridge over the Eastern US. Surface high
-            pressure and associated dry air mass building into Pennsylvania
-            should result in efficient radiational cooling into next weekend,
-            with frost/freeze concerns through at least Friday morning. Abundant
-            sunshine and moderating temps aloft should result in progressively
-            warmer days with highs getting back above average by Friday.<br>
-            <div>
-              <div>
-                <div style="text-align: left;">
-                  <div>
-                    <p><u><strong>Daily Summary</strong></u><strong><br>
-                      </strong></p>
+                  <div><strong>Tonight</strong>: Becoming cloudy with a low near
+                    41°. Southeast wind at 5 mph.<u><strong></strong></u>
+                    <div><u><strong></strong></u><br>
+                      <strong>Saturday:</strong><span> Mostly cloudy </span>with
+                      a high around 65°. South/southeast wind 10-13 mph.<strong><br>
+                      </strong></div>
+                    <div>
+                      <div><strong><br>
+                          Saturday Night:<span>&nbsp;</span></strong>Mostly
+                        cloudy with a 50% chance of showers. Low near 55°. South
+                        wind 15-20 mph gusting 25-35 mph.<br>
+                        <u><strong><br>
+                          </strong></u>
+                        <div><strong>Sunday:<span>&nbsp;</span></strong>Cloudy
+                          with a 100% chance of showers and isolated afternoon
+                          thunderstorms. High around 68°. South wind 20-25 mph
+                          gusting up to 40 to 45 mph.</div>
+                        <div><strong><br>
+                          </strong></div>
+                        <div><strong>Sunday Night:<span> </span></strong>Cloudy
+                          with a 90% chance of showers and isolated
+                          thunderstorms. Low near 46°. West wind 8-14 mph.</div>
+                      </div>
+                    </div>
                   </div>
                 </div>
-                <strong>Friday: </strong>Sunny, with a high near 67.<br>
-                <strong><br>
-                  Friday Night: </strong>Clear, with a low around 40.<br>
-                <strong><br>
-                  Saturday: </strong>Sunny, with a high near 70.<br>
-                <strong><br>
-                  Saturday Night:</strong> Clear, with a low around 41.<br>
-                <strong><br>
-                  Sunday: </strong>Sunny, with a high near 72.<br>
-                <strong><br>
-                  Sunday Night: </strong>Mostly clear, with a low around 46.<br>
-                <strong><br>
-                  Monday: </strong>Sunny, with a high near 73.</div>
-              <div><strong><br>
-                </strong></div>
-              <div><strong>Monday Night: </strong>Clear, with a low around 47.<br>
-              </div>
-              <div><br>
-                <div>
-                  <hr><br>
-                  <div><u><strong>8-14 Day Regional Climate Trends: Tue. Oct. 22
-                        -&nbsp; Mon. Oct. 28</strong></u> </div>
-                  <p>Above normal temperatures / Below normal precipitation</p>
-                  <p><a href="https://www.cpc.ncep.noaa.gov/products/predictions/814day/814temp.new.gif"><img
-                        src="https://www.cpc.ncep.noaa.gov/products/predictions/814day/814temp.new.gif"
-                        alt="8-14 Day Temperature Outlook " style="width: 300px; height: 231.818px; border-radius: 1px / 0px; border-width: 1px; border-style: solid; margin: 5px;"></a><a
-                      href="https://www.cpc.ncep.noaa.gov/products/predictions/814day/814prcp.new.gif"><img
-                        src="https://www.cpc.ncep.noaa.gov/products/predictions/814day/814prcp.new.gif"
-                        alt="8-14 Day Precipitation Outlook" style="width: 300px; height: 233px; border-width: 1px; border-style: solid; margin: 5px;"></a></p>
-                </div>
               </div>
               <div>
-                <div style="text-align: left;"> </div>
+                <div><br>
+                </div>
               </div>
             </div>
-          </div>
-          <div>
-            <hr><strong><br>
-            </strong></div>
-          <u><strong>US National Outlooks<br>
-              <br>
-            </strong> </u>
-          <div> <strong></strong><strong>Oct. 15: Fall-Like Temperatures, Rain
-              and Light Snow From the Upper Midwest to the Northeast; Elevated
-              Fire Weather Conditions in the Southern Plains<br>
-            </strong>Cooler temperatures, rain and light snow are forecast for
-            the Midwest and portions of the Eastern U.S. early this week as a
-            cold front progresses through. Gusty winds will bring elevated fire
-            weather conditions to southern Kansas, northwest Texas and Oklahoma
-            today. Elevated to critical fire weather conditions will then be
-            possible across South Dakota and Nebraska Wednesday.<strong><br>
-            </strong>
-            <div style="text-align: left;"><strong><br>
-              </strong></div>
             <div>
-              <div style="text-align: center;"><strong></strong><strong> </strong></div>
-              <div><strong>Thunderstorm/Severe Weather Outlook for</strong><strong>
-                  Oct. 15</strong><br>
-                Severe thunderstorms are not expected through tonight.</div>
+              <div>
+                <div>
+                  <div>
+                    <hr><u><strong><br>
+                      </strong></u><u><strong></strong></u><u><strong></strong></u><u><strong></strong></u><u><strong></strong></u><u><strong>4-7
+                        Day Outlook: Mon. Mar. 17 - Thu. Mar. 20</strong></u><u><strong><br>
+                      </strong></u></div>
+                </div>
+              </div>
             </div>
             <div><br>
             </div>
           </div>
-          <div>
-            <div style="text-align: left;"> </div>
-            <div style="text-align: left;"><strong></strong> <strong> </strong>
-              <div style="text-align: left;">
-                <div style="text-align: center;"><strong>National Forecast Map</strong></div>
-                <div style="text-align: center;"><em><strong></strong></em><em><strong></strong></em><a
-                    href="https://www.wpc.ncep.noaa.gov/NationalForecastChart/map.php"><img
-                      src="https://www.wpc.ncep.noaa.gov/NationalForecastChart/staticmaps/noaad1.png"
-                      alt="National Forecast Chart" style="width: 570px; height: 380.97px; border-width: 1px; border-style: solid;"><em
-                      style="font-size: 12px;"></em></a><br>
-                  <a href="https://www.wpc.ncep.noaa.gov/NationalForecastChart/map.php">
-                  </a></div>
-                <ul>
-                </ul>
-              </div>
-              <div style="text-align: left; font-size: 12px;">
-                <div style="text-align: left;"><br>
-                  <div style="text-align: center;"><strong style="font-size: 16px;">Current
-                      Continental US Satellite Image</strong></div>
-                  <div style="text-align: center;"><strong></strong><strong style="font-size: 16px;"></strong><a
-                      href="https://weather.cod.edu/data/satellite/continental/conus/current/conus.truecolor.jpg"
-                      title="Click for more information"><img src="https://weather.cod.edu/data/satellite/continental/conus/current/conus.truecolor.jpg"
-                        alt="True Color Satellite Image of CONUS" style="width: 570px; height: 388.16px; border-radius: 1px / 0px; border-width: 1px; border-style: solid;"
-                        title="Click for larger image/more information"></a></div>
-                  <div style="text-align: center;">Credit: College of DuPage
-                    NEXLAB Satellite and Radar / 1km resolution / Band Type: <a
-                      href="https://weather.ndc.nasa.gov/sport/training/quickGuides/rgb/QuickGuide_TrueColorRGB_NASA_SPoRT.pdf"
-                      title="Click for more information">Composite</a>
-                    (Visual/Near-IR)</div>
+          <div style="color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: medium; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">Showers
+            taper off Monday with clearing skies as high pressure builds across
+            the East Coast heading into Tuesday. High pressure moves offshore
+            Wednesday with a cold front approaching later with a chance of rain
+            by Thursday afternoon. High pressure returns for the late week
+            period.</div>
+          <div style="color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: medium; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+            <div></div>
+            <div><br>
+            </div>
+            <div>
+              <div>
+                <div>
+                  <div>
+                    <div><u><strong>Daily Summary<br>
+                          <br>
+                        </strong></u>
+                      <div><strong>Monday:<span> </span></strong>Decreasing
+                        clouds with a 20% chance of morning showers ending in
+                        the afternoon. High around 56°. Northwest wind 8-14 mph.</div>
+                      <div><strong><br>
+                        </strong></div>
+                      <div><strong>Monday Night:<span>&nbsp;</span></strong>Partly
+                        cloudy with a low near 36°. Northwest wind 0-7 mph.</div>
+                      <div><br>
+                      </div>
+                      <div><strong>Tuesday:<span>&nbsp;</span></strong>Mostly
+                        sunny with a high around 65°. Southwest wind 0-7 mph.</div>
+                      <div><strong><br>
+                        </strong></div>
+                      <div><strong>Tuesday Night:</strong><span>&nbsp;</span>Mostly
+                        clear with a low near 42°. South wind 8-14 mph.</div>
+                      <div><br>
+                        <strong>Wednesday:<span>&nbsp;</span></strong>Partly
+                        cloudy with a high around 70°. South wind 8-14 mph.</div>
+                      <div><strong><br>
+                          Wednesday Night:<span>&nbsp;</span></strong>Mostly
+                        cloudy with a low around 47°. South wind 8-14 mph.</div>
+                      <div><br>
+                      </div>
+                      <div><strong>Thursday:&nbsp; </strong>Partly sunny with a
+                        50% chance of afternoon showers. High around 68°.
+                        Southwest wind 15-22 mph.</div>
+                      <div><br>
+                      </div>
+                      <div><strong>Thursday Night:&nbsp; </strong>Partly cloudy
+                        with a 40% chance of showers. Low near 37°. West wind
+                        8-14 mph.</div>
+                    </div>
+                  </div>
+                  <div><strong></strong><br>
+                    <div>
+                      <hr><br>
+                    </div>
+                    <div><u><strong>8-14 Day Regional Climate Trends: Fri. Mar.
+                          21 - Thu. Mar. 27</strong></u>
+                      <p>Above normal temperatures / Above normal precipitation</p>
+                    </div>
+                  </div>
                 </div>
+              </div>
+            </div>
+            <p><a href="https://www.cpc.ncep.noaa.gov/products/predictions/814day/814temp.new.gif"><img
+                  src="https://www.cpc.ncep.noaa.gov/products/predictions/814day/814temp.new.gif"
+                  alt="8-14 Day Temperature Outlook " style="max-width: 100%; width: 300px; height: 231.818px; border-radius: 1px / 0px; border-width: 1px; border-style: solid; margin: 5px;"></a><a
+                href="https://www.cpc.ncep.noaa.gov/products/predictions/814day/814prcp.new.gif"><img
+                  src="https://www.cpc.ncep.noaa.gov/products/predictions/814day/814prcp.new.gif"
+                  alt="8-14 Day Precipitation Outlook" style="max-width: 100%; width: 300px; height: 233px; border-width: 1px; border-style: solid; margin: 5px;"></a></p>
+          </div>
+          <div style="color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: medium; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+            <div>
+              <div></div>
+              <div>
+                <div style="text-align: left;"></div>
+              </div>
+            </div>
+          </div>
+          <div style="color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: medium; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+            <hr><strong><br>
+            </strong></div>
+          <u style="color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: medium; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;"><strong>US
+              National Outlooks</strong></u><strong style="color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: medium; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"><br>
+          </strong><strong style="color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: medium; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"><br>
+          </strong>
+          <div style="text-align: left;"><strong>Mar. 14: Multi-Day Severe
+              Weather Outbreak; Extremely Critical Fire Weather Conditions<br>
+            </strong>A multi-day severe weather outbreak is expected in the
+            Mississippi Valley into the Lower Ohio Valley this afternoon into
+            Saturday and through the Central Gulf states on Saturday.
+            Significant tornadoes, widespread damaging winds, and large hail are
+            likely. Strong winds, low relative humidity, and dry fuels will
+            bring extremely critical fire weather conditions to the Southern
+            Plains today.<strong><br>
+            </strong></div>
+          <div style="text-align: left;"><strong><br>
+            </strong></div>
+          <div style="text-align: left;"><strong>Thunderstorm/Severe Weather
+              Outlook for</strong><strong> Mar. 14<br>
+            </strong></div>
+          A regional outbreak of severe storms is likely across the
+          Mid-Mississippi Valley to the Lower-Mississippi Valley, including
+          portions of the Lower Ohio Valley. Tornadoes, several of which could
+          be strong, widespread damaging winds with gusts from 70 to 90 mph, and
+          scattered large hail up to baseball size will be possible.<span style="color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: medium; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;"></span>
+          <div style="text-align: left;"><br>
+          </div>
+          <div style="text-align: left;">
+            <div style="text-align: center;"><strong>NWS National Forecast Chart</strong></div>
+            <div style="text-align: left;">
+              <div style="text-align: center;"><a href="https://www.wpc.ncep.noaa.gov/NationalForecastChart/map.php"><img
+                    src="https://www.wpc.ncep.noaa.gov/NationalForecastChart/staticmaps/noaad1.png"
+                    alt="National Forecast Chart" style="width: 570px; height: 412px; border-width: 1px; border-style: solid;"
+                    title="Click for more information / larger chart"></a><strong><br>
+                </strong></div>
+              <div style="text-align: center;"><strong></strong><span style="font-size: 14px;"><strong></strong></span><span
+                  style="font-size: 14px;"></span><br>
+                <span style="font-size: 14px;"><strong> </strong></span> <span
+                  style="font-size: 14px;"><strong> </strong></span> </div>
+            </div>
+            <div>
+              <div><span style="font-size: 14px;"><strong><br>
+                  </strong></span></div>
+              <span style="font-size: 14px;"><strong> </strong></span><span style="font-size: 14px;"><strong>
+                </strong></span>
+              <div><span style="font-size: 14px;"><strong></strong></span></div>
+              <span style="font-size: 14px;"><strong> </strong></span>
+              <div>
+                <div style="text-align: center;"><span style="font-size: 14px;"><strong></strong></span><strong>SPC
+                    Thunderstorm / Severe Weather Outlook</strong></div>
+                <div style="text-align: center;"><a href="https://www.spc.noaa.gov/products/outlook/day1otlk.html"><img
+                      src="https://www.spc.noaa.gov/partners/outlooks/state/swody1.png?1678542573998"
+                      alt="Current Day One Severe Weather Outlook" style="height: 356.25px; width: 570px;"></a></div>
+                <div style="text-align: center;"><em style="font-size: 12px;"><strong><em></em></strong><em
+                      style="font-size: 12px;"></em>Learn more about <a href="https://www.spc.noaa.gov/new/images/SPC_outlook_final_updated.png"
+                      title="Click for more information">Severe Thunderstorm
+                      Outlooks</a></em></div>
+              </div>
+            </div>
+            <div style="text-align: center;"><strong style="font-size: 16px;"><br>
+              </strong></div>
+            <div style="text-align: center;"><strong style="font-size: 16px;">Current
+                Continental US Satellite Image</strong></div>
+            <div style="text-align: center;"><strong></strong><strong style="font-size: 16px;"></strong><a
+                href="https://weather.cod.edu/data/satellite/continental/conus/current/conus.truecolor.jpg"
+                title="Click for more information"><img src="https://weather.cod.edu/data/satellite/continental/conus/current/conus.truecolor.jpg"
+                  alt="True Color Satellite Image of CONUS" style="width: 570px; height: 388.16px; border-radius: 1px / 0px; border-width: 1px; border-style: solid;"
+                  title="Click for larger image/more information"></a></div>
+            <div style="text-align: center;"><em style="font-size: 12px;">Credit:
+                College of DuPage NEXLAB Satellite and Radar / 1km resolution /
+                Band Type: Composite (Visual/Near-IR)<a href="https://www.spc.noaa.gov/new/images/SPC_outlook_final_updated.png"
+                  title="Click for more information"></a></em></div>
+          </div>
+          <div>
+            <div style="text-align: left;">
+              <div style="text-align: left; font-size: 12px;">
                 <div style="text-align: left;"><u><br>
                   </u></div>
                 <div style="text-align: left;"><u>Notices<br>
@@ -379,7 +469,7 @@
           </div>
           <div>
             <p><strong>Official <br>
-                Government Forecasts</strong></p>
+                Government Information</strong></p>
             <p><a href="https://www.weather.gov/" title="NWS Caribou (northern and eastern Maine">US
                 National Weather Service<br>
               </a> </p>
@@ -499,6 +589,13 @@
                   alt="Today's High" style="width: 251px; height: 186px;"></a>
               <div style="width: 100%;"><strong><br>
                 </strong></div>
+              <div style="width: 100%;"><br>
+                <strong>Heat Index</strong><br>
+                <a href="https://www.weather.gov/images/erh/gis/CTP_AptMax.png"><img
+                    src="https://www.weather.gov/images/erh/gis/CTP_AptMax.png"
+                    alt="24-Hour Heat Index" style="width: 251px; height: 186px;"></a></div>
+              <div style="width: 100%;"><strong><br>
+                </strong></div>
               <div style="width: 100%;"><strong><br>
                 </strong></div>
               <div style="width: 100%;"><strong>Tonight's Low</strong><br>
@@ -506,6 +603,14 @@
                     src="https://www.weather.gov/images/erh/gis/CTP_mint_Day1.png"
                     alt="Tonight's Lows" style="width: 251px; height: 186px;"></a></div>
             </div>
+            <div style="text-align: left; width: 278px;"><br>
+            </div>
+            <div style="text-align: left; width: 278px;"><br>
+            </div>
+            <div style="text-align: left; width: 278px;"><strong>Wind Chill</strong><br>
+              <a href="https://www.weather.gov/images/erh/gis/CTP_AptMin.png"><img
+                  src="https://www.weather.gov/images/erh/gis/CTP_AptMin.png" alt="24-Hour Wind Chill"
+                  style="width: 251px; height: 186px;"></a></div>
             <div style="text-align: left; width: 278px;"><br>
             </div>
             <div style="text-align: center; width: 278px;">
@@ -592,7 +697,9 @@ Precipitation
         <div id="tswsideproper">
           <!-- start of RIGHT side column: insert your navigation menu, etc, here -->
           <p style="text-align: center;"><strong style="font-size: 14px;">Current
-              US Weather Chart</strong><a href="https://s.w-x.co/staticmaps/WEB_Current_Weather_Map_1280x720.jpg?crop=16:9&amp;width=800&amp;format=pjpg&amp;auto=webp&amp;quality=60"
+              US Weather Chart</strong></p>
+          <p style="text-align: center;"><strong style="font-size: 14px;"></strong><a
+              href="https://s.w-x.co/staticmaps/WEB_Current_Weather_Map_1280x720.jpg?crop=16:9&amp;width=800&amp;format=pjpg&amp;auto=webp&amp;quality=60"
               title="Click for larger image"><img src="https://s.w-x.co/staticmaps/WEB_Current_Weather_Map_1280x720.jpg?crop=16:9&amp;width=800&amp;format=pjpg&amp;auto=webp&amp;quality=60"
                 alt="Current Surface Map (TWC)" style="width: 251px; height: 141px;"></a>
             <strong><br>
@@ -605,15 +712,11 @@ Precipitation
           </div>
           <div style="text-align: center;"><br>
           </div>
-          <div style="text-align: center;"><span style="font-size: 14px;"><strong>National
-                Severe Weather Outlook</strong></span><br>
-            <a href="https://www.spc.noaa.gov/products/outlook/day1otlk.html"><img
-                src="https://www.spc.noaa.gov/partners/outlooks/state/swody1.png?1678542573998"
-                alt="Current Day One Severe Weather Outlook" style="height: 156.875px; width: 251px;"></a>
-            <div style="text-align: center;"><em style="font-size: 12px;"><strong><em></em></strong><em
-                  style="font-size: 12px;"></em>Learn more about <a href="https://www.spc.noaa.gov/new/images/SPC_outlook_final_updated.png"
-                  title="Click for more information">Severe Thunderstorm
-                  Outlooks</a></em></div>
+          <div style="text-align: center;"><span style="font-size: 14px;"><strong
+                style="font-size: 13px;">US Advisories, Watches, &amp; Warnings</strong></span><br>
+            <a href="https://www.weather.gov/" title="Click for more information"><img
+                src="https://www.weather.gov/wwamap/png/US.png" alt="National Advisories, Watches, and Warnings"
+                style="height: 156.25px; width: 250px;"></a>
             <div style="font-size: 14px; text-align: center;"></div>
           </div>
           <div style="text-align: center;"><br>
@@ -659,6 +762,22 @@ Precipitation
           </div>
           <div style="text-align: center;"><br>
           </div>
+          <div style="text-align: center;"><strong>Maximum Wind Gust</strong>
+            <div><a href="https://www.weather.gov/images/erh/gis/CTP_WGust.png"
+                title="Click for more information"><img src="https://www.weather.gov/images/erh/gis/CTP_WGust.png"
+                  alt="Maximum Wind Gust" style="width: 246px; height: 210px; border-width: 1px; border-style: solid;"></a></div>
+          </div>
+          <div style="text-align: center;"><br>
+          </div>
+          <div style="text-align: center;"><br>
+          </div>
+          <div style="text-align: center;"><strong>Regional Snowfall
+              Accumulation</strong></div>
+          <div style="text-align: center;"><a href="https://www.weather.gov/images/erh/gis/GL_Snow.png"
+              title="Click for larger image"><img src="https://www.weather.gov/images/erh/gis/GL_Snow.png"
+                alt="Regional Snow Accumulation" style="width: 256px; height: 190px;"></a></div>
+          <div style="text-align: center;"><br>
+          </div>
           <div style="text-align: center;">
             <div style="font-size: 14px;">
               <div><strong>Pennsylvania Drought Monitor</strong></div>
@@ -672,8 +791,8 @@ Precipitation
           <div style="text-align: center;"><strong style="font-size: 14px;">Total
               Monthly Precipitation<br>
             </strong></div>
-          <div style="text-align: center;"><a href="https://www.weather.gov/images/erh/gis/CTP_30obs_precip.png"><img
-                src="https://www.weather.gov/images/erh/gis/CTP_30obs_precip.png"
+          <div style="text-align: center;"><a href="https://www.weather.gov/images/erh/gis/CTP_MTDobs_precip.png"><img
+                src="https://www.weather.gov/images/erh/gis/CTP_MTDobs_precip.png"
                 alt="30-Day Total Precipitation" title="Click for larger imate"
                 style="width: 246px; height: 182.962px;"></a></div>
           <div style="text-align: center;"><strong style="font-size: 14px;"><br>
