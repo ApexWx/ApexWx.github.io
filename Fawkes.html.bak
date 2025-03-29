@@ -17,7 +17,7 @@
         <p>&nbsp;</p>
         <!-- end of header section: insert your logo, etc, above this line --> </div>
       <div id="tswcentrecombo">
-        <div id="tswcontent">
+        <div id="tswcontent" style="font-size: 16px;">
           <div id="tswcontproper">
             <!-- start of content column: insert your content here -->
             <div style="text-align: center;">
@@ -81,53 +81,70 @@
             <div style="text-align: left;"><strong></strong><em style="font-size: 12px;"></em><strong></strong>
             </div>
           </div>
-          <div style="color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: medium; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"><strong><u><br>
+          <div><strong><u><br>
               </u></strong><strong></strong></div>
-          <strong><u>Thursday, March 13</u></strong>
-          <div style="color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: medium; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+          <div><strong><u>Friday, March 28</u></strong></div>
+          <div>
             <div>
               <div>
-                <div style="width: 830px;"><b>High</b>: 59° at 4:50 pm /&nbsp;<span>&nbsp;</span><b>Low</b>:
-                  39° at 6:46 am</div>
-                <div><b>Precipitation:<span>&nbsp;</span></b>0.0" /<strong><span>&nbsp;</span>Snow</strong>:
-                  0.0"</div>
-                <div><b>Daily Wind:<span>&nbsp;</span></b><u>Avg. Dir. &amp;
-                    Speed</u>: SE @ 2 mph&nbsp; /<span>&nbsp;</span><u>Max. Gust</u>:
-                  15 mph at 9:31 am<br>
+                <div style="width: 830px;"><b>High</b>: 63° at 4:29 pm /&nbsp; <b>Low</b>:
+                  38° at 6:46 am</div>
+                <div><b>Precipitation: </b>0.02" /<strong> Snow</strong>: 0.0"</div>
+                <div><b>Daily Wind: </b><u>Avg. Dir. &amp; Speed</u>: SE @ 1
+                  mph&nbsp; / <u>Max. Gust</u>: 10 mph at 2:01 am<br>
                   <em style="font-size: 12px;"><em style="font-size: 12px;">Source:
-                      College Park personal weather station</em></em><em style="font-size: 12px;"><em
+                      College Park personal weather station </em></em><em style="font-size: 12px;"><em
                       style="font-size: 12px;"></em></em></div>
               </div>
             </div>
             <div><strong><br>
               </strong></div>
-            <div><strong><u>Friday, March 14<br>
+            <div><strong><u>Saturday, March 29<br>
                 </u></strong></div>
-            <div style="width: 810px;"><strong>Normal High:<span>&nbsp;</span></strong>51°
-              /<strong>&nbsp; Record High</strong>: 84° in 1990<br>
-              <strong>Normal Low:&nbsp;<span>&nbsp;</span></strong>30° /&nbsp;<span>&nbsp;</span><strong>Record
-                Low:<span>&nbsp;</span></strong>16° in 1993<strong><br>
-                Year-to-Date Precipitation</strong><strong>:</strong><span>&nbsp;</span>3.94"
-              /<span>&nbsp;</span><u>avg</u>. 6.95" =<span>&nbsp;</span><span style="color: red;">-3.01"</span><span
-                style="color: rgb(0, 153, 0);"></span><br>
-              <strong>2024 - 2025 Snowfall</strong><strong>:<span>&nbsp;</span></strong>16.0"
-              /<span>&nbsp;</span><u>avg</u>. 19.9" =<span>&nbsp;</span><span style="color: red;">-3.9"</span><br>
-              <strong>2023 - 2024 Snowfall:</strong><span>&nbsp;</span>13.1" /<span>&nbsp;</span><u>avg</u>.
-              21.4"=<span>&nbsp;</span><span style="color: red;">-8.3"</span><span
-                style="color: red;"></span></div>
-            <div><em style="font-size: 12px;">Annual snowfall measured from July
-                1 - June 30 /<span>&nbsp;</span></em><em style="font-size: 12px;">Source:<span>&nbsp;</span></em><em
+            <div style="width: 810px;"><strong>Normal High: </strong>57° /<strong>&nbsp;
+                Record High</strong>: 82° in 1998<br>
+              <strong> Normal Low:&nbsp; </strong>35° /&nbsp; <strong>Record
+                Low:&nbsp; </strong>20° in 1982<strong></strong></div>
+            <div style="width: 810px;"><strong><br>
+              </strong></div>
+            <div style="width: 810px;"><strong><u>Precipitation 2025</u></strong></div>
+            <div style="width: 810px;"><strong> Year-to-Date Precipitation</strong><strong>:</strong>
+              5.09" / <u>avg</u>. 8.78" = <span style="color: red;">-3.69"</span><span
+                style="color: #009900;"></span><br>
+              <strong>2024 - 2025 Snowfall</strong><strong>: </strong>16.0" / <u>avg</u>.
+              21.1" = <span style="color: red;">-5.1"</span><br>
+              <strong>2023 - 2024 Snowfall:</strong> 13.1" / <u>avg</u>. 21.4"=
+              <span style="color: red;">-8.3"</span><span style="color: red;"></span></div>
+            <div> <em style="font-size: 12px;">Annual snowfall measured from
+                July 1 - June 30 / </em><em style="font-size: 12px;">Source: </em><em
                 style="font-size: 12px;"><em style="font-size: 12px;"><a href="https://scacis.rcc-acis.org/">NOAA
-                    SC-ACIS</a><span>&nbsp;</span></em>NWS State College data<br>
+                    SC-ACIS</a> </em>NWS State College data<br>
               </em></div>
             <div><br>
             </div>
-            <div><em style="font-size: 12px;"></em><a href="https://www.timeanddate.com/astronomy/usa/lancaster-pa">Lancaster,
-                Pennsylvania, USA</a><span>&nbsp;</span>— Sun and Moon Times</div>
+            <div> <em style="font-size: 12px;"></em><a href="https://www.timeanddate.com/astronomy/usa/lancaster-pa">Lancaster,
+                Pennsylvania, USA</a> — Sun and Moon Times</div>
             <div><a href="https://www.timeanddate.com/moon/phases/@4964627"><br>
               </a></div>
             <div><a href="https://www.timeanddate.com/moon/phases/usa/lancaster-pa">Moon
-                Phase</a>: 🌕 Full "Worm" Moon at 2:55 am ET Fri. Mar. 14</div>
+                Phase</a>: 🌑 New Moon @ 6:58 am Sat. Mar. 29</div>
+            <div><br>
+            </div>
+            <div><u><strong>National High and Low Temperature for the contiguous
+                  United States</strong></u>
+              <div style="font-size: 12px;"><em>Source: <a href="https://www.wpc.ncep.noaa.gov/discussions/hpcdiscussions.php?disc=nathilo&amp;version=0&amp;fmt=reg">NWS
+                    Weather Prediction Center</a>, College Park, MD</em></div>
+              <div>
+                <dl>
+                  <dd> <u><strong>High Temperature for Friday, March 28, 2025</strong></u></dd>
+                  <dd> 94 at Rio Grande Village, TX</dd>
+                  <dd> <br>
+                  </dd>
+                  <dd> <u><strong>Low Temperature for Friday, March 28, 2025</strong></u></dd>
+                  <dd> 8 at Mount Washington, NH</dd>
+                </dl>
+              </div>
+            </div>
             <div>
               <div>
                 <hr style="margin-left: 0px; margin-right: auto;"><u><strong><span
@@ -137,92 +154,105 @@
                 <u><strong><span style="font-variant: small-caps;"></span></strong></u>
                 <div>
                   <div><strong><span style="font-size: 12px;"><u>Forecast
-                          updated</u>:<span>&nbsp;</span><span style="color: rgb(51, 51, 255);">March
-                          14, 2025 at 9:01 am EDT</span><span>&nbsp;</span></span></strong>→<span>&nbsp;</span><span
-                      style="font-size: 12px;">Viewing later?<span>&nbsp;</span><strong>Check
-                        for<span>&nbsp;</span><a href="https://forecast.weather.gov/MapClick.php?CityName=Fort+Kent&amp;state=ME&amp;site=CAR&amp;textField1=47.2632&amp;textField2=-68.5774&amp;e=1#.UzCiuVf-6Sp">updates</a>.</strong></span></div>
+                          updated</u>: <span style="color: #3333ff;">March 29,
+                          2025 at 10:16 am EDT</span> </span></strong>→ <span
+                      style="font-size: 12px;">Viewing later? <strong>Check for
+                        <a href="https://forecast.weather.gov/MapClick.php?CityName=Fort+Kent&amp;state=ME&amp;site=CAR&amp;textField1=47.2632&amp;textField2=-68.5774&amp;e=1#.UzCiuVf-6Sp">updates</a>.</strong></span></div>
                   <div style="text-align: left;"><span style="font-size: 12px;"><strong><br>
                       </strong></span></div>
                   <div style="text-align: left;">
-                    <div style="text-align: center;"><span style="font-size: 12px;"><strong></strong></span><strong>⚠️<span>&nbsp;</span><a
-                          href="https://forecast.weather.gov/product.php?site=NWS&amp;issuedby=CTP&amp;product=HWO">Current
-                          NWS State College Hazardous Weather Outlook</a></strong><span>&nbsp;</span>⚠️</div>
+                    <div style="text-align: center;"><span style="font-size: 12px;"><strong>
+                        </strong></span><strong>⚠️ <a href="https://forecast.weather.gov/product.php?site=NWS&amp;issuedby=CTP&amp;product=HWO">Current
+                          NWS State College Hazardous Weather Outlook</a></strong>
+                      ⚠️</div>
+                    <br>
                   </div>
                 </div>
-                <div><strong><em style="font-size: 12px;"></em></strong><strong></strong></div>
+                <div> <strong><em style="font-size: 12px;"></em></strong> <strong>
+                  </strong></div>
                 <strong></strong></div>
             </div>
-            <div><u><strong><br>
-                </strong></u></div>
-            <div><u><strong>3-Day Outlook: Fri. Mar. 14 - Sun. Mar. 16</strong></u><br>
-              <strong></strong></div>
+            <div><u><strong>3-Day Outlook: Sat. Mar. 29 - Mon. Mar. 31</strong></u></div>
+            <div>
+              <div><br>
+              </div>
+              <div>A warm front will stall over New England today, then slide
+                back southwestward into the region as a cold front tonight. It
+                will stall across the area on Sunday. This front finally lifts
+                back to the northeast once and for all Sunday night into early
+                Monday, before a more powerful front moves into the region from
+                the northwest Monday night. </div>
+              <div><br>
+              </div>
+              <div>For today, Lancaster will see breezy west/southwest winds
+                with partly sunny skies across the Lower Susquehanna Valley.
+                Mostly cloudy tonight with isolated showers overnight. Mostly
+                cloudy skies remain over Fawkes House Sunday with a chance of
+                afternoon showers. A chance of showers continues Sunday night
+                with less than 1/10-inch rainfall expected overnight. </div>
+              <div><br>
+              </div>
+              <div>Monday features mostly cloudy to overcast skies with gusty
+                south/southwest winds. Showers and scattered afternoon
+                thunderstorms are possible including a chance of scattered
+                strong-to-severe thunderstorms featuring a line of strong to
+                severe thunderstorms will sweep through Monday afternoon, with
+                the primary threat being damaging wind gusts.</div>
+              <div><br>
+              </div>
+            </div>
+            <u><strong>Daily Summary</strong></u><u><strong></strong></u><br>
+            <u><strong></strong></u>
             <div>
               <div>
                 <div>
-                  <div><br>
-                  </div>
-                  <div>Becoming partly cloudy to mostly sunny today with light
-                    southeast winds developing. Clouds increase tonight as a low
-                    pressure system moving east from the Plains tracks across
-                    the Great Lakes into Canada as the weekend progresses. </div>
-                  <div><br>
-                  </div>
-                  <div>Mostly cloudy to overcast skies are expected Saturday.
-                    Saturday night, mostly cloudy to overcast skies with gusty
-                    south/southeast winds are expected along with a slight
-                    chance of rain after midnight as a warm front lifts across
-                    the Lower Susquehanna Valley. </div>
-                  <div><br>
-                  </div>
-                  <div>A cold front slowly approaches Sunday and moves through
-                    Sunday night into early Monday with rain expected along with
-                    a chance of isolated afternoon thunderstorms for Lancaster
-                    and vicinity. South winds remain gusty through the
-                    afternoon. Showers are likely Sunday night with isolated
-                    thunderstorms into Monday morning.</div>
-                  <div><br>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <u><strong>Daily Summary</strong></u><u><strong></strong></u>
-            <div>
-              <div><u><strong></strong></u><strong></strong><u><strong></strong></u>
-                <div><u><strong></strong></u><br>
-                  <div><strong>Today:<span>&nbsp;</span></strong>Partly cloudy
-                    to mostly sunny with a high around 60°. East wind becoming
-                    southeast 5-8 mph.</div>
-                  <div><strong><br>
-                    </strong></div>
-                  <div><strong>Tonight</strong>: Becoming cloudy with a low near
-                    41°. Southeast wind at 5 mph.<u><strong></strong></u>
-                    <div><u><strong></strong></u><br>
-                      <strong>Saturday:</strong><span> Mostly cloudy </span>with
-                      a high around 65°. South/southeast wind 10-13 mph.<strong><br>
-                      </strong></div>
+                  <div>
                     <div>
-                      <div><strong><br>
-                          Saturday Night:<span>&nbsp;</span></strong>Mostly
-                        cloudy with a 50% chance of showers. Low near 55°. South
-                        wind 15-20 mph gusting 25-35 mph.<br>
-                        <u><strong><br>
-                          </strong></u>
-                        <div><strong>Sunday:<span>&nbsp;</span></strong>Cloudy
-                          with a 100% chance of showers and isolated afternoon
-                          thunderstorms. High around 68°. South wind 20-25 mph
-                          gusting up to 40 to 45 mph.</div>
-                        <div><strong><br>
-                          </strong></div>
-                        <div><strong>Sunday Night:<span> </span></strong>Cloudy
-                          with a 90% chance of showers and isolated
-                          thunderstorms. Low near 46°. West wind 8-14 mph.</div>
+                      <div>
+                        <div>
+                          <div><u><strong> </strong></u><strong><br>
+                            </strong></div>
+                          <div><strong>Today: </strong>Partly sunny, with a
+                            high near 82. West wind 9 to 14 mph, with gusts as
+                            high as 30 mph.<br>
+                            <strong><br>
+                              Tonight:</strong> A slight chance of showers
+                            between 10pm and 2am. Mostly cloudy, with a low
+                            around 59. South wind around 6 mph. Chance of
+                            precipitation is 20%.<br>
+                            <strong><br>
+                              Sunday: </strong>A chance of showers, mainly
+                            after 2pm. Mostly cloudy, with a high near 74. South
+                            wind 6 to 11 mph, with gusts as high as 22 mph.
+                            Chance of precipitation is 30%. New precipitation
+                            amounts of less than a tenth of an inch possible.<br>
+                            <strong><br>
+                              Sunday Night: </strong>A chance of showers,
+                            mainly after 2am. Mostly cloudy, with a low around
+                            62. South wind around 11 mph, with gusts as high as
+                            21 mph. Chance of precipitation is 50%. New
+                            precipitation amounts of less than a tenth of an
+                            inch possible.<br>
+                            <strong><br>
+                              Monday: </strong>A chance of showers, then
+                            showers and possibly a thunderstorm after 2pm. High
+                            near 75. South wind 13 to 16 mph, with gusts as high
+                            as 33 mph. Chance of precipitation is 90%. New
+                            rainfall amounts between a tenth and quarter of an
+                            inch, except higher amounts possible in
+                            thunderstorms.<br>
+                            <strong><br>
+                              Monday Night: </strong>Showers and possibly a
+                            thunderstorm before 11pm, then showers likely
+                            between 11pm and 2am. Low around 42. Chance of
+                            precipitation is 80%. New precipitation amounts
+                            between a quarter and half of an inch possible.<strong><br>
+                              <br>
+                            </strong></div>
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
-              </div>
-              <div>
-                <div><br>
                 </div>
               </div>
             </div>
@@ -231,72 +261,83 @@
                 <div>
                   <div>
                     <hr><u><strong><br>
-                      </strong></u><u><strong></strong></u><u><strong></strong></u><u><strong></strong></u><u><strong></strong></u><u><strong>4-7
-                        Day Outlook: Mon. Mar. 17 - Thu. Mar. 20</strong></u><u><strong><br>
-                      </strong></u></div>
+                      </strong></u><u><strong> </strong></u><u><strong> </strong></u><u><strong>
+                      </strong></u><u><strong> </strong></u><u><strong> 4-7 Day
+                        Outlook: Tue. Apr. 1 - Fri. Apr. 4</strong></u></div>
                 </div>
               </div>
             </div>
             <div><br>
             </div>
           </div>
-          <div style="color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: medium; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">Showers
-            taper off Monday with clearing skies as high pressure builds across
-            the East Coast heading into Tuesday. High pressure moves offshore
-            Wednesday with a cold front approaching later with a chance of rain
-            by Thursday afternoon. High pressure returns for the late week
-            period.</div>
-          <div style="color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: medium; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
-            <div></div>
-            <div><br>
+          <div>
+            <div>
+              <div>
+                <div>
+                  <div> </div>
+                  Showers and isolated thunderstorms wind down Tuesday morning
+                  as high pressure builds in from central Canada on breezy
+                  northwest winds. Mostly sunny skies Tuesday afternoon segue
+                  into mostly clear skies and cool conditions Tuesday night. </div>
+                <div><br>
+                </div>
+                <div>Clouds increase Wednesday into Wednesday night as a warm
+                  front ahead of a low pressure area tracking towards the Great
+                  Lakes lifts across the Lower Susquehanna Valley. Scattered
+                  showers are anticipated Thursday as the warm front lifts north
+                  of the region and a cold front advances towards the area.
+                  Showers over the course of the day Thursday into Friday
+                  morning become a steadier rain Friday afternoon as the cold
+                  front moves across the Lancaster region.</div>
+                <div> <br>
+                </div>
+              </div>
             </div>
             <div>
               <div>
                 <div>
                   <div>
-                    <div><u><strong>Daily Summary<br>
-                          <br>
-                        </strong></u>
-                      <div><strong>Monday:<span> </span></strong>Decreasing
-                        clouds with a 20% chance of morning showers ending in
-                        the afternoon. High around 56°. Northwest wind 8-14 mph.</div>
+                    <div><u><strong>Daily Summary</strong></u>
+                      <div>
+                        <div><br>
+                        </div>
+                        <strong>Tuesday: </strong>Mostly sunny, with a high
+                        near 53.<br>
+                        <strong><br>
+                          Tuesday Night: </strong>Mostly clear, with a low
+                        around 33.<br>
+                        <strong><br>
+                          Wednesday: </strong>Partly sunny, with a high near
+                        54.<br>
+                        <strong><br>
+                          Wednesday Night: </strong>A chance of showers. Mostly
+                        cloudy, with a low around 43. Chance of precipitation is
+                        40%.<br>
+                        <strong><br>
+                          Thursday: </strong>A chance of showers. Mostly
+                        cloudy, with a high near 71. Chance of precipitation is
+                        40%.<br>
+                        <strong><br>
+                          Thursday Night: </strong>A chance of showers. Mostly
+                        cloudy, with a low around 58. Chance of precipitation is
+                        50%.<br>
+                        <strong><br>
+                          Friday: </strong>A chance of rain. Mostly cloudy,
+                        with a high near 73. Chance of precipitation is 50%.</div>
                       <div><strong><br>
                         </strong></div>
-                      <div><strong>Monday Night:<span>&nbsp;</span></strong>Partly
-                        cloudy with a low near 36°. Northwest wind 0-7 mph.</div>
-                      <div><br>
-                      </div>
-                      <div><strong>Tuesday:<span>&nbsp;</span></strong>Mostly
-                        sunny with a high around 65°. Southwest wind 0-7 mph.</div>
-                      <div><strong><br>
-                        </strong></div>
-                      <div><strong>Tuesday Night:</strong><span>&nbsp;</span>Mostly
-                        clear with a low near 42°. South wind 8-14 mph.</div>
-                      <div><br>
-                        <strong>Wednesday:<span>&nbsp;</span></strong>Partly
-                        cloudy with a high around 70°. South wind 8-14 mph.</div>
-                      <div><strong><br>
-                          Wednesday Night:<span>&nbsp;</span></strong>Mostly
-                        cloudy with a low around 47°. South wind 8-14 mph.</div>
-                      <div><br>
-                      </div>
-                      <div><strong>Thursday:&nbsp; </strong>Partly sunny with a
-                        50% chance of afternoon showers. High around 68°.
-                        Southwest wind 15-22 mph.</div>
-                      <div><br>
-                      </div>
-                      <div><strong>Thursday Night:&nbsp; </strong>Partly cloudy
-                        with a 40% chance of showers. Low near 37°. West wind
-                        8-14 mph.</div>
+                      <div><strong> Friday Night: </strong><strong></strong>A
+                        chance of showers. Mostly cloudy, with a low around 46.
+                        Chance of precipitation is 30%.</div>
                     </div>
                   </div>
                   <div><strong></strong><br>
                     <div>
                       <hr><br>
                     </div>
-                    <div><u><strong>8-14 Day Regional Climate Trends: Fri. Mar.
-                          21 - Thu. Mar. 27</strong></u>
-                      <p>Above normal temperatures / Above normal precipitation</p>
+                    <div><u><strong>8-14 Day Regional Climate Trends: Sat. Apr.
+                          5 -&nbsp; Fri. Apr. 11</strong></u>
+                      <p>Near normal temperatures / Above normal precipitation</p>
                     </div>
                   </div>
                 </div>
@@ -304,47 +345,51 @@
             </div>
             <p><a href="https://www.cpc.ncep.noaa.gov/products/predictions/814day/814temp.new.gif"><img
                   src="https://www.cpc.ncep.noaa.gov/products/predictions/814day/814temp.new.gif"
-                  alt="8-14 Day Temperature Outlook " style="max-width: 100%; width: 300px; height: 231.818px; border-radius: 1px / 0px; border-width: 1px; border-style: solid; margin: 5px;"></a><a
+                  alt="8-14 Day Temperature Outlook " style="width: 300px; height: 231.818px; border-radius: 1px / 0px; border-width: 1px; border-style: solid; margin: 5px;"></a><a
                 href="https://www.cpc.ncep.noaa.gov/products/predictions/814day/814prcp.new.gif"><img
                   src="https://www.cpc.ncep.noaa.gov/products/predictions/814day/814prcp.new.gif"
-                  alt="8-14 Day Precipitation Outlook" style="max-width: 100%; width: 300px; height: 233px; border-width: 1px; border-style: solid; margin: 5px;"></a></p>
+                  alt="8-14 Day Precipitation Outlook" style="width: 300px; height: 233px; border-width: 1px; border-style: solid; margin: 5px;"></a></p>
           </div>
-          <div style="color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: medium; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+          <div>
             <div>
-              <div></div>
+              <div> </div>
               <div>
-                <div style="text-align: left;"></div>
+                <div style="text-align: left;"> </div>
               </div>
             </div>
           </div>
-          <div style="color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: medium; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
-            <hr><strong><br>
-            </strong></div>
-          <u style="color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: medium; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;"><strong>US
-              National Outlooks</strong></u><strong style="color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: medium; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"><br>
-          </strong><strong style="color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: medium; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"><br>
-          </strong>
-          <div style="text-align: left;"><strong>Mar. 14: Multi-Day Severe
-              Weather Outbreak; Extremely Critical Fire Weather Conditions<br>
-            </strong>A multi-day severe weather outbreak is expected in the
-            Mississippi Valley into the Lower Ohio Valley this afternoon into
-            Saturday and through the Central Gulf states on Saturday.
-            Significant tornadoes, widespread damaging winds, and large hail are
-            likely. Strong winds, low relative humidity, and dry fuels will
-            bring extremely critical fire weather conditions to the Southern
-            Plains today.<strong><br>
-            </strong></div>
-          <div style="text-align: left;"><strong><br>
-            </strong></div>
-          <div style="text-align: left;"><strong>Thunderstorm/Severe Weather
-              Outlook for</strong><strong> Mar. 14<br>
-            </strong></div>
-          A regional outbreak of severe storms is likely across the
-          Mid-Mississippi Valley to the Lower-Mississippi Valley, including
-          portions of the Lower Ohio Valley. Tornadoes, several of which could
-          be strong, widespread damaging winds with gusts from 70 to 90 mph, and
-          scattered large hail up to baseball size will be possible.<span style="color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: medium; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;"></span>
-          <div style="text-align: left;"><br>
+          <div>
+            <hr><strong></strong>
+            <div><u><strong><br>
+                </strong></u></div>
+            <div><u><strong>US National Outlooks</strong></u><strong><br>
+              </strong><strong><br>
+              </strong><strong></strong><strong>Mar. 29: Winter Hazards Across
+                the North; Heavy Rainfall Across the Gulf Coast; Severe Weather
+                Outlook<br>
+              </strong>Moisture across the northern Plains, upper Great Lakes
+              into northern New England will likely bring a period of snow,
+              sleet and freezing rain through this weekend. Meanwhile, heavy
+              rainfall continues along the Gulf Coast with areas of flooding.
+              Fire weather conditions continue for the areas of the Plains,
+              southern Appalachians into portions of Florida. Severe
+              thunderstorm potential increasing.<strong><br>
+              </strong>
+              <div style="text-align: left;"><strong><br>
+                </strong></div>
+              <div style="text-align: left;"><strong>Thunderstorm/Severe Weather
+                  Outlook for</strong><strong> Mar. 29<br>
+                </strong></div>
+              Widely scattered severe thunderstorms are possible across parts of
+              the central and southern Great Plains into middle Mississippi
+              Valley today through tonight. This may include an organizing
+              cluster of storms across parts of northern Oklahoma and
+              southeastern Kansas through western Missouri this evening into the
+              overnight hours.</div>
+          </div>
+          <div><strong></strong><strong></strong>
+            <div style="text-align: left;"><br>
+            </div>
           </div>
           <div style="text-align: left;">
             <div style="text-align: center;"><strong>NWS National Forecast Chart</strong></div>
@@ -469,7 +514,7 @@
           </div>
           <div>
             <p><strong>Official <br>
-                Government Information</strong></p>
+                Government Forecasts</strong></p>
             <p><a href="https://www.weather.gov/" title="NWS Caribou (northern and eastern Maine">US
                 National Weather Service<br>
               </a> </p>
