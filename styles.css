@@ -91,8 +91,8 @@ div#tswfooter {
 .container {
   position: relative;
   width: 100%;
-  overflow: auto;
-  padding-top: 56.25%; /* 16:9 Aspect Ratio */
+  overflow: hidden;
+  padding-top: 100%; /* 1:1 Aspect Ratio */
 }
 
 .responsive-iframe {
