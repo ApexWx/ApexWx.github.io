@@ -8,6 +8,61 @@
     <link rel="stylesheet" type="text/css" media="all" href="styles.css">
     <link rel="stylesheet" type="text/css" href="tswnavbar.css">
     <script src="https://cdnres.willyweather.com/widget/warning/loadView.html?id=154210"></script>
+    <style>
+    #weather-widget {
+      font-family: Arial, sans-serif;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 1em;
+      background: transparent;  /* Transparent background for widget */
+      color: #333;
+    }
+
+    .fw-container h2 {
+      font-size: 1.5rem;
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+
+    .fw-forecast {
+      background: transparent;  /* Transparent background for forecast */
+      padding: 1em;
+      border-radius: 8px;
+    }
+
+    .fw-forecast .fw-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin-bottom: 1.5em;
+    }
+
+    .fw-forecast img {
+      width: 48px;
+      height: 48px;
+      flex-shrink: 0;
+    }
+
+    .fw-text {
+      font-size: 1rem;
+    }
+
+    .fw-day {
+      font-weight: bold;  /* Bold day names */
+    }
+
+    @media (max-width: 600px) {
+      .fw-forecast .fw-item {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .fw-forecast img {
+        margin-bottom: 0.5em;
+      }
+    }
+  </style>
   </head>
   <body>
     <div id="tswcontainer">
@@ -191,7 +246,7 @@
                     <div>
                       <div style="text-align: center;"><strong><span style="font-size: 12px;">Forecast
                             updated: </span><span style="font-size: 12px;"><span
-                              style="color: #3333ff;">May 13, 2025 at 8:26 am
+                              style="color: #3333ff;">May 13, 2025 at 8:30 am
                               EDT</span></span><span style="font-size: 12px;"> </span></strong>→
                         <span style="font-size: 12px;">Viewing later? <strong>Check
                             for <a href="https://forecast.weather.gov/MapClick.php?CityName=Fort+Kent&amp;state=ME&amp;site=CAR&amp;textField1=47.2632&amp;textField2=-68.5774&amp;e=1#.UzCiuVf-6Sp">updates</a>.</strong></span></div>
@@ -274,7 +329,7 @@
             low 40s.</div>
           <div><br>
           </div>
-          <div><strong>NWS 7-Day Forecast Summary</strong></div>
+          <div><strong>7-Day Forecast Summary</strong></div>
           <div>
             <div>
               <div>
@@ -284,12 +339,15 @@
                       <div>
                         <div>
                           <div>
-                            <div><br>
+                            <div>
+                              <div id="weather-widget">
+                                <div class="fw-container">
+                                  <div class="fw-forecast" id="forecast">Loading
+                                    forecast...</div>
+                                </div>
+                              </div>
                             </div>
-                            <div class="container"> <iframe class="responsive-iframe"
-                                src="https://forecast.weather.gov/MapClick.php?lat=47.2632&amp;lon=-68.5774&amp;unit=0&amp;lg=english&amp;FcstType=text&amp;TextType=1"></iframe>
-                            </div>
-                            <div> <br>
+                            <div>
                               <div>
                                 <hr><br>
                               </div>
@@ -1120,5 +1178,35 @@
                        //]]>
                        
                   </script>
+    <script>
+    async function fetchForecast() {
+      try {
+        const response = await fetch('https://api.weather.gov/points/47.25,-68.58');
+        const pointData = await response.json();
+        const forecastUrl = pointData.properties.forecast;
+
+        const forecastResponse = await fetch(forecastUrl);
+        const forecastData = await forecastResponse.json();
+
+        const periods = forecastData.properties.periods;
+
+        const forecastHtml = periods.map(p => `
+          <div class="fw-item">
+            <img src="${p.icon}" alt="${p.shortForecast}" />
+            <div class="fw-text">
+              <span class="fw-day">${p.name}:</span> ${p.detailedForecast}
+            </div>
+          </div>
+        `).join('');
+
+        document.getElementById('forecast').innerHTML = forecastHtml;
+      } catch (error) {
+        console.error('Error fetching weather:', error);
+        document.getElementById('forecast').textContent = 'Failed to load forecast.';
+      }
+    }
+
+    fetchForecast();
+  </script>
   </body>
 </html>
