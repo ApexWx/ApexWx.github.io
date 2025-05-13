@@ -8,6 +8,61 @@
     <link rel="stylesheet" type="text/css" media="all" href="styles.css">
     <link rel="stylesheet" type="text/css" href="tswnavbar.css">
     <script src="https://cdnres.willyweather.com/widget/warning/loadView.html?id=126547"></script>
+    <style>
+    #weather-widget {
+      font-family: Arial, sans-serif;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 1em;
+      background: transparent;
+      color: #333;
+    }
+
+    .fw-container h2 {
+      font-size: 1.5rem;
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+
+    .fw-forecast {
+      background: transparent;
+      padding: 1em;
+      border-radius: 8px;
+    }
+
+    .fw-forecast .fw-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin-bottom: 1.5em;
+    }
+
+    .fw-forecast img {
+      width: 48px;
+      height: 48px;
+      flex-shrink: 0;
+    }
+
+    .fw-text {
+      font-size: 1rem;
+    }
+
+    .fw-day {
+      font-weight: bold;
+    }
+
+    @media (max-width: 600px) {
+      .fw-forecast .fw-item {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .fw-forecast img {
+        margin-bottom: 0.5em;
+      }
+    }
+  </style>
   </head>
   <body><br>
     <div id="tswcontainer">
@@ -195,8 +250,7 @@
           due to the deep tropical moisture and how long the rain may last.
           Because of this, there is a chance for flooding this afternoon and
           overnight—especially in south-central Pennsylvania, where 3 or more
-          inches of rain could fall in some areas. A Flood Watch has been issued
-          for parts of that region.<br>
+          inches of rain could fall in some areas.<br>
           <br>
           Most areas will not see very intense rainfall (less than 1 inch per
           hour), however, the rain will be steady and can add up over time,
@@ -241,11 +295,16 @@
                 <br>
                 For Sunday and Monday, there is still some uncertainty about how
                 fast the next weather system will move through. For now, there’s
-                a 30% to 50% chance of more showers both days..</div>
+                a 30% to 50% chance of more showers both days.</div>
               <div><br>
               </div>
-              <div><strong>NWS 7-Day Forecast Summary</strong>
-                <div><br>
+              <div><strong>7-Day Forecast Summary</strong>
+                <div>
+                  <div id="weather-widget">
+                    <div class="fw-container">
+                      <div class="fw-forecast" id="forecast">Loading forecast...</div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -255,9 +314,7 @@
               <div>
                 <div>
                   <div>
-                    <div class="container"> <iframe class="responsive-iframe" src="https://forecast.weather.gov/MapClick.php?lat=40.0383&amp;lon=-76.3013&amp;unit=0&amp;lg=english&amp;FcstType=text&amp;TextType=1"></iframe>
-                    </div>
-                    <div><strong></strong> <br>
+                    <div>
                       <div>
                         <hr><u><strong></strong></u><strong><br>
                         </strong></div>
@@ -1018,5 +1075,35 @@ Ice
                        //]]>
                        
                   </script>
+    <script>
+    async function fetchForecast() {
+      try {
+        const response = await fetch('https://api.weather.gov/points/40.0379,-76.3055');
+        const pointData = await response.json();
+        const forecastUrl = pointData.properties.forecast;
+
+        const forecastResponse = await fetch(forecastUrl);
+        const forecastData = await forecastResponse.json();
+
+        const periods = forecastData.properties.periods;
+
+        const forecastHtml = periods.map(p => `
+          <div class="fw-item">
+            <img src="${p.icon}" alt="${p.shortForecast}" />
+            <div class="fw-text">
+              <span class="fw-day">${p.name}:</span> ${p.detailedForecast}
+            </div>
+          </div>
+        `).join('');
+
+        document.getElementById('forecast').innerHTML = forecastHtml;
+      } catch (error) {
+        console.error('Error fetching weather:', error);
+        document.getElementById('forecast').textContent = 'Failed to load forecast.';
+      }
+    }
+
+    fetchForecast();
+  </script>
   </body>
 </html>
