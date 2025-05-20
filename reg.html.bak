@@ -79,7 +79,7 @@ meter, progress, output {
       <li><a href="#severe">Severe Weather Outlook</a></li>
       <li><a href="#sat">Satellite</a></li>
       <li><a href="#temp">Temperature</a></li>
-      <li><a href="#feel">Feels Like</a></li>
+      <li><a href="#feel">Hazards</a></li>
       <li><a href="#precip">Precipitation</a></li>
       <li><a href="#river">Area Rivers</a></li>
       <li><a href="#coast">Coastal Conditions</a></li>
@@ -149,7 +149,7 @@ meter, progress, output {
       <div class="column">
         <div style="text-align: center;"><strong>NWS Caribou Weather Briefing</strong></div>
         <strong></strong> <strong> </strong> <a href="https://www.weather.gov/images/car/WeatherStory.gif"
-          title="Click for larger image"><img src="https://www.weather.gov/images/car/WeatherStory.gif"
+          title="Click for larger image"><img src="https://www.weather.gov//images/car/WxStory/WeatherStory1.png"
             style="width: 100%; border-width: 1px; border-style: solid;" alt="NWS Caribou Weather Story"></a>
       </div>
     </div>
@@ -381,8 +381,8 @@ meter, progress, output {
               Center Briefing<br>
             </strong></div>
           <a href="https://www.weather.gov/nerfc/briefings" title="Click for larger image"><img
-              src="https://www.weather.gov/images/nerfc/ops/NERFCbriefing.png" alt="NE River Forecast Center Briefing"
-              style="width:100%"></a> </div>
+              src="https://www.weather.gov/images/nerfc/WxStory/WeatherStory1.png"
+              alt="NE River Forecast Center Briefing" style="width:100%"></a> </div>
         <div class="column">
           <div style="text-align: center;"><strong>Saint John River at Fort Kent<br>
             </strong></div>
