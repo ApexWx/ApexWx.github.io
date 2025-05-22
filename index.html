@@ -227,9 +227,11 @@
                     Kent, ME, USA</a> — Sun and Moon Times<a href="https://www.timeanddate.com/moon/phases/@4964627"><span
                       style="color: black;"></span><span style="color: black;"><br>
                     </span></a></div>
-                <div><a href="https://www.timeanddate.com/moon/phases/@4964627"><span
-                      style="color: black;"></span><br>
-                  </a></div>
+                <div><br>
+                  <div id="sunriseSunset" style="text-align: left; font-size: 16px;">Loading
+                    sunrise/sunset...</div>
+                  <br>
+                </div>
                 <div><a href="https://www.timeanddate.com/moon/phases/@4964627">Moon
                     Phase</a>: 🌘 Waning Crescent → 🌑 New Moon @ 11:02 pm EDT
                   Mon. May 26<br>
@@ -1184,5 +1186,54 @@
 
   // Refresh every 3 hours (3 * 60 * 60 * 1000 ms = 10,800,000 ms)
   setInterval(fetchForecast, 10800000);
+</script> <script>
+  async function fetchSunriseSunset() {
+    const lat = 47.2632;  // Fort Kent, ME
+    const lng = -68.5774;
+    const apiURL = `https://api.sunrise-sunset.org/json?lat=${lat}&lng=${lng}&formatted=0`;
+
+    try {
+      const response = await fetch(apiURL);
+      const data = await response.json();
+
+      const sunriseUTC = new Date(data.results.sunrise);
+      const sunsetUTC = new Date(data.results.sunset);
+      const dayLengthSec = data.results.day_length;
+
+      // Convert UTC times to local (Eastern Time)
+      const options = { hour: 'numeric', minute: '2-digit', timeZone: 'America/New_York' };
+      const sunriseLocal = sunriseUTC.toLocaleTimeString('en-US', options);
+      const sunsetLocal = sunsetUTC.toLocaleTimeString('en-US', options);
+
+      // Get EDT/EST abbreviation safely
+      const tzString = new Date().toLocaleTimeString('en-US', {
+        timeZone: 'America/New_York',
+        timeZoneName: 'short'
+      });
+      const tzAbbr = tzString.match(/\b(EDT|EST)\b/)?.[0] || "ET";
+
+      // Format current date
+      const now = new Date();
+      const dateStr = now.toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+
+      // Convert daylight length from seconds to hh:mm
+      const hours = Math.floor(dayLengthSec / 3600);
+      const minutes = Math.floor((dayLengthSec % 3600) / 60);
+      const dayLengthStr = `${hours}h ${minutes}m`;
+
+      document.getElementById("sunriseSunset").innerHTML = `
+        <div><strong>${dateStr}</strong></div>
+        <div><strong>🌅 Sunrise</strong>: ${sunriseLocal} ${tzAbbr} | <strong>🌇 Sunset</strong>: ${sunsetLocal} ${tzAbbr}</div>
+        <div><strong>Day Length</strong>: ${dayLengthStr}</div>
+      `;
+
+    } catch (error) {
+      console.error("Sunrise/Sunset fetch error:", error);
+      document.getElementById("sunriseSunset").innerText = "Unable to load sunrise/sunset.";
+    }
+  }
+
+  fetchSunriseSunset();
+  setInterval(fetchSunriseSunset, 3600000); // Refresh every hour
 </script> </body>
 </html>
