@@ -8,7 +8,44 @@
     <link rel="stylesheet" type="text/css" media="all" href="styles.css">
     <link rel="stylesheet" type="text/css" href="tswnavbar.css">
     <script src="https://cdnres.willyweather.com/widget/warning/loadView.html?id=154210"></script>
-    <style>
+    <script>
+  function getCurrentSeason(date = new Date()) {
+    const month = date.getMonth() + 1;
+    const day = date.getDate();
+
+    if ((month === 12 && day >= 21) || (month <= 2) || (month === 3 && day < 20)) {
+      return "winter";
+    } else if ((month === 3 && day >= 20) || (month >= 4 && month <= 5) || (month === 6 && day < 21)) {
+      return "spring";
+    } else if ((month === 6 && day >= 21) || (month >= 7 && month <= 8) || (month === 9 && day < 22)) {
+      return "summer";
+    } else {
+      return "fall";
+    }
+  }
+
+  function getSeasonEmoji(season) {
+    switch (season) {
+      case "winter": return "🌨️";
+      case "spring": return "🌸";
+      case "summer": return "☀️";
+      case "fall":   return "🍂";
+      default: return "";
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", function() {
+    const season = getCurrentSeason();
+    const emoji = getSeasonEmoji(season);
+    const displayDiv = document.getElementById("season-display");
+
+    if (displayDiv) {
+      const capitalizedSeason = season.charAt(0).toUpperCase() + season.slice(1);
+      displayDiv.textContent = `${emoji} Current season: ${capitalizedSeason}`;
+      displayDiv.classList.add(season); // Adds color class
+    }
+  });
+</script> <style>
     #weather-widget {
       font-family: Arial, sans-serif;
       max-width: 800px;
@@ -62,6 +99,29 @@
         margin-bottom: 0.5em;
       }
     }
+    
+    #season-display {
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 10px;
+  }
+
+  /* Text color for each season */
+  .winter {
+    color: #0277bd; /* Cool blue */
+  }
+
+  .spring {
+    color: #2e7d32; /* Fresh green */
+  }
+
+  .summer {
+    color: #ef6c00; /* Warm orange */
+  }
+
+  .fall {
+    color: #d84315; /* Earthy red-orange */
+  }
   </style>
   </head>
   <body>
@@ -216,13 +276,10 @@
                 <div> <em style="font-size: 12px;">*Annual snowfall measured
                     from July 1 - June 30</em><em style="font-size: 12px;"><br>
                   </em></div>
-                <div><br>
+                <div>
+                  <div id="season-display">Loading season...</div>
+                  <br>
                 </div>
-                <div>Additional Archived Weather Data from Apex Wx is at the
-                  University of Utah's <a href="https://mesowest.utah.edu/cgi-bin/droman/meso_base_dyn.cgi?stn=E0429">MesoWest</a>
-                </div>
-                <div><strong><br>
-                  </strong> </div>
                 <strong> </strong>
                 <div><strong> <em style="font-size: 12px;"></em><a href="https://www.timeanddate.com/astronomy/@4964627">Fort
                       Kent, ME, USA</a> — Sun and Moon Times</strong><a href="https://www.timeanddate.com/moon/phases/@4964627"><strong><span
@@ -234,13 +291,8 @@
                   <br>
                 </div>
                 <div><a href="https://www.timeanddate.com/moon/phases/@4964627">Moon
-                    Phase</a>: 🌒 Waxing Crescent → 🌓 First Quarter Mon. 2 June
-                  @ 11:45 pm</div>
-                <div><br>
-                </div>
-                <div><strong>↑Moonrise</strong>: 7:51 AM today |&nbsp;<strong>↓Moonset</strong>:
-                  12:17 am tomorrow <a href="https://www.timeanddate.com/moon/phases/@4964627">
-                  </a></div>
+                    Phase</a><strong>: </strong>🌒 Waxing Crescent → 🌓 First
+                  Quarter Mon. 2 June @ 11:45 pm</div>
                 <div><br>
                 </div>
                 <div>
@@ -576,16 +628,20 @@
                 official watches, warnings, and advisories for northern Maine.<br>
               </span></div>
             <div style="text-align: left;"><span style="font-size: 12px;"><br>
-                Forecast updates are usually posted between 7 - 9 am M-F &amp; 8
-                -10 am weekends and holidays.<br>
+                Forecast updates are typically posted between 7 - 9 am M-F &amp;
+                8 -10 am weekends and holidays.<br>
               </span></div>
             <div style="text-align: left;"><span style="font-size: 12px;"><br>
               </span></div>
             <div style="text-align: left;"><span style="font-size: 12px;"></span>
               Sun/Moon data from <a href="https://www.timeanddate.com/">timeanddate.com</a>.<br>
               <br>
-              NOAA Warning Banner provided by <a href="https://www.willyweather.com/">WillyWeather.com</a>.<br>
-              <br>
+              NOAA Warning Banner provided by <a href="https://www.willyweather.com/">WillyWeather.com</a>.</div>
+            <div style="text-align: left;"><br>
+            </div>
+            <div style="text-align: left;">Additional Archived Weather Data from
+              Apex Wx is at the University of Utah's <a href="https://mesowest.utah.edu/cgi-bin/droman/meso_base_dyn.cgi?stn=E0429">MesoWest</a></div>
+            <div style="text-align: left;"> <br>
               Apex Wx logo by Joanna Becker ©2016 (Visit <a href="https://www.bushiandbrush.com/">Bushi
                 and Brush Arts Dojo</a>)</div>
             <div style="text-align: left;"><br>
