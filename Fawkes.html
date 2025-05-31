@@ -8,7 +8,44 @@
     <link rel="stylesheet" type="text/css" media="all" href="styles.css">
     <link rel="stylesheet" type="text/css" href="tswnavbar.css">
     <script src="https://cdnres.willyweather.com/widget/warning/loadView.html?id=126547"></script>
-    <style>
+    <script>
+  function getCurrentSeason(date = new Date()) {
+    const month = date.getMonth() + 1;
+    const day = date.getDate();
+
+    if ((month === 12 && day >= 21) || (month <= 2) || (month === 3 && day < 20)) {
+      return "winter";
+    } else if ((month === 3 && day >= 20) || (month >= 4 && month <= 5) || (month === 6 && day < 21)) {
+      return "spring";
+    } else if ((month === 6 && day >= 21) || (month >= 7 && month <= 8) || (month === 9 && day < 22)) {
+      return "summer";
+    } else {
+      return "fall";
+    }
+  }
+
+  function getSeasonEmoji(season) {
+    switch (season) {
+      case "winter": return "🌨️";
+      case "spring": return "🌸";
+      case "summer": return "☀️";
+      case "fall":   return "🍂";
+      default: return "";
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", function() {
+    const season = getCurrentSeason();
+    const emoji = getSeasonEmoji(season);
+    const displayDiv = document.getElementById("season-display");
+
+    if (displayDiv) {
+      const capitalizedSeason = season.charAt(0).toUpperCase() + season.slice(1);
+      displayDiv.textContent = `${emoji} Current season: ${capitalizedSeason}`;
+      displayDiv.classList.add(season); // Adds color class
+    }
+  });
+</script> <style>
     #weather-widget {
       font-family: Arial, sans-serif;
       max-width: 800px;
@@ -62,6 +99,28 @@
         margin-bottom: 0.5em;
       }
     }
+    #season-display {
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 10px;
+  }
+
+  /* Text color for each season */
+  .winter {
+    color: #0277bd; /* Cool blue */
+  }
+
+  .spring {
+    color: #2e7d32; /* Fresh green */
+  }
+
+  .summer {
+    color: #ef6c00; /* Warm orange */
+  }
+
+  .fall {
+    color: #d84315; /* Earthy red-orange */
+  }
   </style>
   </head>
   <body>|<br>
@@ -139,12 +198,12 @@
               <div>
                 <div>
                   <div>
-                    <div><b>High</b>: 74° @ 6:27 pm |&nbsp; <b>Low</b>: 53° @
-                      12:15 am<br>
-                      <strong>Rain</strong>:&nbsp; 0.02" |<strong> Snow</strong>:
+                    <div><b>High</b>: 80° @ 2:59 pm |&nbsp; <b>Low</b>: 60° @
+                      11:58 pm<br>
+                      <strong>Rain</strong>:&nbsp; 0.43" |<strong> Snow</strong>:
                       0.0"</div>
                     <div><b>Daily Wind: </b>SE @&nbsp; 1 mph&nbsp; |&nbsp; <strong><u>Max.
-                          Gust</u>:</strong> 6 mph @ 12;19 am<br>
+                          Gust</u>:</strong> 13 mph @ 6:53 pm<br>
                       <em style="font-size: 12px;"><em style="font-size: 12px;">Source:
                           College Park personal weather station</em></em></div>
                     <div><em style="font-size: 12px;"><em style="font-size: 12px;"><br>
@@ -154,32 +213,38 @@
               </div>
               <strong><u>Friday, May 30<br>
                 </u></strong></div>
-            <div style="width: 810px;"><strong>Normal High: </strong>78° |<strong>&nbsp;
-Record
-                High</strong>: 93° (2013)<br>
-              <strong> Normal Low:&nbsp; </strong>55° |&nbsp; <strong>Record
-                Low:&nbsp; </strong>37° (1949)<br>
-              <strong>Norm. Daily Precipitation: </strong>0.12"&nbsp; |<strong>&nbsp;
-                Norm. Daily Snowfall:</strong> 0.0"</div>
+            <div style="width: 810px;"><strong>Norm. High: </strong>78° |<strong>&nbsp;
+                Record</strong>: 95° (2022)<br>
+              <strong> Norm. Low:&nbsp; </strong>55° |&nbsp; <strong>Record: </strong>40°
+              (1996)<br>
+              <strong>Norm. Daily Precipitation: </strong>0.12" | <strong>Record</strong>:
+              1.80" (2010)</div>
+            <div style="width: 810px;"><strong>Norm. Daily Snowfall:</strong>
+              0.0" | <strong>Record</strong>: 0.0"</div>
             <div style="width: 810px;"><em style="font-size: 12px;">Source: </em><em
                 style="font-size: 12px;"><em style="font-size: 12px;"><a href="https://scacis.rcc-acis.org/">NOAA
-                    SC-ACIS</a> </em><br>
+                    SC-ACIS</a> </em>NWS State College climate data collected
+                since 1948/49<br>
               </em></div>
             <div style="width: 810px;"><br>
             </div>
             <div style="width: 810px;"><u><strong>Precipitation 2025</strong></u><br>
               <strong></strong></div>
             <div style="width: 810px;"><strong>Rain</strong><strong>:</strong>
-              18.19"&nbsp; |&nbsp; <u>avg</u>. 16.10" (+ 2.09")<span style="color: #009900;"></span><br>
-              <strong>Snow</strong>*<strong>: </strong>16.0"&nbsp; |&nbsp; <u>avg</u>.&nbsp;
+              18.22"&nbsp; |&nbsp; <u>avg</u>. 16.22" (+ 2.00")<span style="color: #009900;"></span><br>
+              <strong>Snow</strong><strong>: </strong>16.0"&nbsp; |&nbsp; <u>avg</u>.&nbsp;
               21.4"&nbsp; <span style="color: red;">(-5.4")</span><br>
               <span style="color: red;"></span><span style="color: red;"></span></div>
-            <div> <em style="font-size: 12px;">*Annual snowfall measured from
+            <div> <em style="font-size: 12px;">Annual snowfall measured from
                 July 1 - June 30</em><em style="font-size: 12px;"><br>
               </em></div>
-            <div><br>
+            <div>
+              <div id="season-display" style="text-align: left;">Loading
+                season...</div>
             </div>
-            <div> <strong><em style="font-size: 12px;"></em><a href="https://www.timeanddate.com/astronomy/usa/lancaster-pa">Lancaster,
+            <div style="text-align: center;"><strong><a href="https://www.timeanddate.com/astronomy/usa/lancaster-pa"><br>
+                </a></strong></div>
+            <div style="text-align: left;"><strong><a href="https://www.timeanddate.com/astronomy/usa/lancaster-pa">Lancaster,
                   Pennsylvania, USA</a> — Sun and Moon Times</strong></div>
             <div><br>
             </div>
@@ -192,31 +257,25 @@ Record
                 Phase</a>: 🌒 Waxing Crescent → 🌓 First Quarter Mon. 2 June @
               11:45 pm</div>
             <div><br>
-              <strong>Moonrise</strong>: 8:54 am today | <strong>Moonset</strong>:
-              12:23 am tomorrow <br>
+              <strong>Moonrise</strong>: 10:06 am today | <strong>Moonset</strong>:
+              12:55 am tomorrow <br>
               <a href="https://www.timeanddate.com/moon/phases/@4964627"> </a>
             </div>
             <div><br>
             </div>
             <div>
               <div>
-                <hr style="margin-left: 0px; margin-right: auto;"><u><strong><span
-                      style="font-variant: small-caps;"><br>
-                    </span></strong></u>
-                <div style="text-align: center;"><strong><span style="font-variant: small-caps;">
-                      The Week Ahead for Lancaster &amp; the Lower Susquehanna
-                      Valley</span></strong><br>
-                  <u> <strong><span style="font-variant: small-caps;"></span></strong>
+                <hr style="margin-left: 0px; margin-right: auto;">
+                <div style="text-align: center;"><u><strong><span style="font-variant: small-caps;"></span></strong></u><strong><span
+                      style="font-variant: small-caps;">The Week Ahead for
+                      Lancaster &amp; the Lower Susquehanna Valley</span></strong></div>
+                <u><strong><span style="font-variant: small-caps;"></span></strong></u>
+                <div style="text-align: center;"> <u> <strong><span style="font-variant: small-caps;"></span></strong>
                   </u></div>
                 <div>
                   <div style="text-align: center;"><u> </u></div>
-                  <div style="text-align: center;"><strong><span style="font-size: 12px;">Forecast
-                        updated:</span></strong><strong><span style="font-size: 12px;"><span
-                          style="color: #3333ff;"> May 29, 2025</span></span></strong><strong><span
-                        style="font-size: 12px;"><span style="color: #3333ff;">
-                          at 10:11 am EDT</span></span></strong><span style="font-size: 12px;"><strong></strong></span></div>
-                  <div style="text-align: left;"><span style="font-size: 12px;"><strong><br>
-                      </strong></span></div>
+                  <div style="text-align: center;"><br>
+                  </div>
                   <div style="text-align: left;">
                     <div style="text-align: center;"><span style="font-size: 12px;"><strong>
                         </strong></span><strong>⚠️ <a href="https://forecast.weather.gov/product.php?site=NWS&amp;issuedby=CTP&amp;product=HWO">Current
@@ -224,8 +283,11 @@ Record
                       ⚠️</div>
                     <u><strong><br>
                       </strong></u></div>
-                  <div style="text-align: left;"><u><strong>3-Day Outlook: Fri.
-                        May 30 - Sun</strong></u><u><strong>. June 1</strong></u>
+                  <div style="text-align: left;"><u><strong>7-Day Outlook: Sat.
+                        May 31 - </strong></u><u><strong>Fri. June 6</strong></u>
+                    <div style="text-align: left;"><strong><span style="font-size: 12px;">Updated:
+                          </span><span style="font-size: 12px;"><span style="color: #3333ff;">May
+                            31, 2025 at 10:00 am EDT</span></span></strong></div>
                     <div style="text-align: left;"><u><strong></strong></u><strong></strong><u><strong></strong></u>
                       <u><strong></strong></u><u><strong></strong></u><u><strong></strong></u><u><strong></strong></u><u><strong></strong></u></div>
                   </div>
@@ -236,53 +298,50 @@ Record
             </div>
           </div>
           <div>
-            <div>
-              <div>An unsettled pattern will remain across the Middle Atlantic
-                region for today and Saturday as a stalled front persists across
-                the area. A strong low pressure system advances along the front
-                tonight and early Saturday, bringing greater chances for showers
-                and thunderstorms. High pressure will build in beginning Sunday
-                and allow for mostly fair weather into next week.</div>
-              <div><br>
-                A major concern is the heavy rainfall that is probable from late
-                this evening through late tonight. Periods of rainfall rates of
-                1-2" per hour are possible with total rainfall between 1 and 3
-                inches.</div>
-              <div><br>
-              </div>
-              <div>A cold front moving in on Saturday, combined with upper-level
-                energy and cooler air overhead, is likely to bring scattered
-                showers and a few isolated thunderstorms. There is even a slight
-                chance of strong winds in far southeastern Pennsylvania,
-                according to the Storm Prediction Center.<br>
-                <br>
-                Expect a noticeably cooler and breezy Saturday, with high
-                temperatures running 10 to 15 degrees below normal for the end
-                of May. Saturday night into Sunday morning, cloud cover is
-                likely, and it will feel quite chilly, with morning temperatures
-                in the 35 to 45 degree range. It will be a cool start to June.<br>
-                <br>
-                The upper-level system may depart more slowly than originally
-                expected. Some forecast models suggest a few lingering showers
-                into early next week. However, the overall trend still appears
-                drier than Friday night and Saturday. </div>
+            <div>A low-pressure system has moved northeast, taking most of the
+              rain that was over eastern Pennsylvania out of the area. A cold
+              front will start moving into western Pennsylvania early this
+              morning, bringing more showers across much of central Pennsylvania
+              throughout the day.<br>
+              <br>
+              This morning, the atmosphere will be fairly stable, meaning
+              there's little chance for strong storms at first. However, some
+              sunshine in south-central and southeastern Pennsylvania could lead
+              to brief afternoon storm development. Forecasts suggest there’s a
+              small chance of a few stronger storms in areas southeast of the
+              I-81 corridor later today.<br>
+              <br>
+              Behind the low-pressure system, it will be breezy for much of the
+              day. As the cold front moves through, some areas could also see
+              stronger wind gusts from late morning into the evening.</div>
+            <div><br>
             </div>
           </div>
           <div>
-            <div>
-              <p><u><strong>4-7 Day Outlook: Mon. June 2 - Thu. June </strong></u></p>
-              High pressure building over the southeastern United States early
-              next week will bring temperatures closer to what is normal for
-              early June. At times, temperatures could even run slightly above
-              average over the next week or two.<br>
+            <div>Cooler, drier air will move in behind the cold front, bringing
+              below-normal temperatures from Saturday night into Sunday
+              morning—an unseasonably cool start to June. The cool weather will
+              continue Sunday night into Monday, but temperatures will gradually
+              warm up through Tuesday, getting closer to what's typical for this
+              time of year.<br>
               <br>
-              From Sunday through Wednesday, the weather looks mostly dry. The
-              next chance for rain comes on Thursday, when a cold front may move
-              through and bring some showers and possibly a thunderstorm. This
-              is the time of year when cold fronts can slow down or stall over
-              parts of southeastern Pennsylvania, especially if winds high in
-              the atmosphere shift northward. This pattern is more likely if a
-              system in the upper atmosphere remains in place to the south.</div>
+              Any leftover showers or thunderstorms early in the period will
+              slowly move out to the east. By Monday morning, the weather should
+              turn dry, with clear and calm conditions expected to continue as
+              high pressure settles into the region.</div>
+            <div><br>
+            </div>
+            <div>Dry weather is expected to continue on Wednesday, thanks to a
+              high-pressure system keeping moisture away from the area.
+              Temperatures should warm up, with highs reaching the 80s on both
+              Wednesday and Thursday. Some cities might even hit 90°F Wednesday
+              afternoon.<br>
+              <br>
+              A cold front may move in on Thursday, bringing a chance of showers
+              and possibly a thunderstorm or two. After that, winds high in the
+              atmosphere will continue bringing moisture into the region from
+              the southwest, likely leading to more unsettled, humid conditions
+              heading into the weekend with showers and thunderstorms possible.</div>
             <div><br>
             </div>
             <div>
@@ -297,8 +356,8 @@ Record
               </div>
             </div>
           </div>
-          <div> <strong> <u><u>8-14 Day Climate Trends: Fri. June 6 - Thu.
-                  June 12</u></u></strong></div>
+          <div> <strong> <u><u>8-14 Day Climate Trends: Sat. June 7 - Fri.
+                  June 13</u></u></strong></div>
           <u><em><span style="font-size: 12px;"></span></em><strong> </strong></u><em
             style="font-size: 12px;"></em>
           <div>
@@ -336,36 +395,29 @@ Record
                   <div style="text-align: left;">
                     <div><br>
                     </div>
-                    <div><strong>May 30: Severe Thunderstorms and Possible
-                        Flooding in the East; Extreme Heat in the West.<br>
-                      </strong>Scattered severe storms with wind damage, large
-                      hail, and a few tornadoes will be possible this afternoon
-                      and evening across much of the Mid Atlantic and Southeast.
-                      Heavy rain may cause instances of flash flooding from
-                      eastern Kentucky to southern New York. Out west, dangerous
-                      heat will develop through Saturday, with record-breaking
-                      temperatures expected.</div>
+                    <strong>May 31: Severe Thunderstorms Possible in the South
+                      Central U.S.; Wildfire Smoke Impacts in the North Central
+                      U.S.<br>
+                    </strong>Scattered severe thunderstorms may bring large hail
+                    and isolated damaging winds this weekend over parts of the
+                    south central U.S. Smoke from Canadian wildfires will bring
+                    air quality issues to parts of the north central U.S. this
+                    weekend. Air Quality Alerts have been issued.
                     <div><br>
                     </div>
                     <div> </div>
                     <div><strong></strong>
                       <div><strong>Thunderstorm/Severe Weather Outlook</strong><strong>
-                          Thu. May 29<br>
-                        </strong>Large to very large hail, severe winds, and a
-                        couple of tornadoes will be a concern with thunderstorms
-                        this afternoon and evening from the Texas-New Mexico
-                        border eastward into central Texas. Thunderstorms
-                        producing scattered damaging winds are possible later
-                        today across parts of the Southeast. An isolated severe
-                        threat may develop this afternoon across the Ozarks and
-                        Mid-South vicinity.</div>
+                          May 31<br>
+                        </strong>Large hail and severe outflow gusts will be
+                        possible this afternoon into tonight from southern
+                        Kansas across central Oklahoma to the Red River.<strong><br>
+                        </strong></div>
                       <div><br>
                       </div>
                       <div><strong>National High and Low Temperature</strong><strong>
-                          Thu.</strong><strong> May 29</strong></div>
+                          Fri.</strong><strong> May 30</strong></div>
                     </div>
-                  </div>
-                  <div>
                     <div>
                       <div>
                         <div>
@@ -377,24 +429,28 @@ Record
                                     <div>
                                       <div>
                                         <div>
-                                          <div style="text-align: left;">
-                                            <div>
-                                              <div style="font-size: 12px;"><em>Source:
-                                                  <a href="https://www.wpc.ncep.noaa.gov/discussions/hpcdiscussions.php?disc=nathilo&amp;version=0&amp;fmt=reg">Weather
-                                                    Predication Center</a> |
-                                                  excluding Alaska and Hawai'i</em></div>
-                                              <div style="text-indent: 30px;"><u><strong></strong></u></div>
-                                              <div><br>
+                                          <div>
+                                            <div style="text-align: left;">
+                                              <div>
+                                                <div style="font-size: 12px;"><em>Source:
+                                                    <a href="https://www.wpc.ncep.noaa.gov/discussions/hpcdiscussions.php?disc=nathilo&amp;version=0&amp;fmt=reg">Weather
+                                                      Predication Center</a> |
+                                                    excluding Alaska and Hawai'i</em></div>
+                                                <div style="text-indent: 30px;"><u><strong></strong></u></div>
+                                                <div><br>
+                                                </div>
+                                                <div style="text-indent: 30px;"><u><strong>High</strong></u></div>
+                                                <div style="text-indent: 30px;"><u><strong></strong></u>116°
+                                                  at Death Valley, CA</div>
+                                                <div style="text-indent: 30px;">116°
+                                                  at Stovepipe Wells, CA</div>
+                                                <div style="text-indent: 30px;"><br>
+                                                </div>
+                                                <div style="text-indent: 30px;"><u><strong>Low</strong></u></div>
+                                                <div style="text-indent: 30px;">28°
+                                                  at 14 miles west-southwest of
+                                                  Mackay, ID</div>
                                               </div>
-                                              <div style="text-indent: 30px;"><u><strong>High</strong></u></div>
-                                              <div style="text-indent: 30px;"><u><strong></strong></u>112°
-                                                at Death Valley, CA</div>
-                                              <div style="text-indent: 30px;"><br>
-                                              </div>
-                                              <div style="text-indent: 30px;"><u><strong>Low</strong></u></div>
-                                              <div style="text-indent: 30px;">30°
-                                                at 32 miles west southwest of
-                                                Bynum, MT</div>
                                             </div>
                                           </div>
                                         </div>
@@ -452,7 +508,8 @@ Record
                 <div><span style="font-size: 14px;"><strong><br>
                     </strong></span>
                   <div><span style="font-size: 14px;"><strong style="font-size: 16px;">Today's
-                        SPC National Thunderstorm / Severe Weather Outlook</strong></span></div>
+Storm
+                        Predication Center Thunderstorm / Severe Weather Outlook</strong></span></div>
                   <div><a href="https://www.spc.noaa.gov/products/outlook/day1otlk.html"><img
                         src="https://www.spc.noaa.gov/partners/outlooks/state/swody1.png?1678542573998"
                         alt="Current Day One Severe Weather Outlook" style="height: 356.25px; width: 570px;"></a></div>
@@ -1182,11 +1239,14 @@ Ice
       const minutes = Math.floor((dayLengthSec % 3600) / 60);
       const dayLengthStr = `${hours}h ${minutes}m`;
 
-      document.getElementById("sunriseSunset").innerHTML = `
-        <div><strong>${dateStr}</strong></div>
-        <div><strong>🌅 Sunrise</strong>: ${sunriseLocal} ${tzAbbr} | <strong>🌇 Sunset</strong>: ${sunsetLocal} ${tzAbbr}</div>
-        <div><strong>Day Length</strong>: ${dayLengthStr}</div>
-      `;
+          document.getElementById("sunriseSunset").innerHTML = `
+  
+  <div>
+    <strong>🌅 Sunrise</strong>: ${sunriseLocal} ${tzAbbr} |
+    <strong>🌇 Sunset</strong>: ${sunsetLocal} ${tzAbbr} |
+    <strong>Day Length</strong>: ${dayLengthStr}
+  </div>
+`;
 
     } catch (error) {
       console.error("Sunrise/Sunset fetch error:", error);
