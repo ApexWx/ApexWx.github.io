@@ -45,7 +45,161 @@
       displayDiv.classList.add(season); // Adds color class
     }
   });
+</script> <script>
+  async function fetchNWSAlerts() {
+    const zone = "PAZ066"; // Lancaster County, PA
+    const apiURL = `https://api.weather.gov/alerts/active/zone/${zone}`;
+
+    try {
+      const response = await fetch(apiURL);
+      const data = await response.json();
+      const alertDiv = document.getElementById("weatherAlert");
+
+      if (data.features.length > 0) {
+        const alert = data.features[0].properties;
+        const alertId = data.features[0].id;
+        const storedDismissedId = localStorage.getItem("dismissedAlertId");
+
+        if (alertId !== storedDismissedId) {
+          const title = alert.headline;
+          const description = alert.description;
+          const severity = alert.severity.toLowerCase();
+          const link = alert.uri;
+          const updated = new Date(alert.sent).toLocaleString('en-US', {
+            dateStyle: 'medium',
+            timeStyle: 'short',
+            timeZone: 'America/New_York'
+          });
+
+          const severityClass = {
+            minor: "alert-minor",
+            moderate: "alert-moderate",
+            severe: "alert-severe",
+            extreme: "alert-extreme"
+          }[severity] || "alert-moderate";
+
+          alertDiv.innerHTML = `
+            <div class="alert-box ${severityClass}" data-alert-id="${alertId}">
+              <button class="alert-close" onclick="dismissAlert('${alertId}')" aria-label="Dismiss alert">&times;</button>
+              <strong>⚠️ Weather Alert (${alert.severity}):</strong>
+              <strong>${title}</strong>
+              <div>${description}</div>
+              <div style="margin-top: 8px;">
+                <a href="${link}" target="_blank" rel="noopener">View full alert from NWS</a>
+              </div>
+              <div style="margin-top: 6px; font-size: 0.9em; color: #555;">
+                Last updated: ${updated}
+              </div>
+            </div>
+          `;
+        } else {
+          alertDiv.innerHTML = ""; // Alert dismissed by user
+        }
+      } else {
+        alertDiv.innerHTML = ""; // No active alerts
+      }
+    } catch (error) {
+      console.error("NWS Alert fetch error:", error);
+      document.getElementById("weatherAlert").innerText = "Unable to load weather alerts.";
+    }
+  }
+
+  function dismissAlert(alertId) {
+    localStorage.setItem("dismissedAlertId", alertId);
+    const alertBox = document.querySelector(`[data-alert-id="${alertId}"]`);
+    if (alertBox) {
+      alertBox.style.display = 'none';
+    }
+  }
+
+  fetchNWSAlerts();
+  setInterval(fetchNWSAlerts, 15 * 60 * 1000); // Refresh every 15 minutes
 </script> <style>
+       .alert-container {
+    margin-top: 1em;
+    font-family: sans-serif;
+  }
+
+  .alert-box {
+    border-left: 5px solid;
+    padding: 12px 15px;
+    border-radius: 4px;
+    font-size: 1rem;
+    line-height: 1.4;
+    background-color: #f9f9f9;
+    position: relative;
+  }
+
+  .alert-minor {
+    border-color: #ffcc00;
+    background-color: #fff8e1;
+  }
+
+  .alert-moderate {
+    border-color: #ffa726;
+    background-color: #fff3e0;
+  }
+
+  .alert-severe {
+    border-color: #ef5350;
+    background-color: #fdecea;
+  }
+
+  .alert-extreme {
+    border-color: #b71c1c;
+    background-color: #fce4e4;
+  }
+
+  .alert-box strong {
+    display: block;
+    margin-bottom: 5px;
+  }
+
+  .alert-box a {
+    color: #0056b3;
+    text-decoration: underline;
+  }
+
+  .alert-close {
+    background: transparent;
+    border: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #444;
+    float: right;
+    cursor: pointer;
+    margin: -5px -8px 5px 8px;
+  }
+
+  .alert-close:hover {
+    color: #000;
+  }
+
+  @media (max-width: 600px) {
+    .alert-box {
+      font-size: 0.95rem;
+      padding: 10px 12px;
+    }
+  }
+    .sun-info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;  /* smaller space between items */
+    font-size: 1rem;
+    align-items: left;
+  }
+
+  .sun-info > div {
+    flex: 0 0 auto;
+    white-space: nowrap;
+  }
+
+  @media (max-width: 600px) {
+    .sun-info {
+      flex-direction: column;
+      gap: 2px;
+    }
+  }
     #weather-widget {
       font-family: Arial, sans-serif;
       max-width: 800px;
@@ -141,6 +295,8 @@
                 <h2 style="color: black; font-family: sans-serif; font-weight: 400; line-height: 1.4; margin: 0px 0px 30px; text-align: center;"><strong>Lancaster
                     &amp; the </strong><strong>Lower Susquehanna Valley, PA<br>
                     Weather Information</strong></h2>
+                <div id="weatherAlert" class="alert-container"></div>
+                <br>
                 <a href="https://en.wikipedia.org/wiki/Pennsylvania"><img src="https://apexwx.github.io/pa.png"
                     alt="Pennsylvania State Flag" style="width: 144px; height: 108px;"></a></div>
               <div><span style="font-size: 12px;">Weather information for
@@ -346,7 +502,8 @@
             <div><br>
             </div>
             <div>
-              <div><strong>7-Day Forecast Summary</strong>
+              <div><strong>7-Day Forecast Summary</strong></div>
+              <div><i><span style="font-size: 12px;">Updates 24/7 </span></i><br>
                 <div>
                   <div id="weather-widget">
                     <div class="fw-container">
@@ -1240,15 +1397,14 @@ Ice
       const minutes = Math.floor((dayLengthSec % 3600) / 60);
       const dayLengthStr = `${hours}h ${minutes}m`;
 
-          document.getElementById("sunriseSunset").innerHTML = `
-  
-  <div>
-    <strong>🌅 Sunrise</strong>: ${sunriseLocal} ${tzAbbr} |
-    <strong>🌇 Sunset</strong>: ${sunsetLocal} ${tzAbbr} |
-    <strong>Day Length</strong>: ${dayLengthStr}
+     document.getElementById("sunriseSunset").innerHTML = `
+  <div><strong>${dateStr}</strong></div>
+  <div class="sun-info">
+    <div>🌅 <strong>Sunrise</strong>: ${sunriseLocal} ${tzAbbr} |</div>
+    <div>🌇 <strong>Sunset</strong>: ${sunsetLocal} ${tzAbbr} |</div>
+    <div><strong>Day Length</strong>: ${dayLengthStr}</div>
   </div>
 `;
-
     } catch (error) {
       console.error("Sunrise/Sunset fetch error:", error);
       document.getElementById("sunriseSunset").innerText = "Unable to load sunrise/sunset.";
