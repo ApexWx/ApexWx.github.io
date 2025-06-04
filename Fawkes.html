@@ -276,8 +276,39 @@
   .fall {
     color: #d84315; /* Earthy red-orange */
   }
-  </style>
-  </head>
+  
+/* Responsive fixes */
+div[style*="width: 810px"],
+div[style*="width: 830px"],
+div[style*="width: 800px"] {
+  max-width: 100%;
+  width: 100% !important;
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+@media (max-width: 768px) {
+  #tswothersidecol, #tswsidecol {
+    float: none !important;
+    width: 100% !important;
+    display: block;
+  }
+}
+
+iframe {
+  max-width: 100%;
+}
+
+div, span, p {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+</style> </head>
   <body>
     <div id="tswcontainer">
       <div><!-- start of header section: insert your logo, etc, here --> <br class="Apple-interchange-newline">
