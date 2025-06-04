@@ -63,8 +63,9 @@
         if (alertId !== storedDismissedId) {
           const title = alert.headline;
           const description = alert.description;
-          const severity = alert.severity.toLowerCase();
-          const link = alert.uri;
+          const severityRaw = alert.severity || "Unknown";
+          const severity = severityRaw.toLowerCase();
+          const link = alert.url || "https://www.weather.gov/ctp/";
           const updated = new Date(alert.sent).toLocaleString('en-US', {
             dateStyle: 'medium',
             timeStyle: 'short',
@@ -81,7 +82,7 @@
           alertDiv.innerHTML = `
             <div class="alert-box ${severityClass}" data-alert-id="${alertId}">
               <button class="alert-close" onclick="dismissAlert('${alertId}')" aria-label="Dismiss alert">&times;</button>
-              <strong>⚠️ Weather Alert (${alert.severity}):</strong>
+              <strong>⚠️ Weather Alert (${severityRaw === "Unknown" ? "Severity Unknown" : severityRaw}):</strong>
               <strong>${title}</strong>
               <div>${description}</div>
               <div style="margin-top: 8px;">
@@ -282,7 +283,6 @@
       <div><!-- start of header section: insert your logo, etc, here --> <br class="Apple-interchange-newline">
         <p style="text-align: center;"><img src="https://raw.githubusercontent.com/ApexWx/ApexWx.github.io/master/Apex%20banner.jpg"
             alt="Apex Wx Banner" style="border: medium none; max-width: 100%;"></p>
-        <p>&nbsp;</p>
         <!-- end of header section: insert your logo, etc, above this line --></div>
       <div id="tswcentrecombo">
         <div id="tswcontent" style="font-size: 16px;">
@@ -526,7 +526,7 @@
             <div>
               <div>
                 <div><strong>7-Day Forecast Summary</strong></div>
-                <div><i><span style="font-size: 12px;">Updates 24/7 </span></i><br>
+                <div><i><span style="font-size: 12px;">Automatic updates</span></i><br>
                   <div>
                     <div id="weather-widget">
                       <div class="fw-container">
@@ -666,37 +666,26 @@
               <div style="text-align: left;"> </div>
               <div><strong style="font-size: 16px;"><br>
                 </strong></div>
-              <div><strong style="font-size: 16px;"><br>
-                  Today's National Forecast Chart</strong></div>
+              <div><strong><br>
+                </strong></div>
+              <div><strong>Today's National Forecast Chart &amp; Severe Weather
+                  / Thunderstorm Outlook</strong>
+                <div style="text-align: left;"><strong></strong><strong style="font-size: 16px;"></strong><br>
+                  <strong style="font-size: 16px;"> </strong></div>
+                <div><a href="https://www.wpc.ncep.noaa.gov/NationalForecastChart/map.php"
+                    title="Click for larger interactive image"><img src="https://www.wpc.ncep.noaa.gov/NationalForecastChart/staticmaps/noaad1.png"
+                      alt="Today's National Forecast Chart" style="font-size: 16px; width: 300px; height: 226.019px;"></a>&nbsp;&nbsp;&nbsp;
+                  &nbsp;&nbsp; &nbsp;&nbsp; <a href="https://www.spc.noaa.gov/partners/outlooks/state/swody1.png?1678542573998"
+                    title="Click for larger image"><img src="https://www.spc.noaa.gov/partners/outlooks/state/swody1.png?1678542573998"
+                      alt="Today's Severe Weather / Thunderstorm Oultook" style="width: 300px; height: 226.019px;"></a></div>
+                <div><em><span style="font-size: 12px;">Learn more about <a href="https://www.spc.noaa.gov/new/images/SPC_outlook_final_updated.png"
+                        title="Click for more information">Severe Thunderstorm
+                        Outlooks</a></span></em></div>
+                <span style="font-size: 12px;"><br>
+                </span> </div>
             </div>
             <div style="text-align: left;">
-              <div style="text-align: left;"><a href="https://www.wpc.ncep.noaa.gov/NationalForecastChart/map.php"><img
-                    src="https://www.wpc.ncep.noaa.gov/NationalForecastChart/staticmaps/noaad1.png"
-                    alt="National Forecast Chart" style="width: 570px; height: 412px; border-width: 1px; border-style: solid;"
-                    title="Click for more information / larger chart"></a></div>
-            </div>
-            <div style="text-align: left;">
-              <div>
-                <div><strong><br>
-                  </strong></div>
-              </div>
-              <div>
-                <div><strong></strong><strong> </strong></div>
-                <div><span style="font-size: 14px;"><strong><br>
-                    </strong></span>
-                  <div><span style="font-size: 14px;"><strong style="font-size: 16px;">Today's
-Storm
-                        Predication Center Thunderstorm / Severe Weather Outlook</strong></span></div>
-                  <div><a href="https://www.spc.noaa.gov/products/outlook/day1otlk.html"><img
-                        src="https://www.spc.noaa.gov/partners/outlooks/state/swody1.png?1678542573998"
-                        alt="Current Day One Severe Weather Outlook" style="height: 356.25px; width: 570px;"></a></div>
-                </div>
-                <div> <span style="font-size: 12px;">Learn more about <a href="https://www.spc.noaa.gov/new/images/SPC_outlook_final_updated.png"
-                      title="Click for more information">Severe Thunderstorm
-                      Outlooks</a><br>
-                    <br>
-                  </span> </div>
-              </div>
+              <div> </div>
               <div> </div>
               <div> <strong></strong> <strong></strong>
                 <div>
@@ -704,27 +693,9 @@ Storm
                 </div>
               </div>
             </div>
-            <div style="text-align: left; font-size: 12px;">
-              <div style="text-align: left;"><u><br>
-                </u></div>
-              <div style="text-align: left;">
-                <div style="font-size: 16px;"><strong>Current Continental US
-                    Satellite Image</strong><strong></strong></div>
-                <a href="https://weather.cod.edu/data/satellite/continental/conus/current/conus.truecolor.jpg"
-                  title="Click for more information"><img src="https://weather.cod.edu/data/satellite/continental/conus/current/conus.truecolor.jpg"
-                    alt="True Color Satellite Image of CONUS" style="width: 570px; height: 388.16px; border-radius: 1px / 0px; border-width: 1px; border-style: solid;"
-                    title="Click for larger image/more information"></a></div>
-              <div style="text-align: left;">Credit: College of DuPage NEXLAB
-                Satellite and Radar / 1km resolution / Band Type: <a href="https://weather.ndc.nasa.gov/sport/training/quickGuides/rgb/QuickGuide_TrueColorRGB_NASA_SPoRT.pdf"
-                  title="Click for more information">Composite</a>
-                (Visual/Near-IR)</div>
-              <div style="text-align: left;"><u><br>
-                </u></div>
-            </div>
-            <div style="text-align: left;"><u><br>
-              </u></div>
-            <div style="text-align: left;"><u>Notices<br>
-              </u><br>
+            <div style="text-align: left;">
+              <div style="text-align: left;"><u></u><u>Notices</u></div>
+              <u> </u><br>
               Apex Wx is a private weather information service unaffiliated with
               NOAA/NWS operated by Joseph Becker, PhD. Dr. Becker holds a
               certification in weather forecasting from Penn State University
@@ -1064,7 +1035,7 @@ Precipitation
         <div style="clear: both;"></div>
       </div>
       <div id="tswsidecol">
-        <div id="tswsideproper">
+        <div id="tswsideproper" style="text-align: center;">
           <!-- start of RIGHT side column: insert your navigation menu, etc, here --><strong
             style="font-size: 14px;"><br>
           </strong></div>
@@ -1082,12 +1053,14 @@ Precipitation
             </strong></div>
           <div style="text-align: center;"><strong style="font-size: 14px;"><br>
             </strong></div>
-          <div style="text-align: center;"><strong style="font-size: 14px;">Current
-              US Composite Satellite</strong></div>
-          <div style="text-align: center;"><strong></strong><a href="https://www.ssec.wisc.edu/data/us_comp/"><img
-                src="https://www.ssec.wisc.edu/data/us_comp/image7.jpg" title="Click for larger image"
-                alt="Real-Time US Composite Satellite Image" style="width: 251px; height: 141px;"></a><br>
-          </div>
+          <div style="text-align: center;"><strong style="font-size: 14px;">Continental
+              US Satellite<br>
+            </strong></div>
+          <div style="text-align: center;"><strong></strong><strong></strong> <a
+              href="https://weather.cod.edu/data/satellite/continental/conus/current/conus.truecolor.jpg"
+              title="Click for larger image"><img src="https://weather.cod.edu/data/satellite/continental/conus/current/conus.truecolor.jpg"
+                alt="True Color Satellite Image of CONUS" style="width: 251px; height: 141.188px; border-radius: 1px / 0px; border-width: 1px; border-style: solid;"></a></div>
+          <div style="text-align: center;"><em>College of DuPage NEXLAB</em></div>
           <div style="text-align: center;"><br>
           </div>
           <div style="text-align: center;"><br>
@@ -1432,6 +1405,5 @@ Ice
 
   fetchSunriseSunset();
   setInterval(fetchSunriseSunset, 3600000); // Refresh every hour
-</script>
-  </body>
+</script> </body>
 </html>

@@ -47,7 +47,7 @@
   });
 </script> <script>
   async function fetchNWSAlerts() {
-    const zone = "MEZ002"; // Fort Kent, Maine (Aroostook County)
+    const zone = "MEZ002"; // Northeast Aroostook, including Fort Kent, ME
     const apiURL = `https://api.weather.gov/alerts/active/zone/${zone}`;
 
     try {
@@ -57,15 +57,15 @@
 
       if (data.features.length > 0) {
         const alert = data.features[0].properties;
-        const alertId = data.features[0].id; // unique ID for this alert
+        const alertId = data.features[0].id;
         const storedDismissedId = localStorage.getItem("dismissedAlertId");
 
-        // Only show the alert if it hasn't been dismissed
         if (alertId !== storedDismissedId) {
           const title = alert.headline;
           const description = alert.description;
-          const severity = alert.severity.toLowerCase();
-          const link = alert.uri;
+          const severityRaw = alert.severity || "Unknown";
+          const severity = severityRaw.toLowerCase();
+          const link = alert.url || "https://www.weather.gov/car/";
           const updated = new Date(alert.sent).toLocaleString('en-US', {
             dateStyle: 'medium',
             timeStyle: 'short',
@@ -82,7 +82,7 @@
           alertDiv.innerHTML = `
             <div class="alert-box ${severityClass}" data-alert-id="${alertId}">
               <button class="alert-close" onclick="dismissAlert('${alertId}')" aria-label="Dismiss alert">&times;</button>
-              <strong>⚠️ Weather Alert (${alert.severity}):</strong>
+              <strong>⚠️ Weather Alert (${severityRaw === "Unknown" ? "Severity Unknown" : severityRaw}):</strong>
               <strong>${title}</strong>
               <div>${description}</div>
               <div style="margin-top: 8px;">
@@ -94,7 +94,7 @@
             </div>
           `;
         } else {
-          alertDiv.innerHTML = ""; // Don't show dismissed alert
+          alertDiv.innerHTML = ""; // Alert dismissed by user
         }
       } else {
         alertDiv.innerHTML = ""; // No active alerts
@@ -105,7 +105,6 @@
     }
   }
 
-  // Store dismissed alert ID
   function dismissAlert(alertId) {
     localStorage.setItem("dismissedAlertId", alertId);
     const alertBox = document.querySelector(`[data-alert-id="${alertId}"]`);
@@ -549,7 +548,7 @@
           <div><br>
           </div>
           <div><strong>7-Day Forecast Summary</strong></div>
-          <div><i><span style="font-size: 12px;">Updates 24/7</span></i><strong
+          <div><i><span style="font-size: 12px;">Automatic updates</span></i><strong
               style="font-size: 12px;"><br>
             </strong></div>
           <div>
@@ -570,8 +569,11 @@
                                   <div>
                                     <div style="text-align: left;">
                                       <div style="font-size: 16px;"><strong>Current
-                                          Month Climate Trends</strong><u> <em><span
-                                              style="font-size: 12px;"></span></em><strong>
+                                          Month Climate Trends</strong></div>
+                                      <div style="font-size: 16px;"><strong><br>
+                                        </strong></div>
+                                      <div style="font-size: 16px;"><strong></strong><u>
+                                          <em><span style="font-size: 12px;"></span></em><strong>
                                           </strong><em style="font-size: 12px;"></em>
                                         </u>
                                         <div><a href="https://www.cpc.ncep.noaa.gov/products/predictions/814day/814temp.new.gif"
@@ -679,8 +681,8 @@
                                       <div style="text-indent: 30px;"><br>
                                       </div>
                                       <div style="text-indent: 30px;"><u><strong>Low</strong></u></div>
-                                      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; 19° at 32
-                                      miles west southwest of Bynum, MT
+                                      <div style="text-indent: 30px;">19° at 32
+                                        miles west southwest of Bynum, MT</div>
                                       <div style="text-indent: 30px;">19° at 13
                                         miles north of White Sulphur Springs, MT</div>
                                       <div><br>
@@ -711,13 +713,27 @@
                                   </div>
                                   <div><br>
                                   </div>
-                                </div>
-                              </div>
-                            </div>
-                            <div>
-                              <div style="text-align: left;">
-                                <div>
-                                  <div> </div>
+                                  <div>
+                                    <div style="text-align: left;"><strong>Today's
+                                        National Forecast Chart &amp; Severe
+                                        Weather / Thunderstorm Outlook</strong></div>
+                                    <div style="text-align: left;"><strong></strong><strong
+                                        style="font-size: 16px;"></strong><br>
+                                      <strong style="font-size: 16px;"> </strong></div>
+                                    <div><a href="https://www.wpc.ncep.noaa.gov/NationalForecastChart/map.php"
+                                        title="Click for larger interactive image"><img
+                                          src="https://www.wpc.ncep.noaa.gov/NationalForecastChart/staticmaps/noaad1.png"
+                                          alt="Today's National Forecast Chart"
+                                          style="font-size: 16px; width: 300px; height: 226.019px;"></a>&nbsp;&nbsp;&nbsp;
+                                      &nbsp;&nbsp; &nbsp;&nbsp; <a href="https://www.spc.noaa.gov/partners/outlooks/state/swody1.png?1678542573998"
+                                        title="Click for larger image"><img src="https://www.spc.noaa.gov/partners/outlooks/state/swody1.png?1678542573998"
+                                          alt="Today's Severe Weather / Thunderstorm Oultook"
+                                          style="width: 300px; height: 226.019px;"></a></div>
+                                    <div><em><span style="font-size: 12px;">Learn
+                                          more about <a href="https://www.spc.noaa.gov/new/images/SPC_outlook_final_updated.png"
+                                            title="Click for more information">Severe
+                                            Thunderstorm Outlooks</a></span></em></div>
+                                  </div>
                                 </div>
                               </div>
                             </div>
@@ -730,65 +746,6 @@
               </div>
             </div>
           </div>
-          <div style="text-align: left;">
-            <div style="text-align: left;">
-              <div>
-                <div><strong>Today's National Forecast Chart</strong></div>
-                <strong></strong></div>
-              <strong> </strong><a href="https://www.wpc.ncep.noaa.gov/NationalForecastChart/map.php"><em
-                  style="font-size: 14px;"><span style="color: #555555;"> </span></em></a></div>
-            <div style="text-align: left;"><a href="https://www.wpc.ncep.noaa.gov/NationalForecastChart/map.php"><img
-                  src="https://www.wpc.ncep.noaa.gov/NationalForecastChart/staticmaps/noaad1.png"
-                  alt="National Forecast Chart" style="width: 570px; height: 412px; border-width: 1px; border-style: solid;"
-                  title="Click for more information / larger chart"></a></div>
-          </div>
-          <div style="text-align: left;">
-            <div>
-              <div><strong><br>
-                </strong></div>
-            </div>
-            <div>
-              <div><strong></strong><strong> </strong></div>
-              <div><span style="font-size: 14px;"><strong><br>
-                  </strong></span>
-                <div><span style="font-size: 14px;"><strong style="font-size: 16px;">Today's
-Storm
-                      Predication Center Thunderstorm / Severe Weather Outlook</strong></span><br>
-                  <span style="font-size: 12px;"></span></div>
-                <div><a href="https://www.spc.noaa.gov/products/outlook/day1otlk.html"><img
-                      src="https://www.spc.noaa.gov/partners/outlooks/state/swody1.png?1678542573998"
-                      alt="Current Day One Severe Weather Outlook" style="height: 356.25px; width: 570px;"></a></div>
-              </div>
-              <div><span style="font-size: 12px;">Learn more about <a href="https://www.spc.noaa.gov/new/images/SPC_outlook_final_updated.png"
-                    title="Click for more information">Severe Thunderstorm
-                    Outlooks</a><br>
-                  <br>
-                </span> </div>
-            </div>
-            <div> </div>
-            <div> <strong></strong> <strong></strong>
-              <div>
-                <div> </div>
-              </div>
-            </div>
-          </div>
-          <div style="text-align: left; font-size: 12px;">
-            <div style="text-align: left;"><u><br>
-              </u></div>
-            <div style="text-align: left;">
-              <div style="font-size: 16px;"><strong>Current Continental US
-                  Satellite Image</strong><strong></strong></div>
-              <a href="https://weather.cod.edu/data/satellite/continental/conus/current/conus.truecolor.jpg"
-                title="Click for more information"><img src="https://weather.cod.edu/data/satellite/continental/conus/current/conus.truecolor.jpg"
-                  alt="True Color Satellite Image of CONUS" style="width: 570px; height: 388.16px; border-radius: 1px / 0px; border-width: 1px; border-style: solid;"
-                  title="Click for larger image/more information"></a></div>
-            <div style="text-align: left;">Credit: College of DuPage NEXLAB
-              Satellite and Radar / 1km resolution / Band Type: <a href="https://weather.ndc.nasa.gov/sport/training/quickGuides/rgb/QuickGuide_TrueColorRGB_NASA_SPoRT.pdf"
-                title="Click for more information">Composite</a>
-              (Visual/Near-IR)</div>
-            <div style="text-align: left;"><br>
-            </div>
-            <em style="font-size: 12px;"></em></div>
           <div style="text-align: left; font-size: 12px;"><em style="font-size: 12px;"><br>
             </em></div>
           <div style="text-align: left; font-size: 12px;"><em style="font-size: 12px;"></em>
@@ -1200,7 +1157,17 @@ Storm
           </div>
           <div style="text-align: center;"><strong style="font-size: 14px;"><br>
             </strong></div>
-          <br>
+          <div style="text-align: center;"><br>
+            <strong style="font-size: 14px;">Continental US Satellite<br>
+            </strong></div>
+          <div style="text-align: center;"><strong></strong><strong></strong> <a
+              href="https://weather.cod.edu/data/satellite/continental/conus/current/conus.truecolor.jpg"
+              title="Click for larger image"><img src="https://weather.cod.edu/data/satellite/continental/conus/current/conus.truecolor.jpg"
+                alt="True Color Satellite Image of CONUS" style="width: 251px; height: 141.188px; border-radius: 1px / 0px; border-width: 1px; border-style: solid;"
+                title="Click for larger image"></a></div>
+        </div>
+        <div style="text-align: center;"><em>College of DuPage NEXLAB</em></div>
+        <div><br>
           <div style="font-size: 14px; text-align: center;"><strong>Environment
               Canada Weather Map<em><br>
                 <a href="https://weather.gc.ca/data/wxoimages/wocanmap0_e.jpg" title="Click for larger image"><img
@@ -1526,6 +1493,5 @@ Storm
 
   fetchSunriseSunset();
   setInterval(fetchSunriseSunset, 3600000); // Refresh every hour
-</script>
-  </body>
+</script> </body>
 </html>
