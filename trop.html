@@ -146,9 +146,6 @@ img {
         <li><a href="#chart">Oceanic Wx Charts</a></li>
       </ul>
       <br>
-      <div style="text-align: center;">For more information regarding tropical
-        cyclones affecting the United States, visit the <a href="https://www.nhc.noaa.gov/"
-          title="US National Hurricane Center"><strong>National Hurricane Center</strong></a></div>
       <div class="clock-wrapper">
         <table class="clock-table">
           <thead>
@@ -441,7 +438,8 @@ img {
         </div>
         <br>
         <br>
-        <p> <a href="#top"><i>Top of Page</i></a></p>
+        <div id="last-updated" style="text-align:center; font-size:12px; font-family:Arial, sans-serif;">Page
+          last modified: June 5, 2025 at 04:36 PM EDT</div>
         <script>
 document.addEventListener("DOMContentLoaded", function () {
   const nav = document.querySelector(".nav");
@@ -479,8 +477,6 @@ function updateClocks() {
 setInterval(updateClocks, 1000);
 updateClocks();
 </script></div> </main>
-    <p style="text-align:center; font-size:12px; font-family:Arial, sans-serif;">Page
-      last updated: June 05, 2025 at 19:58 UTC</p>
     <script>
 fetch("https://api.weather.gov/alerts/active?area=AT")
   .then(response => response.json())
@@ -530,6 +526,18 @@ fetch("https://api.weather.gov/alerts/active?area=FL,AL,MS,LA,TX")
     }
   })
   .catch(err => console.error("Gulf alert fetch failed", err));
-</script>
-  </body>
+</script><div id="last-updated" style="text-align:center; font-size:12px; font-family:Arial, sans-serif;"></div>
+    <script>
+document.addEventListener("DOMContentLoaded", function () {
+  const modified = new Date(document.lastModified);
+  const options = {
+    year: 'numeric', month: 'long', day: 'numeric',
+    hour: '2-digit', minute: '2-digit',
+    timeZone: 'America/New_York',
+    timeZoneName: 'short'
+  };
+  const formatted = modified.toLocaleDateString('en-US', options);
+  document.getElementById("last-updated").textContent = "Page last modified: " + formatted;
+});
+</script> </body>
 </html>
