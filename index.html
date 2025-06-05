@@ -308,6 +308,52 @@ div, span, p {
   overflow-wrap: break-word;
 }
 
+
+/* --- Responsive Fixes Injected --- */
+div[style*="width:"],
+td[style*="width:"],
+table[style*="width:"] {
+  max-width: 100%;
+  width: 100% !important;
+  box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+iframe {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  #tswsidecol, #tswothersidecol {
+    float: none !important;
+    width: 100% !important;
+    display: block;
+    margin: 0 auto;
+  }
+
+  #tswcontent, #tswcontproper {
+    padding: 0 1em;
+  }
+
+  h2, h3 {
+    font-size: 1.2em;
+  }
+}
+
+table {
+  max-width: 100%;
+  width: 100%;
+  overflow-x: auto;
+  display: block;
+}
+/* --- End Responsive Fixes --- */
+
 </style> </head>
   <body>
     <div id="tswcontainer">
@@ -537,25 +583,28 @@ div, span, p {
           <div>
             <div style="text-align: center;">
               <div style="text-align: left;"><u><strong>7-Day Outlook: Thu. June
-                    5 - Wed</strong></u><u><strong>. June 111</strong></u></div>
-              <div style="text-align: left;"><strong><span style="font-size: 12px;">Updated:
-                    </span><span style="font-size: 12px;"><span style="color: #3333ff;"><span
-                        style="color: black;"></span>Thursday, 5 June 2025 at
-                      7:51 am EDT</span></span></strong><u><strong> </strong></u></div>
+                    5 - Wed</strong></u><u><strong>. June 11</strong></u></div>
+              <div style="text-align: left; font-size: 12px;">
+                <div style="text-align: left;"><strong><span style="font-size: 12px;">Updated:
+                      </span><span style="font-size: 12px;"><span style="color: #3333ff;"><span
+                          style="color: black;"></span>Thursday, 5 June 2025 at
+                        7:51 am EDT</span></span></strong><u><strong> </strong></u></div>
+              </div>
+              <div style="text-align: left;"><br>
+              </div>
+              <div style="text-align: left;">A cold front is located just west
+                in Québec near the Saint Lawrence River this morning. The front
+                is expected to advance across the region this afternoon into the
+                evening and stall out near the Maine coast or over the Gulf
+                tonight into Friday. Mostly sunny skies with some smoke haze
+                start the day with increasing cloudiness as the morning
+                progresses. The front will bring showers and thunderstorms to
+                Valley communities this afternoon with isolated strong-to-severe
+                storms possible. </div>
             </div>
-            <strong></strong></div>
-          <div><br>
           </div>
           <div>
             <div>
-              <div> A cold front is located just west in Québec near the Saint
-                Lawrence River this morning. The front is expected to advance
-                across the region this afternoon into the evening and stall out
-                near the Maine coast or over the Gulf tonight into Friday.
-                Mostly sunny skies with some smoke haze start the day with
-                increasing cloudiness as the morning progresses. The front will
-                bring showers and thunderstorms to Valley communities this
-                afternoon with isolated strong-to-severe storms possible. </div>
               <div><br>
               </div>
               <div>The greatest risk of storms will be between 12 pm and 4 pm
@@ -798,12 +847,12 @@ div, span, p {
             </div>
           </div>
           <div style="text-align: left; font-size: 12px;"><em style="font-size: 12px;"></em>
-            <div style="text-align: left;"><u style="border-radius: 0px;">Notices<br>
-              </u><br>
+            <div style="text-align: left;"><u style="border-radius: 0px;">Notices</u></div>
+            <div style="text-align: left;"><u style="border-radius: 0px;"> </u><br>
               Apex Wx is a private weather information service unaffiliated with
               NOAA/NWS operated by Joseph Becker, PhD. Dr. Becker holds a
               certification in weather forecasting from Penn State University
-              and is a trained NWS Storm Spotter.</div>
+              and is a trained NWS Storm Spotter. </div>
             <div style="text-align: left;"><br>
               <em style="font-size: 12px;"> </em><span style="font-size: 12px; padding: 5px;">Weather
                 information compiled by Apex Wx is based on computer weather
@@ -832,6 +881,10 @@ div, span, p {
             <div style="text-align: left;"> <br>
               Apex Wx logo by Joanna Becker ©2016 (Visit <a href="https://www.bushiandbrush.com/">Bushi
                 and Brush Arts Dojo</a>)</div>
+            <div style="text-align: left;"><br>
+            </div>
+            <div style="text-align: left;"><br>
+            </div>
             <div style="text-align: left;"><br>
             </div>
             <div style="text-align: left;">
@@ -1536,5 +1589,25 @@ div, span, p {
 
   fetchSunriseSunset();
   setInterval(fetchSunriseSunset, 3600000); // Refresh every hour
+</script> <script>
+  // Format date in "Thursday, 5 June 2025 at 7:51 am EDT" style
+  function formatModifiedDate(dateString) {
+    const date = new Date(dateString);
+    const options = {
+      weekday: 'long',
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+      hour: 'numeric',
+      minute: '2-digit',
+      hour12: true,
+      timeZoneName: 'short' // Will show EDT, PST, etc.
+    };
+    return date.toLocaleString('en-US', options);
+  }
+
+  const lastModified = document.lastModified;
+  const formattedDate = formatModifiedDate(lastModified);
+  document.getElementById('last-updated').textContent = `Updated: ${formattedDate}`;
 </script> </body>
 </html>
