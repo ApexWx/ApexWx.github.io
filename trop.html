@@ -7,24 +7,14 @@
   box-sizing: border-box;
 }
 
-.column {
-  float: left;
-  width: 33.33%;
-  padding: 5px;
-}
+
 
 /* Clearfix (clear floats) */
-.row::after {
-  content: "";
-  clear: both;
-  display: table;
-}
+
 
 /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
 @media screen and (max-width: 500px) {
-  .column {
-    width: 100%;
-  }
+  
 }
   
   /* navigation bar */
@@ -160,6 +150,22 @@ div.a, div.b {
   background-size: cover;
   background-attachment: fixed;
 }
+
+/* FLEXBOX LAYOUT FOR STACKING */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1em;
+  margin-bottom: 1em;
+}
+.column {
+  flex: 1 1 300px;
+  max-width: 100%;
+  box-sizing: border-box;
+  padding: 0.5em;
+}
+
 </style></head>
   <body>
     <h2 style="text-align: center;">Tropical Wall</h2>
