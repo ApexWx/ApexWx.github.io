@@ -1,79 +1,105 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8">
-    <title>Regional Maps and Charts1</title>
-    <script src="https://cdnres.willyweather.com/widget/warning/loadView.html?id=125218"
-type="application/javascript"></script>
+    <meta charset="utf-8">
+    <title>Regional Maps and Charts</title>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
     <style>
-* {
-  box-sizing: border-box;
-}
-
-.column {
-  float: left;
-  width: 33.33%;
-  padding: 5px;
-}
-
-/* Clearfix (clear floats) */
-.row::after {
-  content: "";
-  clear: both;
-  display: table;
-}
-
-/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 500px) {
-  .column {
-    width: 100%;
-  }
-}
+    * { box-sizing: border-box; }
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f8f8;
+      background-image: url('https://raw.githubusercontent.com/ApexWx/ApexWx.github.io/refs/heads/master/seamless-background-simply-sky.jpg');
+      background-repeat: repeat;
+      background-size: cover;
+      background-attachment: fixed;
+      margin: 0;
+    }
+    .nav {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      border-top: 1px solid #ccc;
+      border-bottom: 1px solid #ccc;
+    }
+    .nav.show {
+      display: flex;
+    }
+    .nav li {
+      display: inline;
+    }
+    .nav a {
+      display: inline-block;
+      padding: 10px;
+      text-decoration: none;
+      font-weight: bold;
+      color: black;
+    }
+    .nav a:hover {
+      text-decoration: underline;
+      color: #0077cc;
+    }
+    #navToggle {
+      font-size: 20px;
+      border: none;
+      background: none;
+      cursor: pointer;
+      margin: 10px auto;
+      display: block;
+    }
+    @media (min-width: 769px) {
+      .nav {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+      }
+      #navToggle {
+        display: none;
+      }
+    }
+    .clock-table {
+      width: 90%;
+      max-width: 600px;
+      margin: 1em auto;
+      text-align: center;
+      border-collapse: collapse;
+    }
+    .clock-cell {
+      font-weight: bold;
+    }
   
-  /* navigation bar */
-  .nav{
-    border:1px solid #ccc;
-    border-width:1px 0;
-    list-style:none;
-    margin:0;
-    padding:0;
-    text-align:center;
+
+/* Flexbox row/column layout like trop.html */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+  justify-content: center;
 }
-.nav li{
-    display:inline;
-}
-.nav a{
-    display:inline-block;
-    padding:10px;
-}
-      
-body {
-	font-family: Arial, Helvetica, sans-serif ;
-  background-color: #F8F8F8;
+.column {
+  flex: 1 1 300px;
+  min-width: 280px;
+  max-width: 100%;
+  box-sizing: border-box;
+  padding: 0.5em;
 }
 img {
-	max-width: 100% ;
-	width: auto ;
-	height: auto ;
+  max-width: 100%;
+  height: auto;
+  border: 1px solid #ccc;
+  display: block;
+  margin: auto;
 }
-input, select, button, textarea {
-	max-width: 100% ;
-}
-meter, progress, output {
-	max-width: 100% ;
-}
-  div.a {
-  font-size: 15px;
-}
-  div.b {
-  font-size: 12px;
-}
-</style> </head>
+</style>
+  </head>
   <body>
-    <h2 style="text-align: center;"><a name="top" id="top"></a>Regional Maps
-      &amp; Charts</h2>
-    <p></p>
-    <p></p>
+    <h2 style="text-align: center;">Regional Maps &amp; Charts</h2>
+    <div id="last-modified" style="text-align:center; font-size:14px; font-family:Arial, sans-serif; margin-top: -0.5em;"></div>
+    <div id="last-modified" style="text-align:center; font-size:14px; color:#555;"></div>
+    <button id="navToggle">☰ Menu</button>
     <ul class="nav">
       <li><a href="https://apexwx.github.io/">Main Page</a></li>
       <li><a href="#severe">Severe Weather Outlook</a></li>
@@ -84,73 +110,76 @@ meter, progress, output {
       <li><a href="#river">Area Rivers</a></li>
       <li><a href="#coast">Coastal Conditions</a></li>
     </ul>
-    <br>
-    <div class="a">Click maps and charts for larger versions, loops, etc. Most
-      graphics update automatically--check timestamps for currency. During
-      updates, maintenance, network outages, etc., graphics may be temporarily
-      unavailable. Graphic sources include NOAA, NWS, University of Wisconsin,
-      Weather Underground, and various other organizations. All products
-      produced by the US government or affiliated organizations are public
-      domain unless otherwise labeled.</div>
-    <br>
-    <div class="a"><u>Note</u>: For US Eastern Time on maps and charts, subtract
-      4 hours (Daylight Saving Time) or 5 hours (Standard Time) from UTC / Z
-      timestamp on the maps and charts. UTC / Z / GMT = Coordinated Universal
-      Time / Zulu Time / Greenwich Mean Time -- Time is based on 0° longitude
-      running through the Royal Observatory in Greenwich, London, UK. It is the
-      same all year round and is not affected by Daylight Saving Time (aka
-      Summer Time) clock changes. Using UTC allows weather services and others
-      to avoid time zone conversions. Visit <a title="timeanddate.com" href="https://www.timeanddate.com/">timeanddate.com</a>
-      for more time zone conversion information and additional time-related
-      data.</div>
-    <br>
-    <br>
-    <table style="width: 50%; text-align: left; margin-left: auto; margin-right: auto;"
-      border="0">
+    <table class="clock-table">
+      <thead>
+        <tr>
+          <th>Eastern Time 12-Hour</th>
+          <th>Eastern Time 24-Hour</th>
+          <th>UTC / Z / Greenwich</th>
+        </tr>
+      </thead>
       <tbody>
-        <tr align="center">
-          <td rowspan="1" colspan="3"><strong>Current Time US Eastern and UTC /
-              Z</strong></td>
-        </tr>
         <tr>
-          <td style="text-align: center;"><strong>ET 12-Hour</strong></td>
-          <td style="text-align: center;"><strong>ET 24-Hour</strong></td>
-          <td style="text-align: center;"><strong>UTC / Z</strong></td>
-        </tr>
-        <tr>
-          <td style="text-align: center; width: 181px;"><br>
-            <iframe src="https://freesecure.timeanddate.com/clock/i7b14drd/n5278/ts1/ta1"
-              height="19" frameborder="0" width="126"></iframe><br>
-          </td>
-          <td style="text-align: center; width: 146px;"><br>
-            <iframe src="https://freesecure.timeanddate.com/clock/i7athxrb/n5278/th1/ts1/ta1"
-              height="19" frameborder="0" width="69"></iframe><br>
-          </td>
-          <td style="text-align: center; width: 167px;"><br>
-            <iframe src="https://freesecure.timeanddate.com/clock/i7allsch/th1/ts1/ta1"
-              height="19" frameborder="0" width="70"></iframe><br>
-          </td>
+          <td class="clock-cell" id="et12">--</td>
+          <td class="clock-cell" id="et24">--</td>
+          <td class="clock-cell" id="utc">--</td>
         </tr>
       </tbody>
     </table>
-    <br>
-    <br>
+    <script>
+    function updateClocks() {
+      const nowUTC = new Date();
+      const nowET = new Date(nowUTC.toLocaleString("en-US", { timeZone: "America/New_York" }));
+
+      const pad = n => n.toString().padStart(2, '0');
+
+      const h12 = nowET.getHours() % 12 || 12;
+      const ampm = nowET.getHours() >= 12 ? 'PM' : 'AM';
+
+      document.getElementById("et12").textContent = \`\${pad(h12)}:\${pad(nowET.getMinutes())} \${ampm}\`;
+      document.getElementById("et24").textContent = \`\${pad(nowET.getHours())}:\${pad(nowET.getMinutes())}\`;
+      document.getElementById("utc").textContent = \`\${pad(nowUTC.getUTCHours())}:\${pad(nowUTC.getUTCMinutes())} UTC\`;
+    }
+    setInterval(updateClocks, 1000);
+    updateClocks();
+
+    document.addEventListener("DOMContentLoaded", function () {
+      const nav = document.querySelector(".nav");
+      const toggle = document.getElementById("navToggle");
+      if (toggle && nav) {
+        toggle.addEventListener("click", () => {
+          nav.classList.toggle("show");
+        });
+      }
+      const mod = new Date(document.lastModified);
+      const options = {
+        year: 'numeric', month: 'long', day: 'numeric',
+        hour: '2-digit', minute: '2-digit',
+        timeZone: 'America/New_York',
+        timeZoneName: 'short'
+      };
+      document.getElementById("last-modified").textContent =
+        "Page last modified: " + mod.toLocaleDateString("en-US", options);
+    });
+  </script>
     <div class="row">
       <div class="column" style="text-align: center;"> <strong>NE Weather Chart</strong><a
           href="https://www.wpc.ncep.noaa.gov/sfc/namnesfcwbg.gif" title="Click for larger image"><img
-            src="https://www.wpc.ncep.noaa.gov/sfc/namnesfcwbg.gif" style="width: 100%; border-width: 1px; border-style: solid;"
-            alt="Northeast Weather Chart"></a> </div>
+            alt="Northeast Weather Chart" src="https://www.wpc.ncep.noaa.gov/sfc/namnesfcwbg.gif"
+            style="max-width: 100%; height: auto; border: 1px solid #ccc; display: block; margin: auto;"></a>
+      </div>
       <div class="column">
         <div style="text-align: center;"><strong>NE Radar<br>
           </strong></div>
         <strong></strong> <strong> </strong> <a href="https://s.w-x.co/staticmaps/wu/wu/wxtype1200_cur/usbml/animate.png"
-          title="Click for larger image"><img src="https://s.w-x.co/staticmaps/wu/wu/wxtype1200_cur/usbml/animate.png"
-            style="height: 351px; width: 481px;" alt="Regional Radar"></a> </div>
+          title="Click for larger image"><img alt="Regional Radar" src="https://s.w-x.co/staticmaps/wu/wu/wxtype1200_cur/usbml/animate.png"
+            style="max-width: 100%; height: auto; border: 1px solid #ccc; display: block; margin: auto;"></a>
+      </div>
       <div class="column">
         <div style="text-align: center;"><strong>NWS Caribou Weather Briefing</strong></div>
-        <strong></strong> <strong> </strong> <a href="https://www.weather.gov/images/car/WeatherStory.gif"
-          title="Click for larger image"><img src="https://www.weather.gov//images/car/WxStory/WeatherStory1.png"
-            style="width: 100%; border-width: 1px; border-style: solid;" alt="NWS Caribou Weather Story"></a>
+        <strong></strong> <strong> </strong> <a href="https://www.weather.gov//images/car/WxStory/WeatherStory1.png"
+          title="Click for larger image"><img alt="NWS Caribou Weather Story" src="https://www.weather.gov//images/car/WxStory/WeatherStory1.png"
+            style="max-width: 100%; height: 352px; border: 1px solid #cccccc; display: block; margin: auto; width: 452px;"></a>
       </div>
     </div>
     <br>
@@ -160,18 +189,18 @@ meter, progress, output {
     <p><a href="#top"> </a><a href="#top"><i></i></a></p>
     <br>
     <div class="row">
-      <div class="column" style="text-align: center;"> <strong><a name="sat" id="sat"></a>NE
+      <div class="column" style="text-align: center;"> <strong><a id="sat" name="sat"></a>NE
           Geocolor Satellite</strong><a href="https://cdn.star.nesdis.noaa.gov/GOES16/ABI/SECTOR/ne/GEOCOLOR/latest.jpg"
-          title="Click for larger image"><img src="https://cdn.star.nesdis.noaa.gov/GOES16/ABI/SECTOR/ne/GEOCOLOR/600x600.jpg"
-            style="width: 100%; border-width: 1px; border-style: solid;" alt="NE Geocolor Satellite"></a>
+          title="Click for larger image"><img alt="NE Geocolor Satellite" src="https://cdn.star.nesdis.noaa.gov/GOES16/ABI/SECTOR/ne/GEOCOLOR/600x600.jpg"
+            style="max-width: 100%; height: auto; border: 1px solid #ccc; display: block; margin: auto;"></a>
       </div>
       <div class="column">
         <div style="text-align: center;"><strong>NE Infrared Satellite</strong><br>
           <a href="https://cdn.star.nesdis.noaa.gov/GOES16/ABI/SECTOR/ne/Sandwich/20211511811_GOES16-ABI-ne-Sandwich-2400x2400.jpg"
             title="Click for larger image"> </a></div>
         <div style="text-align: center;"><a href="https://cdn.star.nesdis.noaa.gov/GOES16/ABI/SECTOR/ne/Sandwich/latest.jpg"
-            title="Click for larger image"><img src="https://cdn.star.nesdis.noaa.gov/GOES16/ABI/SECTOR/ne/Sandwich/600x600.jpg"
-              style="width: 100%; border-width: 1px; border-style: solid;" alt="NE Infrared"></a>
+            title="Click for larger image"><img alt="NE Infrared" src="https://cdn.star.nesdis.noaa.gov/GOES16/ABI/SECTOR/ne/Sandwich/600x600.jpg"
+              style="max-width: 100%; height: auto; border: 1px solid #ccc; display: block; margin: auto;"></a>
         </div>
         <a href="https://www.weather.gov/images/car/WeatherStory.gif" title="Click for larger image"></a>
       </div>
@@ -179,8 +208,9 @@ meter, progress, output {
         <div style="text-align: center;"><strong>NE Water Vapor Satellite</strong><br>
           <strong></strong></div>
         <strong> </strong> <a href="https://cdn.star.nesdis.noaa.gov/GOES16/ABI/SECTOR/ne/09/latest.jpg"
-          title="Click for larger image"><img src="https://cdn.star.nesdis.noaa.gov/GOES16/ABI/SECTOR/ne/09/600x600.jpg"
-            style="width: 100%; border-width: 1px; border-style: solid;" alt="Northeast Water Vapor Satellite"></a>
+          title="Click for larger image"><img alt="Northeast Water Vapor Satellite"
+            src="https://cdn.star.nesdis.noaa.gov/GOES16/ABI/SECTOR/ne/09/600x600.jpg"
+            style="max-width: 100%; height: auto; border: 1px solid #ccc; display: block; margin: auto;"></a>
       </div>
     </div>
     <br>
@@ -188,21 +218,22 @@ meter, progress, output {
     <a href="#top"><i>Top of Page</i></a><br>
     <br>
     <div class="row">
-      <div class="column" style="text-align: center;"> <strong><a name="temp" id="temp"></a>Today's
+      <div class="column" style="text-align: center;"> <strong><a id="temp" name="temp"></a>Today's
           Highs</strong><a href="https://graphical.weather.gov/GraphicalNDFD.php?width=515&amp;timezone=EDT&amp;sector=CAR&amp;element=maxt&amp;n=1"
-          title="Click for larger image"><img src="https://graphical.weather.gov/GraphicalNDFD.php?width=515&amp;timezone=EDT&amp;sector=CAR&amp;element=maxt&amp;n=1"
-            style="width: 100%; border-width: 1px; border-style: none; height: 100%;"
-            alt="Today's High"></a> </div>
+          title="Click for larger image"><img alt="Today's High" src="https://graphical.weather.gov/GraphicalNDFD.php?width=515&amp;timezone=EDT&amp;sector=CAR&amp;element=maxt&amp;n=1"
+            style="max-width: 100%; height: auto; border: 1px solid #ccc; display: block; margin: auto;"></a>
+      </div>
       <div class="column" style="text-align: center;"> <strong>Tonight's Lows</strong><a
           href="https://graphical.weather.gov/GraphicalNDFD.php?width=515&amp;timezone=EDT&amp;sector=CAR&amp;element=mint&amp;n=1"
-          title="Click for larger image"><img src="https://graphical.weather.gov/GraphicalNDFD.php?width=515&amp;timezone=EDT&amp;sector=CAR&amp;element=mint&amp;n=1"
-            style="width: 100%; border-width: 1px; border-style: none; height: 100%;"
-            alt="Tonight's Lows"></a> </div>
+          title="Click for larger image"><img alt="Tonight's Lows" src="https://graphical.weather.gov/GraphicalNDFD.php?width=515&amp;timezone=EDT&amp;sector=CAR&amp;element=mint&amp;n=1"
+            style="max-width: 100%; height: auto; border: 1px solid #ccc; display: block; margin: auto;"></a>
+      </div>
       <div class="column" style="text-align: center;"> <strong>Today's Minimum
           Relative Humidity</strong><a href="https://graphical.weather.gov/GraphicalNDFD.php?width=515&amp;timezone=EDT&amp;sector=MAINE&amp;element=minrh&amp;n=1"
-          title="Click for larger image"><img src="https://graphical.weather.gov/GraphicalNDFD.php?width=515&amp;timezone=EDT&amp;sector=MAINE&amp;element=minrh&amp;n=1"
-            style="width: 469px; border-width: 1px; border-style: none; height: 577px;"
-            alt="Today's Minimum Relative Humidity"></a> </div>
+          title="Click for larger image"><img alt="Today's Minimum Relative Humidity"
+            src="https://graphical.weather.gov/GraphicalNDFD.php?width=515&amp;timezone=EDT&amp;sector=MAINE&amp;element=minrh&amp;n=1"
+            style="max-width: 100%; height: 580px; border: 1px solid #cccccc; display: block; margin: auto; width: 528px;"></a>
+      </div>
       <br>
       <a href="#top"><i><br>
         </i></a></div>
@@ -211,18 +242,19 @@ meter, progress, output {
       <div class="row">
         <div class="column" style="text-align: center;"> <strong>Tomorrow's
             Highs</strong><a href="https://graphical.weather.gov/GraphicalNDFD.php?width=515&amp;timezone=EDT&amp;sector=MAINE&amp;element=maxt&amp;n=2"
-            title="Click for larger image"><img src="https://graphical.weather.gov/GraphicalNDFD.php?width=515&amp;timezone=EDT&amp;sector=MAINE&amp;element=maxt&amp;n=2"
-              style="width: 100%; border-width: 1px; border-style: none;" alt="Tomorrow's Highs"></a>
+            title="Click for larger image"><img alt="Tomorrow's Highs" src="https://graphical.weather.gov/GraphicalNDFD.php?width=515&amp;timezone=EDT&amp;sector=MAINE&amp;element=maxt&amp;n=2"
+              style="max-width: 100%; height: auto; border: 1px solid #ccc; display: block; margin: auto;"></a>
         </div>
         <div class="column" style="text-align: center;"> <strong>Tomorrow
             Night's Lows</strong><a href="https://graphical.weather.gov/GraphicalNDFD.php?width=515&amp;timezone=EDT&amp;sector=MAINE&amp;element=mint&amp;n=2"
-            title="Click for larger image"><img src="https://graphical.weather.gov/GraphicalNDFD.php?width=515&amp;timezone=EDT&amp;sector=MAINE&amp;element=mint&amp;n=2"
-              style="width: 100%; border-width: 1px; border-style: none;" alt="Tomorrow's Lows"></a>
+            title="Click for larger image"><img alt="Tomorrow's Lows" src="https://graphical.weather.gov/GraphicalNDFD.php?width=515&amp;timezone=EDT&amp;sector=MAINE&amp;element=mint&amp;n=2"
+              style="max-width: 100%; height: auto; border: 1px solid #ccc; display: block; margin: auto;"></a>
         </div>
         <div class="column" style="text-align: center;"> <strong>Tomorrow's
             Minimum Relative Humidity</strong><a href="https://graphical.weather.gov/GraphicalNDFD.php?width=515&amp;timezone=EDT&amp;sector=MAINE&amp;element=minrh&amp;n=2"
-            title="Click for larger image"><img src="https://graphical.weather.gov/GraphicalNDFD.php?width=515&amp;timezone=EDT&amp;sector=MAINE&amp;element=minrh&amp;n=2"
-              style="width: 100%; border-width: 0px; border-style: none;" alt="Tomorrow's Minimum Relative Humidity"></a>
+            title="Click for larger image"><img alt="Tomorrow's Minimum Relative Humidity"
+              src="https://graphical.weather.gov/GraphicalNDFD.php?width=515&amp;timezone=EDT&amp;sector=MAINE&amp;element=minrh&amp;n=2"
+              style="max-width: 100%; height: auto; border: 1px solid #ccc; display: block; margin: auto;"></a>
         </div>
       </div>
       <br>
@@ -230,23 +262,23 @@ meter, progress, output {
       <a href="#top"><i>Top of Page</i></a><br>
       <br>
       <div class="row">
-        <div class="column" style="text-align: center;"> <strong><a name="feel"
-              id="feel"></a>Today's Heat Risk</strong><a href="https://graphical.weather.gov/GraphicalNDFD.php?width=515&amp;timezone=EDT&amp;sector=MAINE&amp;element=heatrisk&amp;n=1"
-            title="Click for larger image"><img src="https://graphical.weather.gov/GraphicalNDFD.php?width=515&amp;timezone=EDT&amp;sector=MAINE&amp;element=heatrisk&amp;n=1"
-              style="width: 100%; border-width: 1px; border-style: solid;" alt="Heat Risk (Experimental)"><br>
+        <div class="column" style="text-align: center;"> <strong><a id="feel" name="feel"></a>Today's
+            Heat Risk</strong><a href="https://graphical.weather.gov/GraphicalNDFD.php?width=515&amp;timezone=EDT&amp;sector=MAINE&amp;element=heatrisk&amp;n=1"
+            title="Click for larger image"><img alt="Heat Risk (Experimental)" src="https://graphical.weather.gov/GraphicalNDFD.php?width=515&amp;timezone=EDT&amp;sector=MAINE&amp;element=heatrisk&amp;n=1"
+              style="max-width: 100%; height: auto; border: 1px solid #ccc; display: block; margin: auto;"><br>
           </a> </div>
         <div class="column" style="text-align: center;"> <strong>Today's
             Hazards</strong><a href="https://graphical.weather.gov/GraphicalNDFD.php?width=515&amp;timezone=EDT&amp;sector=MAINE&amp;element=wwa&amp;n=4"
-            title="Click for larger image"><img src="https://graphical.weather.gov/GraphicalNDFD.php?width=515&amp;timezone=EDT&amp;sector=MAINE&amp;element=wwa&amp;n=4"
-              style="width: 100%; border-width: 1px; border-style: solid;" alt="Today's Hazards"><br>
+            title="Click for larger image"><img alt="Today's Hazards" src="https://graphical.weather.gov/GraphicalNDFD.php?width=515&amp;timezone=EDT&amp;sector=MAINE&amp;element=wwa&amp;n=4"
+              style="max-width: 100%; height: auto; border: 1px solid #ccc; display: block; margin: auto;"><br>
           </a>
           <div class="b"><br>
           </div>
         </div>
         <div class="column" style="text-align: center;"> <strong>Tonight's
             Hazards</strong><a href="https://graphical.weather.gov/GraphicalNDFD.php?width=515&amp;timezone=EDT&amp;sector=MAINE&amp;element=wwa&amp;n=8"
-            title="Click for larger image"><img src="https://graphical.weather.gov/GraphicalNDFD.php?width=515&amp;timezone=EDT&amp;sector=MAINE&amp;element=wwa&amp;n=8"
-              style="width: 100%; border-width: 1px; border-style: solid;" alt="Tonight's Hazards"></a>
+            title="Click for larger image"><img alt="Tonight's Hazards" src="https://graphical.weather.gov/GraphicalNDFD.php?width=515&amp;timezone=EDT&amp;sector=MAINE&amp;element=wwa&amp;n=8"
+              style="max-width: 100%; height: auto; border: 1px solid #ccc; display: block; margin: auto;"></a>
         </div>
       </div>
       <br>
@@ -254,40 +286,44 @@ meter, progress, output {
       <a href="#top"><i>Top of Page</i></a><br>
       <br>
       <div class="row">
-        <div class="column" style="text-align: center;"> <strong><a name="precip"
-              id="precip"></a>Today's Forecast Precipitation</strong><a href="https://www.weather.gov/images/erh/gis/CAR_QPF24.png"
-            title="Click for larger image"><img src="https://graphical.weather.gov/GraphicalNDFD.php?width=515&amp;timezone=EDT&amp;sector=MAINE&amp;element=pop12&amp;n=1"
-              style="width: 100%; border-width: 1px; border-style: solid;" alt="Today's Forecast Precipitation"></a>
+        <div class="column" style="text-align: center;"> <strong><a id="precip"
+              name="precip"></a>Today's Forecast Precipitation</strong><a href="https://www.weather.gov/images/erh/gis/CAR_QPF24.png"
+            title="Click for larger image"><img alt="Today's Forecast Precipitation"
+              src="https://graphical.weather.gov/GraphicalNDFD.php?width=515&amp;timezone=EDT&amp;sector=MAINE&amp;element=pop12&amp;n=1"
+              style="max-width: 100%; height: auto; border: 1px solid #ccc; display: block; margin: auto;"></a>
         </div>
         <div class="column" style="text-align: center;"> <strong>Tonight's
             Forecast Precipitation</strong><a href="https://www.weather.gov/images/erh/gis/CAR_QPF24.png"
-            title="Click for larger image"><img src="https://graphical.weather.gov/GraphicalNDFD.php?width=515&amp;timezone=EDT&amp;sector=MAINE&amp;element=pop12&amp;n=2"
-              style="width: 100%; border-width: 1px; border-style: solid;" alt="Tonight's  Forecast Precipitation"></a>
+            title="Click for larger image"><img alt="Tonight's  Forecast Precipitation"
+              src="https://graphical.weather.gov/GraphicalNDFD.php?width=515&amp;timezone=EDT&amp;sector=MAINE&amp;element=pop12&amp;n=2"
+              style="max-width: 100%; height: auto; border: 1px solid #ccc; display: block; margin: auto;"></a>
         </div>
         <div class="column" style="text-align: center;"> <strong>Today's
             Snowfall Outlook</strong><a href="https://www.weather.gov/images/erh/gis/CAR_Snow.png"
-            title="Click for larger image"><img src="https://graphical.weather.gov/GraphicalNDFD.php?width=515&amp;timezone=EDT&amp;sector=MAINE&amp;element=snowamt&amp;n=2"
-              style="width: 100%; border-width: 1px; border-style: solid;" alt="Today's Snowfall Outlook"></a>
+            title="Click for larger image"><img alt="Today's Snowfall Outlook" src="https://graphical.weather.gov/GraphicalNDFD.php?width=515&amp;timezone=EDT&amp;sector=MAINE&amp;element=snowamt&amp;n=2"
+              style="max-width: 100%; height: auto; border: 1px solid #ccc; display: block; margin: auto;"></a>
           <br>
         </div>
       </div>
       <br>
       <br>
       <div class="row">
-        <div class="column" style="text-align: center;"> <strong><a name="precip"
-              id="precip"></a>Today's Ice Accumulation Outlook</strong><a href="https://www.weather.gov/images/erh/gis/CAR_QPF24.png"
-            title="Click for larger image"><img src="https://graphical.weather.gov/GraphicalNDFD.php?width=515&amp;timezone=EDT&amp;sector=MAINE&amp;element=iceaccum&amp;n=2"
-              style="width: 100%; border-width: 1px; border-style: solid;" alt="Today's Ice Accumulation Outlook"></a>
+        <div class="column" style="text-align: center;"> <strong><a id="precip"
+              name="precip"></a>Today's Ice Accumulation Outlook</strong><a href="https://www.weather.gov/images/erh/gis/CAR_QPF24.png"
+            title="Click for larger image"><img alt="Today's Ice Accumulation Outlook"
+              src="https://graphical.weather.gov/GraphicalNDFD.php?width=515&amp;timezone=EDT&amp;sector=MAINE&amp;element=iceaccum&amp;n=2"
+              style="max-width: 100%; height: auto; border: 1px solid #ccc; display: block; margin: auto;"></a>
         </div>
         <div class="column" style="text-align: center;"> <strong>Tonight's Ice
             Accumulation Outlook</strong><a href="https://www.weather.gov/images/erh/gis/CAR_QPF24.png"
-            title="Click for larger image"><img src="https://graphical.weather.gov/GraphicalNDFD.php?width=515&amp;timezone=EDT&amp;sector=MAINE&amp;element=iceaccum&amp;n=4"
-              style="width: 100%; border-width: 1px; border-style: solid;" alt="Tonight's Ice Accumulation Outlook"></a>
+            title="Click for larger image"><img alt="Tonight's Ice Accumulation Outlook"
+              src="https://graphical.weather.gov/GraphicalNDFD.php?width=515&amp;timezone=EDT&amp;sector=MAINE&amp;element=iceaccum&amp;n=4"
+              style="max-width: 100%; height: auto; border: 1px solid #ccc; display: block; margin: auto;"></a>
         </div>
         <div class="column" style="text-align: center;"> <strong>Today's
             Snowfall Outlook</strong><a href="https://www.weather.gov/images/erh/gis/CAR_Snow.png"
-            title="Click for larger image"><img src="https://graphical.weather.gov/GraphicalNDFD.php?width=515&amp;timezone=EDT&amp;sector=MAINE&amp;element=snowamt&amp;n=2"
-              style="width: 100%; border-width: 1px; border-style: solid;" alt="Today's Snowfall Outlook"></a>
+            title="Click for larger image"><img alt="Today's Snowfall Outlook" src="https://graphical.weather.gov/GraphicalNDFD.php?width=515&amp;timezone=EDT&amp;sector=MAINE&amp;element=snowamt&amp;n=2"
+              style="max-width: 100%; height: auto; border: 1px solid #ccc; display: block; margin: auto;"></a>
           <br>
         </div>
       </div>
@@ -300,22 +336,25 @@ meter, progress, output {
       <div class="row">
         <div class="column" style="text-align: center;"> <strong>Tomorrow's
             Precipitation Outlook</strong><a href="https://graphical.weather.gov/GraphicalNDFD.php?width=515&amp;timezone=EDT&amp;sector=MAINE&amp;element=pop12&amp;n=3"
-            title="Click for larger image"><img src="https://graphical.weather.gov/GraphicalNDFD.php?width=515&amp;timezone=EDT&amp;sector=MAINE&amp;element=pop12&amp;n=3"
-              style="width: 100%; border-width: 1px; border-style: solid;" alt="Tomorrow's Precipitation Outlook"></a>
+            title="Click for larger image"><img alt="Tomorrow's Precipitation Outlook"
+              src="https://graphical.weather.gov/GraphicalNDFD.php?width=515&amp;timezone=EDT&amp;sector=MAINE&amp;element=pop12&amp;n=3"
+              style="max-width: 100%; height: auto; border: 1px solid #ccc; display: block; margin: auto;"></a>
         </div>
         <div class="column">
           <div style="text-align: center;"><strong>Tomorrow Night's
               Precipitation Outlook<br>
             </strong></div>
           <a href="https://graphical.weather.gov/GraphicalNDFD.php?width=515&amp;timezone=EDT&amp;sector=MAINE&amp;element=pop12&amp;n=4"
-            title="Click for larger image"><img src="https://graphical.weather.gov/GraphicalNDFD.php?width=515&amp;timezone=EDT&amp;sector=MAINE&amp;element=pop12&amp;n=4"
-              alt="Tomorrow Night's Precipitation Outlook" style="width: 100%; border-width: 1px; border-style: solid;"></a>
+            title="Click for larger image"><img alt="Tomorrow Night's Precipitation Outlook"
+              src="https://graphical.weather.gov/GraphicalNDFD.php?width=515&amp;timezone=EDT&amp;sector=MAINE&amp;element=pop12&amp;n=4"
+              style="max-width: 100%; height: auto; border: 1px solid #ccc; display: block; margin: auto;"></a>
         </div>
         <div class="column">
           <div style="text-align: center;"><strong>Tomorrow Night's Snowfall
               Outlook</strong><a href="https://graphical.weather.gov/GraphicalNDFD.php?width=515&amp;timezone=EDT&amp;sector=MAINE&amp;element=snowamt&amp;n=8"
-              title="Click for larger image"><img src="https://graphical.weather.gov/GraphicalNDFD.php?width=515&amp;timezone=EDT&amp;sector=MAINE&amp;element=snowamt&amp;n=8"
-                alt="Tomorrow Night's Snowfall Outlook" style="width: 100%; border-width: 1px; border-style: solid;"></a>
+              title="Click for larger image"><img alt="Tomorrow Night's Snowfall Outlook"
+                src="https://graphical.weather.gov/GraphicalNDFD.php?width=515&amp;timezone=EDT&amp;sector=MAINE&amp;element=snowamt&amp;n=8"
+                style="max-width: 100%; height: auto; border: 1px solid #ccc; display: block; margin: auto;"></a>
           </div>
         </div>
       </div>
@@ -326,22 +365,26 @@ meter, progress, output {
       <div class="row">
         <div class="column" style="text-align: center;"> <strong>Today's Wind
             Gust Outlook</strong><a href="https://graphical.weather.gov/GraphicalNDFD.php?width=515&amp;timezone=EDT&amp;sector=MAINE&amp;element=windgust&amp;n=4"
-            title="Click for larger image"><img src="https://graphical.weather.gov/GraphicalNDFD.php?width=515&amp;timezone=EDT&amp;sector=MAINE&amp;element=windgust&amp;n=4"
-              style="width: 100%; border-width: 1px; border-style: solid;" alt="Today's Wind Gust Outlook"></a>
+            title="Click for larger image"><img alt="Today's Wind Gust Outlook"
+              src="https://graphical.weather.gov/GraphicalNDFD.php?width=515&amp;timezone=EDT&amp;sector=MAINE&amp;element=windgust&amp;n=4"
+              style="max-width: 100%; height: auto; border: 1px solid #ccc; display: block; margin: auto;"></a>
         </div>
         <div class="column">
           <div style="text-align: center;"><strong>Tonight's Wind Gust Outlook<br>
             </strong></div>
           <a href="https://graphical.weather.gov/GraphicalNDFD.php?width=515&amp;timezone=EDT&amp;sector=MAINE&amp;element=windgust&amp;n=8"
-            title="Click for larger image"><img src="https://graphical.weather.gov/GraphicalNDFD.php?width=515&amp;timezone=EDT&amp;sector=MAINE&amp;element=windgust&amp;n=8"
-              alt="Tonight's Wind Gust Outlook" style="width:100%"></a> </div>
+            title="Click for larger image"><img alt="Tonight's Wind Gust Outlook"
+              src="https://graphical.weather.gov/GraphicalNDFD.php?width=515&amp;timezone=EDT&amp;sector=MAINE&amp;element=windgust&amp;n=8"
+              style="max-width: 100%; height: auto; border: 1px solid #ccc; display: block; margin: auto;"></a>
+        </div>
         <div class="column">
           <div style="text-align: center;"><strong>Today's "Feel's Like"
               Temperature<br>
             </strong></div>
           <a href="https://graphical.weather.gov/GraphicalNDFD.php?width=515&amp;timezone=EDT&amp;sector=MAINE&amp;element=apparentt&amp;n=4"
-            title="Click for larger image"><img src="https://graphical.weather.gov/GraphicalNDFD.php?width=515&amp;timezone=EDT&amp;sector=MAINE&amp;element=apparentt&amp;n=4"
-              alt="Today's &quot;Feels Like&quot; Temperature" style="width:100%"></a>
+            title="Click for larger image"><img alt="Today's &quot;Feels Like&quot; Temperature"
+              src="https://graphical.weather.gov/GraphicalNDFD.php?width=515&amp;timezone=EDT&amp;sector=MAINE&amp;element=apparentt&amp;n=4"
+              style="max-width: 100%; height: auto; border: 1px solid #ccc; display: block; margin: auto;"></a>
         </div>
       </div>
       <br>
@@ -349,49 +392,52 @@ meter, progress, output {
       <a href="#top"><i>Top of Page</i><br>
       </a><br>
       <div class="row">
-        <div class="column" style="text-align: center;"> <strong><a name="severe"
-              id="severe"></a>Day 1 Severe Weather Outlook</strong><a href="https://www.spc.noaa.gov/partners/outlooks/state/images/ME_swody1.png"
-            title="Click for larger image"><img src="https://www.spc.noaa.gov/partners/outlooks/state/images/ME_swody1.png"
-              style="width: 100%; border-width: 1px; border-style: solid;" alt="Today's Severe Severe Outlook"></a>
+        <div class="column" style="text-align: center;"> <strong><a id="severe"
+              name="severe"></a>Day 1 Severe Weather Outlook</strong><a href="https://www.spc.noaa.gov/partners/outlooks/state/images/ME_swody1.png"
+            title="Click for larger image"><img alt="Today's Severe Severe Outlook"
+              src="https://www.spc.noaa.gov/partners/outlooks/state/images/ME_swody1.png"
+              style="max-width: 100%; height: auto; border: 1px solid #ccc; display: block; margin: auto;"></a>
         </div>
         <div class="column">
           <div style="text-align: center;"><strong>Day 2 Severe Weather Outlook<br>
             </strong></div>
           <a href="https://www.spc.noaa.gov/partners/outlooks/state/images/ME_swody2.png"
-            title="Click for larger image"><img src="https://www.spc.noaa.gov/partners/outlooks/state/images/ME_swody2.png"
-              alt="Tomorrow's Severe Outlook" style="width:100%"></a> </div>
+            title="Click for larger image"><img alt="Tomorrow's Severe Outlook"
+              src="https://www.spc.noaa.gov/partners/outlooks/state/images/ME_swody2.png"
+              style="max-width: 100%; height: auto; border: 1px solid #ccc; display: block; margin: auto;"></a>
+        </div>
         <div class="column">
           <div style="text-align: center;"><strong>Day 3 Severe Weather Outlook</strong></div>
           <a href="https://www.spc.noaa.gov/partners/outlooks/state/images/ME_swody3.png"
-            title="Click for larger image"><img src="https://www.spc.noaa.gov/partners/outlooks/state/images/ME_swody3.png"
-              alt="Day 3 Severe Outlook" style="width:100%"></a> </div>
+            title="Click for larger image"><img alt="Day 3 Severe Outlook" src="https://www.spc.noaa.gov/partners/outlooks/state/images/ME_swody3.png"
+              style="max-width: 100%; height: auto; border: 1px solid #ccc; display: block; margin: auto;"></a>
+        </div>
       </div>
       <br>
       <br>
       <a href="#top"><i>Top of Page</i><br>
       </a><br>
       <div class="row">
-        <div class="column" style="text-align: center;"> <strong><a name="river"
-              id="river"></a>Maine Drought Monitor</strong><a href="https://droughtmonitor.unl.edu/data/png/current/current_me_trd.png"
-            title="Click for larger image"><img src="https://droughtmonitor.unl.edu/data/png/current/current_me_trd.png"
-              style="width: 100%; border-width: 1px; border-style: solid;" alt="ME Drought Monitor"></a>
+        <div class="column" style="text-align: center;"> <strong><a id="river"
+              name="river"></a>Maine Drought Monitor</strong><a href="https://droughtmonitor.unl.edu/data/png/current/current_me_trd.png"
+            title="Click for larger image"><img alt="ME Drought Monitor" src="https://droughtmonitor.unl.edu/data/png/current/current_me_trd.png"
+              style="max-width: 100%; height: auto; border: 1px solid #ccc; display: block; margin: auto;"></a>
         </div>
         <div class="column">
           <div style="text-align: center;"><strong>Northeast River Forecast
               Center Briefing<br>
             </strong></div>
           <a href="https://www.weather.gov/nerfc/briefings" title="Click for larger image"><img
-              src="https://www.weather.gov/images/nerfc/WxStory/WeatherStory1.png"
-              alt="NE River Forecast Center Briefing" style="width:100%"></a> </div>
+              alt="NE River Forecast Center Briefing" src="https://www.weather.gov/images/nerfc/WxStory/WeatherStory1.png"
+              style="max-width: 100%; height: 362px; border: 1px solid #cccccc; display: block; margin: auto; width: 641px;"></a>
+        </div>
         <div class="column">
           <div style="text-align: center;"><strong>Saint John River at Fort Kent<br>
             </strong></div>
           <a href="https://water.weather.gov/ahps2/hydrograph.php?wfo=car&amp;gage=ftkm1"
-            title="Click for larger image"><img src="https://water.weather.gov/resources/hydrographs/ftkm1_hg.png"
-              alt="Saint John River at Fort Kent" style="width: 100%; border-width: 1px; border-style: solid;"></a><br>
-          <div style="text-align: center;"><span style="color: red;"><strong style="font-size: 12px;">Gauge
-                readings may be affected by ice. Forecast flows are not adjusted
-                for ice.</strong></span></div>
+            title="Click for larger image"><img alt="Saint John River at Fort Kent"
+              src="https://water.weather.gov/resources/hydrographs/ftkm1_hg.png"
+              style="max-width: 100%; height: auto; border: 1px solid #ccc; display: block; margin: auto;"></a><br>
         </div>
       </div>
       <br>
@@ -401,12 +447,10 @@ meter, progress, output {
       <div class="row">
         <div class="column" style="text-align: center;"> <strong>Fish River at
             Fort Kent</strong><a href="https://water.weather.gov/ahps2/hydrograph.php?wfo=car&amp;gage=fihm1"
-            title="Click for larger image"><img src="https://water.weather.gov/resources/hydrographs/fihm1_hg.png"
-              style="width: 100%; border-width: 1px; border-style: solid;" alt="Fish River at Fort Kent"><br>
+            title="Click for larger image"><img alt="Fish River at Fort Kent" src="https://water.weather.gov/resources/hydrographs/fihm1_hg.png"
+              style="max-width: 100%; height: auto; border: 1px solid #ccc; display: block; margin: auto;"><br>
           </a>
-          <div style="text-align: center;"><span style="color: red;"><strong style="font-size: 12px;">Gauge
-                readings may be affected by ice. Forecast flows are not adjusted
-                for ice.</strong></span><br>
+          <div style="text-align: center;"><br>
           </div>
           <a href="https://droughtmonitor.unl.edu/data/png/current/current_me_trd.png"
             title="Click for larger image"><br>
@@ -415,22 +459,22 @@ meter, progress, output {
           <div style="text-align: center;"><strong>Saint John River at Dickey<br>
             </strong></div>
           <a href="https://water.weather.gov/ahps2/hydrograph.php?wfo=car&amp;gage=dicm1"
-            title="Click for larger image"><img src="https://water.weather.gov/resources/hydrographs/dicm1_hg.png"
-              alt="Saint John River at Dickey" style="width: 100%; border-style: solid; border-width: 1px;"><br>
+            title="Click for larger image"><img alt="Saint John River at Dickey"
+              src="https://water.weather.gov/resources/hydrographs/dicm1_hg.png"
+              style="max-width: 100%; height: auto; border: 1px solid #ccc; display: block; margin: auto;"><br>
           </a>
-          <div style="text-align: center;"><span style="color: red;"><strong style="font-size: 12px;">Gauge
-                readings may be affected by ice. Forecast flows are not adjusted
-                for ice.</strong></span></div>
+          <div style="text-align: center;"><br>
+          </div>
         </div>
         <div class="column">
           <div style="text-align: center;"><strong>Allagash River above Allagash<br>
             </strong></div>
           <a href="https://water.weather.gov/ahps2/hydrograph.php?wfo=car&amp;gage=allm1"
-            title="Click for larger image"><img src="https://water.weather.gov/resources/hydrographs/ftkm1_hg.png"
-              alt="Saint John River at Fort Kent" style="width: 100%; border-width: 1px; border-style: solid;"></a><br>
-          <div style="text-align: center;"><span style="color: red;"><strong style="font-size: 12px;">Gauge
-                readings may be affected by ice. Forecast flows are not adjusted
-                for ice.</strong></span></div>
+            title="Click for larger image"><img alt="Saint John River at Fort Kent"
+              src="https://water.weather.gov/resources/hydrographs/ftkm1_hg.png"
+              style="max-width: 100%; height: auto; border: 1px solid #ccc; display: block; margin: auto;"></a><br>
+          <div style="text-align: center;"><br>
+          </div>
         </div>
       </div>
       <br>
@@ -438,10 +482,10 @@ meter, progress, output {
       <br>
       <br>
       <div class="row">
-        <div class="column" style="text-align: center;"> <strong><a name="coast"
-              id="coast"></a>Today's Wave Heights (Gulf of Maine)</strong><a href="https://graphical.weather.gov/GraphicalNDFD.php?width=515&amp;timezone=EDT&amp;sector=MAINE&amp;element=waveheight&amp;n=4"
-            title="Click for larger image"><img src="https://graphical.weather.gov/GraphicalNDFD.php?width=515&amp;timezone=EDT&amp;sector=MAINE&amp;element=waveheight&amp;n=4"
-              style="width: 100%; border-width: 1px; border-style: solid;" alt="Today's Wave Heights"><br>
+        <div class="column" style="text-align: center;"> <strong><a id="coast"
+              name="coast"></a>Today's Wave Heights (Gulf of Maine)</strong><a href="https://graphical.weather.gov/GraphicalNDFD.php?width=515&amp;timezone=EDT&amp;sector=MAINE&amp;element=waveheight&amp;n=4"
+            title="Click for larger image"><img alt="Today's Wave Heights" src="https://graphical.weather.gov/GraphicalNDFD.php?width=515&amp;timezone=EDT&amp;sector=MAINE&amp;element=waveheight&amp;n=4"
+              style="max-width: 100%; height: auto; border: 1px solid #ccc; display: block; margin: auto;"><br>
           </a> <a href="https://droughtmonitor.unl.edu/data/png/current/current_me_trd.png"
             title="Click for larger image"> </a> </div>
         <div class="column">
@@ -449,16 +493,16 @@ meter, progress, output {
               of Maine)<br>
             </strong></div>
           <a href="https://graphical.weather.gov/GraphicalNDFD.php?width=515&amp;timezone=EDT&amp;sector=MAINE&amp;element=waveheight&amp;n=8"
-            title="Click for larger image"><img src="https://graphical.weather.gov/GraphicalNDFD.php?width=515&amp;timezone=EDT&amp;sector=MAINE&amp;element=waveheight&amp;n=8"
-              alt="Tonight's Wave Heights" style="width: 100%; border-style: solid; border-width: 1px;"><br>
+            title="Click for larger image"><img alt="Tonight's Wave Heights" src="https://graphical.weather.gov/GraphicalNDFD.php?width=515&amp;timezone=EDT&amp;sector=MAINE&amp;element=waveheight&amp;n=8"
+              style="max-width: 100%; height: auto; border: 1px solid #ccc; display: block; margin: auto;"><br>
           </a> </div>
         <div class="column">
           <div style="text-align: center;"><strong>Western Atlantic Weather
               Chart<br>
             </strong></div>
           <a href="https://ocean.weather.gov/A_w_sfc_color.png" title="Click for larger image"><img
-              src="https://ocean.weather.gov/A_w_sfc_color.png" alt="Western Atlantic Weather Chart"
-              style="width: 452px; border-width: 1px; border-style: solid; height: 544px;"></a><br>
+              alt="Western Atlantic Weather Chart" src="https://ocean.weather.gov/A_w_sfc_color.png"
+              style="max-width: 100%; height: 517px; border: 1px solid #cccccc; display: block; margin: auto; width: 430px;"></a><br>
         </div>
       </div>
       <br>
@@ -466,5 +510,18 @@ meter, progress, output {
       <br>
       <br>
     </div>
+    <script>
+document.addEventListener("DOMContentLoaded", function () {
+  const modified = new Date(document.lastModified);
+  const options = {
+    year: 'numeric', month: 'long', day: 'numeric',
+    hour: '2-digit', minute: '2-digit',
+    timeZone: 'America/New_York',
+    timeZoneName: 'short'
+  };
+  const formatted = modified.toLocaleDateString('en-US', options);
+  document.getElementById("last-modified").textContent = "Page last modified: " + formatted;
+});
+</script>
   </body>
 </html>
