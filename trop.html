@@ -1,6 +1,6 @@
 <html>
   <head>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta content="text/html; charset=utf-8" http-equiv="content-type">
     <meta content="width=device-width, initial-scale=1" name="viewport">
     <title>Tropical Weather</title>
     <style>
@@ -86,6 +86,16 @@ meter, progress, output {
   background-size: cover;
   background-attachment: fixed;
 }
+      .clock-table {
+      width: 90%;
+      max-width: 600px;
+      margin: 1em auto;
+      text-align: center;
+      border-collapse: collapse;
+    }
+    .clock-cell {
+      font-weight: bold;
+    }
   
 
 /* Modern Flex Layout for Responsiveness */
@@ -151,19 +161,16 @@ img {
         <table class="clock-table">
           <thead>
             <tr>
-              <th>ET 12-Hour</th>
-              <th>ET 24-Hour</th>
-              <th>UTC / Z</th>
+              <th>Eastern Time 12-Hour</th>
+              <th>Eastern Time 24-Hour</th>
+              <th>UTC / Z / Greenwich</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td id="et12"><br>
-              </td>
-              <td id="et24"><br>
-              </td>
-              <td id="utc"><br>
-              </td>
+              <td class="clock-cell" id="et12">--</td>
+              <td class="clock-cell" id="et24">--</td>
+              <td class="clock-cell" id="utc">--</td>
             </tr>
           </tbody>
         </table>
@@ -540,5 +547,21 @@ document.addEventListener("DOMContentLoaded", function () {
   const formatted = modified.toLocaleDateString('en-US', options);
   document.getElementById("last-updated").textContent = "Page last modified: " + formatted;
 });
+</script> <script>
+function updateClocks() {
+  const nowUTC = new Date();
+  const nowET = new Date(nowUTC.toLocaleString("en-US", { timeZone: "America/New_York" }));
+
+  const pad = n => n.toString().padStart(2, '0');
+  const h12 = nowET.getHours() % 12 || 12;
+  const ampm = nowET.getHours() >= 12 ? 'PM' : 'AM';
+
+  document.getElementById("et12").textContent = `${pad(h12)}:${pad(nowET.getMinutes())} ${ampm}`;
+  document.getElementById("et24").textContent = `${pad(nowET.getHours())}:${pad(nowET.getMinutes())}`;
+  document.getElementById("utc").textContent = `${pad(nowUTC.getUTCHours())}:${pad(nowUTC.getUTCMinutes())} UTC`;
+}
+
+setInterval(updateClocks, 1000);
+updateClocks();
 </script> </body>
 </html>
