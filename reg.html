@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <title>Regional Maps and Charts</title>
     <meta content="width=device-width, initial-scale=1" name="viewport">
     <style>
@@ -93,8 +93,7 @@ img {
   display: block;
   margin: auto;
 }
-</style>
-  </head>
+</style> </head>
   <body>
     <h2 style="text-align: center;">Regional Maps &amp; Charts</h2>
     <div id="last-modified" style="text-align:center; font-size:14px; font-family:Arial, sans-serif; margin-top: -0.5em;"></div>
@@ -166,20 +165,20 @@ img {
       <div class="column" style="text-align: center;"> <strong>NE Weather Chart</strong><a
           href="https://www.wpc.ncep.noaa.gov/sfc/namnesfcwbg.gif" title="Click for larger image"><img
             alt="Northeast Weather Chart" src="https://www.wpc.ncep.noaa.gov/sfc/namnesfcwbg.gif"
-            style="max-width: 100%; height: auto; border: 1px solid #ccc; display: block; margin: auto;"></a>
+            style="max-width: 100%; height: 348px; border: 1px solid #cccccc; display: block; margin: auto; width: 463px;"></a>
       </div>
       <div class="column">
         <div style="text-align: center;"><strong>NE Radar<br>
           </strong></div>
         <strong></strong> <strong> </strong> <a href="https://s.w-x.co/staticmaps/wu/wu/wxtype1200_cur/usbml/animate.png"
           title="Click for larger image"><img alt="Regional Radar" src="https://s.w-x.co/staticmaps/wu/wu/wxtype1200_cur/usbml/animate.png"
-            style="max-width: 100%; height: auto; border: 1px solid #ccc; display: block; margin: auto;"></a>
+            style="max-width: 100%; height: 348px; border: 1px solid #cccccc; display: block; margin: auto; width: 477px;"></a>
       </div>
       <div class="column">
         <div style="text-align: center;"><strong>NWS Caribou Weather Briefing</strong></div>
         <strong></strong> <strong> </strong> <a href="https://www.weather.gov//images/car/WxStory/WeatherStory1.png"
           title="Click for larger image"><img alt="NWS Caribou Weather Story" src="https://www.weather.gov//images/car/WxStory/WeatherStory1.png"
-            style="max-width: 100%; height: 352px; border: 1px solid #cccccc; display: block; margin: auto; width: 452px;"></a>
+            style="max-width: 100%; height: 349px; border: 1px solid #cccccc; display: block; margin: auto; width: 449px;"></a>
       </div>
     </div>
     <br>
@@ -522,6 +521,21 @@ document.addEventListener("DOMContentLoaded", function () {
   const formatted = modified.toLocaleDateString('en-US', options);
   document.getElementById("last-modified").textContent = "Page last modified: " + formatted;
 });
-</script>
-  </body>
+</script> <script>
+  function updateClocks() {
+    const nowUTC = new Date();
+    const nowET = new Date(nowUTC.toLocaleString("en-US", { timeZone: "America/New_York" }));
+
+    const pad = n => n.toString().padStart(2, '0');
+    const h12 = nowET.getHours() % 12 || 12;
+    const ampm = nowET.getHours() >= 12 ? 'PM' : 'AM';
+
+    document.getElementById("et12").textContent = `${pad(h12)}:${pad(nowET.getMinutes())} ${ampm}`;
+    document.getElementById("et24").textContent = `${pad(nowET.getHours())}:${pad(nowET.getMinutes())}`;
+    document.getElementById("utc").textContent = `${pad(nowUTC.getUTCHours())}:${pad(nowUTC.getUTCMinutes())} UTC`;
+  }
+
+  setInterval(updateClocks, 1000);
+  updateClocks();
+</script> </body>
 </html>
