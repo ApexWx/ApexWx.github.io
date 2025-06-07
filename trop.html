@@ -1,6 +1,6 @@
 <html>
   <head>
-    <meta content="text/html; charset=utf-8" http-equiv="content-type">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <meta content="width=device-width, initial-scale=1" name="viewport">
     <title>Tropical Weather</title>
     <style>
@@ -69,16 +69,24 @@ meter, progress, output {
   margin: 1em 0;
 }
 
-.clock-table {
-  border-collapse: collapse;
-  width: auto;
+..clock-table {
+  width: 90%;
+  max-width: 600px;
+  margin: 1em auto;
   text-align: center;
+  border-collapse: collapse;
+  background: transparent;
 }
 
 .clock-table th, .clock-table td {
-  border: 1px solid #ccc;
+  border: none;
   padding: 0.5em 1em;
-  font-family: monospace;
+  font-family: Arial, sans-serif;
+  color: black;
+}
+
+.clock-cell {
+  font-weight: bold;
 }
       body {
   background-image: url('https://raw.githubusercontent.com/ApexWx/ApexWx.github.io/refs/heads/master/seamless-background-simply-sky.jpg');
@@ -86,16 +94,7 @@ meter, progress, output {
   background-size: cover;
   background-attachment: fixed;
 }
-      .clock-table {
-      width: 90%;
-      max-width: 600px;
-      margin: 1em auto;
-      text-align: center;
-      border-collapse: collapse;
-    }
-    .clock-cell {
-      font-weight: bold;
-    }
+
   
 
 /* Modern Flex Layout for Responsiveness */
@@ -140,15 +139,70 @@ img {
     padding: 10px;
   }
 }
+      body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f8f8;
+      margin: 0;
+      background-image: url('https://raw.githubusercontent.com/ApexWx/ApexWx.github.io/refs/heads/master/seamless-background-simply-sky.jpg');
+      background-repeat: repeat;
+      background-size: cover;
+      background-attachment: fixed;
+    }
+    .nav {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      border-top: 1px solid #ccc;
+      border-bottom: 1px solid #ccc;
+    }
+    .nav.show { display: flex; }
+    .nav li { display: inline; }
+    .nav a {
+      display: inline-block;
+      padding: 10px;
+      text-decoration: none;
+      font-weight: bold;
+      color: black;
+    }
+    .nav a:hover {
+      text-decoration: underline;
+      color: #0077cc;
+    }
+    #navToggle {
+      font-size: 20px;
+      border: none;
+      background: none;
+      cursor: pointer;
+      margin: 10px auto;
+      display: block;
+    }
+    @media (min-width: 769px) {
+      .nav { display: flex; flex-direction: row; justify-content: center; }
+      #navToggle { display: none; }
+    }
+    .clock-table {
+      width: 90%;
+      max-width: 600px;
+      margin: 1em auto;
+      text-align: center;
+      border-collapse: collapse;
+    }
+    .clock-cell { font-weight: bold; }
 </style> </head>
   <body>
     <main role="main">
       <h2 style="text-align: center;">Tropical Weather</h2>
       <div id="last-updated" style="text-align:center; font-size:12px; font-family:Arial, sans-serif;">Page
         last modified: June 5, 2025 at 04:36 PM EDT</div>
+      <div style="text-align: center; font-size: 12px;"><em><br>
+          Graphics update automatically -- check image timestamps for most
+          recent updates/valid periods. </em></div>
       <p></p>
       <ul class="nav">
-        <li><a href="https://apexwx.github.io/">Main Page</a></li>
+        <li><a href="https://apexwx.github.io/">Home</a></li>
         <li><a href="#atl">Atlantic Outlook</a></li>
         <li><a href="#sat">Atlantic Satellite</a></li>
         <li><a href="#pac">Eastern Pacific Outlook</a></li>
@@ -448,8 +502,20 @@ img {
         </div>
         <br>
         <br>
+        <!-- Top button --> <a class="top-button" href="#top" title="Back to top">⬆️</a>
+        <!-- Clocks -->
+        <div id="et12"></div>
+        <div id="et24"></div>
+        <div id="utc"></div>
+        <!-- Alert Boxes -->
+        <div id="tropical-alert" style="display:none;"></div>
+        <div id="gulf-alert" style="display:none;"></div>
+        <!-- Last Updated -->
+        <div id="last-updated" style="text-align:center; font-size:12px; font-family:Arial, sans-serif;"></div>
+        <!-- All JavaScript Together -->
         <script>
 document.addEventListener("DOMContentLoaded", function () {
+  // Nav toggle
   const nav = document.querySelector(".nav");
   const toggle = document.getElementById("navToggle");
   if (toggle && nav) {
@@ -457,86 +523,8 @@ document.addEventListener("DOMContentLoaded", function () {
       nav.classList.toggle("show");
     });
   }
-});
-</script><a class="top-button" href="#top" title="Back to top">⬆️</a>
-        <script>
-function updateClocks() {
-  const now = new Date();
 
-  const et12 = now.toLocaleTimeString('en-US', {
-    hour: 'numeric', minute: '2-digit', hour12: true,
-    timeZone: 'America/New_York'
-  });
-
-  const et24 = now.toLocaleTimeString('en-GB', {
-    hour: '2-digit', minute: '2-digit', hour12: false,
-    timeZone: 'America/New_York'
-  });
-
-  const utc = now.toLocaleTimeString('en-GB', {
-    hour: '2-digit', minute: '2-digit', hour12: false,
-    timeZone: 'UTC'
-  });
-
-  document.getElementById('et12').textContent = et12;
-  document.getElementById('et24').textContent = et24;
-  document.getElementById('utc').textContent = utc;
-}
-setInterval(updateClocks, 1000);
-updateClocks();
-</script></div> </main>
-    <script>
-fetch("https://api.weather.gov/alerts/active?area=AT")
-  .then(response => response.json())
-  .then(data => {
-    if (data.features && data.features.length > 0) {
-      const alerts = data.features.map(f => f.properties).filter(p => p.event.includes("Tropical"));
-      if (alerts.length > 0) {
-        const alertBox = document.getElementById("tropical-alert");
-        alertBox.style.display = "block";
-        const dismissBtn = document.createElement("button");
-        dismissBtn.textContent = "Dismiss";
-        dismissBtn.style.cssText = "float:right;background:#cc0000;color:white;border:none;padding:0.3em 0.7em;border-radius:4px;cursor:pointer;";
-        dismissBtn.onclick = () => alertBox.remove();
-
-        const content = document.createElement("div");
-        content.innerHTML = "<strong>Active Tropical Alerts:</strong><br>" +
-                            alerts.map(a => a.headline).join("<br><br>");
-        alertBox.appendChild(dismissBtn);
-        alertBox.appendChild(content);
-      }
-    }
-  })
-  .catch(err => console.log("Alert fetch failed:", err));
-</script><script>
-fetch("https://api.weather.gov/alerts/active?area=FL,AL,MS,LA,TX")
-  .then(res => res.json())
-  .then(data => {
-    const alerts = data.features
-      .map(f => f.properties)
-      .filter(p => /Gulf|Marine|Tropical|Storm|Hurricane/i.test(p.event));
-
-    if (alerts.length > 0) {
-      const alertBox = document.getElementById("gulf-alert");
-      alertBox.style.display = "block";
-
-      const dismissBtn = document.createElement("button");
-      dismissBtn.textContent = "Dismiss";
-      dismissBtn.style.cssText = "float:right;background:#cc0000;color:white;border:none;padding:0.3em 0.7em;border-radius:4px;cursor:pointer;";
-      dismissBtn.onclick = () => alertBox.remove();
-
-      const content = document.createElement("div");
-      content.innerHTML = "<strong>Active Gulf of Mexico Alerts:</strong><br>" +
-        alerts.map(a => a.headline).join("<br><br>");
-
-      alertBox.appendChild(dismissBtn);
-      alertBox.appendChild(content);
-    }
-  })
-  .catch(err => console.error("Gulf alert fetch failed", err));
-</script><div id="last-updated" style="text-align:center; font-size:12px; font-family:Arial, sans-serif;"></div>
-    <script>
-document.addEventListener("DOMContentLoaded", function () {
+  // Last modified
   const modified = new Date(document.lastModified);
   const options = {
     year: 'numeric', month: 'long', day: 'numeric',
@@ -545,23 +533,83 @@ document.addEventListener("DOMContentLoaded", function () {
     timeZoneName: 'short'
   };
   const formatted = modified.toLocaleDateString('en-US', options);
-  document.getElementById("last-updated").textContent = "Page last modified: " + formatted;
+  const modEl = document.getElementById("last-updated");
+  if (modEl) modEl.textContent = "Page last modified: " + formatted;
+
+  // Clocks
+  function updateClocks() {
+    const nowUTC = new Date();
+    const nowET = new Date(nowUTC.toLocaleString("en-US", { timeZone: "America/New_York" }));
+
+    const pad = n => n.toString().padStart(2, '0');
+    const h12 = nowET.getHours() % 12 || 12;
+    const ampm = nowET.getHours() >= 12 ? 'PM' : 'AM';
+
+    const el = id => document.getElementById(id);
+    if (el("et12")) el("et12").textContent = `${pad(h12)}:${pad(nowET.getMinutes())} ${ampm}`;
+    if (el("et24")) el("et24").textContent = `${pad(nowET.getHours())}:${pad(nowET.getMinutes())}`;
+    if (el("utc"))  el("utc").textContent  = `${pad(nowUTC.getUTCHours())}:${pad(nowUTC.getUTCMinutes())} UTC`;
+  }
+
+  updateClocks();
+  setInterval(updateClocks, 1000);
 });
-</script> <script>
-function updateClocks() {
-  const nowUTC = new Date();
-  const nowET = new Date(nowUTC.toLocaleString("en-US", { timeZone: "America/New_York" }));
+</script><!-- Tropical Alerts -->
+        <script>
+fetch("https://api.weather.gov/alerts/active?area=AT")
+  .then(res => res.json())
+  .then(data => {
+    if (data.features?.length) {
+      const alerts = data.features
+        .map(f => f.properties)
+        .filter(p => p.event.includes("Tropical"));
 
-  const pad = n => n.toString().padStart(2, '0');
-  const h12 = nowET.getHours() % 12 || 12;
-  const ampm = nowET.getHours() >= 12 ? 'PM' : 'AM';
+      if (alerts.length > 0) {
+        const box = document.getElementById("tropical-alert");
+        box.style.display = "block";
 
-  document.getElementById("et12").textContent = `${pad(h12)}:${pad(nowET.getMinutes())} ${ampm}`;
-  document.getElementById("et24").textContent = `${pad(nowET.getHours())}:${pad(nowET.getMinutes())}`;
-  document.getElementById("utc").textContent = `${pad(nowUTC.getUTCHours())}:${pad(nowUTC.getUTCMinutes())} UTC`;
-}
+        const btn = document.createElement("button");
+        btn.textContent = "Dismiss";
+        btn.style.cssText = "float:right;background:#cc0000;color:white;border:none;padding:0.3em 0.7em;border-radius:4px;cursor:pointer;";
+        btn.onclick = () => box.remove();
 
-setInterval(updateClocks, 1000);
-updateClocks();
-</script> </body>
+        const content = document.createElement("div");
+        content.innerHTML = "<strong>Active Tropical Alerts:</strong><br>" +
+          alerts.map(a => a.headline).join("<br><br>");
+
+        box.appendChild(btn);
+        box.appendChild(content);
+      }
+    }
+  })
+  .catch(err => console.log("Tropical alert fetch failed:", err));
+</script><!-- Gulf Alerts -->
+        <script>
+fetch("https://api.weather.gov/alerts/active?area=FL,AL,MS,LA,TX")
+  .then(res => res.json())
+  .then(data => {
+    const alerts = data.features
+      .map(f => f.properties)
+      .filter(p => /Gulf|Marine|Tropical|Storm|Hurricane/i.test(p.event));
+
+    if (alerts.length > 0) {
+      const box = document.getElementById("gulf-alert");
+      box.style.display = "block";
+
+      const btn = document.createElement("button");
+      btn.textContent = "Dismiss";
+      btn.style.cssText = "float:right;background:#cc0000;color:white;border:none;padding:0.3em 0.7em;border-radius:4px;cursor:pointer;";
+      btn.onclick = () => box.remove();
+
+      const content = document.createElement("div");
+      content.innerHTML = "<strong>Active Gulf of Mexico Alerts:</strong><br>" +
+        alerts.map(a => a.headline).join("<br><br>");
+
+      box.appendChild(btn);
+      box.appendChild(content);
+    }
+  })
+  .catch(err => console.error("Gulf alert fetch failed", err));
+</script> </div></main>
+  </body>
 </html>
