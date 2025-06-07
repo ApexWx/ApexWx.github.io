@@ -1,0 +1,36 @@
+CSS
+
+.layout {
+  width: 100%;
+
+  display: grid;
+  grid:
+    "header header header" auto
+    "leftSide body rightSide" 1fr
+    "footer footer footer" auto
+    / auto 1fr auto;
+  gap: 8px;
+}
+
+body {
+	font-family: Arial, Helvetica, sans-serif ;
+	background-image: url('https://github.com/ApexWx/ApexWx.github.io/blob/master/seamless-background-simply-sky.jpg?raw=true');
+	background-color: transparent;
+}
+
+.header { grid-area: header; }
+.leftSide { grid-area: leftSide; }
+.body { grid-area: body; }
+.rightSide { grid-area: rightSide; }
+.footer { grid-area: footer; }
+
+
+HTML
+
+<section class="layout">
+  <div class="header">1</div>
+  <div class="leftSide">2</div>
+  <div class="body">3</div>
+  <div class="rightSide">4</div>
+  <div class="footer">5</div>
+</section>

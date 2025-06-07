@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=windows-1252">
+    <title>Disclaimer</title>
+    <script src="https://cdnres.willyweather.com/widget/warning/loadView.html?id=125218"
+type="application/javascript"></script>
+    <style>
+      body {
+  font-family: Arial, sans-serif;
+  background-color: #f8f8f8;
+  background-image: url('https://raw.githubusercontent.com/ApexWx/ApexWx.github.io/refs/heads/master/seamless-background-simply-sky.jpg');
+  background-repeat: repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  margin: 0;
+}
+* {
+  box-sizing: border-box;
+}
+
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 5px;
+}
+
+/* Clearfix (clear floats) */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 500px) {
+  .column {
+    width: 100%;
+  }
+}
+  
+  /* navigation bar */
+  .nav{
+    border:1px solid #ccc;
+    border-width:1px 0;
+    list-style:none;
+    margin:0;
+    padding:0;
+    text-align:center;
+}
+.nav li{
+    display:inline;
+}
+.nav a{
+    display:inline-block;
+    padding:10px;
+}
+      
+body {
+  background-color: #F8F8F8;
+}
+  
+</style> </head>
+  <body>
+    <h2 style="text-align: center;"><strong style="font-size: 24px;">Apex Wx
+        Website Disclaimer</strong></h2>
+    <p></p>
+    <p></p>
+    <ul class="nav">
+      <li><a href="https://apexwx.github.io/">Main Page</a></li>
+    </ul>
+    <br>
+    <em> <strong></strong></em><strong>About Apex Wx</strong><strong><br>
+    </strong>
+    <p><strong> </strong>This is a personal, non-governmental weather
+      information website which primarily focuses on weather that will affect <a
+        href="https://en.wikipedia.org/wiki/Fort_Kent,_Maine" title="Fort Kent, Maine">Fort
+        Kent</a> and the <a href="https://www.upperstjohn.com/" title="Upper Saint John Valley">Upper
+        Saint John Valley</a> of Maine. This is not a professional
+      meteorological site; however, the website author undertook a course of
+      studies via Penn State University leading to a certificate in weather
+      forecasting with topics of study that included:</p>
+    <ul>
+      <li>fundamental principles of synoptic and physical meteorology, satellite
+        and radar imagery, and data analysis in the setting of mid-latitude
+        weather forecasting;</li>
+      <li>applying atmospheric principles to small-scale weather systems, with
+        an emphasis on the conceptual modeling and short-range prediction of
+        severe thunderstorms;</li>
+      <li>applying atmospheric principles to the tropics, with an emphasis on
+        the development, structure, prediction, and destructive impact of
+        hurricanes;</li>
+      <li>exploring highly specialized topics and techniques in weather
+        forecasting that span from mesoscale to planetary spatial scales and
+        short-term to long-range time scales</li>
+    </ul>
+    <p>The author is also a NWS trained storm spotter, too. A key point is that
+      a meteorologist is a scientist who studies the atmosphere, while a weather
+      forecaster applies that knowledge to predict short-term weather patterns.
+      A meteorologist encompasses the entire field of atmospheric science, while
+      a weather forecaster focuses on creating and communicating weather
+      predictions.</p>
+    <strong> Website Author</strong><br>
+    The website designed and maintained by Joseph E. Becker, a professor at the
+    <a href="https://www.umfk.edu/" title="University of Maine at Fort Kent">University
+      of Maine at Fort Kent</a>, NWS Storm Spotter, and an alum of the weather
+    certificate program at Penn State University.<br>
+    <br>
+    <strong>Unofficial Weather Information</strong><br>
+    This website is not intended to replace official weather forecasts produced
+    by governmental entities. Visit the <a href="https://www.weather.gov/" title="US National Weather Service">US
+      National Weather Service</a>, <a href="https://weather.gc.ca/canada_e.html"
+      title="Environment Canada">Environment Canada</a>, or <a href="https://smn.conagua.gob.mx/"
+      title="Servicio Meteorologico Nacional">Servicio Meteorologico Nacional<span
+        style="color: #3d3d3d;"></span></a> (Mexico--in Spanish) for official
+    government-issued weather forecasts in North America. Any use of unofficial
+    forecasts on this website are strictly at the discretion and risk of the
+    site visitor.<br>
+    <br>
+    <strong>Severe Weather Protocol</strong><br>
+    When severe weather threatens or is occurring, obtain the latest weather
+    information from the <strong>National Weather Service/NOAA Radio,
+      commercial television/radio, and/or local emergency service providers</strong>
+    to ensure access to the most current information. Never base important
+    decisions on this or any other weather information obtained from the
+    Internet or from non-governmental sources.<em><br>
+    </em><br>
+    <strong>Weather Forecasts and Other Information</strong><br>
+    Weather information on this site is for <strong>general information
+      purposes only</strong>, and this website will not be liable for any loss
+    or damage including without limitation, indirect or consequential loss or
+    damage, or any loss or damage what so ever arising from loss of data or
+    profits arising out of, or in connection with, the use of this website. <br>
+    <br>
+    Forecasts are based on computer weather models, personal weather station
+    data, and information from NOAA, the National Weather Service, and other
+    weather data providers available at time of posting/updating. Any
+    information on Apex Wx that is categorized as "current" or "real time" may
+    be out of date by the time site visitors access it, and the data is not
+    validated for accuracy. No forecast guarantees or warranties, expressed or
+    implied, are provided due to inaccuracies, errors, and/or defects in data
+    feeds, instruments, and computer weather models that are beyond the
+    forecaster's control.<br>
+    <br>
+    Use of any information on this site is at your sole risk. All information on
+    this website is provided "as is", with no guarantee of completeness,
+    accuracy, timeliness or of the results obtained from the use of this
+    information, and without warranty of any kind, express or implied,
+    including, but not limited to warranties of performance, merchantability and
+    fitness for a particular purpose. <br>
+    <br>
+    The site maintainer reserves the right to make additions, deletions, or
+    modifications to the contents of the website at any time without prior
+    notice.<br>
+    <strong><br>
+      Links to Other Resources</strong><br>
+    Although this website may link to other resources (such as websites, mobile
+    applications, etc.), the site maintainer is not, directly or indirectly,
+    implying any approval, association, sponsorship, endorsement, or affiliation
+    with any linked resource, unless specifically stated herein. <br>
+    <br>
+    <ul>
+      <li> The site maintainer is not responsible for examining or evaluating,
+        and he does not warrant the offerings of, any businesses or individuals
+        or the content of their resources. </li>
+      <li> The site maintainer does not assume any responsibility or liability
+        for the actions, products, services, and content of any other third
+        parties. </li>
+      <li> You should carefully review the legal statements and other conditions
+        of use of any resource which you access through a link on the website.
+        Your linking to any other off-site resources is at your own risk.</li>
+    </ul>
+    <em><br>
+    </em><strong>Privacy<br>
+    </strong>This website does not collect or share personal information. GitHub
+    employees do not access repositories unless required to for security
+    reasons, to assist the repository owner with a support matter, or to
+    maintain the integrity of the service. Advertising is not hosted on GitHub.<br>
+    <br>
+    <strong>Disclaimer Changes and Amendments</strong><br>
+    The site maintainer reserves the right to modify this disclaimer and/or its
+    terms relating to this website and services at any time, effective upon
+    posting of an updated version of this disclaimer on the website. Continued
+    use of the website and services after any such changes shall constitute your
+    consent to such changes.<br>
+    <div id="last-modified" style="text-align:left; font-size:16px; font-family:Arial, sans-serif; margin-top:2em;"></div>
+    <br>
+    <div> </div>
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const mod = new Date(document.lastModified);
+      const options = {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit',
+        timeZone: 'America/New_York',
+        timeZoneName: 'short'
+      };
+      const formatted = mod.toLocaleString('en-US', options);
+      document.getElementById("last-modified").textContent =
+        "Page last modified: " + formatted;
+    });
+  </script>
+  </body>
+</html>
