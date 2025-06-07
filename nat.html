@@ -17,6 +17,7 @@ body {
   margin: 0;
 }
 
+/* === MENU STYLE START === */
 .nav {
   display: none;
   flex-direction: column;
@@ -68,6 +69,7 @@ body {
     display: none;
   }
 }
+/* === MENU STYLE END === */
 
 .row {
   display: flex;
@@ -110,19 +112,19 @@ img {
     <div id="last-modified" style="text-align:center; font-size:14px; font-family:Arial, sans-serif; margin-top: -0.5em;"></div>
     <p></p>
     <p></p>
-    <button id="navToggle"></button>
-    <ul class="nav">
-      <li><a href="https://apexwx.github.io/">Main Page</a></li>
-      <li><a href="#sat">Satellite</a></li>
-      <li><a href="#severe">Severe Weather</a></li>
-      <li><a href="#temp">Temperature</a></li>
-      <li><a href="#precip">Precipitation</a></li>
-      <li><a href="#fire">Fire Weather</a></li>
-      <li><a href="#trends">Trends</a></li>
-    </ul>
-    <br>
-    <div class="a"><br>
+    <!-- === START NAVIGATION MENU === -->
+    <div style="text-align: center;"> <button id="navToggle">☰ Menu</button>
+      <ul class="nav">
+        <li><a href="#main">Main Page</a></li>
+        <li><a href="#satellite">Satellite</a></li>
+        <li><a href="#severe">Severe Weather</a></li>
+        <li><a href="#temperature">Temperature</a></li>
+        <li><a href="#precip">Precipitation</a></li>
+        <li><a href="#fire">Fire Weather</a></li>
+        <li><a href="#trends">Trends</a></li>
+      </ul>
     </div>
+    <!-- === END NAVIGATION MENU === -->
     <table class="clock-table">
       <thead>
         <tr>
@@ -142,12 +144,11 @@ img {
     <br>
     <br>
     <div class="row">
-      <div class="column" style="text-align: center;"> <strong>National Weather
-          Map</strong><a href="https://www.wpc.ncep.noaa.gov/NationalForecastChart/map.php"
+      <div class="column" style="text-align: center;"> <strong><a id="main"></a>National
+          Weather Map</strong><a href="https://www.wpc.ncep.noaa.gov/NationalForecastChart/map.php"
           title="Click for interactive image"><img alt="National Weather Chart"
             src="https://www.wpc.ncep.noaa.gov/NationalForecastChart/staticmaps/noaad1.png"
-            style="width: 100%; border-width: 1px; border-style: solid;"></a>
-      </div>
+            style="width: 100%; border-width: 1px; border-style: solid;"></a> </div>
       <div class="column">
         <div style="text-align: center;"><strong>National Watches and Warnings</strong><br>
           <strong></strong></div>
@@ -168,13 +169,11 @@ img {
     <a href="#top"><i>Top of Page</i><br>
     </a><br>
     <div class="row">
-      <div class="column" style="text-align: center;"> <strong><a id="sat" name="sat"></a>National
-True
-          Color Satellite</strong><a href="https://cdn.star.nesdis.noaa.gov/GOES16/ABI/CONUS/GEOCOLOR/latest.jpg"
+      <div class="column" style="text-align: center;"> <strong><a id="satellite"></a><a
+            id="satellite"></a>National True Color Satellite</strong><a href="https://cdn.star.nesdis.noaa.gov/GOES16/ABI/CONUS/GEOCOLOR/latest.jpg"
           title="Click for larger image"><img alt="National Geocolor Satellite"
             src="https://cdn.star.nesdis.noaa.gov/GOES16/ABI/CONUS/GEOCOLOR/625x375.jpg"
-            style="width: 100%; border-width: 1px; border-style: solid;"></a>
-      </div>
+            style="width: 100%; border-width: 1px; border-style: solid;"></a> </div>
       <div class="column">
         <div style="text-align: center;"><strong>National Infrared Satellite</strong><br>
           <a href="https://cdn.star.nesdis.noaa.gov/GOES16/ABI/SECTOR/ne/Sandwich/20211511811_GOES16-ABI-ne-Sandwich-2400x2400.jpg"
@@ -191,19 +190,17 @@ True
         <strong> </strong> <a href="https://cdn.star.nesdis.noaa.gov/GOES16/ABI/CONUS/09/latest.jpg"
           title="Click for larger image"><img alt="National Water Vapor Satellite"
             src="https://cdn.star.nesdis.noaa.gov/GOES16/ABI/CONUS/09/625x375.jpg"
-            style="width: 100%; border-width: 1px; border-style: solid;"></a>
-      </div>
+            style="width: 100%; border-width: 1px; border-style: solid;"></a> </div>
     </div>
     <br>
     <br>
     <a href="#top"><i>Top of Page</i></a><br>
     <br>
     <div class="row">
-      <div class="column" style="text-align: center;"> <strong><a id="temp" name="temp"></a>Today's
-          Highs</strong><a href="https://www.weather.gov/images/erh/gis/CONUS_maxt_Day1.png"
+      <div class="column" style="text-align: center;"> <strong><a id="temperature"></a><a
+            id="temperature"></a>Today's Highs</strong><a href="https://www.weather.gov/images/erh/gis/CONUS_maxt_Day1.png"
           title="Click for larger image"><img alt="US Highs Day 1" src="https://www.weather.gov/images/erh/gis/CONUS_maxt_Day1.png"
-            style="width: 100%; border-width: 1px; border-style: solid;"></a>
-      </div>
+            style="width: 100%; border-width: 1px; border-style: solid;"></a> </div>
       <div class="column" style="text-align: center;"> <strong>Tonight's Lows</strong><a
           href="https://www.weather.gov/images/erh/gis/CONUS_mint_Day1.png" title="Click for larger image"><img
             alt="Day 1 Lows" src="https://www.weather.gov/images/erh/gis/CONUS_mint_Day1.png"
@@ -211,8 +208,7 @@ True
       <div class="column" style="text-align: center;"> <strong>24-Hour Heat
           Index</strong><a href="https://www.weather.gov/images/erh/gis/CONUS_AptMax.png"
           title="Click for larger image"><img alt="24-Hour Heat Index" src="https://www.weather.gov/images/erh/gis/CONUS_AptMax.png"
-            style="width: 100%; border-width: 1px; border-style: solid;"></a>
-      </div>
+            style="width: 100%; border-width: 1px; border-style: solid;"></a> </div>
     </div>
     <br>
     <br>
@@ -222,8 +218,7 @@ True
       <div class="column" style="text-align: center;"> <strong>24-Hour Wind
           Chill</strong><a href="https://www.weather.gov/images/erh/gis/CONUS_AptMin.png"
           title="Click for larger image"><img alt="24-Hour Wind Chill" src="https://www.weather.gov/images/erh/gis/CONUS_AptMin.png"
-            style="width: 100%; border-width: 1px; border-style: solid;"></a>
-      </div>
+            style="width: 100%; border-width: 1px; border-style: solid;"></a> </div>
       <div class="column" style="text-align: center;"> <strong>Tomorrow's Highs</strong><a
           href="https://www.weather.gov/images/erh/gis/CONUS_maxt_Day2.png" title="Click for larger image"><img
             alt="Day 2 Highs" src="https://www.weather.gov/images/erh/gis/CONUS_maxt_Day2.png"
@@ -231,15 +226,14 @@ True
       <div class="column" style="text-align: center;"> <strong>Tomorrow Night's
           Lows</strong><a href="https://www.weather.gov/images/erh/gis/CONUS_mint_Day2.png"
           title="Click for larger image"><img alt="Day 2 Lows" src="https://www.weather.gov/images/erh/gis/CONUS_mint_Day2.png"
-            style="width: 100%; border-width: 1px; border-style: solid;"></a>
-      </div>
+            style="width: 100%; border-width: 1px; border-style: solid;"></a> </div>
     </div>
     <br>
     <br>
     <a href="#top"><i>Top of Page</i></a><br>
     <br>
     <div class="row">
-      <div class="column" style="text-align: center;"> <strong><a id="precip" name="precip"></a>24-Hour
+      <div class="column" style="text-align: center;"> <strong><a id="precip"></a>24-Hour
           Forecast Precipitation</strong><a href="https://www.weather.gov/images/erh/gis/CONUS_QPF24.png"
           title="Click for larger image"><img alt="24-Hour Forecast Precipitation"
             src="https://www.weather.gov/images/erh/gis/CONUS_QPF24.png" style="width: 100%; border-width: 1px; border-style: solid;"></a>
@@ -252,8 +246,7 @@ True
       <div class="column" style="text-align: center;"> <strong>3-Day Snowfall
           Outlook</strong><a href="https://www.weather.gov/images/erh/gis/CONUS_Snow.png"
           title="Click for larger image"><img alt="3-Day Snowfall Outlook" src="https://www.weather.gov/images/erh/gis/CONUS_Snow.png"
-            style="width: 100%; border-width: 1px; border-style: solid;"></a>
-        <br>
+            style="width: 100%; border-width: 1px; border-style: solid;"></a> <br>
         <a href="https://www.weather.gov/images/erh/gis/CAR_QPF24.png" title="Click for larger image"></a>
       </div>
     </div>
@@ -315,8 +308,7 @@ True
           1 Severe Thunderstorm Outlook</strong><a href="https://www.spc.noaa.gov/partners/outlooks/state/swody1.png?1749232401460"
           title="Click for larger image"><img alt="Day 1 Severe Severe Outlook"
             src="https://www.spc.noaa.gov/partners/outlooks/state/swody1.png?1749232401460"
-            style="width: 100%; border-width: 1px; border-style: solid;"></a>
-      </div>
+            style="width: 100%; border-width: 1px; border-style: solid;"></a> </div>
       <div class="column">
         <div style="text-align: center;"><strong>Day 2 Severe Thunderstorm
             Outlook<br>
@@ -363,8 +355,7 @@ True
       <div class="column" style="text-align: center;"> <strong><a id="river" name="river"></a>Monthly
           Drought Outlook</strong><a href="https://www.cpc.ncep.noaa.gov/products/expert_assessment/month_drought.png"
           title="Click for larger image"><img alt="Monthly Drought Outlook" src="https://www.cpc.ncep.noaa.gov/products/expert_assessment/month_drought.png"
-            style="width: 100%; border-width: 1px; border-style: solid;"></a>
-      </div>
+            style="width: 100%; border-width: 1px; border-style: solid;"></a> </div>
       <div class="column">
         <div style="text-align: center;"><strong>3-Day Wind Gust Outlook<br>
           </strong></div>
@@ -384,7 +375,7 @@ True
     <br>
     <br>
     <div class="row">
-      <div class="column" style="text-align: center;"> <strong><a id="trends" name="trends"></a>Current
+      <div class="column" style="text-align: center;"> <strong><a id="trends"></a>Current
           Temperature Anomaly</strong><a href="https://climatereanalyzer.org/" title="Click for more information"><img
             alt="Current Temperature Anomaly" src="https://climatereanalyzer.org/wx/todays-weather/maps/gfs_nh-sat1_t2anom_d1.png"
             style="width: 100%; border-width: 1px; border-style: solid;"><br>
@@ -418,7 +409,7 @@ True
     <br>
     <br>
     <div class="row">
-      <div class="column" style="text-align: center;"> <strong><a id="fire" name="fire"></a>Day
+      <div class="column" style="text-align: center;"> <strong><a id="fire"></a>Day
           1 Fire Weather Outlook</strong><a href="https://www.spc.noaa.gov/products/fire_wx/day1otlk_fire.gif"
           title="Click for larger image"><img alt="Fire Wx Day 1" src="https://www.spc.noaa.gov/products/fire_wx/day1otlk_fire.gif"
             style="width: 100%; border-width: 1px; border-style: solid;"><br>
@@ -426,8 +417,7 @@ True
         <div style="text-align: center;"><br>
         </div>
         <a href="https://droughtmonitor.unl.edu/data/png/current/current_me_trd.png"
-          title="Click for larger image">
-        </a> </div>
+          title="Click for larger image"> </a> </div>
       <div class="column">
         <div style="text-align: center;"><strong>Day 2 Fire Weather Outlook<br>
           </strong></div>
@@ -478,7 +468,18 @@ document.addEventListener("DOMContentLoaded", function () {
   };
   document.getElementById("last-modified").textContent = "Page last modified: " + mod.toLocaleDateString("en-US", options);
 });
-</script></div>
+</script><!-- === START MENU SCRIPT === -->
+        <script>
+document.addEventListener("DOMContentLoaded", function () {
+  const nav = document.querySelector(".nav");
+  const toggle = document.getElementById("navToggle");
+  if (toggle && nav) {
+    toggle.addEventListener("click", () => {
+      nav.classList.toggle("show");
+    });
+  }
+});
+</script><!-- === END MENU SCRIPT === --></div>
     </div>
   </body>
 </html>
