@@ -96,9 +96,27 @@ img {
   <body>
     <h2 style="text-align: center;"><a id="top" name="top"></a>Regional Maps
       &amp; Charts</h2>
+    <div id="last-modified" style="text-align:center; font-size:14px; font-family:Arial, sans-serif; margin-top: -0.5em;"></div>
+    <script>
+document.addEventListener("DOMContentLoaded", function () {
+  const modified = new Date(document.lastModified);
+  const options = {
+    year: 'numeric', month: 'long', day: 'numeric',
+    hour: '2-digit', minute: '2-digit',
+    timeZone: 'America/New_York',
+    timeZoneName: 'short'
+  };
+  const formatted = modified.toLocaleDateString('en-US', options);
+  document.getElementById("last-modified").textContent = "Page last modified: " + formatted;
+});
+</script><br>
+    <div style="text-align: center; font-size: 12px;"><em> Graphics update
+        automatically -- check image timestamps for most recent updates/valid
+        periods. <br>
+      </em></div>
     <button id="navToggle">☰ Menu</button>
     <ul class="nav">
-      <li><a href="https://apexwx.github.io/Fawkes">Home</a></li>
+      <li><a href="https://apexwx.github.io/">Home</a></li>
       <li><a href="#severe">Severe Weather Outlook</a></li>
       <li><a href="#sat">Satellite</a></li>
       <li><a href="#temp">Temperature</a></li>
@@ -155,8 +173,7 @@ img {
       <div class="column" style="text-align: center;"> <strong><a id="sat" name="sat"></a>NE
           Geocolor Satellite</strong><a href="https://cdn.star.nesdis.noaa.gov/GOES16/ABI/SECTOR/ne/GEOCOLOR/2400x2400.jpg"
           title="Click for larger image"><img alt="NE Geocolor Satellite" src="https://cdn.star.nesdis.noaa.gov/GOES16/ABI/SECTOR/ne/GEOCOLOR/600x600.jpg"
-            style="width: 100%; border-width: 1px; border-style: solid;"></a>
-      </div>
+            style="width: 100%; border-width: 1px; border-style: solid;"></a> </div>
       <div class="column">
         <div style="text-align: center;"><strong>NE Infrared Satellite</strong><br>
           <a href="https://cdn.star.nesdis.noaa.gov/GOES16/ABI/SECTOR/ne/Sandwich/20211511811_GOES16-ABI-ne-Sandwich-2400x2400.jpg"
@@ -173,8 +190,7 @@ img {
         <strong> </strong> <a href="https://cdn.star.nesdis.noaa.gov/GOES16/ABI/SECTOR/ne/09/2400x2400.jpg"
           title="Click for larger image"><img alt="Northeast Water Vapor Satellite"
             src="https://cdn.star.nesdis.noaa.gov/GOES16/ABI/SECTOR/ne/09/600x600.jpg"
-            style="width: 100%; border-width: 1px; border-style: solid;"></a>
-      </div>
+            style="width: 100%; border-width: 1px; border-style: solid;"></a> </div>
     </div>
     <br>
     <br>
@@ -184,8 +200,7 @@ img {
       <div class="column" style="text-align: center;"> <strong><a id="temp" name="temp"></a>Today's
           Highs</strong><a href="https://www.weather.gov/images/erh/gis/CTP_maxt_Day1.png"
           title="Click for larger image"><img alt="Highs Day 1" src="https://www.weather.gov/images/erh/gis/CTP_maxt_Day1.png"
-            style="width: 100%; border-width: 1px; border-style: solid;"></a>
-      </div>
+            style="width: 100%; border-width: 1px; border-style: solid;"></a> </div>
       <div class="column" style="text-align: center;"> <strong>Tonight's Lows</strong><a
           href="https://www.weather.gov/images/erh/gis/CTP_mint_Day1.png" title="Click for larger image"><img
             alt="Day 1 Lows" src="https://www.weather.gov/images/erh/gis/CTP_mint_Day1.png"
@@ -208,8 +223,7 @@ img {
       <div class="column" style="text-align: center;"> <strong>Tomorrow Night's
           Lows</strong><a href="https://www.weather.gov/images/erh/gis/CTP_mint_Day2.png"
           title="Click for larger image"><img alt="Day 2 Lows" src="https://www.weather.gov/images/erh/gis/CTP_mint_Day2.png"
-            style="width: 100%; border-width: 1px; border-style: solid;"></a>
-      </div>
+            style="width: 100%; border-width: 1px; border-style: solid;"></a> </div>
       <div class="column" style="text-align: center;"> <strong>Tomorrow's
           Minimum Relative Humidity</strong><a href="https://www.weather.gov/images/erh/gis/CTP_minrh_Day2.png"
           title="Click for larger image"><img alt="Day 2 Minimum Relative Humidity"
@@ -240,8 +254,7 @@ img {
       <div class="column" style="text-align: center;"> <strong>24-Hour
           Temperature Trend</strong><a href="https://www.wpc.ncep.noaa.gov/exper/change/tmpf_latest_24_ne.gif"
           title="Click for larger image"><img alt="24-Hour Temperature Trend" src="https://www.wpc.ncep.noaa.gov/exper/change/tmpf_latest_24_ne.gif"
-            style="width: 100%; border-width: 1px; border-style: solid;"></a>
-      </div>
+            style="width: 100%; border-width: 1px; border-style: solid;"></a> </div>
     </div>
     <br>
     <br>
@@ -261,8 +274,7 @@ img {
       <div class="column" style="text-align: center;"> <strong>3-Day Snowfall
           Outlook</strong><a href="https://www.weather.gov/images/erh/gis/CTP_Snow.png"
           title="Click for larger image"><img alt="3-Day Snowfall Outlook" src="https://www.weather.gov/images/erh/gis/CTP_Snow.png"
-            style="width: 100%; border-width: 1px; border-style: solid;"></a>
-        <br>
+            style="width: 100%; border-width: 1px; border-style: solid;"></a> <br>
         <a href="https://www.weather.gov/images/erh/gis/CAR_QPF24.png" title="Click for larger image"></a>
       </div>
     </div>
@@ -281,8 +293,7 @@ img {
           </strong></div>
         <a href="https://hprcc.unl.edu/products/maps/acis/nrcc/7dPDeptNRCC.png"
           title="Click for larger image"><img alt="7-Day Precipitation Trend" src="https://hprcc.unl.edu/products/maps/acis/nrcc/7dPDeptNRCC.png"
-            style="width: 100%; border-width: 1px; border-style: solid;"></a>
-      </div>
+            style="width: 100%; border-width: 1px; border-style: solid;"></a> </div>
       <div class="column">
         <div style="text-align: center;"><strong>30 Day Precipitation Trend</strong><a
             href="https://hprcc.unl.edu/products/maps/acis/nrcc/30dPDeptNRCC.png"
@@ -300,8 +311,7 @@ img {
       <div class="column" style="text-align: center;"> <strong>3-Day Wind Gust
           Outlook</strong><a href="https://www.weather.gov/images/erh/gis/CTP_WGust.png"
           title="Click for larger image"><img alt="3-Day Wind Gust Outlook" src="https://www.weather.gov/images/erh/gis/CTP_WGust.png"
-            style="width: 100%; border-width: 1px; border-style: solid;"></a>
-      </div>
+            style="width: 100%; border-width: 1px; border-style: solid;"></a> </div>
       <div class="column">
         <div style="text-align: center;"><strong>Total Monthly Precipitation</strong></div>
         <a href="https://www.weather.gov/images/erh/gis/CTP_30obs_precip.png" title="Click for larger image"><img
@@ -344,8 +354,7 @@ img {
       <div class="column" style="text-align: center;"> <strong><a id="river" name="river"></a>Pennsylvania
           Drought Monitor</strong><a href="https://droughtmonitor.unl.edu/data/png/current/current_pa_trd.png"
           title="Click for larger image"><img alt="ME Drought Monitor" src="https://droughtmonitor.unl.edu/data/png/current/current_pa_trd.png"
-            style="width: 100%; border-width: 1px; border-style: solid;"></a>
-      </div>
+            style="width: 100%; border-width: 1px; border-style: solid;"></a> </div>
       <div class="column">
         <div style="text-align: center;"><strong>Middle Atlantic River Forecast
             Center Briefing<br>
@@ -353,8 +362,7 @@ img {
         <a href="https://www.weather.gov/images/marfc/graphicalHMD/graphicalHMD.png"
           title="Click for larger image"><img alt="NE River Forecast Center Briefing"
             src="https://www.weather.gov/images/marfc/graphicalHMD/graphicalHMD.png"
-            style="width: 100%; border-width: 1px; border-style: solid;"></a>
-      </div>
+            style="width: 100%; border-width: 1px; border-style: solid;"></a> </div>
       <div class="column">
         <div style="text-align: center;"><strong>Conestoga River at Lancaster<br>
           </strong></div>
@@ -460,6 +468,5 @@ document.addEventListener("DOMContentLoaded", function () {
 
   setInterval(updateClocks, 1000);
   updateClocks();
-</script>
-  </body>
+</script> </body>
 </html>
