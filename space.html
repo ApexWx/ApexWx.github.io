@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <title>Space Weather</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
@@ -133,6 +133,9 @@
   <body>
     <h2 style="text-align: center;">Space Weather</h2>
     <div id="last-modified" style="text-align: center; font-size: 14px; color: #555;"></div>
+    <div style="text-align: center; font-size: 12px;"><em> <br>
+        Graphics update automatically -- check image timestamps for most recent
+        updates/valid periods. </em></div>
     <!-- Responsive Menu --> <button id="navToggle">☰ Menu</button>
     <ul class="nav">
       <li><a href="https://apexwx.github.io/">Main Page</a></li>
@@ -374,7 +377,6 @@
       document.getElementById("last-modified").textContent =
         "Page last modified: " + mod.toLocaleDateString("en-US", options);
     });
-  </script>
-    </div>
+  </script> </div>
   </body>
 </html>
