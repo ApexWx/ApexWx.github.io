@@ -47,20 +47,24 @@
   });
 </script> <script>
   async function fetchNWSAlerts() {
-    const zone = "MEZ002"; // Northeast Aroostook, including Fort Kent, ME
+    const zone = "MEZ002";
     const apiURL = `https://api.weather.gov/alerts/active/zone/${zone}`;
 
     try {
       const response = await fetch(apiURL);
       const data = await response.json();
       const alertDiv = document.getElementById("weatherAlert");
+      const storedDismissedIds = JSON.parse(localStorage.getItem("dismissedAlertIds") || "[]");
 
       if (data.features.length > 0) {
-        const alert = data.features[0].properties;
-        const alertId = data.features[0].id;
-        const storedDismissedId = localStorage.getItem("dismissedAlertId");
+        alertDiv.innerHTML = "";
 
-        if (alertId !== storedDismissedId) {
+        data.features.forEach((feature) => {
+          const alert = feature.properties;
+          const alertId = feature.id;
+
+          if (storedDismissedIds.includes(alertId)) return;
+
           const title = alert.headline;
           const description = alert.description;
           const severityRaw = alert.severity || "Unknown";
@@ -79,25 +83,31 @@
             extreme: "alert-extreme"
           }[severity] || "alert-moderate";
 
-          alertDiv.innerHTML = `
-            <div class="alert-box ${severityClass}" data-alert-id="${alertId}">
-              <button class="alert-close" onclick="dismissAlert('${alertId}')" aria-label="Dismiss alert">&times;</button>
-              <strong>⚠️ Weather Alert (${severityRaw === "Unknown" ? "Severity Unknown" : severityRaw}):</strong>
-              <strong>${title}</strong>
-              <div>${description}</div>
-              <div style="margin-top: 8px;">
-                <a href="${link}" target="_blank" rel="noopener">View full alert from NWS</a>
-              </div>
-              <div style="margin-top: 6px; font-size: 0.9em; color: #555;">
-                Last updated: ${updated}
-              </div>
+          const shouldCollapse = description.length > 300 && !["severe", "extreme"].includes(severity);
+          const shortText = description.slice(0, 300).trim() + "...";
+
+          const alertBox = document.createElement("div");
+          alertBox.className = `alert-box ${severityClass}`;
+          alertBox.setAttribute("data-alert-id", alertId);
+          alertBox.innerHTML = `
+            <button class="alert-close" onclick="dismissAlert('${alertId}')" aria-label="Dismiss alert">&times;</button>
+            <strong>⚠️ Weather Alert (${severityRaw === "Unknown" ? "Severity Unknown" : severityRaw}):</strong>
+            <strong>${title}</strong>
+            <div class="alert-description" id="desc-${alertId}">
+              ${shouldCollapse ? shortText : description}
+            </div>
+            ${shouldCollapse ? `<button class="alert-toggle" onclick="toggleAlert('${alertId}', \`${description.replace(/`/g, "\`")}\`)">Read more</button>` : ""}
+            <div style="margin-top: 8px;">
+              <a href="${link}" target="_blank" rel="noopener">View full alert from NWS</a>
+            </div>
+            <div style="margin-top: 6px; font-size: 0.9em; color: #555;">
+              Last updated: ${updated}
             </div>
           `;
-        } else {
-          alertDiv.innerHTML = ""; // Alert dismissed by user
-        }
+          alertDiv.appendChild(alertBox);
+        });
       } else {
-        alertDiv.innerHTML = ""; // No active alerts
+        alertDiv.innerHTML = "";
       }
     } catch (error) {
       console.error("NWS Alert fetch error:", error);
@@ -106,15 +116,31 @@
   }
 
   function dismissAlert(alertId) {
-    localStorage.setItem("dismissedAlertId", alertId);
+    let dismissed = JSON.parse(localStorage.getItem("dismissedAlertIds") || "[]");
+    if (!dismissed.includes(alertId)) {
+      dismissed.push(alertId);
+      localStorage.setItem("dismissedAlertIds", JSON.stringify(dismissed));
+    }
     const alertBox = document.querySelector(`[data-alert-id="${alertId}"]`);
-    if (alertBox) {
-      alertBox.style.display = 'none';
+    if (alertBox) alertBox.style.display = 'none';
+  }
+
+  function toggleAlert(alertId, fullText) {
+    const descEl = document.getElementById(`desc-${alertId}`);
+    const btn = descEl.nextElementSibling;
+    const isCollapsed = btn.textContent === "Read more";
+
+    if (isCollapsed) {
+      descEl.textContent = fullText;
+      btn.textContent = "Show less";
+    } else {
+      descEl.textContent = fullText.slice(0, 300).trim() + "...";
+      btn.textContent = "Read more";
     }
   }
 
   fetchNWSAlerts();
-  setInterval(fetchNWSAlerts, 15 * 60 * 1000); // Refresh every 15 minutes
+  setInterval(fetchNWSAlerts, 15 * 60 * 1000);
 </script> <style>
       .sun-info {
     display: flex;
@@ -309,6 +335,20 @@ div, span, p {
 }
 
 
+
+.alert-toggle {
+  background: none;
+  border: none;
+  color: #0056b3;
+  text-decoration: underline;
+  cursor: pointer;
+  font-size: 0.9rem;
+  margin-top: 6px;
+  padding: 0;
+}
+.alert-toggle:hover {
+  color: #003d80;
+}
 </style> </head>
   <body>
     <div id="tswcontainer">
