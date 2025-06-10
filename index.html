@@ -349,6 +349,31 @@ div, span, p {
 .alert-toggle:hover {
   color: #003d80;
 }
+    
+    .responsive-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: transparent;
+  }
+
+  .responsive-table td, .responsive-table th {
+    padding: 10px;
+    border: none;
+    text-align: left;
+    vertical-align: top;
+  }
+
+  @media screen and (max-width: 600px) {
+    .responsive-table td, .responsive-table th {
+      display: block;
+      width: 100%;
+    }
+
+    .responsive-table tr {
+      display: block;
+      margin-bottom: 15px;
+    }
+  }
 </style> </head>
   <body>
     <div id="tswcontainer">
@@ -521,8 +546,8 @@ div, span, p {
                   "Strawberry" Moon @ 2:44 am Wed. 11 June</div>
                 <div><br>
                 </div>
-                <div><strong>Moonrise:</strong> Tue. 10 June @ 8:36 pm | <strong>Moonset</strong>:
-                  Wed. 11 June @ 4:11 am</div>
+                <div><strong>Moonrise:</strong> 8:36 pm Tue. June 10 | <strong>Moonset</strong>:
+                  4:11 am Wed. June 11</div>
                 <div><br>
                 </div>
                 <div>
@@ -570,7 +595,7 @@ div, span, p {
                 <div style="text-align: left;"><span style="color: silver;"><span
                       style="color: #666666;"><span style="font-size: 12px;"><u>Updated</u>:
                         Tuesday</span><span style="font-size: 12px;">, June 10,
-                        2025 at 7:43 am EDT</span></span><em><u> </u></em></span></div>
+                        2025 at 8:40 am EDT</span></span><em><u> </u></em></span></div>
               </div>
               <div style="text-align: left;"><br>
               </div>
@@ -669,25 +694,26 @@ div, span, p {
                                   <div>
                                     <div style="text-align: left;">
                                       <div style="font-size: 16px;"><strong>Current
-                                          Month Climate Trends</strong></div>
-                                      <div style="font-size: 16px;"><strong><br>
+                                          Month Climate Trends<br>
                                         </strong></div>
-                                      <div style="font-size: 16px;"><strong></strong><u>
-                                          <em><span style="font-size: 12px;"></span></em><strong>
-                                          </strong><em style="font-size: 12px;"></em>
-                                        </u>
-                                        <div><a href="https://www.cpc.ncep.noaa.gov/products/predictions/814day/814temp.new.gif"
-                                            title="Click for larger image"><img
-                                              src="https://www.cpc.ncep.noaa.gov/products/predictions/long_range/lead14/off15_temp.gif"
-                                              alt="Current Month Temperature Outlook "
-                                              style="width: 300px; height: 231.818px; border-radius: 0px; border-width: 0px; border-style: solid; padding: 5px;"></a><a
-                                            href="https://www.cpc.ncep.noaa.gov/products/predictions/814day/814prcp.new.gif"
-                                            title="Click for larger image"><img
-                                              src="https://www.cpc.ncep.noaa.gov/products/predictions/long_range/lead14/off15_prcp.gif"
-                                              alt="Current Month Precipitation Outlook"
-                                              style="width: 300px; height: 233px; border-width: 0px; border-style: solid; padding: 5px;"></a></div>
-                                        <em style="font-size: 12px;">Source: <a
-                                            href="https://www.cpc.ncep.noaa.gov/">NOAA
+                                      <table class="responsive-table">
+                                        <tbody>
+                                          <tr>
+                                            <th style="text-align: center;"><img
+                                                src="https://www.cpc.ncep.noaa.gov/products/predictions/814day/814temp.new.gif"
+                                                alt="Current Month Temperture Trends"
+                                                style="height: 310px;"><br>
+                                            </th>
+                                            <th style="text-align: center;"><img
+                                                src="https://www.cpc.ncep.noaa.gov/products/predictions/814day/814prcp.new.gif"
+                                                alt="Current Month Precipitation Trends"
+                                                style="height: 310px;"><br>
+                                            </th>
+                                          </tr>
+                                        </tbody>
+                                      </table>
+                                      <div style="font-size: 16px;"><em style="font-size: 12px;">Source:
+                                          <a href="https://www.cpc.ncep.noaa.gov/">NOAA
                                             Climate Predication Center</a><br>
                                         </em></div>
                                       <div style="font-size: 12px;"><br>
@@ -739,18 +765,30 @@ div, span, p {
                                       <div><u><strong style="font-size: 16px;"><br>
                                           </strong></u></div>
                                       <div><strong>National Forecast Chart &amp;
-                                          Severe Weather / Thunderstorm Outlook</strong>
-                                        <div><a href="https://www.wpc.ncep.noaa.gov/NationalForecastChart/map.php"
-                                            title="Click for larger image"><img
-                                              src="https://www.wpc.ncep.noaa.gov/NationalForecastChart/staticmaps/noaad1.png"
-                                              alt="Ntaional Forecast Chart" style="width: 300px; height: 231.818px; border-radius: 0px; border-width: 0px; border-style: solid; padding: 5px;"></a><a
-                                            href="https://www.spc.noaa.gov/partners/outlooks/"
-                                            title="Click for larger image"><img
-                                              src="https://www.spc.noaa.gov/partners/outlooks/state/swody1.png?1678542573998"
-                                              alt="Thunderstorm / Severe Weather Outlook"
-                                              style="width: 300px; border-width: 0px; border-style: solid; padding: 5px; height: 231px;"></a>
-                                          <em style="font-size: 12px;"><br>
-                                          </em></div>
+                                          Severe Weather / Thunderstorm Outlook</strong></div>
+                                      <div><strong>
+                                          <table class="responsive-table">
+                                            <tbody>
+                                              <tr>
+                                                <th style="text-align: center;"><a
+                                                    href="https://www.wpc.ncep.noaa.gov/NationalForecastChart/map.php"
+                                                    title="Click for larger image"><img
+                                                      src="https://www.wpc.ncep.noaa.gov/NationalForecastChart/staticmaps/noaad1.png"
+                                                      alt="National Forecast Chart"
+                                                      style="height: 310px;"></a><br>
+                                                </th>
+                                                <th style="text-align: center;"><a
+                                                    href="https://www.spc.noaa.gov/products/outlook/day1otlk.html"
+                                                    title="Click for more information"><img
+                                                      src="https://www.spc.noaa.gov/partners/outlooks/state/swody1.png?1678542573998"
+                                                      alt="Thunderstorm / Severe Weather Outlook"
+                                                      style="height: 310px;"></a><br>
+                                                </th>
+                                              </tr>
+                                            </tbody>
+                                          </table>
+                                        </strong></div>
+                                      <div>
                                         <div><em><span style="font-size: 12px;">Learn
                                               more about <a href="https://www.spc.noaa.gov/new/images/SPC_outlook_final_updated.png"
                                                 title="Click for more information">Severe
@@ -759,26 +797,34 @@ div, span, p {
                                       <div><u><strong style="font-size: 16px;"><br>
                                           </strong></u></div>
                                       <div><strong style="font-size: 16px;">US
-                                          High &amp; Low Temperature Outlook</strong><br>
-                                        <div><strong style="font-size: 16px;"><br>
-                                          </strong></div>
-                                        <a href="https://graphical.weather.gov/GraphicalNDFD.php?width=2000&amp;timezone=EDT&amp;sector=CONUS&amp;element=maxt&amp;n=1"
-                                          title="Click for larger image"><img src="https://graphical.weather.gov/GraphicalNDFD.php?width=515&amp;timezone=EDT&amp;sector=CONUS&amp;element=maxt&amp;n=1"
-                                            alt="Today's US Maximum Temperatures"
-                                            style="width: 300px; height: 231.818px; border-radius: 0px; border-width: 0px; border-style: solid; padding: 5px;"></a><a
-                                          href="https://graphical.weather.gov/GraphicalNDFD.php?width=2000&amp;timezone=EDT&amp;sector=CONUS&amp;element=mint&amp;n=1"
-                                          title="Click for larger image"><img src="https://graphical.weather.gov/GraphicalNDFD.php?width=515&amp;timezone=EDT&amp;sector=CONUS&amp;element=mint&amp;n=1"
-                                            alt="Tonight's US Minimum Temperatures"
-                                            style="width: 300px; height: 233px; border-width: 0px; border-style: solid; padding: 5px;"></a>
-                                        <em style="font-size: 12px;"><br>
-                                        </em></div>
-                                      <div><br>
-                                      </div>
+                                          High &amp; Low Temperature Outlook</strong></div>
+                                      <div><strong style="font-size: 16px;">
+                                          <table class="responsive-table">
+                                            <tbody>
+                                              <tr>
+                                                <th style="text-align: center;"><a
+                                                    href="https://graphical.weather.gov/GraphicalNDFD.php?width=2000&amp;timezone=EDT&amp;sector=CONUS&amp;element=maxt&amp;n=1"
+                                                    title="Click for HD image"><img
+                                                      src="https://graphical.weather.gov/GraphicalNDFD.php?width=515&amp;timezone=EDT&amp;sector=CONUS&amp;element=maxt&amp;n=1"
+                                                      alt="US High Temeperature Outlook"
+                                                      style="height: 310px;"></a><br>
+                                                </th>
+                                                <th style="text-align: center;"><a
+                                                    href="https://graphical.weather.gov/GraphicalNDFD.php?width=2000&amp;timezone=EDT&amp;sector=CONUS&amp;element=mint&amp;n=1"
+                                                    title="Click for HD image"><img
+                                                      src="https://graphical.weather.gov/GraphicalNDFD.php?width=515&amp;timezone=EDT&amp;sector=CONUS&amp;element=mint&amp;n=1"
+                                                      alt="US Low Temperture Outlook"
+                                                      style="height: 310px;"></a><br>
+                                                </th>
+                                              </tr>
+                                            </tbody>
+                                          </table>
+                                        </strong></div>
                                       <div><a href="https://www.wpc.ncep.noaa.gov/discussions/hpcdiscussions.php?disc=nathilo&amp;version=0&amp;fmt=reg"
                                           style="font-size: 14px;">WPC National
                                           High and Low Temperatures</a></div>
-                                      <div style="font-size: 12px;"><a href="https://www.wpc.ncep.noaa.gov/discussions/hpcdiscussions.php?disc=nathilo&amp;version=0&amp;fmt=reg"></a>(excluding
-                                        Alaska &amp; Hawaii)</div>
+                                      <div style="font-size: 12px;"><span style="color: #999999;">(excluding
+                                          Alaska &amp; Hawaii)</span></div>
                                       <div><br>
                                       </div>
                                     </div>
@@ -1583,6 +1629,5 @@ div, span, p {
   const lastModified = document.lastModified;
   const formattedDate = formatModifiedDate(lastModified);
   document.getElementById('last-updated').textContent = `Updated: ${formattedDate}`;
-</script>
-  </body>
+</script> </body>
 </html>
