@@ -438,9 +438,32 @@ div, span, p {
                   UTC</div>
                 <div style="font-size: 12px;">Many weather graphic timestamps
                   are in UTC / Z Time</div>
+                <div style="font-size: 12px;"><br>
+                </div>
                 <div style="font-size: 12px; text-align: center;"><em></em></div>
               </div>
-              <div style="text-align: center;"><strong></strong></div>
+              <div style="font-size:14px; text-align:center;">
+                <form style="width:200px; border:1px solid #960000; margin-top:6px; font-size:13px; padding:5px; display:inline-block;">
+                  <strong>Temperature Converter<br>
+                  </strong>
+                  <table style="width:100%; font-size:13px; border-collapse:collapse;">
+                    <tbody>
+                      <tr>
+                        <td style="padding:2px;">Fahrenheit:</td>
+                        <td style="padding:2px;"> <input style="font-size:13px; width:60px;"
+                            name="F" value="32" onkeyup="this.form.C.value = (100/180)*(this.value - 32)"
+                            type="text"> ° </td>
+                      </tr>
+                      <tr>
+                        <td style="padding:2px;">Celsius:</td>
+                        <td style="padding:2px;"> <input style="font-size:13px; width:60px;"
+                            name="C" value="0" onkeyup="this.form.F.value = (180/100)*this.value + 32"
+                            type="text"> ° </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </form>
+              </div>
             </div>
             <div>
               <div style="text-align: center;"><br>
