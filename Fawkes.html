@@ -303,6 +303,41 @@
     color: #d84315; /* Earthy red-orange */
   }
   
+</style> <style>
+  img, iframe {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .responsive-container {
+    max-width: 100%;
+    overflow-x: auto;
+  }
+
+  @media (max-width: 600px) {
+    body {
+      padding: 8px;
+    }
+
+    #tswcontent, #tswothersidecol, #tswsidecol {
+      width: 100% !important;
+      display: block;
+    }
+
+    .sun-info {
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .fw-forecast .fw-item {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .fw-forecast img {
+      margin-bottom: 0.5em;
+    }
+  }
 </style> </head>
   <body>
     <div id="tswcontainer">
@@ -392,15 +427,15 @@
               <div style="text-align: center;"><strong></strong></div>
             </div>
             <div>
-              <div style="text-align: center;"><br>
+              <div style="text-align: center;"><span style="font-size: 12px;"><br>
+                </span></div>
+              <div style="text-align: center; font-family: Arial, sans-serif; font-size: 14px;">
+                <div id="air-quality" style="display: inline-block; padding: 10px 15px; border-radius: 6px; font-weight: bold; min-width: 250px;">
+                  Loading air quality... </div>
+                <div style="margin-top: 6px;"> <a href="https://www.iqair.com/usa/pennsylvania/lancaster"
+                    target="_blank" rel="noopener noreferrer"> View detailed air
+                    quality in Lancaster, PA </a> </div>
               </div>
-              <div style="text-align: center;"><a href="https://www.airnow.gov/?city=Lancaster&amp;state=PA&amp;country=USA"><strong>Lancaster
-                    Air Quality Index</strong></a><br>
-                <div><strong><u><iframe title="Example 3" src="https://widget.airnow.gov/aq-dial-widget/?city=Lancaster&amp;state=PA&amp;country=USA"
-                        style="border: none; border-radius: 25px;" height="230"
-                        width="230"> </iframe></u></strong></div>
-                <span style="font-size: 12px;">Click "AirNow" for more
-                  information</span> </div>
               <div style="text-align: center;">
                 <hr> </div>
               <strong><strong>🗓️ </strong><u>Lancaster Weather Almanac</u> </strong><strong>🗓️</strong>
@@ -417,18 +452,18 @@
             <div><br>
               <strong></strong><em style="font-size: 12px;"><em style="font-size: 12px;">
                 </em></em><em style="font-size: 12px;"><em style="font-size: 12px;"></em></em></div>
-            <u><strong>Fri,day, June 13</strong></u><strong></strong>
+            <u><strong>Thursday, June 12</strong></u><strong><u></u></strong>
             <div>
               <div>
                 <div>
                   <div>
                     <div>
-                      <div><b>High</b>: 83° @ 3:15 pm |&nbsp; <b>Low</b>: 71° @
-                        7:04 am<br>
+                      <div><b>High</b>: 92° @ 4:15 pm |&nbsp; <b>Low</b>: 62° @
+                        5:26 am<br>
                         <strong>Rain</strong>:&nbsp; 0.00" |<strong> Snow</strong>:
                         0.0"</div>
-                      <div><b>Daily Wind: </b>SE @&nbsp; 2 mph&nbsp; |&nbsp; <strong><u>Max.
-                            Gust</u>:</strong> 15 mph @ 8:35 am<br>
+                      <div><b>Daily Wind: </b>SE @&nbsp; 1 mph&nbsp; |&nbsp; <strong><u>Max.
+                            Gust</u>:</strong> 9 mph @ 8:32 am<br>
                         <em style="font-size: 12px;"><em style="font-size: 12px;">Source:
                             College Park personal weather station</em></em></div>
                       <div><em style="font-size: 12px;"><em style="font-size: 12px;"><br>
@@ -436,14 +471,14 @@
                     </div>
                   </div>
                 </div>
-                <u><strong>Saturday, June 14</strong></u><strong><u><br>
+                <u><strong>Fri, June 13</strong></u><strong><u><br>
                   </u></strong></div>
               <div style="width: 810px;"><strong>Norm. High: </strong>82° |<strong>&nbsp;
-                  Record</strong>: 94° (1994)<br>
+                  Record</strong>: 97° (2017)<br>
                 <strong> Norm. Low:&nbsp; </strong>59° |&nbsp; <strong>Record:
-                </strong>45° (1985)<br>
-                <strong>Norm. Daily Precipitation: </strong>0.14" | <strong>Record</strong>:
-                1.37" (1981)</div>
+                </strong>42° (1979)<br>
+                <strong>Norm. Daily Precipitation: </strong>0.15" | <strong>Record</strong>:
+                2.06" (2014)</div>
               <div style="width: 810px;"><strong>Norm. Daily Snowfall:</strong>
                 0.0" | <strong>Record</strong>: 0.0"</div>
               <div style="width: 810px;"><em style="font-size: 12px;">Source: </em><em
@@ -456,7 +491,7 @@
               <div style="width: 810px;"><u><strong>Precipitation 2025</strong></u><br>
                 <strong></strong></div>
               <div style="width: 810px;"><strong>Rain</strong><strong>:</strong>
-                19.88"&nbsp; |&nbsp; <u>avg</u>. 18.18" (+1.70")<span style="color: #009900;"></span><br>
+                19.88"&nbsp; |&nbsp; <u>avg</u>. 18.04" (+1.84")<span style="color: #009900;"></span><br>
                 <strong>Snow</strong><strong>: </strong>16.0"&nbsp; |&nbsp; <u>avg</u>.&nbsp;
                 21.4"&nbsp; <span style="color: red;">(-5.4")</span><br>
                 <span style="color: red;"></span><span style="color: red;"></span></div>
@@ -482,8 +517,8 @@
                   Phase</a>: 🌖 Waning Gibbous → 🌗 Last Quarter 3:19 pm Wed.
                 June 18</div>
               <div><br>
-                <strong>Moonrise:</strong> 11:37 pm Sat. June 14 | <strong>Moonset</strong>:
-                9:29 am Sun. June 15</div>
+                <strong>Moonrise:</strong> 11:00 pm Fri. June 13 | <strong>Moonset</strong>:
+                7:19 am Sat. June 14</div>
               <div><br>
               </div>
               <div>
@@ -513,12 +548,12 @@
                       <u><strong><br>
                         </strong></u></div>
                     <div style="text-align: left;"><u><strong>7-Day Outlook:
-                          Sat. June 14 - Fri</strong></u><u><strong>. June 20</strong></u>
+                          Fri. June 13 - Thu</strong></u><u><strong>. June 19</strong></u>
                       <div style="text-align: left; font-size: 12px;">
                         <div style="text-align: left;"><span style="color: silver;"><span
                               style="color: #666666;"><span style="font-size: 12px;"><u>Updated</u>:
-                                Saturday</span><span style="font-size: 12px;">,
-                                June 14, 2025 at 10:39 am EDT</span></span></span></div>
+                                Friday</span><span style="font-size: 12px;">,
+                                June 13, 2025 at 9:26 am EDT</span></span></span></div>
                       </div>
                       <div style="text-align: left;"><u><strong></strong></u><strong></strong><u><strong></strong></u>
                         <u><strong></strong></u><u><strong></strong></u><u><strong></strong></u><u><strong></strong></u><u><strong></strong></u></div>
@@ -531,55 +566,59 @@
             </div>
             <div>
               <div>
-                <div><strong>Saturday - Monday</strong><br>
-                  A front will remain across southern Delmarva through the
-                  weekend. Several waves of weak low pressure with some showers
-                  and thunderstorms will impact the region along with below
-                  average temperatures through early next week.<br>
+                <div><strong>Friday - Sunday</strong><br>
+                  A cold front has drifted south and is now sitting near the
+                  Maryland–Pennsylvania border. It will stay stalled there for
+                  the next few days. Meanwhile, an upper-level trough is
+                  positioned to the west. This setup will keep conditions
+                  unsettled across Lancaster County.<br>
                   <br>
-                  For today, expect cloudy skies with showers likely and
-                  isolated to scattered afternoon/evening thunderstorms.
-                  Lancaster's high will be in the low 70s. Tonight,
-                  showers/scattered evening thunderstorms with a chance of
-                  showers and isolated thunderstorms overnight. Temperatures in
-                  the low 60s expected.<br>
+                  Moist air riding up over the cooler air at the surface will
+                  lead to periods of light to moderate rain throughout the day.
+                  By late afternoon into the evening, some scattered
+                  thunderstorms may develop, though they are not expected to be
+                  severe. The strongest storms today are likely to stay
+                  southwest of the area, but Lancaster could still see brief
+                  downpours.<br>
                   <br>
-                  Sunday, cloudy skies with a chance of showers and isolated
-                  thunderstorms in the morning with showers likely and isolated
-                  thunderstorms possible in the afternoon. Sunday night, cloudy
-                  skies with a scattered showers are expected. Highs in the
-                  upper 60s and lows around 60F are anticipated for Fawkes House
-                  and vicinity.</div>
-                <div><br>
-                  Monday, cloudy/mostly cloudy skies are expected across the
-                  Lower Susquehanna Valley with a chance of showers in the
-                  morning and isolated showers in the afternoon. Highs in the
-                  low 70s are expected. Monday night, cloudy skies with a slight
-                  chance of showers overnight. Lows dip into the lower 60s.</div>
+                  Rain chances will increase tonight as a jet streak (a
+                  fast-moving area of strong winds aloft) moves across the Ohio
+                  Valley and directs moisture toward south-central Pennsylvania.
+                  Expect showers to become more widespread after sunset and
+                  continue overnight.<br>
+                  <br>
+                  The cold front will remain nearly stationary south of
+                  Lancaster through the weekend, keeping the area in a cooler,
+                  cloudier air mass. A moist easterly to southeasterly flow will
+                  continue to bring in humidity, and occasional showers and
+                  thunderstorms will remain possible throughout the day.<br>
+                  <br>
+                  Saturday will not be a total washout, but expect off-and-on
+                  rain, especially in the afternoon and evening when daytime
+                  heating helps fuel diurnally driven storms. The best chance
+                  for heavier rainfall will again be to the southwest, but
+                  Lancaster could still see localized downpours. Sunday will
+                  remain mostly cloudy with a chance of showers.</div>
                 <div><strong><br>
                   </strong></div>
-                <div> <strong>Tuesday - Friday</strong></div>
-                <div>A high-pressure system will stay over the Southeast U.S.,
-                  while a low pressure system lingers over the Upper Great Lakes
-                  and Midwest through midweek before moving east. This setup
-                  will bring unsettled weather to the Mid-Atlantic region from
-                  Tuesday through Thursday, with a chance of showers or
-                  thunderstorms each day. Conditions are expected to improve by
-                  Friday and into the start of the weekend as the system moves
-                  offshore and high pressure begins to build in from the north.</div>
-                <div><br>
-                  Presently, expected mostly cloudy skies Tuesday and Tuesday
-                  night with scattered showers and a chance of isolated
-                  thunderstorms overnight. Wednesday, mostly cloudy skies in the
-                  morning give way to partly sunny/partly cloudy skies in the
-                  afternoon with a chance of scattered afternoon showers and
-                  isolated thunderstorms with isolated showers/thunderstorms
-                  possible overnight.</div>
-                <div><br>
-                  Thursday, partly cloudy skies with afternoon showers and
-                  isolated thunderstorms followed by scattered showers and
-                  thunderstorms. Friday becomes mostly sunny with mostly clear
-                  skies Friday night for Lancaster and vicinity.</div>
+                <div><strong>Monday - Thursday</strong></div>
+                <div>The unsettled weather pattern will continue into next week,
+                  with multiple chances for rain. A series of weak storm systems
+                  will move from west to east across the region, bringing
+                  periods of showers and the potential for locally heavy
+                  rainfall. The atmosphere will stay quite moist, helping to
+                  fuel these on-and-off rain events from the Midwest through the
+                  Mid-Atlantic and into the Northeast.<br>
+                  <br>
+                  Sunday and Monday are expected to be the coolest days, as a
+                  wedge of cooler air settles in from the north while a storm
+                  system moves through the <a href="https://en.wikipedia.org/wiki/Delmarva_Peninsula">Delmarva</a>
+                  region. This setup could keep skies cloudy and rain chances
+                  elevated.<br>
+                  <br>
+                  By the middle of the week, winds will shift to come from the
+                  west and southwest, allowing temperatures to rise again and
+                  potentially bringing a bit more sunshine.</div>
               </div>
             </div>
             <div><br>
@@ -625,30 +664,24 @@
                 <div style="text-align: left;">
                   <div><br>
                   </div>
-                  <strong>June 14: Widespread Showers in the Eastern US; Severe
-                    Thunderstorms in the Plains; Heatwave in the Desert
-                    Southwest<br>
-                  </strong>Widespread showers and thunderstorms across much of
-                  the central and eastern U.S. will produce areas of excessive
-                  rainfall, especially in the southern Mid-Atlantic states.
-                  Scattered severe thunderstorms are expected from Montana into
-                  portions of the central/southern Plains this weekend. A
-                  heatwave will build in the Desert Southwest, in parts of
-                  Arizona, southeastern California, and southern Nevada.
+                  <strong>June 13: Areas of Excessive Rainfall and Severe
+                    Thunderstorms Friday<br>
+                  </strong>Heavy thunderstorms may bring areas of excessive
+                  rainfall and locally considerable flooding over parts of the
+                  Ozarks into the lower-Mississippi River Valley Friday and
+                  Saturday. Scattered severe thunderstorms may occur Friday from
+                  Montana into the central Plains, with hail and corridors of
+                  damaging winds possible.
                   <div><br>
                   </div>
                   <div> </div>
                   <div><strong></strong>
                     <div><strong>Thunderstorm/Severe Weather Outlook</strong><strong>
-                        June 14<br>
+                        June 13<br>
                       </strong></div>
-                    <div>Scattered severe thunderstorms capable of producing
-                      large hail and damaging wind gusts will be possible across
-                      parts of the northern and central High Plains this
-                      afternoon and evening. Isolated strong to severe
-                      thunderstorms may also occur today across parts of the
-                      southern Plains into the Ozarks, and over portions of the
-                      southern Mid-Atlantic.</div>
+                    <div>Scattered thunderstorms, a few severe, will spread
+                      across portions of the central and northern Plains this
+                      evening. Hail and wind are the primary risks.</div>
                   </div>
                   <div>
                     <div><u><strong style="font-size: 16px;"><br>
@@ -1493,5 +1526,58 @@ function updateTimes() {
 
 updateTimes();
 setInterval(updateTimes, 60000);
+</script> <script>
+  const airBox = document.getElementById("air-quality");
+
+  async function updateAirQuality() {
+    const apiKey = "d8f8301c-11d7-4a01-a6fc-9055f5f99cbc";  // Replace with your actual IQAir key
+    const url = `https://api.airvisual.com/v2/city?city=Lancaster&state=Pennsylvania&country=USA&key=${apiKey}`;
+
+    try {
+      const response = await fetch(url);
+      const data = await response.json();
+
+      if (data.status !== "success") {
+        airBox.textContent = "Air quality data is unavailable.";
+        airBox.style.backgroundColor = "#666";
+        airBox.style.color = "#fff";
+        return;
+      }
+
+      const aqi = data.data.current.pollution.aqius;
+      const category = getAQICategory(aqi);
+      const colors = getAQIColors(aqi);
+
+      airBox.style.backgroundColor = colors.bg;
+      airBox.style.color = colors.text;
+      airBox.innerHTML = `🌫️ Air Quality in Lancaster, PA:<br>AQI ${aqi} (${category})`;
+    } catch (error) {
+      console.error("Air quality fetch error:", error);
+      airBox.textContent = "Unable to load air quality data.";
+      airBox.style.backgroundColor = "#666";
+      airBox.style.color = "#fff";
+    }
+  }
+
+  function getAQICategory(aqi) {
+    if (aqi <= 50) return "Good";
+    if (aqi <= 100) return "Moderate";
+    if (aqi <= 150) return "Unhealthy for Sensitive Groups";
+    if (aqi <= 200) return "Unhealthy";
+    if (aqi <= 300) return "Very Unhealthy";
+    return "Hazardous";
+  }
+
+  function getAQIColors(aqi) {
+    if (aqi <= 50) return { bg: "#00e400", text: "#000" };
+    if (aqi <= 100) return { bg: "#ffff00", text: "#000" };
+    if (aqi <= 150) return { bg: "#ff7e00", text: "#000" };
+    if (aqi <= 200) return { bg: "#ff0000", text: "#fff" };
+    if (aqi <= 300) return { bg: "#8f3f97", text: "#fff" };
+    return { bg: "#7e0023", text: "#fff" };
+  }
+
+  updateAirQuality();
+  setInterval(updateAirQuality, 15 * 60 * 1000); // Refresh every 15 minutes
 </script> </body>
 </html>
