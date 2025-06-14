@@ -362,8 +362,8 @@
                   href="https://en.wikipedia.org/wiki/Lancaster,_Pennsylvania" title="Lancaster PA Information"><img
                     src="https://github.com/ApexWx/ApexWx.github.io/blob/master/us-palan.png?raw=true"
                     alt="Flag of Lancaster, PA" style="height: 108px; margin: 10px;"><br>
-                </a><span style="font-size: 12px;">Weather information for the
-                  Saint John Valley since 2009</span><br>
+                </a><span style="font-size: 12px;">Weather information for
+                  Lancaster since 2017</span><br>
                 <span style="font-size: 12px;">A Gold Award 2024<span style="color: black;"></span>
                   Weather Site by the <a href="https://www.metoffice.gov.uk/">Met
                     Office UK</a> <br>
@@ -383,34 +383,8 @@
               <br>
               <div style="font-size: 14px;">
                 <div id="localClock" style="text-align: center; font-weight: bold; font-family: Arial, sans-serif; font-size: 14px;">
-                  Loading time...
-                </div>
-                <script>
-function updateLocalClock() {
-  const clockEl = document.getElementById("localClock");
-  const now = new Date();
-
-  const options = {
-    weekday: 'long',
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric',
-    hour: 'numeric',
-    minute: '2-digit',
-    timeZone: 'America/New_York',
-    timeZoneName: 'short'
-  };
-
-  const formatter = new Intl.DateTimeFormat('en-US', options);
-  const formatted = formatter.format(now).replace(",", "").replace(",", "");
-
-  clockEl.textContent = formatted;
-}
-
-// Initial call and repeat every 30 seconds
-updateLocalClock();
-setInterval(updateLocalClock, 30000);
-</script> <div style="font-size: 12px;"><u><strong><br>
+                  Loading time... </div>
+                <div style="font-size: 12px;"><u><strong><br>
                     </strong></u></div>
                 <u> </u>
                 <div id="timeWidget" style="text-align:center; font-family:Arial, sans-serif; font-size:14px;">
@@ -1628,5 +1602,31 @@ function updateLocalClock() {
 // Initial call and repeat every 30 seconds
 updateLocalClock();
 setInterval(updateLocalClock, 30000);
-</script> </body>
+</script> <script>
+function updateLocalClock() {
+  const clockEl = document.getElementById("localClock");
+  const now = new Date();
+
+  const options = {
+    weekday: 'long',
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+    hour: 'numeric',
+    minute: '2-digit',
+    timeZone: 'America/New_York',
+    timeZoneName: 'short'
+  };
+
+  const formatter = new Intl.DateTimeFormat('en-US', options);
+  const formatted = formatter.format(now).replace(",", "").replace(",", "");
+
+  clockEl.textContent = formatted;
+}
+
+// Initial call and repeat every 30 seconds
+updateLocalClock();
+setInterval(updateLocalClock, 30000);
+</script>
+  </body>
 </html>
