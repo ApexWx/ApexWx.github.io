@@ -7,25 +7,10 @@ body {
 	background-image: url('https://github.com/ApexWx/ApexWx.github.io/blob/master/seamless-background-simply-sky.jpg?raw=true');
 	background-color: transparent;
 }
-/* Seasonal text color classes */
-.winter {
-  color: #0277bd; /* Cool blue */
-}
 
-.spring {
-  color: #2e7d32; /* Fresh green */
-}
-
-.summer {
-  color: #ef6c00; /* Warm orange */
-}
-
-.fall {
-  color: #d84315; /* Autumn red-orange */
-}
 img {
 	max-width: 100% ;
-	width: auto ;
+	width: auto;
 	height: auto ;
 }
 input, select, button, textarea {
@@ -104,4 +89,6 @@ div#tswfooter {
 	background-color: #fff ;
 	background-image: url('https://github.com/ApexWx/ApexWx.github.io/blob/master/seamless-background-simply-sky.jpg?raw=true');
 }
+
+
 
