@@ -382,11 +382,35 @@
               <div><label id="lblGreetings"><b>Good Afternoon!</b></label> </div>
               <br>
               <div style="font-size: 14px;">
-                <div style="font-size: 12px;"><iframe src="https://free.timeanddate.com/clock/i9cmhi8l/n23/tct/pct/ftb/tt0/ts1/ta1"
-                    style="border: none; background-color: transparent;" height="18"
-                    width="343"></iframe><br>
+                <div id="localClock" style="text-align: center; font-weight: bold; font-family: Arial, sans-serif; font-size: 14px;">
+                  Loading time...
                 </div>
-                <div style="font-size: 12px;"><u><strong><br>
+                <script>
+function updateLocalClock() {
+  const clockEl = document.getElementById("localClock");
+  const now = new Date();
+
+  const options = {
+    weekday: 'long',
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+    hour: 'numeric',
+    minute: '2-digit',
+    timeZone: 'America/New_York',
+    timeZoneName: 'short'
+  };
+
+  const formatter = new Intl.DateTimeFormat('en-US', options);
+  const formatted = formatter.format(now).replace(",", "").replace(",", "");
+
+  clockEl.textContent = formatted;
+}
+
+// Initial call and repeat every 30 seconds
+updateLocalClock();
+setInterval(updateLocalClock, 30000);
+</script> <div style="font-size: 12px;"><u><strong><br>
                     </strong></u></div>
                 <u> </u>
                 <div id="timeWidget" style="text-align:center; font-family:Arial, sans-serif; font-size:14px;">
@@ -1579,5 +1603,30 @@ setInterval(updateTimes, 60000);
 
   updateAirQuality();
   setInterval(updateAirQuality, 15 * 60 * 1000); // Refresh every 15 minutes
+</script><script>
+function updateLocalClock() {
+  const clockEl = document.getElementById("localClock");
+  const now = new Date();
+
+  const options = {
+    weekday: 'long',
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+    hour: 'numeric',
+    minute: '2-digit',
+    timeZone: 'America/New_York',
+    timeZoneName: 'short'
+  };
+
+  const formatter = new Intl.DateTimeFormat('en-US', options);
+  const formatted = formatter.format(now).replace(",", "").replace(",", "");
+
+  clockEl.textContent = formatted;
+}
+
+// Initial call and repeat every 30 seconds
+updateLocalClock();
+setInterval(updateLocalClock, 30000);
 </script> </body>
 </html>
