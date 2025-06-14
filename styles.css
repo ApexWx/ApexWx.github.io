@@ -7,6 +7,22 @@ body {
 	background-image: url('https://github.com/ApexWx/ApexWx.github.io/blob/master/seamless-background-simply-sky.jpg?raw=true');
 	background-color: transparent;
 }
+/* Seasonal text color classes */
+.winter {
+  color: #0277bd; /* Cool blue */
+}
+
+.spring {
+  color: #2e7d32; /* Fresh green */
+}
+
+.summer {
+  color: #ef6c00; /* Warm orange */
+}
+
+.fall {
+  color: #d84315; /* Autumn red-orange */
+}
 img {
 	max-width: 100% ;
 	width: auto ;
@@ -105,3 +121,12 @@ div#tswfooter {
   height: 100%;
   border: none;
 }
+/* Allow content divs to scale */
+div[style*="width: 810px"], 
+div[style*="width: 830px"], 
+div[style*="width: 800px"] {
+  max-width: 100%;
+  width: 100% !important;
+  box-sizing: border-box;
+}
+
