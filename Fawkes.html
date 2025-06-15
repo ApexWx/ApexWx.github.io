@@ -142,6 +142,7 @@
   fetchNWSAlerts();
   setInterval(fetchNWSAlerts, 15 * 60 * 1000);
 </script> <style>
+
        .alert-container {
     margin-top: 1em;
     font-family: sans-serif;
@@ -202,7 +203,6 @@
     color: #000;
   }
     
-  }
     .sun-info {
     display: flex;
     flex-wrap: wrap;
@@ -217,7 +217,6 @@
   }
 
  
-  }
     #weather-widget {
       font-family: Arial, sans-serif;
       max-width: 800px;
@@ -264,7 +263,6 @@
       .fw-forecast img {
         margin-bottom: 0.5em;
       }
-    }
     #season-display {
     font-size: 16px;
     font-weight: bold;
@@ -289,7 +287,6 @@
   }
     
 
-}
     
     .container {
   position: relative;
@@ -318,40 +315,8 @@ div[style*="width: 800px"] {
   box-sizing: border-box;
 }
     
-  
-    /* Responsive override for inline fixed-width elements */
-    div[style*="width: 8"] {
-      width: 100% !important;
-      max-width: 100%;
-      box-sizing: border-box;
-    }
-
-    /* Stack side columns on narrower screens */
-    @media (max-width: 768px) {
-      #tswothersidecol, #tswsidecol {
-        float: none !important;
-        width: 100% !important;
-        display: block;
-      }
-    }
-
-    /* Contain images and iframes in the left column */
-    #tswothersidecol img,
-    #tswothersidecol iframe {
-      max-width: 100%;
-      height: auto;
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    #tswothersidecol {
-      overflow-wrap: break-word;
-      word-wrap: break-word;
-      box-sizing: border-box;
-    }
-  </style>
-  </head>
+    
+</style> </head>
   <body>
     <div id="tswcontainer">
       <div><!-- start of header section: insert your logo, etc, here -->
