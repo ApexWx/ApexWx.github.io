@@ -316,6 +316,25 @@ div[style*="width: 8"] {
   box-sizing: border-box;
 }
     
+    /* TEMP FIX: Contain images and widgets in the left column */
+#tswothersidecol img,
+#tswothersidecol iframe {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#tswothersidecol {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  box-sizing: border-box;
+}
+
+#tswothersideproper {
+  padding: 0 10px;
+}
     
 </style> </head>
   <body>
