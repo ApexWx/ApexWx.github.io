@@ -1297,8 +1297,6 @@ div, span, p {
             </strong></em> <a href="https://water.noaa.gov/gauges/ALLM1"><img src="https://water.noaa.gov/resources/hydrographs/mrtp1_hg.png"
               title="Click formore information" alt="Susquehanna River at Marietta"
               style="width: 251px; height: 141px; border-width: 1px; border-style: solid;"></a><br>
-          <div style="font-size: 12px;"><em>Ice in winter may affect gauge
-              measurement.</em></div>
         </div>
         <div style="font-size: 14px; text-align: center;"><br>
           <strong></strong></div>
@@ -1460,8 +1458,8 @@ div, span, p {
   <div><strong>${dateStr}</strong></div><br>
   <div class="sun-info">
     <div>🌅 <strong>Sunrise</strong>: ${sunriseLocal} ${tzAbbr}
-    🌇 <strong>Sunset</strong>: ${sunsetLocal} ${tzAbbr} |
-    <strong>Day Length</strong>: ${dayLengthStr}</div>
+    🌇 <strong>Sunset</strong>: ${sunsetLocal} ${tzAbbr} 
+    <div><strong>Day Length</strong>: ${dayLengthStr}</div>
   </div>
 `;
 
@@ -1544,5 +1542,6 @@ function updateLocalClock() {
 // Initial call and repeat every 30 seconds
 updateLocalClock();
 setInterval(updateLocalClock, 30000);
-</script> </body>
+</script>
+  </body>
 </html>
