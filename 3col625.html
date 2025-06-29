@@ -19,7 +19,7 @@
 
     .container {
       display: grid;
-      grid-template-columns: 20% 60% 20%;
+      grid-template-columns: 25% 50% 25%;
       min-height: 80vh; /* adjust as needed */
     }
 
@@ -31,6 +31,30 @@
     @media (max-width: 768px) {
       .container {
         grid-template-columns: 1fr;
+      }
+    }
+     
+
+    /* Responsive images container */
+    .inline-images {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+    }
+
+    .inline-images img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        grid-template-columns: 1fr;
+      }
+
+      .inline-images {
+        justify-content: center;
       }
     }
       <script>
@@ -403,7 +427,7 @@ div, span, p {
   </head>
   <body>
     <header id="page-header">
-      <h1><img src="https://raw.githubusercontent.com/ApexWx/ApexWx.github.io/master/Apex%20banner.jpg"
+      <h1 style="text-align: center;"><img src="https://raw.githubusercontent.com/ApexWx/ApexWx.github.io/master/Apex%20banner.jpg"
           alt="Apex Wx Banner" style="border: medium none; max-width: 100%;"></h1>
       <a href="https://apexwx.github.io/reg.html">Regional Weather</a> | <a href="https://apexwx.github.io/nat.html">National
         Weather </a> | <a href="https://apexwx.github.io/trop.html">Tropical
@@ -415,8 +439,8 @@ div, span, p {
       <p></p>
     </header>
     <div class="container" id="main-container">
-      <div class="column left" id="left-column"> <br>
-        <strong>Official</strong><strong> Government Forecasts<br>
+      <div class="column left" id="left-column"> <strong>Official</strong><strong>
+          Government Forecasts<br>
           <br>
         </strong>
         <div> <a href="https://www.weather.gov/" title="NWS Caribou (northern and eastern Maine">US
@@ -561,8 +585,6 @@ div, span, p {
               alt="NWS Caribou Watches, Warnings, and Advisories" title="Clidk for more information"
               style="border-width: 1px; border-style: solid; width: 251px; height: 195px;"></a><br>
           <p> </p>
-          <div><br>
-          </div>
           <div><br>
             <strong></strong></div>
           <div><strong> </strong><span style="font-size: 14px;"><strong>NE
@@ -715,15 +737,22 @@ div, span, p {
           Fort Kent &amp; the Saint John Valley, Maine<br>
           Weather Information</h2>
         <div>
-          <div style="text-align: center;"><a href="https://en.wikipedia.org/wiki/Maine"
-              title="Flag of Maine -- Click for more"><img src="https://apexwx.github.io/me.png"
-                alt="Maine State Flag" style="width: 132px; height: 88px; left: 5px; right: 5px; padding: 5px;"></a><a
-              href="https://en.wikipedia.org/wiki/Acadia" title="Flag of Acadia -- Click for more"><img
-                src="https://apexwx.github.io/Flag_of_Acadia.svg.png" alt="Flag of Acadia"
-                style="width: 132px; height: 87.9px; padding: 5px;"></a><br>
-            <a href="https://en.wikipedia.org/wiki/Acadia" title="Flag of Acadia -- Click for more">
-            </a><span style="font-size: 12px;">Weather information for the Saint
-              John Valley since 2009</span><br>
+          <div style="text-align: center;">
+            <div class="inline-images">
+              <div style="text-align: center;"><a href="https://en.wikipedia.org/wiki/Maine"
+                  title="Flag of Maine -- Click for more"><img src="https://apexwx.github.io/me.png"
+                    alt="Maine State Flag" style="width: 132px; height: 88px; left: 5px; right: 5px; padding: 5px;"
+                    class="img-center"></a><a href="https://en.wikipedia.org/wiki/Acadia"
+                  title="Flag of Acadia -- Click for more"><img src="https://apexwx.github.io/Flag_of_Acadia.svg.png"
+                    alt="Flag of Acadia" style="width: 132px; height: 87.9px; padding: 5px;"
+                    class="img-center"></a><br>
+              </div>
+            </div>
+            <div style="text-align: center;"><a href="https://en.wikipedia.org/wiki/Acadia"
+                title="Flag of Acadia -- Click for more"> </a></div>
+          </div>
+          <div style="text-align: center;"><span style="font-size: 12px;">Weather
+              information for the Saint John Valley since 2009</span><br>
             <span style="font-size: 12px;">A <a href="https://wow.metoffice.gov.uk/support/faq#4.7">Gold
                 Award 2024<span style="color: black;"></span></a> Weather Site
               by the <a href="https://www.metoffice.gov.uk/">Met Office UK</a>
@@ -1624,6 +1653,5 @@ function updateLocalClock() {
 // Initial call and repeat every 30 seconds
 updateLocalClock();
 setInterval(updateLocalClock, 30000);
-</script>
-  </body>
+</script> </body>
 </html>
