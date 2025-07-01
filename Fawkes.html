@@ -426,24 +426,15 @@ div, span, p {
                   title="Translate into Spanish"><strong></strong></a></div>
               <div><label id="lblGreetings"><b>Good Afternoon!</b></label> </div>
               <br>
-              <div style="font-size: 14px;">
-                <div style="font-size: 12px;"><iframe src="https://free.timeanddate.com/clock/i9cmhi8l/n23/tct/pct/ftb/tt0/ts1/ta1"
-                    style="border: none; background-color: transparent;" height="18"
-                    width="343"></iframe><br>
-                </div>
+              <div style="font-size: 12px;">
+                <div id="localTime" style="font-weight:bold; text-align:center; font-size:14px;"></div>
                 <div style="font-size: 12px;"><u><strong><br>
                     </strong></u></div>
                 <u> </u>
                 <div style="font-size: 14px;"><u><strong>Current Time (24-Hour)</strong></u>
                 </div>
-                <div style="font-size: 12px;"><iframe src="https://free.timeanddate.com/clock/i9h3zb0w/n23/tct/pct/ftb/th1/ts1/ta1"
-                    style="border: none; background-color: transparent;" height="18"
-                    width="69"></iframe></div>
-                <div style="font-size: 12px;"><iframe src="https://free.timeanddate.com/clock/i9cmhxb2/n1440/tct/pct/ftb/th1/ts1/ta1"
-                    style="border: none; background-color: transparent;" height="18"
-                    width="70"></iframe></div>
-                <div style="font-size: 12px;">EST -5 hours / EDT -4 hours from
-                  UTC</div>
+                <div id="dualTime" style="font-weight:bold; text-align:center; font-size:14px; line-height:1.8;"></div>
+                EST -5 hours / EDT -4 hours from UTC
                 <div style="font-size: 12px;">Many weather graphic timestamps
                   are in UTC / Z Time</div>
                 <div style="font-size: 12px;"><br>
@@ -1572,6 +1563,37 @@ div, span, p {
   const lastModified = document.lastModified;
   const formattedDate = formatModifiedDate(lastModified);
   document.getElementById('last-updated').textContent = `Updated: ${formattedDate}`;
+</script> <script>
+  function updateLocalTime() {
+    const now = new Date();
+
+    const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+    const months = [
+      "January", "February", "March", "April", "May", "June",
+      "July", "August", "September", "October", "November", "December"
+    ];
+
+    const dayName = days[now.getDay()];
+    const monthName = months[now.getMonth()];
+    const day = now.getDate();
+    const year = now.getFullYear();
+
+    let hour = now.getHours();
+    const minute = now.getMinutes().toString().padStart(2, '0');
+    const ampm = hour >= 12 ? 'pm' : 'am';
+    hour = hour % 12 || 12;
+
+    const options = { timeZoneName: 'short' };
+    const tz = new Intl.DateTimeFormat('en-US', options).formatToParts(now)
+      .find(part => part.type === 'timeZoneName').value;
+
+    const output = `${dayName}, ${monthName} ${day}, ${year} at ${hour}:${minute} ${ampm} ${tz}`;
+
+    document.getElementById("localTime").textContent = output;
+  }
+
+  updateLocalTime(); // Initial call
+  setInterval(updateLocalTime, 60000); // Update every minute
 </script> <script> // Clocks
 function updateTimes() {
   const now = new Date();
@@ -1599,29 +1621,27 @@ function updateTimes() {
 updateTimes();
 setInterval(updateTimes, 60000);
 </script> <script>
-function updateLocalClock() {
-  const clockEl = document.getElementById("localClock");
-  const now = new Date();
+  function updateDualTime() {
+    const now = new Date();
 
-  const options = {
-    weekday: 'long',
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric',
-    hour: 'numeric',
-    minute: '2-digit',
-    timeZone: 'America/New_York',
-    timeZoneName: 'short'
-  };
+    // Format local time (24-hour) with EST/EDT abbreviation
+    const localHour = now.getHours().toString().padStart(2, '0');
+    const localMinute = now.getMinutes().toString().padStart(2, '0');
+    const tz = new Intl.DateTimeFormat('en-US', { timeZoneName: 'short' })
+      .formatToParts(now)
+      .find(part => part.type === 'timeZoneName').value;
+    const localTime = `${localHour}:${localMinute} ${tz}`;
 
-  const formatter = new Intl.DateTimeFormat('en-US', options);
-  const formatted = formatter.format(now).replace(",", "").replace(",", "");
+    // Format UTC time (24-hour)
+    const utcHour = now.getUTCHours().toString().padStart(2, '0');
+    const utcMinute = now.getUTCMinutes().toString().padStart(2, '0');
+    const utcTime = `${utcHour}:${utcMinute} UTC`;
 
-  clockEl.textContent = formatted;
-}
+    // Output to div
+    document.getElementById("dualTime").innerHTML = `${localTime}<br>${utcTime}`;
+  }
 
-// Initial call and repeat every 30 seconds
-updateLocalClock();
-setInterval(updateLocalClock, 30000);
+  updateDualTime(); // Initial call
+  setInterval(updateDualTime, 60000); // Update every minute
 </script> </body>
 </html>
