@@ -244,14 +244,15 @@ type="application/javascript"></script>
     font-family: sans-serif;
   }
 
-  .alert-box {
-    border-left: 5px solid;
-    padding: 12px 15px;
-    border-radius: 4px;
-    font-size: 1rem;
-    line-height: 1.4;
-    background-color: #f9f9f9;
-  }
+.alert-box {
+  border-left: 5px solid;
+  padding: 12px 15px;
+  border-radius: 4px;
+  font-size: 1rem;
+  line-height: 1.4;
+  background-color: #f9f9f9;
+  margin-bottom: 1em; /* Ensures stacking of multiple alerts */
+}
 
   .alert-minor {
     border-color: #ffcc00;
@@ -414,8 +415,8 @@ div, span, p {
                   Weather Site by the <a href="https://www.metoffice.gov.uk/">Met
                     Office UK</a> <br>
                   Member <a href="https://madis.ncep.noaa.gov/snow_project.shtml">APRSWXNET/CWOP</a>
-                  Program<br>
-                </span><br>
+                  Program</span></div>
+              <div><span style="font-size: 12px;"></span><br>
                 <div style="text-align: center;"><a href="https://apexwx-github-io.translate.goog/?_x_tr_sl=en&amp;_x_tr_tl=es&amp;_x_tr_hl=en&amp;_x_tr_pto=wapp"
                     title="Translate into Spanish"><strong>Traducir al español</strong></a></div>
               </div>
@@ -505,19 +506,19 @@ div, span, p {
                   𝘥𝘢𝘵𝘢</div>
                 <div><strong><u><br>
                     </u></strong></div>
-                <div><strong><u>Monday, June 30</u></strong>
+                <div> <strong><u>Tuesday, July 1</u></strong>
                   <div>
                     <div>
                       <div>
                         <div>
                           <div>
-                            <div><b>High</b>: 91° @ 3:26 pm |&nbsp; <b>Low</b>:
-                              70 ° @ 9:17 pm<br>
-                              <strong>Rain</strong>:&nbsp; 3.21" |<strong> Snow</strong>:
+                            <div><b>High</b>: 92° @ 2:53 pm |&nbsp; <b>Low</b>:
+                              70° @ 5:27 pm<br>
+                              <strong>Rain</strong>:&nbsp; 1.20" |<strong> Snow</strong>:
                               0.0"</div>
                             <div><b>Daily Wind: </b>SE @&nbsp; 1 mph&nbsp;
-                              |&nbsp; <strong><u>Max. Gust</u>:</strong> 14 mph
-                              @11:26 pm<br>
+                              |&nbsp; <strong><u>Max. Gust</u>:</strong> 27 mph
+                              @ 4:15 pm<br>
                               <em style="font-size: 12px;"><em style="font-size: 12px;">Source:
                                   College Park personal weather station</em></em></div>
                             <div><em style="font-size: 12px;"><em style="font-size: 12px;"><br>
@@ -525,14 +526,14 @@ div, span, p {
                           </div>
                         </div>
                       </div>
-                      <strong><u>Tuesday, July 1<br>
+                      <strong><u>Wednesday, July 2<br>
                         </u></strong></div>
-                    <div style="width: 810px;"><strong>Norm. High: </strong>86°
-                      |<strong>&nbsp; Record</strong>: 96° (2018)<br>
+                    <div style="width: 810px;"><strong>Norm. High: </strong>87°
+                      |<strong>&nbsp; Record</strong>: 97° (2018)<br>
                       <strong> Norm. Low:&nbsp; </strong>64° |&nbsp; <strong>Record:
-                        </strong>46° (1986)<br>
+                        </strong>51° (1982)<br>
                       <strong>Norm. Daily Precipitation: </strong>0.14" | <strong>Record</strong>:
-                      2.80" (2006)</div>
+                      0.76" (1993)</div>
                     <div style="width: 810px;"><strong>Norm. Daily Snowfall:</strong>
                       0.0" | <strong>Record</strong>: 0.0"</div>
                     <div style="width: 810px;"><em style="font-size: 12px;">Source:
@@ -543,11 +544,10 @@ div, span, p {
                       </em></div>
                     <div style="width: 810px;"><br>
                     </div>
-                    <div style="width: 810px;"><u><strong>🌧️ Precipitation 2025
-                          🌨️</strong></u><br>
+                    <div style="width: 810px;"><u><strong>Precipitation 2025</strong></u><br>
                       <strong></strong></div>
                     <div style="width: 810px;"><strong>Rain</strong><strong>:</strong>
-                      25.94"&nbsp; |&nbsp; <u>norm</u>. 20.45" (+5.49")<span style="color: #009900;"></span><br>
+                      28.07"&nbsp; |&nbsp; <u>norm</u>. 20.59" (+7.48")<span style="color: #009900;"></span><br>
                       <strong>Snow</strong><strong>: </strong>0.0" | <u>norm</u>.
                       0.0" <span style="color: red;"></span></div>
                     <div> <strong>Snowfall </strong><strong>24-25</strong><strong>:
@@ -572,8 +572,8 @@ div, span, p {
                   <br>
                 </div>
                 <div><strong><a href="https://www.timeanddate.com/moon/phases/usa/lancaster-pa">Moon
-                      Phase</a>: </strong>🌒 Waxing Crescent → 🌓 First Quarter
-                  @ 3:30 pm Wed. July 2</div>
+                      Phase</a>: </strong>🌓 First Quarter @ 3:30 pm Wed. July
+                  2</div>
                 <div><br>
                 </div>
                 <div><strong><a href="https://www.timeanddate.com/moon/usa/lancaster-pa">Moon
@@ -616,75 +616,86 @@ div, span, p {
           <div> <strong><em style="font-size: 12px;"></em></strong> <strong> </strong></div>
           <strong></strong>
           <div> </div>
-          <u><strong></strong></u><u><strong>7-Day Outlook: Tue. July 1 - Mon</strong></u><u><strong>.
-              July 7<br>
+          <u><strong></strong></u><u><strong>7-Day Outlook: Wed. July 2 - Tue</strong></u><u><strong>.
+              July 8<br>
             </strong></u>
           <div style="text-align: left; font-size: 12px;">
             <div style="text-align: left;"><em><span style="color: silver;"><span
-                    style="color: #666666;"><span style="font-size: 12px;">Outlook
-                      updated Tuesday July 1</span><span style="font-size: 12px;">,
-                      2025 at 10:47 am EDT</span></span><u> </u></span></em></div>
+                    style="color: #999999;"><span style="font-size: 12px;">Updated
+                      Wednesday, July 2</span><span style="font-size: 12px;">,
+                      2025 at 9:41 am EDT</span></span><u> </u></span></em></div>
             <em> </em></div>
           <em> </em>
           <div>
             <div>
               <div><strong><br>
                 </strong></div>
-              <div><strong>Tuesday -&nbsp; Thursday</strong></div>
+              <div><strong>Wednesday -&nbsp; Friday</strong></div>
             </div>
           </div>
           <div>
             <div>
               <div>
-                <div>A cold front will approach the area late today and move
-                  through the region tonight into Wednesday. High pressure
-                  builds closer to the area later Wednesday into Thursday before
-                  settling over our area on Friday and into the weekend.</div>
+                <div>A cold front will stall out across the area today, then
+                  move offshore and to the south on Thursday. Dry high pressure
+                  will build into the region on Friday and remain in control
+                  through much of the weekend, providing seasonable temperatures
+                  and tranquil weather conditions. Warmer, more humid, and
+                  unsettled conditions will return early next week.</div>
                 <div><br>
                 </div>
-                <div>For today, showers are likely along with thunderstorms,
-                  especially this afternoon/evening. A chance of showers
-                  continues overnight into early Wednesday. Highs today reach
-                  the mid-80s with lows tonight in the lower 70s.</div>
+                <div>Clouds decrease today with mostly clear skies by this
+                  afternoon/evening. Highs top out in the middle 80s in
+                  Lancaster and vicinity. Tonight, mostly clear skies with lows
+                  in the middle 60s are expected. Northwest winds 0-5 mph today
+                  become west&nbsp; 0-5 mph tonight.</div>
                 <div><br>
                 </div>
-                <div>Wednesday, clouds decrease with a slight chance of showers
-                  in the morning. Mostly sunny skies overspread Lancaster
-                  Wednesday afternoon with highs in the middle 80s. Wednesday
-                  night, mostly clear skies and dry conditions with lows in the
-                  middle 60s are expected.</div>
+                <div>Thursday, a cold front approaches from the north/northwest
+                  with isolated afternoon showers and thunderstorms possible for
+                  the Lower Susquehanna Valley with mostly clear skies in the
+                  morning become partly cloudy in the afternoon. Highs in the
+                  mid-80s. Thursday night, mostly clear skies develop as high
+                  pressure builds in with temperatures in the lower 60s. West
+                  winds 5-10 mph Thursday become northwest 0-5 mph Thursday
+                  night.</div>
                 <div><br>
                 </div>
-                <div>Thursday looks mostly sunny with highs in the mid-80s
-                  followed by mostly clear skies Thursday night and temperatures
-                  in the lower 60s.<br>
+                <div>Independence Day looks sunny with highs in the mid-80s and
+                  northwest winds 5-6 mph. Friday night, mostly clear skies over
+                  Fawkes House with lows in the lower 60s and light north winds.<br>
                 </div>
               </div>
             </div>
             <br>
             <div>
               <div>
-                <div> <strong>Friday - Monday</strong></div>
-                High pressure is expected to build to the southwest, bringing
-                dry and pleasant weather through the middle of the week and into
-                the weekend. The best chance for rain through Saturday will be
-                tied to a cold front moving across northern Pennsylvania. This
-                front will not have much moisture to work with, but it could
-                still trigger a few showers and possibly some afternoon or
-                evening thunderstorms.<br>
+                <div> <strong>Saturday - Tuesday</strong></div>
+                <div>Low pressure approaching the Great Lakes by Sunday morning
+                  will bring about increasing chances for precipitation for the
+                  second half of the weekend and into the beginning of next
+                  week.</div>
                 <br>
-                Behind the front, the most noticeable change will be much drier
-                and cooler air. Nights and mornings on Thursday and Friday are
-                expected to feel refreshingly cool, with low temperatures
-                dipping into the 50s and low 60s—a welcome break from the recent
-                stretch of heat and humidity.<br>
-                <br>
-                Weather for Independence Day should be ideal, with mostly clear
-                skies, comfortable temperatures, and light northwest breezes.<br>
-                <br>
-                By Sunday morning, a low-pressure system moving toward the Great
-                Lakes will begin to increase the chance of rain during the
-                second half of the weekend and into early next week.</div>
+                Saturday, expect partly cloudy to mostly sunny skies and highs
+                in the middle 80s with partly cloudy skies Saturday night and
+                lows in the mid-60s. Sunday remains partly cloudy with highs in
+                the upper 80s. Partly cloudy skies continue Sunday night with
+                lows in the upper 60s.</div>
+              <div><br>
+              </div>
+              <div>A cold front and wave of low pressure will approach Monday
+                with partly cloudy skies and a chance of scattered afternoon
+                showers and thunderstorms for Lancaster and vicinity. A slight
+                chance of showers/thunderstorms continues overnight into Tuesday
+                AM. Highs in the low 90s with lows in the lower 70s can be
+                expected.</div>
+              <div><br>
+              </div>
+              <div>Tuesday, partly cloudy skies with a slight chance of showers
+                in the morning with more widespread showers and thunderstorms in
+                the afternoon. highs reach the upper 80s. Tuesday night,
+                scattered showers and thunderstorms are possible with
+                temperatures in the low 70s.</div>
               <div><br>
               </div>
             </div>
@@ -741,34 +752,32 @@ div, span, p {
                                   <div style="text-align: left;">
                                     <div><br>
                                     </div>
-                                    <strong>July 1:&nbsp; Severe Thunderstorms
-                                      and Excessive Rainfall in the
-                                      Mid-Atlantic; Heat and Fire Weather
-                                      Concerns in the West<br>
-                                    </strong>Scattered strong to severe storms,
-                                    excessive rainfall, and flooding are
-                                    expected across parts of the Mid-Atlantic
-                                    into the Northeast today. Flood Watches are
-                                    in effect. Heat will continue to impact the
-                                    West today. Heat advisories are in effect
-                                    for portions of the Intermountain West; and
-                                    Extreme Heat Warnings are in effect for
-                                    portions of Arizona and southeast
-                                    California.<strong><br>
+                                    <strong>July 2:&nbsp; Heavy Rainfall Across
+                                      the Southwest, Mid-Atlantic and Florida;
+                                      Fire Weather Concerns in the Northwest and
+                                      Alaska<br>
+                                    </strong>Heavy to excessive rainfall may
+                                    bring flooding to parts of Arizona, New
+                                    Mexico, Florida, North Carolina, and
+                                    Virginia today. Recently burned areas will
+                                    be particularly vulnerable to flash
+                                    flooding. Gusty winds and low humidity will
+                                    bring elevated to critical fire weather
+                                    conditions to parts of the Northwest U.S.
+                                    and central Alaska today.<strong><br>
                                     </strong>
                                     <div><strong><br>
                                       </strong></div>
                                     <div> </div>
                                     <div style="font-size: 16px;"><strong></strong>
                                       <div><strong>Thunderstorm/Severe Weather
-                                          Outlook</strong><strong> July 1<br>
+                                          Outlook</strong><strong> July 2<br>
                                         </strong></div>
-                                      <div>Scattered strong to severe storms are
-                                        possible across parts of the
-                                        Mid-Atlantic into the Northeast this
-                                        afternoon/evening. A few severe
-                                        thunderstorms are possible over western
-                                        parts of Nebraska and South Dakota.</div>
+                                      <div>Isolated strong to severe
+                                        thunderstorms may occur today across
+                                        parts of the northern Rockies/High
+                                        Plains, Great Basin, and Upper
+                                        Midwest/Great Lakes.</div>
                                     </div>
                                     <div><br>
                                     </div>
