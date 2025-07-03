@@ -1656,8 +1656,8 @@ body, div, span, p {
 
    document.getElementById("sunriseSunset").innerHTML = `
     <div class="sun-info">
-    <div>🌅 <strong>Sunrise</strong>: ${sunriseLocal} ${tzAbbr} |
-    🌇 <strong>Sunset</strong>: ${sunsetLocal} ${tzAbbr} |</div>
+    <div>🌅 <strong>Sunrise</strong>: ${sunriseLocal} ${tzAbbr} | </div>
+    <div>🌇<strong>Sunset</strong>: ${sunsetLocal} ${tzAbbr} |</div>
     <div><strong>Day Length</strong>: ${dayLengthStr}</div>
   </div>
 `;
@@ -1755,6 +1755,5 @@ setInterval(updateTimes, 60000);
     const menu = document.getElementById('menuLinks');
     menu.classList.toggle('show');
   }
-</script>
-  </body>
+</script> </body>
 </html>

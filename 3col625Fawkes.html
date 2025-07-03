@@ -341,6 +341,20 @@ div, span, p {
       display: flex;
     }
   }
+      
+body, div, span, p {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+.column {
+  min-width: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
   </style>
   </head>
   <body>
@@ -793,13 +807,14 @@ div, span, p {
               <br>
             </div>
             <div><strong><a href="https://www.timeanddate.com/moon/phases/usa/lancaster-pa">Moon
-                  Phase</a>: </strong>🌓 First Quarter @ 3:30 pm Wed. July 2</div>
+                  Phase</a>: </strong>🌒 Waxing Crescent → 🌓 First Quarter @
+              3:30 pm Wed. July 2</div>
             <div><br>
             </div>
             <div><strong><a href="https://www.timeanddate.com/moon/usa/lancaster-pa">Moon
                   Times for Lancaster, PA</a></strong></div>
-            <div><br>
-            </div>
+          </div>
+          <div><br>
             <div>
               <div>
                 <hr style="margin-left: 0px; margin-right: auto;">
@@ -1436,8 +1451,8 @@ div, span, p {
 
    document.getElementById("sunriseSunset").innerHTML = `
     <div class="sun-info">
-    <div>🌅 <strong>Sunrise</strong>: ${sunriseLocal} ${tzAbbr} |
-    🌇 <strong>Sunset</strong>: ${sunsetLocal} ${tzAbbr} |</div>
+    <div>🌅 <strong>Sunrise</strong>: ${sunriseLocal} ${tzAbbr} | </div>
+    <div>🌇<strong>Sunset</strong>: ${sunsetLocal} ${tzAbbr} |</div>
     <div><strong>Day Length</strong>: ${dayLengthStr}</div>
   </div>
 `;
