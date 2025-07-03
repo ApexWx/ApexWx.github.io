@@ -58,141 +58,8 @@
         justify-content: center;
       }
     }
-      <script>
-  function getCurrentSeason(date = new Date()) {
-    const month = date.getMonth() + 1;
-    const day = date.getDate();
-
-    if ((month === 12 && day >= 21) || (month <= 2) || (month === 3 && day < 20)) {
-      return "winter";
-    } else if ((month === 3 && day >= 20) || (month >= 4 && month <= 5) || (month === 6 && day < 21)) {
-      return "spring";
-    } else if ((month === 6 && day >= 21) || (month >= 7 && month <= 8) || (month === 9 && day < 22)) {
-      return "summer";
-    } else {
-      return "fall";
-    }
-  }
-
-  function getSeasonEmoji(season) {
-    switch (season) {
-      case "winter": return "🌨️";
-      case "spring": return "🌸";
-      case "summer": return "☀️";
-      case "fall":   return "🍂";
-      default: return "";
-    }
-  }
-
-  document.addEventListener("DOMContentLoaded", function() {
-    const season = getCurrentSeason();
-    const emoji = getSeasonEmoji(season);
-    const displayDiv = document.getElementById("season-display");
-
-    if (displayDiv) {
-      const capitalizedSeason = season.charAt(0).toUpperCase() + season.slice(1);
-      displayDiv.textContent = `${emoji} Current season: ${capitalizedSeason}`;
-      displayDiv.classList.add(season); // Adds color class
-    }
-  });
-</script> <script>
-  async function fetchNWSAlerts() {
-    const zone = "MEZ002";
-    const apiURL = `https://api.weather.gov/alerts/active/zone/${zone}`;
-
-    try {
-      const response = await fetch(apiURL);
-      const data = await response.json();
-      const alertDiv = document.getElementById("weatherAlert");
-      const storedDismissedIds = JSON.parse(localStorage.getItem("dismissedAlertIds") || "[]");
-
-      if (data.features.length > 0) {
-        alertDiv.innerHTML = "";
-
-        data.features.forEach((feature) => {
-          const alert = feature.properties;
-          const alertId = feature.id;
-
-          if (storedDismissedIds.includes(alertId)) return;
-
-          const title = alert.headline;
-          const description = alert.description;
-          const severityRaw = alert.severity || "Unknown";
-          const severity = severityRaw.toLowerCase();
-          const link = alert.url || "https://www.weather.gov/car/";
-          const updated = new Date(alert.sent).toLocaleString('en-US', {
-            dateStyle: 'medium',
-            timeStyle: 'short',
-            timeZone: 'America/New_York'
-          });
-
-          const severityClass = {
-            minor: "alert-minor",
-            moderate: "alert-moderate",
-            severe: "alert-severe",
-            extreme: "alert-extreme"
-          }[severity] || "alert-moderate";
-
-          const shouldCollapse = description.length > 300 && !["severe", "extreme"].includes(severity);
-          const shortText = description.slice(0, 300).trim() + "...";
-
-          const alertBox = document.createElement("div");
-          alertBox.className = `alert-box ${severityClass}`;
-          alertBox.setAttribute("data-alert-id", alertId);
-          alertBox.innerHTML = `
-            <button class="alert-close" onclick="dismissAlert('${alertId}')" aria-label="Dismiss alert">&times;</button>
-            <strong>⚠️ Weather Alert (${severityRaw === "Unknown" ? "Severity Unknown" : severityRaw}):</strong>
-            <strong>${title}</strong>
-            <div class="alert-description" id="desc-${alertId}">
-              ${shouldCollapse ? shortText : description}
-            </div>
-            ${shouldCollapse ? `<button class="alert-toggle" onclick="toggleAlert('${alertId}', \`${description.replace(/`/g, "\`")}\`)">Read more</button>` : ""}
-            <div style="margin-top: 8px;">
-              <a href="${link}" target="_blank" rel="noopener">View full alert from NWS</a>
-            </div>
-            <div style="margin-top: 6px; font-size: 0.9em; color: #555;">
-              Last updated: ${updated}
-            </div>
-          `;
-          alertDiv.appendChild(alertBox);
-        });
-      } else {
-        alertDiv.innerHTML = "";
-      }
-    } catch (error) {
-      console.error("NWS Alert fetch error:", error);
-      document.getElementById("weatherAlert").innerText = "Unable to load weather alerts.";
-    }
-  }
-
-  function dismissAlert(alertId) {
-    let dismissed = JSON.parse(localStorage.getItem("dismissedAlertIds") || "[]");
-    if (!dismissed.includes(alertId)) {
-      dismissed.push(alertId);
-      localStorage.setItem("dismissedAlertIds", JSON.stringify(dismissed));
-    }
-    const alertBox = document.querySelector(`[data-alert-id="${alertId}"]`);
-    if (alertBox) alertBox.style.display = 'none';
-  }
-
-  function toggleAlert(alertId, fullText) {
-    const descEl = document.getElementById(`desc-${alertId}`);
-    const btn = descEl.nextElementSibling;
-    const isCollapsed = btn.textContent === "Read more";
-
-    if (isCollapsed) {
-      descEl.textContent = fullText;
-      btn.textContent = "Show less";
-    } else {
-      descEl.textContent = fullText.slice(0, 300).trim() + "...";
-      btn.textContent = "Read more";
-    }
-  }
-
-  fetchNWSAlerts();
-  setInterval(fetchNWSAlerts, 15 * 60 * 1000);
-</script> <style>
-      .sun-info {
+     
+.sun-info {
     display: flex;
     flex-wrap: wrap;
     gap: 6px;  /* smaller space between items */
@@ -1668,5 +1535,138 @@ setInterval(updateTimes, 60000);
     const menu = document.getElementById('menuLinks');
     menu.classList.toggle('show');
   }
+</script> <script>
+  function getCurrentSeason(date = new Date()) {
+    const month = date.getMonth() + 1;
+    const day = date.getDate();
+
+    if ((month === 12 && day >= 21) || (month <= 2) || (month === 3 && day < 20)) {
+      return "winter";
+    } else if ((month === 3 && day >= 20) || (month >= 4 && month <= 5) || (month === 6 && day < 21)) {
+      return "spring";
+    } else if ((month === 6 && day >= 21) || (month >= 7 && month <= 8) || (month === 9 && day < 22)) {
+      return "summer";
+    } else {
+      return "fall";
+    }
+  }
+
+  function getSeasonEmoji(season) {
+    switch (season) {
+      case "winter": return "🌨️";
+      case "spring": return "🌸";
+      case "summer": return "☀️";
+      case "fall":   return "🍂";
+      default: return "";
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", function() {
+    const season = getCurrentSeason();
+    const emoji = getSeasonEmoji(season);
+    const displayDiv = document.getElementById("season-display");
+
+    if (displayDiv) {
+      const capitalizedSeason = season.charAt(0).toUpperCase() + season.slice(1);
+      displayDiv.textContent = `${emoji} Current season: ${capitalizedSeason}`;
+      displayDiv.classList.add(season); // Adds color class
+    }
+  });
+</script> <script>
+  async function fetchNWSAlerts() {
+    const zone = "PAZ066"; // Lancaster County, PA
+    const apiURL = `https://api.weather.gov/alerts/active/zone/${zone}`;
+
+    try {
+      const response = await fetch(apiURL);
+      const data = await response.json();
+      const alertDiv = document.getElementById("weatherAlert");
+      const storedDismissedIds = JSON.parse(localStorage.getItem("dismissedAlertIds") || "[]");
+
+      if (data.features.length > 0) {
+        alertDiv.innerHTML = "";
+
+        data.features.forEach((feature) => {
+          const alert = feature.properties;
+          const alertId = feature.id;
+
+          if (storedDismissedIds.includes(alertId)) return;
+
+          const title = alert.headline;
+          const description = alert.description;
+          const severityRaw = alert.severity || "Unknown";
+          const severity = severityRaw.toLowerCase();
+          const link = alert.url || "https://www.weather.gov/phi/"; // NWS Mount Holly office for PA
+          const updated = new Date(alert.sent).toLocaleString('en-US', {
+            dateStyle: 'medium',
+            timeStyle: 'short',
+            timeZone: 'America/New_York'
+          });
+
+          const severityClass = {
+            minor: "alert-minor",
+            moderate: "alert-moderate",
+            severe: "alert-severe",
+            extreme: "alert-extreme"
+          }[severity] || "alert-moderate";
+
+          const shouldCollapse = description.length > 300 && !["severe", "extreme"].includes(severity);
+          const shortText = description.slice(0, 300).trim() + "...";
+
+          const alertBox = document.createElement("div");
+          alertBox.className = `alert-box ${severityClass}`;
+          alertBox.setAttribute("data-alert-id", alertId);
+          alertBox.innerHTML = `
+            <button class="alert-close" onclick="dismissAlert('${alertId}')" aria-label="Dismiss alert">&times;</button>
+            <strong>⚠️ Weather Alert (${severityRaw === "Unknown" ? "Severity Unknown" : severityRaw}):</strong>
+            <strong>${title}</strong>
+            <div class="alert-description" id="desc-${alertId}">
+              ${shouldCollapse ? shortText : description}
+            </div>
+            ${shouldCollapse ? `<button class="alert-toggle" onclick="toggleAlert('${alertId}', \`${description.replace(/`/g, "\`")}\`)">Read more</button>` : ""}
+            <div style="margin-top: 8px;">
+              <a href="${link}" target="_blank" rel="noopener">View full alert from NWS</a>
+            </div>
+            <div style="margin-top: 6px; font-size: 0.9em; color: #555;">
+              Last updated: ${updated}
+            </div>
+          `;
+          alertDiv.appendChild(alertBox);
+        });
+      } else {
+        alertDiv.innerHTML = "";
+      }
+    } catch (error) {
+      console.error("NWS Alert fetch error:", error);
+      document.getElementById("weatherAlert").innerText = "Unable to load weather alerts.";
+    }
+  }
+
+  function dismissAlert(alertId) {
+    let dismissed = JSON.parse(localStorage.getItem("dismissedAlertIds") || "[]");
+    if (!dismissed.includes(alertId)) {
+      dismissed.push(alertId);
+      localStorage.setItem("dismissedAlertIds", JSON.stringify(dismissed));
+    }
+    const alertBox = document.querySelector(`[data-alert-id="${alertId}"]`);
+    if (alertBox) alertBox.style.display = 'none';
+  }
+
+  function toggleAlert(alertId, fullText) {
+    const descEl = document.getElementById(`desc-${alertId}`);
+    const btn = descEl.nextElementSibling;
+    const isCollapsed = btn.textContent === "Read more";
+
+    if (isCollapsed) {
+      descEl.textContent = fullText;
+      btn.textContent = "Show less";
+    } else {
+      descEl.textContent = fullText.slice(0, 300).trim() + "...";
+      btn.textContent = "Read more";
+    }
+  }
+
+  fetchNWSAlerts();
+  setInterval(fetchNWSAlerts, 15 * 60 * 1000);
 </script> </body>
 </html>
