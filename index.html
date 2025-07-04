@@ -59,22 +59,24 @@ header, footer {
 }
 
 .sun-info {
-  display: flex;
-  flex-wrap: wrap;
-  font-size: 1rem;
-  justify-content: flex-start;
-}
-
-.sun-info > div {
-  flex: 0 0 auto;
-  white-space: nowrap;
-}
-
-@media ( max-width : 600px ) {
-  .sun-info {
-    flex-direction: column;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;  /* smaller space between items */
+    font-size: 1rem;
+      justify-content: flex-start; /* aligns items to the left horizontally */
   }
-}
+
+  .sun-info > div {
+    flex: 0 0 auto;
+    white-space: nowrap;
+  }
+
+  @media (max-width: 600px) {
+    .sun-info {
+      flex-direction: column;
+      gap: 2px;
+    }
+  }
 
 #weather-widget {
   font-family: Arial, sans-serif;
@@ -1514,7 +1516,7 @@ em {
    document.getElementById("sunriseSunset").innerHTML = `
     <div class="sun-info">
     <div>🌅 <strong>Sunrise</strong>: ${sunriseLocal} ${tzAbbr} | </div>
-    <div>🌇<strong>Sunset</strong>: ${sunsetLocal} ${tzAbbr} |</div>
+    <div>🌇<strong>Sunset</strong>: ${sunsetLocal} ${tzAbbr} | </div>
     <div><strong>Day Length</strong>: ${dayLengthStr}</div>
   </div>
 `;
