@@ -6,224 +6,217 @@
     <script src="https://cdnres.willyweather.com/widget/warning/loadView.html?id=157826"></script>
     <title>Apex Wx Weather Information Fort Kent, Maine</title>
     <style>
-   body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: url('https://github.com/ApexWx/ApexWx.github.io/blob/master/seamless-background-simply-sky.jpg?raw=true') repeat;
-    }
+body {
+  margin: 0px;
+  font-family: Arial, sans-serif;
+  background: rgba(0, 0, 0, 0) url("https://github.com/ApexWx/ApexWx.github.io/blob/master/seamless-background-simply-sky.jpg?raw=true") repeat scroll 0% 0%;
+}
 
-    header, footer {
-      text-align: center;
-      padding: 1rem;
-      background: inherit;
-    }
+header, footer {
+  text-align: center;
+  padding: 1rem;
+  background: ;
+}
 
-    .container {
-      display: grid;
-      grid-template-columns: 25% 50% 25%;
-      min-height: 80vh; /* adjust as needed */
-    }
+.container {
+  display: grid;
+  -webkit-grid-template-columns: 25% 50% 25%;
+  grid-template-columns: 25% 50% 25%;
+  min-height: 80vh;
+}
 
-    .column {
-      padding: 1rem;
-      background: inherit;
-    }
+.column {
+  padding: 1rem;
+  background: ;
+}
 
-    @media (max-width: 768px) {
-      .container {
-        grid-template-columns: 1fr;
-      }
-    }
-     
+@media ( max-width : 768px ) {
+  .container {
+    -webkit-grid-template-columns: 1fr;
+    grid-template-columns: 1fr;
+  }
+}
 
-    /* Responsive images container */
-    .inline-images {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      justify-content: center;
-    }
+.inline-images {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
 
-    .inline-images img {
-      max-width: 100%;
-      height: auto;
-    }
+.inline-images img {
+  max-width: 100%;
+  height: auto;
+}
 
-    @media (max-width: 768px) {
-      .container {
-        grid-template-columns: 1fr;
-      }
+@media ( max-width : 768px ) {
+  .container {
+    -webkit-grid-template-columns: 1fr;
+    grid-template-columns: 1fr;
+  }
+  .inline-images {
+    justify-content: center;
+  }
+}
 
-      .inline-images {
-        justify-content: center;
-      }
-    }
-     
 .sun-info {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px;  /* smaller space between items */
-    font-size: 1rem;
-      justify-content: flex-start; /* aligns items to the left horizontally */
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 1rem;
+  justify-content: flex-start;
+}
+
+.sun-info > div {
+  flex: 0 0 auto;
+  white-space: nowrap;
+}
+
+@media ( max-width : 600px ) {
+  .sun-info {
+    flex-direction: column;
   }
+}
 
-  .sun-info > div {
-    flex: 0 0 auto;
-    white-space: nowrap;
+#weather-widget {
+  font-family: Arial, sans-serif;
+  max-width: 800px;
+  margin: 0px auto;
+  padding: 1em;
+  background: transparent none repeat scroll 0% 0%;
+  color: #333333;
+}
+
+.fw-container h2 {
+  font-size: 1.5rem;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.fw-forecast {
+  background: transparent none repeat scroll 0% 0%;
+  padding: 1em;
+  border-radius: 8px;
+}
+
+.fw-forecast .fw-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 1.5em;
+}
+
+.fw-forecast img {
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+}
+
+.fw-text {
+  font-size: 1rem;
+}
+
+.fw-day {
+  font-weight: bold;
+}
+
+@media ( max-width : 600px ) {
+  .fw-forecast .fw-item {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
   }
-
-  @media (max-width: 600px) {
-    .sun-info {
-      flex-direction: column;
-      gap: 2px;
-    }
+  .fw-forecast img {
+    margin-bottom: 0.5em;
   }
-    #weather-widget {
-      font-family: Arial, sans-serif;
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 1em;
-      background: transparent;  /* Transparent background for widget */
-      color: #333;
-    }
+}
 
-    .fw-container h2 {
-      font-size: 1.5rem;
-      text-align: center;
-      margin-bottom: 1rem;
-    }
+#season-display {
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 10px;
+}
 
-    .fw-forecast {
-      background: transparent;  /* Transparent background for forecast */
-      padding: 1em;
-      border-radius: 8px;
-    }
+.winter {
+  color: #0277bd;
+}
 
-    .fw-forecast .fw-item {
-      display: flex;
-      align-items: flex-start;
-      gap: 10px;
-      margin-bottom: 1.5em;
-    }
+.spring {
+  color: #2e7d32;
+}
 
-    .fw-forecast img {
-      width: 48px;
-      height: 48px;
-      flex-shrink: 0;
-    }
+.summer {
+  color: #ef6c00;
+}
 
-    .fw-text {
-      font-size: 1rem;
-    }
+.fall {
+  color: #d84315;
+}
 
-    .fw-day {
-      font-weight: bold;  /* Bold day names */
-    }
+.alert-container {
+  margin-top: 1em;
+  font-family: sans-serif;
+}
 
-    @media (max-width: 600px) {
-      .fw-forecast .fw-item {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-      }
+.alert-box {
+  border-left: 5px solid;
+  padding: 12px 15px;
+  border-radius: 4px;
+  font-size: 1rem;
+  line-height: 1.4;
+  background-color: #f9f9f9;
+}
 
-      .fw-forecast img {
-        margin-bottom: 0.5em;
-      }
-    }
-    
-    #season-display {
-    font-size: 16px;
-    font-weight: bold;
-    margin-top: 10px;
-  }
+.alert-minor {
+  border-color: #ffcc00;
+  background-color: #fff8e1;
+}
 
-  /* Text color for each season */
-  .winter {
-    color: #0277bd; /* Cool blue */
-  }
+.alert-moderate {
+  border-color: #ffa726;
+  background-color: #fff3e0;
+}
 
-  .spring {
-    color: #2e7d32; /* Fresh green */
-  }
+.alert-severe {
+  border-color: #ef5350;
+  background-color: #fdecea;
+}
 
-  .summer {
-    color: #ef6c00; /* Warm orange */
-  }
+.alert-extreme {
+  border-color: #b71c1c;
+  background-color: #fce4e4;
+}
 
-  .fall {
-    color: #d84315; /* Earthy red-orange */
-  }
-    
-   .alert-container {
-    margin-top: 1em;
-    font-family: sans-serif;
-  }
+.alert-box strong {
+  display: block;
+  margin-bottom: 5px;
+}
 
+.alert-box a {
+  color: #0056b3;
+  text-decoration: underline;
+}
+
+.alert-close {
+  background: transparent none repeat scroll 0% 0%;
+  border: medium none;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #444444;
+  float: right;
+  cursor: pointer;
+  margin: -5px -8px 5px 8px;
+}
+
+.alert-close:hover {
+  color: black;
+}
+
+@media ( max-width : 600px ) {
   .alert-box {
-    border-left: 5px solid;
-    padding: 12px 15px;
-    border-radius: 4px;
-    font-size: 1rem;
-    line-height: 1.4;
-    background-color: #f9f9f9;
+    font-size: 0.95rem;
+    padding: 10px 12px;
   }
+}
 
-  .alert-minor {
-    border-color: #ffcc00;
-    background-color: #fff8e1;
-  }
-
-  .alert-moderate {
-    border-color: #ffa726;
-    background-color: #fff3e0;
-  }
-
-  .alert-severe {
-    border-color: #ef5350;
-    background-color: #fdecea;
-  }
-
-  .alert-extreme {
-    border-color: #b71c1c;
-    background-color: #fce4e4;
-  }
-
-  .alert-box strong {
-    display: block;
-    margin-bottom: 5px;
-  }
-
-  .alert-box a {
-    color: #0056b3;
-    text-decoration: underline;
-  }
-  .alert-close {
-    background: transparent;
-    border: none;
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: #444;
-    float: right;
-    cursor: pointer;
-    margin: -5px -8px 5px 8px;
-  }
-
-  .alert-close:hover {
-    color: #000;
-  }
-
-  @media (max-width: 600px) {
-    .alert-box {
-      font-size: 0.95rem;
-      padding: 10px 12px;
-    }
-  }
-
-/* Responsive fixes */
-div[style*="width: 810px"],
-div[style*="width: 830px"],
-div[style*="width: 800px"] {
+div[style*="width: 810px"], div[style*="width: 830px"], div[style*="width: 800px"] {
   max-width: 100%;
   width: 100% !important;
   box-sizing: border-box;
@@ -234,7 +227,7 @@ img {
   height: auto !important;
 }
 
-@media (max-width: 768px) {
+@media ( max-width : 768px ) {
   #tswothersidecol, #tswsidecol {
     float: none !important;
     width: 100% !important;
@@ -247,115 +240,112 @@ iframe {
 }
 
 div, span, p {
-  word-wrap: break-word;
   overflow-wrap: break-word;
 }
 
 .alert-toggle {
-  background: none;
-  border: none;
+  background: rgba(0, 0, 0, 0) none repeat scroll 0% 0%;
+  border: medium none;
   color: #0056b3;
   text-decoration: underline;
   cursor: pointer;
   font-size: 0.9rem;
   margin-top: 6px;
-  padding: 0;
+  padding: 0px;
 }
-      
+
 .alert-toggle:hover {
   color: #003d80;
 }
-    
-    .responsive-table {
-    width: 100%;
-    border-collapse: collapse;
-    background-color: transparent;
-  }
 
+.responsive-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: transparent;
+}
+
+.responsive-table td, .responsive-table th {
+  padding: 10px;
+  border: medium none;
+  text-align: left;
+  vertical-align: top;
+}
+
+@media screen and ( max-width : 600px ) {
   .responsive-table td, .responsive-table th {
-    padding: 10px;
-    border: none;
-    text-align: left;
-    vertical-align: top;
+    display: block;
+    width: 100%;
   }
+}
 
-  @media screen and (max-width: 600px) {
-    .responsive-table td, .responsive-table th {
-      display: block;
-      width: 100%;
-    }
-  }
+.responsive-table tr {
+  display: block;
+  margin-bottom: 15px;
+}
 
-    .responsive-table tr {
-      display: block;
-      margin-bottom: 15px;
-    }
-      
 responsive-menu {
-    background-color: #333;
-    color: white;
-    padding: 10px;
-    font-family: Arial, sans-serif;
-  }
+  background-color: #333333;
+  color: white;
+  padding: 10px;
+  font-family: Arial, sans-serif;
+}
 
+.responsive-menu .menu-toggle {
+  background-color: #444444;
+  color: white;
+  padding: 10px 15px;
+  font-size: 16px;
+  border: medium none;
+  cursor: pointer;
+  display: none;
+}
+
+.responsive-menu .menu-links a {
+  color: #1e3a8a;
+  font-weight: bold;
+  padding: 8px 12px;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.responsive-menu .menu-links a:hover {
+  background-color: #555555;
+  color: white;
+}
+
+@media ( max-width : 768px ) {
   .responsive-menu .menu-toggle {
-    background-color: #444;
-    color: white;
-    padding: 10px 15px;
-    font-size: 16px;
-    border: none;
-    cursor: pointer;
+    display: block;
+  }
+  .responsive-menu .menu-links {
     display: none;
+    flex-direction: column;
   }
-
   .responsive-menu .menu-links a {
-    color: #1E3A8A;        /* Tailwind dark blue */
-    font-weight: bold;     /* Bold before hover */
-    padding: 8px 12px;
-    text-decoration: none;
-    display: inline-block;
+    display: block;
+    border-top: 1px solid #444444;
   }
-
-  .responsive-menu .menu-links a:hover {
-    background-color: #555;
-    color: white;          /* White on hover */
+  .responsive-menu .menu-links.show {
+    display: flex;
   }
+}
 
-  @media (max-width: 768px) {
-    .responsive-menu .menu-toggle {
-      display: block;
-    }
-
-    .responsive-menu .menu-links {
-      display: none;
-      flex-direction: column;
-    }
-
-    .responsive-menu .menu-links a {
-      display: block;
-      border-top: 1px solid #444;
-    }
-
-    .responsive-menu .menu-links.show {
-      display: flex;
-    }
-  }
-      
 body, div, span, p {
-  word-wrap: break-word;
   overflow-wrap: break-word;
-  word-break: break-word;
 }
 
 .column {
-  min-width: 0;
+  min-width: 0px;
 }
 
 * {
   box-sizing: border-box;
 }
-  </style>
-  </head>
+
+em {
+}
+
+</style> </head>
   <body>
     <header id="page-header">
       <h1 style="text-align: center;"><img src="https://raw.githubusercontent.com/ApexWx/ApexWx.github.io/master/Apex%20banner.jpg"
@@ -375,11 +365,11 @@ body, div, span, p {
       </nav>
     </header>
     <div class="container" id="main-container">
-      <div class="column left" id="left-column"><strong>Official</strong><strong>
-          Government Forecasts<br>
-          <br>
-        </strong>
-        <div> <a href="https://www.weather.gov/" title="NWS Caribou (northern and eastern Maine">US
+      <div class="column left" id="left-column"><strong>Official Government
+          Forecasts</strong><br>
+        <div> <a href="https://www.weather.gov/" title="NWS Caribou (northern and eastern Maine"><br>
+          </a></div>
+        <div><a href="https://www.weather.gov/" title="NWS Caribou (northern and eastern Maine">US
             National Weather Service<br>
           </a></div>
         <div><a href="https://www.weather.gov/car/" title="NWS Caribou (northern and eastern Maine"><br>
@@ -408,8 +398,6 @@ body, div, span, p {
             Prediction Center</a></div>
         <div><br>
         </div>
-        <div><br>
-        </div>
         <div><strong>NWS Caribou Office<br>
           </strong> <br>
           <div><a href="https://forecast.weather.gov/MapClick.php?CityName=Fort+Kent&amp;state=ME&amp;site=CAR&amp;textField1=47.2632&amp;textField2=-68.5774&amp;e=1">7-Day
@@ -429,8 +417,7 @@ body, div, span, p {
               discussion with glossary</em></div>
           <div><br>
             <a href="https://www.weather.gov/wrh/climate?wfo=car" title="NWS Caribou Regional Climate Data">NWS
-              Caribou<br>
-              Regional Climate Data</a><br>
+              Caribou Regional Climate Data</a><br>
             <div style="font-size: 12px;"><em>regional weather records,
                 averages, etc.</em> </div>
           </div>
@@ -440,7 +427,8 @@ body, div, span, p {
               Channel</a></div>
           <div><br>
             <a href="https://www.weather.gov/car/recreation" title="Recreation Forecasts">Recreation
-              Forecast for Northern &amp; Eastern Maine</a></div>
+              Forecast for <br>
+              Northern &amp; Eastern Maine</a></div>
         </div>
         <div><br>
         </div>
@@ -513,7 +501,6 @@ body, div, span, p {
               Weather Extremes</a><strong><br>
             </strong></span></div>
         <div><span style="font-size: 13px;"><strong><br>
-              <br>
             </strong></span></div>
         <div><span style="font-size: 13px;"><strong>NWS Caribou Watches &amp;
               Advisories</strong></span><em style="font-size: 13px;"><strong><br>
@@ -537,10 +524,7 @@ body, div, span, p {
               </strong></em> <a href="https://radar.weather.gov/?settings=v1_eyJhZ2VuZGEiOnsiaWQiOiJsb2NhbCIsImNlbnRlciI6Wy02Ni4wMTEsNDUuMjRdLCJsb2NhdGlvbiI6bnVsbCwiem9vbSI6NywiZmlsdGVyIjoiV1NSLTg4RCIsImxheWVyIjoiYnJlZl9yYXciLCJzdGF0aW9uIjoiS0NCVyJ9LCJhbmltYXRpbmciOmZhbHNlLCJiYXNlIjoic3RhbmRhcmQiLCJhcnRjYyI6ZmFsc2UsImNvdW50eSI6ZmFsc2UsImN3YSI6ZmFsc2UsInJmYyI6ZmFsc2UsInN0YXRlIjpmYWxzZSwibWVudSI6dHJ1ZSwic2hvcnRGdXNlZE9ubHkiOnRydWUsIm9wYWNpdHkiOnsiYWxlcnRzIjowLjgsImxvY2FsIjowLjYsImxvY2FsU3RhdGlvbnMiOjAuOCwibmF0aW9uYWwiOjAuNn19#/"
               title="Current Local Radar"><img src="https://radar.weather.gov/ridge/standard/KCBW_loop.gif"
                 title="Click for larger image" alt="Local Radar" style="width: 251px; height: 228px; border-width: 1px; border-style: solid;"></a><br>
-            <strong></strong>
-            <div style="font-size: 14px; text-align: center;"><strong><br>
-              </strong></div>
-          </div>
+            <strong></strong> </div>
           <div><em style="font-size: 11px;"><br>
             </em></div>
           <div style="width: 100%;"><strong>Today's Highs</strong><br>
@@ -662,6 +646,20 @@ body, div, span, p {
                 </em></div>
               <div style="text-align: left;"><em style="font-size: 12px;">Located
                   about 30 mi / 48 km W/SW of Fort Kent</em></div>
+              <div style="text-align: left;"><em style="font-size: 12px;"><br>
+                </em></div>
+              <div style="text-align: left;"><br>
+                <strong>Bird Migration Forecast Map</strong><em><strong><br>
+                    <a href="https://birdcast.info/migration-tools/migration-forecast-maps/"
+                      title="Click for more information"><img src="https://s3.amazonaws.com/is-birdcast-predicted-prod/images/day1.jpg"
+                        alt="Bird Migration Forecast Map" style="width: 259px; height: 145px;"></a></strong><br>
+                </em>
+                <div>
+                  <div style="font-size: 14px; text-align: left;"><em style="font-size: 12px;">Live
+                      March 1 to June 15 &amp; Aug. 1 to Nov.15</em></div>
+                </div>
+              </div>
+              <div> </div>
             </div>
           </div>
         </div>
@@ -796,14 +794,14 @@ body, div, span, p {
               </strong></u></div>
           <div><u><strong><br>
               </strong></u></div>
-          <div> <u><strong>Wednesday, July 2</strong></u>
+          <div> <u><strong>Thursday, July 3</strong></u>
             <div>
               <div>
-                <div style="width: 830px;"><b>High</b>: 85° @ 2:46 pm&nbsp;
-                  |&nbsp;&nbsp; <b>Low</b>: 62° @ 11:51 pm</div>
-                <div><b>Rain: </b>0.01" | <strong>Snow</strong>: 0.0"</div>
-                <div><b>Daily Wind:</b> W @ 1 mph |&nbsp; <strong><u>Max. Gust</u></strong>:
-                  15 mph @ 2:58 pm<br>
+                <div style="width: 830px;"><b>High</b>: 77° @ 10:50 am&nbsp;
+                  |&nbsp;&nbsp; <b>Low</b>: 56° @ 4:43 am</div>
+                <div><b>Rain: </b>0.92" | <strong>Snow</strong>: 0.0"</div>
+                <div><b>Daily Wind:</b> W @ &lt; 1 mph |&nbsp; <strong><u>Max.
+                      Gust</u></strong>: 15 mph @ 11:22 am<br>
                   <em style="font-size: 12px;"><em style="font-size: 12px;">Source:
                       </em></em><em style="font-size: 12px;"><em style="font-size: 12px;">Davis
                       Instruments <a href="https://www.davisinstruments.com/collections/vantage-pro2/products/vantage-pro2-groweather-wireless-integrated-sensor-suite">Vantage
@@ -815,14 +813,14 @@ body, div, span, p {
         </div>
         <div><br>
         </div>
-        <u><strong>Thursday, July 3</strong></u><br>
+        <div> <u><strong>Friday, July 3</strong></u> </div>
         <div style="width: 810px; border-width: 0px;"><strong>Norm. High: </strong>75°&nbsp;
-          |<strong>&nbsp; Record</strong>: 91° (2002)<br>
+          |<strong>&nbsp; Record</strong>: 92° (1939)<br>
           <strong> Norm. Low:&nbsp; </strong>53°&nbsp; |&nbsp; <strong>Record</strong>:
-          34° (1962)</div>
+          37° (1982)</div>
         <div style="width: 810px; border-radius: 0px;"><strong>Norm. Daily
-            Precipitation: </strong>0.14"<strong> </strong>|<strong> Record</strong>:
-          1.48" (1953)</div>
+            Precipitation: </strong>0.15"<strong> </strong>|<strong> Record</strong>:
+          1.65" (1960)</div>
         <div style="width: 810px;"><strong>Norm. Daily Snow:</strong> 0.0" | <strong>Record</strong>:
           0.0"</div>
         <div style="width: 810px;"><em style="font-size: 12px;">Source: </em><em
@@ -830,10 +828,10 @@ body, div, span, p {
                 SC-ACIS</a> </em>NWS Caribou climate data collected since 1893</em></div>
         <div style="width: 810px;"><br>
         </div>
-        <div class="precip-table-container">
-          <div class="precip-title"><strong><u>Precipitation 2025</u></strong></div>
-          <strong>Rainfall</strong><strong>:</strong> 21.43"&nbsp; |&nbsp; <u>norm</u>.
-          19.21" (+2.22")
+        <div>
+          <div><strong><u>Precipitation 2025</u></strong></div>
+          <strong>Rainfall</strong><strong>:</strong> 21.46"&nbsp; |&nbsp; <u>norm</u>.
+          19.36" (+2.10")
           <div style="width: 810px;"><strong><span style="color: #009900;"></span>Snowfall</strong>:
             0.0" | <u>norm</u>. 0.0"<br>
             <strong>Snowfall </strong><strong>24-25</strong><strong>: </strong>73.2"&nbsp;
@@ -906,72 +904,82 @@ body, div, span, p {
         </div>
         <div> <strong><em style="font-size: 12px;"></em></strong> <strong> </strong></div>
         <strong></strong>
-        <div> </div>
-        <u><strong>7-Day Outlook: Thu. July 3 - Wed</strong></u><u><strong>.
-            July 9<br>
-          </strong></u>
+        <div> <u><strong>7-Day Outlook: Fri. July 4 - Thu</strong></u><u><strong>.
+              July 10<br>
+            </strong></u></div>
         <div style="text-align: left; font-size: 12px;">
           <div style="text-align: left;"><span style="color: #757575;"><em><span
-                  style="font-size: 12px;"><u>Updated</u>: Thursday, July 3</span><span
-                  style="font-size: 12px;">, 2025 at 8:45 am EDT</span><u> </u></em></span></div>
+                  style="font-size: 12px;"><u>Updated</u>: Friday July 4</span><span
+                  style="font-size: 12px;">, 2025 at 8:25 am EDT</span><u> </u></em></span></div>
           <em> </em></div>
         <em> </em>
         <div>
           <div>
             <div><strong></strong><br>
-              <strong>☀️ Aphelion Day!<br>
-              </strong>The Earth will be the farthest point from the sun for the
-              year at 3:54 pm EDT.</div>
+            </div>
             <div><strong><br>
               </strong></div>
-            <div><strong>Thursday -&nbsp; Saturday</strong></div>
-            <div>An upper trough will approach today and cross the Valley this
-              afternoon followed by a cold front later today. Showers and
-              scattered thunderstorms are expected this afternoon with scattered
-              strong/sever storms possible. Based on current atmospheric
-              dynamics, the potential for damaging storm winds and hail exists
-              with any stronger storms this afternoon.</div>
+            <div><strong>Friday -&nbsp; Sunday</strong></div>
+            <div>An upper-level low will move across Maine today. The low's cold
+              pool along with daytime heating will be sufficient to trigger some
+              showers and isolated thunderstorms across the north today, with
+              precipitation most widespread in the afternoon hours (so have some
+              means of keeping dry for any Fourth of July festivities). Tonight,
+              showers wane with the loss of daytime heating and the departure of
+              the upper-low into the Maritimes. Skies become partly cloudy to
+              mostly clear as high pressure builds into the region. Highs today
+              reach the upper 60s with overnight lows in the lower 50s.
+              Northwest winds 5-10 mph today fall to 0-5 mph tonight.</div>
             <div><br>
             </div>
-            <div>Behind the cold front, skies become partly cloudy tonight with
-              patchy fog across the area along with isolated showers that taper
-              off after midnight. An upper level-low just east of James Bay in
-              Canada this morning will move across the SJV Friday producing a
-              chance of showers, especially in the afternoon/evening, along with
-              isolated to scattered thunderstorms, some of which could feature
-              small hail thanks to low freezing levels aloft.</div>
+            <div>Saturday, mostly sunny skies start the day allowing
+              temperatures to climb into the lower 80s. Clouds increase in the
+              afternoon as a warm front trailing from an area of low pressure
+              east of James Bay approaches. Saturday night, skies become mostly
+              cloudy as the warm front lifts across the region with a chance of
+              showers and isolated thunderstorms, mainly after midnight. Lows
+              fall into the lower 60s. West winds 5-6 mph Saturday become
+              southwest 0-5 mph with gusts 15-20 mph after midnight.</div>
             <div><br>
             </div>
-            <div>The upper-low will move southeast of the region Friday night
-              while high pressure builds in to the region from the southwest.
-              High pressure will bring mostly clear skies Friday night and sunny
-              skies into Saturday afternoon. Clouds increase Saturday
-              afternoon/evening as a cold front approaches with increasing
-              chances of rain Saturday night heading into Sunday.</div>
+            <div>Partly sunny to mostly cloudy skies overspread the Saint John
+              Valley Sunday morning as a cold front approaches with a chance of
+              showers, mainly in the afternoon, and scattered afternoon
+              thunderstorms. Highs top out in the low 80s with southwesterly
+              winds shifting to the west 10-11 mph with gusts 20-25 mph
+              possible. Sunday night, the cold front crosses the SJV with a
+              chance of showers and thunderstorms under mostly cloudy skies.
+              Lows dip into the mid-50s with west winds 0-7 mph.</div>
             <div><br>
             </div>
             <div>
-              <div> <strong>Sunday - Wednesday</strong></div>
-              <div>The cold front moves across the area Sunday as high pressure
-                moves into the Atlantic. Breezy southwest winds area possible as
-                the pressure gradient between the departing highs and
-                approaching cold front interact. The cold front produces showers
-                and scattered thunderstorms Sunday afternoon/evening with
-                showers and isolated thunderstorms possible Sunday night into
-                Monday.</div>
+              <div> <strong>Monday - Thursday</strong></div>
+              <div>The cold front slowly moves to the coast Monday with a chance
+                of showers and isolated thunderstorms in the morning then a
+                chance of showers and scattered thunderstorms in the afternoon.
+                Highs in the mid-70s with lows in the mid-50s are anticipated.</div>
               <br>
-              The front slowly slides to the coast Monday into Tuesday with a
-              wave of low pressure moving along the boundary. This brings the
-              chance of showers and afternoon thunderstorms to Fort Kent and
-              vicinity Monday afternoon/evening with showers lingering overnight
-              as the front gradually moves east. </div>
+              High pressure builds in Tuesday with morning showers ending by the
+              afternoon and mostly clear skies overspreading the SJV Tuesday
+              night. Highs in the upper 70s to near 80F are expected with
+              overnight lows in the middle 50s for Fort Kent and vicinity.</div>
             <div><br>
             </div>
-            <div>A 1020-mb (30.12 inHg) high pressure area builds in Tuesday
-              into Wednesday with partly cloudy/mostly clear skies overspreading
-              the SJV Tuesday afternoon through Wednesday bringing mostly dry
-              conditions to the area, though some isolated shower activity
-              cannot be ruled out.</div>
+            <div>Midweek, the Valley looks to be positioned between high
+              pressure centered to the west and a quasi-stalled frontal boundary
+              to the east with waves of low pressure moving along it. Wednesday
+              looks to be partly cloudy with a slight chance of afternoon
+              showers as a rather shallow upper-trough moves across the area. A
+              slight chance of showers continues Wednesday night into Thursday.
+              Highs Wednesday top out in the low 80s with overnight lows in the
+              mid-50s.</div>
+            <div><br>
+            </div>
+            <div>For Thursday, partly cloudy to partly sunny skies remain across
+              the area with a chance of showers, mainly in the afternoon, along
+              with some isolated thunderstorms. Partly cloudy skies with a a
+              chance of showers is possible Thursday night with lows in the
+              middle 50s.</div>
             <div><br>
             </div>
           </div>
@@ -1027,30 +1035,35 @@ body, div, span, p {
                                 <div style="text-align: left;">
                                   <div><br>
                                   </div>
-                                  <strong>July 3: Severe Thunderstorms in the
-                                    Northeast and Northern Plains; Critical Fire
-                                    Weather in the West<br>
-                                  </strong>Scattered severe thunderstorms
-                                  capable of damaging wind gusts and hail are
-                                  forecast across the Northeast U.S. and North
-                                  Dakota today. Heavy to excessive rainfall is
-                                  possible over eastern New Mexico into western
-                                  Texas and over the western Florida peninsula
-                                  today. Critical fire weather conditions will
-                                  persist today over parts of the interior
-                                  Northwest and Great Basin<strong><br>
+                                  <strong>July 4: Above Normal Temperatures,
+                                    Strong Thunderstorms, Tropical Development
+                                    Being Monitored<br>
+                                  </strong>Well above normal temperatures are
+                                  forecast to shift from the northern Plains
+                                  through the Northeast U.S. over the long
+                                  holiday weekend. A few strong to severe
+                                  thunderstorm will be possible as well along
+                                  with a potential for excessive rainfall. A
+                                  tropical or subtropical depression could form
+                                  off the Southeast U.S. coast over the weekend
+                                  while drifting northward to northeastward.<strong><br>
                                   </strong>
                                   <div><strong><br>
                                     </strong></div>
                                   <div> </div>
                                   <div style="font-size: 16px;"><strong></strong>
                                     <div><strong>Thunderstorm/Severe Weather
-                                        Outlook</strong><strong> July 3<br>
+                                        Outlook</strong><strong> July 4<br>
                                       </strong></div>
-                                    <div>Scattered severe thunderstorms capable
-                                      of producing severe/damaging winds and
-                                      large hail are forecast across parts of
-                                      the Northeast and northern Plains today.</div>
+                                    <div>Scattered strong to severe
+                                      thunderstorms with mainly a wind threat
+                                      are expected this afternoon and evening
+                                      over parts of the northern/central Plains
+                                      toward the upper Mississippi Valley.
+                                      Isolated severe gusts and hail may also
+                                      occur today from eastern Oregon into
+                                      portions of the northern Great
+                                      Basin/Rockies.</div>
                                   </div>
                                   <div>
                                     <div><u><strong style="font-size: 16px;"><br>
@@ -1077,10 +1090,10 @@ body, div, span, p {
                                         High &amp; Low Temperature Outlook</strong></div>
                                     <div> <a href="https://graphical.weather.gov/GraphicalNDFD.php?width=2000&amp;timezone=EDT&amp;sector=CONUS&amp;element=maxt&amp;n=1"
                                         title="Click for HD image"><img src="https://graphical.weather.gov/GraphicalNDFD.php?width=515&amp;timezone=EDT&amp;sector=CONUS&amp;element=maxt&amp;n=1"
-                                          alt="US High Temeperature Outlook" style="height: 244px; margin: 5px; width: 323px;"></a><a
+                                          alt="US High Temeperature Outlook" style="height: 248px; margin: 5px; width: 330px;"></a><a
                                         href="https://graphical.weather.gov/GraphicalNDFD.php?width=2000&amp;timezone=EDT&amp;sector=CONUS&amp;element=mint&amp;n=1"
                                         title="Click for HD image"><img src="https://graphical.weather.gov/GraphicalNDFD.php?width=515&amp;timezone=EDT&amp;sector=CONUS&amp;element=mint&amp;n=1"
-                                          alt="US Low Temperture Outlook" style="height: 242px; margin: 5px; width: 323px;"></a></div>
+                                          alt="US Low Temperture Outlook" style="height: 250px; margin: 5px; width: 333px;"></a></div>
                                     <div><br>
                                     </div>
                                     <strong><a href="https://www.wpc.ncep.noaa.gov/discussions/hpcdiscussions.php?disc=nathilo&amp;version=0&amp;fmt=reg"
@@ -1089,32 +1102,15 @@ body, div, span, p {
                                     <div style="font-size: 12px;"><span style="color: #999999;"><em>excluding
                                           Alaska &amp; Hawaii</em></span></div>
                                     <div><br>
-                                      <strong>High Temperature July 2</strong><br>
-                                      110° at Needles, CA<br>
-                                      110° at Death Valley, CA<br>
-                                      110° at 16 miles southwesr of Tecopa, CA</div>
+                                      <strong>High Temperature July 3</strong><br>
+                                      113° at Death Valley, CA</div>
                                     <div><br>
                                     </div>
                                     <div><strong>Low Temperature </strong><strong>July
-                                        2<br>
+                                        3<br>
                                       </strong></div>
-                                    <div>33° at Leadville, CO</div>
-                                    <div><br>
-                                    </div>
-                                    <div><strong>Bird Migration Forecast Map</strong><em><strong><br>
-                                          <a href="https://birdcast.info/migration-tools/migration-forecast-maps/"
-                                            title="Click for more information"><img
-                                              src="https://s3.amazonaws.com/is-birdcast-predicted-prod/images/day1.jpg"
-                                              alt="Bird Migration Forecast Map"
-                                              style="width: 338px;"></a></strong><br>
-                                      </em>
-                                      <div>
-                                        <div style="font-size: 14px; text-align: left;"><em
-                                            style="font-size: 12px;">Live March
-                                            1 to June 15 &amp; Aug. 1 to Nov.15<br>
-                                          </em></div>
-                                      </div>
-                                    </div>
+                                    <div>35° at 16 miles west of Redfeather
+                                      Lakes, CO</div>
                                     <div><br>
                                     </div>
                                   </div>
@@ -1417,6 +1413,7 @@ body, div, span, p {
         </div>
       </div>
     </div>
+    <!-- Footer -->
     <footer id="page-footer">
       <p><strong><strong><a href="https://www.thesitewizard.com/" target="_top"></a></strong></strong><strong><strong><a
               href="https://jigsaw.w3.org/css-validator/validator?lang=en&amp;profile=css3svg&amp;uri=https%3A%2F%2Fapexwx.github.io%2F&amp;usermedium=all&amp;vextwarning=&amp;warning=1"><strong><strong></strong></strong></a><strong><strong><a
