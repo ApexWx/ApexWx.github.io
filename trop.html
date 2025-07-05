@@ -191,6 +191,24 @@ img {
       border-collapse: collapse;
     }
     .clock-cell { font-weight: bold; }
+      
+      #hurricaneAlerts {
+    max-width: 700px;
+    margin: 2rem auto;
+    padding: 1rem;
+    background-color: transparent; /* Allow page background to show through */
+    z-index: 1;
+    position: relative;
+  }
+
+  .alertBox {
+    background-color: #fff3f3;
+    border: 2px solid red;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  }
 </style> </head>
   <body>
     <main role="main">
@@ -232,6 +250,7 @@ img {
       <div id="tropical-alert" style="margin: 2em auto; max-width: 800px; background: #fff0f0; border: 1px solid #cc0000; border-radius: 6px; padding: 1em; font-family: Arial, sans-serif; font-size: 14px; display: none;"></div>
       <div id="gulf-alert" style="margin: 2em auto; max-width: 800px; background: #fff8e0; border: 1px solid #cc9900; border-radius: 6px; padding: 1em; font-family: Arial, sans-serif; font-size: 14px; display: none;"></div>
       <br>
+      <div id="hurricaneAlerts" style="max-width: 700px; margin: 0 auto; padding: 1rem;"></div>
       <br>
       <div class="row">
         <div class="column" style="text-align: center;"> <strong>2-Day Tropical
@@ -612,6 +631,103 @@ fetch("https://api.weather.gov/alerts/active?area=FL,AL,MS,LA,TX")
     }
   })
   .catch(err => console.error("Gulf alert fetch failed", err));
-</script> </div></main>
+</script> <script> // Atlantic Hurricane Alerts
+  async function fetchHurricaneAlerts() {
+    const apiURL = "https://api.weather.gov/alerts/active";
+    const hurricaneEvents = [
+      "Hurricane Warning",
+      "Hurricane Watch",
+      "Tropical Storm Warning",
+      "Tropical Storm Watch",
+      "Storm Surge Warning",
+      "Storm Surge Watch"
+    ];
+
+    try {
+      const response = await fetch(apiURL);
+      const data = await response.json();
+      const alerts = data.features.filter(feature =>
+        hurricaneEvents.includes(feature.properties.event)
+      );
+
+      const alertDiv = document.getElementById("hurricaneAlerts");
+      if (alerts.length === 0) {
+        alertDiv.innerHTML = "<strong>No active Atlantic hurricane alerts at this time.</strong>";
+        return;
+      }
+
+      alerts.forEach((alert, index) => {
+        const { event, headline, description, instruction, areaDesc, severity, effective, expires } = alert.properties;
+
+        const wrapper = document.createElement("div");
+        wrapper.className = "alertBox";
+        wrapper.style.cssText = `
+          border: 2px solid red;
+          background-color: #fff3f3;
+          padding: 1rem;
+          margin-bottom: 1rem;
+          border-radius: 8px;
+          box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+          word-wrap: break-word;
+          position: relative;
+        `;
+
+        const dismissBtn = document.createElement("button");
+        dismissBtn.textContent = "✖";
+        dismissBtn.title = "Dismiss alert";
+        dismissBtn.style.cssText = `
+          position: absolute;
+          top: 8px;
+          right: 10px;
+          background: none;
+          border: none;
+          font-size: 1.2rem;
+          cursor: pointer;
+          color: #900;
+        `;
+        dismissBtn.onclick = () => wrapper.remove();
+
+        const toggleBtn = document.createElement("button");
+        toggleBtn.textContent = alerts.length > 1 ? "Show Details" : "Hide Details";
+        toggleBtn.style.cssText = `
+          margin-top: 0.5rem;
+          background-color: #eee;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          padding: 0.3rem 0.6rem;
+          cursor: pointer;
+        `;
+
+        const detailDiv = document.createElement("div");
+        detailDiv.style.display = alerts.length > 1 ? "none" : "block";
+        detailDiv.innerHTML = `
+          <strong>Area:</strong> ${areaDesc}<br>
+          <strong>Effective:</strong> ${new Date(effective).toLocaleString()}<br>
+          <strong>Expires:</strong> ${new Date(expires).toLocaleString()}<br><br>
+          <strong>${headline}</strong><br>
+          <p>${description.replace(/\n/g, "<br>")}</p>
+          ${instruction ? `<p><em>${instruction.replace(/\n/g, "<br>")}</em></p>` : ""}
+        `;
+
+        toggleBtn.onclick = () => {
+          const isHidden = detailDiv.style.display === "none";
+          detailDiv.style.display = isHidden ? "block" : "none";
+          toggleBtn.textContent = isHidden ? "Hide Details" : "Show Details";
+        };
+
+        wrapper.innerHTML = `<h3 style="margin-top: 0;">${event} – ${severity}</h3>`;
+        wrapper.appendChild(dismissBtn);
+        wrapper.appendChild(toggleBtn);
+        wrapper.appendChild(detailDiv);
+        alertDiv.appendChild(wrapper);
+      });
+    } catch (error) {
+      console.error("Error fetching alerts:", error);
+      document.getElementById("hurricaneAlerts").textContent = "Unable to fetch alerts.";
+    }
+  }
+
+  fetchHurricaneAlerts();
+</script> </div> </main>
   </body>
 </html>
