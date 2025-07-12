@@ -354,6 +354,50 @@ body, div, span, p {
 * {
   box-sizing: border-box;
 }
+      
+.table-responsive {
+    width: 100%;
+    overflow-x: auto;
+  }
+
+  .custom-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 1rem;
+  }
+
+  .custom-table th,
+  .custom-table td {
+    padding: 10px;
+    text-align: left;
+  }
+
+  @media (max-width: 600px) {
+    .custom-table,
+    .custom-table thead,
+    .custom-table tbody,
+    .custom-table th,
+    .custom-table td,
+    .custom-table tr {
+      display: block;
+      width: 100%;
+    }
+
+    .custom-table tr {
+      margin-bottom: 15px;
+    }
+
+    .custom-table td::before {
+      content: attr(data-label);
+      display: block;
+      font-weight: bold;
+      margin-bottom: 4px;
+    }
+
+    .custom-table thead {
+      display: none;
+    }
+  }
 </style> </head>
   <body>
     <header id="page-header">
@@ -798,14 +842,14 @@ body, div, span, p {
               </em></span></div>
           <div><u><strong><br>
               </strong></u></div>
-          <div> <u><strong>Thursday, July 10</strong></u>
+          <div> <u><strong>Friday, July 11</strong></u>
             <div>
               <div>
-                <div style="width: 830px;"><b>High</b>: 83° @ 3:29 pm&nbsp; | <b>Low</b>:
-                  55° @ 5:22 am</div>
+                <div style="width: 830px;"><b>High</b>: 81° @ 6:15 pm&nbsp; | <b>Low</b>:
+                  62° @ 3:37 am</div>
                 <div><b>Rain: </b>0.00" | <strong>Snow</strong>: 0.0"</div>
-                <div><b>Daily Wind:</b> SW @ 1 mph |&nbsp; <strong><u>Max. Gust</u></strong>:
-                  23 mph @ 3:50 pm<br>
+                <div><b>Daily Wind:</b> SSW @ 1 mph |&nbsp; <strong><u>Max.
+                      Gust</u></strong>: 11 mph @ 10:01 am<br>
                   <em style="font-size: 12px;"><em style="font-size: 12px;">Source:
                       </em></em><em style="font-size: 12px;"><em style="font-size: 12px;">Davis
                       Instruments <a href="https://www.davisinstruments.com/collections/vantage-pro2/products/vantage-pro2-groweather-wireless-integrated-sensor-suite">Vantage
@@ -817,14 +861,14 @@ body, div, span, p {
         </div>
         <div><br>
         </div>
-        <div> <u><strong>Friday, July 11</strong></u> </div>
+        <div> <u><strong>Saturday, July 12</strong></u> </div>
         <div style="width: 810px; border-width: 0px;"><strong>Norm. High: </strong>76°&nbsp;
-          |<strong>&nbsp; Record</strong>: 96° (1955)<br>
+          |<strong>&nbsp; Record</strong>: 91° (1950)<br>
           <strong> Norm. Low:&nbsp; </strong>54°&nbsp; |&nbsp; <strong>Record</strong>:
-          40° (1969)</div>
+          41° (1985)</div>
         <div style="width: 810px; border-radius: 0px;"><strong>Norm. Daily
-            Precipitation: </strong>0.15"<strong> </strong>|<strong> Record</strong>:
-          2.13" (2005)</div>
+            Precipitation: </strong>0.14"<strong> </strong>|<strong> Record</strong>:
+          1.45" (1984)</div>
         <div style="width: 810px;"><strong>Norm. Daily Snow:</strong> 0.0" | <strong>Record</strong>:
           0.0"</div>
         <div style="width: 810px;"><em style="font-size: 12px;">Source: </em><em
@@ -835,9 +879,9 @@ body, div, span, p {
         <div>
           <div><strong><u>Precipitation 2025</u></strong></div>
           <strong>Rainfall</strong><strong>:</strong> 23.21"&nbsp; |&nbsp; <u>norm</u>.
-          20.42" (+2.79")
-          <div style="width: 810px;"><strong><span style="color: #009900;"></span>Snowfall</strong>:
-            0.0" | <u>norm</u>. 0.0"<br>
+          20.56" (+2.65")
+          <div style="width: 810px;"><strong><span style="color: #009900;"></span>Snowfall
+              25-26</strong>:&nbsp;&nbsp; 0.0" | <u>norm</u>. 0.0"<br>
             <strong>Snowfall </strong><strong>24-25</strong><strong>: </strong>73.2"&nbsp;
             |&nbsp; <u>norm</u>. 99.3"&nbsp; <span style="color: red;">(-26.1")</span></div>
           <span style="color: red;"> </span>
@@ -908,12 +952,12 @@ body, div, span, p {
         </div>
         <div> <strong><em style="font-size: 12px;"></em></strong> <strong> </strong></div>
         <strong></strong>
-        <div> <u><strong>7-Day Outlook: Fri. July 11 - Thu</strong></u><u><strong>.
-              July 17<br>
+        <div> <u><strong>7-Day Outlook: Sat. July 12 - Fri</strong></u><u><strong>.
+              July 18<br>
             </strong></u></div>
         <div style="text-align: left; font-size: 12px;">
           <div style="text-align: left;"><span style="color: #757575;"><span style="font-size: 12px;"><u>Updated</u>,
-                July 11</span><span style="font-size: 12px;"> at 8:10 am EDT</span><em><u>
+                July 12</span><span style="font-size: 12px;"> at 9:40 am EDT</span><em><u>
                 </u></em></span></div>
           <em> </em></div>
         <em> </em>
@@ -921,71 +965,64 @@ body, div, span, p {
           <div>
             <div><strong></strong><br>
             </div>
-            <div><strong>Friday -&nbsp; Sunday</strong></div>
-            <div>A rather anemic weather-pattern looks to dominate the Saint
-              John Valley's weather through the first part of next week along
-              with muggier conditions than of late.</div>
+            <div><strong>Saturday -&nbsp; Monday</strong></div>
+            <div>Surface high pressure will slide east today into tonight with
+              mostly sunny skies for the Saint John Valley. Tonight, clouds
+              increase as a warm front approaches with patchy fog towards
+              morning thanks to light winds across the area. Highs today in the
+              low 80s with lows tonight in the lower 60s. Southerly winds 0-5
+              mph are expected today and tonight.</div>
             <div><br>
-              Today, an upper-level trough will slide across the Valley this
-              morning and move east this afternoon. This system will bring a
-              chance of showers and isolated thunderstorms to Fort Kent and
-              vicinity this morning with a chance of showers and scattered
-              thunderstorms this afternoon as daytime heating peaks. While there
-              is plenty of moisture aloft, atmospheric dynamics do not look
-              favorable for severe weather at present. However, locally heavy
-              downpours could occur with any storms or slow-moving areas of
-              shower activity. Mostly cloudy to partly sunny skies are expected
-              today with highs in the middle 70s and south win 0-5 mph.</div>
-            <div><br>
-            </div>
-            <div>Tonight, partly to mostly cloudy skies are expected as the
-              upper trough departs and a weak high pressure ridge builds into
-              the region. A slight chance of evening showers/thunderstorms is
-              possible with mostly dry conditions overnight. Lows in the lower
-              60s with near calm winds are anticipated overnight.</div>
+              For Sunday, a warm front approaches Sunday with a slight chance of
+              afternoon showers and some thunderstorms for Fort Kent and
+              surrounding communities. Highs reach the mid-80s with south winds
+              5-10 mph gusting 15-20 mph in the afternoon and evening. Tomorrow
+              night, mostly cloudy skies with a chance of showers and
+              thunderstorms as a cold front moves closer with overnight lows in
+              the middle 60s. South winds subside overnight into Monday morning
+              falling into the 0-5 mph range.</div>
             <div><br>
             </div>
-            High pressure builds in Saturday with&nbsp; skies becoming mostly
-            sunny, and highs in the low 80s. Partly cloudy skies are expected
-            Saturday night as high pressure moves east and the next frontal
-            system approaches from the west. Saturday's highs will be in the low
-            80s with overnight lows in the lower 60s. Light southerly winds are
-            expected.</div>
-          <div><br>
-            A warm front approaches Sunday with increasing chances of showers
-            and some afternoon thunderstorms for Fort Kent and surrounding
-            communities. Highs reach the low 80s with south winds 5-10 mph
-            gusting 15-20 mph in the afternoon. Sunday night, mostly cloudy
-            skies with a chance of showers and thunderstorms as the system's
-            cold front moves closer with overnight lows in the middle 60s. Light
-            south winds are expected.<br>
+            <div>On Monday, expect showers along with a chance of thunderstorms
+              as the cold front crosses the region. Highs climb to near 80 with
+              south winds 6-8 mph. Monday night, a chance of showers lingers
+              into early Tuesday with temperatures in the lower 60s. Southwest
+              wind 0-7 mph expected.<br>
+              <div><br>
+              </div>
+              <div>
+                <div> <strong>Tuesday - Friday<br>
+                  </strong></div>
+              </div>
+              High pressure builds across the SJV Tuesday into early Wednesday
+              with mostly clear skies across the area. Highs in the low 80s with
+              overnight temperatures in the mid-50s with some locations possibly
+              a bit cooler. Another cold front approaches Wednesday with
+              increasing clouds and a slight chance of afternoon
+              showers/thunderstorms. Highs in the lower 80s with mostly cloudy
+              skies and scattered showers Wednesday night with lows in the lower
+              60s.</div>
             <div><br>
             </div>
-            <div>
-              <div> <strong>Monday - Thursday<br>
-                </strong></div>
+            <div>A cold front looks to affect the Valley late week; however,
+              timing differences remain with various forecast models. Based on
+              current data, on Thursday mostly cloudy to partly sunny skies are
+              expected with a chance of showers and isolated afternoon
+              thunderstorms. Highs top out in the upper 70s/near 80 with partly
+              cloudy skies and scattered showers Thursday night with lows in the
+              upper 50s.</div>
+            <div><br>
             </div>
-            The cold front slowly crosses Maine Monday into early Tuesday with a
-            trough setting up Downeast into New Brunswick. Plenty of moisture
-            aloft will allow for heavier downpours and the Weather Prediction
-            Center has northern and western Maine at marginal risk of excessive
-            rainfall (meaning localized flash flooding is possible due to rapid
-            runoff in heavy downpours). </div>
-          <div><br>
+            <div>Friday, mostly cloudy skies with a chance of showers,
+              especially in the afternoon along with some isolated
+              thunderstorms. Highs peak in the mid-to-upper 70s. For Friday
+              night, partly cloudy skies with scattered showers and lows in the
+              upper 50s are anticipated.</div>
           </div>
-          Showers and thunderstorms will taper off Monday night as the weakening
-          front moves through the state. Tuesday is expected to be mostly dry,
-          with just a slight chance of a shower or thunderstorm, mainly in
-          northeastern portions of the County. Dry and pleasant weather will
-          continue into Tuesday night and Wednesday thanks to high pressure.
-          Another cold front may arrive later in the week, but the timing is
-          still uncertain, based on current forecast model data. Currently, a
-          chance of afternoon showers and isolated thunderstorms are possible
-          Thursday continuing into Thursday night.<br>
           <div><br>
           </div>
         </div>
-        <strong>7-Day Forecast Summary</strong>
+        <strong>The Week Ahead</strong>
         <div style="font-size: 12px;"><span style="color: #999999;">Updates
             automatically</span><strong></strong></div>
         <i style="color: #999999;"><span style="font-size: 12px;"></span></i><strong
@@ -1032,24 +1069,24 @@ body, div, span, p {
                                       style="font-variant: small-caps;"></span></strong></u></div>
                               <u><strong><br>
                                 </strong></u></div>
-                            <div><u><strong>US National Weather for July 11</strong></u>
+                            <div><u><strong>US National Weather for July 12</strong></u>
                               <div>
                                 <div style="text-align: left;">
                                   <div><br>
                                   </div>
-                                  <strong>Storms, Flooding, and Building Heat<br>
-                                  </strong>Widespread thunderstorms are expected
-                                  across the Midwest over the next couple of
-                                  days, bringing the potential for flash
-                                  flooding and some severe weather. As the
-                                  weekend approaches, the risk of flash flooding
-                                  will shift southward into the Southern Plains,
-                                  including parts of central Texas on Saturday.
-                                  Meanwhile, heat is on the rise across the
-                                  western United States. The Interior Northeast
-                                  and Southeast will also feel the heat, with
-                                  hot and humid conditions expected to make for
-                                  an uncomfortable start to the weekend.<strong><br>
+                                  <strong>Severe Thunderstorms and Excessive
+                                    Rainfall in the Central U.S.; Heat Building
+                                    in the Western U.S.<br>
+                                  </strong>A cold front pressing east across the
+                                  central U.S. will be the focus for areas of
+                                  strong to severe thunderstorms and excessive
+                                  rainfall through this weekend. Strong to
+                                  severe thunderstorms my bring damaging winds,
+                                  hail, and a few tornadoes while excessive
+                                  rainfall may lead to areas of flooding. Heat
+                                  will build across the western U.S. with
+                                  heat-related watches, warnings, and advisories
+                                  issued.<strong><br>
                                   </strong>
                                   <div><strong><br>
                                     </strong></div>
@@ -1058,18 +1095,42 @@ body, div, span, p {
                                     <div><strong>Thunderstorm/Severe Weather
                                         Outlook</strong><strong><br>
                                       </strong></div>
-                                    <div>Strong thunderstorms are likely to
-                                      impact a corridor from the lower Missouri
-                                      Valley into southern portions of the Great
-                                      Lakes region this afternoon and evening,
-                                      accompanied by a risk for damaging wind
-                                      gusts, a few tornadoes and some hail.</div>
+                                    <div>Scattered damaging winds are most
+                                      probable across eastern Lower Michigan to
+                                      the Lower Ohio Valley, mainly from
+                                      mid-afternoon through dusk.</div>
+                                    <div><br>
+                                    </div>
+                                    <div><strong>National High &amp; Low
+                                        Temperatures for July 11</strong>
+                                      <div><em style="color: #999999;"><span style="font-size: 12px;">Excluding
+                                            Alaska &amp; Hawai'i</span></em></div>
+                                    </div>
+                                    <div>
+                                      <div class="table-responsive">
+                                        <table class="custom-table">
+                                          <thead>
+                                            <tr>
+                                              <th>High</th>
+                                              <th>Low</th>
+                                            </tr>
+                                          </thead>
+                                          <tbody>
+                                            <tr>
+                                              <td data-label="High">121° at <a
+                                                  href="https://en.wikipedia.org/wiki/Stovepipe_Wells,_California">Stovepipe
+                                                  Wells, CA</a><strong></strong></td>
+                                              <td data-label="Low">28° at <a href="https://en.wikipedia.org/wiki/Peter_Sinks">Peter
+                                                  Sinks, UT</a></td>
+                                            </tr>
+                                          </tbody>
+                                        </table>
+                                      </div>
+                                      <br>
+                                      <strong></strong></div>
                                   </div>
-                                  <div>
-                                    <div><u><strong style="font-size: 16px;"><br>
-                                        </strong></u></div>
-                                    <div><strong>Today's National Forecast Chart<br>
-                                      </strong></div>
+                                  <div><strong>Today's National Forecast Chart</strong><br>
+                                    <strong> </strong>
                                     <div><a href="https://www.wpc.ncep.noaa.gov/NationalForecastChart/map.php"
                                         title="Click for interactive chart"><img
                                           src="https://www.wpc.ncep.noaa.gov/NationalForecastChart/staticmaps/noaad1.png"
