@@ -398,6 +398,7 @@ body, div, span, p {
       display: none;
     }
   }
+      
 </style> </head>
   <body>
     <header id="page-header">
@@ -975,14 +976,14 @@ body, div, span, p {
               remain over the region this afternoon with partly sunny skies
               expected for Fort Kent and vicinity.</div>
             <div><br>
-              Later this afternoon, there is a chance of
-              scattered&nbsp; showers and thunderstorms as a warm front moves by
-              with a cold front approaching from the west. Highs reach the
-              mid-80s with south winds 5-10 mph. Tonight, mostly cloudy skies
-              with a slight chance of showers and thunderstorms in the evening
-              then showers are likely with scattered thunderstorms overnight as
-              the cold front moves closer. Overnight lows drop into the middle
-              60s. South wind around 5 mph expected.</div>
+              Later this afternoon, there is a chance of scattered&nbsp; showers
+              and thunderstorms as a warm front moves by with a cold front
+              approaching from the west. Highs reach the mid-80s with south
+              winds 5-10 mph. Tonight, mostly cloudy skies with a slight chance
+              of showers and thunderstorms in the evening then showers are
+              likely with scattered thunderstorms overnight as the cold front
+              moves closer. Overnight lows drop into the middle 60s. South wind
+              around 5 mph expected.</div>
             <div><br>
             </div>
             <div>Skies will be mostly cloudy Monday with showers likely along
@@ -1024,11 +1025,10 @@ body, div, span, p {
               showers along with some isolated afternoon thunderstorms with
               partly sunny skies over the region Highs peak in the mid-to-upper
               70s. Friday night, partly cloudy skies with scattered showers and
-              lows in the
-              middle 50s are anticipated. High pressure builds in behind the
-              front Saturday with partly cloudy/mostly sunny skies and highs in
-              the low 80s. Saturday night looks partly cloudy and dry with lows
-              in the mid-50s.</div>
+              lows in the middle 50s are anticipated. High pressure builds in
+              behind the front Saturday with partly cloudy/mostly sunny skies
+              and highs in the low 80s. Saturday night looks partly cloudy and
+              dry with lows in the mid-50s.</div>
             <div><br>
             </div>
           </div>
@@ -1798,6 +1798,7 @@ body, div, span, p {
       const forecastData = await forecastResponse.json();
 
       const periods = forecastData.properties.periods;
+      const updatedTime = forecastData.properties.updated;
 
       const forecastHtml = periods.map(p => `
         <div class="fw-item">
@@ -1809,18 +1810,28 @@ body, div, span, p {
       `).join('');
 
       document.getElementById('forecast').innerHTML = forecastHtml;
+
+      // Format the updated timestamp to a readable format
+      const updatedDate = new Date(updatedTime);
+      const updatedString = updatedDate.toLocaleString(undefined, {
+        dateStyle: 'medium',
+        timeStyle: 'short'
+      });
+
+      document.getElementById('forecast-updated').textContent = `Last updated by NWS: ${updatedString}`;
     } catch (error) {
       console.error('Error fetching weather:', error);
       document.getElementById('forecast').textContent = 'Failed to load forecast.';
+      document.getElementById('forecast-updated').textContent = '';
     }
   }
 
   // Initial call
   fetchForecast();
 
-  // Refresh every 3 hours (3 * 60 * 60 * 1000 ms = 10,800,000 ms)
+  // Refresh every 3 hours
   setInterval(fetchForecast, 10800000);
-</script> <script> // Greeting for Time of Day
+</script><script> // Greeting for Time of Day
                      //<![CDATA[
                          var myDate = new Date();
                          var hrs = myDate.getHours();
