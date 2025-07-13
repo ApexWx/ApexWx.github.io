@@ -1798,7 +1798,6 @@ body, div, span, p {
       const forecastData = await forecastResponse.json();
 
       const periods = forecastData.properties.periods;
-      const updatedTime = forecastData.properties.updated;
 
       const forecastHtml = periods.map(p => `
         <div class="fw-item">
@@ -1810,26 +1809,16 @@ body, div, span, p {
       `).join('');
 
       document.getElementById('forecast').innerHTML = forecastHtml;
-
-      // Format the updated timestamp to a readable format
-      const updatedDate = new Date(updatedTime);
-      const updatedString = updatedDate.toLocaleString(undefined, {
-        dateStyle: 'medium',
-        timeStyle: 'short'
-      });
-
-      document.getElementById('forecast-updated').textContent = `Last updated by NWS: ${updatedString}`;
     } catch (error) {
       console.error('Error fetching weather:', error);
       document.getElementById('forecast').textContent = 'Failed to load forecast.';
-      document.getElementById('forecast-updated').textContent = '';
     }
   }
 
   // Initial call
   fetchForecast();
 
-  // Refresh every 3 hours
+  // Refresh every 3 hours (3 * 60 * 60 * 1000 ms = 10,800,000 ms)
   setInterval(fetchForecast, 10800000);
 </script><script> // Greeting for Time of Day
                      //<![CDATA[
