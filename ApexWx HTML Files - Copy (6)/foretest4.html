@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>7-Day Forecast</title>
+  <style>
+    .fw-item {
+      margin-bottom: 1em;
+    }
+    .fw-day {
+      font-weight: bold;
+    }
+    .fw-text {
+      margin-top: 0.2em;
+    }
+  </style>
+</head>
+<body>
+  <div id="forecast"></div>
+  <div id="forecast-updated" style="font-size: 0.9em; color: #666; margin-top: 0.5em;"></div>
+
+  <script>
+    async function fetchForecast() {
+      try {
+        // ✅ Skip points lookup and use direct forecast endpoint
+        const forecastUrl = "https://api.weather.gov/gridpoints/CAR/95,89/forecast";
+        const forecastResponse = await fetch(forecastUrl);
+        if (!forecastResponse.ok) throw new Error("Forecast request failed");
+
+        const forecastData = await forecastResponse.json();
+
+        const periods = forecastData?.properties?.periods;
+        const updatedTime = forecastData?.properties?.updated;
+
+        if (!periods || !updatedTime) throw new Error("Missing forecast data or timestamp");
+
+        const forecastHtml = periods.map(p => `
+          <div class="fw-item">
+            <img src="${p.icon}" alt="${p.shortForecast}" />
+            <div class="fw-text">
+              <span class="fw-day">${p.name}:</span> ${p.detailedForecast}
+            </div>
+          </div>
+        `).join('');
+
+        document.getElementById('forecast').innerHTML = forecastHtml;
+
+        const updatedDate = new Date(updatedTime);
+        const updatedString = updatedDate.toLocaleString(undefined, {
+          dateStyle: 'medium',
+          timeStyle: 'short'
+        });
+
+        document.getElementById('forecast-updated').textContent = `Last updated by NWS: ${updatedString}`;
+      } catch (error) {
+        console.error('Error fetching weather:', error);
+        document.getElementById('forecast').textContent = 'Failed to load forecast.';
+        document.getElementById('forecast-updated').textContent = '';
+      }
+    }
+
+    fetchForecast();
+    setInterval(fetchForecast, 10800000); // every 3 hours
+  </script>
+</body>
+</html>

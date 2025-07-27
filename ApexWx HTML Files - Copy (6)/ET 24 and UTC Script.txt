@@ -1,0 +1,59 @@
+HTML
+
+<div id="localTimeContainer" style="text-align: center; font-family: Arial, sans-serif; font-size: 14px;">
+  <div id="localClock12" style="font-weight: bold;">Loading local time...</div>
+  <div id="localClock24" style="margin-top: 4px;">Loading 24-hour time...</div>
+  <div id="utcClock" style="margin-top: 4px;">Loading UTC time...</div>
+</div>
+
+<script>
+function updateClocks() {
+  const clock12 = document.getElementById("localClock12");
+  const clock24 = document.getElementById("localClock24");
+  const clockUTC = document.getElementById("utcClock");
+
+  const now = new Date();
+
+  // 1. 12-Hour Local Time with Date and Timezone
+  const options12 = {
+    weekday: 'long',
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+    hour: 'numeric',
+    minute: '2-digit',
+    timeZone: 'America/New_York',
+    timeZoneName: 'short'
+  };
+  const formatted12 = new Intl.DateTimeFormat('en-US', options12).format(now).replace(",", "");
+
+  // 2. 24-Hour Local Time
+  const options24 = {
+    hour: '2-digit',
+    minute: '2-digit',
+    hour12: false,
+    timeZone: 'America/New_York'
+  };
+  const formatted24 = new Intl.DateTimeFormat('en-US', options24).format(now);
+
+  // 3. 24-Hour UTC Time
+  const optionsUTC = {
+    hour: '2-digit',
+    minute: '2-digit',
+    hour12: false,
+    timeZone: 'UTC'
+  };
+  const formattedUTC = new Intl.DateTimeFormat('en-US', optionsUTC).format(now);
+
+  // Update DOM
+  clock12.textContent = formatted12;
+  clock24.textContent = `Current Time (24-Hour): ${formatted24}`;
+  clockUTC.textContent = `Current Time (UTC): ${formattedUTC}`;
+}
+
+// Run immediately and every 30 seconds
+updateClocks();
+setInterval(updateClocks, 30000);
+</script>
+
+

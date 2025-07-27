@@ -377,14 +377,14 @@ body, div, span, p {
     <div class="container" id="main-container">
       <div class="column left" id="left-column" style="font-size: 16px;">
         <div style="text-align: center;">
-          <div style="text-align: left;"><strong style="font-size: 14px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              Fort Kent Air Quality Index</strong><br>
+          <div style="text-align: left;"><strong style="font-size: 14px;">Fort
+              Kent Air Quality Index</strong><br>
           </div>
           <div style="font-size: 12px; text-align: left;">
             <div><strong><u><iframe title="Example 3" src="https://widget.airnow.gov/aq-dial-widget/?city=Fort%20Kent&amp;state=ME&amp;country=USA"
                     style="border: none; border-radius: 25px;" height="230" width="230">
                   </iframe></u></strong></div>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Click "AirNow" for more information<br>
+            Click "AirNow" for more information<br>
           </div>
           <br>
         </div>
@@ -623,8 +623,7 @@ body, div, span, p {
         </div>
       </div>
       <div class="column center" id="center-column">
-        <h2 style="text-align: center;">Apex Wx</h2>
-        <h2 style="text-align: center;">Fort Kent &amp; the Saint John Valley,
+        <h2 style="text-align: center;"> Fort Kent &amp; the Saint John Valley,
           Maine<br>
           Weather Information</h2>
         <div>
@@ -679,8 +678,8 @@ body, div, span, p {
               <div style="text-align: center; font-size: 12px;"><a href="https://www.buymeacoffee.com/MaineApexWx"
                   target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png"
                     alt="Buy Me A Coffee" style="height: 60px !important; width: 217px !important;"></a><br>
-                <div style="text-align: center;"> <span style="font-size: 12px;">Contributions
-                    support equipment and software maintenance.</span></div>
+                <div style="text-align: center;"> Contributions support
+                  equipment and software maintenance.</div>
               </div>
             </div>
             <div>
@@ -701,14 +700,14 @@ body, div, span, p {
               </em></span></div>
           <div><u><strong><br>
               </strong></u></div>
-          <div> <u><strong>Saturday, July 26</strong></u>
+          <div> <u><strong>Monday, July 21</strong></u>
             <div>
               <div>
-                <div style="width: 830px;"><b>High</b>: 80° @ 5:42 pm&nbsp; | <b>Low</b>:
-                  50° @ 5;15 am</div>
-                <div><b>Rain: </b>0.00" | <strong>Snow</strong>: 0.0"</div>
-                <div><b>Daily Wind:</b> NNW @ 2 mph |&nbsp; <strong><u>Max.
-                      Gust</u></strong>: 24 mph @ 5:38 pm<br>
+                <div style="width: 830px;"><b>High</b>: 67° @ 3:07 pm&nbsp; | <b>Low</b>:
+                  55° @ 11:58 pm</div>
+                <div><b>Rain: </b>0.09" | <strong>Snow</strong>: 0.0"</div>
+                <div><b>Daily Wind:</b> WSW @ 1 mph |&nbsp; <strong><u>Max.
+                      Gust</u></strong>: 14 mph @ 8:29 pm<br>
                   <em style="font-size: 12px;"><em style="font-size: 12px;">Source:
                       </em></em><em style="font-size: 12px;"><em style="font-size: 12px;">Davis
                       Instruments <a href="https://www.davisinstruments.com/collections/vantage-pro2/products/vantage-pro2-groweather-wireless-integrated-sensor-suite">Vantage
@@ -720,14 +719,14 @@ body, div, span, p {
         </div>
         <div><br>
         </div>
-        <div> <u><strong>Sunday, July 27</strong></u> </div>
-        <div style="width: 810px; border-width: 0px;"><strong>Norm. High: </strong>77°&nbsp;
-          |<strong>&nbsp; Record</strong>: 94° (1939)<br>
+        <div> <u><strong>Tuesday, July 22</strong></u> </div>
+        <div style="width: 810px; border-width: 0px;"><strong>Norm. High: </strong>76°&nbsp;
+          |<strong>&nbsp; Record</strong>: 90° (1994)<br>
           <strong> Norm. Low:&nbsp; </strong>54°&nbsp; |&nbsp; <strong>Record</strong>:
-          40° (1965)</div>
+          39° (1992)</div>
         <div style="width: 810px; border-radius: 0px;"><strong>Norm. Daily
-            Precipitation: </strong>0.14"<strong> </strong>|<strong> Record</strong>:
-          1.30" (2018)</div>
+            Precipitation: </strong>0.15"<strong> </strong>|<strong> Record</strong>:
+          1.05" (2022)</div>
         <div style="width: 810px;"><strong>Norm. Daily Snow:</strong> 0.0" | <strong>Record</strong>:
           0.0"</div>
         <div style="width: 810px;"><em style="font-size: 12px;">Source: </em><em
@@ -737,8 +736,8 @@ body, div, span, p {
         </div>
         <div>
           <div><strong><u>Precipitation 2025</u></strong></div>
-          <strong>Rainfall</strong><strong>:</strong> 24.90"&nbsp; |&nbsp; <u>norm</u>.
-          22.71" (+2.19")
+          <strong>Rainfall</strong><strong>:</strong> 23.97"&nbsp; |&nbsp; <u>norm</u>.
+          22.02" (+1.95")
           <div style="width: 810px;"><strong><span style="color: #009900;"></span>Snowfall
               25-26</strong>:&nbsp;&nbsp; 0.0" | <u>norm</u>.&nbsp;&nbsp; 0.0"<br>
             <strong>Snowfall </strong><strong>24-25</strong><strong>: </strong>73.2"
@@ -766,8 +765,8 @@ body, div, span, p {
               <br>
             </div>
             <div><strong><a href="https://www.timeanddate.com/moon/phases/@4964627">Moon
-                  Phase</a>:</strong> 🌒 Waxing Crescent → 🌓 First Quarter Fri.
-              Aug. 1 @ 8:41 am</div>
+                  Phase</a>:</strong> 🌘 Waning Crescent → 🌑 New Moon Thu. July
+              24 @ 3:11 pm</div>
             <div><br>
             </div>
             <div><strong><a href="https://www.timeanddate.com/moon/@4964627">Moon
@@ -808,83 +807,71 @@ body, div, span, p {
         </div>
         <div> <strong><em style="font-size: 12px;"></em></strong> <strong> </strong></div>
         <strong></strong>
-        <div> <u><strong>7-Day Outlook: Sun. July 27 - Sat</strong></u><u><strong>.
-              Aug. 2<br>
+        <div> <u><strong>7-Day Outlook: Tue. July 22 - Mon</strong></u><u><strong>.
+              July 28<br>
             </strong></u></div>
         <div style="text-align: left; font-size: 12px;">
-          <div style="text-align: left;"><span style="color: #757575;"><em><span
-                  style="font-size: 12px;">Updated July 27 </span><span style="font-size: 12px;">at
-                  9:45 am EDT</span><u> </u></em></span></div>
+          <div style="text-align: left;"><span style="color: #757575;"><span style="font-size: 12px;"><u>Updated</u>:
+                July 22 </span><span style="font-size: 12px;">at 8:30 am EDT</span><em><u>
+                </u></em></span></div>
           <em> </em></div>
         <em> </em>
         <div>
           <div>
             <div><strong></strong><br>
             </div>
-            <div><strong>Sunday -&nbsp; Tuesday</strong></div>
-            <div>High pressure will drift into the Atlantic southeast of Nova
-              Scotia today with southwest flow on the backside of the high
-              pressure ridge will produce mostly sunny and hot conditions Sunday
-              with highs in the upper 80s. Southwest winds 5-10 mph with some
-              gusts to around 20 mph at times. A weak upper trough moving
-              through produces a chance of afternoon showers/thunderstorms,
-              though storm coverage varies from isolated to scattered on
-              high-resolution models. </div>
+            <div><strong>Tuesday -&nbsp; Thursday</strong></div>
+            High pressure builds across the region today with mostly sunny/clear
+            skies and temperatures in the mid-70s. Northwest wind 5-10 mph
+            expected with gusts 15-20 mph possible. For tonight, mostly
+            clear/partly cloudy skies with temperatures in the lower 50s and
+            west/southwest wind 0-5 mph.
             <div><br>
             </div>
-            <div>Tonight, a chance of evening showers/thunderstorms wanes by
-              midnight with partly cloudy skies overnight and any precipitation
-              amounts expected to be less than 1/10-inch (unless storms produce
-              locally higher totals). Temperatures in the lower 60s with
-              northwest winds 0-5 mph expected.</div>
-          </div>
-          <div><br>
-          </div>
-          <div>Monday, high pressure at the surface and aloft will bring mostly
-            sunny skies and somewhat cooler temperatures in the lower 80s for
-            Fort Kent and surrounding communities. Another weak disturbance
-            brings a chance of showers Monday night into Tuesday morning with
-            overnight lows in the lower 60s and near calm winds. </div>
-          <div><br>
-          </div>
-          <div>Tuesday, party sunny to mostly cloudy skies overspread the Valley
-            as a cold front moves through with a chance of showers and scattered
-            thunderstorms for Fort Kent and vicinity. Highs in the low 80s with
-            west/southwest winds early 6-8 mph shift to the west/northwest later
-            4-6 mph. Tuesday night, showers and isolated thunderstorms are
-            possible with lows in the upper 50s and light northwest winds across
-            the region as a secondary cold front approaches.<br>
+            <div>High pressure moves into the Atlantic tomorrow evening with
+              winds becoming southwesterly on the backside of the ridge. Highs
+              expected in the upper 70s with west wind 0-5 mph becoming
+              southwest in the afternoon/evening 0-5 mph. Tomorrow night, Valley
+              residents can expect partly-to-mostly cloudy skies with a chance
+              of showers after midnight as a cold front approaches. Lows fall
+              into the lower 60s with southwest winds 0-5 mph.</div>
+            <div><br>
+            </div>
+            <div>A chance of showers with isolated afternoon/evening
+              thunderstorms as the cold front approaches Thursday. Highs in the
+              low 80s with southwest wind 5-10 mph. Thursday night, showers are
+              likely along with a chance of isolated thunderstorms as the cold
+              front draws closer to northern Maine. Lows in the mid-60s with a
+              southwest wind 0-5 mph expected.</div>
             <div></div>
-            <div><strong><br>
-              </strong></div>
-            <div><strong>Wednesday - Saturday<br>
-              </strong>
-              <div> </div>
-            </div>
-            <div>The secondary cold front moves through Wednesday with a chance
-              of scattered showers, mainly in the afternoon with scattered
-              showers overnight into Thursday. A large upper low in northern
-              Québec will bring partly cloudy skies and a slight chance of
-              showers Thursday as the Valley will be near the southern edge of
-              the low's circulation with some disturbances moving through the
-              circulation aloft.</div>
+            <div><br>
+              <div>
+                <div> <strong>Friday - Monday<br>
+                  </strong></div>
+              </div>
+              The cold front moves through Friday with showers likely along with
+              isolated thunderstorms. some of which could feature heavy
+              downpours thanks to plenty of moisture available aloft. Currently,
+              the Weather Prediction Center has Maine at "marginal" risk for
+              excessive rainfall Friday indicating that localized flash flooding
+              due to rapid runoff is possible. Showers and thunderstorms are
+              expected to subside Friday night behind the departing cold front.</div>
             <div><br>
             </div>
-            <div>A large ridge of Canadian high pressure builds east into the
-              region for Friday and Saturday with cooler temperatures, dry
-              conditions, and mostly sunny to partly cloudy skies across the
-              SJV. Daytime highs Friday top out in the low 70s with overnight
-              lows in the middle 40s Friday night. Saturday features mostly
-              sunny skies with highs in the mid-70s with a slight chance of
-              afternoon showers/thunderstorms. A chance of showers/thunderstorms
-              Saturday evening is followed by mostly clear skies Saturday
-              night&nbsp; with lows in the lower to middle 50s.</div>
+            <div>Saturday looks mostly sunny as high pressure builds into the
+              region with dry conditions. Mostly clear skies continue over the
+              region Saturday night with mostly sunny skies Sunday as high
+              pressure drifts into the Maritimes. A cold front is expected to
+              approach later Sunday into Monday with a chance of
+              showers/thunderstorms Sunday afternoon/evening with showers
+              possible Sunday night into Monday and a chance of thunderstorms
+              Monday afternoon.</div>
             <div><br>
             </div>
           </div>
         </div>
         <strong>Daily Forecast</strong>
-        <div style="font-size: 12px;"><em><span style="color: #999999;">Updated
+        <div style="font-size: 12px;"><em><span style="color: #999999;">Updates
               every 3-6 hours<br>
             </span></em><strong></strong></div>
         <i style="color: #999999;"><span style="font-size: 12px;"></span></i><strong
@@ -931,38 +918,21 @@ body, div, span, p {
                                       style="font-variant: small-caps;"></span></strong></u></div>
                               <u><strong><br>
                                 </strong></u></div>
-                            <div><u><strong>US National Weather for July 27</strong></u></div>
+                            <div><u><strong>US National Weather for July 22</strong></u></div>
                             <div><u><strong><br>
                                 </strong></u>
-                              <div><strong>Storms, Flash Flooding, and Extreme
-                                  Heat to Impact Large Parts of the U.S.</strong></div>
-                              <div>A strong weather system in the South is
-                                pushing moist air northward, where it will meet
-                                a storm system over the Upper Midwest.
-                                Thunderstorms are expected this afternoon in
-                                northern Minnesota, possibly forming a larger
-                                storm complex tonight. There is a slight risk of
-                                flash flooding and severe storms with damaging
-                                winds and hail. Scattered storms may also impact
-                                the Ohio Valley, Northeast, and Mid-Atlantic
-                                today, where wet ground increases the flash
-                                flooding risk. Affected areas include eastern
-                                Missouri to West Virginia, and southern New York
-                                to southern Maryland. </div>
-                              <div><br>
-                              </div>
-                              <div>On Monday, the storm threat shifts south to
-                                parts of South Dakota, Minnesota, and Iowa.
-                                Severe weather risks include hail and isolated
-                                tornadoes, especially in South Dakota. Storms
-                                are also possible in Montana and the western
-                                Dakotas. In the Southwest, monsoonal moisture
-                                may lead to localized flooding over the next few
-                                days. Dangerous heat is building across the
-                                Southeast and Tennessee Valley, with heat index
-                                values reaching 110–115°F through midweek.
-                                Cities like Raleigh, Nashville, and Orlando face
-                                multiple days of extreme heat risk.<strong><br>
+                              <div><strong>Dangerous Heat Continues in the
+                                  Central and Southern U.S.; Severe Weather and
+                                  Heavy Rain in the Northern Plains<br>
+                                </strong>Dangerous, prolonged heat is expected
+                                across portions of the Central and Southeast
+                                U.S. through July. Scattered severe
+                                thunderstorms are expected over parts of the
+                                northern Plains into the upper Mississippi
+                                Valley today, with damaging winds and large hail
+                                as the primary threats. Heavy rainfall could
+                                lead to areas of flooding across the northern
+                                Plains, Upper Midwest, Southeast and Southwest.<strong><br>
                                 </strong>
                                 <div style="text-align: left;"><strong><br>
                                   </strong>
@@ -971,23 +941,35 @@ body, div, span, p {
                                     <div><strong>Thunderstorm/Severe Weather
                                         Outlook</strong><strong><br>
                                       </strong></div>
-                                    Severe thunderstorms will be possible this
-                                    afternoon and evening from parts of the
-                                    upper Mississippi Valley into the western
-                                    Great Lakes. Marginally severe storms will
-                                    also be possible in parts of the northern
-                                    Plains, central Appalachians, Mid-Atlantic
-                                    and eastern North Carolina.<br>
-                                    <div>
+                                    <div>Scattered severe thunderstorms are
+                                      expected over parts of the northern Plains
+                                      into the upper Mississippi Valley later
+                                      today into tonight.<br>
                                       <div style="text-align: left;">
                                         <div style="font-size: 16px;">
-                                          <div>
-                                            <div><br>
-                                            </div>
-                                            <div>
+                                          <div><br>
+                                          </div>
+                                          <div><strong>National High &amp; Low
+                                              Temperatures for Sun. July 21</strong>
+                                            <div><em style="color: #999999;"><span
+                                                  style="font-size: 12px;">Excluding
+                                                  Alaska &amp; Hawai'i<br>
+                                                </span></em></div>
+                                            <div><em style="color: #999999;"><br>
+                                              </em></div>
+                                            <div><strong>High</strong>
                                               <div>
                                                 <div style="text-align: left;">
                                                   <div style="font-size: 16px;">
+                                                    <div>115° at <a href="https://en.wikipedia.org/wiki/Stovepipe_Wells,_California">Stovepipe
+                                                        Wells, CA</a>
+                                                      <div><br>
+                                                      </div>
+                                                      <div><strong>Low</strong></div>
+                                                      <div>32° at <a href="https://en.wikipedia.org/wiki/Fox_Park,_Wyoming">Foxpark,
+                                                          WY</a><br>
+                                                        <a href="https://en.wikipedia.org/wiki/Peter%20Sinks"></a></div>
+                                                    </div>
                                                   </div>
                                                 </div>
                                               </div>
@@ -996,7 +978,8 @@ body, div, span, p {
                                                   style="font-size: 12px;"></span></em></div>
                                           </div>
                                         </div>
-                                        <strong> </strong></div>
+                                        <strong><br>
+                                        </strong></div>
                                       <div style="text-align: left;"><strong>Today's
                                           National Forecast Chart</strong><br>
                                         <strong> </strong>
@@ -1053,13 +1036,15 @@ body, div, span, p {
                                         </div>
                                         <div><br>
                                         </div>
-                                        <strong></strong><strong> </strong>
-                                        <div style="text-align: left;">
-                                          <h3>🌤️Weather Resources🌤️</h3>
-                                        </div>
-                                        <strong>🇺🇸 NOAA/National Weather
-                                          Service Weather Information</strong><br>
-                                        <div style="text-align: left;">
+                                        <div style="text-align: left;"><strong><br>
+                                          </strong></div>
+                                        <div style="text-align: left;"><strong>Weather
+                                            Resources<br>
+                                          </strong></div>
+                                        <div style="text-align: center;"><strong><br>
+                                          </strong></div>
+                                        <div style="text-align: left;"><strong>US
+                                            Government Weather Information</strong><br>
                                           <div> <a href="https://www.weather.gov/"
                                               title="NWS Caribou (northern and eastern Maine"><br>
                                             </a></div>
@@ -1071,25 +1056,26 @@ body, div, span, p {
                                               Range Forecast Discussion</a> | <a
                                               href="https://www.wpc.ncep.noaa.gov/medr/medr.shtml">Medium
                                               Range Forecast Discussion</a> | <a
-                                              href="https://www.wpc.ncep.noaa.gov/discussions/hpcdiscussions.php?disc=pmdepd">Extended
+                                              href="https://www.spc.noaa.gov/">Extended
                                               Forecast Discussion</a> | <a href="https://www.spc.noaa.gov/">
                                               Storm Predication Center</a> |<a href="https://www.cpc.ncep.noaa.gov/"><span
                                                 style="color: black;"> </span>Climate
-                                              Prediction Center</a> | <a href="https://www.wpc.ncep.noaa.gov/discussions/hpcdiscussions.php?disc=nathilo&amp;version=0&amp;fmt=reg">National
-                                              High/Low Temperature</a> </div>
-                                          <div><br>
-                                          </div>
-                                          <div></div>
-                                          <div><strong><img src="https://github.com/ApexWx/ApexWx.github.io/blob/master/us-me.gif?raw=true"
-                                                alt="ME Flag" style="width: 21px; height: 14px;">󠁵󠁳󠁭󠁥󠁿
-                                              NWS Caribou Weather Information<br>
+                                              Prediction Center <br>
+                                            </a></div>
+                                          <div><a href="https://www.cpc.ncep.noaa.gov/"><br>
+                                            </a></div>
+                                          <div><strong>NWS Caribou Office
+                                              Weather Information<br>
                                             </strong> <br>
-                                            <div><a href="https://forecast.weather.gov/MapClick.php?zoneid=MEZ001">ME
-                                                Zone 001 Forecast for Northwest
-                                                Aroostook</a>&nbsp; | <a href="https://www.weather.gov/car/winter">Winter
+                                            <div><a href="https://forecast.weather.gov/MapClick.php?CityName=Fort+Kent&amp;state=ME&amp;site=CAR&amp;textField1=47.2632&amp;textField2=-68.5774&amp;e=1">7-Day
+                                                Forecast for Fort Kent, ME</a>&nbsp;
+                                              | <a href="https://forecast.weather.gov/MapClick.php?zoneid=MEZ001">
+                                                ME Zone 001 Area Forecast for
+                                                Northwest Aroostook</a>&nbsp; |
+                                              <a href="https://www.weather.gov/car/winter">Winter
                                                 Weather Forecasts</a> | <a href="https://forecast.weather.gov/product.php?site=CAR&amp;issuedby=CAR&amp;product=AFD&amp;format=CI&amp;version=1&amp;glossary=1&amp;highlight=off">
-                                                Area Forecast Discussion</a> | <a
-                                                href="https://www.weather.gov/wrh/climate?wfo=car"
+                                                | Area Forecast Discussion</a> |
+                                              <a href="https://www.weather.gov/wrh/climate?wfo=car"
                                                 title="NWS Caribou Regional Climate Data">NWS
                                                 Caribou Regional Climate Data</a>
                                               | <a href="https://www.youtube.com/@NWSCaribou">NWS
@@ -1103,11 +1089,13 @@ body, div, span, p {
                                               </a></div>
                                             <div><br>
                                             </div>
-                                            <div><strong>⛰️ Other Regional
+                                            <div><strong>Other Regional
                                                 Resources</strong>
                                               <div><strong><br>
                                                 </strong></div>
-                                              <div><a href="https://www.maine.gov/mdot/cams/all/">Maine
+                                              <div><a href="https://www.airnow.gov/?city=Fort%20Kent&amp;state=ME&amp;country=USA">Current
+                                                  Fort Kent Air Quality</a> | <a
+                                                  href="https://www.maine.gov/mdot/cams/all/">Maine
                                                   DOT Cams</a> | <a href="https://newengland511.org/">New
                                                   England Road Conditions</a> |
                                                 <a href="https://www.maine.gov/dacf/mfs/wildfire_danger_report/index.html">Maine
@@ -1117,17 +1105,17 @@ body, div, span, p {
                                               <div><br>
                                               </div>
                                             </div>
-                                            <div><strong>🇨🇦 Environment
-                                                Canadian Weather Information</strong></div>
+                                            <div><strong>Canadian Government
+                                                Weather Information</strong></div>
                                             <div><strong><br>
                                               </strong></div>
                                             <div><a href="https://weather.gc.ca/canada_e.html">Canadian
                                                 Weather</a> | <a href="https://weather.gc.ca/forecast/canada/index_e.html?id=NB">Province
                                                 of New Brunswick</a> | <a href="https://weather.gc.ca/en/location/index.html?coords=47.364,-68.336">Edmundston,
                                                 NB</a> | <a href="https://weather.gc.ca/en/location/index.html?coords=45.955,-66.646">Fredericton,
-                                                NB</a> | <a href="https://weather.gc.ca/en/location/index.html?coords=45.276,-66.078">Saint
-                                                John, NB</a> | <a href="https://weather.gc.ca/forecast/canada/index_e.html?id=QC">
-                                                Province of Québec</a> | <a href="https://weather.gc.ca/en/location/index.html?coords=46.811,-71.225">Québec
+                                                NB</a></div>
+                                            <div><a href="https://weather.gc.ca/forecast/canada/index_e.html?id=QC">Province
+                                                of Québec</a> | <a href="https://weather.gc.ca/en/location/index.html?coords=46.811,-71.225">Québec
                                                 City, QC</a> | <a href="https://weather.gc.ca/en/location/index.html?coords=45.529,-73.562">Montréal,
                                                 QC</a> <br>
                                             </div>
@@ -1135,33 +1123,15 @@ body, div, span, p {
                                         </div>
                                         <div><br>
                                         </div>
-                                        <div><strong>🌎 World Weather</strong></div>
+                                        <div style="font-size: 16px;"><strong>World
+                                            Weather<br>
+                                          </strong> <strong></strong><a href="https://eldoradoweather.com/climate/world-extremes2/world-temp-rainfall-extremes.php"><br>
+                                            World Weathe<span style="color: black;">r
+                                            </span></a><a href="https://eldoradoweather.com/climate/world-extremes2/world-temp-rainfall-extremes.php">Extremes</a>
+                                          | <a href="https://eldoradoweather.com/climate/world-extremes2/world-temp-rainfall-extremes.php?extremes=United%2BS">US
+                                            Weather Extremes</a> | <a href="https://eldoradoweather.com/climate/world-extremes2/world-temp-rainfall-extremes.php?extremes=Cana">Canadian
+                                            Weather Extremes </a></div>
                                         <div><br>
-                                          <strong></strong><a href="https://eldoradoweather.com/climate/world-extremes2/world-temp-rainfall-extremes.php">
-                                            World Temperature Extremes</a> | <a
-                                            href="https://eldoradoweather.com/climate/world-extremes2/world-temp-rainfall-extremes.php?extremes=United%2BS">US
-                                            Temperature Extremes</a> | <a href="https://eldoradoweather.com/climate/world-extremes2/world-temp-rainfall-extremes.php?extremes=Cana">Canadian
-                                            Temperature&nbsp; Extremes</a><span
-                                            style="color: #0000ee;"> </span>|&nbsp;
-                                          <a href="https://eldoradoweather.com/climate/world-extremes2/world-temp-rainfall-extremes.php?extremes=Eur">Europe
-                                            Temperatures Extremes</a> | <a href="https://eldoradoweather.com/climate/world-extremes2/world-temp-rainfall-extremes.php?extremes=North">Northern
-                                            Hemisphere</a> | <a href="https://eldoradoweather.com/climate/world-extremes2/world-temp-rainfall-extremes.php?extremes=South">Southern
-                                            Hemisphere</a> |&nbsp; <a href="https://earth.nullschool.net/">Earth
-                                            from Nullschool</a><span style="color: #0000ee;">
-                                          </span>| <a href="https://www.timeanddate.com/weather/">Weather
-                                            Around The World<br>
-                                          </a></div>
-                                        <div><a href="https://earth.nullschool.net/"><br>
-                                          </a> </div>
-                                        <div><strong>🛠️Conversion Tools</strong>
-                                          <div style="text-align: left;"><strong><br>
-                                            </strong></div>
-                                          <div style="text-align: left;"><a href="https://www.weather.gov/epz/wxcalc_tempconvert">Temperature
-                                              Converter</a><strong> </strong>|
-                                            <a href="https://nist.time.gov/">Official
-                                              US Time </a><a href="https://earth.nullschool.net/"></a></div>
-                                          <div style="text-align: left;"><a href="https://nist.time.gov/"><br>
-                                            </a></div>
                                         </div>
                                         <div>
                                           <hr> </div>
@@ -1257,38 +1227,41 @@ body, div, span, p {
             Surface Weather Chart</strong></div>
         <div style="text-align: center; font-size: 12px;"><strong style="font-size: 14px;"></strong><a
             href="https://s.w-x.co/staticmaps/WEB_Current_Weather_Map_1280x720.jpg?crop=16:9&amp;width=800&amp;format=pjpg&amp;auto=webp&amp;quality=60">
-          </a><a href="https://s.w-x.co/staticmaps/wu/fee4c/surface_cur/conus/thumbnail.png"
-            title="Click for larger image"><img src="https://s.w-x.co/staticmaps/wu/fee4c/surface_cur/conus/thumbnail.png"
-              alt="Current Surface Chart" style="width: 251px; height: 188.586px;"></a></div>
-        <div style="text-align: center; font-size: 12px;">&nbsp;<em>Weather
-            Underground</em></div>
+          </a><a href="https://www.wpc.ncep.noaa.gov/sfc/bwsfc.gif" title="Click for larger image"><img
+              src="https://www.wpc.ncep.noaa.gov/sfc/bwsfc.gif" alt="Current Surface Map"
+              style="width: 251px; height: 188.586px;"></a></div>
+        <a href="https://www.wpc.ncep.noaa.gov/sfc/bwsfc.gif" title="Click for larger image"></a>&nbsp;<br>
         <div style="text-align: center; font-size: 12px;"> <strong></strong></div>
-        <div style="text-align: center;"><br>
-        </div>
         <div style="text-align: center;"><br>
           <strong style="font-size: 14px;">US Visible/Infrared Satellite<br>
           </strong></div>
         <div style="text-align: center;"><strong></strong><strong></strong> <a
             href="https://weather.cod.edu/data/satellite/continental/conus/current/conus.truecolor.jpg"
             title="Click for larger image"><img src="https://weather.cod.edu/data/satellite/continental/conus/current/conus.truecolor.jpg"
-              alt="True Color Satellite Image of CONUS" style="width: 251px; height: 141.188px; border-radius: 0px / 0%; border-width: 0px; border-style: none; margin: 0px; padding: 0px;"
-              title="Click for larger image"></a><em style="font-size: 12px;"><br>
-          </em></div>
+              alt="True Color Satellite Image of CONUS" style="width: 251px; height: 141.188px; border-radius: 1px / 0px; border-width: 1px; border-style: solid;"
+              title="Click for larger image"></a></div>
         <div style="text-align: center;"><em style="font-size: 12px;">College of
             DuPage NEXLAB</em></div>
-        <div style="text-align: center;"><em style="font-size: 12px;"><br>
-          </em></div>
-        <div style="text-align: center;"><em style="font-size: 12px;"><br>
-          </em></div>
-        <div>
-          <div style="font-size: 14px; text-align: center;"><strong>US Weather
-              Radar<em><br>
-                <a href="https://s.w-x.co/staticmaps/wu/wu/wxtype1200_cur/conus/thumbnail.png"
-                  title="Click for larger image"><img src="https://s.w-x.co/staticmaps/wu/wu/wxtype1200_cur/conus/thumbnail.png"
-                    alt="US Weather Satellite" style="width: 254px; height: 197px;"></a></em></strong></div>
-          <div style="font-size: 14px; text-align: center;"><em style="font-size: 12px;">Weather
-              Underground</em><br>
-          </div>
+        <div><br>
+          <div style="font-size: 14px; text-align: center;"><strong><br>
+            </strong></div>
+          <div style="font-size: 14px; text-align: center;"><strong>Environment
+              Canada Weather Map<em><br>
+                <a href="https://weather.gc.ca/data/wxoimages/wocanmap0_e.jpg" title="Click for larger image"><img
+                    src="https://weather.gc.ca/data/wxoimages/wocanmap0_e.jpg" alt="Canadian Weather Map"
+                    style="width: 254px; height: 220px;"></a></em></strong></div>
+          <div style="font-size: 14px; text-align: center;"><em style="font-size: 12px;">Temperature
+              in Celsius</em><strong><br>
+            </strong></div>
+          <div style="font-size: 14px; text-align: center;"><strong><em>&nbsp;<br>
+              </em></strong></div>
+          <div style="font-size: 14px; text-align: center;"><strong><br>
+            </strong></div>
+          <div style="font-size: 14px; text-align: center;"><strong>Environment
+              Canada IR Satellite<em><br>
+                <a href="https://weather.gc.ca/data/satellite/goes_nam_1070x_100.jpg"><img
+                    src="https://weather.gc.ca/data/satellite/goes_nam_1070x_100.jpg"
+                    alt="Canadian IR Satellite" style="width: 254px; height: 197px;"></a></em></strong></div>
           <div style="font-size: 14px; text-align: center;"><br>
           </div>
           <div style="font-size: 14px; text-align: center;"><br>
@@ -1363,8 +1336,9 @@ body, div, span, p {
                 alt="Regional Satellite" style="width: 251px; height: 251px; border-width: 1px; border-style: solid;"></a></div>
           <div style="font-size: 14px; text-align: center;"><strong><br>
             </strong></div>
-          <div style="text-align: center;"><br>
-          </div>
+          <div style="font-size: 14px; text-align: center;"><strong><br>
+            </strong></div>
+          <br>
           <div style="font-size: 14px; text-align: center;"> <strong>Regional&nbsp;
               Precipitation Outlook</strong>
             <div><a href="https://www.weather.gov/images/erh/gis/NE_QPF.png" title="Click for more information"><img
@@ -1397,6 +1371,8 @@ body, div, span, p {
                   alt="Regional Snow Accumulation" style="width: 250px; height: 185.938px;"></a></div>
             <div style="text-align: center;"><br>
             </div>
+            <div style="text-align: center;"><br>
+            </div>
           </div>
           <div style="font-size: 14px; text-align: center;"><br>
             <strong>NE Wind Gust Outlook</strong><br>
@@ -1404,6 +1380,8 @@ body, div, span, p {
               title="Click for more information"><img src="https://www.weather.gov/images/erh/gis/NE_WGust.png"
                 alt="NE Wind Gusts" style="width: 253px; height: 220px; border-width: 1px; border-style: solid;"
                 title="Click for larger image"></a></div>
+          <div style="font-size: 14px; text-align: center;"><strong><br>
+            </strong></div>
           <div style="font-size: 14px; text-align: center;"><strong><br>
             </strong></div>
           <div style="font-size: 14px; text-align: center;"><strong><br>
@@ -1461,18 +1439,6 @@ body, div, span, p {
                 style="width: 251px; height: 141px; border-width: 1px; border-style: solid;"></a><br>
             <div style="font-size: 12px;"><em>Ice in winter may affect gauge
                 measurement.</em></div>
-          </div>
-          <div style="font-size: 14px; text-align: center;"><br>
-          </div>
-          <div style="font-size: 14px; text-align: center;"><br>
-          </div>
-          <div style="font-size: 14px; text-align: center;"><strong>Environment
-              Canada Weather Map<em><br>
-                <a href="https://weather.gc.ca/data/wxoimages/wocanmap0_e.jpg" title="Click for larger image"><img
-                    src="https://weather.gc.ca/data/wxoimages/wocanmap0_e.jpg" alt="Canadian Weather Map"
-                    style="width: 254px; height: 220px;"></a></em></strong>
-            <div style="font-size: 14px; text-align: center;"><em style="font-size: 12px;">Temperature
-                in Celsius</em><strong></strong></div>
             <br>
             <strong></strong><em><strong></strong></em></div>
           <div style="font-size: 14px; text-align: center;"><strong><br>

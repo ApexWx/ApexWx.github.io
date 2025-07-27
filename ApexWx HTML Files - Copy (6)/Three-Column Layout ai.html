@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Three-Column Layout</title>
+    <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header, footer {
+      background-color: #333;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    main {
+      flex: 1;
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .column {
+      padding: 1rem;
+      flex: 1;
+      min-width: 250px;
+    }
+
+    .left {
+      background-color: #f0f0f0;
+    }
+
+    .center {
+      background-color: #e0e0e0;
+    }
+
+    .right {
+      background-color: #d0d0d0;
+    }
+
+    @media (max-width: 768px) {
+      .column {
+        flex: 100%;
+      }
+    }
+  </style>
+  </head>
+  <body>
+    <header>
+      <h1>Three-Column Responsive Website</h1>
+    </header>
+    <main>
+      <div class="column left">
+        <h2>Left Column</h2>
+        <p>Content for the left column goes here.</p>
+      </div>
+      <div class="column center">
+        <h2>Center Column</h2>
+        <p>Main content in the center column.</p>
+      </div>
+      <div class="column right">
+        <h2>Right Column</h2>
+        <p>Additional content for the right column.</p>
+      </div>
+    </main>
+    <footer>
+      <p>© 2025 Three-Column Layout. All rights reserved.</p>
+    </footer>
+  </body>
+</html>

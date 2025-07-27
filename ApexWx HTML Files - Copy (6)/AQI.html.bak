@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>AQI</title>
+  </head>
+  <body>
+    <p><iframe title="Example 4" src="https://widget.airnow.gov/aq-dial-widget/?city=Lancaster&amp;state=PA&amp;country=USA&amp;transparent=true"
+        style="border: none; border-radius: 25px;"></iframe><iframe title="Example 1"
+        src="https://widget.airnow.gov/aq-dial-widget/?city=Lancaster&amp;state=PA&amp;country=USA"
+        style="border: none; border-radius: 25px;" height="340" width="230"></iframe><br>
+    </p>
+  </body>
+</html>

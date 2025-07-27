@@ -1,0 +1,235 @@
+Perfect — I'll now provide a cleaned and modernized version of your Fawkes.html and styles.css files that:
+
+    ✅ Keeps your layout, style, and content intact
+
+    ✅ Fixes outdated or messy code
+
+    ✅ Improves responsiveness and structure
+
+    ✅ Avoids major redesign or disruptive changes
+
+✅ Key Fixes Applied
+In Fawkes.html
+
+    Cleaned embedded <style> section
+
+    Replaced brittle inline width rule with a generalized responsive fix
+
+    Removed unclosed or malformed CSS blocks (} found in wrong places)
+
+    Retained all your JavaScript and content blocks
+
+In styles.css
+
+    Added responsive enhancements at the bottom
+
+    Removed outdated float-based structure in favor of @media query tweaks
+
+    Preserved all your existing styles and background
+
+🧼 Updated CSS (styles.css)
+
+Add to the bottom of your existing file:
+
+/* Responsive fix for inline style widths */
+div[style*="width: 8"] {
+  width: 100% !important;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* Responsive enhancements */
+@media screen and (max-width: 768px) {
+  div#tswcentrecombo,
+  div#tswcontent,
+  div#tswsidecol,
+  div#tswothersidecol {
+    float: none;
+    width: 100%;
+  }
+
+  form[style*="width:200px"] {
+    width: 100% !important;
+    max-width: 300px;
+    margin: 0 auto;
+    box-sizing: border-box;
+  }
+
+  iframe {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+html, body {
+  overflow-x: hidden;
+}
+
+🧼 Embedded <style> Block in Fawkes.html
+
+Replace this portion inside the <head> (the embedded <style>) with the cleaned version below:
+
+<style>
+  /* Alert Box Styles */
+  .alert-container {
+    margin-top: 1em;
+    font-family: sans-serif;
+  }
+
+  .alert-box {
+    border-left: 5px solid;
+    padding: 12px 15px;
+    border-radius: 4px;
+    font-size: 1rem;
+    line-height: 1.4;
+    background-color: #f9f9f9;
+    position: relative;
+  }
+
+  .alert-minor {
+    border-color: #ffcc00;
+    background-color: #fff8e1;
+  }
+
+  .alert-moderate {
+    border-color: #ffa726;
+    background-color: #fff3e0;
+  }
+
+  .alert-severe {
+    border-color: #ef5350;
+    background-color: #fdecea;
+  }
+
+  .alert-extreme {
+    border-color: #b71c1c;
+    background-color: #fce4e4;
+  }
+
+  .alert-box strong {
+    display: block;
+    margin-bottom: 5px;
+  }
+
+  .alert-box a {
+    color: #0056b3;
+    text-decoration: underline;
+  }
+
+  .alert-close {
+    background: transparent;
+    border: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #444;
+    float: right;
+    cursor: pointer;
+    margin: -5px -8px 5px 8px;
+  }
+
+  .alert-close:hover {
+    color: #000;
+  }
+
+  .sun-info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    font-size: 1rem;
+    justify-content: flex-start;
+  }
+
+  .sun-info > div {
+    flex: 0 0 auto;
+    white-space: nowrap;
+  }
+
+  #weather-widget {
+    font-family: Arial, sans-serif;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 1em;
+    background: transparent;
+    color: #333;
+  }
+
+  .fw-container h2 {
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+  .fw-forecast {
+    background: transparent;
+    padding: 1em;
+    border-radius: 8px;
+  }
+
+  .fw-forecast .fw-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 1.5em;
+  }
+
+  .fw-forecast img {
+    width: 48px;
+    height: 48px;
+    flex-shrink: 0;
+    margin-bottom: 0.5em;
+  }
+
+  .fw-text {
+    font-size: 1rem;
+  }
+
+  .fw-day {
+    font-weight: bold;
+  }
+
+  #season-display {
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 10px;
+  }
+
+  .winter { color: #0277bd; }
+  .spring { color: #2e7d32; }
+  .summer { color: #ef6c00; }
+  .fall   { color: #d84315; }
+
+  .container {
+    position: relative;
+    width: 100%;
+    overflow: auto;
+    padding-top: 56.25%;
+  }
+
+  .responsive-iframe {
+    position: absolute;
+    top: 0; left: 0;
+    bottom: 0; right: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+
+  /* Responsive override for legacy widths */
+  div[style*="width: 8"] {
+    max-width: 100%;
+    width: 100% !important;
+    box-sizing: border-box;
+  }
+</style>
+
+✅ Outcome
+
+You’ll get:
+
+    Cleaner, more modern code
+
+    Improved tablet/phone responsiveness
+
+    No layout or design disruption
+
+    Easier maintenance and future updates

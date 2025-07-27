@@ -1,0 +1,65 @@
+<div style="text-align: center; font-family: Arial, sans-serif; font-size: 14px;">
+  <div id="fk-air-quality" style="display: inline-block; padding: 10px 15px; border-radius: 6px; font-weight: bold; min-width: 250px;">
+    Loading air quality...
+  </div>
+  <div style="margin-top: 6px;">
+    <a href="https://www.iqair.com/usa/maine/fort-kent" target="_blank" rel="noopener noreferrer">
+      View detailed air quality in Fort Kent, ME
+    </a>
+  </div>
+</div>
+
+<script>
+  const airBox = document.getElementById("fk-air-quality");
+
+  async function updateAirQuality() {
+    const apiKey = "YOUR_API_KEY_HERE";  // Replace with your actual IQAir API key
+    const url = `https://api.airvisual.com/v2/city?city=Fort%20Kent&state=Maine&country=USA&key=${apiKey}`;
+
+    try {
+      const response = await fetch(url);
+      const data = await response.json();
+
+      if (data.status !== "success") {
+        airBox.textContent = "Air quality data is unavailable.";
+        airBox.style.backgroundColor = "#666";
+        airBox.style.color = "#fff";
+        return;
+      }
+
+      const aqi = data.data.current.pollution.aqius;
+      const category = getAQICategory(aqi);
+      const colors = getAQIColors(aqi);
+
+      airBox.style.backgroundColor = colors.bg;
+      airBox.style.color = colors.text;
+      airBox.innerHTML = `🌫️ Air Quality in Fort Kent, ME:<br>AQI ${aqi} (${category})`;
+    } catch (error) {
+      console.error("Air quality fetch error:", error);
+      airBox.textContent = "Unable to load air quality data.";
+      airBox.style.backgroundColor = "#666";
+      airBox.style.color = "#fff";
+    }
+  }
+
+  function getAQICategory(aqi) {
+    if (aqi <= 50) return "Good";
+    if (aqi <= 100) return "Moderate";
+    if (aqi <= 150) return "Unhealthy for Sensitive Groups";
+    if (aqi <= 200) return "Unhealthy";
+    if (aqi <= 300) return "Very Unhealthy";
+    return "Hazardous";
+  }
+
+  function getAQIColors(aqi) {
+    if (aqi <= 50) return { bg: "#00e400", text: "#000" };
+    if (aqi <= 100) return { bg: "#ffff00", text: "#000" };
+    if (aqi <= 150) return { bg: "#ff7e00", text: "#000" };
+    if (aqi <= 200) return { bg: "#ff0000", text: "#fff" };
+    if (aqi <= 300) return { bg: "#8f3f97", text: "#fff" };
+    return { bg: "#7e0023", text: "#fff" };
+  }
+
+  updateAirQuality();
+  setInterval(updateAirQuality, 15 * 60 * 1000); // Refresh every 15 minutes
+</script>
