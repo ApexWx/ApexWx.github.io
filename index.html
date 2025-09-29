@@ -151,7 +151,7 @@
     color: #ef6c00; /* Warm orange */
   }
 
-  .autumn {
+  .fall {
     color: #d84315; /* Earthy red-orange */
   }
     
@@ -1607,7 +1607,7 @@ body, div, span, p {
     } else if ((month === 6 && day >= 21) || (month >= 7 && month <= 8) || (month === 9 && day < 22)) {
       return "summer";
     } else {
-      return "autumn";
+      return "fall";
     }
   }
 
@@ -1616,7 +1616,7 @@ body, div, span, p {
       case "winter": return "🌨️";
       case "spring": return "🌸";
       case "summer": return "☀️";
-      case "autumn":   return "🍂";
+      case "fall":   return "🍂";
       default: return "";
     }
   }
