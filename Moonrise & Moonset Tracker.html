@@ -58,8 +58,9 @@
     const lat = 47.258;        // Fort Kent latitude
     const lon = -68.589;       // Fort Kent longitude
     const timeZone = "America/New_York";
+    let currentDateKey = getDateKey(new Date());
 
-    // Convert numeric moon phase to emoji
+    // Converts numeric moon phase to an emoji
     function getPhaseEmoji(phase) {
       if (phase < 0.03 || phase > 0.97) return "🌑"; // New Moon
       if (phase < 0.22) return "🌒"; // Waxing Crescent
@@ -78,11 +79,24 @@
       return new Intl.DateTimeFormat([], opts).format(date);
     }
 
+    // Returns a simple YYYY-MM-DD key for the current date in local time
+    function getDateKey(date) {
+      return date.toLocaleDateString('en-CA', { timeZone }); // format: 2025-10-05
+    }
+
     function showMoonData() {
       const now = new Date();
+      const todayKey = getDateKey(now);
 
-      // Moon rise/set times
-      const times = SunCalc.getMoonTimes(now, lat, lon);
+      // Detect midnight rollover
+      if (todayKey !== currentDateKey) {
+        currentDateKey = todayKey;
+        console.log("New day detected — updating moonrise/set data");
+      }
+
+      // Compute moon times for *today's date*
+      const dateLocal = new Date(now.toLocaleString("en-US", { timeZone }));
+      const times = SunCalc.getMoonTimes(dateLocal, lat, lon);
       const rise = times.alwaysUp ? '🌙 Always above horizon' :
                    times.alwaysDown ? '🌑 Always below horizon' :
                    formatTime(times.rise);
@@ -103,12 +117,13 @@
       const phasePct = Math.round(illum.fraction * 100);
 
       document.getElementById('info').innerHTML = `
-        <div>Location: Fort Kent, Maine</div>
+        <div>📍 Location: Fort Kent, Maine</div>
+        <div>📅 Date: ${todayKey}</div>
         <div>Latitude: ${lat.toFixed(3)}, Longitude: ${lon.toFixed(3)}</div>
-        <div>Moonrise: <span class="time">${rise}</span></div>
-        <div>Moonset: <span class="time">${set}</span></div>
-        <div class="phase">Phase: ${phaseEmoji} ${phasePct}% illuminated</div>
-        <div>Timezone: ${timeZone}</div>
+        <div>🌅 Moonrise: <span class="time">${rise}</span></div>
+        <div>🌇 Moonset: <span class="time">${set}</span></div>
+        <div class="phase">🌗 Phase: ${phaseEmoji} ${phasePct}% illuminated</div>
+        <div>🕒 Timezone: ${timeZone}</div>
         ${status}
       `;
     }
