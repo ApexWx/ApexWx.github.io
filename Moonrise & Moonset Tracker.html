@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Fort Kent, Maine – Moon Tracker</title>
+    <script src="https://unpkg.com/suncalc/suncalc.js"></script>
+    <style>
+    body {
+      font-family: system-ui, sans-serif;
+      background: radial-gradient(circle at top, #0b1a2a, #000);
+      color: #fff;
+      text-align: center;
+      padding: 2rem;
+    }
+    h1 {
+      margin-bottom: 0.5rem;
+      font-size: 1.9rem;
+      color: #d2ecff;
+    }
+    #info {
+      font-size: 1.1rem;
+      margin-top: 1.5rem;
+      line-height: 1.6;
+    }
+    .time {
+      font-weight: bold;
+      color: #f0e68c;
+    }
+    .status {
+      margin-top: 1rem;
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+    .above {
+      color: #9eff9e;
+    }
+    .below {
+      color: #ff9999;
+    }
+    .phase {
+      margin-top: 1rem;
+      font-size: 1.3rem;
+    }
+    footer {
+      margin-top: 3rem;
+      font-size: 0.8rem;
+      color: #aaa;
+    }
+    a { color: #6cf; }
+  </style>
+  </head>
+  <body>
+    <h1>🌕 Moon Tracker — Fort Kent, Maine</h1>
+    <div id="info">Loading moon data...</div>
+    <footer> Powered by <a href="https://github.com/mourner/suncalc" target="_blank">SunCalc</a>
+    </footer>
+    <script>
+    const lat = 47.258;        // Fort Kent latitude
+    const lon = -68.589;       // Fort Kent longitude
+    const timeZone = "America/New_York";
+
+    // Convert numeric moon phase to emoji
+    function getPhaseEmoji(phase) {
+      if (phase < 0.03 || phase > 0.97) return "🌑"; // New Moon
+      if (phase < 0.22) return "🌒"; // Waxing Crescent
+      if (phase < 0.28) return "🌓"; // First Quarter
+      if (phase < 0.47) return "🌔"; // Waxing Gibbous
+      if (phase < 0.53) return "🌕"; // Full Moon
+      if (phase < 0.72) return "🌖"; // Waning Gibbous
+      if (phase < 0.78) return "🌗"; // Last Quarter
+      if (phase < 0.97) return "🌘"; // Waning Crescent
+      return "🌑";
+    }
+
+    function formatTime(date) {
+      if (!date) return '—';
+      const opts = { hour: '2-digit', minute: '2-digit', second: '2-digit', timeZone };
+      return new Intl.DateTimeFormat([], opts).format(date);
+    }
+
+    function showMoonData() {
+      const now = new Date();
+
+      // Moon rise/set times
+      const times = SunCalc.getMoonTimes(now, lat, lon);
+      const rise = times.alwaysUp ? '🌙 Always above horizon' :
+                   times.alwaysDown ? '🌑 Always below horizon' :
+                   formatTime(times.rise);
+      const set = times.alwaysUp ? '—' :
+                  times.alwaysDown ? '—' :
+                  formatTime(times.set);
+
+      // Moon position
+      const pos = SunCalc.getMoonPosition(now, lat, lon);
+      const altitude = pos.altitude * (180 / Math.PI); // radians → degrees
+      const status = altitude > 0
+        ? `<span class="status above">🌝 The Moon is currently above the horizon</span>`
+        : `<span class="status below">🌚 The Moon is currently below the horizon</span>`;
+
+      // Moon phase & illumination
+      const illum = SunCalc.getMoonIllumination(now);
+      const phaseEmoji = getPhaseEmoji(illum.phase);
+      const phasePct = Math.round(illum.fraction * 100);
+
+      document.getElementById('info').innerHTML = `
+        <div>Location: Fort Kent, Maine</div>
+        <div>Latitude: ${lat.toFixed(3)}, Longitude: ${lon.toFixed(3)}</div>
+        <div>Moonrise: <span class="time">${rise}</span></div>
+        <div>Moonset: <span class="time">${set}</span></div>
+        <div class="phase">Phase: ${phaseEmoji} ${phasePct}% illuminated</div>
+        <div>Timezone: ${timeZone}</div>
+        ${status}
+      `;
+    }
+
+    // Initial call and auto-update every minute
+    showMoonData();
+    setInterval(showMoonData, 60000);
+  </script>
+  </body>
+</html>
