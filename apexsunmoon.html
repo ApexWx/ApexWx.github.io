@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fort Kent Moon Tracker</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: { sans: ["Inter", "sans-serif"] },
+            colors: {
+              "celestial-blue": "#2c3e50",
+              "moon-silver": "#ecf0f1",
+              "star-yellow": "#f1c40f",
+              "dark-bg": "#1e293b",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+        background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 1rem;
+      }
+      .card {
+        background-color: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(5px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+      .spinner {
+        border: 4px solid rgba(255, 255, 255, 0.3);
+        border-top: 4px solid #f1c40f;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        animation: spin 1s linear infinite;
+      }
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style>
+  </head>
+  <body class="text-moon-silver">
+    <div id="app-container" class="w-full max-w-2xl">
+      <header class="text-center mb-8">
+        <h1 class="text-4xl sm:text-5xl font-extrabold text-star-yellow drop-shadow-lg">
+          Fort Kent Sun &amp; Moon </h1>
+        <p class="text-lg text-gray-300 mt-2"> Aroostook County, Maine • Lat:
+          47.26° N, Long: -68.59° W </p>
+      </header>
+      <div class="card p-6 md:p-8 rounded-2xl shadow-2xl space-y-6">
+        <div class="flex flex-col sm:flex-row items-center justify-between p-4 bg-celestial-blue/50 rounded-xl shadow-inner">
+          <label for="date-input" class="text-lg font-semibold mb-2 sm:mb-0 text-star-yellow">Select
+            Date:</label> <input id="date-input" class="p-3 rounded-lg border-2 border-celestial-blue bg-dark-bg text-moon-silver focus:ring-star-yellow focus:border-star-yellow transition w-full sm:w-auto cursor-pointer"
+
+            aria-label="Date selector for moon data" type="date"> </div>
+        <div id="status-message" class="hidden text-center p-6 rounded-xl bg-red-800/20 border border-red-700/50"></div>
+        <div id="data-container" class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+          <div class="data-card p-5 rounded-xl bg-celestial-blue/70 shadow-lg text-center transition hover:bg-celestial-blue/90">
+            <div class="text-4xl mb-2">☽</div>
+            <p class="text-md font-medium text-gray-300">Moonrise</p>
+            <p id="moon-rise" class="text-3xl font-bold text-star-yellow mt-1">--:--</p>
+          </div>
+          <div class="data-card p-5 rounded-xl bg-celestial-blue/70 shadow-lg text-center transition hover:bg-celestial-blue/90">
+            <div class="text-4xl mb-2">☾</div>
+            <p class="text-md font-medium text-gray-300">Moonset</p>
+            <p id="moon-set" class="text-3xl font-bold text-star-yellow mt-1">
+              --:-- </p>
+          </div>
+          <div class="data-card p-5 rounded-xl bg-celestial-blue/70 shadow-lg text-center transition hover:bg-celestial-blue/90">
+            <div id="moon-phase-icon" class="text-4xl mb-2">🌒</div>
+            <p class="text-md font-medium text-gray-300">Current Phase</p>
+            <p id="moon-phase" class="text-xl font-bold text-moon-silver mt-1">
+              Loading... </p>
+          </div>
+        </div>
+        <div class="p-4 bg-celestial-blue/50 rounded-xl text-center shadow-inner">
+          <p class="text-lg font-semibold text-gray-300">Illumination:</p>
+          <p id="illumination" class="text-2xl font-bold text-star-yellow mt-1">
+            --% </p>
+        </div>
+        <!-- 🌅 UPDATED Sunrise and Sunset Section -->
+        <div class="p-4 bg-celestial-blue/50 rounded-xl text-center shadow-inner grid grid-cols-2 gap-4">
+          <div>
+            <p class="text-lg font-semibold text-gray-300">Sunrise 🌅</p>
+            <p id="sunrise" class="text-2xl font-bold text-star-yellow mt-1">
+              --:-- </p>
+          </div>
+          <div>
+            <p class="text-lg font-semibold text-gray-300">Sunset 🌇</p>
+            <p id="sunset" class="text-2xl font-bold text-star-yellow mt-1">
+              --:-- </p>
+          </div>
+        </div>
+        <!-- 🌅 END Sunrise/Sunset Section -->
+        <div id="citation-container" class="text-xs text-gray-400 text-center pt-4 hidden">
+          <p id="citation-text"></p>
+        </div>
+      </div>
+    </div>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const dateInput = document.getElementById("date-input");
+        const statusMessage = document.getElementById("status-message");
+        const dataContainer = document.getElementById("data-container");
+        const moonRiseElement = document.getElementById("moon-rise");
+        const moonSetElement = document.getElementById("moon-set");
+        const moonPhaseElement = document.getElementById("moon-phase");
+        const moonPhaseIcon = document.getElementById("moon-phase-icon");
+        const illuminationElement = document.getElementById("illumination");
+        const sunriseElement = document.getElementById("sunrise");
+        const sunsetElement = document.getElementById("sunset");
+        const citationContainer = document.getElementById("citation-container");
+        const citationText = document.getElementById("citation-text");
+
+        const today = new Date().toISOString().split("T")[0];
+        dateInput.value = today;
+
+        const LAT = "47.26";
+        const LONG = "-68.59";
+        const API_KEY = "8ef618733d384d8b90a5f0a3e8ea4a5c";
+
+        function showLoading() {
+          dataContainer.classList.add("hidden");
+          statusMessage.classList.remove("hidden");
+          statusMessage.innerHTML = `
+            <div class="flex justify-center items-center">
+              <div class="spinner"></div>
+              <span class="ml-4 text-lg font-medium">Fetching data...</span>
+            </div>`;
+          citationContainer.classList.add("hidden");
+        }
+
+        function showError(msg) {
+          dataContainer.classList.add("hidden");
+          statusMessage.classList.remove("hidden");
+          statusMessage.innerHTML = `<p class="text-lg font-semibold">Error: ${msg}</p>`;
+        }
+
+        function hideStatus() {
+          statusMessage.classList.add("hidden");
+          dataContainer.classList.remove("hidden");
+        }
+
+        function formatPhaseName(phase) {
+          return phase
+            .replace(/_/g, " ")
+            .toLowerCase()
+            .split(" ")
+            .map((w) => w[0].toUpperCase() + w.slice(1))
+            .join(" ");
+        }
+
+        function getPhaseIcon(phase) {
+          switch (phase) {
+            case "NEW_MOON":
+              return "&#127761;";
+            case "WAXING_CRESCENT":
+              return "&#127762;";
+            case "FIRST_QUARTER":
+              return "&#127763;";
+            case "WAXING_GIBBOUS":
+              return "&#127764;";
+            case "FULL_MOON":
+              return "&#127765;";
+            case "WANING_GIBBOUS":
+              return "&#127766;";
+            case "THIRD_QUARTER":
+              return "&#127767;";
+            case "WANING_CRESCENT":
+              return "&#127768;";
+            default:
+              return "&#127762;";
+          }
+        }
+
+        function updateDisplay(data) {
+          moonRiseElement.textContent = data.moonrise || "N/A";
+          moonSetElement.textContent = data.moonset || "N/A";
+          illuminationElement.textContent = `${parseFloat(
+            data.moon_illumination_percentage
+          ).toFixed(1)}%`;
+          moonPhaseElement.textContent = formatPhaseName(data.moon_phase);
+          moonPhaseIcon.innerHTML = getPhaseIcon(data.moon_phase);
+
+          // 🌅 Sunrise/Sunset
+          sunriseElement.textContent = data.sunrise || "N/A";
+          sunsetElement.textContent = data.sunset || "N/A";
+
+          citationText.textContent = `Data for ${data.date} provided by ipgeolocation.io Astronomy API`;
+          citationContainer.classList.remove("hidden");
+          hideStatus();
+        }
+
+        async function fetchAstronomyData(date) {
+          const url = `https://api.ipgeolocation.io/astronomy?apiKey=${API_KEY}&lat=${LAT}&long=${LONG}&date=${date}`;
+          showLoading();
+          try {
+            const res = await fetch(url);
+            if (!res.ok) throw new Error(`HTTP ${res.status}`);
+            const data = await res.json();
+            updateDisplay(data);
+          } catch (err) {
+            console.error(err);
+            showError("Unable to load data. Try again later.");
+          }
+        }
+
+        dateInput.addEventListener("change", (e) =>
+          fetchAstronomyData(e.target.value)
+        );
+        fetchAstronomyData(today);
+      });
+    </script>
+    
+  </body>
+</html>
