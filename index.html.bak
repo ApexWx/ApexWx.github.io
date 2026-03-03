@@ -625,7 +625,8 @@ body, div, span, p {
             </div>
             <div style="font-size: 14px;">
               <div style="text-align: center;"><br>
-                <strong>Fort Kent Outdoor Center</strong><br>
+                <a href="https://www.fortkentoc.org/"><strong>Fort Kent Outdoor
+                    Center</strong></a><br>
                 <strong><em> </em></strong></div>
               <div style="text-align: center;"><a href="https://webcam.fortkentoc.org/webcam/image.jpg"><img
                     src="https://webcam.fortkentoc.org/webcam/image.jpg" alt="Fort Kent Outdoor Center"
@@ -636,9 +637,11 @@ body, div, span, p {
                 </em></div>
               <div style="text-align: center;"><em style="font-size: 12px;"><br>
                 </em></div>
-              <div style="text-align: center;"><em style="font-size: 12px;"><br>
-                </em></div>
-              <div style="text-align: center;"><strong>Four Seasons Trail Cam<br>
+              <div style="text-align: center;"><strong><em style="font-size: 12px;"><br>
+                  </em></strong></div>
+              <strong> </strong>
+              <div style="text-align: center;"><strong><a href="https://www.fourseasonstrail.org/">Four
+                    Seasons Trail Cam</a><br>
                 </strong></div>
               <div style="text-align: center;"><a href="https://www.fourseasonstrail.org/web-cam-weather"
                   title="Four Seasons Trail Cam"><img src="https://www.mediamaine.org/Madawaska/fourseasonstrail/WebCam/camera1.jpg"
