@@ -535,8 +535,8 @@ body, div, span, p {
             <div style="text-align: center;"><span style="font-size: 14px;"><strong>Snowfall
                   Outlook</strong><br>
               </span></div>
-            <div style="text-align: center;"><a href="https://www.wpc.ncep.noaa.gov/Prob_Precip/idss-map/mapgen.php?office=CAR&amp;ptype=prob_sn&amp;summary=true&amp;pointpreferences=CAR&amp;product=expected_range"
-                title="Click for larger image"><img src="https://www.wpc.ncep.noaa.gov/Prob_Precip/idss-map/mapgen.php?office=CAR&amp;summary=true&amp;pointpreferences=CAR&amp;ptype=prob_sn&amp;product=expected&amp;2025121111"
+            <div style="text-align: center;"><a href="https://www.weather.gov/images/erh/gis/ME_state_Snow.png"
+                title="Click for larger image"><img src="https://www.weather.gov/images/erh/gis/ME_state_Snow.png"
                   alt="Snowfall Oultook" style="width: 251px; height: 186.681px;"></a><em
                 style="font-size: 14px;"><strong></strong></em><br>
               <em style="font-size: 14px;"><strong></strong></em></div>
@@ -547,8 +547,8 @@ body, div, span, p {
             <div style="text-align: center;"><span style="font-size: 14px;"><strong>Ice
                   Accumulation Outlook<br>
                 </strong></span></div>
-            <div style="text-align: center;"><a href="https://www.weather.gov/images/gyx/winter/StormTotalIceWeb_ME.jpg"
-                title="Click for larger image"><img src="https://www.weather.gov/images/gyx/winter/StormTotalIceWeb_ME.jpg"
+            <div style="text-align: center;"><a href="https://www.weather.gov/images/erh/gis/ME_state_Ice.png"
+                title="Click for larger image"><img src="https://www.weather.gov/images/erh/gis/ME_state_Ice.png"
                   alt="Ice Accumulation Outlook" style="width: 251px; height: 186.681px;"></a></div>
           </div>
           <div>
@@ -653,12 +653,7 @@ body, div, span, p {
                 </strong></div>
               <div style="text-align: center;"><strong style="font-size: 12px;"></strong><br>
                 <div style="text-align: left;"><span style="color: #0000ee;"><span
-                      style="color: black;"></span></span><a href="https://www.weather.gov/ama/conversions"></a>
-                  <div style="text-align: center;"><br>
-                    <br>
-                  </div>
-                  <div style="text-align: center;"><br>
-                  </div>
+                      style="color: black;"></span></span>
                   <div style="text-align: center;"><br>
                     <strong style="font-size: 16px;">Today's High Temperatures<br>
                     </strong>
@@ -669,9 +664,7 @@ body, div, span, p {
                         title="Click for HD image"><br>
                       </a></div>
                   </div>
-                  <div style="text-align: center;"><br>
-                  </div>
-                  <div style="text-align: center;"><br>
+                  <div style="text-align: center;">
                     <div style="text-align: center;"> <strong><br>
                       </strong></div>
                     <div style="text-align: center;"><strong><br>
@@ -920,7 +913,7 @@ body, div, span, p {
             </strong></div>
           <div>
             <div style="text-align: left;">⏰ <strong data-start="2" data-end="36">Daylight
-                Saving Time Reminder</strong> ⏰</div>
+                Saving Time Reminder EST → EDT</strong> ⏰</div>
             Don’t forget to set your clocks <strong data-start="75" data-end="93">ahead
               one hour</strong> before heading to bed tonight since we “spring
             forward” early Sunday morning. It’s also a great time to check <strong>smoke
@@ -1592,6 +1585,8 @@ US
             </div>
             <div><br>
             </div>
+            <div><br>
+            </div>
             <div><strong>7-Day Tropical Atlantic Outlook</strong></div>
             <div><a href="https://www.nhc.noaa.gov/gtwo.php?basin=atlc&amp;fdays=7"><img
                   src="https://www.nhc.noaa.gov/xgtwo/two_atl_7d0.png" alt="7-Day Tropical Atlantic Outlook"
@@ -1600,7 +1595,10 @@ US
           </div>
           <div style="font-size: 14px; text-align: center;"><em style="font-size: 12px;">Graphics
               update June - November</em></div>
-          <br>
+        </div>
+        <div><br>
+        </div>
+        <div><br>
           <div style="font-size: 14px; text-align: center;"> <strong>Northeast
               Regional Satellite</strong><em><strong><br>
               </strong></em> <a href="https://cdn.star.nesdis.noaa.gov/GOES19/ABI/SECTOR/ne/GEOCOLOR/latest.jpg"
@@ -1691,7 +1689,10 @@ US
             <div style="font-size: 12px;"><em>Ice in winter may affect gauge
                 measurement.<br>
               </em></div>
-            <br>
+          </div>
+          <div style="font-size: 14px; text-align: center;"><br>
+          </div>
+          <div style="font-size: 14px; text-align: center;"><br>
             <strong><br>
             </strong></div>
           <div style="font-size: 14px; text-align: center;"><strong>Fish River
@@ -1706,6 +1707,8 @@ US
           </div>
           <div style="font-size: 14px; text-align: center;"><br>
           </div>
+          <div style="font-size: 14px; text-align: center;"><br>
+          </div>
           <div style="font-size: 14px; text-align: center;"><strong>Allagash
               River above Allagash</strong><em><strong><br>
               </strong></em> <a href="https://water.noaa.gov/gauges/ALLM1"><img
@@ -1714,6 +1717,8 @@ US
                 style="width: 251px; height: 141px; border-width: 1px; border-style: solid;"></a><br>
             <div style="font-size: 12px;"><em>Ice in winter may affect gauge
                 measurement.</em></div>
+          </div>
+          <div style="font-size: 14px; text-align: center;"><br>
           </div>
           <div style="font-size: 14px; text-align: center;"><br>
             <strong></strong></div>
