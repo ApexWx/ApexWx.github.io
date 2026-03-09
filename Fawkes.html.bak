@@ -860,7 +860,7 @@ State
                           Outlook: Mon. Mar. 9 - Sat. Mar. 14</strong><span style="color: #666666;"><em><span
                               style="font-size: 12px;"></span></em></span></u><br>
                       <span style="color: #666666;"><em><span style="font-size: 12px;">
-                            Updated March 9 at 8:40 </span></em><em><span style="font-size: 12px;">am</span></em><em><span
+                            Updated March 9 at 9:45 </span></em><em><span style="font-size: 12px;">am</span></em><em><span
                             style="font-size: 12px;"> EDT</span></em></span><span
                         style="color: #666666;"><em><span style="font-size: 12px;"><span
                               style="color: black;"></span></span></em></span><br>
@@ -1252,6 +1252,23 @@ State
                                 </div>
                               </div>
                               <div style="font-size: 14px; text-align: center;"><br>
+                              </div>
+                              <div style="text-align: center;"><strong>Today's
+                                  Excessive Rainfall Outlook</strong>
+                                <div style="font-size: 14px; text-align: center;"><strong></strong>
+                                  <a href="https://www.wpc.ncep.noaa.gov/#page=ero"
+                                    title="Excessive Rainfall Outlook"><img src="https://www.wpc.ncep.noaa.gov/qpf/94ewbg.gif"
+                                      alt="Day 1 Excessive Rainfall Outlook" style="width: 553px; height: 175.959px; border-width: 1px; border-style: solid;"></a></div>
+                                <div style="font-size: 14px; text-align: center;"><a
+                                    href="https://www.wpc.ncep.noaa.gov/para/para_images/ERO_Categories.png"
+                                    style="font-size: 12px;">Understanding ERO
+                                    Categories</a><em></em></div>
+                              </div>
+                              <div style="font-size: 14px; text-align: center;"><br>
+                              </div>
+                              <div style="font-size: 14px; text-align: center;"><br>
+                              </div>
+                              <div style="font-size: 14px; text-align: center;"><br>
                                 <strong style="font-size: 16px;">Today's US Fire
                                   Weather Outlook</strong></div>
                               <div style="text-align: center;"><strong style="font-size: 14px;"></strong><strong></strong><a
@@ -1523,19 +1540,18 @@ State
         </div>
         <div style="font-size: 14px; text-align: center;"><strong><br>
           </strong></div>
-        <div style="font-size: 14px; text-align: center;"> <strong>Today's
-            Excessive Rainfall Outlook</strong></div>
+        <div style="font-size: 14px; text-align: center;"><strong>24-Hour Snow
+            Probability ≥ 1"<br>
+          </strong></div>
         <div style="font-size: 14px; text-align: center;"><strong></strong> <a
             href="https://www.wpc.ncep.noaa.gov/#page=ero" title="Excessive Rainfall Outlook"><img
-              src="https://www.wpc.ncep.noaa.gov/qpf/94ewbg.gif" alt="Day 1 Excessive Rainfall Outlook"
-              style="width: 251px; height: 175.959px; border-width: 0px; border-style: solid;"></a></div>
-        <div style="font-size: 14px; text-align: center;"><a href="https://www.wpc.ncep.noaa.gov/para/para_images/ERO_Categories.png"
-            style="font-size: 12px;">Understanding ERO Categories</a><em><br>
-          </em></div>
+              src="https://www.wpc.ncep.noaa.gov/pwpf_24hr/prb_24hsnow_ge01_2026030912f024.gif"
+              alt="24-Hour Snow Probability" style="width: 251px; height: 175.959px; border-width: 0px; border-style: solid;"></a></div>
         <div style="font-size: 14px; text-align: center;">
           <div style="text-align: center;"><br>
           </div>
           <div style="text-align: center;"><br>
+            <br>
           </div>
           <div style="text-align: center;"><strong>Yesterday's Storm Reports</strong>
             <a href="https://www.spc.noaa.gov/climo/reports/"><img src="https://www.spc.noaa.gov/climo/reports/yesterday.gif"

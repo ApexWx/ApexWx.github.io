@@ -1251,9 +1251,8 @@ US
                                                 src="https://www.wpc.ncep.noaa.gov/NationalForecastChart/staticmaps/noaad1.png"
                                                 alt="National Forecast Chart" style="height: 369px; width: 555px;"></a><br>
                                           </div>
-                                          <div style="text-align: center;"><br>
-                                            <br>
-                                          </div>
+                                          <br>
+                                          <br>
                                           <div style="text-align: center;"><br>
                                             <strong>Today's US <a href="https://www.spc.noaa.gov/products/outlook/day1otlk.html">Severe
                                                 Weather / Thunderstorm Outlook</a></strong></div>
@@ -1269,8 +1268,6 @@ US
                                                     title="Click for more information">Severe
                                                     Thunderstorm Outlooks</a></span></em></div>
                                           </div>
-                                        </div>
-                                        <div style="text-align: center;"><br>
                                         </div>
                                         <div style="text-align: center;"><br>
                                           <br>
@@ -1289,8 +1286,6 @@ US
                                                 href="https://www.wpc.ncep.noaa.gov/para/para_images/ERO_Categories.png"
                                                 style="font-size: 12px;">Understanding
                                                 ERO Categories</a></em></div>
-                                        </div>
-                                        <div style="font-size: 14px; text-align: center;"><br>
                                         </div>
                                         <div style="font-size: 14px; text-align: center;"><br>
                                         </div>
@@ -1630,18 +1625,14 @@ US
           <div style="font-size: 14px; text-align: center;"><strong><br>
               <br>
             </strong></div>
-          <div style="text-align: center;"><strong style="font-size: 14px;">Excessive
-              Rainfall Outlook</strong></div>
+          <div style="text-align: center;"><strong style="font-size: 14px;">24-Hour
+              Snow Probability ≥ 1"</strong></div>
           <div style="font-size: 14px; text-align: center;"><strong></strong> <a
               href="https://www.wpc.ncep.noaa.gov/#page=ero" title="Excessive Rainfall Outlook"><img
-                src="https://www.wpc.ncep.noaa.gov/qpf/94ewbg.gif" alt="Day 1 Excessive Rainfall Outlook"
-                style="width: 251px; height: 175.959px; border-width: 0px; border-style: solid;"></a></div>
-          <div style="font-size: 14px; text-align: center;"><a href="https://www.wpc.ncep.noaa.gov/para/para_images/ERO_Categories.png"
-              style="font-size: 12px;">Understanding ERO Categories</a><em><br>
-            </em></div>
-          <div style="font-size: 14px; text-align: center;">
-            <div style="text-align: center;"><br>
-            </div>
+                src="https://www.wpc.ncep.noaa.gov/pwpf_24hr/prb_24hsnow_ge01_2026030912f024.gif"
+                alt="24-Hour Snow Probability" style="width: 251px; height: 175.959px; border-width: 0px; border-style: solid;"></a></div>
+          <div style="font-size: 14px; text-align: center;"><br>
+            <br>
             <div style="text-align: center;"><br>
             </div>
             <div style="text-align: center;"><strong>Yesterday's Storm Reports</strong></div>
