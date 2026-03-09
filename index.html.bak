@@ -536,7 +536,7 @@ body, div, span, p {
                   Outlook</strong><br>
               </span></div>
             <div style="text-align: center;"><a href="https://www.wpc.ncep.noaa.gov/Prob_Precip/idss-map/mapgen.php?office=CAR&amp;summary=true&amp;pointpreferences=CAR&amp;ptype=prob_sn&amp;product=expected"
-                title="Click for larger image"><img src="https://www.wpc.ncep.noaa.gov/Prob_Precip/idss-map/mapgen.php?office=CAR&amp;summary=true&amp;pointpreferences=CAR&amp;ptype=prob_sn&amp;product=expected&amp;"
+                title="Click for larger image"><img src="https://www.wpc.ncep.noaa.gov/Prob_Precip/idss-map/mapgen.php?office=CAR&amp;summary=true&amp;pointpreferences=CAR&amp;ptype=prob_sn&amp;product=expected"
                   alt="Snowfall Outlook" style="width: 251px; height: 186.681px;"></a><em
                 style="font-size: 14px;"><strong></strong></em><br>
               <em style="font-size: 14px;"><strong></strong></em></div>
@@ -547,8 +547,8 @@ body, div, span, p {
             <div style="text-align: center;"><span style="font-size: 14px;"><strong>Ice
                   Accumulation Outlook<br>
                 </strong></span></div>
-            <div style="text-align: center;"><a href="https://www.weather.gov/images/erh/gis/ME_state_Ice.png"
-                title="Click for larger image"><img src="https://www.wpc.ncep.noaa.gov/Prob_Precip/idss-map/mapgen.php?office=CAR&amp;summary=true&amp;pointpreferences=CAR&amp;ptype=prob_ice&amp;product=expected&amp;2026030814"
+            <div style="text-align: center;"><a href="https://www.wpc.ncep.noaa.gov/Prob_Precip/idss-map/mapgen.php?office=CAR&amp;summary=true&amp;pointpreferences=CAR&amp;ptype=prob_ice&amp;product=expected"
+                title="Click for larger image"><img src="https://www.wpc.ncep.noaa.gov/Prob_Precip/idss-map/mapgen.php?office=CAR&amp;summary=true&amp;pointpreferences=CAR&amp;ptype=prob_ice&amp;product=expected"
                   alt="Ice Accumulation Outlook" style="width: 251px; height: 186.681px;"></a></div>
           </div>
           <div>
@@ -765,18 +765,18 @@ body, div, span, p {
               </em></em></div>
           <u><strong></strong></u><u><strong></strong></u><em style="font-size: 12px;"></em><em
             style="font-size: 12px;"></em><u><strong></strong></u>
-          <div><u><strong>Saturday, March 7</strong></u>
+          <div><u><strong>Sunday, March 8</strong></u>
             <div>
               <div>
                 <div>
                   <div>
                     <div>
-                      <div style="width: 830px;"><b>High</b>: 39° at 11:42
-                        pm&nbsp; | <b>Low</b>: 20° at 12:16 am </div>
-                      <div><b>Precipitation: </b>0.18" | <strong>Snow</strong>:
+                      <div style="width: 830px;"><b>High</b>: 42° at 7:55
+                        am&nbsp; | <b>Low</b>: 33° at 8:00 pm </div>
+                      <div><b>Precipitation: </b>0.24" | <strong>Snow</strong>:
                         0.0"</div>
-                      <div><b>Avg. Daily Wind:</b> SSW @ 1 mph |<strong> Daily
-                          Maximum Gust</strong>: 15 mph @ 5:56 pm<br>
+                      <div><b>Avg. Daily Wind:</b> WSW @ 1 mph |<strong> Daily
+                          Maximum Gust</strong>: 17 mph @ 10:56 pm<br>
                         <em style="font-size: 12px;"><em style="font-size: 12px;">Data
                             source: </em></em><em style="font-size: 12px;"><em
                             style="font-size: 12px;">Davis Instruments <a href="https://www.davisinstruments.com/collections/vantage-pro2/products/vantage-pro2-groweather-wireless-integrated-sensor-suite">Vantage
@@ -791,16 +791,16 @@ body, div, span, p {
         </div>
         <div><u><strong><br>
             </strong></u></div>
-        <div><u><strong>Sunday, March 8</strong></u>
+        <div><u><strong>Monday, March 9</strong></u>
           <div style="width: 810px; border-width: 0px;"><strong>Normal High: </strong>30°&nbsp;
-            |<strong>&nbsp; Record High</strong>: 54° (1894)<br>
-            <strong> Normal Low:</strong>&nbsp;&nbsp;&nbsp; 5°&nbsp; |&nbsp; <strong>Record
-              Low</strong>: -28° (1989)</div>
+            |<strong>&nbsp; Record High</strong>: 57° (2012)<br>
+            <strong> Normal Low:</strong>&nbsp;&nbsp;&nbsp; 6°&nbsp; |&nbsp; <strong>Record
+              Low</strong>: -28° (1984)</div>
           <div style="width: 810px; border-radius: 0px;"><strong>Normal Daily
-              Precipitation: </strong>0.10"<strong> </strong>|<strong> Record
-              Precipitation</strong>: 0.98" (2011)</div>
+              Precipitation: </strong>0.09"<strong> </strong>|<strong> Record
+              Precipitation</strong>: 2.80" (2005)</div>
           <div style="width: 810px;"><strong>Normal Daily Snow:</strong> 0.7" |
-            <strong>Record Snow</strong>: 9.0" (1971)</div>
+            <strong>Record Snow</strong>: 15.0" (2005)</div>
           <div style="width: 810px;"><em style="font-size: 12px;">Source: </em><em
               style="font-size: 12px;"><em style="font-size: 12px;"><a href="https://scacis.rcc-acis.org/">NOAA
                   SC-ACIS</a> </em>NWS Caribou climate data<br>
@@ -809,11 +809,11 @@ body, div, span, p {
           </div>
           <div>
             <div><strong><u>Precipitation 2026</u></strong></div>
-            <strong>Precipitation</strong><strong>:</strong> 2.93" |&nbsp; <u>normal</u>
-            = 5.88" (<span style="color: red;"><span style="color: black;"><span
-                  style="color: red;">-2.95"</span>)</span></span></div>
+            <strong>Precipitation</strong><strong>:</strong> 3.21" |&nbsp; <u>normal</u>
+            = 5.97" (<span style="color: red;"><span style="color: black;"><span
+                  style="color: red;">-2.76"</span>)</span></span></div>
           <div style="width: 810px;"><strong><span style="color: #009900;"></span>Snowfall
-              25-26</strong>: 61.6" | <u>normal</u> = 79.4" (<span style="color: red;">-17.8"</span>)<br>
+              25-26</strong>: 61.6" | <u>normal</u> = 80.1" (<span style="color: red;">-18.5"</span>)<br>
             <strong>Snowfall </strong><strong>24-25</strong><strong>: </strong>73.2"
             | <u>normal</u> = 99.3" <span style="color: red;"><span style="color: black;">(</span>-26.1"<span
                 style="color: black;">)</span></span></div>
@@ -894,11 +894,11 @@ body, div, span, p {
             </strong></u></div>
         <div style="text-align: center; font-size: 16px;"><strong><br>
           </strong>
-          <div style="text-align: left;"><u><strong> 7-Day Outlook: Sun. Mar. 8
-                - Fri. Mar. 13</strong><span style="color: #666666;"><em><span style="font-size: 12px;"></span></em></span></u><br>
+          <div style="text-align: left;"><u><strong> 7-Day Outlook: Mon. Mar. 9
+                - Sat. Mar. 14</strong><span style="color: #666666;"><em><span style="font-size: 12px;"></span></em></span></u><br>
             <span style="color: #666666;"><em><span style="font-size: 12px;">
-                  Updated March 8 at 9:50 </span></em><em><span style="font-size: 12px;">am</span></em><em><span
-                  style="font-size: 12px;"> EST<span style="color: black;"></span></span></em></span><br>
+                  Updated March 9 at 8:40 </span></em><em><span style="font-size: 12px;">am</span></em><em><span
+                  style="font-size: 12px;"> EDT<span style="color: black;"></span></span></em></span><br>
             <span style="color: #666666;"><em><span style="font-size: 12px;"><span
                     style="color: black;"> </span></span></em></span></div>
         </div>
@@ -907,106 +907,119 @@ body, div, span, p {
         <div>
           <div><strong><br>
             </strong></div>
-          <div><strong>Today - Tuesday</strong></div>
-          <div>Low pressure over far southern Québec will track across the area
-            today as a cold front sags into northern Maine. Rain, combined with
-            warm air temperatures in the low 40s today, will erode the snowpack
-            and river ice and weaken ice on area lakes. An 80% chance of rain
-            showers with areas of fog this morning. Precipitation totals look to
-            be less than 1/10-inch today with mostly cloudy skies and northwest
-            wind 4-5 mph..</div>
+          <div>❄️<strong>Winter Storm Watch Wednesday morning through Thursday
+              morning</strong> <strong>❄️<br>
+            </strong>Heavy mixed precipitation possible. Total snow and sleet
+            accumulations greater than 4 inches and ice accumulations up to one
+            quarter of an inch possible. Travel could be very difficult. The
+            hazardous conditions could impact the Wednesday evening and Thursday
+            morning commutes. Northern areas are most likely to see mostly snow
+            and sleet, while southern areas will see greater potential for
+            significant freezing rain. Uncertainty on the exact cutoff location
+            of different precipitation types remains high.<br>
+            <br>
+            <strong>Today - Wednesday</strong><br>
+            High pressure will bring mostly sunny to partly cloudy skies over
+            Fort Kent and surrounding locations today. Mild weather will
+            continue through Tuesday as warm air moves into the region. High
+            temperatures will reach the low 50s. Southwest wind around 5-10 mph
+            with gusts 20-25 mph are possible today.</div>
           <div><br>
           </div>
-          <div>Low pressure will move into the Maritimes later today into
-            tonight with high pressure building into the region. Partly cloudy
-            to mostly clear skies overspread the SJV tonight with a 20% chance
-            of showers, mainly in the evening, with little in the way of
-            additional rainfall expected. Overnight lows fall into the lower 30s
-            with west wind 6-8 mph.</div>
+          <div> Periods of sunshine and the warmer temperatures will gradually
+            melt and compact the remaining snowpack. This snowmelt may lead to
+            some ponding of water in low-lying or poorly drained areas, and the
+            warming trend will also weaken river ice. Though ice will continue
+            to weaken but is expected to remain mostly in place for now. </div>
           <div><br>
           </div>
-          <div>Monday, high pressure spreads across the Valley Monday with highs
-            reaching the upper 40s and contributing to further snow/ice melt.
-            Partly cloudy to mostly sunny skies and a 20% chance of rain showers
-            in the afternoon as a weak disturbance in the flow aloft crosses the
-            region. South-southwest wind 10-15 mph with gusts 20-25 mph
-            possible. Monday night, mostly clear to partly cloudy skies are
-            expected with temperatures in the low 30s. Wind becomes west at 4-6
-            mph. </div>
+          <div>Tonight, a cold front approaches with mostly clear skies in the
+            evening becoming partly cloudy overnight. Temperatures fall into the
+            low 30s with west-northwest wind 5-8 mph.</div>
           <div><br>
           </div>
-          <div>Tuesday, an approaching system brings increasing clouds by
-            afternoon and a 20% chance of snow/rain showers by Tuesday
-            afternoon. High in the low 40s with northwest wind 3-5 mph becoming
-            north in the afternoon at 4 mph. Tuesday night, mostly cloudy skies
-            with a 40% chance of snow after midnight with a low near 20° in Fort
-            Kent. North wind 0-7 mph.</div>
+          <div>Tuesday, low pressure over the Great Lakes will organize and
+            begin to advance east with partly sunny skies in the morning with
+            increasing cloudiness in the afternoon. Highs in the lower 40s with
+            north-northwest wind 3-4 mph. 30% chance of snow by afternoon.
+            Tuesday night, skies become mostly cloudy with a 50% chance of snow
+            and a low in the upper 10s. North wind around 4 mph expected.</div>
           <div><br>
           </div>
-          <div>NWS Caribou notes that the unusually warm temperatures over the
-            next couple of days will cause the remaining snowpack to melt
-            quickly across the region. Current estimates show about 2 to 5
-            inches of water stored in the snowpack, but ongoing rain and warmth
-            will accelerate melting. By Tuesday night, an additional 1 to 2
-            inches of that snow water may be lost.</div>
+          <div>A significant storm is expected to affect the region from
+            Wednesday into early Thursday, bringing a mix of precipitation
+            types. A chance of snow continues across the area Wednesday morning
+            before changing to sleet and possibly some freezing rain later in
+            the day as <a href="https://www.weather.gov/images/wrn/Infographics/winter_precipitation.png">warmer
+              air moves in above the surface</a>. Central areas of Maine could
+            see a period of sleet and freezing rain, while southern locations
+            are more likely to experience mainly rain. </div>
+          <div><br>
+          </div>
+          <div>Northern Maine could receive substantial snowfall at first (~6-8
+            inches), with sleet becoming more common later. Ice accumulations
+            may be significant in some areas, especially near the Katahdin
+            region and parts of southern Aroostook County. Total precipitation
+            will be heavy at times and could lead to difficult travel,
+            particularly Wednesday afternoon through Thursday morning, with
+            isolated power outages possible where icing becomes heavier.</div>
+          <div><br>
+          </div>
+          <div>Wednesday, cloudy skies with a 90% chance of precipitation with
+            snow in the morning mixing with sleet in the afternoon with a slight
+            chance of freezing rain. Accumulations 4 to 8 inches possible. High
+            in the middle 20s with northeast wind 5-6 mph becoming east 6-8 mph
+            in the afternoon. </div>
+          <div><br>
+          </div>
+          <div>Wednesday night, cloudy skies with a 100% chance of precipitation
+            with snow, sleet, and freezing rain likely, with sleet heavy at
+            times. Precipitation amounts in the 3/4 to 1-inch range possible
+            with additional light snow accumulation. Lows in the lower 20s with
+            east wind 0-7 mph.</div>
           <div><br>
           </div>
         </div>
         <div>
           <div>
             <div>
-              <div><strong>Wednesday - Saturday</strong></div>
-              <div>A low pressure system is expected to approach from the west
-                on Wednesday, bringing unsettled weather to the region. A warm
-                front will move through during the day Wednesday, followed by a
-                cold front Wednesday night into Thursday. This system will
-                likely bring periods of precipitation, with the heaviest amounts
-                expected across northern areas during the afternoon and evening.</div>
+              <div><strong>Thursday - Sunday</strong></div>
+              <div>An active weather pattern is expected this weekend into early
+                next week, with two storm systems likely to bring travel
+                impacts. The first system is expected Friday night into Saturday
+                and will likely bring a period of snow to much of the area.
+                Current trends suggest moderate snowfall is possible, especially
+                across central and Downeast locations, though a track farther
+                inland could reduce totals and allow some mixing near the coast.
+                A second, potentially stronger storm may arrive Sunday night
+                into Monday. Precipitation will likely begin as snow in many
+                areas before possibly changing to rain along the coast if warmer
+                air moves in. Strong winds could also develop, particularly near
+                the coast, which may create additional travel difficulties.</div>
               <div><br>
               </div>
-              <div> However, there is still some uncertainty in the exact timing
-                and track of the system, which will affect how much
-                precipitation falls and what type occurs. Areas north of Bangor
-                may see a mix of sleet or freezing rain at times before changing
-                over, while Downeast areas are more likely to see mostly rain as
-                temperatures warm. Gusty winds are also possible as the pressure
-                as the storm's pressure gradient increases. The combination of
-                rainfall, melting snow, and warmer temperatures may increase the
-                risk for river rises and potential ice movement on rivers.</div>
-              <div><br>
-              </div>
-              <div>Currently, in Fort Kent and vicinity, Wednesday will be
-                mostly cloudy with a 90% chance of freezing rain/snow, mixing
-                with sleet in the afternoon, with a high in the upper 20s.&nbsp;
-                East wind 0-7 mph. Wednesday night, 90% chance of freezing rain,
-                sleet, and snow with temperatures in the lower 20s. East wind
-                0-7 mph.</div>
+              <div>A mix of precipitation is expected Thursday as rain, snow,
+                sleet, and some freezing rain move through the region.
+                Temperatures will rise into the mid-30s during the day, allowing
+                for periods of rain or a rain and snow mix before precipitation
+                gradually changes to mainly snow later in the afternoon. Gusty
+                winds may develop as the system moves away. A few lingering snow
+                showers are possible Thursday evening before colder air arrives
+                overnight, with temperatures dropping sharply into the lower
+                10s. Friday will be quieter with partly sunny skies and colder
+                conditions, as afternoon highs reach only the mid- to upper-20s.<br>
+                <br>
+                Another system approaches late Friday night into Saturday,
+                bringing a renewed chance for snow. Lows Friday night will fall
+                into the lower to mid-10s before snow develops toward morning.
+                Snow is likely at times Saturday with highs near the lower 30s.
+                Colder air returns Saturday night with lows falling into the
+                5-10 degree range under mostly cloudy skies. Sunday looks mainly
+                dry with a mix of sun and clouds and highs around the lower 30s,
+                but another round of snow may arrive Sunday night as
+                temperatures drop into the mid- to upper-10s.</div>
             </div>
-            <div><br>
-            </div>
-            <div>Snow/sleet/freezing rain will likely persist into Thursday
-              morning then changing to a snow-rain mix Thursday afternoon before
-              changing to all snow Thursday night before ending early Friday.
-              High Thursday in the low 40s with an 80% chance of precipitation.
-              South wind 8-14 mph. Thursday night, mostly cloudy with a 50%
-              chance of precipitation and temperatures falling into the lower
-              10s. West wind 8-14 mph.</div>
-            <div><br>
-            </div>
-            <div>Friday will bring quieter weather with a mix of sun and clouds
-              and seasonably cold temperatures. High in the middle 20 with west
-              wind 8-14 mph and a 20% chance of afternoon snow showers as low
-              pressure and a cold front approach from the west. Friday night,
-              mostly cloudy with a 60% chance of snow and a low in the lower
-              10s. South wind 0-7 mph.</div>
-            <div><br>
-            </div>
-            <div>Saturday, expect mostly cloudy skies with snow likely in the
-              morning then a chance of snow in the afternoon. High near 30° with
-              a 50% chance of precipitation. Northwest wind 8-14 mph. Saturday
-              night, a 30% chance of snow in the evening with partly cloudy
-              skies developing overnight and a low in the 5 to 10 degree above
-              range.<br>
+            <div>
               <div><br>
               </div>
               <div>
@@ -1079,26 +1092,23 @@ body, div, span, p {
                               <div style="text-align: center;"><br>
                                 <strong></strong><u><strong></strong></u><u><strong></strong></u></div>
                               <strong></strong></div>
-                            <strong>Mild Nationwide Pattern with Northwest
-                              Storms and Southern Storm Threat</strong><br>
-                            A dynamic weather pattern will continue across the
-                            United States through early next week. In the
-                            Pacific Northwest and northern Rockies, a steady
-                            stream of Pacific moisture will bring periods of
-                            valley rain and mountain snow, with heavier snowfall
-                            possible in higher elevations, especially Monday.
-                            Meanwhile, a lingering cold front across the
-                            Southeast will support scattered showers and
-                            thunderstorms, with a slight risk of severe storms
-                            across parts of the Lower Mississippi Valley, mainly
-                            due to the potential for large hail. Some locally
-                            heavy rainfall and isolated flash flooding may also
-                            occur near the Gulf Coast. Much of the country will
-                            experience above-average temperatures, with highs
-                            well into the 60s and 70s across the central and
-                            eastern states. Gusty winds, localized flooding, and
-                            changing weather conditions remain possible as
-                            several systems move through the country.
+                            <strong>Active Weather Across the U.S. This Week</strong><br>
+                            An active weather pattern will affect several parts
+                            of the country through midweek. Showers and
+                            thunderstorms will continue across the Southeast
+                            Monday before a larger and more widespread severe
+                            weather outbreak develops Tuesday across parts of
+                            the Midwest, central Plains, and southern Plains.
+                            Some storms could produce large hail, damaging
+                            winds, and a few tornadoes, while heavy rainfall may
+                            also lead to isolated flash flooding. Farther north,
+                            colder air may bring periods of snow and ice from
+                            the northern Plains to the Upper Great Lakes, with
+                            wintry precipitation possibly reaching northern
+                            Maine by Wednesday. Meanwhile, the Pacific Northwest
+                            and northern Rockies will see continued rounds of
+                            rain in lower elevations and heavy mountain snow as
+                            multiple storm systems move through the region.
                             <div>
                               <div>
                                 <div>
@@ -1118,60 +1128,90 @@ body, div, span, p {
                                 <strong></strong><strong></strong><strong></strong><strong></strong><strong></strong><strong></strong><strong></strong><strong></strong><strong></strong><strong></strong><strong></strong><strong></strong><strong></strong>
                                 <div style="margin-top: 1em;">
                                   <div style="text-align: center;">
-                                    <div style="text-align: left;"><strong>Marginal
-                                        Severe Storm Risk for the Carolinas and
-                                        Southeast Virginia</strong><br>
-                                      A cold front moving across the eastern
-                                      United States today will bring the
-                                      potential for scattered showers and
-                                      thunderstorms across parts of the
-                                      Carolinas and southeast Virginia this
-                                      afternoon and early evening. As warmer,
-                                      more humid air moves northward ahead of
-                                      the front, temperatures may climb into the
-                                      upper 70s and lower 80s, helping fuel some
-                                      storm development. While most storms are
-                                      expected to remain below severe levels, a
-                                      few could briefly become strong, producing
-                                      gusty winds and heavy downpours. The
-                                      overall severe weather risk remains low,
-                                      but isolated stronger storms are possible.
-                                      Farther south, thunderstorms may also
-                                      continue across parts of southern Texas,
-                                      where a few storms could also approach
-                                      severe limits before gradually weakening
-                                      later today.</div>
+                                    <div style="text-align: left;">
+                                      <p data-start="0" data-end="42"><strong data-start="0"
+                                          data-end="42">Severe Storm Risk Across
+                                          the Mid-South</strong><br>
+                                        A round of active weather is expected
+                                        today across parts of the Mid-South and
+                                        central Gulf Coast states, where
+                                        conditions will become favorable for
+                                        strong to severe thunderstorms.
+                                        Increasing moisture and strengthening
+                                        winds in the lower atmosphere will help
+                                        thunderstorms develop and organize as
+                                        the day progresses. Storms may begin
+                                        early across parts of the southern
+                                        Plains before spreading east toward
+                                        Arkansas, Mississippi, and Alabama
+                                        during the afternoon and evening. Some
+                                        storms could become severe, with large
+                                        hail as the primary threat, along with
+                                        gusty winds and heavy downpours.
+                                        Thunderstorm clusters may grow larger as
+                                        they move east, bringing periods of
+                                        active weather into the evening hours.
+                                        Farther west, scattered storms in
+                                        southern Arizona could produce small
+                                        hail and gusty winds.</p>
+                                    </div>
                                   </div>
                                 </div>
                                 <div style="margin-top: 1em;">
+                                  <div style="margin-top: 1em; text-align: center;"><strong>🌧️Excessive
+                                      Rainfall Outlook</strong> 🌧️<em><span style="font-size: 12px;"><br>
+                                        Learn more about <a href="https://www.wpc.ncep.noaa.gov/para/para_images/ERO_Categories.png">Excessive
+                                          Rainfall Risk Categories</a><br>
+                                      </span></em></div>
+                                  <div style="margin-top: 1em; text-align: left;"><strong>Heavy
+                                      Rainfall Could Bring Isolated Flooding</strong><br>
+                                    Periods of heavy rain may develop across
+                                    parts of the Lower Mississippi Valley and
+                                    Southeast as a moist and unstable air mass
+                                    moves into the region. Increasing moisture
+                                    and strengthening winds in the lower
+                                    atmosphere will help support clusters of
+                                    showers and thunderstorms along a nearby
+                                    frontal boundary. Some storms may produce
+                                    brief downpours capable of dropping around 1
+                                    to 2 inches of rain in a short period of
+                                    time. Because some areas recently received
+                                    heavy rainfall, soils may already be
+                                    somewhat saturated, which could allow water
+                                    to run off more quickly. While widespread
+                                    flooding is not expected, isolated flash
+                                    flooding could occur where the heaviest
+                                    storms develop and persist for a longer
+                                    period of time.<br>
+                                    <em><span style="font-size: 12px;"></span></em></div>
                                   <div style="margin-top: 1em; text-align: center;"><strong>🔥Fire
                                       Weather Outlook</strong><strong>🔥</strong><br>
                                     <em><span style="font-size: 12px;">Learn
                                         more about <a href="https://www.spc.noaa.gov/misc/about.html#FireWx">Fire
                                           Weather Outlooks</a></span></em>
                                     <div style="text-align: left;"><strong></strong><br>
-                                      <strong>Critical Fire Weather Risk Across
-                                        the Southern High Plains</strong><br>
+                                      <strong>Critical Fire Weather Threat
+                                        Across the High Plains</strong><br>
                                       Dangerous fire weather conditions are
-                                      expected this afternoon across parts of
-                                      the southern High Plains, particularly
-                                      from northeastern New Mexico into the
-                                      Oklahoma and Texas Panhandles. Very dry
-                                      air combined with strengthening west winds
-                                      will create conditions favorable for rapid
-                                      fire spread. Relative humidity levels may
-                                      drop as low as 10 to 15 percent, while
-                                      sustained winds of 15 to 25 mph with
-                                      higher gusts are expected. Dry vegetation
-                                      and ongoing rainfall deficits will further
-                                      increase the fire risk. Farther north
-                                      across eastern Montana and Wyoming,
-                                      elevated fire weather conditions are also
-                                      possible as gusty downslope winds develop,
-                                      though slightly higher humidity should
-                                      limit the overall severity compared to
-                                      areas farther south.<br>
-                                      <strong></strong></div>
+                                      expected today across parts of the central
+                                      and southern High Plains as strong winds
+                                      and dry air combine to increase wildfire
+                                      risk. Westerly downslope winds will
+                                      strengthen during the afternoon, with
+                                      sustained speeds of 15 to 25 mph and even
+                                      higher gusts possible. At the same time,
+                                      very dry air will cause humidity levels to
+                                      fall sharply, dropping to around 20
+                                      percent in the central High Plains and
+                                      even lower—into the single digits—in parts
+                                      of the southern High Plains. These
+                                      conditions will dry vegetation and make it
+                                      easier for fires to start and spread
+                                      quickly. The greatest concern extends from
+                                      eastern Wyoming into Nebraska and from
+                                      northeastern New Mexico into the Texas
+                                      Panhandle before cooler air arrives
+                                      tonight.</div>
                                   </div>
                                 </div>
                                 <div>
