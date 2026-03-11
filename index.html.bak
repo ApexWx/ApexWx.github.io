@@ -917,9 +917,7 @@ body, div, span, p {
             latest road conditions for Maine can be obtained by going to <br>
             <a href="https://newengland511.org/">newengland511.org</a>.<br>
             <br>
-            <strong>Today - Friday</strong><br>
-            <strong><br>
-              Synopsis<br>
+            <strong>Today - Friday</strong><strong><br>
             </strong>A significant winter storm will impact the region today
             through early Thursday, bringing a mix of snow, sleet, freezing
             rain, and rain. Precipitation is expected to become steady around
@@ -937,15 +935,13 @@ body, div, span, p {
             afternoon will help melting, but colder air returning Thursday night
             may cause remaining ice to refreeze.<br>
             <div><br>
-              <strong>Saint John Valley Outlook</strong><br>
-            </div>
-            For the Saint John Valley, today will start with snow likely this
-            morning, possibly mixed with a brief period of freezing rain. As the
-            day progresses, snow will mix with and change to sleet, with only a
-            slight chance of freezing rain at times. Snow and sleet
-            accumulations of 1 to 3 inches are expected, along with a light
-            glaze of ice. Temperatures will remain much cooler, with highs in
-            the lower 20s, while gusty east winds add to the wintry feel.<br>
+              For the Saint John Valley, today will start with snow likely this
+              morning, possibly mixed with a brief period of freezing rain. As
+              the day progresses, snow will mix with and change to sleet, with
+              only a slight chance of freezing rain at times. Snow and sleet
+              accumulations of 1 to 3 inches are expected, along with a light
+              glaze of ice. Temperatures will remain much cooler, with highs in
+              the lower 20s, while gusty east winds add to the wintry feel.</div>
             <br>
             Tonight, precipitation will continue, beginning mainly as sleet with
             a slight chance of snow or freezing rain, then transitioning to
@@ -976,16 +972,14 @@ body, div, span, p {
           <div>
             <div>
               <div><strong>Saturday - Tuesday</strong><strong></strong></div>
-              <div><br>
-                <strong>Synopsis</strong><br>
-                A fast-moving storm system will bring another round of snow to
-                the region Friday night into early Saturday, with the greatest
-                impacts expected across central and northern areas. Snow will
-                spread into the area Friday night as a clipper system moves east
-                from the Great Lakes. While snowfall amounts will depend on the
-                exact track of the storm, several inches of accumulation are
-                possible inland, with the potential for around 2 to 4 inches or
-                locally higher amounts. </div>
+              A fast-moving storm system will bring another round of snow to the
+              region Friday night into early Saturday, with the greatest impacts
+              expected across central and northern areas. Snow will spread into
+              the area Friday night as a clipper system moves east from the
+              Great Lakes. While snowfall amounts will depend on the exact track
+              of the storm, several inches of accumulation are possible inland,
+              with the potential for around 2 to 4 inches or locally higher
+              amounts.
               <div><br>
                 Snowfall could create messy and slippery travel conditions late
                 Friday night into early Saturday morning, especially across
@@ -1009,7 +1003,7 @@ body, div, span, p {
                 strong wind gusts before cooler, drier air arrives Monday night.
                 High pressure will build in Tuesday into Wednesday.</div>
               <div><br>
-                <strong>Saint John Valley Outlook</strong></div>
+              </div>
               <div>Snow will continue across the region on Saturday as the
                 departing system lingers, bringing periods of light snow through
                 the day. Additional minor accumulations are expected, with high
@@ -1146,32 +1140,31 @@ body, div, span, p {
                                   <div style="text-align: center;">
                                     <div style="text-align: left;">
                                       <p data-start="0" data-end="42"><strong data-start="0"
-                                          data-end="42">Severe Thunderstorm
-                                          Outbreak Possible Tonight Across
-                                          Midwest<br>
-                                        </strong>A dangerous severe weather
-                                        outbreak is expected tonight from the
-                                        southern Plains into the Midwest and
-                                        southern Great Lakes region.
-                                        Thunderstorms developing along a warm
-                                        front and cold front will likely become
-                                        widespread and intense as they move east
-                                        and northeast through the evening and
-                                        overnight hours. Atmospheric conditions
-                                        are very favorable for severe storms,
-                                        with strong instability and wind shear
-                                        supporting powerful thunderstorms. All
-                                        severe hazards are possible, including
-                                        damaging winds, very large hail, and
-                                        multiple tornadoes, some of which could
-                                        be strong. The greatest risk is centered
-                                        across northern Illinois and northwest
-                                        Indiana, though severe storms may extend
-                                        from parts of Kansas and Missouri
-                                        through the Mississippi Valley. Storms
-                                        may organize into larger clusters
-                                        overnight while continuing to pose a
-                                        threat for severe weather.</p>
+                                          data-end="42">Slight Risk of Severe
+                                          Thunderstorms Across the Mississippi,
+                                          Ohio, and Mid-Atlantic Valleys<br>
+                                        </strong>Scattered severe thunderstorms
+                                        are expected today from the Lower
+                                        Mississippi Valley and Gulf States
+                                        northeast through the Ohio Valley into
+                                        the Mid-Atlantic. In the Ohio and
+                                        Tennessee Valleys, a cold front will
+                                        trigger storms this afternoon, with
+                                        modest heating and strong wind shear
+                                        supporting supercells, line segments,
+                                        and clusters. Large hail, damaging
+                                        winds, and a few tornadoes are possible
+                                        as storms move east toward the
+                                        Mid-Atlantic. Across the Gulf States, a
+                                        trough and mid-level jet will enhance
+                                        thunderstorm development, with strong
+                                        shear favoring severe wind gusts and
+                                        isolated tornadoes. Storms will remain
+                                        isolated to scattered but could organize
+                                        into clusters in the southern Gulf
+                                        region. Residents should monitor the
+                                        weather and be prepared for severe
+                                        conditions.</p>
                                     </div>
                                   </div>
                                 </div>
