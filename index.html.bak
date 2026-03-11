@@ -935,13 +935,14 @@ body, div, span, p {
             afternoon will help melting, but colder air returning Thursday night
             may cause remaining ice to refreeze.<br>
             <div><br>
-              For the Saint John Valley, today will start with snow likely this
-              morning, possibly mixed with a brief period of freezing rain. As
-              the day progresses, snow will mix with and change to sleet, with
-              only a slight chance of freezing rain at times. Snow and sleet
-              accumulations of 1 to 3 inches are expected, along with a light
-              glaze of ice. Temperatures will remain much cooler, with highs in
-              the lower 20s, while gusty east winds add to the wintry feel.</div>
+              For Fort Kent and the Saint John Valley, today will start with
+              snow likely this morning, possibly mixed with a brief period of
+              freezing rain. As the day progresses, snow will mix with and
+              change to sleet, with only a slight chance of freezing rain at
+              times. Snow and sleet accumulations of 1 to 3 inches are expected,
+              along with a light glaze of ice. Temperatures will remain much
+              cooler, with highs in the lower 20s, while gusty east winds add to
+              the wintry feel.</div>
             <br>
             Tonight, precipitation will continue, beginning mainly as sleet with
             a slight chance of snow or freezing rain, then transitioning to
@@ -971,15 +972,15 @@ body, div, span, p {
         <div>
           <div>
             <div>
-              <div><strong>Saturday - Tuesday</strong><strong></strong></div>
-              A fast-moving storm system will bring another round of snow to the
-              region Friday night into early Saturday, with the greatest impacts
-              expected across central and northern areas. Snow will spread into
-              the area Friday night as a clipper system moves east from the
-              Great Lakes. While snowfall amounts will depend on the exact track
-              of the storm, several inches of accumulation are possible inland,
-              with the potential for around 2 to 4 inches or locally higher
-              amounts.
+              <div><strong>Saturday - Tuesday</strong><br>
+                A fast-moving storm system will bring another round of snow to
+                the region Friday night into early Saturday, with the greatest
+                impacts expected across central and northern areas. Snow will
+                spread into the area Friday night as a clipper system moves east
+                from the Great Lakes. While snowfall amounts will depend on the
+                exact track of the storm, several inches of accumulation are
+                possible inland, with the potential for around 2 to 4 inches or
+                locally higher amounts. </div>
               <div><br>
                 Snowfall could create messy and slippery travel conditions late
                 Friday night into early Saturday morning, especially across
@@ -1002,30 +1003,6 @@ body, div, span, p {
                 cross the region Monday afternoon, possibly producing additional
                 strong wind gusts before cooler, drier air arrives Monday night.
                 High pressure will build in Tuesday into Wednesday.</div>
-              <div><br>
-              </div>
-              <div>Snow will continue across the region on Saturday as the
-                departing system lingers, bringing periods of light snow through
-                the day. Additional minor accumulations are expected, with high
-                temperatures near 30 degrees. Snow will gradually taper Saturday
-                evening, with skies becoming partly cloudy overnight. It will
-                turn much colder Saturday night, with lows around 10 above zero.<br>
-                <br>
-                Sunday begins with sunshine before clouds increase during the
-                afternoon. Temperatures will moderate slightly, with highs in
-                the lower 30s. Another system approaches Sunday night, bringing
-                a renewed chance of snow as temperatures fall to around 20
-                degrees, then slowly rise into the lower 20s overnight.<br>
-                <br>
-                On Monday, snow in the morning will likely transition to rain as
-                warmer air moves in. Highs will climb into the mid 40s, making
-                it the mildest day of the period. Rain may mix with or change
-                back to snow Monday night as colder air returns, with lows
-                dropping into the 10 to 15 degree range.<br>
-                <br>
-                Much cooler conditions return Tuesday with partly sunny skies
-                and highs in the mid 20s. Clearer skies Tuesday night will allow
-                temperatures to fall sharply, with lows near zero.</div>
             </div>
             <div>
               <div><br>
@@ -1640,14 +1617,24 @@ US
               <br>
             </strong></div>
           <div style="text-align: center;"><span style="font-size: 14px;"><strong
-                style="font-size: 13px;">US Snowfall Outlook<br>
+                style="font-size: 13px;">US Precipitation Outlook<br>
               </strong></span></div>
           <div style="font-size: 14px; text-align: center;"><strong></strong> <a
-              href="http://www.weather.gov/images/erh/gis/CONUS_Snow.png" title="Excessive Rainfall Outlook"><img
-                src="http://www.weather.gov/images/erh/gis/CONUS_Snow.png" alt="24-Hour US Snow Outlook"
+              href="http://www.weather.gov/images/erh/gis/CONUS_QPF.png" title="Excessive Rainfall Outlook"><img
+                src="http://www.weather.gov/images/erh/gis/CONUS_QPF.png" alt="24-Hour US Precipitation Outlook"
                 style="width: 251px; height: 175.959px; border-width: 0px; border-style: solid;"></a></div>
           <div style="font-size: 14px; text-align: center;"><br>
-            <br>
+          </div>
+          <div style="font-size: 14px; text-align: center;"><br>
+            <span style="font-size: 14px;"><strong style="font-size: 13px;">US
+                Snowfall Outlook<br>
+              </strong></span>
+            <div style="font-size: 14px; text-align: center;"><strong></strong>
+              <a href="http://www.weather.gov/images/erh/gis/CONUS_Snow.png" title="Excessive Rainfall Outlook"><img
+                  src="http://www.weather.gov/images/erh/gis/CONUS_Snow.png" alt="24-Hour US Snow Outlook"
+                  style="width: 251px; height: 175.959px; border-width: 0px; border-style: solid;"></a></div>
+            <div style="text-align: center;"><br>
+            </div>
             <div style="text-align: center;"><br>
             </div>
             <div style="text-align: center;"><strong>Yesterday's Storm Reports</strong></div>
@@ -1864,9 +1851,8 @@ US
                   src="https://www.cpc.ncep.noaa.gov/products/predictions/814day/814prcp.new.gif"
                   alt="8-14 Day Precipitation Outlook" title="Click for larger image"
                   style="width: 251px;"></a><br>
-              <div style="font-size: 16px;"><em style="font-size: 12px;">Climate
-                  Data Source: <a href="https://www.cpc.ncep.noaa.gov/">NOAA
-                    Climate Predication Center</a></em></div>
+              <div style="font-size: 16px;"><em style="font-size: 12px;"><a href="https://www.cpc.ncep.noaa.gov/"
+                    style="font-size: 12px;">NOAA Climate Predication Center</a></em></div>
             </div>
             <div style="text-align: left;"><br>
             </div>
