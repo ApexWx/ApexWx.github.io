@@ -109,7 +109,7 @@ font-size:14px;
             Weather</a> <a href="https://www.tropicaltidbits.com/analysis/models/">Tropical
             Tidbits</a> <a href="https://mapwall.met.psu.edu/ewall/">PSU EWall</a>
           <a href="https://www.atmos.albany.edu/student/abentley/realtime.html">Bentley</a>
-          <a href="http://arctic.som.ou.edu/tburg/models/">Burg</a> <a href="http://www.meteor.iastate.edu/%7Eckarsten/bufkit/data/">Bufkit
+          <a href="http://arctic.som.ou.edu/tburg/models/">PolarWx</a> <a href="http://www.meteor.iastate.edu/%7Eckarsten/bufkit/data/">Bufkit
             Warehouse</a> <a href="http://moe.met.fsu.edu/cyclonephase/index.html">Cyclone
             Phase Evolution</a> <a href="http://www.spc.noaa.gov/exper/href/">HREF</a>
           <a href="http://www.spc.noaa.gov/exper/sref/fplumes/index2.php">SREF
@@ -121,13 +121,12 @@ font-size:14px;
         <h2>🌀Tropics</h2>
         <div class="links"> <a href="https://web.uwm.edu/hurricane-models/models/">Hurricane
             Models</a> <a href="https://www.tropicaltidbits.com/storminfo/">Tropical
-            Tidbits</a> <a href="https://www.nrlmry.navy.mil/tc_pages/tc_home.html">Navy
-            NRL</a> <a href="https://tropic.ssec.wisc.edu/">CIMSS Tropical</a>
+            Tidbits</a> <a href="https://tropic.ssec.wisc.edu/">CIMSS Tropical</a>
           <a href="http://rammb-data.cira.colostate.edu/tc_realtime/">RAMMB Real
-            Time</a> <a href="http://arctic.som.ou.edu/tburg/products/realtime/tropical/">Burg</a>
-          <a href="https://www.atmos.albany.edu/facstaff/tang/tcguidance/">Tang</a>
-          <a href="https://www.tropicaltidbits.com/recon/">Recon (Cowan)</a> <a
-            href="https://cyclonicwx.com/recon/">Recon (Cyclonic)</a> </div>
+            Time</a> <a href="https://www.polarwx.com/tropical/">PolarWx
+            Tropical</a> <a href="https://www.tropicaltidbits.com/recon/">Recon
+            (Cowan)</a> <a href="https://cyclonicwx.com/recon/">Recon
+            (Cyclonic)</a> </div>
       </div>
       <div class="section">
         <h2>🌡️Climate</h2>
