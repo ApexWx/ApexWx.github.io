@@ -356,8 +356,19 @@ body, div, span, p {
 }
       
 
-  </style>
-  </head>
+  
+/* Prevent image layout shift (no visual/layout change) */
+img {
+  content-visibility: auto;
+  contain-intrinsic-size: 200px 150px;
+}
+
+/* Ensure top row current conditions stay inline */
+nav img {
+  display: inline-block;
+}
+
+</style> </head>
   <body>
     <header id="page-header">
       <h1 style="text-align: center;"><img decoding="async" loading="lazy" src="https://raw.githubusercontent.com/ApexWx/ApexWx.github.io/master/Apex%20banner.jpg"
@@ -1042,110 +1053,164 @@ State
                               average temperatures will spread across the
                               central and eastern states, with highs rising into
                               the 70s and 80s by early next week.
+                              <div><br>
+                              </div>
                               <div>
+                                <div style="text-align: center;"><strong>Today's
+                                    US Forecast Chart</strong><br>
+                                  <strong> </strong></div>
+                                <div>
+                                  <div style="text-align: center;"><a href="https://www.wpc.ncep.noaa.gov/NationalForecastChart/map.php"
+                                      title="Click for interactive chart"><img src="https://www.wpc.ncep.noaa.gov/NationalForecastChart/staticmaps/noaad1.png"
+                                        alt="National Forecast Chart" style="height: 369px; width: 555px;"></a></div>
+                                </div>
                                 <div>
                                   <div>
+                                    <div>
+                                      <div style="margin-top: 1em;">
+                                        <div style="text-align: center;">
+                                          <div style="text-align: center;"><strong><strong><strong><br>
+                                                  ⛈️</strong></strong>Thunderstorm
+                                              / Severe Weather Outlook</strong><strong><strong><strong>🌪️<br>
+                                                </strong></strong></strong><em><span
+                                                style="font-size: 12px;">Learn
+                                                more about <a href="https://www.spc.noaa.gov/new/images/SPC_outlook_final_updated.png"
+                                                  title="Click for more information">Severe
+                                                  Thunderstorm Outlooks</a></span></em><br>
+                                            <strong> </strong></div>
+                                          <strong></strong></div>
+                                        <strong> </strong><strong></strong></div>
+                                      <strong> </strong></div>
+                                    <strong></strong><strong></strong><strong></strong><strong></strong><strong></strong><strong></strong><strong></strong><strong></strong><strong></strong><strong></strong><strong></strong><strong></strong><strong></strong>
                                     <div style="margin-top: 1em;">
                                       <div style="text-align: center;">
-                                        <div style="text-align: center;"><strong><strong><strong>⛈️</strong></strong>Thunderstorm
-                                            / Severe Weather Outlook</strong><strong><strong><strong>🌪️<br>
-                                              </strong></strong></strong><em><span
-                                              style="font-size: 12px;">Learn
-                                              more about <a href="https://www.spc.noaa.gov/new/images/SPC_outlook_final_updated.png"
-                                                title="Click for more information">Severe
-                                                Thunderstorm Outlooks</a></span></em><br>
-                                          <strong> </strong></div>
-                                        <strong></strong></div>
-                                      <strong> </strong><strong></strong></div>
-                                    <strong> </strong></div>
-                                  <strong></strong><strong></strong><strong></strong><strong></strong><strong></strong><strong></strong><strong></strong><strong></strong><strong></strong><strong></strong><strong></strong><strong></strong><strong></strong>
-                                  <div style="margin-top: 1em;">
-                                    <div style="text-align: center;">
-                                      <div style="text-align: left;"><strong>Severe
-                                          Storm Risk Targets Southern High
-                                          Plains Today</strong><br>
-                                        Scattered thunderstorms are expected to
-                                        develop across the southern High Plains
-                                        this afternoon and evening, with a
-                                        slight risk for severe weather. Large
-                                        hail and strong wind gusts will be the
-                                        primary hazards as storms initially form
-                                        as isolated cells before organizing into
-                                        clusters or lines. A few storms could
-                                        also produce brief tornadoes, especially
-                                        across parts of southwest Texas.
-                                        Additional isolated strong storms are
-                                        possible across the central Plains into
-                                        the upper Mississippi Valley, as well as
-                                        the central Rockies, where gusty winds
-                                        may occur. Along the northern California
-                                        coast, a few thunderstorms could bring
-                                        locally strong winds. Overall, this
-                                        system will support multiple areas of
-                                        active weather through tonight across
-                                        the western and central United States.</div>
-                                      <div style="text-align: left;"><br>
-                                        <div style="text-align: center;"><strong>🌧️Excessive
-                                            Rainfall Outlook</strong> 🌧️<em><span
-                                              style="font-size: 12px;"></span></em><br>
-                                          <em><span style="font-size: 12px;">Learn
-                                              more about <a href="https://www.wpc.ncep.noaa.gov/para/para_images/ERO_Categories.png">Excessive
-                                                Rainfall Risk Categories</a></span></em><br>
-                                          <em><span style="font-size: 12px;"> </span></em></div>
+                                        <div style="text-align: left;"><strong>Severe
+                                            Storm Risk Targets Southern High
+                                            Plains Today</strong><br>
+                                          Scattered thunderstorms are expected
+                                          to develop across the southern High
+                                          Plains this afternoon and evening,
+                                          with a slight risk for severe weather.
+                                          Large hail and strong wind gusts will
+                                          be the primary hazards as storms
+                                          initially form as isolated cells
+                                          before organizing into clusters or
+                                          lines. A few storms could also produce
+                                          brief tornadoes, especially across
+                                          parts of southwest Texas. Additional
+                                          isolated strong storms are possible
+                                          across the central Plains into the
+                                          upper Mississippi Valley, as well as
+                                          the central Rockies, where gusty winds
+                                          may occur. Along the northern
+                                          California coast, a few thunderstorms
+                                          could bring locally strong winds.
+                                          Overall, this system will support
+                                          multiple areas of active weather
+                                          through tonight across the western and
+                                          central United States.<br>
+                                          <div style="text-align: center;"><br>
+                                          </div>
+                                          <div style="text-align: center;"><strong>Today's
+                                              <a href="https://www.spc.noaa.gov/products/outlook/day1otlk.html">Severe
+                                                Weather / Thunderstorm Outlook</a></strong></div>
+                                          <div style="text-align: center;"><a href="https://www.spc.noaa.gov/products/outlook/day1otlk.html"
+                                              title="Click for more information"><img
+                                                src="https://www.spc.noaa.gov/partners/outlooks/state/swody1.png?1678542573998"
+                                                alt="Thunderstorm / Severe Weather Outlook"
+                                                style="height: 320px; width: 555px;"></a></div>
+                                        </div>
+                                        <div style="text-align: left;"><br>
+                                          <div style="text-align: center;"><strong>🌧️Excessive
+                                              Rainfall Outlook</strong> 🌧️<em><span
+                                                style="font-size: 12px;"></span></em><br>
+                                            <em><span style="font-size: 12px;">Learn
+                                                more about <a href="https://www.wpc.ncep.noaa.gov/para/para_images/ERO_Categories.png">Excessive
+                                                  Rainfall Risk Categories</a></span></em><br>
+                                            <em><span style="font-size: 12px;">
+                                              </span></em></div>
+                                        </div>
                                       </div>
                                     </div>
-                                  </div>
-                                  <div style="margin-top: 1em;">
-                                    <div style="margin-top: 1em; text-align: left;"><strong>Heavy
-                                        Rain and Flash Flood Risk Across the
-                                        Southern Plains</strong><br>
-                                      A growing threat for heavy rainfall and
-                                      possible flash flooding will develop
-                                      across the southern Plains through tonight
-                                      into Sunday morning. Increasing moisture
-                                      from the Gulf will fuel thunderstorms
-                                      developing along a dry line in West Texas,
-                                      with storms becoming more widespread and
-                                      organizing into a large area of heavy
-                                      rain. Rainfall totals of two to four
-                                      inches are possible from west-central
-                                      Texas into southern Oklahoma, raising
-                                      concerns for excessive runoff. Additional
-                                      showers and storms will impact parts of
-                                      the Upper Midwest and Great Lakes, where
-                                      saturated ground and snowmelt increase
-                                      flood sensitivity. Isolated heavy rain is
-                                      also possible from northeast Kansas into
-                                      northern Missouri, where localized flash
-                                      flooding cannot be ruled out.<br>
-                                      <em><span style="font-size: 12px;"></span></em></div>
-                                    <div style="margin-top: 1em; text-align: center;"><strong>🔥Fire
-                                        Weather Outlook</strong><strong>🔥</strong><br>
-                                      <em><span style="font-size: 12px;">Learn
-                                          more about <a href="https://www.spc.noaa.gov/misc/about.html#FireWx">Fire
-                                            Weather Outlooks</a></span></em>
-                                      <div style="text-align: left;"><strong></strong><br>
-                                        <strong>Elevated Fire Weather and Dry
-                                          Thunderstorm Risk in the High Plains</strong><br>
-                                        A developing weather system over the
-                                        western United States will bring
-                                        elevated fire weather concerns to
-                                        portions of eastern Wyoming and the
-                                        central High Plains. Dry and breezy
-                                        conditions are expected, with winds
-                                        increasing to around 15 to 20 miles per
-                                        hour and very low humidity in the mid-
-                                        to upper-teens. These factors will
-                                        create an environment favorable for the
-                                        rapid spread of wildfires, especially
-                                        across areas with dry vegetation. At the
-                                        same time, isolated dry thunderstorms
-                                        may develop, producing little rainfall
-                                        but capable of generating lightning that
-                                        could ignite new fires. This combination
-                                        of gusty winds, dry air, and lightning
-                                        will lead to heightened fire danger
-                                        across the region through the period.</div>
+                                    <div style="margin-top: 1em;">
+                                      <div style="margin-top: 1em; text-align: left;"><strong>Heavy
+                                          Rain and Flash Flood Risk Across the
+                                          Southern Plains</strong><br>
+                                        A growing threat for heavy rainfall and
+                                        possible flash flooding will develop
+                                        across the southern Plains through
+                                        tonight into Sunday morning. Increasing
+                                        moisture from the Gulf will fuel
+                                        thunderstorms developing along a dry
+                                        line in West Texas, with storms becoming
+                                        more widespread and organizing into a
+                                        large area of heavy rain. Rainfall
+                                        totals of two to four inches are
+                                        possible from west-central Texas into
+                                        southern Oklahoma, raising concerns for
+                                        excessive runoff. Additional showers and
+                                        storms will impact parts of the Upper
+                                        Midwest and Great Lakes, where saturated
+                                        ground and snowmelt increase flood
+                                        sensitivity. Isolated heavy rain is also
+                                        possible from northeast Kansas into
+                                        northern Missouri, where localized flash
+                                        flooding cannot be ruled out.</div>
+                                      <div style="margin-top: 1em; text-align: left;">
+                                        <div style="text-align: center;"><strong>Today's
+                                            <a href="https://www.wpc.ncep.noaa.gov/qpf/excessive_rainfall_outlook_ero.php">Excessive
+                                              Rainfall</a> Outlook</strong></div>
+                                        <div style="font-size: 14px; text-align: center;"><strong></strong>
+                                          <a href="https://www.wpc.ncep.noaa.gov/#page=ero"
+                                            title="Excessive Rainfall Outlook"><img
+                                              src="https://www.wpc.ncep.noaa.gov/qpf/94ewbg.gif"
+                                              alt="Day 1 Excessive Rainfall Outlook"
+                                              style="width: 553px; height: 175.959px; border-width: 1px; border-style: solid;"></a></div>
+                                      </div>
+                                      <div style="margin-top: 1em; text-align: center;"><strong>🔥Fire
+                                          Weather Outlook</strong><strong>🔥</strong><br>
+                                        <em><span style="font-size: 12px;">Learn
+                                            more about <a href="https://www.spc.noaa.gov/misc/about.html#FireWx">Fire
+                                              Weather Outlooks</a></span></em>
+                                        <div style="text-align: left;"><strong></strong><br>
+                                          <strong>Elevated Fire Weather and Dry
+                                            Thunderstorm Risk in the High Plains</strong><br>
+                                          A developing weather system over the
+                                          western United States will bring
+                                          elevated fire weather concerns to
+                                          portions of eastern Wyoming and the
+                                          central High Plains. Dry and breezy
+                                          conditions are expected, with winds
+                                          increasing to around 15 to 20 miles
+                                          per hour and very low humidity in the
+                                          mid- to upper-teens. These factors
+                                          will create an environment favorable
+                                          for the rapid spread of wildfires,
+                                          especially across areas with dry
+                                          vegetation. At the same time, isolated
+                                          dry thunderstorms may develop,
+                                          producing little rainfall but capable
+                                          of generating lightning that could
+                                          ignite new fires. This combination of
+                                          gusty winds, dry air, and lightning
+                                          will lead to heightened fire danger
+                                          across the region through the period.</div>
+                                        <div style="text-align: left;"><br>
+                                        </div>
+                                        <div style="text-align: left;">
+                                          <div style="text-align: center;"><strong
+                                              style="font-size: 16px;">Today's <a
+                                                href="https://www.spc.noaa.gov/products/fire_wx/fwdy1.html">Fire
+                                                Weather</a> Outlook</strong></div>
+                                          <div style="font-size: 14px; text-align: center;"><strong
+                                              style="font-size: 14px;"></strong>
+                                            <strong></strong><a href="https://www.spc.noaa.gov/products/fire_wx/fwdy1.html"
+                                              title="Click for more information"><img
+                                                src="https://www.spc.noaa.gov/products/fire_wx/day1otlk_fire.gif"
+                                                alt="Today's Fire Weather Outlook"
+                                                style="width: 555px; height: 171px; border-radius: 1px / 0px; border-width: 1px; border-style: solid;"></a></div>
+                                        </div>
+                                      </div>
                                     </div>
                                   </div>
                                 </div>
@@ -1162,83 +1227,12 @@ State
                                             target="_blank" rel="noopener noreferrer">Weather
                                             Prediction Center </a> &amp; <a href="https://www.spc.noaa.gov/"
                                             target="_blank" rel="noopener noreferrer">
-                                            Storm Prediction Center </a></em></div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                              <div>
-                                <div>
-                                  <div style="margin-top: 1em;">
-                                    <div style="text-align: center;">
-                                      <div>
-                                        <div> </div>
-                                      </div>
-                                      <br>
-                                      <div> </div>
-                                      <strong></strong>
-                                      <div style="text-align: left;">
-                                        <div style="text-align: center;"><strong>Today's
-                                            US Forecast Chart</strong><br>
-                                          <strong> </strong></div>
-                                        <div>
-                                          <div style="text-align: center;"><a href="https://www.wpc.ncep.noaa.gov/NationalForecastChart/map.php"
-                                              title="Click for interactive chart"><img
-                                                decoding="async" loading="lazy"
-                                                src="https://www.wpc.ncep.noaa.gov/NationalForecastChart/staticmaps/noaad1.png"
-                                                alt="National Forecast Chart" style="height: 369px; width: 555px;"></a><br>
-                                          </div>
-                                          <div style="text-align: center;"><br>
-                                          </div>
-                                          <div style="text-align: center;"><br>
-                                            <strong>Today's US <a href="https://www.spc.noaa.gov/products/outlook/day1otlk.html">Severe
-                                                Weather / Thunderstorm Outlook</a></strong></div>
-                                          <div style="text-align: center;"><a href="https://www.spc.noaa.gov/products/outlook/day1otlk.html"
-                                              title="Click for more information"><img
-                                                decoding="async" loading="lazy"
-                                                src="https://www.spc.noaa.gov/partners/outlooks/state/swody1.png?1678542573998"
-                                                alt="Thunderstorm / Severe Weather Outlook"
-                                                style="height: 320px; width: 555px;"><br>
-                                            </a></div>
-                                          <div style="text-align: center;">
-                                            <div><em><span style="font-size: 12px;">Learn
-                                                  more about <a href="https://www.spc.noaa.gov/new/images/SPC_outlook_final_updated.png"
-                                                    title="Click for more information">Severe
-                                                    Thunderstorm Outlooks</a></span></em></div>
-                                          </div>
-                                        </div>
-                                        <div style="text-align: center;"><br>
-                                        </div>
-                                      </div>
-                                      <div style="font-size: 14px; text-align: center;"><br>
-                                      </div>
-                                      <div style="text-align: center;"><strong>Today's
-                                          Excessive Rainfall Outlook</strong>
-                                        <div style="font-size: 14px; text-align: center;"><strong></strong>
-                                          <a href="https://www.wpc.ncep.noaa.gov/#page=ero"
-                                            title="Excessive Rainfall Outlook"><img
-                                              decoding="async" loading="lazy" src="https://www.wpc.ncep.noaa.gov/qpf/94ewbg.gif"
-                                              alt="Day 1 Excessive Rainfall Outlook"
-                                              style="width: 553px; height: 175.959px; border-width: 1px; border-style: solid;"></a></div>
-                                        <div style="font-size: 14px; text-align: center;"><a
-                                            href="https://www.wpc.ncep.noaa.gov/para/para_images/ERO_Categories.png"
-                                            style="font-size: 12px;">Understanding
-                                            ERO Categories</a><em></em></div>
-                                      </div>
-                                      <div style="font-size: 14px; text-align: center;"><br>
-                                      </div>
-                                      <div style="font-size: 14px; text-align: center;"><br>
-                                      </div>
-                                      <div style="font-size: 14px; text-align: center;"><br>
-                                        <strong style="font-size: 16px;">Today's
-                                          US Fire Weather Outlook</strong></div>
-                                      <div style="text-align: center;"><strong style="font-size: 14px;"></strong><strong></strong><a
-                                          href="https://www.spc.noaa.gov/products/fire_wx/fwdy1.html"
-                                          title="Click for more information"><img
-                                            decoding="async" loading="lazy" src="https://www.spc.noaa.gov/products/fire_wx/day1otlk_fire.gif"
-                                            alt="Today's Fire Weather Outlook" style="width: 555px; height: 171px; border-radius: 1px / 0px; border-width: 1px; border-style: solid;"></a><br>
-                                        <br>
-                                      </div>
+                                            Storm Prediction Center <br>
+                                          </a></em></div>
+                                      <div style="text-align: left;"><em style="font-size: 12px;"><a
+                                            href="https://www.spc.noaa.gov/" target="_blank"
+                                            rel="noopener noreferrer"><br>
+                                          </a></em></div>
                                     </div>
                                   </div>
                                 </div>
