@@ -359,9 +359,9 @@ body, div, span, p {
   
 /* Prevent image layout shift (no visual/layout change) */
 img {
-  content-visibility: auto;
-  contain-intrinsic-size: 200px 150px;
-}
+  width: auto; /* Ensure auto width */
+  height: auto; /* Ensure auto height */
+  max-width: 100%; /* Prevent image from exceeding container */
 
 /* Ensure top row current conditions stay inline */
 nav img {
@@ -769,13 +769,12 @@ State
                 units unless otherwise indicated; times US Eastern</em></span></div>
         </div>
         <div><u><strong><br>
-            </strong></u> <u><strong>Saturday, April 11</strong></u>
+            </strong></u> <u><strong>Sunday, April 12</strong></u>
           <div>
-            <div><b>High</b>: 66° at 5:45 pm&nbsp; | <b>Low</b>: 50° at 11;15
-              pm
-              <div><b>Precipitation: </b>0.01" | <strong>Snow</strong>: 0.0"</div>
+            <div><b>High</b>: 68° at 3:50 pm&nbsp; | <b>Low</b>: 41° at 3:36 am
+              <div><b>Precipitation: </b>0.00" | <strong>Snow</strong>: 0.0"</div>
               <div><b>Avg. Daily Wind:</b> SE @ 3 mph |<strong> Max. Gust</strong>:
-                20 mph @ 12:00 pm</div>
+                21 mph @ 3:27 pm</div>
             </div>
           </div>
           <div>
@@ -789,15 +788,15 @@ State
             <div><u><strong><br>
                 </strong></u></div>
           </div>
-          <u><strong>Sunday, April 12</strong></u>
+          <u><strong>Monday, April 13</strong></u>
           <div> </div>
         </div>
-        <div style="width: 810px;"><strong>Normal High: </strong>63° |<strong>&nbsp;
-            Record High</strong>: 85° (2023)<br>
-          <strong> Normal Low:&nbsp; </strong>39° |&nbsp; <strong>Record
-            Low:&nbsp; </strong>26° (1989)<br>
-          <strong>Normal Daily Precipitation: </strong>0.12"<strong> </strong>|<strong>
-            Record Precipitation</strong>:1.34" (1951)</div>
+        <div style="width: 810px;"><strong>Normal High: </strong>64° |<strong>&nbsp;
+            Record High</strong>: 88° (2023)<br>
+          <strong> Normal Low:&nbsp; </strong>40° |&nbsp; <strong>Record
+            Low:&nbsp; </strong>23° (1986)<br>
+          <strong>Normal Daily Precipitation: </strong>0.11"<strong> </strong>|<strong>
+            Record Precipitation</strong>: 1.83" (2020)</div>
         <div style="width: 810px;"><strong>Normal Daily Snowfall:</strong> 0.0"
           | <strong>Record Snowfall</strong>: --</div>
         <div style="width: 810px;"><em><span style="font-size: 12px;">Data
@@ -810,7 +809,7 @@ State
         <div style="width: 810px;"><u><strong>Precipitation 2026</strong></u><br>
           <strong></strong></div>
         <div style="width: 810px;"><strong>Rain</strong><strong>:</strong> 8.22"
-          |&nbsp; <u>normal</u>: 10.44" (<span style="color: red;">-2.22"</span>)<span
+          |&nbsp; <u>normal</u>: 10.55" (<span style="color: red;">-2.33"</span>)<span
             style="color: #009900;"></span><br>
           <strong>Snow 25-26</strong><strong>: </strong>20.4" | <u>normal</u>:
           21.4" (<span style="color: red;">-1.0"</span>)<span style="color: red;"></span></div>
@@ -877,90 +876,81 @@ State
                 <div>
                   <div style="text-align: center;">
                     <div style="text-align: left;"><u><strong></strong></u><u><strong>7-Day
-                          Outlook: Sun. Apr. 12 – Sat. Apr. 18</strong></u><br>
+                          Outlook: Mon. Apr. 13 – Sun. Apr. 19</strong></u><br>
                       <div> <strong></strong><strong></strong>
                         <div><span style="color: #666666;"><em><span style="font-size: 12px;">Updated
-                                April 12 at 10:05 AM </span><span style="font-size: 12px;"></span><span
-                                style="font-size: 12px;"> EDT</span></em></span></div>
+                                April 13 at 9:45 AM </span><span style="font-size: 12px;"></span><span
+                                style="font-size: 12px;"> EDT<br>
+                              </span></em></span></div>
                         <div><strong><br>
                           </strong></div>
-                      </div>
-                      <div>
-                        <div style="text-align: left;"><strong>Today – Tuesday</strong><br>
-                          High pressure centered near Albany, NY early today
-                          with a ridge extending south into the Delaware Valley
-                          of Eastern PA, will lead to mainly clear skies with a
-                          light east to southeast wind early today. Look for an
-                          increase in cloud cover today as a warm front pushes
-                          northeast from the Ohio Valley. Breezy conditions and
-                          a chance of scattered showers are expected Monday.
-                          High pressure will build in later Monday into Tuesday
-                          with partly cloudy/mostly clear skies over Lancaster
-                          and vicinity.<br>
-                          <br>
-                          Today will be mostly sunny with mild and breezy
-                          conditions as south winds strengthen through the
-                          afternoon. High temperatures will reach the low 60s.
-                          Clouds will gradually increase tonight, and it will
-                          stay mild and breezy, with lows in the low 50s and
-                          continued south winds around 10 mph with occasional
-                          gusts.<br>
-                          <br>
-                          On Monday, temperatures will surge into the upper 70s
-                          as moisture increases and a chance of afternoon
-                          showers develops. A few showers may linger into the
-                          early evening before tapering off, with overnight lows
-                          remaining in the upper 50s under partly cloudy skies.
-                          Tuesday will be warmer and mostly sunny, with highs
-                          reaching the low 80s and lighter southwest winds. A
-                          slight chance of late-night showers returns Tuesday
-                          night, with lows in the low 60s.<br>
+                        <div><strong>Today – Wednesday</strong><br>
+                          A warm front will cross the Lower Susquehanna Valley
+                          today bringing a slight chance of afternoon showers to
+                          Lancaster and vicinity. Partly sunny skies with a 20%
+                          chance of precipitation and a high in the upper 70s
+                          expected. Breezy southwest wind 15-20 mph with gusts
+                          25-30 mph possible. Tonight, high pressure builds into
+                          the region with mostly clear skies over Fawkes House.
+                          Low in the middle 50s with west wind 0-5 mph becoming
+                          southwest overnight near calm.</div>
+                        <div><br>
+                        </div>
+                        <div>High pressure brings partly cloudy to mostly sunny
+                          skies to the area Tuesday with highs in the
+                          low-to-mid-80s. Low pressure tracking across the Great
+                          Lakes towards the Northeast produces a 20% chance of
+                          shower activity in the evening. Tuesday night, lows
+                          dip into the lower 60s with west-southwest wind 0-5
+                          mph.</div>
+                        <div><br>
+                        </div>
+                        <div>By Wednesday, low pressure to the north and an
+                          upper-trough nearby will bring a 30% chance of showers
+                          and isolated thunderstorms to Lancaster in the
+                          afternoon. High in the mid-80s with dew points in the
+                          lower 60s creating somewhat muggy conditions.
+                          Southwest wind 5-10 mph expected. </div>
+                        <div><br>
+                        </div>
+                        <div style="text-align: left;">For Wednesday night,
+                          partly cloudy skies with a 30% chance of showers
+                          expected. Temperatures in the low 60s with southwest
+                          wind 0-7 mph.<br>
                           <div><br>
                           </div>
-                          <strong>Wednesday – Saturday</strong></div>
+                          <strong>Thursday – Sunday</strong></div>
                       </div>
+                      <div> </div>
                     </div>
-                    <div style="text-align: left;">A series of storm systems
-                      will move from the southwest to the northeast across the
-                      Great Lakes this week, sending several waves of low
-                      pressure into Ontario. A stalled front stretching across
-                      New York will keep conditions unsettled, especially across
-                      northwest Pennsylvania, where clouds, showers, and
-                      occasional thunderstorms will be more frequent.<br>
-                      <br>
-                      As disturbances move out of a larger trough over the
-                      central and western United States, the risk for stronger
-                      thunderstorms may increase at times. The potential for
-                      severe weather appears highest in northwest Pennsylvania
-                      on Tuesday, expanding across much of the state Wednesday,
-                      and shifting toward southeastern Pennsylvania on Thursday.
-                      Rainfall will be uneven, with wetter conditions continuing
-                      in already soaked areas of the northwest, while drier
-                      areas in the southeast may receive less-needed rain.<br>
-                      <br>
-                      However, there is a lot of spread in forecast model
-                      solutions further out in time, so more in the way of
-                      rainfall and a return to much colder weather could occur
-                      heading into late next weekend or early next week. </div>
+                    <div style="text-align: left;">High pressure remains over
+                      the area Thursday with some high clouds creating partly
+                      sunny conditions for Lancaster and vicinity. A weak cold
+                      front brings a slit chance of showers to the region Friday
+                      with high pressure moving in behind Friday night into
+                      Saturday. A stronger cold front approaches for Sunday with
+                      increasing chance of showers Saturday night and a chance
+                      of scattered showers Sunday.</div>
                     <div style="text-align: left;"><br>
-                      <div style="text-align: left;">Wednesday will be mostly
-                        sunny and warm with high temperatures reaching the upper
-                        80s and light winds. Skies will become mostly cloudy
-                        Wednesday night as temperatures fall into the mid-60s.
-                        Thursday will remain warm with a mix of sun and clouds
-                        and highs in the mid-80s, followed by mostly cloudy
-                        skies Thursday night with temperatures in the low 60s.<br>
-                        <br>
-                        Friday brings slightly cooler but still pleasant
-                        conditions with mostly sunny skies and highs in the low
-                        80s. Friday night will be partly cloudy and comfortable
-                        with lows in the upper 50s. Saturday stays warm and
-                        mostly sunny with highs in the low 80s, but clouds will
-                        increase Saturday night as a chance of showers develops,
-                        with lows in the upper 50s.</div>
-                      <strong></strong></div>
-                    <div><strong></strong><strong></strong><br>
-                      <strong></strong>
+                    </div>
+                    <div style="text-align: left;"> Thursday will be partly
+                      sunny and quite warm, with afternoon highs reaching the
+                      upper 80s. Skies turn mostly cloudy Thursday night with
+                      lows settling into the low 60s. Friday brings mostly sunny
+                      conditions with slightly cooler temperatures in the low
+                      80s, followed by a partly cloudy Friday night with lows in
+                      the upper 50s.<br>
+                      <br>
+                      The weekend begins mostly sunny Saturday with highs in the
+                      low to mid-80s. Clouds increase Saturday night with a
+                      chance of showers and lows in the upper 50s. Sunday turns
+                      partly sunny with a chance of showers and cooler highs in
+                      the low 70s. Sunday night will be partly cloudy with a
+                      slight chance of lingering showers and lows dropping into
+                      the low 40s.<strong></strong> </div>
+                    <div style="text-align: left;"><br>
+                    </div>
+                    <div>
                       <div>
                         <div>
                           <div>
@@ -1038,45 +1028,48 @@ State
                                 <strong> </strong></div>
                               <div style="text-align: center;"><br>
                                 <strong></strong><u><strong></strong></u><u><strong></strong></u></div>
-                              <strong>Stormy West and Active Central U.S.
-                                Weather Pattern Continues</strong><br>
-                              An active weather pattern will bring heavy
-                              mountain snow and soaking rain to California today
-                              as a strong system moves inland, with the Sierra
-                              Nevada expecting up to two feet of additional snow
-                              and lower elevations receiving around an inch of
-                              rain with gusty winds. Precipitation will spread
-                              into the Great Basin and Pacific Northwest before
-                              tapering off by Tuesday morning. Farther east,
-                              strong to severe thunderstorms with heavy rain are
-                              expected across the southern Plains, Upper
-                              Midwest, and Great Lakes, with another round
-                              possible Monday night into Tuesday. Warm air will
-                              expand across much of the eastern United States,
-                              bringing unusually high temperatures, while
-                              cooler, unsettled conditions gradually spread
-                              across the West.
-                              <div><br>
+                              <strong>Severe Storms, Heavy Rain, and Fire Risk
+                                Across Multiple Regions</strong><br>
+                              Multiple rounds of strong to severe thunderstorms
+                              with heavy rain are expected across the Southern
+                              and Central Plains and the Midwest through
+                              midweek, while additional storms impact the Great
+                              Lakes and interior Northeast. A wavering frontal
+                              boundary will focus repeated storm development,
+                              bringing periods of heavy rainfall and a risk of
+                              damaging winds and hail. A brief lull Tuesday
+                              daytime will be followed by another active round
+                              Tuesday night. Meanwhile, unsettled weather shifts
+                              from California to the Four Corners and Pacific
+                              Northwest, with mountain snow and valley rain.
+                              Warm conditions expand eastward, challenging
+                              records, while dry, gusty winds elevate critical
+                              fire weather risk over the central and southern
+                              High Plains. Localized flooding may occur in areas
+                              with repeated downpours possible.
+                              <div style="text-align: center;"><br>
                               </div>
                               <div>
-                                <div style="text-align: center;"><a href="https://www.wpc.ncep.noaa.gov/NationalForecastChart/staticmaps/noaad1.png"><strong>Today's
+                                <div class="text-center" style="text-align: center;"><a
+                                    href="https://www.wpc.ncep.noaa.gov/NationalForecastChart/staticmaps/noaad1.png"><strong>Today's
                                       Forecast Chart</strong></a><br>
                                   <strong> </strong>
                                   <div>
-                                    <div style="text-align: center;"><a href="https://www.wpc.ncep.noaa.gov/NationalForecastChart/map.php"
+                                    <div class="text-center"><a href="https://www.wpc.ncep.noaa.gov/NationalForecastChart/map.php"
                                         title="Click for interactive chart"><img
                                           alt="National Forecast Chart" src="https://www.wpc.ncep.noaa.gov/NationalForecastChart/staticmaps/noaad1.png"
                                           style="height: 369px; width: 555px;" height="369"
                                           width="555"></a></div>
                                   </div>
                                 </div>
-                                <br>
+                                <div style="text-align: center;"><br>
+                                </div>
                                 <div>
                                   <div>
                                     <div>
                                       <div style="margin-top: 1em;">
-                                        <div style="text-align: center;">
-                                          <div style="text-align: center;"><strong><strong><strong>⛈</strong></strong>
+                                        <div class="text-center">
+                                          <div class="text-center" style="text-align: center;"><strong><strong><strong>⛈</strong></strong>
                                               Severe Weather Outlook</strong><strong><strong><strong>🌪️<br>
                                                 </strong></strong></strong><em><span
                                                 style="font-size: 12px;">Learn
@@ -1089,56 +1082,47 @@ State
                                       <strong> </strong></div>
                                     <strong></strong><strong></strong><strong></strong><strong></strong><strong></strong><strong></strong><strong></strong><strong></strong><strong></strong><strong></strong><strong></strong><strong></strong><strong></strong>
                                     <div style="margin-top: 1em;">
-                                      <div style="text-align: center;">
-                                        <div style="text-align: left;"><strong>Isolated
-                                            Severe Storm Risk Across Texas and
-                                            Northern Tier</strong><br>
-                                          A developing low pressure system
-                                          across the northern Plains will help
-                                          fuel scattered thunderstorms across
-                                          parts of the country today, with the
-                                          greatest concern centered over central
-                                          and southern Texas. In these areas, a
-                                          moist and unstable air mass will
-                                          support isolated to scattered strong
-                                          to severe storms this afternoon and
-                                          evening. Some storms could produce
-                                          large hail and gusty winds, although
-                                          the exact placement and coverage of
-                                          storms remains uncertain. Earlier
-                                          storm activity in southeastern Texas
-                                          is expected to weaken by midday, but
-                                          could leave behind boundaries that
-                                          help trigger new development later in
-                                          the day.<br>
-                                          <br>
-                                          Farther north, isolated severe storms
-                                          are also possible across the Upper
-                                          Great Lakes and northern Rockies. In
-                                          Minnesota and nearby areas, a narrow
-                                          corridor of moisture may support
-                                          thunderstorms capable of producing
-                                          hail, with a very low chance of a
-                                          tornado. Across the northern Rockies,
-                                          gusty winds from stronger storms will
-                                          be the primary concern. Overall, while
-                                          severe weather will be scattered,
-                                          conditions will support pockets of
-                                          intense storms.</div>
-                                        <div style="text-align: left;"><br>
+                                      <div class="text-center">
+                                        <div style="text-align: left;"><strong>Enhanced
+                                            Severe Storm Risk in the Upper
+                                            Mississippi Valley</strong><br>
+                                          An enhanced risk of severe
+                                          thunderstorms is expected across the
+                                          Upper Mississippi Valley and parts of
+                                          the Great Lakes today and tonight.
+                                          Storms may produce large to very large
+                                          hail, damaging winds, and a few
+                                          tornadoes, especially near a warm
+                                          front where conditions will be most
+                                          favorable. Thunderstorms are likely to
+                                          develop late this afternoon and
+                                          evening, becoming more organized as
+                                          they track eastward. While some storms
+                                          may cluster over time, early activity
+                                          could remain isolated and intense.
+                                          Farther south, across portions of
+                                          Texas and Oklahoma, a more isolated
+                                          and uncertain severe weather threat
+                                          exists. If storms develop there, they
+                                          could also become strong, but overall
+                                          coverage is expected to remain
+                                          limited.</div>
+                                        <div style="text-align: center;"><br>
                                         </div>
-                                        <div style="text-align: center;"><strong><a
+                                        <div class="text-center" style="text-align: center;"><strong><a
                                               href="https://www.spc.noaa.gov/products/outlook/day1otlk.html">Today's
                                               Severe Weather Chart</a></strong>
-                                          <div style="text-align: center;"><a href="https://www.spc.noaa.gov/products/outlook/day1otlk.html"
+                                          <div class="text-center"><a href="https://www.spc.noaa.gov/products/outlook/day1otlk.html"
                                               title="Click for more information"><img
                                                 alt="Thunderstorm / Severe Weather Outlook"
                                                 src="https://www.spc.noaa.gov/partners/outlooks/state/swody1.png?1678542573998"
                                                 style="height: 320px; width: 555px;"
                                                 height="320" width="555"></a></div>
                                         </div>
-                                        <div style="text-align: left;"><br>
-                                          <div style="text-align: center;"><strong>🌧️Excessive
+                                        <div style="text-align: left;">
+                                          <div style="text-align: center;"><br>
+                                          </div>
+                                          <div class="text-center" style="text-align: center;"><strong>🌧️Excessive
                                               Rainfall Outlook</strong> 🌧️<em><span
                                                 style="font-size: 12px;"></span></em><br>
                                             <em><span style="font-size: 12px;">Learn
@@ -1150,36 +1134,30 @@ State
                                       </div>
                                     </div>
                                     <div style="margin-top: 1em;">
-                                      <div style="margin-top: 1em; text-align: left;"><strong>Heavy
-                                          Rain and Flooding Risk Focused on
-                                          Central Texas</strong><br>
-                                        A developing weather pattern will bring
-                                        the threat of heavy rainfall and
-                                        possible flooding to central Texas,
-                                        where a moist and unstable air mass will
-                                        support rounds of thunderstorms through
-                                        the afternoon and overnight hours. Some
-                                        storms may become strong, but the
-                                        primary concern will be intense rainfall
-                                        rates that could exceed two inches per
-                                        hour in spots. While the region is in
-                                        need of rain due to ongoing drought,
-                                        very dry and hardened ground may not
-                                        absorb water efficiently, increasing the
-                                        risk of runoff and localized flooding,
-                                        especially in urban areas along the
-                                        Interstate 35 corridor.<br>
-                                        <br>
-                                        Farther north into parts of Oklahoma,
-                                        Kansas, and Missouri, scattered storms
-                                        may also produce locally heavy rain,
-                                        though faster storm movement should
-                                        limit widespread flooding concerns. In
-                                        northern Michigan, additional rainfall
-                                        of one to two inches could lead to
-                                        localized flooding issues, particularly
-                                        where snowpack remains and soils are
-                                        already saturated.</div>
+                                      <div style="margin-top: 1em; text-align: left;"><strong>Marginal
+                                          Flood Risk with Additional Rainfall
+                                          Across the Upper Midwest</strong><br>
+                                        A marginal risk for excessive rainfall
+                                        remains in place from eastern Minnesota
+                                        through Wisconsin into parts of
+                                        Michigan. Periods of rain, possibly
+                                        accompanied by a few thunderstorms,
+                                        could bring locally heavier amounts
+                                        despite a slight decrease in overall
+                                        rainfall expectations. Some areas,
+                                        especially in eastern Wisconsin and
+                                        western Michigan, still have a moderate
+                                        chance of receiving over one inch of
+                                        rain. This may lead to localized
+                                        flooding concerns, particularly where
+                                        rivers and streams are already running
+                                        high. Additional rainfall could also
+                                        accelerate ongoing snowmelt, increasing
+                                        runoff into waterways. While widespread
+                                        flooding is not expected, conditions may
+                                        worsen in more vulnerable locations, and
+                                        water levels should be monitored
+                                        closely.</div>
                                       <div style="margin-top: 1em; text-align: center;"><a
                                           href="https://www.wpc.ncep.noaa.gov/qpf/excessive_rainfall_outlook_ero.php"><strong>Today's
                                             Excessive Rainfall Chart</strong></a>
@@ -1197,32 +1175,40 @@ State
                                             more about <a href="https://www.spc.noaa.gov/misc/about.html#FireWx">Fire
                                               Weather Outlooks</a></span></em>
                                         <div style="text-align: left;"><strong></strong><br>
-                                          <strong>Dry, Windy Conditions Raise
-                                            Fire Weather Concerns Across
-                                            Multiple Regions</strong><br>
-                                          A strengthening storm system moving
-                                          from the northern Plains into the
-                                          upper Midwest will bring widespread
-                                          dry and windy conditions across much
-                                          of the Southwest and Great Plains
-                                          today. In the Southwest and Four
-                                          Corners region, gusty winds reaching
-                                          25 to 30 miles per hour combined with
-                                          very low humidity levels around 10 to
-                                          15 percent will create an increased
-                                          risk for fire spread, although
-                                          conditions may remain just below
-                                          critical thresholds in most areas.
-                                          Across the central High Plains,
-                                          similarly dry air and winds of 20 to
-                                          25 miles per hour will elevate fire
-                                          concerns, especially in parts of
-                                          Nebraska where vegetation is more
-                                          receptive. Meanwhile, portions of the
-                                          Mississippi and Ohio River Valleys
-                                          will also see elevated fire risk due
-                                          to ongoing dryness, breezy winds, and
-                                          low humidity.</div>
+                                          <strong>Critical Fire Weather Threat
+                                            Across the Central High Plains</strong><br>
+                                          Critical fire weather conditions are
+                                          expected today across eastern Wyoming,
+                                          southwestern South Dakota,
+                                          northwestern Nebraska, and
+                                          southeastern Colorado. Dry air and
+                                          gusty winds will combine during the
+                                          afternoon, creating an environment
+                                          favorable for rapid fire spread.
+                                          Humidity levels will drop very low
+                                          while winds increase, especially
+                                          across open terrain and elevated
+                                          areas. These conditions will persist
+                                          for several hours during peak heating.
+                                          Farther south and east, including
+                                          parts of the southern Appalachians and
+                                          Piedmont, elevated fire weather
+                                          concerns are also expected due to dry
+                                          conditions and breezy winds. Although
+                                          winds may be somewhat lighter in these
+                                          areas, dry vegetation will still
+                                          support an increased risk of fire
+                                          ignition and spread.</div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div>
+                                <div>
+                                  <div>
+                                    <div style="margin-top: 1em;">
+                                      <div style="margin-top: 1em; text-align: center;">
                                         <div style="text-align: left;"><br>
                                         </div>
                                         <div style="font-size: 14px; text-align: center;"><a
@@ -1254,18 +1240,13 @@ State
                                 <div>
                                   <div style="margin-top: 1em;">
                                     <div style="text-align: center;">
-                                      <div style="text-align: left;"><em style="font-size: 12px;">National
+                                      <div style="text-align: center;"><em style="font-size: 12px;">National
                                           Weather Outlook information sources: <a
                                             href="https://www.wpc.ncep.noaa.gov/#page=ovw"
                                             target="_blank" rel="noopener noreferrer">Weather
                                             Prediction Center </a> &amp; <a href="https://www.spc.noaa.gov/"
                                             target="_blank" rel="noopener noreferrer">
-                                            Storm Prediction Center <br>
-                                          </a></em></div>
-                                      <div style="text-align: left;"><em style="font-size: 12px;"><a
-                                            href="https://www.spc.noaa.gov/" target="_blank"
-                                            rel="noopener noreferrer"><br>
-                                          </a></em></div>
+                                            Storm Prediction Center&nbsp;</a></em></div>
                                     </div>
                                   </div>
                                 </div>
