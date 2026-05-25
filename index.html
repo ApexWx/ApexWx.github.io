@@ -357,6 +357,50 @@ body, div, span, p {
 .mt-sm { margin-top: 0.5rem; }
 .font-sm { font-size: 12px; }
       
+      
+.live-station {
+  margin: 20px auto;
+  max-width: 900px;
+  text-align: center;
+}
+
+.station-box {
+  background: rgba(255,255,255,0.15);
+  border-radius: 8px;
+  padding: 15px;
+}
+
+.station-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(150px,1fr));
+  gap: 10px;
+}
+
+.station-item {
+  padding: 8px;
+}
+
+.station-label {
+  font-size: 12px;
+  color: #666;
+  font-weight: bold;
+  text-transform: uppercase; /* Makes it a neat, small capitalized header */
+  letter-spacing: 0.5px;      /* Adds a little space between letters */
+}
+
+.station-value {
+  font-size: 18px;
+  line-height: 1.15;
+}
+
+.metric {
+  display: block;
+  font-size: 0.68em;
+  color: #666;
+  line-height: 1.1;
+  margin-top: 2px;
+}      
+      
 </style> </head>
   <body>
     <div class="text-center"><img alt="Apex Wx Banner" src="https://raw.githubusercontent.com/ApexWx/ApexWx.github.io/master/Apex%20banner.jpg"
@@ -374,27 +418,23 @@ body, div, span, p {
             Weather Station Dashboard</a> <a href="https://www.wunderground.com/dashboard/pws/KMEFORTK7">Apex
             Wx on WU</a> <a href="https://apexwx.github.io/dis.html">Disclaimer</a>
         </div>
-        <div><strong style="font-size: 18px;"><br>
-          </strong></div>
-        <div><strong style="font-size: 18px;">Current Conditions</strong><span style="color: #757575;"><em><span
-                style="font-size: 12px;"><br>
-              </span></em><span style="font-size: 12px;">Updates hourly</span></span>
-          <div class="text-center">
-            <div class="text-center"><a href="https://www.weather.gov/images/car/obs/CurrentT.png"><img
-                  alt="Current Temperatures" src="https://www.weather.gov/images/car/obs/CurrentT.png"
-                  style="width: 250px; margin: 8px; height: 210px;" title="Current Temperatures--Click for larger image"
-                  height="210" width="250"></a><a href="https://www.weather.gov/images/car/obs/CurrentDewPt.png"><img
-                  alt="Current Dew Point" src="https://www.weather.gov/images/car/obs/CurrentDewPt.png"
-                  style="width: 250px; margin: 8px;" title="Current Dew Points -- Click for larger image"
-                  width="250"></a><a href="https://www.weather.gov/images/car/obs/CurrentRH.png"><img
-                  alt="Current Relative Humidity" src="https://www.weather.gov/images/car/obs/CurrentRH.png"
-                  style="width: 250px; margin: 8px;" title="Current Relative Humidity--Click for larger image"
-                  width="250"></a> <a href="https://www.weather.gov/images/car/obs/CurrentGusts.png"><img
-                  alt="Current Wind Gusts-" src="https://www.weather.gov/images/car/obs/CurrentGusts.png"
-                  style="width: 250px; margin: 8px; height: 210px;" title="Current Wind Gusts--Click for larger image"
-                  height="210" width="250"></a></div>
-          </div>
-        </div>
+        <div> <strong style="font-size: 18px;">Current Conditions</strong> <span
+            style="color: #757575;"> <em><span style="font-size: 12px;"><br>
+              </span></em> <span style="font-size: 12px;">Updates hourly</span>
+          </span> </div>
+        <div class="text-center"><a href="https://www.weather.gov/images/car/obs/CurrentT.png"><img
+              alt="Current Temperatures" src="https://www.weather.gov/images/car/obs/CurrentT.png"
+              style="width: 250px; margin: 8px; height: 210px;" title="Current Temperatures--Click for larger image"
+              height="210" width="250"></a><a href="https://www.weather.gov/images/car/obs/CurrentDewPt.png"><img
+              alt="Current Dew Point" src="https://www.weather.gov/images/car/obs/CurrentDewPt.png"
+              style="width: 250px; margin: 8px;" title="Current Dew Points -- Click for larger image"
+              width="250"></a><a href="https://www.weather.gov/images/car/obs/CurrentRH.png"><img
+              alt="Current Relative Humidity" src="https://www.weather.gov/images/car/obs/CurrentRH.png"
+              style="width: 250px; margin: 8px;" title="Current Relative Humidity--Click for larger image"
+              width="250"></a> <a href="https://www.weather.gov/images/car/obs/CurrentGusts.png"><img
+              alt="Current Wind Gusts-" src="https://www.weather.gov/images/car/obs/CurrentGusts.png"
+              style="width: 250px; margin: 8px; height: 210px;" title="Current Wind Gusts--Click for larger image"
+              height="210" width="250"></a></div>
       </nav>
     </header>
     <div class="container" id="main-container">
@@ -822,12 +862,74 @@ body, div, span, p {
             </div>
             <div>
               <div class="text-center">
-                <hr> </div>
+                <hr></div>
             </div>
           </div>
         </div>
-        <div class="text-center"><strong>📅 </strong><b>Fort Kent Weather
-            Almanac</b> <strong>📅</strong><u><strong></strong></u><strong></strong></div>
+        <div class="text-center" style="text-align: left;">
+          <div class="live-station" style="font-size: 18px;"><strong style="font-size: 18px;">&nbsp;
+              🔴 Live Apex Wx Station Conditions 🔴</strong></div>
+          <div class="live-station" style="font-size: 14px;"><strong></strong><strong>Fort
+              Kent, Maine</strong><br>
+            <br>
+            <div style="font-size:12px;"> Updated: <span id="aw-update">Loading...</span>
+            </div>
+            <div class="station-box">
+              <div class="station-grid">
+                <div class="station-item">
+                  <div class="station-label">Temperature</div>
+                  <div class="station-value" id="temp">--</div>
+                </div>
+                <div class="station-item">
+                  <div class="station-label">Dew Point</div>
+                  <div class="station-value" id="dewpoint">--</div>
+                </div>
+                <div class="station-item">
+                  <div class="station-label">Humidity</div>
+                  <div class="station-value" id="humidity">--</div>
+                </div>
+                <div class="station-item">
+                  <div class="station-label">Pressure</div>
+                  <div class="station-value" id="pressure">--</div>
+                </div>
+                <div class="station-item">
+                  <div class="station-label">Feels Like</div>
+                  <div class="station-value" id="feels-like">--</div>
+                </div>
+                <div class="station-item">
+                  <div class="station-label">Wind Direction</div>
+                  <div class="station-value" id="winddir">--</div>
+                </div>
+                <div class="station-item">
+                  <div class="station-label">Wind Speed</div>
+                  <div class="station-value" id="wind">--</div>
+                </div>
+                <div class="station-item">
+                  <div class="station-label">Wind Gust</div>
+                  <div class="station-value" id="gust">--</div>
+                </div>
+                <div class="station-item">
+                  <div class="station-label">Rain Today</div>
+                  <div class="station-value" id="rain">--</div>
+                </div>
+                <div class="station-item">
+                  <div class="station-label">24-Hour Rainfall</div>
+                  <div class="station-value" id="rain24">--</div>
+                </div>
+                <div class="station-item">
+                  <div class="station-label">Monthly Rain</div>
+                  <div class="station-value" id="rain-month">--</div>
+                </div>
+                <div class="station-item">
+                  <div class="station-label">Yearly Rain</div>
+                  <div class="station-value" id="rain-year">--</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <hr></div>
+        <div class="text-center" style="font-size: 18px;"><strong>📅 </strong><b>Fort
+            Kent Weather Almanac</b> <strong>📅</strong><u><strong></strong></u><strong></strong></div>
         <div>
           <div class="text-center"><span style="font-size: 12px;"><em>Non-metric
                 units unless otherwise indicated; times US Eastern<br>
@@ -836,10 +938,10 @@ body, div, span, p {
                 has live and archived Apex Wx data (Station EW0429 Fort Kent).<br>
               </em></span></div>
         </div>
-        <div>
+        <div style="width: 810px;">
           <div><em style="font-size: 12px;"><em style="font-size: 12px;"><br>
               </em></em></div>
-          <u><strong> Sunday, May 24</strong></u> <u><strong><u> </u></strong></u>
+          <u><strong>Sunday, May 24</strong></u> <u><strong><u> </u></strong></u>
           <div>
             <div>
               <div><b>High</b>: 62° at 4:27 pm&nbsp; | <b>Low</b>: 50° at 12:00
@@ -865,33 +967,33 @@ body, div, span, p {
               </div>
             </div>
           </div>
-        </div>
-        <div><u><strong></strong></u><u><strong><br>
-              Monday, May 25</strong></u> </div>
-        <div>
-          <div> </div>
-          <div style="width: 810px;"><strong>Normal High: </strong>65° |<strong>
-              Record High</strong>: 90° (1977)<br>
-            <strong> Normal Low:&nbsp; </strong>40° | <strong>Record
-              Low:&nbsp; </strong>24<strong>°</strong> (1956)<br>
-            <strong>Normal Daily Rainfall: </strong>0.10"<strong> </strong>|<strong>
-              Record Rainfall</strong>: 1.00" (1928)</div>
-          <div style="width: 810px;"><strong>Normal Daily Snowfall:</strong>
-            0.0" | <strong>Record Snowfall</strong>: —</div>
-          <div style="width: 810px;"><span style="font-size: 12px;">Source: </span><span
-              style="font-size: 12px;"><span style="font-size: 12px;"><a href="https://scacis.rcc-acis.org/">NOAA
-                  SC-ACIS</a> </span>NWS Caribou climate data / Weather records
-              since 1893</span><em style="font-size: 12px;"><br>
-            </em></div>
-          <div style="width: 810px;"><br>
+          <div><u><strong></strong></u><u><strong><br>
+                Monday, May 25</strong></u> </div>
+          <div>
+            <div> </div>
+            <div style="width: 810px;"><strong>Normal High: </strong>65° |<strong>
+                Record High</strong>: 90° (1977)<br>
+              <strong> Normal Low:&nbsp; </strong>40° | <strong>Record
+                Low:&nbsp; </strong>24<strong>°</strong> (1956)<br>
+              <strong>Normal Daily Rainfall: </strong>0.10"<strong> </strong>|<strong>
+                Record Rainfall</strong>: 1.00" (1928)</div>
+            <div style="width: 810px;"><strong>Normal Daily Snowfall:</strong>
+              0.0" | <strong>Record Snowfall</strong>: —</div>
+            <div style="width: 810px;"><span style="font-size: 12px;">Source: </span><span
+                style="font-size: 12px;"><span style="font-size: 12px;"><a href="https://scacis.rcc-acis.org/">NOAA
+                    SC-ACIS</a> </span>NWS Caribou climate data / Weather
+                records since 1893</span><em style="font-size: 12px;"><br>
+              </em></div>
+            <div style="width: 810px;"><br>
+            </div>
+            <u><strong>Precipitation 2026</strong></u><br>
+            <strong></strong>
+            <div style="width: 810px;"><strong>Rain</strong><strong>: </strong>12.76"
+              | <u>normal</u>: 13.66" (<span style="color: red;">-0.90"</span>)</div>
           </div>
-          <u><strong>Precipitation 2026</strong></u><br>
-          <strong></strong>
-          <div style="width: 810px;"><strong>Rain</strong><strong>: </strong>12.76"
-            | <u>normal</u>: 13.66" (<span style="color: red;">-0.90"</span>)<span
-              style="color: #009900;"></span><br>
-            <strong>Snow 25-26</strong><strong>: </strong>84.8" | <u>normal</u>:
-            99.3" (<span style="color: red;">-14.5"</span>)</div>
+          <strong>Snow 25-26</strong><strong>: </strong>84.8" | <u>normal</u>:
+          99.3" (<span style="color: red;">-14.5"</span>)</div>
+        <div>
           <div style="width: 810px;"><strong>Snow 24-25:</strong> 73.2" | <u>normal</u>:
             99.3" (<span style="color: red;">-26.1"</span>)</div>
           <span style="color: red;"><span style="color: black;"></span></span> <span
@@ -918,15 +1020,15 @@ body, div, span, p {
             <div style="text-align: left;"><strong> <a href="https://www.timeanddate.com/astronomy/@4964627"><br>
                 </a></strong></div>
             <hr>
-            <div style="text-align: center;"><strong></strong><strong>☀️Sun
+            <div style="text-align: center; font-size: 18px;"><strong></strong><strong>☀️Sun
                 &amp; Moon Information</strong><strong>🌕</strong><em></em></div>
             <div style="text-align: center;"><span style="font-size: 12px;"><em>Times
                   US Eastern</em></span></div>
             <div style="text-align: center;"><span style="font-size: 12px;"><em><br>
                 </em></span></div>
             <div style="text-align: left;">
-              <div style="text-align: center;"><a href="https://www.timeanddate.com/astronomy/@4964627">Fort
-                  Kent, Maine USA</a><strong> </strong></div>
+              <div style="text-align: center;"><strong><a href="https://www.timeanddate.com/astronomy/@4964627">Fort
+                    Kent, Maine USA</a> </strong></div>
               <strong></strong></div>
             <div style="text-align: left;"><br>
               <div id="sunriseSunset" style="font-size: 16px;">Loading
@@ -952,6 +1054,8 @@ body, div, span, p {
             <div>
               <div>
                 <hr style="margin-left: 0px; margin-right: auto;">
+                <div class="text-center"><strong><span style="font-variant: small-caps;"><br>
+                    </span></strong></div>
                 <div class="text-center"><strong><span style="font-variant: small-caps;">The
                       Week Ahead for Fort Kent &amp; the Saint John Valley of
                       Maine</span></strong></div>
@@ -1052,8 +1156,7 @@ body, div, span, p {
           evening thunderstorms is expected for Fort Kent and nearby
           communities. Temperatures fall into the lower 50s with winds becoming
           west 0-5 mph. Rainfall totals between 0.10 and 0.25-inch expected,
-          except for higher
-          amounts possible in any thunderstorms.</div>
+          except for higher amounts possible in any thunderstorms.</div>
         <div><br>
         </div>
         <div>Partly sunny skies develop Wednesday with a 50% chance of showers
@@ -1278,29 +1381,32 @@ body, div, span, p {
                                   </div>
                                 </div>
                                 <div style="margin-top: 1em;">
-                                  <div style="margin-top: 1em; text-align: left;"><strong>Slight
-                                      Risk of Flash Flooding from the Gulf Coast
-                                      to the Southern Appalachians</strong><br>
-                                    Periods of heavy rain and thunderstorms are
-                                    expected today and tonight from the central
-                                    Gulf Coast into parts of the Southeast and
-                                    southern Appalachians. The greatest flash
-                                    flood threat extends from southeastern
-                                    Louisiana through Mississippi, Alabama,
-                                    Georgia, and into the Carolinas, where
-                                    repeated storms may produce several inches
-                                    of rain in a short time. Urban areas and
-                                    locations with poor drainage are especially
-                                    vulnerable to flooding. Additional heavy
-                                    rain is possible across parts of Virginia
-                                    and the Mid Atlantic, where slow-moving
-                                    thunderstorms could lead to localized
-                                    flooding concerns. Farther west, scattered
-                                    storms in Texas and New Mexico may also
-                                    produce intense downpours and isolated flash
-                                    flooding. While flooding will not occur
-                                    everywhere, conditions support localized
-                                    areas of dangerous high water.</div>
+                                  <div style="margin-top: 1em; text-align: left;">
+                                    <div style="margin-top: 1em; text-align: left;"><strong>Slight
+                                        Risk of Flash Flooding from the Gulf
+                                        Coast to the Southern Appalachians</strong><br>
+                                      Periods of heavy rain and thunderstorms
+                                      are expected today and tonight from the
+                                      central Gulf Coast into parts of the
+                                      Southeast and southern Appalachians. The
+                                      greatest flash flood threat extends from
+                                      southeastern Louisiana through
+                                      Mississippi, Alabama, Georgia, and into
+                                      the Carolinas, where repeated storms may
+                                      produce several inches of rain in a short
+                                      time. Urban areas and locations with poor
+                                      drainage are especially vulnerable to
+                                      flooding. Additional heavy rain is
+                                      possible across parts of Virginia and the
+                                      Mid Atlantic, where slow-moving
+                                      thunderstorms could lead to localized
+                                      flooding concerns. Farther west, scattered
+                                      storms in Texas and New Mexico may also
+                                      produce intense downpours and isolated
+                                      flash flooding. While flooding will not
+                                      occur everywhere, conditions support
+                                      localized areas of dangerous high water.</div>
+                                    <a href="https://www.wpc.ncep.noaa.gov/qpf/excessive_rainfall_outlook_ero.php"><strong></strong></a></div>
                                   <div style="margin-top: 1em; text-align: center;"><a
                                       href="https://www.wpc.ncep.noaa.gov/qpf/excessive_rainfall_outlook_ero.php"><strong>Today's
                                         Excessive Rainfall Chart</strong></a>
@@ -1317,8 +1423,8 @@ body, div, span, p {
                                     <em><span style="font-size: 12px;">Learn
                                         more about <a href="https://www.spc.noaa.gov/misc/about.html#FireWx">Fire
                                           Weather Outlooks</a></span></em>
-                                    <div style="text-align: left;"><strong></strong><strong></strong><br>
-                                    </div>
+                                    <div style="text-align: left;"><strong></strong><strong></strong><strong><br>
+                                      </strong></div>
                                     <div style="text-align: left;"><strong>Critical
                                         Fire Weather Threat in Northwestern
                                         Nevada and Southeastern Oregon</strong><br>
@@ -2340,5 +2446,158 @@ setInterval(updateGreeting, 60000);</script>
     loadHiLo();
     setInterval(loadHiLo, 3600000); // refresh every hour
   </script>
+    <script>
+
+const workerUrl =
+  "https://apexwx-observations.maineapexwx.workers.dev";
+
+function degreesToCompass(degrees) {
+  const directions = [
+    "N","NNE","NE","ENE",
+    "E","ESE","SE","SSE",
+    "S","SSW","SW","WSW",
+    "W","WNW","NW","NNW"
+  ];
+
+  return directions[
+    Math.round(degrees / 22.5) % 16
+  ];
+}
+
+async function updateStation() {
+
+  try {
+
+    const response = await fetch(`${workerUrl}?t=${Date.now()}`);
+
+    if (!response.ok) {
+      throw new Error("Worker unavailable");
+    }
+
+    const data = await response.json();
+
+    // Temperature
+document.getElementById("temp").innerHTML =
+  data.temperature != null
+    ? `${data.temperature.toFixed(1)}°F
+       <br><span class="metric">
+       ${((data.temperature - 32) * 5 / 9).toFixed(1)}°C
+       </span>`
+    : "--";
+
+// Dew Point
+document.getElementById("dewpoint").innerHTML =
+  data.dewpoint != null
+    ? `${data.dewpoint.toFixed(1)}°F
+       <br><span class="metric">
+       ${((data.dewpoint - 32) * 5 / 9).toFixed(1)}°C
+       </span>`
+    : "--";
+    
+    // Humidity
+    document.getElementById("humidity").textContent =
+  data.humidity != null
+    ? `${Math.round(data.humidity)}%`
+    : "--";
+
+// Feels Like
+    // Feels Like
+document.getElementById("feels-like").innerHTML =
+  data.feelsLike != null
+    ? `${data.feelsLike.toFixed(1)}°F
+       <br><span class="metric">
+       ${((data.feelsLike - 32) * 5 / 9).toFixed(1)}°C
+       </span>`
+    : "--";
+
+// Wind Speed
+document.getElementById("wind").innerHTML =
+  data.windSpeed != null
+    ? `${data.windSpeed.toFixed(1)} mph
+       <br><span class="metric">
+       ${(data.windSpeed * 1.60934).toFixed(1)} km/h
+       </span>`
+    : "--";
+
+// Wind Gust
+document.getElementById("gust").innerHTML =
+  data.windGust != null
+    ? `${data.windGust.toFixed(1)} mph
+       <br><span class="metric">
+       ${(data.windGust * 1.60934).toFixed(1)} km/h
+       </span>`
+    : "--";
+    
+// Wind Direction
+document.getElementById("winddir").innerHTML =
+  data.windDirection != null
+    ? `${degreesToCompass(data.windDirection)}
+       <br><span class="metric">
+       ${Math.round(data.windDirection)}°
+       </span>`
+    : "--";
+    
+// Pressure
+document.getElementById("pressure").innerHTML =
+  data.pressure != null
+    ? `${data.pressure.toFixed(2)} inHg
+       <br><span class="metric">
+       ${(data.pressure * 33.86389).toFixed(1)} hPa
+       </span>`
+    : "--";
+
+// Rain Today
+document.getElementById("rain").innerHTML =
+  data.rainToday != null
+    ? `${data.rainToday.toFixed(2)} in
+      <br><span class="metric">
+       ${(data.rainToday * 25.4).toFixed(1)} mm
+       </span>`
+    : "--";
+
+// 24-Hour Rainfall
+document.getElementById("rain24").innerHTML =
+  data.rain24 != null
+    ? `${data.rain24.toFixed(2)} in
+      <br><span class="metric">
+       ${(data.rain24 * 25.4).toFixed(1)} mm
+       </span>`
+    : "--";
+
+// Monthly Rain
+document.getElementById("rain-month").innerHTML =
+  data.rainMonth != null
+    ? `${Number(data.rainMonth).toFixed(2)} in
+       <br><span class="metric">
+       ${(Number(data.rainMonth) * 25.4).toFixed(1)} mm
+       </span>`
+    : "--";
+
+// Yearly Rain
+document.getElementById("rain-year").innerHTML =
+  data.rainYear != null
+    ? `${Number(data.rainYear).toFixed(2)} in
+       <br><span class="metric">
+       ${(Number(data.rainYear) * 25.4).toFixed(1)} mm
+       </span>`
+    : "--";
+    
+    document.getElementById("aw-update").textContent =
+      new Date(data.timestamp).toLocaleString();
+
+  } catch (error) {
+
+    console.error(error);
+
+    document.getElementById("aw-update").textContent =
+      "Unable to retrieve station data";
+
+  }
+}
+
+updateStation();
+setInterval(updateStation, 60000);
+
+</script>
   </body>
 </html>
