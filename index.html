@@ -909,12 +909,12 @@ body, div, span, p {
                   <div class="station-value" id="gust">--</div>
                 </div>
                 <div class="station-item">
-                  <div class="station-label">Rain Today</div>
-                  <div class="station-value" id="rain">--</div>
+                  <div class="station-label">Max Daily Gust</div>
+                  <div class="station-value" id="maxdailygust">--</div>
                 </div>
                 <div class="station-item">
-                  <div class="station-label">24-Hour Rainfall</div>
-                  <div class="station-value" id="rain24">--</div>
+                  <div class="station-label">Rain Today</div>
+                  <div class="station-value" id="rain">--</div>
                 </div>
                 <div class="station-item">
                   <div class="station-label">Monthly Rain</div>
@@ -926,6 +926,20 @@ body, div, span, p {
                 </div>
               </div>
             </div>
+            <div style="text-align: left;"> <em><span style="font-size: 12px;"><a
+                    href="https://madis.ncep.noaa.gov/snow_project.shtml">APRSWXNET/CWOP</a>
+                  &amp; <a href="https://weather.gladstonefamily.net/site/E0429">CWOP</a>
+                  Station EW0429: Live weather data is provided "as is" and is
+                  sourced from a </span></em><em><span style="font-size: 12px;"><span
+                    style="font-size: 12px;"><span style="font-size: 12px;">Davis
+                      Instruments <a href="https://www.davisinstruments.com/collections/vantage-pro2/products/vantage-pro2-groweather-wireless-integrated-sensor-suite">Vantage
+                        Pro 2</a> Personal Weather Station</span></span>. Sensor
+                  accuracy errors, transmission delays, or outages may occur. Do
+                  not rely on this data for critical personal safety decisions,
+                  severe weather tracking, or official forecasting. For official
+                  forecasts, watches, and warnings, consult the<a href="https://www.weather.gov/car/">
+                    National Weather Service</a>.Visit <a href="https://viewer.synopticdata.com/map/data/now/air-temperature?radar=conus_bref_qcd#map=11.67/47.2239/-68.5609">Synoptic
+                    Data</a> for more live and archived Apex Wx PWS data.</span></em></div>
           </div>
           <hr></div>
         <div class="text-center" style="font-size: 18px;"><strong>📅 </strong><b>Fort
@@ -933,9 +947,6 @@ body, div, span, p {
         <div>
           <div class="text-center"><span style="font-size: 12px;"><em>Non-metric
                 units unless otherwise indicated; times US Eastern<br>
-              </em></span></div>
-          <div class="text-center"><span style="font-size: 12px;"><em><a href="https://mesowest.utah.edu/cgi-bin/droman/meso_base_dyn.cgi?stn=E0429&amp;unit=0&amp;timetype=LOCAL">MesoWest</a>
-                has live and archived Apex Wx data (Station EW0429 Fort Kent).<br>
               </em></span></div>
         </div>
         <div style="width: 810px;">
@@ -1074,7 +1085,7 @@ body, div, span, p {
                           Hazardous Weather Outlook</a></strong> <strong>⚠️</strong></div>
                     <div class="text-center"><br>
                     </div>
-                    <div class="text-center"><!-- Weather alerts render here -->
+                    <div class="text-center">
                       <!-- Weather alerts render here --><br>
                     </div>
                   </div>
@@ -1157,7 +1168,7 @@ body, div, span, p {
             </div>
           </div>
           A persistent <a href="https://www.theweatherprediction.com/habyhints/144/">omega
-            block</a><span style="color: #0000ee;"> a</span>n unsettled stretch
+            block</a><span style="color: #0000ee;"> </span>an unsettled stretch
           of weather is expected from the middle of the week through the
           upcoming weekend as a broad area of cooler air remains parked over
           northern New England. Temperatures will generally run below normal for
@@ -2582,12 +2593,12 @@ document.getElementById("rain").innerHTML =
        </span>`
     : "--";
 
-// 24-Hour Rainfall
-document.getElementById("rain24").innerHTML =
-  data.rain24 != null
-    ? `${data.rain24.toFixed(2)} in
-      <br><span class="metric">
-       ${(data.rain24 * 25.4).toFixed(1)} mm
+// Max Daily Gust
+document.getElementById("maxdailygust").innerHTML =
+  data.maxDailyGust != null
+    ? `${data.maxDailyGust.toFixed(1)} mph
+       <br><span class="metric">
+       ${(data.maxDailyGust * 1.609344).toFixed(1)} km/h
        </span>`
     : "--";
 
@@ -2625,6 +2636,5 @@ document.getElementById("rain-year").innerHTML =
 updateStation();
 setInterval(updateStation, 60000);
 
-</script>
-  </body>
+</script> </body>
 </html>
