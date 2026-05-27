@@ -1150,7 +1150,7 @@ body, div, span, p {
           An upper-level low will affect the Valley Saturday into Sunday. High
           pressure begins to move over the eastern US as the week progresses
           gradually bringing drier conditions to the Saint John Valley. However,
-          current upper air model data suggests that the blocking pattern will
+          current upper air model data suggests that the blocking pattern may
           remain through the first week of June before it finally breaks down.<br>
           <br>
           The weekend will begin with improving conditions as drier air
@@ -2176,7 +2176,11 @@ body, div, span, p {
       const dayLengthStr = `${hours}h ${minutes}m`;
 
    document.getElementById("sunriseSunset").innerHTML = `
-    <div class="sun-info">
+  <div class="sun-date" style="text-align: center; margin-bottom: 5px; font-weight: bold;">
+    ${dateStr}
+<br><br>
+  </div>
+  <div class="sun-info">
     <div>🌅 <strong>Sunrise</strong>: ${sunriseLocal} ${tzAbbr} | </div>
     <div>🌇<strong>Sunset</strong>: ${sunsetLocal} ${tzAbbr} | </div>
     <div><strong>Day Length</strong>: ${dayLengthStr}</div>

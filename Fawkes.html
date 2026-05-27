@@ -763,10 +763,10 @@ State
         <div> <u><strong><br>
             </strong></u> <u><strong> Tuesday, May 26</strong></u>
           <div>
-            <div><b>High</b>: 62° at 4:24 pm&nbsp; | <b>Low</b>: 57° at 3:19 am
-              <div><b>Rainfall: </b>0.13" | <strong>Snowfall</strong>: 0.0"</div>
-              <div><b>Avg. Daily Wind:</b> NW &lt; 1 mph |<strong> Max. Daily
-                  Gust</strong>: 6mph at 3:35 pm</div>
+            <div><b>High</b>: 82° at 2:40 pm&nbsp; | <b>Low</b>: 59° at 4:34 am
+              <div><b>Rainfall: </b>0.00" | <strong>Snowfall</strong>: 0.0"</div>
+              <div><b>Avg. Daily Wind:</b> NW 1 mph |<strong> Max. Daily Gust</strong>:
+                9 mph at 3:32 pm</div>
             </div>
           </div>
           <div>
@@ -783,11 +783,11 @@ State
           <div> </div>
         </div>
         <div style="width: 810px;"><strong>Normal High: </strong>77° |<strong>&nbsp;
-            Record High</strong>: 93° (2018)<br>
+            Record High</strong>: 91° (1991)<br>
           <strong> Normal Low:&nbsp; </strong>54° |&nbsp; <strong>Record
-            Low:&nbsp; </strong>43° (1949)<br>
+            Low:&nbsp; </strong>39° (1949)<br>
           <strong>Normal Daily Rainfall: </strong>0.12"<strong> </strong>|<strong>
-            Record Rainfall</strong>: 1.35" (2021)</div>
+            Record Rainfall</strong>: 0.80" (2010)</div>
         <div style="width: 810px;"><strong>Normal Daily Snowfall:</strong> 0.0"
           | <strong>Record Snowfall</strong>: —</div>
         <div style="width: 810px;"><em><span style="font-size: 12px;">Data
@@ -801,7 +801,7 @@ State
         <div style="width: 810px;"><u><strong>Precipitation 2026</strong></u><br>
           <strong></strong></div>
         <div style="width: 810px;"><strong>Rain</strong><strong>:</strong>
-          10.47" |&nbsp; <u>normal</u>: 15.61" (<span style="color: red;">-5.14"</span>)<span
+          10.47" |&nbsp; <u>normal</u>: 15.73" (<span style="color: red;">-5.26"</span>)<span
             style="color: #009900;"></span><br>
           <strong>Snow 25-26</strong><strong>: </strong>20.4" | <u>normal</u>:
           21.4" (<span style="color: red;">-1.0"</span>)</div>
@@ -833,8 +833,8 @@ State
               </div>
             </div>
             <div>
-              <div style="text-align: center;"><a href="https://www.timeanddate.com/astronomy/usa/lancaster-pa">Lancaster,
-                  Pennsylvania, USA</a><br>
+              <div style="text-align: center;"><strong><a href="https://www.timeanddate.com/astronomy/usa/lancaster-pa">Lancaster,
+                    Pennsylvania, USA</a></strong><br>
                 <strong></strong></div>
               <strong><br>
               </strong>
@@ -1901,7 +1901,10 @@ State
       const dayLengthStr = `${hours}h ${minutes}m`;
 
    document.getElementById("sunriseSunset").innerHTML = `
-  <div><strong>${dateStr}</strong></div><br>
+   <div class="sun-date" style="text-align: center; margin-bottom: 5px; font-weight: bold;">
+    ${dateStr}
+<br><br>
+  </div>
   <div class="sun-info">
     <div>🌅 <strong>Sunrise</strong>: ${sunriseLocal} ${tzAbbr} |</div>
     <div>🌇 <strong>Sunset</strong>: ${sunsetLocal} ${tzAbbr} |</div>
