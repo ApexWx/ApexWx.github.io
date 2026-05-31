@@ -401,44 +401,6 @@ body, div, span, p {
   margin-top: 2px;
 }      
       
-.departure-positive {
-  color: #c0392b;   /* warm anomaly */
-  font-weight: bold;
-}
-
-.departure-negative {
-  color: #2166ac;   /* cool anomaly */
-  font-weight: bold;
-}
-
-.departure-neutral {
-  color: #666;
-}
-      
-      /* Rainfall Departure Color Coding */
-.rain-positive {
-  color: #1a7f43 !important; /* Richer, darker forest green that pops against the sky background */
-  font-weight: bold;
-}
-
-.rain-negative {
-  color: #e67e22 !important; /* Warm Orange/Brown for below normal / dry weather */
-  font-weight: bold;
-}
-
-.rain-neutral {
-  color: #aaaaaa !important; /* Soft Gray for exactly normal */
-}
-
-#page-footer a img {
-  display: inline-block;
-  vertical-align: middle;
-}
-
-#page-footer a {
-  text-decoration: none !important;
-  border: none !important;
-}
 </style> </head>
   <body>
     <div class="text-center"><img alt="Apex Wx Banner" src="https://raw.githubusercontent.com/ApexWx/ApexWx.github.io/master/Apex%20banner.jpg"
@@ -730,8 +692,8 @@ body, div, span, p {
                     style="width: 251px; height: 203.202px;" width="251"></a><em></em><em
                   style="font-size: 12px;"><br>
                 </em></div>
-              <div class="text-center"><em style="font-size: 12px;">47°23'N /
-                  68°59'W / Altitude 663 ft <br>
+              <div class="text-center"><em style="font-size: 12px;"><a href="https://maps.app.goo.gl/j7xjRvxLHxM9bRwA8">47°23'N
+                    / 68°59'W </a>/ Altitude 663 ft <br>
                   1 mi / 1.5 km SW of Apex Wx station in Fort Kent<br>
                 </em></div>
               <div class="text-center"><em style="font-size: 12px;"><br>
@@ -741,9 +703,9 @@ body, div, span, p {
               <div class="text-center"><strong><em style="font-size: 12px;"><br>
                   </em></strong></div>
               <strong> </strong>
-              <div class="text-center"><strong><a href="https://www.fourseasonstrail.org/">
-                    <strong> </strong></a>Mont Farlagne Route 2, Canada<a href="https://www.fourseasonstrail.org/"><strong>
-                    </strong> </a> </strong></div>
+              <div class="text-center"><a href="https://maps.app.goo.gl/BX2VZbWneL2q4KEr5"><strong>
+                    <strong> </strong>Mont Farlagne Route 2, Canada<strong> </strong>
+                  </strong></a></div>
               <div class="text-center"><a href="https://511.gnb.ca/map/Cctv/20?t=1777324020"><img
                     alt="Mont Farlagne Route 2  NB Canada" src="https://511.gnb.ca/map/Cctv/20?t=1777323870"
                     style="width: 251px; height: 144px;" height="144" width="251"></a></div>
@@ -758,8 +720,8 @@ body, div, span, p {
                 <strong style="font-size: 12px;"></strong></div>
               <div class="text-center"><strong><br>
                 </strong></div>
-              <div class="text-center"><strong>St. John River @ Dickey Bridge,
-                  Allagash<br>
+              <div class="text-center"><strong><a href="https://maps.app.goo.gl/j8B2bTvY4ibbjCki9">St.
+                    John River @ Dickey Bridge, Allagash</a><br>
                 </strong>
                 <div class="text-center"><a href="https://www1.maine.gov/mdot/maps/cameras/dickey_Public.jpg"
                     title="St. John River at Dickey"><img alt="St. John River at Dickey, ME"
@@ -791,7 +753,8 @@ body, div, span, p {
                     <div class="text-center"><strong><br>
                       </strong></div>
                     <div class="text-center"><strong></strong><br>
-                      <strong>US Route 1 @ Van Buren, ME<br>
+                      <strong><a href="https://maps.app.goo.gl/jJmcSkpSxokUnTpZ7">US
+                          Route 1 @ Van Buren, ME</a><br>
                       </strong>
                       <div class="text-center"><a href="https://newengland511.org/map/Cctv/2253?t=1775931089"
                           title="St. John River at Dickey"><img alt="US 1 @ Van Buren, ME"
@@ -893,9 +856,10 @@ body, div, span, p {
                     style="height: 60px !important; width: 217px !important;" height="60"
                     width="217"></a><br>
                 <div class="text-center"> <span style="font-size: 12px;">Contributions
-                    help support this weather information service.</span><br>
-                  <span style="font-size: 12px;"> Apex Wx is committed to
-                    no-hype forecasting based on meteorological science.</span></div>
+                    help support this weather information service.<br>
+                    Apex Wx is committed to no-hype forecasting based on
+                    meteorological science.<br>
+                  </span></div>
                 <div class="text-center"><span style="font-size: 12px;"><br>
                   </span></div>
               </div>
@@ -973,190 +937,100 @@ body, div, span, p {
                 tracking, or official forecasting. For official forecasts,
                 watches, and warnings, consult the <a href="https://www.weather.gov/car/">National
                   Weather Service</a>. Data source: Davis Instruments Vantage
-                Pro 2 Personal Weather Station.<br>
-              </em></div>
+                Pro 2 Personal Weather Station.</em></div>
           </div>
           <hr></div>
-        <div class="live-station" style="font-size:14px;">
-          <details style="width: 100%; max-width: 900px; margin: 0 auto;">
-            <summary style="cursor: pointer; text-align: center; font-size: 1.2em; font-weight: bold;">
-              📊 Fort Kent Climate Information 📊 <span style="font-size: 13px; font-weight: normal; color: #555; display: block; margin-top: 2px;">(Click
-                to Collapse/Expand)</span> </summary>
-            <div class="live-station" style="font-size:14px;"> <strong>NOAA
-                Climate Summary</strong><br>
-              <br>
-              <div style="font-size:12px;"> Updated: <span id="climate-update">Loading...</span>
-              </div>
-              <div class="station-box">
-                <!-- YESTERDAY -->
-                <div style="margin-bottom:20px;">
-                  <div class="station-label" style="font-size:15px;">
-                    Yesterday's Conditions </div>
-                  <div style="font-size:11px; color:#666; margin-bottom:8px;">
-                    Observed conditions from the previous calendar day </div>
-                  <div class="station-grid">
-                    <div class="station-item">
-                      <div class="station-label">High Temperature</div>
-                      <div class="station-value" id="yesterday-high">--</div>
-                    </div>
-                    <div class="station-item">
-                      <div class="station-label">Departure from Normal High</div>
-                      <div class="station-value" id="yesterday-high-departure">--</div>
-                    </div>
-                    <div class="station-item">
-                      <div class="station-label">Low Temperature</div>
-                      <div class="station-value" id="yesterday-low">--</div>
-                    </div>
-                    <div class="station-item">
-                      <div class="station-label">Departure from Normal Low</div>
-                      <div class="station-value" id="yesterday-low-departure">--</div>
-                    </div>
-                  </div>
-                </div>
-                <!-- TODAY'S NORMALS & RECORDS -->
-                <div style="margin-bottom:20px;">
-                  <div class="station-label" style="font-size:15px;"> Today's
-                    Climate Normals &amp; Records </div>
-                  <div style="font-size:11px; color:#666; margin-bottom:8px;">
-                    Climate normals and records for today's calendar date </div>
-                  <div class="station-grid">
-                    <div class="station-item">
-                      <div class="station-label">Today's Normal High</div>
-                      <div class="station-value" id="normal-high">66°F</div>
-                    </div>
-                    <div class="station-item">
-                      <div class="station-label">Today's Record High</div>
-                      <div class="station-value" id="record-high">90°F</div>
-                    </div>
-                    <div class="station-item">
-                      <div class="station-label">Today's Normal Low</div>
-                      <div class="station-value" id="normal-low">41°F</div>
-                    </div>
-                    <div class="station-item">
-                      <div class="station-label">Today's Record Low</div>
-                      <div class="station-value" id="record-low">28°F</div>
-                    </div>
-                    <div class="station-item">
-                      <div class="station-label">Today's Normal Rainfall</div>
-                      <div class="station-value" id="normal-rain">--</div>
-                    </div>
-                    <div class="station-item">
-                      <div class="station-label">Today's Record Rainfall</div>
-                      <div class="station-value" id="record-rain"> 2.73 in<br>
-                        <span class="metric">2022</span> </div>
-                    </div>
-                    <div class="station-item">
-                      <div class="station-label">Year-to-Date Rainfall</div>
-                      <div class="station-value" id="ytd-rain">--</div>
-                    </div>
-                    <div class="station-item">
-                      <div class="station-label">Year-to-Date Departure from
-                        Normal Rainfall</div>
-                      <div class="station-value" id="ytd-rain-departure">--</div>
-                    </div>
-                  </div>
-                </div>
-                <!-- MONTHLY SUMMARY -->
-                <div style="margin-bottom:20px;">
-                  <div class="station-label" style="font-size:15px;"> Monthly
-                    Climate Summary </div>
-                  <div style="font-size:11px; color:#666; margin-bottom:8px;">
-                    Month-to-date climate statistics </div>
-                  <div class="station-grid">
-                    <div class="station-item">
-                      <div class="station-label">Warmest Day This Month</div>
-                      <div class="station-value" id="climate-max-temp">--</div>
-                    </div>
-                    <div class="station-item">
-                      <div class="station-label">Coldest Day This Month</div>
-                      <div class="station-value" id="climate-min-temp">--</div>
-                    </div>
-                    <div class="station-item">
-                      <div class="station-label">Average Daily High</div>
-                      <div class="station-value" id="climate-avg-high">--</div>
-                    </div>
-                    <div class="station-item">
-                      <div class="station-label">Average Daily Low</div>
-                      <div class="station-value" id="climate-avg-low">--</div>
-                    </div>
-                    <div class="station-item">
-                      <div class="station-label">Avg Monthly Temp</div>
-                      <div class="station-value" id="climate-monthly-mean">--</div>
-                    </div>
-                    <div class="station-item">
-                      <div class="station-label">Monthly Rainfall Total</div>
-                      <div class="station-value" id="climate-month-rain">--</div>
-                    </div>
-                    <div class="station-item">
-                      <div class="station-label">Wettest Day This Month</div>
-                      <div class="station-value" id="climate-max-rain">--</div>
-                    </div>
-                    <div class="station-item">
-                      <div class="station-label">Average Rainfall / Day</div>
-                      <div class="station-value" id="climate-avg-rain">--</div>
-                    </div>
-                  </div>
-                </div>
-                <!-- SNOW SEASON -->
-                <div style="margin-bottom:20px;">
-                  <div class="station-label" style="font-size:15px;"> Snow
-                    Season Summary </div>
-                  <div style="font-size:11px; color:#666; margin-bottom:8px;">
-                    Seasonal snowfall statistics (July 1 – June 30) </div>
-                  <div class="station-grid">
-                    <div class="station-item">
-                      <div class="station-label">Snowfall This Season</div>
-                      <div class="station-value" id="season-snow">--</div>
-                    </div>
-                    <div class="station-item">
-                      <div class="station-label">Largest Snowstorm</div>
-                      <div class="station-value" id="largest-snow">--</div>
-                    </div>
-                    <div class="station-item">
-                      <div class="station-label">Average Snowfall / Event</div>
-                      <div class="station-value" id="avg-snow">--</div>
-                    </div>
-                    <div class="station-item">
-                      <div class="station-label">Snowfall Days</div>
-                      <div class="station-value" id="snow-days">--</div>
-                    </div>
-                  </div>
-                </div>
-                <!-- STATISTICS -->
-                <div>
-                  <div class="station-label" style="font-size:15px;"> Data
-                    Statistics </div>
-                  <div style="font-size:11px; color:#666; margin-bottom:8px;">
-                    NOAA ACIS retrieval information </div>
-                  <div class="station-grid">
-                    <div class="station-item">
-                      <div class="station-label">Days Observed This Month</div>
-                      <div class="station-value" id="climate-days">--</div>
-                    </div>
-                    <div class="station-item">
-                      <div class="station-label">Observation Period</div>
-                      <div class="station-value" id="climate-period">--</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div style="text-align:left;"> <span style="font-size:12px;">
-                  Climate data source: <a href="https://scacis.rcc-acis.org/">
-                    NOAA RCC ACIS</a></span><span style="font-size:12px;"> with
-                  weather records since 1893. Climate normals and historical
-                  records are sourced via NOAA/ACIS data feeds and are intended
-                  for informational purposes only. Station data can occasionally
-                  contain provisional values or missing periods due to automated
-                  reporting delays.</span><span style="font-size:12px;"></span><span
-                  style="font-size: 12px;"></span><em style="font-size: 12px;"></em>
+        <div class="text-center" style="font-size: 18px;"><strong>📅 </strong><b>Fort
+            Kent Weather Almanac</b> <strong>📅</strong><u><strong></strong></u><strong></strong></div>
+        <div>
+          <div class="text-center"><span style="font-size: 12px;"><em>Non-metric
+                units unless otherwise indicated; times US Eastern<br>
+              </em></span><em><span style="font-size: 12px;">Visit <a href="https://viewer.synopticdata.com/map/data/now/air-temperature?radar=conus_bref_qcd#map=11.67/47.2239/-68.5609">Synoptic
+                  Data</a> for more live and archived Apex Wx PWS data.</span></em></div>
+        </div>
+        <div style="width: 810px;">
+          <div><em style="font-size: 12px;"><em style="font-size: 12px;"><br>
+              </em></em></div>
+          <u><strong> Saturday, May 30</strong></u>
+          <div>
+            <div>
+              <div><b>High</b>: 63° at 4:58 am&nbsp; | <b>Low</b>: 32° at 3:54
+                am
+                <div><b>Rainfall: </b>0.00" | <strong>Snowfall</strong>: 0.0"</div>
+                <div><b>Avg. Daily Wind:</b> N at 1 mph |<strong> Max. Daily
+                    Gust</strong>: 14 mph at 1:44 pm</div>
               </div>
             </div>
-          </details>
+            <div>
+              <div>
+                <div>
+                  <div>
+                    <div>
+                      <div> <span style="font-size: 12px;"><span style="font-size: 12px;">Data
+                            source: </span></span><span style="font-size: 12px;"><span
+                            style="font-size: 12px;">Davis Instruments <a href="https://www.davisinstruments.com/collections/vantage-pro2/products/vantage-pro2-groweather-wireless-integrated-sensor-suite">Vantage
+                              Pro 2</a> Personal Weather Station | Rain gauge
+                            not heated in winter.</span></span></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div><u><strong></strong></u><u><strong><br>
+              </strong></u><u><strong> Sunday, May 31</strong></u> </div>
+          <div>
+            <div> </div>
+            <div style="width: 810px;"><strong>Normal High: </strong>67° |<strong>
+                Record High</strong>: 88° (1937)<br>
+              <strong> Normal Low:&nbsp; </strong>42° | <strong>Record
+                Low:&nbsp; </strong>29<strong>°</strong> (1964)<br>
+              <strong>Normal Daily Rainfall: </strong>0.12"<strong> </strong>|<strong>
+                Record Rainfall</strong>: 1.13" (1979)</div>
+            <div style="width: 810px;"><strong>Normal Daily Snowfall:</strong>
+              0.0" | <strong>Record Snowfall</strong>: —</div>
+            <div style="width: 810px;"><span style="font-size: 12px;">Source: </span><span
+                style="font-size: 12px;"><span style="font-size: 12px;"><a href="https://scacis.rcc-acis.org/">NOAA
+                    SC-ACIS</a> </span>NWS Caribou climate data / Weather
+                records since 1893</span><em style="font-size: 12px;"><br>
+              </em></div>
+            <div style="width: 810px;"><br>
+            </div>
+            <u><strong>Precipitation 2026</strong></u><br>
+            <strong></strong>
+            <div style="width: 810px;"><strong>Rain</strong><strong>: </strong>14.35"
+              | <u>normal</u>: 14.35" (<span style="color: #666666;">0.00"</span>)</div>
+          </div>
+          <strong>Snow 25-26</strong><strong>: </strong>84.8" | <u>normal</u>:
+          99.3" (<span style="color: red;">-14.5"</span>)</div>
+        <div>
+          <div style="width: 810px;"><strong>Snow 24-25:</strong> 73.2" | <u>normal</u>:
+            99.3" (<span style="color: red;">-26.1"</span>)</div>
+          <span style="color: red;"><span style="color: black;"></span></span> <span
+            style="color: red;"> </span>
+          <div class="precip-note"><span style="font-size: 12px;">❄️</span><em style="font-size: 12px;">
+            </em><span style="font-size: 12px;">Annual snowfall measured from
+              July 1 - June 30</span><em style="font-size: 12px;"> </em><span style="font-size: 12px;">❄️</span><em
+              style="font-size: 12px;"> | </em><span style="font-size: 12px;">Data
+              source: </span><span style="font-size: 12px;"><span style="font-size: 12px;"><a
+                  href="https://scacis.rcc-acis.org/">NOAA SC-ACIS</a> </span>NWS
+              Caribou climate data</span><em style="font-size: 12px;"><br>
+            </em></div>
+          <div class="precip-note"><em style="font-size: 12px;"><br>
+            </em></div>
+          <div class="precip-note">
+            <div style="text-align: left;"><a href="https://www.wpc.ncep.noaa.gov/discussions/hpcdiscussions.php?disc=nathilo&amp;version=0&amp;fmt=reg">US
+                National High/Low Temperatures</a></div>
+            <div style="font-size: 12px; text-align: left;"><em>Source: NOAA
+                Weather Prediction Center</em></div>
+          </div>
         </div>
-        <hr>
         <div>
           <div>
-            <div style="text-align: center; font-size: 18px;"><strong>☀️Sun
+            <div style="text-align: left;"><strong> <a href="https://www.timeanddate.com/astronomy/@4964627"><br>
+                </a></strong></div>
+            <hr>
+            <div style="text-align: center; font-size: 18px;"><strong></strong><strong>☀️Sun
                 &amp; Moon Information</strong><strong><span>🌙</span></strong><em></em></div>
             <div style="text-align: center;"><span style="font-size: 12px;"><em>Times
                   US Eastern</em></span></div>
@@ -1171,22 +1045,22 @@ body, div, span, p {
                 sunrise/sunset...</div>
             </div>
             <div style="text-align: left;"><strong><br>
-              </strong><strong><a href="https://www.timeanddate.com/moon/phases/@4964627">Moon
-                  Phase</a>:</strong> 🌕 Full "Blue" Moon <span>4:45 am Sun. 31
-                May<br>
-              </span>
+              </strong>
+              <div><strong> </strong><strong><a href="https://www.timeanddate.com/moon/phases/@4964627">Moon
+                    Phase</a>:</strong> 🌕 Full "Blue" Moon <span>4:45 am Sun.
+                  31 May<br>
+                </span></div>
               <div><strong><span><br>
                   </span></strong></div>
               <div><strong><span>Today's Moon Times: 🌙↓ </span></strong><span>4:13
                   am this morning&nbsp;</span> |&nbsp; <strong><span> 🌙↑ </span></strong><span>9:22</span><span></span><span>
                 </span>pm this evening</div>
-              <div><br>
-              </div>
-              <div style="font-size: 12px;"> <em><u>Notice</u>: Sun and moon
-                  times are astronomical predictions based on ideal horizon
-                  conditions and standard calculations, rather than real-time
-                  observations. Actual visibility will vary depending on your
-                  exact local topography, weather, and atmospheric distortion.</em></div>
+              <div style="font-size: 12px;"><br>
+                <em><u>Notice</u>: Sun and moon times are astronomical
+                  predictions based on ideal horizon conditions and standard
+                  calculations, rather than real-time observations. Actual
+                  visibility will vary depending on your exact local topography,
+                  weather, and atmospheric distortion.</em></div>
             </div>
           </div>
           <div> </div>
@@ -1204,10 +1078,9 @@ body, div, span, p {
                   <div style="text-align: left;">
                     <div class="text-center" style="font-size: 12px;"><em style="color: #666666;">Outlooks
                         updated 7-9 AM ET Weekdays / 8-10 AM Weekends &amp;
-                        Holidays</em><br>
-                      <em style="color: #666666;"> </em><span style="color: #666666;"><em><span
-                            style="font-size: 12px;">AI is not used in
-                            generating outlooks.</span></em></span></div>
+                        Holidays<br>
+                      </em><span style="color: #666666;"><em><span style="font-size: 12px;">AI
+                            is not used in generating outlooks</span></em></span></div>
                     <div class="text-center">
                       <div id="season-display" style="text-align: center;">Loading
                         season... </div>
@@ -1231,27 +1104,28 @@ body, div, span, p {
           <strong></strong></div>
         <div><u><strong><br>
             </strong></u></div>
-        <u><strong>7-Day Outlook: Sun. May 31 – Sat. Jun. 6</strong></u>
-        <div>
-          <div><span style="color: #666666;"><em><span style="font-size: 12px;">Updated
-                  May 31 at 9:50 AM </span><span style="font-size: 12px;">EDT <br>
-                </span></em></span></div>
-          <div><strong><br>
-            </strong></div>
-          <div><strong>Short-Term Forecast: Today – Tuesday<br>
-            </strong></div>
-        </div>
-        Low pressure over Québec will slide into western-southwestern Maine
-        today and off Cape Cod by Monday morning. This system is weaker than the
-        one which affected western Maine, Vermont, and New Hampshire Friday
-        night into Saturday morning. Currently, some shower activity and a few
-        thunderstorms are possible in western/southwestern Maine today
-        (Allagash, North Woods, and western mountains) and tonight with some
-        locally heavy downpours possible. Most areas east of <a href="https://en.wikipedia.org/wiki/Maine_State_Route_11">Maine
-          Highway 11</a> seeing little in the way from this system beyond some
-        increased cloudiness at times. Mostly-to-partly sunny skies are expected
-        across the Valley today with only a 10% chance of showers in Fort Kent
-        and vicinity. High in the low 60s with east wind 0-5 mph.
+        <div><u><strong>7-Day Outlook: Sun. May 31 – Sat. Jun. 6</strong></u>
+          <div>
+            <div><span style="color: #666666;"><em><span style="font-size: 12px;">Updated
+                    May 31 at 9:50 AM </span><span style="font-size: 12px;">EDT
+                    <br>
+                  </span></em></span></div>
+            <div><strong><br>
+              </strong></div>
+            <div><strong>Short-Term Forecast: Today – Tuesday<br>
+              </strong></div>
+          </div>
+          Low pressure over Québec will slide into western-southwestern Maine
+          today and off Cape Cod by Monday morning. This system is weaker than
+          the one which affected western Maine, Vermont, and New Hampshire
+          Friday night into Saturday morning. Currently, some shower activity
+          and a few thunderstorms are possible in western/southwestern Maine
+          today (Allagash, North Woods, and western mountains) and tonight with
+          some locally heavy downpours possible. Most areas east of <a href="https://en.wikipedia.org/wiki/Maine_State_Route_11">Maine
+            Highway 11</a> seeing little in the way from this system beyond some
+          increased cloudiness at times. Mostly-to-partly sunny skies are
+          expected across the Valley today with only a 10% chance of showers in
+          Fort Kent and vicinity. High in the low 60s with east wind 0-5 mph.</div>
         <div><br>
           Tonight, mostly cloudy skies in the evening give way to partly cloudy
           conditions overnight with lows falling into the mid- to upper 30s with
@@ -1334,9 +1208,9 @@ body, div, span, p {
           in the low 50s. Based on current data, this pattern looks to continue
           through about Tue. June 9 with highs in the 70s and lows in the 50s
           under partly cloudy/mostly clear skies with only slight chances of
-          precipitation through Wed. June 10. Climate Predication Center 8-14
-          day climate trends for June 8-14 currently suggest above normal
-          temperatures and near normal precipitation amounts for northern Maine.</div>
+          precipitation through Wed. June 10. 8-14 day climate trends currently
+          suggest above normal temperatures and near normal precipitation
+          amounts for northern Maine.</div>
         <div><br>
         </div>
         <div>
@@ -1395,229 +1269,219 @@ body, div, span, p {
                               <div>
                                 <hr style="margin-left: 0px; margin-right: auto;"><u><strong><span
                                       style="font-variant: small-caps;"></span></strong></u></div>
+                              <div style="text-align: left;"><u><strong></strong></u><br>
+                                <u><strong> </strong></u></div>
                             </div>
-                            <div style="margin-top: 1em; text-align: center;">
-                              <details style="width:100%; margin-top:1em;" open="">
-                                <summary style="cursor: pointer; text-align: center; font-size: 1.2em; font-weight: bold;">
-                                  🇺🇸 US National Weather Outlook 🇺🇸 <span style="
-      font-size:13px;      font-weight:normal;      color:#555;      display:block;      margin-top:2px;">
-                                    (Click to Collapse/Expand)<br>
-                                    <br>
-                                  </span> </summary>
-                                <div style="text-align: left;"><strong>Heavy
-                                    Rain, Flooding Concerns, and Strong
-                                    Thunderstorms Stretch from the Rockies to
-                                    the Southeast</strong></div>
-                                <div style="text-align: left;"> A slow-moving
-                                  weather system will bring periods of showers
-                                  and thunderstorms from the Northern Rockies
-                                  through the Plains and into the Southeast
-                                  through Monday. The greatest concern is across
-                                  parts of the Southeast, where heavy rainfall
-                                  may lead to localized flooding, especially in
-                                  areas that have already received significant
-                                  rain. Strong thunderstorms are also possible
-                                  from the Dakotas into the Ozarks and portions
-                                  of western Texas. By Monday, the storm system
-                                  will shift slightly northeast, continuing to
-                                  produce thunderstorms across parts of the
-                                  eastern and central United States. Some storms
-                                  may become severe, with damaging wind gusts
-                                  and large hail as the primary threats.
-                                  Meanwhile, temperatures across much of the
-                                  country will remain near to above seasonal
-                                  averages. The southern Plains will experience
-                                  the hottest conditions, with widespread
-                                  temperatures in the 90s creating elevated
-                                  heat-related concerns.</div>
-                                <div><br>
-                                </div>
+                            <div>
+                              <div class="text-center"><strong style="font-size: 18px;">🇺🇸
+                                  US National Weather Outlook</strong><strong></strong><strong>
+                                  🇺🇸<br>
+                                </strong></div>
+                              <div class="text-center"><strong><br>
+                                </strong> <strong></strong></div>
+                              <strong>Heavy Rain, Flooding Concerns, and Strong
+                                Thunderstorms Stretch from the Rockies to the
+                                Southeast</strong><br>
+                              A slow-moving weather system will bring periods of
+                              showers and thunderstorms from the Northern
+                              Rockies through the Plains and into the Southeast
+                              through Monday. The greatest concern is across
+                              parts of the Southeast, where heavy rainfall may
+                              lead to localized flooding, especially in areas
+                              that have already received significant rain.
+                              Strong thunderstorms are also possible from the
+                              Dakotas into the Ozarks and portions of western
+                              Texas. By Monday, the storm system will shift
+                              slightly northeast, continuing to produce
+                              thunderstorms across parts of the eastern and
+                              central United States. Some storms may become
+                              severe, with damaging wind gusts and large hail as
+                              the primary threats. Meanwhile, temperatures
+                              across much of the country will remain near to
+                              above seasonal averages. The southern Plains will
+                              experience the hottest conditions, with widespread
+                              temperatures in the 90s creating elevated
+                              heat-related concerns.</div>
+                            <div><br>
+                            </div>
+                          </div>
+                          <div>
+                            <div class="text-center"><a href="https://www.wpc.ncep.noaa.gov/NationalForecastChart/staticmaps/noaad1.png"><strong>Today's
+                                  Forecast Chart</strong></a><br>
+                              <strong> </strong>
+                              <div>
+                                <div class="text-center"><a href="https://www.wpc.ncep.noaa.gov/NationalForecastChart/map.php"
+                                    title="Click for interactive chart"><img alt="National Forecast Chart"
+                                      src="https://www.wpc.ncep.noaa.gov/NationalForecastChart/staticmaps/noaad1.png"
+                                      style="height: 369px; width: 555px;" height="369"
+                                      width="555"></a></div>
+                              </div>
+                            </div>
+                            <br>
+                            <div>
+                              <div>
                                 <div>
-                                  <div class="text-center"><a href="https://www.wpc.ncep.noaa.gov/NationalForecastChart/staticmaps/noaad1.png"><strong>Today's
-                                        Forecast Chart</strong></a><br>
-                                    <strong> </strong>
-                                    <div>
-                                      <div class="text-center"><a href="https://www.wpc.ncep.noaa.gov/NationalForecastChart/map.php"
-                                          title="Click for interactive chart"><img
-                                            alt="National Forecast Chart" src="https://www.wpc.ncep.noaa.gov/NationalForecastChart/staticmaps/noaad1.png"
-                                            style="height: 369px; width: 555px;"
-                                            height="369" width="555"></a></div>
-                                    </div>
-                                  </div>
-                                  <br>
-                                  <div>
-                                    <div>
-                                      <div>
-                                        <div style="margin-top: 1em;">
-                                          <div class="text-center">
-                                            <div class="text-center"><strong><strong><strong><strong><strong><strong>🌪️</strong></strong></strong>⛈️
-                                                    </strong></strong>Severe
-                                                Weather Outlook </strong><strong><strong><strong><strong><strong><strong><strong><strong><strong></strong></strong></strong>⛈️</strong></strong></strong>🌪️<br>
-                                                  </strong></strong></strong><em><span
-                                                  style="font-size: 12px;">Learn
-                                                  more about <a href="https://www.spc.noaa.gov/new/images/SPC_outlook_final_updated.png"
-                                                    title="Click for more information">Severe
-                                                    Thunderstorm Outlooks</a></span></em><br>
-                                              <strong> </strong></div>
-                                            <strong></strong></div>
-                                          <strong> </strong><strong></strong></div>
+                                  <div style="margin-top: 1em;">
+                                    <div class="text-center">
+                                      <div class="text-center"><strong><strong><strong><strong><strong><strong>🌪️</strong></strong></strong>⛈️
+                                              </strong></strong>Severe Weather
+                                          Outlook </strong><strong><strong><strong><strong><strong><strong><strong><strong><strong></strong></strong></strong>⛈️</strong></strong></strong>🌪️<br>
+                                            </strong></strong></strong><em><span
+                                            style="font-size: 12px;">Learn more
+                                            about <a href="https://www.spc.noaa.gov/new/images/SPC_outlook_final_updated.png"
+                                              title="Click for more information">Severe
+                                              Thunderstorm Outlooks</a></span></em><br>
                                         <strong> </strong></div>
-                                      <strong></strong><strong></strong><strong></strong><strong></strong><strong></strong><strong></strong><strong></strong><strong></strong><strong></strong><strong></strong><strong></strong><strong></strong><strong></strong>
-                                      <div style="margin-top: 1em;">
-                                        <div class="text-center">
-                                          <div style="text-align: left;"><strong>Severe
-                                              Thunderstorm Threat Develops
-                                              Across Eastern Kansas and Western
-                                              Missouri This Evening</strong><br>
-                                            Warm, humid air and a slow-moving
-                                            weather boundary will create
-                                            favorable conditions for strong
-                                            thunderstorms across eastern Kansas
-                                            and western Missouri this evening. A
-                                            few storms may become severe,
-                                            bringing the potential for large
-                                            hail, damaging wind gusts, and an
-                                            isolated tornado. Thunderstorms
-                                            already present during the morning
-                                            may help set the stage for
-                                            additional development later in the
-                                            day as the boundary shifts
-                                            northward. The strongest storms are
-                                            expected to organize during the
-                                            early evening and move from eastern
-                                            Kansas into Missouri. Residents
-                                            should remain alert for rapidly
-                                            changing weather conditions and
-                                            possible severe weather warnings.
-                                            Elsewhere, scattered strong
-                                            thunderstorms may develop across
-                                            parts of Arkansas and southwest
-                                            Texas, while isolated storms capable
-                                            of producing large hail are possible
-                                            from portions of the Dakotas into
-                                            Nebraska and Iowa.</div>
-                                          <div style="text-align: left;"><br>
-                                          </div>
-                                          <div class="text-center"><strong><a href="https://www.spc.noaa.gov/products/outlook/day1otlk.html">Today's
-                                                Severe Weather Chart</a></strong>
-                                            <div class="text-center"><a href="https://www.spc.noaa.gov/products/outlook/day1otlk.html"
-                                                title="Click for more information"><img
-                                                  alt="Thunderstorm / Severe Weather Outlook"
-                                                  src="https://www.spc.noaa.gov/partners/outlooks/state/swody1.png?1678542573998"
-                                                  style="height: 320px; width: 555px;"
-                                                  height="320" width="555"></a></div>
-                                          </div>
-                                          <div style="text-align: left;"><br>
-                                            <div class="text-center"><strong>🌧️Excessive
-                                                Rainfall Outlook</strong> 🌧️<em><span
-                                                  style="font-size: 12px;"></span></em><br>
-                                              <em><span style="font-size: 12px;">Learn
-                                                  more about <a href="https://www.wpc.ncep.noaa.gov/para/para_images/ERO_Categories.png">Excessive
-                                                    Rainfall Risk </a></span></em></div>
-                                          </div>
-                                        </div>
-                                      </div>
-                                      <div style="margin-top: 1em;">
-                                        <div style="margin-top: 1em; text-align: left;">
-                                          <div style="margin-top: 1em; text-align: left;"><strong>Flooding
-                                              Concerns Grow Across the Northern
-                                              Rockies and Southeast as Heavy
-                                              Rain Persists</strong><br>
-                                            Periods of rain and thunderstorms
-                                            will continue today across parts of
-                                            the Northern Rockies and the
-                                            Southeast, increasing the risk of
-                                            localized flooding. In Montana,
-                                            northern Wyoming, and nearby
-                                            portions of the western Dakotas,
-                                            additional rainfall on already
-                                            saturated ground may lead to rising
-                                            water levels and flooding issues,
-                                            even where rain is not especially
-                                            intense. Across the Southeast, warm
-                                            and humid conditions will support
-                                            scattered thunderstorms capable of
-                                            producing heavy downpours. Some
-                                            locations could receive several
-                                            inches of rain in a short period of
-                                            time, leading to flooding in
-                                            low-lying and poor-drainage areas.
-                                            Between these regions, scattered
-                                            showers and thunderstorms are
-                                            expected along a nearly stationary
-                                            weather boundary, with isolated
-                                            heavy rainfall possible where storms
-                                            repeatedly move over the same
-                                            locations.</div>
-                                          <a href="https://www.wpc.ncep.noaa.gov/qpf/excessive_rainfall_outlook_ero.php"><strong></strong></a></div>
-                                        <div style="margin-top: 1em; text-align: center;"><a
-                                            href="https://www.wpc.ncep.noaa.gov/qpf/excessive_rainfall_outlook_ero.php"><strong>Today's
-                                              Excessive Rainfall Chart</strong></a>
-                                          <div style="font-size: 14px; text-align: center;"><strong></strong>
-                                            <a href="https://www.wpc.ncep.noaa.gov/#page=ero"
-                                              title="Excessive Rainfall Outlook"><img
-                                                alt="Day 1 Excessive Rainfall Outlook"
-                                                src="https://www.wpc.ncep.noaa.gov/qpf/94ewbg.gif"
-                                                style="width: 553px; height: 175.959px; border-width: 1px; border-style: solid;"
-                                                width="553"></a></div>
-                                        </div>
-                                        <div style="margin-top: 1em; text-align: center;"><strong><br>
-                                            🔥Fire Weather Outlook</strong><strong>🔥</strong><br>
-                                          <em><span style="font-size: 12px;">Learn
-                                              more about <a href="https://www.spc.noaa.gov/misc/about.html#FireWx">Fire
-                                                Weather Outlooks</a></span></em>
-                                          <div style="text-align: left;"><strong></strong><strong></strong><strong><br>
-                                            </strong></div>
-                                          <div style="text-align: left;"><strong>Dry
-                                              Conditions Persist Across the
-                                              Southwest, but Limited Fire
-                                              Weather Threat Expected<br>
-                                            </strong>Fire weather concerns are
-                                            expected to remain relatively low
-                                            across most of the country today.
-                                            The driest conditions will be found
-                                            across eastern Arizona and central
-                                            New Mexico, where very low humidity
-                                            and dry vegetation could support the
-                                            spread of any new fires. However,
-                                            light winds are expected to limit
-                                            the overall fire danger and reduce
-                                            the potential for rapid fire growth.
-                                            Areas of central New Mexico with
-                                            higher terrain may see slightly
-                                            greater concerns due to local wind
-                                            effects. Dry weather will also
-                                            continue across parts of the Great
-                                            Lakes and Upper Mississippi Valley,
-                                            but weak winds should help keep fire
-                                            risks in check. In southeast
-                                            Wyoming, locally elevated fire
-                                            weather conditions are possible,
-                                            although recent rainfall has likely
-                                            reduced the threat by improving
-                                            moisture levels in vegetation.</div>
-                                        </div>
-                                      </div>
+                                      <strong></strong></div>
+                                    <strong> </strong><strong></strong></div>
+                                  <strong> </strong></div>
+                                <strong></strong><strong></strong><strong></strong><strong></strong><strong></strong><strong></strong><strong></strong><strong></strong><strong></strong><strong></strong><strong></strong><strong></strong><strong></strong>
+                                <div style="margin-top: 1em;">
+                                  <div class="text-center">
+                                    <div style="text-align: left;"><strong>Severe
+                                        Thunderstorm Threat Develops Across
+                                        Eastern Kansas and Western Missouri This
+                                        Evening</strong><br>
+                                      Warm, humid air and a slow-moving weather
+                                      boundary will create favorable conditions
+                                      for strong thunderstorms across eastern
+                                      Kansas and western Missouri this evening.
+                                      A few storms may become severe, bringing
+                                      the potential for large hail, damaging
+                                      wind gusts, and an isolated tornado.
+                                      Thunderstorms already present during the
+                                      morning may help set the stage for
+                                      additional development later in the day as
+                                      the boundary shifts northward. The
+                                      strongest storms are expected to organize
+                                      during the early evening and move from
+                                      eastern Kansas into Missouri. Residents
+                                      should remain alert for rapidly changing
+                                      weather conditions and possible severe
+                                      weather warnings. Elsewhere, scattered
+                                      strong thunderstorms may develop across
+                                      parts of Arkansas and southwest Texas,
+                                      while isolated storms capable of producing
+                                      large hail are possible from portions of
+                                      the Dakotas into Nebraska and Iowa.</div>
+                                    <div style="text-align: left;"><br>
+                                    </div>
+                                    <div class="text-center"><strong><a href="https://www.spc.noaa.gov/products/outlook/day1otlk.html">Today's
+                                          Severe Weather Chart</a></strong>
+                                      <div class="text-center"><a href="https://www.spc.noaa.gov/products/outlook/day1otlk.html"
+                                          title="Click for more information"><img
+                                            alt="Thunderstorm / Severe Weather Outlook"
+                                            src="https://www.spc.noaa.gov/partners/outlooks/state/swody1.png?1678542573998"
+                                            style="height: 320px; width: 555px;"
+                                            height="320" width="555"></a></div>
+                                    </div>
+                                    <div style="text-align: left;"><br>
+                                      <div class="text-center"><strong>🌧️Excessive
+                                          Rainfall Outlook</strong> 🌧️<em><span
+                                            style="font-size: 12px;"></span></em><br>
+                                        <em><span style="font-size: 12px;">Learn
+                                            more about <a href="https://www.wpc.ncep.noaa.gov/para/para_images/ERO_Categories.png">Excessive
+                                              Rainfall Risk </a></span></em></div>
                                     </div>
                                   </div>
                                 </div>
-                                <div style="text-align: left;"><br>
+                                <div style="margin-top: 1em;">
+                                  <div style="margin-top: 1em; text-align: left;">
+                                    <div style="margin-top: 1em; text-align: left;"><strong>Flooding
+                                        Concerns Grow Across the Northern
+                                        Rockies and Southeast as Heavy Rain
+                                        Persists</strong><br>
+                                      Periods of rain and thunderstorms will
+                                      continue today across parts of the
+                                      Northern Rockies and the Southeast,
+                                      increasing the risk of localized flooding.
+                                      In Montana, northern Wyoming, and nearby
+                                      portions of the western Dakotas,
+                                      additional rainfall on already saturated
+                                      ground may lead to rising water levels and
+                                      flooding issues, even where rain is not
+                                      especially intense. Across the Southeast,
+                                      warm and humid conditions will support
+                                      scattered thunderstorms capable of
+                                      producing heavy downpours. Some locations
+                                      could receive several inches of rain in a
+                                      short period of time, leading to flooding
+                                      in low-lying and poor-drainage areas.
+                                      Between these regions, scattered showers
+                                      and thunderstorms are expected along a
+                                      nearly stationary weather boundary, with
+                                      isolated heavy rainfall possible where
+                                      storms repeatedly move over the same
+                                      locations.</div>
+                                    <a href="https://www.wpc.ncep.noaa.gov/qpf/excessive_rainfall_outlook_ero.php"><strong></strong></a></div>
+                                  <div style="margin-top: 1em; text-align: center;"><a
+                                      href="https://www.wpc.ncep.noaa.gov/qpf/excessive_rainfall_outlook_ero.php"><strong>Today's
+                                        Excessive Rainfall Chart</strong></a>
+                                    <div style="font-size: 14px; text-align: center;"><strong></strong>
+                                      <a href="https://www.wpc.ncep.noaa.gov/#page=ero"
+                                        title="Excessive Rainfall Outlook"><img
+                                          alt="Day 1 Excessive Rainfall Outlook"
+                                          src="https://www.wpc.ncep.noaa.gov/qpf/94ewbg.gif"
+                                          style="width: 553px; height: 175.959px; border-width: 1px; border-style: solid;"
+                                          width="553"></a></div>
+                                  </div>
+                                  <div style="margin-top: 1em; text-align: center;"><strong><br>
+                                      🔥Fire Weather Outlook</strong><strong>🔥</strong><br>
+                                    <em><span style="font-size: 12px;">Learn
+                                        more about <a href="https://www.spc.noaa.gov/misc/about.html#FireWx">Fire
+                                          Weather Outlooks</a></span></em>
+                                    <div style="text-align: left;"><strong></strong><strong></strong><strong><br>
+                                      </strong></div>
+                                    <div style="text-align: left;"><strong>Dry
+                                        Conditions Persist Across the Southwest,
+                                        but Limited Fire Weather Threat Expected<br>
+                                      </strong>Fire weather concerns are
+                                      expected to remain relatively low across
+                                      most of the country today. The driest
+                                      conditions will be found across eastern
+                                      Arizona and central New Mexico, where very
+                                      low humidity and dry vegetation could
+                                      support the spread of any new fires.
+                                      However, light winds are expected to limit
+                                      the overall fire danger and reduce the
+                                      potential for rapid fire growth. Areas of
+                                      central New Mexico with higher terrain may
+                                      see slightly greater concerns due to local
+                                      wind effects. Dry weather will also
+                                      continue across parts of the Great Lakes
+                                      and Upper Mississippi Valley, but weak
+                                      winds should help keep fire risks in
+                                      check. In southeast Wyoming, locally
+                                      elevated fire weather conditions are
+                                      possible, although recent rainfall has
+                                      likely reduced the threat by improving
+                                      moisture levels in vegetation.</div>
+                                    <div style="text-align: left;"><br>
+                                    </div>
+                                    <div class="text-center"><a href="https://www.spc.noaa.gov/products/fire_wx/fwdy1.html"><strong
+                                          style="font-size: 16px;">Today's Fire
+                                          Weather Chart</strong></a>
+                                      <div style="font-size: 14px; text-align: center;"><strong
+                                          style="font-size: 14px;"></strong> <strong></strong><a
+                                          href="https://www.spc.noaa.gov/products/fire_wx/fwdy1.html"
+                                          title="Click for more information"><img
+                                            alt="Today's Fire Weather Outlook" src="https://www.spc.noaa.gov/products/fire_wx/day1otlk_fire.gif"
+                                            style="width: 555px; height: 171px; border-radius: 1px / 0px; border-width: 1px; border-style: solid;"
+                                            height="171" width="555"></a></div>
+                                    </div>
+                                    <div style="text-align: left;"><br>
+                                    </div>
+                                    <em style="font-size: 12px;"> </em></div>
                                 </div>
-                                <div class="text-center"><a href="https://www.spc.noaa.gov/products/fire_wx/fwdy1.html"><strong
-                                      style="font-size: 16px;">Today's Fire
-                                      Weather Chart</strong></a>
-                                  <div style="font-size: 14px; text-align: center;"><strong
-                                      style="font-size: 14px;"></strong> <strong></strong><a
-                                      href="https://www.spc.noaa.gov/products/fire_wx/fwdy1.html"
-                                      title="Click for more information"><img alt="Today's Fire Weather Outlook"
-                                        src="https://www.spc.noaa.gov/products/fire_wx/day1otlk_fire.gif"
-                                        style="width: 555px; height: 171px; border-radius: 1px / 0px; border-width: 1px; border-style: solid;"
-                                        height="171" width="555"></a></div>
-                                </div>
-                                <em style="font-size: 12px;"><br>
-                                  National Weather Outlook information sources:
-                                  Weather Prediction Center &amp; Storm
-                                  Prediction Center</em></details>
+                              </div>
+                              <div style="font-size: 14px; text-align: center;"><em
+                                  style="font-size: 12px;">National Weather
+                                  Outlook information sources: <a href="https://www.wpc.ncep.noaa.gov/#page=ovw"
+                                    rel="noopener noreferrer" target="_blank">Weather
+                                    Prediction Center </a> &amp; <a href="https://www.spc.noaa.gov/"
+                                    rel="noopener noreferrer" target="_blank">
+                                    Storm Prediction Center</a></em><br>
+                                <strong style="font-size: 16px;"></strong></div>
                             </div>
                           </div>
                           <div>
@@ -1628,7 +1492,7 @@ body, div, span, p {
                                     <div>
                                       <div style="text-align: left;">
                                         <hr>
-                                        <details>
+                                        <details open="">
                                           <summary style="cursor: pointer; text-align: center; font-size: 1.2em; font-weight: bold;">
                                             🌤️ Weather Resources 🌤️<br>
                                             <span style="font-size: 12px; font-style: italic; font-weight: normal;">
@@ -1901,6 +1765,8 @@ body, div, span, p {
             minutes by the time they reach your app.That delay means the weather
             you are viewing might already be miles away — or more intense than
             the image suggests.</div>
+          <div style="text-align: left;"><br>
+          </div>
           <div>
             <script>
                            document.write("This website was last modified " + " " +document.lastModified);
@@ -2241,33 +2107,33 @@ body, div, span, p {
     </div>
     <!-- Footer -->
     <footer id="page-footer">
-      <p style="text-align: center; margin-bottom: 15px;"> <a href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fapexwx.github.io%2F">
-          <img alt="W3C Validated HTML 5" src="https://apexwx.github.io/validhtml5.png"
-            style="width: 112px; height: 49px; margin: 0px;" title="Click for more information"
-            height="49" width="112"> </a> <a href="http://jigsaw.w3.org/css-validator/validator?lang=en&amp;profile=css3svg&amp;uri=https%3A%2F%2Fapexwx.github.io%2F&amp;usermedium=all&amp;vextwarning=&amp;warning=1">
-          <img alt="Valid CSS!" src="https://jigsaw.w3.org/css-validator/images/vcss-blue"
-            style="border: 0px none; width: 88px; height: 31px; margin: 10px;" height="31"
-            width="88"> </a> </p>
-      <div class="text-center">Follow Apex Wx on Social Media</div>
-      <div class="text-center" style="margin-top: 5px;"> <a href="https://www.facebook.com/ApexWx/"
-          style="font-size: 12px; text-align: center;"> <img alt="Apex Wx on Facebook"
-            src="https://raw.githubusercontent.com/ApexWx/ApexWx.github.io/master/outline-dark-facebook-48.png"
+      <p><strong><strong><a href="https://www.thesitewizard.com/" target="_top"></a></strong></strong><strong><strong><a
+              href="https://jigsaw.w3.org/css-validator/validator?lang=en&amp;profile=css3svg&amp;uri=https%3A%2F%2Fapexwx.github.io%2F&amp;usermedium=all&amp;vextwarning=&amp;warning=1"><strong><strong></strong></strong></a><strong><strong><a
+                  href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fapexwx.github.io%2F"><img
+                    alt="W3C Validated HTML 5" src="https://apexwx.github.io/validhtml5.png"
+                    style="width: 112px; height: 49px; margin: 0px;" title="Click for more information"
+                    height="49" width="112"></a></strong></strong> <a href="http://jigsaw.w3.org/css-validator/validator?lang=en&amp;profile=css3svg&amp;uri=https%3A%2F%2Fapexwx.github.io%2F&amp;usermedium=all&amp;vextwarning=&amp;warning=1">
+              <img alt="Valid CSS!" src="https://jigsaw.w3.org/css-validator/images/vcss-blue"
+                style="border: 0px none; width: 88px; height: 31px; margin: 10px;"
+                height="31" width="88"> </a> </strong></strong> </p>
+      <div class="text-center">Follow Apex Wx on Social Media </div>
+      <div class="text-center"><a href="https://www.facebook.com/ApexWx/" style="font-size: 12px; text-align: center;"><img
+            alt="Apex Wx on Facebook" src="https://raw.githubusercontent.com/ApexWx/ApexWx.github.io/master/outline-dark-facebook-48.png"
             style="border: medium none; max-width: 100%; margin: 0px; padding-bottom: 5px; width: 42px; height: 47px;"
-            title="Apex Wx on Facebook" height="47" width="42"> </a> <a href="https://universeodon.com/@ApexWx"
-          title="Apex Wx on Mastodon"> <img alt="Mastodon" src="https://apexwx.github.io/mastodon.png"
+            title="Apex Wx on Facebook" height="47" width="42"></a> <a href="https://universeodon.com/@ApexWx"
+          title="Apex Wx on Mastodon"><img alt="Mastodon" src="https://apexwx.github.io/mastodon.png"
             style="width: 49px; height: 49px; padding: 5px; margin: 0px;" title="Apex Wx on Mastodon"
-            height="49" width="49"> </a> <a href="https://www.threads.net/@apexwx"
-          title="Apex Wx on Threads"> <img alt="Threads" src="https://apexwx.github.io/threadslogo.png"
-            style="width: 47px; height: 47px; padding: 5px;" height="47" width="47">
-        </a> <a href="https://www.instagram.com/apexwx/" title="Apex Wx on Instagram">
-          <img alt="Instagram" src="https://apexwx.github.io/instagram48.png" style="width: 52px; height: 53px; padding: 5px;"
-            height="53" width="52"> </a> <a href="https://bsky.app/profile/apexwx.bsky.social"
-          title="Apex Wx on Blue Sky social "> <img alt="Bluesky" src="https://apexwx.github.io/Bsky75.png"
-            style="width: 62px; height: 51px; padding: 5px;" height="51" width="62">
-        </a> </div>
+            height="49" width="49"></a><a href="https://www.threads.net/@apexwx"
+          title="Apex Wx on Threads"><img alt="Threads" src="https://apexwx.github.io/threadslogo.png"
+            style="width: 47px; height: 47px; padding: 5px;" height="47" width="47"></a><a
+          href="https://www.instagram.com/apexwx/" title="Apex Wx on Instagram"><img
+            alt="Instagram" src="https://apexwx.github.io/instagram48.png" style="width: 52px; height: 53px; padding: 5px;"
+            height="53" width="52"></a><a href="https://bsky.app/profile/apexwx.bsky.social"
+          title="Apex Wx on Blue Sky social "><img alt="Bluesky" src="https://apexwx.github.io/Bsky75.png"
+            style="width: 62px; height: 51px; padding: 5px;" height="51" width="62"><br>
+        </a></div>
     </footer>
-    <script>
-      <script> // Seasons
+    <script> // Seasons
   function getCurrentSeason(date = new Date()) {
     const month = date.getMonth() + 1;
     const day = date.getDate();
@@ -2742,681 +2608,6 @@ document.getElementById("rain-year").innerHTML =
 
 updateStation();
 setInterval(updateStation, 60000);
-
-</script><script>
-
-// ======================================================
-// FORT KENT CLIMATE DATA
-// ======================================================
-
-async function loadClimateData() {
-
-  try {
-
-    const response = await fetch(
-      "https://fortkent-acis.maineapexwx.workers.dev/"
-    );
-
-    const climate = await response.json();
-
-    // ==================================================
-    // UNPACK DATASETS
-    // ==================================================
-
-    const monthlyRows = climate.monthlyRows;
-    const seasonalRows = climate.seasonalRows || [];
-
-    const yesterdayNormals =
-      climate.yesterdayNormals || {
-        normalHigh: 0,
-        normalLow: 0,
-        normalRain: 0
-      };
-
-    const ytdRain =
-      climate.ytdRain || 0;
-
-    const ytdRainDeparture =
-      climate.ytdRainDeparture || 0;
-      
-    // ==================================================
-    // YESTERDAY'S DATA
-    // ==================================================
-
-    const latestRow =
-      monthlyRows[monthlyRows.length - 2] || monthlyRows[0];
-
-    const yesterdayDate = latestRow[0];
-
-    const yesterdayHigh =
-      parseFloat(latestRow[1]);
-
-    const yesterdayLow =
-      parseFloat(latestRow[2]);
-      
-    const yesterdayRain =
-      (latestRow[3] !== "M" && latestRow[3] !== "T")
-        ? parseFloat(latestRow[3]) || 0
-        : 0;
-
-
-    // ==================================================
-    // DAILY NORMALS LOOKUP
-    // ==================================================
-
-    const rec = yesterdayNormals;
-      
-    document.getElementById("normal-high").innerHTML =
-      `${yesterdayNormals.normalHigh.toFixed(0)}°F`;
-
-    document.getElementById("normal-low").innerHTML =
-      `${yesterdayNormals.normalLow.toFixed(0)}°F`;
-
-    document.getElementById("normal-rain").innerHTML =
-      `${yesterdayNormals.normalRain.toFixed(2)} in
-       <br><span class="metric">
-       ${(yesterdayNormals.normalRain * 25.4).toFixed(1)} mm
-       </span>`;
-
-    // ==================================================
-    // DEPARTURES
-    // ==================================================
-
-    let highDeparture = null;
-    let lowDeparture = null;
-
-    if (rec) {
-
-      highDeparture =
-        yesterdayHigh - rec.normalHigh;
-
-      lowDeparture =
-        yesterdayLow - rec.normalLow;
-
-    }
-    let totalRain = 0;
-    let maxRain = 0;
-
-    let maxTemp = -999;
-    let maxTempDate = "";
-
-    let minTemp = 999;
-    let minTempDate = "";
-
-    let totalHigh = 0;
-    let totalLow = 0;
-
-    let validHighs = 0;
-    let validLows = 0;
-
-    let totalSnow = 0;
-    let maxSnow = 0;
-    let maxSnowDate = "";
-    let snowDays = 0;
-
-
-    // ==================================================
-    // MONTHLY DATA LOOP
-    // ==================================================
-
-    monthlyRows.forEach(row => {
-
-      const date = row[0];
-      const high = parseFloat(row[1]);
-      const low = parseFloat(row[2]);
-
-      // SAFE RAIN PARSING
-
-      let rain = 0;
-
-      if (row[3] !== "M" && row[3] !== "T") {
-        rain = parseFloat(row[3]) || 0;
-      }
-
-      // ACCUMULATE RAIN
-
-      totalRain += rain;
-
-      if (rain > maxRain) {
-        maxRain = rain;
-      }
-
-      // HIGH TEMP TRACKING
-
-      if (!isNaN(high)) {
-
-        totalHigh += high;
-        validHighs++;
-
-        if (high > maxTemp) {
-          maxTemp = high;
-          maxTempDate = date;
-        }
-      }
-
-      // LOW TEMP TRACKING
-
-      if (!isNaN(low)) {
-
-        totalLow += low;
-        validLows++;
-
-        if (low < minTemp) {
-          minTemp = low;
-          minTempDate = date;
-        }
-      }
-
-    });
-
-
-    // ==================================================
-    // SEASONAL SNOW LOOP
-    // ==================================================
-
-    seasonalRows.forEach(row => {
-
-      const date = row[0];
-
-      let snow = 0;
-
-      if (row[1] !== "M" && row[1] !== "T") {
-        snow = parseFloat(row[1]) || 0;
-      }
-
-      // ACCUMULATE SNOW
-
-      if (snow > 0) {
-
-        totalSnow += snow;
-        snowDays++;
-
-        if (snow > maxSnow) {
-          maxSnow = snow;
-          maxSnowDate = date;
-        }
-      }
-
-    });
-
-
-    // ==================================================
-    // CALCULATE AVERAGES
-    // ==================================================
-
-    const avgHigh =
-      validHighs > 0 ? totalHigh / validHighs : 0;
-
-    const avgLow =
-      validLows > 0 ? totalLow / validLows : 0;
-      
-    const avgMonthlyMean = (avgHigh + avgLow) / 2;
-
-    const avgRain =
-      monthlyRows.length > 0
-        ? totalRain / monthlyRows.length
-        : 0;
-
-    const avgSnow =
-      snowDays > 0
-        ? totalSnow / snowDays
-        : 0;
-
-
-    // ==================================================
-    // MONTHLY RAIN
-    // ==================================================
-
-    document.getElementById("climate-month-rain").innerHTML =
-      `${totalRain.toFixed(2)} in
-       <br><span class="metric">
-        ${(totalRain * 25.4).toFixed(1)} mm
-       </span>`;
-
-
-    // ==================================================
-    // WETTEST DAY
-    // ==================================================
-
-    document.getElementById("climate-max-rain").innerHTML =
-      `${maxRain.toFixed(2)} in
-       <br><span class="metric">
-        ${(maxRain * 25.4).toFixed(1)} mm
-       </span>`;
-
-
-     // ==================================================
-    // AVERAGE DAILY RAIN
-    // ==================================================
-
-    document.getElementById("climate-avg-rain").innerHTML =
-      `${avgRain.toFixed(2)} in/day<br><span class="metric">${(avgRain * 25.4).toFixed(1)} mm/day</span>`;
-
-
-    // ==================================================
-    // HIGHEST TEMP
-    // ==================================================
-
-    document.getElementById("climate-max-temp").innerHTML =
-      `${maxTemp.toFixed(0)}°F
-       <br><span class="metric">
-        ${((maxTemp - 32) * 5 / 9).toFixed(1)}°C
-       </span>
-       <span class="metric">
-        ${maxTempDate}
-       </span>`;
-
-
-    // ==================================================
-    // LOWEST TEMP
-    // ==================================================
-
-    document.getElementById("climate-min-temp").innerHTML =
-      `${minTemp.toFixed(0)}°F
-       <br><span class="metric">
-        ${((minTemp - 32) * 5 / 9).toFixed(1)}°C
-       </span>
-       <span class="metric">
-        ${minTempDate}
-       </span>`;
-
-
-    // ==================================================
-    // AVERAGE HIGH
-    // ==================================================
-
-    document.getElementById("climate-avg-high").innerHTML =
-      `${avgHigh.toFixed(1)}°F
-       <br><span class="metric">
-        ${((avgHigh - 32) * 5 / 9).toFixed(1)}°C
-       </span>`;
-
-
-    // ==================================================
-    // AVERAGE LOW
-    // ==================================================
-
-    document.getElementById("climate-avg-low").innerHTML =
-      `${avgLow.toFixed(1)}°F
-       <br><span class="metric">
-        ${((avgLow - 32) * 5 / 9).toFixed(1)}°C
-       </span>`;
-      
-    // ==================================================
-    // NEW: AVERAGE MONTHLY MEAN TEMPERATURE
-    // ==================================================
-
-    document.getElementById("climate-monthly-mean").innerHTML =
-      `${avgMonthlyMean.toFixed(1)}°F
-       <br><span class="metric">
-        ${((avgMonthlyMean - 32) * 5 / 9).toFixed(1)}°C
-       </span>`;   
-      
-    // ==================================================
-    // YESTERDAY HIGH
-    // ==================================================
-
-    document.getElementById("yesterday-high").innerHTML =
-      `${yesterdayHigh.toFixed(0)}°F
-       <br><span class="metric">
-        ${((yesterdayHigh - 32) * 5 / 9).toFixed(1)}°C
-       </span>
-       <span class="metric">
-        ${yesterdayDate}
-       </span>`;
-
-    // ==================================================
-    // HIGH DEPARTURE
-    // ==================================================
-
-    if (highDeparture !== null && !isNaN(highDeparture)) {
-
-      const highDepC = highDeparture * 5 / 9;
-
-      const depClass =
-        highDeparture > 0
-          ? "departure-positive"
-          : highDeparture < 0
-            ? "departure-negative"
-            : "departure-neutral";
-
-      document.getElementById("yesterday-high-departure").innerHTML =
-        `<span class="${depClass}">
-          ${highDeparture > 0 ? "+" : ""}
-          ${Math.round(highDeparture)}°F
-         </span>
-         <br>
-         <span class="metric ${depClass}">
-           ${highDepC > 0 ? "+" : ""}
-           ${highDepC.toFixed(1)}°C
-         </span>
-         <span class="metric">
-           ${yesterdayDate}
-         </span>`;
-    }
-
-
-    // ==================================================
-    // YESTERDAY LOW
-    // ==================================================
-
-    document.getElementById("yesterday-low").innerHTML =
-      `${yesterdayLow.toFixed(0)}°F
-       <br><span class="metric">
-        ${((yesterdayLow - 32) * 5 / 9).toFixed(1)}°C
-       </span>
-       <span class="metric">
-        ${yesterdayDate}
-       </span>`;
-
-    // ==================================================
-    // LOW DEPARTURE
-    // ==================================================
-
-    if (lowDeparture !== null && !isNaN(lowDeparture)) {
-
-      const lowDepC = lowDeparture * 5 / 9;
-
-      const depClass =
-        lowDeparture > 0
-          ? "departure-positive"
-          : lowDeparture < 0
-            ? "departure-negative"
-            : "departure-neutral";
-
-      document.getElementById("yesterday-low-departure").innerHTML =
-        `<span class="${depClass}">
-          ${lowDeparture > 0 ? "+" : ""}
-          ${Math.round(lowDeparture)}°F
-         </span>
-         <br>
-         <span class="metric ${depClass}">
-           ${lowDepC > 0 ? "+" : ""}
-           ${lowDepC.toFixed(1)}°C
-         </span>
-         <span class="metric">
-           ${yesterdayDate}
-         </span>`;
-    }
-      
-    // ==================================================
-    // YEAR-TO-DATE RAINFALL
-    // ==================================================
-
-    document.getElementById("ytd-rain").innerHTML =
-      `${ytdRain.toFixed(2)} in
-       <br><span class="metric">
-        ${(ytdRain * 25.4).toFixed(1)} mm
-       </span>`;
-
-    // ==================================================
-    // YEAR-TO-DATE DEPARTURE FROM NORMAL
-    // ==================================================
-
-   // ==================================================
-// YEAR-TO-DATE DEPARTURE FROM NORMAL
-// ==================================================
-
-const rainDepClass =
-  ytdRainDeparture > 0
-    ? "rain-positive"
-    : ytdRainDeparture < 0
-      ? "rain-negative"
-      : "rain-neutral";
-
-document.getElementById("ytd-rain-departure").innerHTML =
-  `<span class="${rainDepClass}">
-    ${ytdRainDeparture > 0 ? "+" : ""}
-    ${ytdRainDeparture.toFixed(2)} in
-   </span>
-   <br>
-   <span class="metric ${rainDepClass}">
-    ${(ytdRainDeparture * 25.4).toFixed(1)} mm
-   </span>`;
-
-    // ==================================================
-    // SEASONAL SNOWFALL
-    // ==================================================
-
-    document.getElementById("season-snow").innerHTML =
-      `${totalSnow.toFixed(1)} in
-       <br><span class="metric">
-        ${(totalSnow * 2.54).toFixed(1)} cm
-       </span>`;
-
-
-    // ==================================================
-    // LARGEST SNOWFALL
-    // ==================================================
-
-    document.getElementById("largest-snow").innerHTML =
-      `${maxSnow.toFixed(1)} in
-       <br><span class="metric">
-        ${(maxSnow * 2.54).toFixed(1)} cm
-       </span>
-       <span class="metric">
-        ${maxSnowDate || "N/A"}
-       </span>`;
-
-
-    // ==================================================
-    // AVERAGE SNOW PER EVENT
-    // ==================================================
-
-    document.getElementById("avg-snow").innerHTML =
-      `${avgSnow.toFixed(1)} in/event
-       <br><span class="metric">
-        ${(avgSnow * 2.54).toFixed(1)} cm
-       </span>`;
-
-
-    // ==================================================
-    // SNOW DAYS COUNT
-    // ==================================================
-
-    document.getElementById("snow-days").textContent =
-      snowDays;
-
-
-    // ==================================================
-    // DAYS RETURNED
-    // ==================================================
-
-    document.getElementById("climate-days").textContent =
-      monthlyRows.length;
-
-
-    // ==================================================
-    // OBS PERIOD
-    // ==================================================
-
-    document.getElementById("climate-period").innerHTML =
-      `${monthlyRows[0][0]} <span style="opacity: 0.6; font-size: 0.95em;">through</span> ${monthlyRows[monthlyRows.length - 1][0]}`;
-
-
-    // ==================================================
-    // UPDATE TIME
-    // ==================================================
-
-    document.getElementById("climate-update").textContent =
-      new Date().toLocaleString();
-
-  }
-
-  catch(error) {
-
-    console.error("Climate data error:", error);
-
-    document.getElementById("climate-update").textContent =
-      "Unable to retrieve climate data";
-
-  }
-
-}
-
-
-// ======================================================
-// DAILY RECORDS & NORMALS
-// ======================================================
-
-const climateRecords = {
-
-  // ==================================================
-  // MAY
-  // ==================================================
-
-  "05-28": {
-    high: [90, 1978],
-    low: [28, 1994],
-    rain: [2.73, 2022]
-  },
-  
-  "05-29": {
-    high: [93, 2020],
-    low: [27, 1985],
-    rain: [1.10, 1973]
-  },
-
-  "05-30": {
-    high: [89, 2020],
-    low: [26, 1941],
-    rain: [1.26, 1993]
-  },
-    
-  "05-31": {
-    high: [88, 1937],
-    low: [29, 1964],
-    rain: [1.13, 1979]
-  },
-    
-  // ==================================================
-  // JUNE
-  // ==================================================   
- 
-  "06-01": {
-    high: [91, 2023],
-    low: [28, 2020],
-    rain: [1.25, 2025]
-  },
-  
-  "06-02": {
-    high: [92, 2023],
-    low: [29, 2020],
-    rain: [1.30, 1994],
-  },
-  
-   "06-03": {
-    high: [90, 1963],
-    low: [31, 2020],
-    rain: [1.18, 2013],
-  },
-  
-   "06-04": {
-    high: [88, 1990],
-    low: [29, 2020],
-    rain: [1.30, 1994],
-  },
-  
-   "06-05": {
-    high: [90, 1893],
-    low: [29, 2000],
-    rain: [0.74, 1952],
-  },
-  
-  "06-06": {
-    high: [86, 1976],
-    low: [29, 1894],
-    rain: [1.08, 1952],
-  },
-  
-  "06-07": {
-    high: [91, 1976],
-    low: [29, 1948],
-    rain: [1.28, 1983],
-  },
- 
-
-// ==================================================
-// CLOSE CLIMATE DATA
-// ==================================================     
-};
-    
- 
-// ======================================================
-// UPDATE DAILY RECORDS DISPLAY
-// ======================================================
-
-function updateDailyClimateRecords() {
-
-  const today = new Date();
-
-  const key =
-    `${String(today.getMonth() + 1).padStart(2, "0")}-${String(today.getDate()).padStart(2, "0")}`;
-
-  const rec = climateRecords[key];
-
-  // NO DATA YET
-
-  if (!rec) {
-
-    document.getElementById("record-high").innerHTML = "--";
-
-    document.getElementById("record-low").innerHTML = "--";
-
-    document.getElementById("record-rain").innerHTML = "--";
-    
-    return;
-  }
-
-
-  // ==================================================
-  // RECORD HIGH
-  // ==================================================
-
-  document.getElementById("record-high").innerHTML =
-    `${rec.high[0]}°F
-    <br><span class="metric">
-     ${rec.high[1]}
-    </span>`;
-
-
-  // ==================================================
-  // RECORD LOW
-  // ==================================================
-
-  document.getElementById("record-low").innerHTML =
-    `${rec.low[0]}°F
-    <br><span class="metric">
-     ${rec.low[1]}
-    </span>`;
-
-
-  // ==================================================
-  // RECORD RAINFALL
-  // ==================================================
-
-  document.getElementById("record-rain").innerHTML =
-    `${rec.rain[0].toFixed(2)} in
-    <br><span class="metric">
-     ${rec.rain[1]}
-    </span>`;
-}
-
-// ======================================================
-// INITIAL LOADS
-// ======================================================
-
-loadClimateData();
-
-updateDailyClimateRecords()
-
-// ======================================================
-// AUTO REFRESH
-// ======================================================
-
-// CLIMATE DATA REFRESHES EVERY 30 MINUTES
-
-setInterval(loadClimateData, 1800000);
 
 </script> </body>
 </html>
