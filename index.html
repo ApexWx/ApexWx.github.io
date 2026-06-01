@@ -64,7 +64,7 @@
     flex-wrap: wrap;
     gap: 6px;  /* smaller space between items */
     font-size: 1rem;
-      justify-content: flex-start; /* aligns items to the left horizontally */
+    justify-content: center; /* CHANGE THIS: aligns items to the middle horizontally */
   }
 
   .sun-info > div {
@@ -909,8 +909,9 @@ body, div, span, p {
         <div class="text-center" style="text-align: left;">
           <div class="live-station" style="font-size: 18px;"><strong style="font-size: 18px;">&nbsp;
               🔴 Live Apex Wx Station Conditions 🔴</strong></div>
-          <div class="live-station" style="font-size: 14px;"><strong></strong><strong>Fort
-              Kent, Maine</strong><br>
+          <div class="live-station" style="font-size: 16px;"><strong></strong><a
+              href="https://en.wikipedia.org/wiki/Fort_Kent,_Maine"><strong>Fort
+                Kent, Maine</strong></a><br>
             <br>
             <div style="font-size:12px;"> Updated: <span id="aw-update">Loading...</span>
             </div>
@@ -978,9 +979,9 @@ body, div, span, p {
           </div>
           <hr></div>
         <div class="live-station" style="font-size:14px;">
-          <details style="width: 100%; max-width: 900px; margin: 0 auto;" open="">
+          <details style="width: 100%; max-width: 900px; margin: 0 auto;">
             <summary style="cursor: pointer; text-align: center; font-size: 1.2em; font-weight: bold;">
-              📊 Fort Kent Climate Information 📊 <span style="font-size: 13px; font-weight: normal; color: #555; display: block; margin-top: 2px;">(Click
+              📊 Fort Kent Weather Almanac 📊 <span style="font-size: 13px; font-weight: normal; color: #555; display: block; margin-top: 2px;">(Click
                 to Collapse/Expand)</span> </summary>
             <div class="live-station" style="font-size:14px;"> <strong>NOAA
                 Climate Summary</strong><br>
@@ -1140,14 +1141,14 @@ body, div, span, p {
                   </div>
                 </div>
               </div>
-              <div style="text-align:left;"> <span style="font-size:12px;">
-                  Climate data source: <a href="https://scacis.rcc-acis.org/">
-                    NOAA RCC ACIS</a></span><span style="font-size:12px;"> with
-                  weather records since 1893. Climate normals and historical
-                  records are sourced via NOAA/ACIS data feeds and are intended
-                  for informational purposes only. Station data can occasionally
-                  contain provisional values or missing periods due to automated
-                  reporting delays.</span><span style="font-size:12px;"></span><span
+              <div style="text-align:left;"> <span style="font-size:12px;"> <em>Climate
+                    data source: <a href="https://scacis.rcc-acis.org/"> NOAA
+                      RCC ACIS</a></em></span><em><span style="font-size:12px;">
+                    with weather records since 1893. Climate normals and
+                    historical records are sourced via NOAA/ACIS data feeds and
+                    are intended for informational purposes only. Data can
+                    occasionally contain provisional values or missing periods
+                    due to automated reporting delays.</span></em><span style="font-size:12px;"></span><span
                   style="font-size: 12px;"></span><em style="font-size: 12px;"></em>
               </div>
             </div>
@@ -1156,40 +1157,36 @@ body, div, span, p {
         <hr>
         <div>
           <div>
-            <div style="text-align: center; font-size: 18px;"><strong>☀️Sun
-                &amp; Moon Information</strong><strong><span>🌙</span></strong><em></em></div>
-            <div style="text-align: center;"><span style="font-size: 12px;"><em>Times
-                  US Eastern</em></span></div>
-            <div style="text-align: center;"><span style="font-size: 12px;"><em><br>
-                </em></span></div>
-            <div style="text-align: left;">
-              <div style="text-align: center;"><strong><a href="https://www.timeanddate.com/astronomy/@4964627">Fort
-                    Kent, Maine</a> </strong></div>
-              <strong></strong></div>
-            <div style="text-align: left;"><br>
+            <div style="font-size: 18px; text-align: center;"><strong>☀️Sun
+                &amp; Moon Information</strong><strong><span> for Fort Kent,
+                  Maine </span></strong>🌕</div>
+            <br>
+            <div style="text-align: center;">
               <div id="sunriseSunset" style="font-size: 16px;">Loading
                 sunrise/sunset...</div>
             </div>
-            <div style="text-align: left;"><strong><br>
+            <div style="text-align: center;"><strong><br>
               </strong><strong><a href="https://www.timeanddate.com/moon/phases/@4964627">Moon
-                  Phase</a>:</strong> 🌕 Full "Blue" Moon <span>4:45 am Sun. 31
-                May<br>
+                  Phase</a>:</strong> 🌖 Waning Gibbous → 🌗 Last Quarter 6:00
+              AM EDT 8 June<span><br>
               </span>
               <div><strong><span><br>
                   </span></strong></div>
-              <div><strong><span>Today's Moon Times: 🌙↓ </span></strong><span>4:13
-                  am this morning&nbsp;</span> |&nbsp; <strong><span> 🌙↑ </span></strong><span>9:22</span><span></span><span>
-                </span>pm this evening</div>
+              <div><strong><span>Today's Moon Times: 🌙↓ </span></strong><span>4:57
+                  AM EDT this morning&nbsp;</span> |&nbsp; <strong><span> 🌙↑ </span></strong><span>10:14</span><span></span><span>
+                  PM EDT </span>this evening</div>
               <div><br>
               </div>
-              <div style="font-size: 12px;"> <em><u>Notice</u>: Sun and moon
-                  times are astronomical predictions based on ideal horizon
-                  conditions and standard calculations, rather than real-time
-                  observations. Actual visibility will vary depending on your
-                  exact local topography, weather, and atmospheric distortion.</em></div>
+              <div style="font-size: 12px; text-align: left;"> <em><u>Notice</u>:
+                  Sun and moon times are astronomical predictions based on ideal
+                  horizon conditions and standard calculations, rather than
+                  real-time observations. Actual visibility will vary depending
+                  on your exact local topography, weather, and atmospheric
+                  distortion. More information at <a href="https://www.timeanddate.com/astronomy/@4964627">timeanddate.com</a>.<br>
+                </em></div>
             </div>
           </div>
-          <div> </div>
+          <div style="text-align: center;"> </div>
           <div>
             <div>
               <div>
@@ -1231,112 +1228,111 @@ body, div, span, p {
           <strong></strong></div>
         <div><u><strong><br>
             </strong></u></div>
-        <u><strong>7-Day Outlook: Sun. May 31 – Sat. Jun. 6</strong></u>
+        <div style="text-align: left;"><u><strong>7-Day Outlook: Mon. Jun. 1 –
+              Sun. Jun. 8</strong></u></div>
         <div>
-          <div><span style="color: #666666;"><em><span style="font-size: 12px;">Updated
-                  May 31 at 9:50 AM </span><span style="font-size: 12px;">EDT <br>
+          <div style="text-align: left;"><span style="color: #666666;"><em><span
+                  style="font-size: 12px;">Updated June 1 at 9:20 AM </span><span
+                  style="font-size: 12px;">EDT <br>
                 </span></em></span></div>
           <div><strong><br>
             </strong></div>
-          <div><strong>Short-Term Forecast: Today – Tuesday<br>
+          <div><strong>Short-Term Forecast: Today – Wednesday<br>
             </strong></div>
         </div>
-        Low pressure over Québec will slide into western-southwestern Maine
-        today and off Cape Cod by Monday morning. This system is weaker than the
-        one which affected western Maine, Vermont, and New Hampshire Friday
-        night into Saturday morning. Currently, some shower activity and a few
-        thunderstorms are possible in western/southwestern Maine today
-        (Allagash, North Woods, and western mountains) and tonight with some
-        locally heavy downpours possible. Most areas east of <a href="https://en.wikipedia.org/wiki/Maine_State_Route_11">Maine
-          Highway 11</a> seeing little in the way from this system beyond some
-        increased cloudiness at times. Mostly-to-partly sunny skies are expected
-        across the Valley today with only a 10% chance of showers in Fort Kent
-        and vicinity. High in the low 60s with east wind 0-5 mph.
-        <div><br>
-          Tonight, mostly cloudy skies in the evening give way to partly cloudy
-          conditions overnight with lows falling into the mid- to upper 30s with
-          some patchy frost possible overnight; however, frost is not expected
-          to be as widespread as Saturday night. Calm wind is expected overnight
-          for most locations.</div>
+        <div> An upper-level trough will slide across the Valley today through
+          Tuesday bringing enough instability for some scattered showers and
+          isolated afternoon thunder to the region. A passing shower or two is
+          possible this morning based on current radar imagery. Instability
+          aloft is weak, so nothing organized or severe is expected this
+          afternoon, though some heavy downpours may occur in heavier showers or
+          storms that develop. Shower/thunderstorm activity will die down in the
+          evening with the loss of daytime heating. </div>
         <div><br>
         </div>
-        Monday, an upper-level trough will move across the Northeast keeping
-        instability aloft, particularly in the afternoon, thanks to daytime
-        heating. Mostly-to-partly sunny skies are expected across the SJV with
-        high temperatures in the mid-60s for most locations. Some isolated
-        afternoon showers are possible with a 20% chance of precipitation.
-        Rainfall amounts are expected to remain light to negligible for most
-        locations. North to northwest winds 0-5 mph expected becoming west late
-        in the day..<br>
+        <div>Today's highs reach the mid- to upper 60s for most Valley locations
+          today with winds becoming northwest 0-5 mph this afternoon. Any
+          precipitation is expected to be light, though locally higher amounts
+          may occur in any storms that develop. Tonight, partly cloudy skies
+          with a 10% chance of isolated showers and thunderstorms in the
+          evening. Lows fall into the lower to middle 40s in most locations, so
+          frost should not be an issue. West wind near calm becoming
+          north-northwest overnight 0-5 mph.<br>
+        </div>
         <div><br>
-          Monday night, partly cloudy skies with a slight (10%) chance of
-          isolated showers and temperatures in the lower 40s. West winds near
-          calm expected.</div>
+          Tuesday, an upper trough moves across the region with partly sunny
+          skies every becoming mostly sunny as the day progresses. Highs
+          expected in the middle 60s with only a 5% chance of precipitation.
+          North wind 5-10 mph over the course of the day. Tuesday night, partly
+          cloudy skies with temperatures falling into the lower to mid-40s and
+          calm winds are expected.</div>
         <div><br>
-          Tuesday, the final round of the current upper-level troughing regime
-          is expected as the persistent upper air <a href="https://www.theweatherprediction.com/habyhints/144/">omega
-            block</a> over North America breaks down with improving conditions
-          for the Saint John Valley by midweek. Mostly sunny skies are expected
-          across the Valley with highs reaching the middle 60s and only a 10%
-          chance of precipitation in Fort Kent and vicinity. Northwest wind 6-8
-          mph are expected. For Tuesday night, partly cloudy skies with
-          temperatures falling into the lower 40s and light west winds are
-          expected.</div>
+        </div>
+        <div> Wednesday, a large ridge high pressure centered over the Great
+          Lakes spreads over the eastern US and builds into the Saint John
+          Valley with drier and warmer conditions. Valley residents can
+          anticipate mostly sunny skies with a high in the middle to upper 70s
+          and west-northwest wind 0-5 mph becoming west-southwest near calm late
+          in the day. Wednesday night, mostly clear skies with a low in the
+          lower 50s and southwest wind 0-7 mph. A nice change after the extended
+          period of cool, wet weather we experienced in May.</div>
         <div><br>
           <div>
             <div>
               <div>
-                <div><strong>Medium-Range Forecast: Wednesday – Saturday<br>
+                <div><strong>Medium-Range Forecast: Thursday – Sunday<br>
                   </strong></div>
               </div>
             </div>
           </div>
-          As the pattern aloft shifts, Saint John residents should see two good
-          days of weather Wednesday and Thursday this week. </div>
+        </div>
+        High pressure will settle into the Southeastern US in the late
+        week/weekend period. Northern Maine will be on the northern periphery of
+        circulation around the high with some disturbances and moisture being
+        carried across the region as a result, which will lead to some showery
+        periods this weekend.<br>
+        <br>
+        However, Thursday remains sunny and warm with high pressure spreading
+        over the eastern US. Warm southwesterly flow will allow temperatures to
+        rise into the lower to middle 80s for most of the Saint John Valley
+        with west winds 0-7 mph. Thursday night, an approaching cold front in
+        Québec brings partly cloudy skies with temperatures in the low to
+        mid-50s and light west winds across the SJV.
         <div><br>
-          Wednesday, a large ridge of high pressure centered over the Great
-          Lakes will build into the Saint John Valley bringing drier and warmer
-          conditions as a more zonal west to east flow sets up aloft. Mostly
-          sunny skies with a high in the middle 70s and west wind 0-7 mph
-          expected. Wednesday night, mostly clear with a low in the upper 40s
-          and west wind 0-7 mph.</div>
+          Friday, low pressure in Québec and a <a href="https://www.theweatherprediction.com/habyhints2/530/">triple
+            point</a> look to approach from the west with partly sunny skies and
+          increasing chances of scattered afternoon showers in Fort Kent and
+          vicinity with generally light rainfall amounts (less than 0.10-inch).
+          High in the mid-70s with northwest wind 0-7 mph. Friday night,
+          partly-to-mostly cloudy skies with temperatures in the lower 50s and a
+          30% chance of scattered showers with light rainfall amounts expected.
+          West wind 0-7 mph expected.</div>
+        <div><br>
+          Low pressure and associated fronts move across the region Saturday
+          bringing partly sunny skies and slightly cooler temperatures in the
+          lower 70s. A 40% chance of scattered showers and isolated
+          afternoon/evening thunderstorms are possible. North winds 0-7 mph. For
+          Saturday night, some scattered showers linger with lows in the upper
+          40s and north wind around 0-7 mph.</div>
         <div><br>
         </div>
-        <div>Thursday, high pressure centered over the Ohio Valley spreads over
-          Northeast with temperatures rising into the lower 80s for most Valley
-          communities with west winds 0-7 mph. Thursday night, mostly clear
-          skies with temperatures in the low 50s and light west winds across the
-          SJV.</div>
-        <div><br>
-          Friday, low pressure in Québec and associated cold front approach from
-          the west with mostly sunny to partly cloudy skies and a chance of
-          scattered afternoon showers in Fort Kent and vicinity. High in the
-          mid-70s with west wind 0-7 mph. Friday night, expect partly-to-mostly
-          cloudy skies with temperatures in the lower 50s and a 30% chance of
-          scattered showers with very light rainfall totals expected. Northwest
-          wind 0-7 mph expected.</div>
-        <div><br>
-          As low pressure and associated fronts move across the region Saturday,
-          partly sunny skies and slightly cooler temperatures are expected
-          thanks to the increased cloud cover. Fort Kent reaches a high in the
-          low to mid-70s with northwest wind 0-7 mph. Precipitation totals based
-          on longer-range models look to be in the 0.01 to 0.09-inch range based
-          on current data.</div>
-        <div><br>
-          For Saturday night, some scattered showers in the evening give way to
-          isolated shower activity overnight. Lows in the lower 50s with
-          northwest wind around 0-7 mph.</div>
+        <div>Sunday, mostly sunny skies are anticipated as drier air takes hold
+          once more; however, models indicate an upper-level trough affecting
+          the region, with a chance of scattered showers continuing for Fort
+          Kent and vicinity, mainly in the afternoon. Highs in the low 70s with
+          light northeast winds currently expected. Sunday night, partly cloudy
+          skies with isolated showers and temperatures in the upper 40s/near 50
+          expected. South winds 0-7 mph develop.</div>
         <div><br>
         </div>
         <div><strong>Extended Forecast</strong></div>
-        <div>Further ahead, partly cloudy skies look on tap Sun. June 7 with a
-          slight chance of showers and highs in the low 70s and overnight lows
-          in the low 50s. Based on current data, this pattern looks to continue
-          through about Tue. June 9 with highs in the 70s and lows in the 50s
-          under partly cloudy/mostly clear skies with only slight chances of
-          precipitation through Wed. June 10. Climate Predication Center 8-14
-          day climate trends for June 8-14 currently suggest above normal
-          temperatures and near normal precipitation amounts for northern Maine.</div>
+        <div>Partly cloudy to mostly clear skies are expected Monday through
+          Wednesday June 8-10 with highs in the mid- to upper 70s and lows in
+          the low to mid-50s. A slight chance of showers looks possible
+          Wednesday night into Thursday. NOAA Climate Predication Center 8-14
+          day climate trends for June 8-14 currently suggest a 50-60% chance of
+          above normal temperatures and near normal precipitation amounts for
+          the Saint John Valley.</div>
         <div><br>
         </div>
         <div>
@@ -1397,39 +1393,35 @@ body, div, span, p {
                                       style="font-variant: small-caps;"></span></strong></u></div>
                             </div>
                             <div style="margin-top: 1em; text-align: center;">
-                              <details style="width:100%; margin-top:1em;">
+                              <details style="width:100%; margin-top:1em;" open="">
                                 <summary style="cursor: pointer; text-align: center; font-size: 1.2em; font-weight: bold;">
                                   🇺🇸 US National Weather Outlook 🇺🇸 <span style="
       font-size:13px;      font-weight:normal;      color:#555;      display:block;      margin-top:2px;">
                                     (Click to Collapse/Expand)<br>
                                     <br>
                                   </span> </summary>
-                                <div style="text-align: left;"><strong>Heavy
-                                    Rain, Flooding Concerns, and Strong
-                                    Thunderstorms Stretch from the Rockies to
-                                    the Southeast</strong></div>
-                                <div style="text-align: left;"> A slow-moving
-                                  weather system will bring periods of showers
+                                <div style="text-align: left;"><strong>Active
+                                    Storm Pattern Brings Heavy Rain and Warmth
+                                    Across Much of the Nation</strong><br>
+                                  An unsettled weather pattern will continue
+                                  over the next several days, bringing showers
                                   and thunderstorms from the Northern Rockies
-                                  through the Plains and into the Southeast
-                                  through Monday. The greatest concern is across
-                                  parts of the Southeast, where heavy rainfall
-                                  may lead to localized flooding, especially in
-                                  areas that have already received significant
-                                  rain. Strong thunderstorms are also possible
-                                  from the Dakotas into the Ozarks and portions
-                                  of western Texas. By Monday, the storm system
-                                  will shift slightly northeast, continuing to
-                                  produce thunderstorms across parts of the
-                                  eastern and central United States. Some storms
-                                  may become severe, with damaging wind gusts
-                                  and large hail as the primary threats.
-                                  Meanwhile, temperatures across much of the
-                                  country will remain near to above seasonal
-                                  averages. The southern Plains will experience
-                                  the hottest conditions, with widespread
-                                  temperatures in the 90s creating elevated
-                                  heat-related concerns.</div>
+                                  into the Plains, Southwest, and parts of the
+                                  Southeast. Some storms may become strong
+                                  across portions of the Plains on Monday and
+                                  Tuesday, producing damaging wind gusts and
+                                  hail. Heavy rainfall is also possible,
+                                  especially across eastern New Mexico and
+                                  western Texas from Tuesday into Wednesday,
+                                  where localized flooding could develop.
+                                  Repeated rounds of thunderstorms may affect
+                                  areas from Texas northward into the central
+                                  Plains. Meanwhile, warmer weather will expand
+                                  across much of the central and eastern United
+                                  States, with afternoon temperatures reaching
+                                  the 80s and lower 90s in some locations.
+                                  Cooler conditions will persist across the
+                                  Pacific Northwest and Northern Rockies.</div>
                                 <div><br>
                                 </div>
                                 <div>
@@ -1466,36 +1458,35 @@ body, div, span, p {
                                       <div style="margin-top: 1em;">
                                         <div class="text-center">
                                           <div style="text-align: left;"><strong>Severe
-                                              Thunderstorm Threat Develops
-                                              Across Eastern Kansas and Western
-                                              Missouri This Evening</strong><br>
-                                            Warm, humid air and a slow-moving
-                                            weather boundary will create
-                                            favorable conditions for strong
-                                            thunderstorms across eastern Kansas
-                                            and western Missouri this evening. A
-                                            few storms may become severe,
-                                            bringing the potential for large
-                                            hail, damaging wind gusts, and an
-                                            isolated tornado. Thunderstorms
-                                            already present during the morning
-                                            may help set the stage for
-                                            additional development later in the
-                                            day as the boundary shifts
-                                            northward. The strongest storms are
-                                            expected to organize during the
-                                            early evening and move from eastern
-                                            Kansas into Missouri. Residents
-                                            should remain alert for rapidly
-                                            changing weather conditions and
-                                            possible severe weather warnings.
-                                            Elsewhere, scattered strong
-                                            thunderstorms may develop across
-                                            parts of Arkansas and southwest
-                                            Texas, while isolated storms capable
-                                            of producing large hail are possible
-                                            from portions of the Dakotas into
-                                            Nebraska and Iowa.</div>
+                                              Storms Threaten Plains, Ozarks,
+                                              and Southeast With Damaging Winds
+                                              and Hail</strong><br>
+                                            Strong to severe thunderstorms are
+                                            expected to develop across parts of
+                                            the central High Plains and the
+                                            Lower Mississippi and Tennessee
+                                            Valleys on Monday. The greatest
+                                            threats will be damaging wind gusts
+                                            and large hail. Storms already
+                                            moving through portions of the
+                                            Tennessee Valley may continue
+                                            southeastward through the day,
+                                            bringing periods of strong winds.
+                                            During the afternoon and evening,
+                                            additional thunderstorms are likely
+                                            to form from Arkansas into
+                                            Mississippi, Alabama, and Tennessee,
+                                            where hot and humid conditions will
+                                            help fuel intense storms. Some areas
+                                            could experience numerous strong
+                                            wind-producing thunderstorms.
+                                            Farther west, storms developing in
+                                            eastern Colorado may strengthen as
+                                            they move into western Kansas,
+                                            producing very large hail and
+                                            damaging winds. Parts of Wyoming,
+                                            Nebraska, and South Dakota may also
+                                            see severe thunderstorms.</div>
                                           <div style="text-align: left;"><br>
                                           </div>
                                           <div class="text-center"><strong><a href="https://www.spc.noaa.gov/products/outlook/day1otlk.html">Today's
@@ -1519,36 +1510,34 @@ body, div, span, p {
                                       </div>
                                       <div style="margin-top: 1em;">
                                         <div style="margin-top: 1em; text-align: left;">
-                                          <div style="margin-top: 1em; text-align: left;"><strong>Flooding
-                                              Concerns Grow Across the Northern
-                                              Rockies and Southeast as Heavy
-                                              Rain Persists</strong><br>
-                                            Periods of rain and thunderstorms
-                                            will continue today across parts of
-                                            the Northern Rockies and the
-                                            Southeast, increasing the risk of
-                                            localized flooding. In Montana,
-                                            northern Wyoming, and nearby
-                                            portions of the western Dakotas,
-                                            additional rainfall on already
-                                            saturated ground may lead to rising
-                                            water levels and flooding issues,
-                                            even where rain is not especially
-                                            intense. Across the Southeast, warm
-                                            and humid conditions will support
-                                            scattered thunderstorms capable of
-                                            producing heavy downpours. Some
-                                            locations could receive several
-                                            inches of rain in a short period of
-                                            time, leading to flooding in
-                                            low-lying and poor-drainage areas.
-                                            Between these regions, scattered
-                                            showers and thunderstorms are
-                                            expected along a nearly stationary
-                                            weather boundary, with isolated
-                                            heavy rainfall possible where storms
-                                            repeatedly move over the same
-                                            locations.</div>
+                                          <div style="margin-top: 1em; text-align: left;"><strong>Scattered
+                                              Heavy Rain May Cause Localized
+                                              Flooding Across Several Regions</strong><br>
+                                            Periods of heavy rain are expected
+                                            across parts of the Northern
+                                            Rockies, Great Plains, Mid-South,
+                                            and portions of New Mexico and West
+                                            Texas today. In Montana, a
+                                            slow-moving weather system will
+                                            continue to produce steady rainfall,
+                                            with some locations receiving one to
+                                            two inches of rain. Across the
+                                            Mid-South, thunderstorms moving east
+                                            and southeast may bring brief
+                                            periods of heavy downpours,
+                                            especially where storms repeatedly
+                                            track over the same areas.
+                                            Additional storms may develop later
+                                            in the day across Mississippi and
+                                            Alabama. In the central Plains,
+                                            scattered afternoon and evening
+                                            thunderstorms are expected from
+                                            Nebraska into Kansas. Farther
+                                            southwest, isolated thunderstorms
+                                            may develop over the mountains of
+                                            New Mexico and West Texas, producing
+                                            locally heavy rainfall and a limited
+                                            flooding threat.</div>
                                           <a href="https://www.wpc.ncep.noaa.gov/qpf/excessive_rainfall_outlook_ero.php"><strong></strong></a></div>
                                         <div style="margin-top: 1em; text-align: center;"><a
                                             href="https://www.wpc.ncep.noaa.gov/qpf/excessive_rainfall_outlook_ero.php"><strong>Today's
@@ -1568,34 +1557,34 @@ body, div, span, p {
                                                 Weather Outlooks</a></span></em>
                                           <div style="text-align: left;"><strong></strong><strong></strong><strong><br>
                                             </strong></div>
-                                          <div style="text-align: left;"><strong>Dry
-                                              Conditions Persist Across the
-                                              Southwest, but Limited Fire
-                                              Weather Threat Expected<br>
+                                          <div style="text-align: left;"><strong>Limited
+                                              Fire Weather Concerns Across the
+                                              Nation Today<br>
                                             </strong>Fire weather concerns are
-                                            expected to remain relatively low
-                                            across most of the country today.
-                                            The driest conditions will be found
-                                            across eastern Arizona and central
-                                            New Mexico, where very low humidity
-                                            and dry vegetation could support the
-                                            spread of any new fires. However,
-                                            light winds are expected to limit
-                                            the overall fire danger and reduce
-                                            the potential for rapid fire growth.
-                                            Areas of central New Mexico with
-                                            higher terrain may see slightly
-                                            greater concerns due to local wind
-                                            effects. Dry weather will also
-                                            continue across parts of the Great
-                                            Lakes and Upper Mississippi Valley,
-                                            but weak winds should help keep fire
-                                            risks in check. In southeast
-                                            Wyoming, locally elevated fire
-                                            weather conditions are possible,
-                                            although recent rainfall has likely
-                                            reduced the threat by improving
-                                            moisture levels in vegetation.</div>
+                                            expected to remain low across most
+                                            of the country today. Dry air will
+                                            continue across parts of eastern
+                                            Arizona and central New Mexico,
+                                            where vegetation has been gradually
+                                            drying out. However, winds are
+                                            expected to remain generally light,
+                                            which should help limit the
+                                            potential for rapid fire growth. A
+                                            few locations in higher terrain,
+                                            especially in northern New Mexico,
+                                            may experience somewhat stronger
+                                            breezes during the afternoon, but
+                                            widespread dangerous fire weather
+                                            conditions are not anticipated. Dry
+                                            weather will also persist across
+                                            portions of the Great Lakes region.
+                                            Even so, increasing high pressure is
+                                            expected to keep winds relatively
+                                            light, reducing the overall fire
+                                            threat. While localized fire
+                                            concerns may develop, significant or
+                                            widespread fire weather problems are
+                                            not expected today.</div>
                                         </div>
                                       </div>
                                     </div>
@@ -1653,8 +1642,9 @@ body, div, span, p {
                                                 href="https://www.cpc.ncep.noaa.gov/"><span
                                                   style="color: black;"> </span>Climate
                                                 Prediction Center</a> | <a href="https://www.tsunami.gov/">Tsunami
-                                                Warning System</a> | <a href="https://www.wpc.ncep.noaa.gov/discussions/hpcdiscussions.php?disc=nathilo&amp;version=0&amp;fmt=reg">National
-                                                High/Low Temperature</a> </div>
+                                                Warning System</a> | <a href="https://www.wpc.ncep.noaa.gov/discussions/hpcdiscussions.php?disc=nathilo&amp;version=0&amp;fmt=reg">US
+                                                National High/Low Temperature</a>
+                                            </div>
                                             <div><br>
                                             </div>
                                             <div></div>
@@ -2345,7 +2335,7 @@ function getCurrentSeason(date = new Date()) {
 <br><br>
   </div>
   <div class="sun-info">
-    <div>🌅 <strong>Sunrise</strong>: ${sunriseLocal} ${tzAbbr} | </div>
+    <div>🌅<strong>Sunrise</strong>: ${sunriseLocal} ${tzAbbr} | </div>
     <div>🌇<strong>Sunset</strong>: ${sunsetLocal} ${tzAbbr} | </div>
     <div><strong>Day Length</strong>: ${dayLengthStr}</div>
   </div>
@@ -2799,10 +2789,14 @@ async function loadClimateData() {
     const yesterdayDate = latestRow[0];
 
     const yesterdayHigh =
-      parseFloat(latestRow[1]);
+  (latestRow[1] !== "M" && latestRow[1] !== "")
+    ? parseFloat(latestRow[1])
+    : null;
 
     const yesterdayLow =
-      parseFloat(latestRow[2]);
+  (latestRow[2] !== "M" && latestRow[2] !== "")
+    ? parseFloat(latestRow[2])
+    : null;
       
     const yesterdayRain =
       (latestRow[3] !== "M" && latestRow[3] !== "T")
@@ -3066,15 +3060,17 @@ async function loadClimateData() {
     // YESTERDAY HIGH
     // ==================================================
 
-    document.getElementById("yesterday-high").innerHTML =
-      `${yesterdayHigh.toFixed(0)}°F
+  document.getElementById("yesterday-high").innerHTML =
+  yesterdayHigh !== null
+    ? `${yesterdayHigh.toFixed(0)}°F
        <br><span class="metric">
         ${((yesterdayHigh - 32) * 5 / 9).toFixed(1)}°C
        </span>
        <span class="metric">
         ${yesterdayDate}
-       </span>`;
-
+       </span>`
+    : "--";
+    
     // ==================================================
     // HIGH DEPARTURE
     // ==================================================
@@ -3106,18 +3102,22 @@ async function loadClimateData() {
     }
 
 
-    // ==================================================
-    // YESTERDAY LOW
-    // ==================================================
 
-    document.getElementById("yesterday-low").innerHTML =
-      `${yesterdayLow.toFixed(0)}°F
+
+// ==================================================
+// YESTERDAY LOW
+// ==================================================
+
+document.getElementById("yesterday-low").innerHTML =
+  yesterdayLow !== null
+    ? `${yesterdayLow.toFixed(0)}°F
        <br><span class="metric">
         ${((yesterdayLow - 32) * 5 / 9).toFixed(1)}°C
        </span>
        <span class="metric">
         ${yesterdayDate}
-       </span>`;
+       </span>`
+    : "--";
 
     // ==================================================
     // LOW DEPARTURE
@@ -3159,13 +3159,9 @@ async function loadClimateData() {
         ${(ytdRain * 25.4).toFixed(1)} mm
        </span>`;
 
-    // ==================================================
-    // YEAR-TO-DATE DEPARTURE FROM NORMAL
-    // ==================================================
-
-   // ==================================================
-// YEAR-TO-DATE DEPARTURE FROM NORMAL
-// ==================================================
+	// ==================================================
+	// YEAR-TO-DATE DEPARTURE FROM NORMAL
+	// ==================================================
 
 const rainDepClass =
   ytdRainDeparture > 0
@@ -3240,8 +3236,29 @@ document.getElementById("ytd-rain-departure").innerHTML =
     // OBS PERIOD
     // ==================================================
 
-    document.getElementById("climate-period").innerHTML =
-      `${monthlyRows[0][0]} <span style="opacity: 0.6; font-size: 0.95em;">through</span> ${monthlyRows[monthlyRows.length - 1][0]}`;
+    // ==================================================
+// OBS PERIOD
+// ==================================================
+
+let periodEndRow = monthlyRows[monthlyRows.length - 1];
+
+// If the last row contains missing data (M),
+// use the previous row for the displayed period.
+
+if (
+  periodEndRow &&
+  (periodEndRow[1] === "M" || periodEndRow[2] === "M")
+) {
+  periodEndRow =
+    monthlyRows[monthlyRows.length - 2] || periodEndRow;
+}
+
+document.getElementById("climate-period").innerHTML =
+  `${monthlyRows[0][0]}
+   <span style="opacity: 0.6; font-size: 0.95em;">
+     through
+   </span>
+   ${periodEndRow[0]}`;
 
 
     // ==================================================
@@ -3373,57 +3390,46 @@ function updateDailyClimateRecords() {
     return;
   }
 
-  // ==================================================
-  // RECORD HIGH (Calculate Celsius from Fahrenheit index [0])
-  // ==================================================
-  const highF = rec.high[0];
-  const highC = ((highF - 32) * 5 / 9).toFixed(1);
-  const highYear = rec.high[1];
+ // ==================================================
+// RECORD HIGH
+// ==================================================
 
-  document.getElementById("record-high").innerHTML =
-    `${highF}°F
-    <br><span class="metric">
-     ${highC}°C
-    </span>
-    <br><span class="metric" style="opacity: 0.6; font-size: 0.85em;">
-     ${highYear}
-    </span>`;
+const highF = rec.high[0];
+const highC = ((highF - 32) * 5 / 9).toFixed(1);
+const highYear = rec.high[1];
 
+document.getElementById("record-high").innerHTML =
+  `${highF}°F
+   <br><span class="metric">${highC}°C</span>
+   <span class="metric">${highYear}</span>`;
 
-  // ==================================================
-  // RECORD LOW (Calculate Celsius from Fahrenheit index [0])
-  // ==================================================
-  const lowF = rec.low[0];
-  const lowC = ((lowF - 32) * 5 / 9).toFixed(1);
-  const lowYear = rec.low[1];
+// ==================================================
+// RECORD LOW
+// ==================================================
 
-  document.getElementById("record-low").innerHTML =
-    `${lowF}°F
-    <br><span class="metric">
-     ${lowC}°C
-    </span>
-    <br><span class="metric" style="opacity: 0.6; font-size: 0.85em;">
-     ${lowYear}
-    </span>`;
+const lowF = rec.low[0];
+const lowC = ((lowF - 32) * 5 / 9).toFixed(1);
+const lowYear = rec.low[1];
 
+document.getElementById("record-low").innerHTML =
+  `${lowF}°F
+   <br><span class="metric">${lowC}°C</span>
+   <span class="metric">${lowYear}</span>`;
 
-  // ==================================================
-  // RECORD RAINFALL
-  // ==================================================
-  const rainIn = rec.rain[0];
-  const rainMm = (rainIn * 25.4).toFixed(1);
-  const rainYear = rec.rain[1];
+// ==================================================
+// RECORD RAINFALL
+// ==================================================
 
-  document.getElementById("record-rain").innerHTML =
-    `${rainIn.toFixed(2)} in
-    <br><span class="metric">
-     ${rainMm} mm
-    </span>
-    <br><span class="metric" style="opacity: 0.6; font-size: 0.85em;">
-     ${rainYear}
-    </span>`;
-}
+const rainIn = rec.rain[0];
+const rainMm = (rainIn * 25.4).toFixed(1);
+const rainYear = rec.rain[1];
 
+document.getElementById("record-rain").innerHTML =
+  `${rainIn.toFixed(2)} in
+   <br><span class="metric">${rainMm} mm</span>
+   <span class="metric">${rainYear}</span>`;
+
+  }
 // ======================================================
 // INITIAL LOADS
 // ======================================================
@@ -3440,6 +3446,5 @@ updateDailyClimateRecords()
 
 setInterval(loadClimateData, 1800000);
 
-</script>
-  </body>
+</script> </body>
 </html>
