@@ -978,7 +978,7 @@ body, div, span, p {
           </div>
           <hr></div>
         <div class="live-station" style="font-size:14px;">
-          <details style="width: 100%; max-width: 900px; margin: 0 auto;">
+          <details style="width: 100%; max-width: 900px; margin: 0 auto;" open="">
             <summary style="cursor: pointer; text-align: center; font-size: 1.2em; font-weight: bold;">
               📊 Fort Kent Climate Information 📊 <span style="font-size: 13px; font-weight: normal; color: #555; display: block; margin-top: 2px;">(Click
                 to Collapse/Expand)</span> </summary>
@@ -2784,7 +2784,17 @@ async function loadClimateData() {
     // ==================================================
 
     const latestRow =
-      monthlyRows[monthlyRows.length - 2] || monthlyRows[0];
+  [...monthlyRows]
+    .reverse()
+    .find(row =>
+      row[1] !== "M" &&
+      row[2] !== "M"
+    );
+    
+    if (!latestRow) {
+  console.warn("No valid climate observations found.");
+  return;
+}
 
     const yesterdayDate = latestRow[0];
 
@@ -3356,49 +3366,61 @@ function updateDailyClimateRecords() {
   const rec = climateRecords[key];
 
   // NO DATA YET
-
   if (!rec) {
-
     document.getElementById("record-high").innerHTML = "--";
-
     document.getElementById("record-low").innerHTML = "--";
-
     document.getElementById("record-rain").innerHTML = "--";
-    
     return;
   }
 
-
   // ==================================================
-  // RECORD HIGH
+  // RECORD HIGH (Calculate Celsius from Fahrenheit index [0])
   // ==================================================
+  const highF = rec.high[0];
+  const highC = ((highF - 32) * 5 / 9).toFixed(1);
+  const highYear = rec.high[1];
 
   document.getElementById("record-high").innerHTML =
-    `${rec.high[0]}°F
+    `${highF}°F
     <br><span class="metric">
-     ${rec.high[1]}
+     ${highC}°C
+    </span>
+    <br><span class="metric" style="opacity: 0.6; font-size: 0.85em;">
+     ${highYear}
     </span>`;
 
 
   // ==================================================
-  // RECORD LOW
+  // RECORD LOW (Calculate Celsius from Fahrenheit index [0])
   // ==================================================
+  const lowF = rec.low[0];
+  const lowC = ((lowF - 32) * 5 / 9).toFixed(1);
+  const lowYear = rec.low[1];
 
   document.getElementById("record-low").innerHTML =
-    `${rec.low[0]}°F
+    `${lowF}°F
     <br><span class="metric">
-     ${rec.low[1]}
+     ${lowC}°C
+    </span>
+    <br><span class="metric" style="opacity: 0.6; font-size: 0.85em;">
+     ${lowYear}
     </span>`;
 
 
   // ==================================================
   // RECORD RAINFALL
   // ==================================================
+  const rainIn = rec.rain[0];
+  const rainMm = (rainIn * 25.4).toFixed(1);
+  const rainYear = rec.rain[1];
 
   document.getElementById("record-rain").innerHTML =
-    `${rec.rain[0].toFixed(2)} in
+    `${rainIn.toFixed(2)} in
     <br><span class="metric">
-     ${rec.rain[1]}
+     ${rainMm} mm
+    </span>
+    <br><span class="metric" style="opacity: 0.6; font-size: 0.85em;">
+     ${rainYear}
     </span>`;
 }
 
@@ -3418,5 +3440,6 @@ updateDailyClimateRecords()
 
 setInterval(loadClimateData, 1800000);
 
-</script> </body>
+</script>
+  </body>
 </html>
