@@ -1148,9 +1148,9 @@ body, div, span, p {
               <div style="text-align:left;"> <span style="font-size:12px;"> <em>Climate
                     data source: <a href="https://scacis.rcc-acis.org/"> NOAA
                       RCC ACIS</a></em></span><em><span style="font-size:12px;">
-                    with weather records since 1893. Climate normals and
-                    historical records are sourced via NOAA/ACIS data feeds and
-                    are intended for informational purposes only. Data can
+                    with Fort Kent weather records since 1893. Climate normals
+                    and historical records are sourced via NOAA/ACIS data feeds
+                    and are intended for informational purposes only. Data can
                     occasionally contain provisional values or missing periods
                     due to automated reporting delays.</span></em><span style="font-size:12px;"></span><span
                   style="font-size: 12px;"></span><em style="font-size: 12px;"></em>
@@ -2785,10 +2785,15 @@ async function loadClimateData() {
     // YESTERDAY'S DATA
     // ==================================================
 
+ // Generate today's date string in YYYY-MM-DD format to filter it out
+    const todayObj = new Date();
+    const todayStr = `${todayObj.getFullYear()}-${String(todayObj.getMonth() + 1).padStart(2, "0")}-${String(todayObj.getDate()).padStart(2, "0")}`;
+
     const latestRow =
   [...monthlyRows]
     .reverse()
     .find(row =>
+      row[0] !== todayStr && // Excludes today's date
       row[1] !== "M" &&
       row[2] !== "M"
     );
@@ -2822,11 +2827,17 @@ async function loadClimateData() {
 
     const rec = yesterdayNormals;
       
-    document.getElementById("normal-high").innerHTML =
-      `${yesterdayNormals.normalHigh.toFixed(0)}°F`;
+   document.getElementById("normal-high").innerHTML =
+      `${yesterdayNormals.normalHigh.toFixed(0)}°F
+       <br><span class="metric">
+       ${((yesterdayNormals.normalHigh - 32) * 5 / 9).toFixed(1)}°C
+       </span>`;
 
     document.getElementById("normal-low").innerHTML =
-      `${yesterdayNormals.normalLow.toFixed(0)}°F`;
+      `${yesterdayNormals.normalLow.toFixed(0)}°F
+       <br><span class="metric">
+       ${((yesterdayNormals.normalLow - 32) * 5 / 9).toFixed(1)}°C
+       </span>`;
 
     document.getElementById("normal-rain").innerHTML =
       `${yesterdayNormals.normalRain.toFixed(2)} in
