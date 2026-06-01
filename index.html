@@ -979,7 +979,7 @@ body, div, span, p {
           </div>
           <hr></div>
         <div class="live-station" style="font-size:14px;">
-          <details style="width: 100%; max-width: 900px; margin: 0 auto;">
+          <details style="width: 100%; max-width: 900px; margin: 0 auto;" open="">
             <summary style="cursor: pointer; text-align: center; font-size: 1.2em; font-weight: bold;">
               📊 Fort Kent Weather Almanac 📊 <span style="font-size: 13px; font-weight: normal; color: #555; display: block; margin-top: 2px;">(Click
                 to Collapse/Expand)</span> </summary>
@@ -1110,6 +1110,10 @@ body, div, span, p {
                       <div class="station-value" id="season-snow">--</div>
                     </div>
                     <div class="station-item">
+                      <div class="station-label">Departure from Normal</div>
+                      <div class="station-value" id="season-snow-departure">--</div>
+                    </div>
+                    <div class="station-item">
                       <div class="station-label">Largest Snowstorm</div>
                       <div class="station-value" id="largest-snow">--</div>
                     </div>
@@ -1172,9 +1176,14 @@ body, div, span, p {
               </span>
               <div><strong><span><br>
                   </span></strong></div>
-              <div><strong><span>Today's Moon Times: 🌙↓ </span></strong><span>4:57
-                  AM EDT this morning&nbsp;</span> |&nbsp; <strong><span> 🌙↑ </span></strong><span>10:14</span><span></span><span>
-                  PM EDT </span>this evening</div>
+              <div><strong><span>Today's Moon Times</span></strong></div>
+              <div><strong><span><br>
+                  </span></strong></div>
+              <div><strong><span><span>Moonset</span><span>🌙</span></span><span>↓
+                  </span></strong><span>4:57 AM EDT this morning&nbsp;</span>
+                |&nbsp;&nbsp;<strong><span><span>Moonrise</span><span>🌙</span></span><span><strong><span>↑</span></strong>
+                  </span></strong><span>10:14</span><span></span><span> PM EDT </span>this
+                evening</div>
               <div><br>
               </div>
               <div style="font-size: 12px; text-align: left;"> <em><u>Notice</u>:
@@ -1294,10 +1303,10 @@ body, div, span, p {
         <br>
         However, Thursday remains sunny and warm with high pressure spreading
         over the eastern US. Warm southwesterly flow will allow temperatures to
-        rise into the lower to middle 80s for most of the Saint John Valley
-        with west winds 0-7 mph. Thursday night, an approaching cold front in
-        Québec brings partly cloudy skies with temperatures in the low to
-        mid-50s and light west winds across the SJV.
+        rise into the lower to middle 80s for most of the Saint John Valley with
+        west winds 0-7 mph. Thursday night, an approaching cold front in Québec
+        brings partly cloudy skies with temperatures in the low to mid-50s and
+        light west winds across the SJV.
         <div><br>
           Friday, low pressure in Québec and a <a href="https://www.theweatherprediction.com/habyhints2/530/">triple
             point</a> look to approach from the west with partly sunny skies and
@@ -2768,6 +2777,9 @@ async function loadClimateData() {
 
     const ytdRainDeparture =
       climate.ytdRainDeparture || 0;
+    
+    const seasonSnowDeparture = 
+      climate.seasonSnowDeparture || 0;
       
     // ==================================================
     // YESTERDAY'S DATA
@@ -3180,9 +3192,9 @@ document.getElementById("ytd-rain-departure").innerHTML =
     ${(ytdRainDeparture * 25.4).toFixed(1)} mm
    </span>`;
 
-    // ==================================================
-    // SEASONAL SNOWFALL
-    // ==================================================
+// ==================================================
+// SEASONAL SNOWFALL
+// ==================================================
 
     document.getElementById("season-snow").innerHTML =
       `${totalSnow.toFixed(1)} in
@@ -3190,6 +3202,24 @@ document.getElementById("ytd-rain-departure").innerHTML =
         ${(totalSnow * 2.54).toFixed(1)} cm
        </span>`;
 
+// ==================================================
+    // SEASONAL SNOWFALL DEPARTURE FROM NORMAL
+    // ==================================================
+    const snowDepClass =
+      seasonSnowDeparture > 0
+        ? "rain-positive"   // Blue styling for above-normal snow
+        : seasonSnowDeparture < 0
+          ? "rain-negative" // Amber styling for below-normal snow
+          : "rain-neutral";
+
+    document.getElementById("season-snow-departure").innerHTML =
+      `<span class="${snowDepClass}">
+        ${seasonSnowDeparture > 0 ? "+" : ""}${seasonSnowDeparture.toFixed(1)} in
+       </span>
+       <br>
+       <span class="metric ${snowDepClass}">
+        ${seasonSnowDeparture > 0 ? "+" : ""}${(seasonSnowDeparture * 2.54).toFixed(1)} cm
+       </span>`;
 
     // ==================================================
     // LARGEST SNOWFALL
