@@ -1096,7 +1096,7 @@ body, div, span, p {
           </div>
           <hr></div>
         <div class="live-station" style="font-size:14px;">
-          <details style="width: 100%; max-width: 900px; margin: 0 auto;">
+          <details style="width: 100%; max-width: 900px; margin: 0 auto;" open="">
             <summary style="cursor: pointer; text-align: center; font-size: 1.2em; font-weight: bold;">
               📊 Fort Kent Weather Almanac 📊 <span style="font-size: 13px; font-weight: normal; color: #555; display: block; margin-top: 2px;">(Click
                 to Collapse/Expand)</span> </summary>
@@ -2846,33 +2846,7 @@ function getCurrentSeason(date = new Date()) {
 
 updateGreeting();
 setInterval(updateGreeting, 60000);</script>
-    <script>
-    const NOAA_URL = 'https://www.wpc.ncep.noaa.gov/discussions/hpcdiscussions.php?disc=nathilo&version=0&fmt=reg';
-    const PROXY = 'https://api.allorigins.win/get?url=';
-
-    async function loadHiLo() {
-      try {
-        const res = await fetch(PROXY + encodeURIComponent(NOAA_URL));
-        const json = await res.json();
-        const html = json.contents;
-
-        // Extract the <pre> block
-        const match = html.match(/<pre[^>]*>([\s\S]*?)<\/pre>/i);
-        if (match) {
-          document.getElementById('hilo').textContent = match[1].trim();
-          document.getElementById('updated').textContent = 'Last fetched: ' + new Date().toLocaleString();
-        } else {
-          document.getElementById('hilo').textContent = 'Could not parse data.';
-        }
-      } catch (e) {
-        document.getElementById('hilo').textContent = 'Error loading data: ' + e.message;
-      }
-    }
-
-    loadHiLo();
-    setInterval(loadHiLo, 3600000); // refresh every hour
-  </script>
-    <script>
+    <script> //STATION LIVE DATA
 
 const workerUrl =
   "https://apexwx-observations.maineapexwx.workers.dev";
@@ -3031,9 +3005,10 @@ setInterval(updateStation, 60000);
 // ======================================================
 
 async function loadClimateData() {
-
+  
+  console.log("LOAD CLIMATE DATA STARTED");
+  
   try {
-
     const response = await fetch(
       "https://fortkent-acis.maineapexwx.workers.dev/"
     );
@@ -3043,7 +3018,6 @@ async function loadClimateData() {
     // ==================================================
     // UNPACK DATASETS
     // ==================================================
-
     const monthlyRows = climate.monthlyRows;
     const seasonalRows = climate.seasonalRows || [];
 
@@ -3054,721 +3028,367 @@ async function loadClimateData() {
         normalRain: 0
       };
 
-    const ytdRain =
-      climate.ytdRain || 0;
-
-    const ytdRainDeparture =
-      climate.ytdRainDeparture || 0;
-    
-    const seasonSnowDeparture = 
-      climate.seasonSnowDeparture || 0;
+    const ytdRain = climate.ytdRain || 0;
+    const ytdRainDeparture = climate.ytdRainDeparture || 0;
+    const seasonSnowDeparture = climate.seasonSnowDeparture || 0;
       
     // ==================================================
-    // YESTERDAY'S DATA
+    // YESTERDAY'S COMPLETE CLIMATE OBSERVATION
     // ==================================================
-
- // Generate today's date string in YYYY-MM-DD format to filter it out
-    const todayObj = new Date();
+    // Establish reliable local Eastern Time for processing
+    const easternTimeStr = new Date().toLocaleString("en-US", { timeZone: "America/New_York" });
+    const todayObj = new Date(easternTimeStr);
     const todayStr = `${todayObj.getFullYear()}-${String(todayObj.getMonth() + 1).padStart(2, "0")}-${String(todayObj.getDate()).padStart(2, "0")}`;
 
-    const latestRow =
-  [...monthlyRows]
-    .reverse()
-    .find(row =>
-      row[0] !== todayStr && // Excludes today's date
-      row[1] !== "M" &&
-      row[2] !== "M"
-    );
-    
+    const latestRow = [...monthlyRows]
+      .reverse()
+      .find(row =>
+        row[0] !== todayStr &&
+        row[1] !== "M" &&
+        row[2] !== "M" &&
+        row[1] !== "" &&
+        row[2] !== ""
+      );
+      
     if (!latestRow) {
-  console.warn("No valid climate observations found.");
-  return;
-}
+      console.warn("No valid climate observations found.");
+      return;
+    }
 
     const yesterdayDate = latestRow[0];
 
-    const yesterdayHigh =
-  (latestRow[1] !== "M" && latestRow[1] !== "")
-    ? parseFloat(latestRow[1])
-    : null;
+    const yesterdayHigh = (latestRow[1] !== "M" && latestRow[1] !== "")
+      ? parseFloat(latestRow[1])
+      : null;
 
-    const yesterdayLow =
-  (latestRow[2] !== "M" && latestRow[2] !== "")
-    ? parseFloat(latestRow[2])
-    : null;
-      
-    const yesterdayRain =
-      (latestRow[3] !== "M" && latestRow[3] !== "T")
-        ? parseFloat(latestRow[3]) || 0
-        : 0;
-
+    const yesterdayLow = (latestRow[2] !== "M" && latestRow[2] !== "")
+      ? parseFloat(latestRow[2])
+      : null;
+        
+    const yesterdayRain = (latestRow[3] !== "M" && latestRow[3] !== "T")
+      ? parseFloat(latestRow[3]) || 0
+      : 0;
 
     // ==================================================
-    // DAILY NORMALS LOOKUP
+    // DAILY NORMALS & RECORDS LOOKUP (DYNAMIC ACIS JSON)
     // ==================================================
+    // 1. Establish initial fallback baselines from your local calendar records dictionary
+    const localKey = `${String(todayObj.getMonth() + 1).padStart(2, "0")}-${String(todayObj.getDate()).padStart(2, "0")}`;
+    const fallbackRec = climateRecords[localKey] || { high: [90, "----"], low: [28, "----"], rain: [2.73, "----"] };
 
-    const rec = yesterdayNormals;
-      
-   document.getElementById("normal-high").innerHTML =
-      `${yesterdayNormals.normalHigh.toFixed(0)}°F
-       <br><span class="metric">
-       ${((yesterdayNormals.normalHigh - 32) * 5 / 9).toFixed(1)}°C
-       </span>`;
+    let normHigh = yesterdayNormals.normalHigh;
+    let normLow = yesterdayNormals.normalLow;
+    let normRain = yesterdayNormals.normalRain;
+    
+    let recHighVal = fallbackRec.high[0];
+    let recHighYear = fallbackRec.high[1];
+    let recLowVal = fallbackRec.low[0];
+    let recLowYear = fallbackRec.low[1];
+    let recRainVal = fallbackRec.rain[0];
+    let recRainYear = fallbackRec.rain[1];
+
+    // Keep this reference intact for Yesterday's Departure calculations below
+    const rec = yesterdayNormals; 
+
+    try {
+      // Fetch verified records directly from NOAA ACIS matching local date
+      const acisRes = await fetch("https://data.rcc-acis.org/StnData", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          sid: "172878", 
+          sdate: todayStr,
+          edate: todayStr,
+          elems: [
+            { name: "maxt", vtype: "normal" },                 // index 1: Normal High
+            { name: "mint", vtype: "normal" },                 // index 2: Normal Low
+            { name: "pcpn", vtype: "normal" },                 // index 3: Normal Rain
+            { name: "maxt", vtype: "record", add: "year" },    // index 4: Record High [Value, Year]
+            { name: "mint", vtype: "record", add: "year" },    // index 5: Record Low  [Value, Year]
+            { name: "pcpn", vtype: "record", add: "year" }     // index 6: Record Rain [Value, Year]
+          ]
+        })
+      });
+
+      const todayClimateData = await acisRes.json();
+     console.log("ACIS TODAY ROW:", todayClimateData.data?.[0]);
+console.log("Worker normals:", yesterdayNormals);
+
+      if (todayClimateData && todayClimateData.data && todayClimateData.data[0]) {
+        const todayRow = todayClimateData.data[0];
+        
+        // Dynamically overwrite if live valid numbers exist
+        if (todayRow[1] && todayRow[1] !== "M" && !isNaN(parseFloat(todayRow[1]))) normHigh = parseFloat(todayRow[1]);
+        if (todayRow[2] && todayRow[2] !== "M" && !isNaN(parseFloat(todayRow[2]))) normLow = parseFloat(todayRow[2]);
+        if (todayRow[3] && todayRow[3] !== "M" && !isNaN(parseFloat(todayRow[3]))) normRain = parseFloat(todayRow[3]);
+        
+        // Safely extract from dynamic record multi-dimensional arrays [Value, Year]
+        if (todayRow[4] && Array.isArray(todayRow[4]) && todayRow[4][0] !== "M" && todayRow[4][0] !== "") {
+          recHighVal = todayRow[4][0];
+          recHighYear = todayRow[4][1] || "N/A";
+        }
+        if (todayRow[5] && Array.isArray(todayRow[5]) && todayRow[5][0] !== "M" && todayRow[5][0] !== "") {
+          recLowVal = todayRow[5][0];
+          recLowYear = todayRow[5][1] || "N/A";
+        }
+        if (todayRow[6] && Array.isArray(todayRow[6]) && todayRow[6][0] !== "M" && todayRow[6][0] !== "") {
+          recRainVal = todayRow[6][0];
+          recRainYear = todayRow[6][1] || "N/A";
+        }
+      }
+    } catch (innerErr) {
+      console.error("Error fetching live ACIS metrics, falling back to local dictionary:", innerErr);
+    }
+
+    // Render Normals to DOM
+    document.getElementById("normal-high").innerHTML =
+      `${Number(normHigh).toFixed(0)}°F<br><span class="metric">${((Number(normHigh) - 32) * 5 / 9).toFixed(1)}°C</span>`;
 
     document.getElementById("normal-low").innerHTML =
-      `${yesterdayNormals.normalLow.toFixed(0)}°F
-       <br><span class="metric">
-       ${((yesterdayNormals.normalLow - 32) * 5 / 9).toFixed(1)}°C
-       </span>`;
+      `${Number(normLow).toFixed(0)}°F<br><span class="metric">${((Number(normLow) - 32) * 5 / 9).toFixed(1)}°C</span>`;
 
     document.getElementById("normal-rain").innerHTML =
-      `${yesterdayNormals.normalRain.toFixed(2)} in
-       <br><span class="metric">
-       ${(yesterdayNormals.normalRain * 25.4).toFixed(1)} mm
-       </span>`;
+      `${Number(normRain).toFixed(2)} in<br><span class="metric">${(Number(normRain) * 25.4).toFixed(1)} mm</span>`;
+
+    // Render Records safely with correct dimensional parsing
+    document.getElementById("record-high").innerHTML =
+      `${parseFloat(recHighVal).toFixed(0)}°F<br><span class="metric">${((parseFloat(recHighVal) - 32) * 5 / 9).toFixed(1)}°C</span><span class="metric">${recHighYear}</span>`;
+
+    document.getElementById("record-low").innerHTML =
+      `${parseFloat(recLowVal).toFixed(0)}°F<br><span class="metric">${((parseFloat(recLowVal) - 32) * 5 / 9).toFixed(1)}°C</span><span class="metric">${recLowYear}</span>`;
+
+    document.getElementById("record-rain").innerHTML =
+      `${parseFloat(recRainVal).toFixed(2)} in<br><span class="metric">${(parseFloat(recRainVal) * 25.4).toFixed(1)} mm</span><span class="metric">${recRainYear}</span>`;
 
     // ==================================================
     // DEPARTURES
     // ==================================================
-
     let highDeparture = null;
     let lowDeparture = null;
 
     if (rec) {
-
-      highDeparture =
-        yesterdayHigh - rec.normalHigh;
-
-      lowDeparture =
-        yesterdayLow - rec.normalLow;
-
+      highDeparture = yesterdayHigh - rec.normalHigh;
+      lowDeparture = yesterdayLow - rec.normalLow;
     }
+    
     let totalRain = 0;
     let maxRain = 0;
-
     let maxTemp = -999;
     let maxTempDate = "";
-
     let minTemp = 999;
     let minTempDate = "";
-
     let totalHigh = 0;
     let totalLow = 0;
-
     let validHighs = 0;
     let validLows = 0;
-
     let totalSnow = 0;
     let maxSnow = 0;
     let maxSnowDate = "";
     let snowDays = 0;
 
-
     // ==================================================
     // MONTHLY DATA LOOP
     // ==================================================
-
     monthlyRows.forEach(row => {
-
       const date = row[0];
       const high = parseFloat(row[1]);
       const low = parseFloat(row[2]);
 
-      // SAFE RAIN PARSING
-
       let rain = 0;
-
       if (row[3] !== "M" && row[3] !== "T") {
         rain = parseFloat(row[3]) || 0;
       }
 
-      // ACCUMULATE RAIN
-
       totalRain += rain;
-
-      if (rain > maxRain) {
-        maxRain = rain;
-      }
-
-      // HIGH TEMP TRACKING
+      if (rain > maxRain) { maxRain = rain; }
 
       if (!isNaN(high)) {
-
         totalHigh += high;
         validHighs++;
-
         if (high > maxTemp) {
           maxTemp = high;
           maxTempDate = date;
         }
       }
 
-      // LOW TEMP TRACKING
-
       if (!isNaN(low)) {
-
         totalLow += low;
         validLows++;
-
         if (low < minTemp) {
           minTemp = low;
           minTempDate = date;
         }
       }
-
     });
-
 
     // ==================================================
     // SEASONAL SNOW LOOP
     // ==================================================
-
     seasonalRows.forEach(row => {
-
       const date = row[0];
-
       let snow = 0;
-
       if (row[1] !== "M" && row[1] !== "T") {
         snow = parseFloat(row[1]) || 0;
       }
 
-      // ACCUMULATE SNOW
-
       if (snow > 0) {
-
         totalSnow += snow;
         snowDays++;
-
         if (snow > maxSnow) {
           maxSnow = snow;
           maxSnowDate = date;
         }
       }
-
     });
-
 
     // ==================================================
     // CALCULATE AVERAGES
     // ==================================================
-
-    const avgHigh =
-      validHighs > 0 ? totalHigh / validHighs : 0;
-
-    const avgLow =
-      validLows > 0 ? totalLow / validLows : 0;
-      
+    const avgHigh = validHighs > 0 ? totalHigh / validHighs : 0;
+    const avgLow = validLows > 0 ? totalLow / validLows : 0;
     const avgMonthlyMean = (avgHigh + avgLow) / 2;
+    const avgRain = monthlyRows.length > 0 ? totalRain / monthlyRows.length : 0;
+    const avgSnow = snowDays > 0 ? totalSnow / snowDays : 0;
 
-    const avgRain =
-      monthlyRows.length > 0
-        ? totalRain / monthlyRows.length
-        : 0;
-
-    const avgSnow =
-      snowDays > 0
-        ? totalSnow / snowDays
-        : 0;
-
-
-    // ==================================================
-    // MONTHLY RAIN
-    // ==================================================
-
-    document.getElementById("climate-month-rain").innerHTML =
-      `${totalRain.toFixed(2)} in
-       <br><span class="metric">
-        ${(totalRain * 25.4).toFixed(1)} mm
-       </span>`;
-
-
-    // ==================================================
-    // WETTEST DAY
-    // ==================================================
-
-    document.getElementById("climate-max-rain").innerHTML =
-      `${maxRain.toFixed(2)} in
-       <br><span class="metric">
-        ${(maxRain * 25.4).toFixed(1)} mm
-       </span>`;
-
-
-     // ==================================================
-    // AVERAGE DAILY RAIN
-    // ==================================================
-
-    document.getElementById("climate-avg-rain").innerHTML =
-      `${avgRain.toFixed(2)} in/day<br><span class="metric">${(avgRain * 25.4).toFixed(1)} mm/day</span>`;
-
-
-    // ==================================================
-    // HIGHEST TEMP
-    // ==================================================
-
-    document.getElementById("climate-max-temp").innerHTML =
-      `${maxTemp.toFixed(0)}°F
-       <br><span class="metric">
-        ${((maxTemp - 32) * 5 / 9).toFixed(1)}°C
-       </span>
-       <span class="metric">
-        ${maxTempDate}
-       </span>`;
-
-
-    // ==================================================
-    // LOWEST TEMP
-    // ==================================================
-
-    document.getElementById("climate-min-temp").innerHTML =
-      `${minTemp.toFixed(0)}°F
-       <br><span class="metric">
-        ${((minTemp - 32) * 5 / 9).toFixed(1)}°C
-       </span>
-       <span class="metric">
-        ${minTempDate}
-       </span>`;
-
-
-    // ==================================================
-    // AVERAGE HIGH
-    // ==================================================
-
-    document.getElementById("climate-avg-high").innerHTML =
-      `${avgHigh.toFixed(1)}°F
-       <br><span class="metric">
-        ${((avgHigh - 32) * 5 / 9).toFixed(1)}°C
-       </span>`;
-
-
-    // ==================================================
-    // AVERAGE LOW
-    // ==================================================
-
-    document.getElementById("climate-avg-low").innerHTML =
-      `${avgLow.toFixed(1)}°F
-       <br><span class="metric">
-        ${((avgLow - 32) * 5 / 9).toFixed(1)}°C
-       </span>`;
-      
-    // ==================================================
-    // NEW: AVERAGE MONTHLY MEAN TEMPERATURE
-    // ==================================================
-
-    document.getElementById("climate-monthly-mean").innerHTML =
-      `${avgMonthlyMean.toFixed(1)}°F
-       <br><span class="metric">
-        ${((avgMonthlyMean - 32) * 5 / 9).toFixed(1)}°C
-       </span>`;   
-      
-    // ==================================================
-    // YESTERDAY HIGH
-    // ==================================================
-
-  document.getElementById("yesterday-high").innerHTML =
-  yesterdayHigh !== null
-    ? `${yesterdayHigh.toFixed(0)}°F
-       <br><span class="metric">
-        ${((yesterdayHigh - 32) * 5 / 9).toFixed(1)}°C
-       </span>
-       <span class="metric">
-        ${yesterdayDate}
-       </span>`
-    : "--";
+    // Render Stats to DOM
+    document.getElementById("climate-month-rain").innerHTML = `${totalRain.toFixed(2)} in<br><span class="metric">${(totalRain * 25.4).toFixed(1)} mm</span>`;
+    document.getElementById("climate-max-rain").innerHTML = `${maxRain.toFixed(2)} in<br><span class="metric">${(maxRain * 25.4).toFixed(1)} mm</span>`;
+    document.getElementById("climate-avg-rain").innerHTML = `${avgRain.toFixed(2)} in/day<br><span class="metric">${(avgRain * 25.4).toFixed(1)} mm/day</span>`;
     
-    // ==================================================
-    // HIGH DEPARTURE
-    // ==================================================
-
+    document.getElementById("climate-max-temp").innerHTML = `${maxTemp.toFixed(0)}°F<br><span class="metric">${((maxTemp - 32) * 5 / 9).toFixed(1)}°C</span><span class="metric">${maxTempDate}</span>`;
+    document.getElementById("climate-min-temp").innerHTML = `${minTemp.toFixed(0)}°F<br><span class="metric">${((minTemp - 32) * 5 / 9).toFixed(1)}°C</span><span class="metric">${minTempDate}</span>`;
+    document.getElementById("climate-avg-high").innerHTML = `${avgHigh.toFixed(1)}°F<br><span class="metric">${((avgHigh - 32) * 5 / 9).toFixed(1)}°C</span>`;
+    document.getElementById("climate-avg-low").innerHTML = `${avgLow.toFixed(1)}°F<br><span class="metric">${((avgLow - 32) * 5 / 9).toFixed(1)}°C</span>`;
+    document.getElementById("climate-monthly-mean").innerHTML = `${avgMonthlyMean.toFixed(1)}°F<br><span class="metric">${((avgMonthlyMean - 32) * 5 / 9).toFixed(1)}°C</span>`;   
+      
+    document.getElementById("yesterday-high").innerHTML = yesterdayHigh !== null
+      ? `${yesterdayHigh.toFixed(0)}°F<br><span class="metric">${((yesterdayHigh - 32) * 5 / 9).toFixed(1)}°C</span><span class="metric">${yesterdayDate}</span>`
+      : "--";
+    
     if (highDeparture !== null && !isNaN(highDeparture)) {
-
       const highDepC = highDeparture * 5 / 9;
-
-      const depClass =
-        highDeparture > 0
-          ? "departure-positive"
-          : highDeparture < 0
-            ? "departure-negative"
-            : "departure-neutral";
-
-      document.getElementById("yesterday-high-departure").innerHTML =
-        `<span class="${depClass}">
-          ${highDeparture > 0 ? "+" : ""}
-          ${Math.round(highDeparture)}°F
-         </span>
-         <br>
-         <span class="metric ${depClass}">
-           ${highDepC > 0 ? "+" : ""}
-           ${highDepC.toFixed(1)}°C
-         </span>
-         <span class="metric">
-           ${yesterdayDate}
-         </span>`;
+      const depClass = highDeparture > 0 ? "departure-positive" : highDeparture < 0 ? "departure-negative" : "departure-neutral";
+      document.getElementById("yesterday-high-departure").innerHTML = `<span class="${depClass}">${highDeparture > 0 ? "+" : ""}${Math.round(highDeparture)}°F</span><br><span class="metric ${depClass}">${highDepC > 0 ? "+" : ""}${highDepC.toFixed(1)}°C</span><span class="metric">${yesterdayDate}</span>`;
     }
 
-
-
-
-// ==================================================
-// YESTERDAY LOW
-// ==================================================
-
-document.getElementById("yesterday-low").innerHTML =
-  yesterdayLow !== null
-    ? `${yesterdayLow.toFixed(0)}°F
-       <br><span class="metric">
-        ${((yesterdayLow - 32) * 5 / 9).toFixed(1)}°C
-       </span>
-       <span class="metric">
-        ${yesterdayDate}
-       </span>`
-    : "--";
-
-    // ==================================================
-    // LOW DEPARTURE
-    // ==================================================
+    document.getElementById("yesterday-low").innerHTML = yesterdayLow !== null
+      ? `${yesterdayLow.toFixed(0)}°F<br><span class="metric">${((yesterdayLow - 32) * 5 / 9).toFixed(1)}°C</span><span class="metric">${yesterdayDate}</span>`
+      : "--";
 
     if (lowDeparture !== null && !isNaN(lowDeparture)) {
-
       const lowDepC = lowDeparture * 5 / 9;
-
-      const depClass =
-        lowDeparture > 0
-          ? "departure-positive"
-          : lowDeparture < 0
-            ? "departure-negative"
-            : "departure-neutral";
-
-      document.getElementById("yesterday-low-departure").innerHTML =
-        `<span class="${depClass}">
-          ${lowDeparture > 0 ? "+" : ""}
-          ${Math.round(lowDeparture)}°F
-         </span>
-         <br>
-         <span class="metric ${depClass}">
-           ${lowDepC > 0 ? "+" : ""}
-           ${lowDepC.toFixed(1)}°C
-         </span>
-         <span class="metric">
-           ${yesterdayDate}
-         </span>`;
+      const depClass = lowDeparture > 0 ? "departure-positive" : lowDeparture < 0 ? "departure-negative" : "departure-neutral";
+      document.getElementById("yesterday-low-departure").innerHTML = `<span class="${depClass}">${lowDeparture > 0 ? "+" : ""}${Math.round(lowDeparture)}°F</span><br><span class="metric ${depClass}">${lowDepC > 0 ? "+" : ""}${lowDepC.toFixed(1)}°C</span><span class="metric">${yesterdayDate}</span>`;
     }
       
-    // ==================================================
-    // YEAR-TO-DATE RAINFALL
-    // ==================================================
+    document.getElementById("ytd-rain").innerHTML = `${ytdRain.toFixed(2)} in<br><span class="metric">${(ytdRain * 25.4).toFixed(1)} mm</span>`;
 
-    document.getElementById("ytd-rain").innerHTML =
-      `${ytdRain.toFixed(2)} in
-       <br><span class="metric">
-        ${(ytdRain * 25.4).toFixed(1)} mm
-       </span>`;
+    const rainDepClass = ytdRainDeparture > 0 ? "rain-positive" : ytdRainDeparture < 0 ? "rain-negative" : "rain-neutral";
+    document.getElementById("ytd-rain-departure").innerHTML = `<span class="${rainDepClass}">${ytdRainDeparture > 0 ? "+" : ""}${ytdRainDeparture.toFixed(2)} in</span><br><span class="metric ${rainDepClass}">${(ytdRainDeparture * 25.4).toFixed(1)} mm</span>`;
 
-	// ==================================================
-	// YEAR-TO-DATE DEPARTURE FROM NORMAL
-	// ==================================================
+    const observedSeasonalSnow = 84.8; 
+    document.getElementById("season-snow").innerHTML = `${observedSeasonalSnow.toFixed(1)} in<br><span class="metric">${(observedSeasonalSnow * 2.54).toFixed(1)} cm</span>`;
 
-const rainDepClass =
-  ytdRainDeparture > 0
-    ? "rain-positive"
-    : ytdRainDeparture < 0
-      ? "rain-negative"
-      : "rain-neutral";
+    fetchSnowNormals().then(currentNormal => {
+      const snowDeparture = observedSeasonalSnow - currentNormal;
+      const snowDepClass = snowDeparture > 0 ? "rain-positive" : snowDeparture < 0 ? "rain-negative" : "rain-neutral";
+      document.getElementById("season-snow-departure").innerHTML = `<span class="${snowDepClass}">${snowDeparture > 0 ? "+" : ""}${snowDeparture.toFixed(1)} in</span><br><span class="metric ${snowDepClass}">${snowDeparture > 0 ? "+" : ""}${(snowDeparture * 2.54).toFixed(1)} cm</span>`;
+    });
 
-document.getElementById("ytd-rain-departure").innerHTML =
-  `<span class="${rainDepClass}">
-    ${ytdRainDeparture > 0 ? "+" : ""}
-    ${ytdRainDeparture.toFixed(2)} in
-   </span>
-   <br>
-   <span class="metric ${rainDepClass}">
-    ${(ytdRainDeparture * 25.4).toFixed(1)} mm
-   </span>`;
-
-// ==================================================
-// SEASONAL SNOWFALL
-// ==================================================
-
-    document.getElementById("season-snow").innerHTML =
-      `${totalSnow.toFixed(1)} in
-       <br><span class="metric">
-        ${(totalSnow * 2.54).toFixed(1)} cm
-       </span>`;
-
-// ==================================================
-    // SEASONAL SNOWFALL DEPARTURE FROM NORMAL
-    // ==================================================
-    const snowDepClass =
-      seasonSnowDeparture > 0
-        ? "rain-positive"   // Blue styling for above-normal snow
-        : seasonSnowDeparture < 0
-          ? "rain-negative" // Amber styling for below-normal snow
-          : "rain-neutral";
-
-    document.getElementById("season-snow-departure").innerHTML =
-      `<span class="${snowDepClass}">
-        ${seasonSnowDeparture > 0 ? "+" : ""}${seasonSnowDeparture.toFixed(1)} in
-       </span>
-       <br>
-       <span class="metric ${snowDepClass}">
-        ${seasonSnowDeparture > 0 ? "+" : ""}${(seasonSnowDeparture * 2.54).toFixed(1)} cm
-       </span>`;
+    document.getElementById("largest-snow").innerHTML = `${maxSnow.toFixed(1)} in<br><span class="metric">${(maxSnow * 2.54).toFixed(1)} cm</span><span class="metric">${maxSnowDate || "N/A"}</span>`;
+    document.getElementById("avg-snow").innerHTML = `${avgSnow.toFixed(1)} in/event<br><span class="metric">${(avgSnow * 2.54).toFixed(1)} cm</span>`;
+    document.getElementById("snow-days").textContent = snowDays;
+    document.getElementById("climate-days").textContent = monthlyRows.length;
 
     // ==================================================
-    // LARGEST SNOWFALL
+    // FIX OBS PERIOD LAYOUT
     // ==================================================
+    let periodEndRow = monthlyRows[monthlyRows.length - 1];
+    if (periodEndRow && (periodEndRow[1] === "M" || periodEndRow[2] === "M")) {
+      periodEndRow = monthlyRows[monthlyRows.length - 2] || periodEndRow;
+    }
 
-    document.getElementById("largest-snow").innerHTML =
-      `${maxSnow.toFixed(1)} in
-       <br><span class="metric">
-        ${(maxSnow * 2.54).toFixed(1)} cm
-       </span>
-       <span class="metric">
-        ${maxSnowDate || "N/A"}
-       </span>`;
+    const startDateStr = monthlyRows[0][0];
+    const endDateStr = periodEndRow[0];
 
+    if (startDateStr === endDateStr) {
+      document.getElementById("climate-period").innerHTML = startDateStr;
+    } else {
+      document.getElementById("climate-period").innerHTML = `${startDateStr} <span style="opacity: 0.6; font-size: 0.95em;">through</span> ${endDateStr}`;
+    }
 
-    // ==================================================
-    // AVERAGE SNOW PER EVENT
-    // ==================================================
+    document.getElementById("climate-update").textContent = new Date().toLocaleString();
 
-    document.getElementById("avg-snow").innerHTML =
-      `${avgSnow.toFixed(1)} in/event
-       <br><span class="metric">
-        ${(avgSnow * 2.54).toFixed(1)} cm
-       </span>`;
-
-
-    // ==================================================
-    // SNOW DAYS COUNT
-    // ==================================================
-
-    document.getElementById("snow-days").textContent =
-      snowDays;
-
-
-    // ==================================================
-    // DAYS RETURNED
-    // ==================================================
-
-    document.getElementById("climate-days").textContent =
-      monthlyRows.length;
-
-
-    // ==================================================
-    // OBS PERIOD
-    // ==================================================
-
-    // ==================================================
-// OBS PERIOD
-// ==================================================
-
-let periodEndRow = monthlyRows[monthlyRows.length - 1];
-
-// If the last row contains missing data (M),
-// use the previous row for the displayed period.
-
-if (
-  periodEndRow &&
-  (periodEndRow[1] === "M" || periodEndRow[2] === "M")
-) {
-  periodEndRow =
-    monthlyRows[monthlyRows.length - 2] || periodEndRow;
-}
-
-document.getElementById("climate-period").innerHTML =
-  `${monthlyRows[0][0]}
-   <span style="opacity: 0.6; font-size: 0.95em;">
-     through
-   </span>
-   ${periodEndRow[0]}`;
-
-
-    // ==================================================
-    // UPDATE TIME
-    // ==================================================
-
-    document.getElementById("climate-update").textContent =
-      new Date().toLocaleString();
-
-  }
-
-  catch(error) {
-
+  } catch(error) {
     console.error("Climate data error:", error);
-
-    document.getElementById("climate-update").textContent =
-      "Unable to retrieve climate data";
-
+    document.getElementById("climate-update").textContent = "Unable to retrieve climate data";
   }
-
 }
 
-
 // ======================================================
-// DAILY RECORDS & NORMALS
+// DAILY RECORDS LOCAL FALLBACK DICTIONARY
 // ======================================================
-
 const climateRecords = {
-
-  // ==================================================
-  // MAY
-  // ==================================================
-
-  "05-28": {
-    high: [90, 1978],
-    low: [28, 1994],
-    rain: [2.73, 2022]
-  },
-  
-  "05-29": {
-    high: [93, 2020],
-    low: [27, 1985],
-    rain: [1.10, 1973]
-  },
-
-  "05-30": {
-    high: [89, 2020],
-    low: [26, 1941],
-    rain: [1.26, 1993]
-  },
-    
-  "05-31": {
-    high: [88, 1937],
-    low: [29, 1964],
-    rain: [1.13, 1979]
-  },
-    
-  // ==================================================
-  // JUNE
-  // ==================================================   
- 
-  "06-01": {
-    high: [91, 2023],
-    low: [28, 2020],
-    rain: [1.25, 2025]
-  },
-  
-  "06-02": {
-    high: [92, 2023],
-    low: [29, 2020],
-    rain: [1.30, 1994],
-  },
-  
-   "06-03": {
-    high: [90, 1963],
-    low: [31, 2020],
-    rain: [1.18, 2013],
-  },
-  
-   "06-04": {
-    high: [88, 1990],
-    low: [29, 2020],
-    rain: [1.30, 1994],
-  },
-  
-   "06-05": {
-    high: [90, 1893],
-    low: [29, 2000],
-    rain: [0.74, 1952],
-  },
-  
-  "06-06": {
-    high: [86, 1976],
-    low: [29, 1894],
-    rain: [1.08, 1952],
-  },
-  
-  "06-07": {
-    high: [91, 1976],
-    low: [29, 1948],
-    rain: [1.28, 1983],
-  },
- 
-
-// ==================================================
-// CLOSE CLIMATE DATA
-// ==================================================     
+  "05-28": { high: [90, 1978], low: [28, 1994], rain: [2.73, 2022] },
+  "05-29": { high: [93, 2020], low: [27, 1985], rain: [1.10, 1973] },
+  "05-30": { high: [89, 2020], low: [26, 1941], rain: [1.26, 1993] },
+  "05-31": { high: [88, 1937], low: [29, 1964], rain: [1.13, 1979] },
+  "06-01": { high: [91, 2023], low: [28, 2020], rain: [1.25, 2025] },
+  "06-02": { high: [92, 2023], low: [29, 2020], rain: [1.30, 1994] },
+  "06-03": { high: [90, 1963], low: [31, 2020], rain: [1.18, 2013] },
+  "06-04": { high: [88, 1990], low: [29, 2020], rain: [1.30, 1994] },
+  "06-05": { high: [90, 1893], low: [29, 2000], rain: [0.74, 1952] },
+  "06-06": { high: [86, 1976], low: [29, 1894], rain: [1.08, 1952] },
+  "06-07": { high: [91, 1976], low: [29, 1948], rain: [1.28, 1983] }
 };
-    
- 
+
 // ======================================================
-// UPDATE DAILY RECORDS DISPLAY
+// INITIAL EXECUTION
 // ======================================================
-
-function updateDailyClimateRecords() {
-
-  const today = new Date();
-
-  const key =
-    `${String(today.getMonth() + 1).padStart(2, "0")}-${String(today.getDate()).padStart(2, "0")}`;
-
-  const rec = climateRecords[key];
-
-  // NO DATA YET
-  if (!rec) {
-    document.getElementById("record-high").innerHTML = "--";
-    document.getElementById("record-low").innerHTML = "--";
-    document.getElementById("record-rain").innerHTML = "--";
-    return;
-  }
-
- // ==================================================
-// RECORD HIGH
-// ==================================================
-
-const highF = rec.high[0];
-const highC = ((highF - 32) * 5 / 9).toFixed(1);
-const highYear = rec.high[1];
-
-document.getElementById("record-high").innerHTML =
-  `${highF}°F
-   <br><span class="metric">${highC}°C</span>
-   <span class="metric">${highYear}</span>`;
-
-// ==================================================
-// RECORD LOW
-// ==================================================
-
-const lowF = rec.low[0];
-const lowC = ((lowF - 32) * 5 / 9).toFixed(1);
-const lowYear = rec.low[1];
-
-document.getElementById("record-low").innerHTML =
-  `${lowF}°F
-   <br><span class="metric">${lowC}°C</span>
-   <span class="metric">${lowYear}</span>`;
-
-// ==================================================
-// RECORD RAINFALL
-// ==================================================
-
-const rainIn = rec.rain[0];
-const rainMm = (rainIn * 25.4).toFixed(1);
-const rainYear = rec.rain[1];
-
-document.getElementById("record-rain").innerHTML =
-  `${rainIn.toFixed(2)} in
-   <br><span class="metric">${rainMm} mm</span>
-   <span class="metric">${rainYear}</span>`;
-
-  }
-// ======================================================
-// INITIAL LOADS
-// ======================================================
-
+// Run unified function (The race condition has been completely removed)
 loadClimateData();
 
-updateDailyClimateRecords()
-
-// ======================================================
-// AUTO REFRESH
-// ======================================================
-
 // CLIMATE DATA REFRESHES EVERY 30 MINUTES
-
 setInterval(loadClimateData, 1800000);
+    
+// ======================================================
+// ACIS JSON FETCH: DYNAMIC SNOWFALL NORMALS
+// ======================================================
+async function fetchSnowNormals() {
+  try {
+    const acisResponse = await fetch("https://data.rcc-acis.org/StnData", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        sid: "172878",         
+        sdate: "2025-07-01",   
+        edate: "2026-06-30",   
+        elems: [{
+          name: "snow",
+          interval: "m",       
+          vtype: "normal"      
+        }]
+      })
+    });
 
+    const data = await acisResponse.json();
+    let totalSeasonalNormal = 0;
+    
+    if (data && data.data) {
+      data.data.forEach(monthRow => {
+        let monthNormal = parseFloat(monthRow[1]);
+        if (!isNaN(monthNormal)) {
+          totalSeasonalNormal += monthNormal;
+        }
+      });
+    }
+    return totalSeasonalNormal > 0 ? totalSeasonalNormal : 99.3; 
+  } catch (error) {
+    console.error("Failed to fetch dynamic snow normals:", error);
+    return 99.3; 
+  }
+}
+    
 </script>
   </body>
 </html>
