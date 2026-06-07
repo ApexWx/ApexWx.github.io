@@ -1,0 +1,66 @@
+<div id="moon-phase-line" style="font-family: Arial, sans-serif; padding: 10px;">
+  Loading moon data...
+</div>
+
+<script>
+  const moonEmojis = {
+    "New Moon": "🌑",
+    "Waxing Crescent": "🌒",
+    "First Quarter": "🌓",
+    "Waxing Gibbous": "🌔",
+    "Full Moon": "🌕",
+    "Waning Gibbous": "🌖",
+    "Last Quarter": "🌗",
+    "Waning Crescent": "🌘"
+  };
+
+  function formatDateTime(dateStr) {
+    const date = new Date(dateStr);
+    const weekday = date.toLocaleDateString(undefined, { weekday: 'short' });
+    const day = date.getDate();
+    const month = date.toLocaleDateString(undefined, { month: 'short' });
+    const time = date.toLocaleTimeString(undefined, { hour: 'numeric', minute: '2-digit', hour12: true }).toLowerCase();
+    return `${weekday}. ${day} ${month} @ ${time}`;
+  }
+
+  async function loadMoonPhase() {
+    const today = new Date().toISOString().split('T')[0];
+    const url = `https://api.viewbits.com/v1/moonphase?startdate=${today}`;
+
+    try {
+      const res = await fetch(url);
+      const data = await res.json();
+
+      // The current day's data is at index 3
+      const currentData = data[3];
+      const currentPhase = currentData.phase;
+      const currentEmoji = moonEmojis[currentPhase] || "🌙";
+
+      // Find the next major phase (First Quarter, Full Moon, Last Quarter, New Moon)
+      const majorPhases = ["First Quarter", "Full Moon", "Last Quarter", "New Moon"];
+      let nextPhaseData = null;
+      for (let i = 4; i < data.length; i++) {
+        if (majorPhases.includes(data[i].phase)) {
+          nextPhaseData = data[i];
+          break;
+        }
+      }
+
+      if (nextPhaseData) {
+        const nextPhase = nextPhaseData.phase;
+        const nextEmoji = moonEmojis[nextPhase] || "🌙";
+        const nextPhaseFormatted = formatDateTime(nextPhaseData.date);
+
+        const output = `${currentEmoji} ${currentPhase} → ${nextEmoji} ${nextPhase} ${nextPhaseFormatted}`;
+        document.getElementById("moon-phase-line").textContent = output;
+      } else {
+        document.getElementById("moon-phase-line").textContent = `${currentEmoji} ${currentPhase}`;
+      }
+    } catch (err) {
+      console.error("Error fetching moon data:", err);
+      document.getElementById("moon-phase-line").textContent = "Unable to load moon data.";
+    }
+  }
+
+  loadMoonPhase();
+</script>

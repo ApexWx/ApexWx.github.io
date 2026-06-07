@@ -1,0 +1,306 @@
+export default {
+  async fetch(request) {
+
+    const today = new Date();
+
+    const year = today.getFullYear();
+    const month = String(today.getMonth() + 1).padStart(2, "0");
+    const day = String(today.getDate()).padStart(2, "0");
+
+    // ==========================================
+// MONTHLY PERIOD
+// ==========================================
+
+let monthlyStart;
+
+if (today.getDate() === 1) {
+
+  const prevMonth = new Date(today);
+
+  prevMonth.setMonth(prevMonth.getMonth() - 1);
+
+  monthlyStart =
+    `${prevMonth.getFullYear()}-${String(prevMonth.getMonth() + 1).padStart(2, "0")}-01`;
+
+} else {
+
+  monthlyStart =
+    `${year}-${month}-01`;
+
+}
+
+const monthlyEnd =
+  `${year}-${month}-${day}`;
+
+    // ==========================================
+    // SNOW SEASON PERIOD
+    // ==========================================
+
+    const snowSeasonYear =
+      today.getMonth() >= 9
+        ? year
+        : year - 1;
+
+    const seasonalStart =
+      `${snowSeasonYear}-10-01`;
+
+    const seasonalEnd =
+      `${year}-${month}-${day}`;
+
+    // ==========================================
+    // YEAR TO DATE PERIOD
+    // ==========================================
+
+    const ytdStart =
+      `${year}-01-01`;
+
+    const ytdEnd =
+      `${year}-${month}-${day}`;
+
+    try {
+
+      // ==========================================
+      // MONTHLY CLIMATE DATA
+      // ==========================================
+
+      const monthlyResponse =
+        await fetch(
+          "https://data.rcc-acis.org/StnData",
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+              sid: "172878",
+              sdate: monthlyStart,
+              edate: monthlyEnd,
+              elems: [
+                "maxt",
+                "mint",
+                "pcpn"
+              ]
+            })
+          }
+        );
+
+      const monthlyData =
+        await monthlyResponse.json();
+
+      // ==========================================
+      // DETERMINE YESTERDAY DATE
+      // ==========================================
+
+      const latestRow =
+        monthlyData.data[
+          monthlyData.data.length - 2
+        ] || monthlyData.data[0];
+
+      const yesterdayDate =
+        latestRow[0];
+
+      // ==========================================
+      // SEASONAL SNOWFALL DATA
+      // ==========================================
+
+      const snowResponse =
+        await fetch(
+          "https://data.rcc-acis.org/StnData",
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+              sid: "172878",
+              sdate: seasonalStart,
+              edate: seasonalEnd,
+              elems: [
+                "snow"
+              ]
+            })
+          }
+        );
+
+      const snowData =
+        await snowResponse.json();
+
+      // ==========================================
+      // YTD PRECIP + NORMALS
+      // ==========================================
+
+      const ytdResponse =
+        await fetch(
+          "https://data.rcc-acis.org/StnData",
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+              sid: "172878",
+              sdate: ytdStart,
+              edate: ytdEnd,
+              elems: [
+                { name: "pcpn" },
+                {
+                  name: "pcpn",
+                  normal: "1"
+                }
+              ]
+            })
+          }
+        );
+
+      const ytdData =
+        await ytdResponse.json();
+
+      // ==========================================
+      // YESTERDAY NORMALS
+      // ==========================================
+
+      const normalsResponse =
+        await fetch(
+          "https://data.rcc-acis.org/StnData",
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+              sid: "172878",
+              sdate: yesterdayDate,
+              edate: yesterdayDate,
+              elems: [
+                {
+                  name: "maxt",
+                  normal: "1"
+                },
+                {
+                  name: "mint",
+                  normal: "1"
+                },
+                {
+                  name: "pcpn",
+                  normal: "1"
+                }
+              ]
+            })
+          }
+        );
+
+      const normalsData =
+        await normalsResponse.json();
+
+      const normalHigh =
+        parseFloat(
+          normalsData.data?.[0]?.[1]
+        ) || 0;
+
+      const normalLow =
+        parseFloat(
+          normalsData.data?.[0]?.[2]
+        ) || 0;
+
+      const normalRain =
+        parseFloat(
+          normalsData.data?.[0]?.[3]
+        ) || 0;
+
+      // ==========================================
+      // YTD TOTALS
+      // ==========================================
+
+      let ytdRain = 0;
+      let ytdNormalRain = 0;
+
+      ytdData.data.forEach(row => {
+
+        const rain =
+          parseFloat(row[1]);
+
+        const normal =
+          parseFloat(row[2]);
+
+        if (!isNaN(rain)) {
+          ytdRain += rain;
+        }
+
+        if (!isNaN(normal)) {
+          ytdNormalRain += normal;
+        }
+
+      });
+
+      ytdRain =
+        Number(ytdRain.toFixed(2));
+
+      ytdNormalRain =
+        Number(ytdNormalRain.toFixed(2));
+
+      const ytdRainDeparture =
+        Number(
+          (ytdRain - ytdNormalRain)
+            .toFixed(2)
+        );
+
+      // ==========================================
+      // RETURN DATA
+      // ==========================================
+
+      return new Response(
+        JSON.stringify({
+
+          monthlyRows:
+            monthlyData.data,
+
+          seasonalRows:
+            snowData.data,
+
+          ytdRain,
+
+          ytdNormalRain,
+
+          ytdRainDeparture,
+
+          yesterdayNormals: {
+
+            normalHigh,
+
+            normalLow,
+
+            normalRain
+
+          }
+
+        }),
+        {
+          headers: {
+            "Content-Type":
+              "application/json",
+            "Access-Control-Allow-Origin":
+              "*"
+          }
+        }
+      );
+
+    } catch (error) {
+
+      return new Response(
+        JSON.stringify({
+          error: error.message
+        }),
+        {
+          status: 500,
+          headers: {
+            "Content-Type":
+              "application/json",
+            "Access-Control-Allow-Origin":
+              "*"
+          }
+        }
+      );
+
+    }
+  }
+};

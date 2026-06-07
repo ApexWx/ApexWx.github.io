@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Forecast Wall</title>
+
+<!-- Makes the page responsive on phones/tablets -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+
+/* ---------- PAGE STYLE ---------- */
+body{
+    margin:0;
+    padding:10px;
+    font-family:Arial, sans-serif;
+    background:url('https://github.com/ApexWx/ApexWx.github.io/blob/master/seamless-background-simply-sky.jpg?raw=true') repeat;
+    color:white;
+}
+
+/* Center page and control maximum width */
+.container{
+    max-width:1240px;
+    margin:auto;
+}
+
+/* All tables scale with screen */
+table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+/* Requested: make all table cells bold */
+td{
+    font-weight:bold;
+    padding:10px;
+    vertical-align:top;
+}
+
+/* Images automatically scale */
+img{
+    width:100%;
+    height:auto;
+    max-width:600px;
+}
+
+/* Navigation styling */
+.nav td{
+    text-align:center;
+}
+
+/* Section title */
+.sectiontitle{
+    text-align:center;
+    font-size:18px;
+}
+
+/* Horizontal divider */
+hr{
+    border:1px solid #444;
+}
+
+/* ---------- MOBILE RESPONSIVE ---------- */
+/* Stacks the 2-column layout vertically on smaller screens */
+
+@media screen and (max-width:900px){
+
+    td{
+        display:block;
+        width:100%;
+        text-align:center;
+    }
+
+    img{
+        max-width:100%;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<a id="top"></a>
+
+<!-- ====================================================== -->
+<!-- NAVIGATION BAR                                         -->
+<!-- ====================================================== -->
+
+<table class="nav" border="2" cellpadding="10">
+
+<tr>
+
+<td><a href="wall.htm">Wall-A</a></td>
+<td><a href="wallf.htm">Wall-F</a></td>
+<td><a href="wallnortheast.htm">Wall-NE</a></td>
+<td><a href="aloft.htm">Aloft</a></td>
+<td><a href="climate.htm">Climate</a></td>
+<td><a href="gis.htm">GIS</a></td>
+<td><a href="maps.htm">Maps</a></td>
+<td><a href="marine.htm">Marine</a></td>
+<td><a href="models.htm">Models</a></td>
+<td><a href="nws.htm">NWS</a></td>
+<td><a href="rad.htm">Radar</a></td>
+<td><a href="rain.htm">Rain</a></td>
+<td><a href="sat.htm">Satellite</a></td>
+<td><a href="snow.htm">Snow</a></td>
+<td><a href="surface.htm">Surface</a></td>
+<td><a href="temps.htm">Temps</a></td>
+<td><a href="thunder.htm">Thunder</a></td>
+<td><a href="tropical.htm">Tropical</a></td>
+<td><a href="wind.htm">Wind</a></td>
+
+</tr>
+
+</table>
+
+<br>
+
+<table>
+<tr>
+<td class="sectiontitle">Forecast Wall</td>
+</tr>
+</table>
+
+<hr>
+
+<!-- ====================================================== -->
+<!-- SAMPLE FORECAST PRODUCTS                               -->
+<!-- Additional forecast rows can be added using the same   -->
+<!-- structure used below.                                  -->
+<!-- ====================================================== -->
+
+<table>
+
+<tr>
+
+<td>
+<center>NOAA Rain Forecast</center>
+
+<!-- Lazy loading + async decoding improves performance -->
+<img loading="lazy" decoding="async"
+src="https://www.weather.gov/images/erh/gis/CONUS_QPF.png">
+
+</td>
+
+<td>
+<center>NOAA Snow Forecast</center>
+
+<img loading="lazy" decoding="async"
+src="https://www.weather.gov/images/erh/gis/CONUS_Snow.png">
+
+</td>
+
+</tr>
+
+<tr>
+<td colspan="2">
+<center><a href="#top">Top of Page</a></center>
+</td>
+</tr>
+
+</table>
+
+<hr>
+
+<!-- ====================================================== -->
+<!-- ADD MORE FORECAST BLOCKS BELOW                         -->
+<!-- Copy the <table> block above and replace image URLs.   -->
+<!-- ====================================================== -->
+
+<br>
+
+<!-- ====================================================== -->
+<!-- FOOTER NAVIGATION                                      -->
+<!-- ====================================================== -->
+
+<table class="nav" border="2" cellpadding="10">
+
+<tr>
+
+<td><a href="wall.htm">Wall-A</a></td>
+<td><a href="wallf.htm">Wall-F</a></td>
+<td><a href="wallnortheast.htm">Wall-NE</a></td>
+<td><a href="aloft.htm">Aloft</a></td>
+<td><a href="climate.htm">Climate</a></td>
+<td><a href="gis.htm">GIS</a></td>
+<td><a href="maps.htm">Maps</a></td>
+<td><a href="marine.htm">Marine</a></td>
+<td><a href="models.htm">Models</a></td>
+<td><a href="nws.htm">NWS</a></td>
+<td><a href="rad.htm">Radar</a></td>
+<td><a href="rain.htm">Rain</a></td>
+<td><a href="sat.htm">Satellite</a></td>
+<td><a href="snow.htm">Snow</a></td>
+<td><a href="surface.htm">Surface</a></td>
+<td><a href="temps.htm">Temps</a></td>
+<td><a href="thunder.htm">Thunder</a></td>
+<td><a href="tropical.htm">Tropical</a></td>
+<td><a href="wind.htm">Wind</a></td>
+
+</tr>
+
+</table>
+
+</div>
+
+<!-- ====================================================== -->
+<!-- IMAGE AUTO REFRESH SCRIPT                              -->
+<!-- Forces weather graphics to reload to avoid caching     -->
+<!-- Refresh interval: 5 minutes                            -->
+<!-- ====================================================== -->
+
+<script>
+
+function refreshImages(){
+
+    const images = document.querySelectorAll("img");
+
+    images.forEach(function(img){
+
+        let src = img.src.split("?")[0];
+        img.src = src + "?t=" + new Date().getTime();
+
+    });
+
+}
+
+setInterval(refreshImages, 300000);
+
+</script>
+
+</body>
+</html>

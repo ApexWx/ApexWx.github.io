@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <title>Space Weather Center</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <style>
+        /* ---------- PAGE STYLE ---------- */
+        body {
+            margin: 0;
+            padding: 10px;
+            font-family: Arial, sans-serif;
+            background: url('https://raw.githubusercontent.com/ApexWx/ApexWx.github.io/refs/heads/master/seamless-background-simply-sky.jpg') repeat;
+            color: black;
+            text-shadow: 0 0 3px rgba(255, 255, 255, 0.7);
+        }
+
+        .container {
+            max-width: 1240px;
+            margin: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: rgba(255, 255, 255, 0.55);
+            border-radius: 6px;
+            overflow: hidden;
+            margin-bottom: 10px;
+        }
+
+        td {
+            font-weight: bold;
+            padding: 10px;
+            vertical-align: top;
+            text-align: center;
+        }
+
+        .sectiontitle {
+            font-size: 18px;
+            background: rgba(255, 255, 255, 0.75);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .nav td {
+            background: rgba(255, 255, 255, 0.75);
+            font-size: 13px;
+            padding: 8px 2px;
+        }
+
+        a { color: black; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        hr { border: 1px solid rgba(0, 0, 0, 0.3); margin: 15px 0; }
+
+        /* ---------- IMAGE STYLES (FIXED VISIBILITY) ---------- */
+        img {
+            width: 100%;
+            height: auto;
+            max-width: 600px;
+            border-radius: 6px;
+            display: block;
+            margin: 10px auto;
+            cursor: zoom-in;
+            opacity: 0; /* Hidden until JS confirms load */
+            transition: opacity 0.5s ease;
+            image-rendering: -webkit-optimize-contrast;
+            image-rendering: crisp-edges;
+        }
+
+        img.loaded { 
+            opacity: 1 !important; 
+        }
+
+        /* ---------- LIGHTBOX ---------- */
+        #lightbox {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            cursor: zoom-out;
+        }
+
+        #lightbox img { 
+            max-width: 95vw;
+            max-height: 95vh;
+            width: auto;
+            height: auto;
+            opacity: 1;
+            image-rendering: auto;
+        }
+
+        @media screen and (max-width:900px) {
+            td { display: block; width: 100%; }
+            img { max-width: 100%; }
+        }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <table class="nav" border="2">
+        <tbody>
+          <tr>
+            <td><a href="https://apexwx.github.io/">Home</a></td>
+            <td><a href="#cur">The Sun</a></td>
+            <td><a href="#flare">Geomagnetic</a></td>
+            <td><a href="#act">Radiation</a></td>
+            <td><a href="#aurora">Aurora</a></td>
+          </tr>
+        </tbody>
+      </table>
+      <table>
+        <tbody>
+          <tr>
+            <td colspan="3" class="sectiontitle">Space Weather Center</td>
+          </tr>
+          <tr>
+            <td>ET 12hr: <span id="et12">--:-- --</span></td>
+            <td>ET 24hr: <span id="et24">--:--</span></td>
+            <td>UTC / Z: <span id="utc">--:--</span></td>
+          </tr>
+        </tbody>
+      </table>
+      <div id="space-weather-alert" style="border: 2px solid red; background: rgba(255, 0, 0, 0.1); margin-bottom: 10px; border-radius: 6px; display: none;">
+        <div style="padding: 10px; background: rgba(255, 0, 0, 0.2); display: flex; justify-content: space-between; align-items: center; cursor: pointer;"
+          onclick="toggleAlertContent()"> <span id="alert-title" style="font-weight: bold; color: #b30000;">⚠️
+            ACTIVE SPACE WEATHER ALERT</span> <span id="alert-toggle-btn" style="font-weight: bold;">[
+            CLICK TO VIEW ]</span> </div>
+        <div id="alert-content" style="padding: 15px; display: none; font-size: 14px; background: white; border-top: 1px solid red; line-height: 1.4; text-align: left;">
+          Loading NOAA alert data... </div>
+      </div>
+      <table>
+        <tbody>
+          <tr>
+            <td style="text-align: left; font-size: 12px; font-weight: normal;">
+              <strong>CAUTION:</strong> Never look directly at the sun. <strong>UPDATES:</strong>
+              Graphics refresh every 5 mins. Data via NOAA SWPC and NASA. </td>
+          </tr>
+        </tbody>
+      </table>
+      <hr>
+      <table>
+        <tbody>
+          <tr>
+            <td colspan="2" class="sectiontitle"><a name="cur">Solar Activity</a></td>
+          </tr>
+          <tr>
+            <td> Sunspots (HMI Intensity) <img src="https://soho.nascom.nasa.gov/data/realtime/hmi_igr/1024/latest.jpg"
+                alt="HMI Intensity"> </td>
+            <td> Coronal Holes (193Å) <img src="https://services.swpc.noaa.gov/images/animations/sdo-193/latest.jpg">
+            </td>
+          </tr>
+          <tr>
+            <td> Filaments/Prominence (304Å) <img src="https://services.swpc.noaa.gov/images/animations/sdo-304/latest.jpg">
+            </td>
+            <td> <a name="aurora">Aurora Forecast (North)</a> <img src="https://services.swpc.noaa.gov/images/animations/ovation/north/latest.jpg">
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2"><a href="#top" style="font-size: 11px;">Top of Page</a></td>
+          </tr>
+        </tbody>
+      </table>
+      <hr>
+      <table>
+        <tbody>
+          <tr>
+            <td colspan="2" class="sectiontitle"><a name="flare">Geomagnetic
+                &amp; Corona</a></td>
+          </tr>
+          <tr>
+            <td> Planetary K-Index (Kp) <img src="https://services.swpc.noaa.gov/images/station-k-index.png">
+            </td>
+            <td> SOHO LASCO C2 (Inner Corona) <img src="https://services.swpc.noaa.gov/images/animations/lasco-c2/latest.jpg">
+            </td>
+          </tr>
+          <tr>
+            <td> SOHO LASCO C3 (Outer Corona) <img src="https://services.swpc.noaa.gov/images/animations/lasco-c3/latest.jpg">
+            </td>
+            <td> Sunspot Regions Chart <img src="https://services.swpc.noaa.gov/images/synoptic-map.jpg">
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2"><a href="#top" style="font-size: 11px;">Top of Page</a></td>
+          </tr>
+        </tbody>
+      </table>
+      <hr>
+      <table>
+        <tbody>
+          <tr>
+            <td class="sectiontitle"><a name="act">Solar Radiation Overview</a></td>
+          </tr>
+          <tr>
+            <td> <img src="https://services.swpc.noaa.gov/images/swx-overview-small.gif"
+                style="max-width: 850px;"> </td>
+          </tr>
+          <tr>
+            <td><a href="#top" style="font-size: 11px;">Top of Page</a></td>
+          </tr>
+        </tbody>
+      </table>
+      <div id="lightbox"><img id="lightbox-img" src=""></div>
+    </div>
+    <script>
+        /* ---------- ALERT TOGGLE ---------- */
+        function toggleAlertContent() {
+            const content = document.getElementById("alert-content");
+            const btn = document.getElementById("alert-toggle-btn");
+            if (content.style.display === "none") {
+                content.style.display = "block";
+                btn.textContent = "[ HIDE DETAILS ]";
+            } else {
+                content.style.display = "none";
+                btn.textContent = "[ VIEW DETAILS ]";
+            }
+        }
+
+        /* ---------- FETCH NOAA ALERTS ---------- */
+        async function fetchSpaceWeatherAlert() {
+            const alertBox = document.getElementById("space-weather-alert");
+            const alertContent = document.getElementById("alert-content");
+            const alertTitle = document.getElementById("alert-title");
+            try {
+                const res = await fetch("https://services.swpc.noaa.gov/products/alerts.json");
+                const alerts = await res.json();
+                // Look for active Storm alerts G1-G5
+                const filtered = alerts.filter(a => a.message.includes("NOAA") && /G[1-5]/.test(a.message));
+                
+                if (filtered[0]) {
+                    alertBox.style.display = "block";
+                    alertContent.innerHTML = filtered[0].message.replace(/\n/g, "<br>");
+                    const match = filtered[0].message.match(/G[1-5]/);
+                    if (match) alertTitle.textContent = `⚠️ ACTIVE STORM ALERT: LEVEL ${match[0]}`;
+                } else {
+                    alertBox.style.display = "none";
+                }
+            } catch (err) { console.error("Alert error:", err); }
+        }
+
+        /* ---------- CLOCK LOGIC ---------- */
+        function updateClocks() {
+            const nowUTC = new Date();
+            const nowET = new Date(nowUTC.toLocaleString("en-US", { timeZone: "America/New_York" }));
+            const pad = n => n.toString().padStart(2, '0');
+            const h12 = nowET.getHours() % 12 || 12;
+            const ampm = nowET.getHours() >= 12 ? 'PM' : 'AM';
+            
+            document.getElementById("et12").textContent = `${pad(h12)}:${pad(nowET.getMinutes())} ${ampm}`;
+            document.getElementById("et24").textContent = `${pad(nowET.getHours())}:${pad(nowET.getMinutes())}`;
+            document.getElementById("utc").textContent = `${pad(nowUTC.getUTCHours())}:${pad(nowUTC.getUTCMinutes())} Z`;
+        }
+
+        /* ---------- INITIALIZATION ---------- */
+        document.addEventListener("DOMContentLoaded", function(){
+            updateClocks();
+            setInterval(updateClocks, 1000);
+            fetchSpaceWeatherAlert();
+            setInterval(fetchSpaceWeatherAlert, 300000);
+
+            const images = document.querySelectorAll("img:not(#lightbox img)");
+            const lb = document.getElementById("lightbox");
+            const lbImg = document.getElementById("lightbox-img");
+            
+            images.forEach(img => {
+                // If image cached, show immediately
+                if (img.complete) img.classList.add("loaded");
+                
+                img.addEventListener("load", () => img.classList.add("loaded"));
+                
+                // Fallback for broken links
+                img.addEventListener("error", () => {
+                    img.style.opacity = "1";
+                    img.alt = "Image Temporarily Unavailable";
+                });
+
+                // Zoom click
+                img.addEventListener("click", () => {
+                    lb.style.display = "flex";
+                    lbImg.src = img.src;
+                });
+            });
+
+            lb.addEventListener("click", () => lb.style.display = "none");
+
+            // Auto-refresh images every 5 minutes to prevent stale data
+            setInterval(() => {
+                images.forEach(img => {
+                    const base = img.src.split('?')[0];
+                    img.src = base + "?t=" + new Date().getTime();
+                });
+            }, 300000);
+        });
+    </script>
+  </body>
+</html>

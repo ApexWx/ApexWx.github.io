@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>Fawkes House Weather</title>
+    <style>.layout {
+  width: 100%;
+
+  display: grid;
+  grid:
+    "header header header" auto
+    "leftSide body rightSide" 1fr
+    "footer footer footer" auto
+    / auto 1fr auto;
+  gap: 8px;
+}
+
+body {
+	font-family: Arial, Helvetica, sans-serif ;
+	background-image: url('https://github.com/ApexWx/ApexWx.github.io/blob/master/seamless-background-simply-sky.jpg?raw=true');
+	background-color: transparent;
+}
+
+.header { grid-area: header; }
+.leftSide { grid-area: leftSide; }
+.body { grid-area: body; }
+.rightSide { grid-area: rightSide; }
+.footer { grid-area: footer; }</style>
+  </head>
+  <body>
+    <section class="layout">
+      <div class="header" style="text-align: center;"><img src="https://raw.githubusercontent.com/ApexWx/ApexWx.github.io/master/Apex%20banner.jpg"
+          alt="Apex Wx Banner" style="border: medium none; max-width: 100%;"></div>
+      <div class="leftSide">2</div>
+      <div class="body">
+        <div style="text-align:center">
+          <h2 style="text-align: center;">Apex Wx<br>
+          </h2>
+          <h2 style="color: black; font-family: sans-serif; font-weight: 400; line-height: 1.4; margin: 0px 0px 30px; text-align: center;"><strong>Fawkes
+              House &amp; the </strong><strong>Lower Susquehanna Valley, PA<br>
+              Weather Information</strong></h2>
+          <a href="https://en.wikipedia.org/wiki/Pennsylvania"><img src="pa.png"
+              alt="Pennsylvania State Flag" style="width: 144px; height: 108px;"></a></div>
+        <div style="text-align:center"><br>
+        </div>
+        <div style="text-align: center;"><label id="lblGreetings"><b>Good
+              Afternoon!</b></label> </div>
+        <br>
+        <div style="text-align: center;"> <iframe src="https://free.timeanddate.com/clock/i8jrr8ph/n198/tct/pct/ftb/tt0/ts1"
+            style="background-color:transparent;" height="18" width="311"></iframe>
+          <div style="text-align: center; font-size:12px;"><br>
+            <div style="text-align: center;"><br>
+              <p style="font-size: 12px;"><strong><span style="font-size: 14px;"><span
+                      style="font-size: 13px;">Lancaster Air Quality Index</span></span></strong><em
+                  style="font-size: 14px;"><strong><em style="font-size: 13px;"></em><em
+                      style="font-size: 13px;"><br>
+                      <iframe title="Example 3" src="https://widget.airnow.gov/aq-dial-widget/?city=Lancaster&amp;state=PA&amp;country=USA"
+                        style="border: none; border-radius: 25px;" height="230"
+                        width="230"></iframe> <br>
+                    </em></strong></em><span style="font-size: 14px;"><strong><span
+                      style="font-size: 13px;"> </span></strong></span> <span
+                  style="font-size: 12px;">Click "AirNow" for more information</span></p>
+            </div>
+            <div class="rightSide">4</div>
+            <div class="footer">5</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+    .weather-dashboard {
+        max-width: 850px;
+        margin: 20px auto;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        color: inherit;
+        line-height: 1.5;
+    }
+
+    .section-box {
+        margin-bottom: 25px;
+        padding: 15px;
+        border: 1px solid rgba(128, 128, 128, 0.2);
+        border-radius: 8px;
+        background: transparent;
+    }
+
+    .section-title {
+        font-size: 1.25rem;
+        font-weight: bold;
+        margin-bottom: 15px;
+        padding-bottom: 5px;
+        border-bottom: 2px solid rgba(128, 128, 128, 0.2);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .data-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 15px;
+    }
+
+    .data-item {
+        padding: 10px;
+    }
+
+    .data-label {
+        display: block;
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        font-weight: 700;
+        opacity: 0.7;
+    }
+
+    .data-value {
+        font-size: 1.1rem;
+        font-weight: 500;
+    }
+
+    .stat-diff {
+        font-size: 0.85rem;
+        font-weight: normal;
+    }
+
+    .diff-plus { color: #2ecc71; }
+    .diff-minus { color: #e74c3c; }
+
+    .source-tag {
+        margin-top: 15px;
+        font-size: 0.7rem;
+        opacity: 0.6;
+        font-style: italic;
+    }
+
+    @media (max-width: 600px) {
+        .data-grid { grid-template-columns: 1fr 1fr; }
+    }
+</style>
+  </head>
+  <body>
+    <div class="weather-dashboard">
+      <!-- MONTHLY SUMMARY: APRIL 2026 -->
+      <div class="section-box">
+        <div class="section-title">April 2026 Summary</div>
+        <div class="data-grid">
+          <div class="data-item"> <span class="data-label">Temp Extremes</span>
+            <span class="data-value">69° <small>(4/27)</small> / 7° <small>(4/8)</small></span>
+          </div>
+          <div class="data-item"> <span class="data-label">Precipitation</span>
+            <span class="data-value">4.47" <span class="stat-diff diff-minus">(-1.3")</span></span>
+          </div>
+          <div class="data-item"> <span class="data-label">Snowfall</span> <span
+              class="data-value">9.0" <span class="stat-diff diff-plus">(+2.4")</span></span>
+          </div>
+          <div class="data-item"> <span class="data-label">Max Wind Gust</span>
+            <span class="data-value">26 mph <small>(4/30)</small></span> </div>
+        </div>
+        <div class="source-tag">Source: Davis Vantage Pro 2 / NOAA SC-ACIS</div>
+      </div>
+      <!-- DAILY DATA: MAY 6 & MAY 7 -->
+      <div class="section-box">
+        <div class="section-title">Daily Observations</div>
+        <!-- May 6 -->
+        <div style="margin-bottom: 20px;"> <strong style="display:block; margin-bottom: 8px;">Wednesday,
+            May 6</strong>
+          <div class="data-grid">
+            <div class="data-item"> <span class="data-label">Range</span> <span
+                class="data-value">57° / 46°</span> </div>
+            <div class="data-item"> <span class="data-label">Precip / Snow</span>
+              <span class="data-value">0.91" / 0.0"</span> </div>
+            <div class="data-item"> <span class="data-label">Wind</span> <span
+                class="data-value">8 mph Gust</span> </div>
+          </div>
+        </div>
+        <!-- May 7 -->
+        <div> <strong style="display:block; margin-bottom: 8px;">Thursday, May
+            7 (Climatology)</strong>
+          <div class="data-grid">
+            <div class="data-item"> <span class="data-label">Normal High/Low</span>
+              <span class="data-value">58° / 35°</span> </div>
+            <div class="data-item"> <span class="data-label">Record High</span>
+              <span class="data-value">85° <small>(1964)</small></span> </div>
+            <div class="data-item"> <span class="data-label">Record Low</span>
+              <span class="data-value">20° <small>(1966)</small></span> </div>
+            <div class="data-item"> <span class="data-label">Record Precip</span>
+              <span class="data-value">0.90" <small>(2003)</small></span> </div>
+          </div>
+        </div>
+        <div class="source-tag">Source: NOAA SC-ACIS NWS Caribou (Records since
+          1893)</div>
+      </div>
+      <!-- PRECIPITATION TRACKER -->
+      <div class="section-box">
+        <div class="section-title">Precipitation &amp; Snow Tracker</div>
+        <div class="data-grid">
+          <div class="data-item"> <span class="data-label">Total Rain (2026)</span>
+            <span class="data-value">12.39" <span class="stat-diff diff-plus">(+0.59")</span></span>
+          </div>
+          <div class="data-item"> <span class="data-label">Snow 25-26</span> <span
+              class="data-value">84.8" <span class="stat-diff diff-minus">(-14.5")</span></span>
+          </div>
+          <div class="data-item"> <span class="data-label">Snow 24-25</span> <span
+              class="data-value">73.2" <span class="stat-diff diff-minus">(-26.1")</span></span>
+          </div>
+        </div>
+        <div class="source-tag"> Annual snowfall July 1 - June 30. National
+          High/Low Data: NOAA WPC. </div>
+      </div>
+    </div>
+  </body>
+</html>

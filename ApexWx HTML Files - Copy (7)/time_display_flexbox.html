@@ -1,0 +1,93 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Time Display Box</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #eef6fb;
+      display: flex;
+      justify-content: center;
+      padding: 2em;
+    }
+
+    .time-box {
+      display: flex;
+      flex-direction: column;
+      background: white;
+      border: 2px solid #ccc;
+      border-radius: 8px;
+      padding: 1em;
+      max-width: 600px;
+      width: 100%;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .time-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 1em;
+      margin: 0.5em 0;
+    }
+
+    .time-cell {
+      flex: 1;
+      text-align: center;
+      padding: 0.5em;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      background-color: #f9f9f9;
+    }
+
+    @media (max-width: 600px) {
+      .time-row {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="time-box">
+    <div class="time-row">
+      <div class="time-cell"><strong>ET 12-Hour</strong></div>
+      <div class="time-cell"><strong>ET 24-Hour</strong></div>
+      <div class="time-cell"><strong>UTC / Z</strong></div>
+    </div>
+    <div class="time-row">
+      <div class="time-cell" id="et12"></div>
+      <div class="time-cell" id="et24"></div>
+      <div class="time-cell" id="utc"></div>
+    </div>
+  </div>
+
+  <script>
+    function updateClocks() {
+      const now = new Date();
+
+      const et12 = now.toLocaleTimeString('en-US', {
+        hour: 'numeric', minute: '2-digit', hour12: true,
+        timeZone: 'America/New_York'
+      });
+
+      const et24 = now.toLocaleTimeString('en-GB', {
+        hour: '2-digit', minute: '2-digit', hour12: false,
+        timeZone: 'America/New_York'
+      });
+
+      const utc = now.toLocaleTimeString('en-GB', {
+        hour: '2-digit', minute: '2-digit', hour12: false,
+        timeZone: 'UTC'
+      });
+
+      document.getElementById('et12').textContent = et12;
+      document.getElementById('et24').textContent = et24;
+      document.getElementById('utc').textContent = utc;
+    }
+
+    setInterval(updateClocks, 1000);
+    updateClocks();
+  </script>
+</body>
+</html>

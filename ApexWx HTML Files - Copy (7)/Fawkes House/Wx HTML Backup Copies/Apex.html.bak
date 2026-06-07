@@ -1,0 +1,915 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <title>Apex Wx for Fort Kent &amp; the Saint John Valley, Maine</title>
+    <meta name="generator" content="thesitewizard.com's Layout Wizard 4.0.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="all" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="tswnavbar.css">
+    <script src="https://cdnres.willyweather.com/widget/warning/loadView.html?id=126547"></script>
+  </head>
+  <body>
+    <div id="tswcontainer">
+      <div id="tswheader">
+        <!-- start of header section: insert your logo, etc, here -->
+        <p style="text-align: center;"><img src="https://raw.githubusercontent.com/ApexWx/ApexWx.github.io/master/Apex%20banner.jpg"
+            alt="Apex Wx Banner" style="border: medium none; max-width: 100%;"></p>
+        <p>&nbsp;</p>
+        <!-- end of header section: insert your logo, etc, above this line --> </div>
+      <div id="tswcentrecombo">
+        <div id="tswcontent">
+          <div id="tswcontproper">
+            <!-- start of content column: insert your content here -->
+            <div style="text-align: center;">
+              <h2>Apex Wx <br>
+                <br>
+                Fort Kent &amp; the Saint John Valley, Maine<br>
+                Weather Information<em></em><br>
+              </h2>
+              <div><a href="https://en.wikipedia.org/wiki/Maine" title="Flag of Maine -- Click for more"><img
+                    src="https://apexwx.github.io/me.png" alt="Maine State Flag"
+                    style="width: 132px; height: 88px; left: 5px; right: 5px; padding: 5px;"></a><a
+                  href="https://en.wikipedia.org/wiki/Acadia" title="Flag of Acadia -- Click for more"><img
+                    src="https://apexwx.github.io/Flag_of_Acadia.svg.png" alt="Flag of Acadia"
+                    style="width: 132px; height: 87.9px; padding: 5px;"><br>
+                </a><span style="font-size: 12px;">Weather information for the
+                  Saint John Valley since 2009</span><br>
+              </div>
+              <div><br>
+              </div>
+              <div><label id="lblGreetings"><b>Good Morning!</b></label> </div>
+              <br>
+              <div>
+                <div style="font-size: 12px;"><iframe src="https://free.timeanddate.com/clock/i9cmhi8l/n23/tct/pct/ftb/tt0/ts1/ta1"
+                    allowtransparency="true" height="18" frameborder="0" width="343"></iframe><br>
+                </div>
+                <div style="font-size: 12px;"><br>
+                  <iframe src="https://free.timeanddate.com/clock/i9cmhxb2/n1440/tct/pct/ftb/th1/ts1/ta1"
+                    allowtransparency="true" height="18" frameborder="0" width="70"></iframe></div>
+                <div style="font-size: 12px;">EST -5 hours = <a href="https://www.timeanddate.com/time/zone/timezone/utc">UTC</a>
+                  / EDT -4 hours = <a href="https://www.timeanddate.com/time/zone/timezone/utc">UTC<br>
+                  </a></div>
+                <div style="font-size: 12px;">Many weather graphic timestamps
+                  are often in UTC</div>
+                <div style="font-size: 12px;"><br>
+                </div>
+                <div style="font-size: 12px;"><a href="https://www.buymeacoffee.com/MaineApexWx"
+                    target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png"
+                      alt="Buy Me A Coffee" style="height: 60px !important; width: 217px !important;"></a><br>
+                  <div style="text-align: center;"> Contributions support
+                    equipment and software maintenance.</div>
+                </div>
+                <div style="font-size: 12px; text-align: center;"><em></em></div>
+              </div>
+              <div style="text-align: center;"><strong><u></u></strong></div>
+            </div>
+            <div>
+              <div style="text-align: center;"><br>
+              </div>
+              <div style="text-align: center;"><strong>Fort Kent Air Quality
+                  Index</strong><br>
+                <div><strong><u><iframe title="Example 3" src="https://widget.airnow.gov/aq-dial-widget/?city=Fort%20Kent&amp;state=ME&amp;country=USA"
+                        style="border: none; border-radius: 25px;" height="230"
+                        width="230">&amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;lt;br&amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;gt;
+                        </iframe></u></strong></div>
+                <div style="text-align: center; font-size: 12px;"> Click
+                  "AirNow" for more information </div>
+                <strong><u>
+                    <hr> </u></strong></div>
+              <div style="text-align: left;"><strong><u>Fort Kent Weather
+                    Almanac</u></strong><br>
+                <strong> </strong> </div>
+              <div>
+                <div><span style="font-size: 12px;"><em>Measurements in United
+                      States customary units unless otherwise indicated.</em></span><strong
+                    style="font-size: 12px;"><em></em><br>
+                  </strong></div>
+                <strong style="font-size: 12px;"> </strong></div>
+              <div><em style="font-size: 12px;"></em><br>
+                <strong><u>Thursday, June 13</u></strong><strong><u><br>
+                  </u></strong>
+                <div>
+                  <div style="width: 830px;"><b><u>High</u></b>: 78° at 3:01
+                    pm&nbsp; <b><u>Low</u></b>: 54° at 4:53 pm</div>
+                  <div><b><u>Precipitation</u>: </b>0.00 inches (station)</div>
+                  <div><strong><u>Snow</u></strong>: 0.0 in</div>
+                  <div><b><u>Daily Wind</u>: </b><u>Avg Dir/Speed</u>: S @ 1
+                    mph / <u>Max. Gust</u>: 12 mph at 10:15 am<br>
+                    <em style="font-size: 12px;"><em style="font-size: 12px;">Source:
+                        </em></em><em style="font-size: 12px;"><em style="font-size: 12px;">Davis
+                        Instruments <a href="https://www.davisinstruments.com/collections/vantage-pro2/products/vantage-pro2-groweather-wireless-integrated-sensor-suite">Vantage
+                          Pro 2</a> Personal Weather Station / Rain gauge not
+                        heated in winter.</em></em></div>
+                </div>
+              </div>
+              <div><strong><br>
+                </strong></div>
+              <div><strong><u>Friday, June 14<br>
+                  </u></strong></div>
+              <div style="width: 810px;"><strong>Normal High: </strong>71° /<strong>&nbsp;
+                  Record High</strong>: 95° in 1956<br>
+                <strong> Normal Low:&nbsp; </strong>47° /&nbsp; <strong>Record
+                  Low</strong>:&nbsp; 32° in 2002<strong><br>
+                  Year-to-Date Precipitation</strong><strong>:</strong> 14.10
+                inches / <u>avg</u>. 16.24 in = <span style="color: red;">-2.14
+                  </span><span style="color: red;">in</span><br>
+                <strong>Year-to-Date Snowfall</strong><strong>: </strong>75.6
+                in<strong> </strong>/ <u>avg</u>. 99.3 in = <span style="color: red;">-23.7
+                  in</span><em></em><u><strong></strong></u></div>
+              <div> <em style="font-size: 12px;">Annual snowfall measured from
+                  July 1. / </em><em style="font-size: 12px;">Source: </em><em
+                  style="font-size: 12px;"><em style="font-size: 12px;"><a href="https://scacis.rcc-acis.org/">NOAA
+                      SC-ACIS</a> </em>NWS Caribou climate data collected since
+                  1893</em></div>
+              <div><br>
+              </div>
+              <div>Additional Archived Weather Data from Apex Wx is at the
+                University of Utah's <a href="https://mesowest.utah.edu/cgi-bin/droman/meso_base_dyn.cgi?stn=E0429">MesoWest</a>
+                <br>
+              </div>
+              <div><em style="font-size: 12px;"><br>
+                </em></div>
+              <em style="font-size: 12px;"> </em><a href="https://www.timeanddate.com/astronomy/@4964627">Fort
+                Kent, ME, USA</a> — Sun and Moon Times
+              <div><a href="https://www.timeanddate.com/moon/phases/@4964627"><br>
+                </a></div>
+              <div><a href="https://www.timeanddate.com/moon/phases/@4964627">Moon
+                  Phase</a>: 🌒 Waxing Crescent → 🌓 First Quarter at 1:18 am
+                Fri. June 14, 2024</div>
+              <div><br>
+              </div>
+              <div>
+                <div>
+                  <hr style="margin-left: 0px; margin-right: auto;"><br>
+                </div>
+              </div>
+            </div>
+            <u><strong><span style="font-variant: small-caps;">The Week Ahead
+                  for Fort Kent &amp; the Upper Saint John Valley of Maine by
+                  Apex Wx</span></strong></u>
+            <div>
+              <div><strong><span style="font-size: 12px;"><u>Updated</u>: <span
+                      style="color: #3333ff;">June 14, 2024 at 8:40 am EDT</span>
+                  </span></strong>→ <span style="font-size: 12px;">Visiting
+                  later? <strong>Check for <a href="https://forecast.weather.gov/MapClick.php?CityName=Fort+Kent&amp;state=ME&amp;site=CAR&amp;textField1=47.2632&amp;textField2=-68.5774&amp;e=1#.UzCiuVf-6Sp">updates</a>.</strong></span><strong><em
+                    style="font-size: 12px;"></em></strong></div>
+              <strong> </strong></div>
+            <strong> </strong>
+            <div><u><strong><br>
+                </strong></u></div>
+            <div><u><strong>3-Day Outlook: Fri. June 14 - Sun. June 16</strong></u></div>
+            <div><a href="https://forecast.weather.gov/showsigwx.php?warnzone=MEZ001&amp;warncounty=MEC003&amp;firewxzone=MEZ001&amp;local_place1=Fort%20Kent%20ME&amp;product1=Winter+Weather+Advisory&amp;lat=47.2632&amp;lon=-68.5774#.YbS2er1Ki3A"
+                style="font-size: 14px;"><br>
+              </a></div>
+            <div><a href="https://forecast.weather.gov/showsigwx.php?warnzone=MEZ001&amp;warncounty=MEC003&amp;firewxzone=MEZ001&amp;local_place1=Fort%20Kent%20ME&amp;product1=Winter+Weather+Advisory&amp;lat=47.2632&amp;lon=-68.5774#.YbS2er1Ki3A"
+                style="font-size: 14px;"> Current NWS Caribou, ME Hazardous
+                Weather Outlook</a><em style="font-size: 12px;"></em></div>
+            <div style="text-align: left;"></div>
+            <div style="text-align: left;"><br>
+            </div>
+            <div style="text-align: left;">A cold front will approach this
+              morning with a chance of scattered showers across the Valley this
+              morning into the afternoon. Showers and scattered thunderstorms
+              are expected this afternoon into the evening. Isolated
+              strong-to-sever storms are possible, mainly in southern Maine,
+              with non-severe storms expected for the Saint John Valley. Gusty
+              south/southwest winds are expected for the Saint John Valley as
+              well today. Daytime highs reach the mid-70s for most locations.</div>
+            <div style="text-align: left;"><br>
+            </div>
+            <div style="text-align: left;">Partly cloudy skies overspread the
+              Valley tonight with lows dipping into the upper 40s. High pressure
+              near the Great Lakes builds east into the Valley Saturday and
+              crests over the Sunday into Monday then moves southeast into the
+              Atlantic Sunday into Monday. Daytime highs reach the middle 60s
+              Saturday and fall into the lower 40s Saturday night under mostly
+              clear skies.</div>
+            <div style="text-align: left;"><br>
+            </div>
+            <div style="text-align: left;">Sunny skies with highs in the low 70s
+              are expected Sunday with partly cloudy skies Sunday night and lows
+              in the upper 40s Sunday night.</div>
+            <div style="text-align: left;">
+              <div><br>
+              </div>
+              <div> </div>
+              <div style="text-align: left;">
+                <div>
+                  <div><u><strong>Daily Summary</strong></u></div>
+                  <div><u><strong><br>
+                      </strong></u></div>
+                  <strong>Today: </strong>Scattered showers before 2pm, then
+                  showers likely and possibly a thunderstorm between 2pm and
+                  5pm, then scattered showers and thunderstorms after 5pm.
+                  Mostly cloudy, with a high near 74. West wind 9 to 13 mph,
+                  with gusts as high as 23 mph. Chance of precipitation is 70%.
+                  New rainfall amounts of less than a tenth of an inch, except
+                  higher amounts possible in thunderstorms.<strong><br>
+                    <br>
+                    Tonight: </strong>Scattered showers, mainly before 7pm.
+                  Partly cloudy, with a low around 48. Northwest wind around 6
+                  mph. Chance of precipitation is 30%.<strong><br>
+                    <br>
+                    Saturday: </strong>Mostly sunny, with a high near 66.
+                  Northwest wind 9 to 11 mph, with gusts as high as 21 mph.<strong><br>
+                    <br>
+                    Saturday Night: </strong>Mostly clear, with a low around
+                  42. Northwest wind around 7 mph.<strong><br>
+                    <br>
+                    Sunday: </strong>Sunny, with a high near 74. Northwest wind
+                  6 to 8 mph.<strong><br>
+                    <br>
+                    Sunday Night: </strong>Partly cloudy, with a low around 49.
+                  Light southwest wind.</div>
+                <div><br>
+                </div>
+                <div>
+                  <hr><u><strong><br>
+                      4-7 Day Outlook: Mon. June 17 - Thu. June 20</strong></u></div>
+                <div><u><strong><br>
+                    </strong></u></div>
+                <div style="text-align: left;"> </div>
+                High pressure remains near the Gulf of Maine Monday with mostly
+                sunny skies continuing across the Valley. Daytime highs reach
+                the lower 80s with partly cloudy skies Monday night and lows in
+                the upper 50s.</div>
+            </div>
+            <div style="text-align: left;"><br>
+            </div>
+            <div style="text-align: left;">A subtropical high pressure ridge
+              brings hot and humid air into the Saint John Valley Tuesday
+              through Thursday. NWS Caribou notes that "[n]ear record high
+              temperatures beginning Tuesday may bring heat indices into the
+              middle 90s to near 100 through the middle part of the week. Record
+              high minimum temperatures Tuesday night into Thursday night are
+              also expected. This promises to be the biggest heat wave since
+              2020 and among the most significant for northern and eastern Maine
+              so far this century." </div>
+            <div style="text-align: left;"><br>
+            </div>
+            <div style="text-align: left;">Tuesday looks sunny, hot, and
+              increasingly humid with a high in the low 90s and a slight chance
+              of afternoon/evening showers. Partly cloudy skies are expected
+              Tuesday night with a slight chance of showers. Overnight
+              temperatures drop into the mid-60s.</div>
+            <div style="text-align: left;"><br>
+            </div>
+            <div style="text-align: left;">Sunny, hot, and humid conditions
+              continue Juneteenth with highs reaching the mid-90s. Once again, a
+              slight chance of mainly afternoon/evening showers is possible.
+              Wednesday night will see partly cloudy skies with temperatures
+              dropping into the upper 60s along with a slight chance of showers.</div>
+            <div style="text-align: left;"><br>
+            </div>
+            <div style="text-align: left;">Mostly sunny, hot, and humid
+              conditions continue Thursday with high climbing into the low 90s
+              with an approaching cold front bringing a chance of scattered
+              showers to the SJV Thursday afternoon. A chance of showers
+              continues Thursday night with overnight lows falling into the
+              lower 60s.<br>
+            </div>
+            <div style="text-align: left;">
+              <div>
+                <div>
+                  <p><u><strong>Daily Summary</strong></u><strong><br>
+                    </strong></p>
+                  <strong>Monday: </strong>Mostly sunny, with a high near 80.
+                  Light southwest wind increasing to 5 to 9 mph in the morning.<strong><br>
+                    <br>
+                    Monday Night: </strong>Partly cloudy, with a low around 59.<strong><br>
+                    <br>
+                    Tuesday: </strong>Mostly sunny and hot, with a high near
+                  93.<strong><br>
+                    <br>
+                    Tuesday Night: </strong>A slight chance of showers before
+                  9pm. Partly cloudy, with a low around 67. Chance of
+                  precipitation is 20%.<strong><br>
+                    <br>
+                    Juneteenth: </strong>A slight chance of showers. Sunny and
+                  hot, with a high near 96. Chance of precipitation is 20%.<br>
+                  <strong><br>
+                    Wednesday Night: </strong>A slight chance of showers.
+                  Partly cloudy, with a low around 69. Chance of precipitation
+                  is 20%.<strong><br>
+                    <br>
+                    Thursday: </strong>A chance of showers. Mostly sunny and
+                  hot, with a high near 93. Chance of precipitation is 30%. </div>
+                <div><br>
+                </div>
+                <div><strong>Thursday Night: </strong>A slight chance of
+                  showers. Partly cloudy, with a low around 61. Chance of
+                  precipitation is 20%.<br>
+                </div>
+                <div><br>
+                </div>
+                <div>
+                  <hr><br>
+                </div>
+                <div><strong><u>8-14 Day Regional Climate Trends: Fri. June 21 -
+                      Thu. </u><u>June 27<br>
+                    </u></strong>
+                  <p>Above normal temperatures / Above normal precipitation</p>
+                </div>
+              </div>
+            </div>
+            <div>
+              <div>
+                <div>
+                  <p style="text-align: center;"><a href="https://www.cpc.ncep.noaa.gov/products/predictions/814day/814temp.new.gif"><img
+                        src="https://www.cpc.ncep.noaa.gov/products/predictions/814day/814temp.new.gif"
+                        alt="8-14 Day Temperature Outlook " style="width: 300px; height: 231.818px; border-radius: 1px / 0px; border-width: 1px; border-style: solid; margin: 5px;"></a><a
+                      href="https://www.cpc.ncep.noaa.gov/products/predictions/814day/814prcp.new.gif"><img
+                        src="https://www.cpc.ncep.noaa.gov/products/predictions/814day/814prcp.new.gif"
+                        alt="8-14 Day Precipitation Outlook" style="width: 300px; height: 233px; border-width: 1px; border-style: solid; margin: 5px;"></a></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div style="text-align: left;">
+            <hr style="margin-left: 0px; margin-right: auto;"><br>
+            <strong>National Outlooks </strong>
+            <div> <strong><br>
+              </strong>
+              <div style="text-align: left;"><strong> </strong><strong>June </strong><strong>
+                  14: Additional Heavy Rainfall for Florida; Severe
+                  Thunderstorms in the High Plains and the East</strong><br>
+                <strong> </strong>Continued heavy to excessive rainfall may
+                bring considerable to locally catastrophic urban flooding today
+                to South Florida with areas of flash and urban flooding
+                remaining possible through Saturday. Flood Watches remain in
+                effect. A slight risk of severe thunderstorms (Level 2 of 5)
+                exists today in the central High Plains and from the
+                Mid-Atlantic to southern New England.</div>
+            </div>
+            <div><br>
+            </div>
+            <div>
+              <div style="text-align: center;"><strong></strong><strong> </strong></div>
+              <div><strong>National Thunderstorm/Severe Weather Outlook for</strong><strong>
+                  June</strong><strong></strong><strong> </strong><strong>14</strong><br>
+                Scattered severe storms with large hail and wind gusts of 60-80
+                mph will be possible from mid-afternoon through evening along
+                the Front Range to the central Great Plains. Scattered strong
+                storms with sporadic damaging winds and isolated hail will also
+                be possible across the Northeast States during the afternoon to
+                early evening.</div>
+              <div><br>
+              </div>
+            </div>
+            <div> </div>
+            <div> <strong></strong> <strong></strong>
+              <div>
+                <div> </div>
+              </div>
+            </div>
+            <div style="text-align: center;"><strong><em></em></strong><strong>National
+                Forecast Chart</strong><br>
+              <a href="https://www.wpc.ncep.noaa.gov/NationalForecastChart/map.php"><img
+                  src="https://www.wpc.ncep.noaa.gov/NationalForecastChart/staticmaps/noaad1.png"
+                  alt="National Forecast Chart" style="width: 525px; height: 378.805px; border-width: 1px; border-style: solid;"
+                  title="Click for more information / larger chart"></a></div>
+            <p>&nbsp;</p>
+            &nbsp;<!-- end of content column: put your content above this line -->
+          </div>
+        </div>
+        <div id="tswothersidecol" style="font-size: 14px; text-align: left;">
+          <div id="tswothersideproper">
+            <!-- start of LEFT side column: insert your navigation menu, etc, here -->
+            <div> <br>
+            </div>
+            <div id="tswcssbuttons">
+              <ul>
+                <li><a href="https://apexwx.github.io/reg.html">Regional Weather</a></li>
+                <li><a href="https://apexwx.github.io/nat.html">National Weather
+                  </a></li>
+                <li><a href="https://apexwx.github.io/trop.html">Tropical
+                    Weather</a></li>
+                <li><a href="https://apexwx.github.io/for.html">Forecast Weather</a></li>
+                <li><a href="https://apexwx.github.io/space.html">Space
+                    Weather/Aurora</a></li>
+                <li><a href="https://ambientweather.net/dashboard/16e0681b266993eb92230c42d89f3fd5">Weather
+                    Station Dashboard</a></li>
+                <li><a href="https://www.wunderground.com/dashboard/pws/KMEFORTK7">Apex
+                    Wx on WU</a></li>
+                <li><a href="https://apexwx.github.io/dis.html"> Disclaimer</a></li>
+              </ul>
+            </div>
+          </div>
+          <div><br>
+          </div>
+          <strong>Official</strong><strong> Government Forecasts<br>
+            <br>
+          </strong>
+          <div> <a href="https://www.weather.gov/" title="NWS Caribou (northern and eastern Maine">US
+              National Weather Service<br>
+            </a></div>
+          <div><a href="https://www.weather.gov/car/" title="NWS Caribou (northern and eastern Maine"><br>
+            </a></div>
+          <div><a href="https://www.wpc.ncep.noaa.gov/">Weather Prediction
+              Center</a></div>
+          <div><br>
+          </div>
+          <div><a href="https://www.wpc.ncep.noaa.gov/discussions/hpcdiscussions.php?disc=pmdspd">Short
+              Range Forecast Discussion</a></div>
+          <div><br>
+          </div>
+          <div><a href="https://www.wpc.ncep.noaa.gov/medr/medr.shtml">Medium
+              Range Forecast Discussion <br>
+            </a></div>
+          <div><br>
+          </div>
+          <div><a href="https://www.wpc.ncep.noaa.gov/discussions/hpcdiscussions.php?disc=pmdepd">Extended
+              Forecast Discussion</a></div>
+          <div><br>
+          </div>
+          <div><a href="https://www.spc.noaa.gov/">Storm Predication Center</a><br>
+          </div>
+          <div><br>
+          </div>
+          <div><a href="https://www.cpc.ncep.noaa.gov/products/predictions/814day/814temp.new.gif">Climate
+              Prediction Center</a> </div>
+          <div> </div>
+          <div><br>
+          </div>
+          <div><strong>NWS Caribou Office<br>
+            </strong> <br>
+            <div><a href="https://forecast.weather.gov/MapClick.php?CityName=Fort+Kent&amp;state=ME&amp;site=CAR&amp;textField1=47.2632&amp;textField2=-68.5774&amp;e=1">7-Day
+                Forecast for Fort Kent, ME</a><br>
+              <em style="font-size: 12px;"> Click for the latest official
+                forecast information. Updated 24/7<br>
+              </em></div>
+            <p><a href="https://forecast.weather.gov/MapClick.php?zoneid=MEZ001">Zone
+                Area Forecast for Northwest Aroostook</a> (MEZ001)</p>
+            <p><a href="https://www.weather.gov/car/winter">Winter Weather
+                Forecasts</a><br>
+              <em style="font-size: 12px;">Click for the latest official
+                forecast details</em></p>
+            <a href="https://forecast.weather.gov/product.php?site=CAR&amp;issuedby=CAR&amp;product=AFD&amp;format=CI&amp;version=1&amp;glossary=1&amp;highlight=off">Area
+              Forecast Discussion</a> <br>
+            <div> <em style="font-size: 12px;">NWS forecasters' technical
+                discussion with glossary</em></div>
+            <div><br>
+              <a href="https://w2.weather.gov/climate/xmacis.php?wfo=car" title="NWS Caribou Regional Climate Data">NWS
+                Caribou<br>
+                Regional Climate Data</a><br>
+              <div style="font-size: 12px;"><em>regional weather records,
+                  averages, etc.</em> </div>
+              <br>
+              <a href="https://www.weather.gov/car/recreation" title="Recreation Forecasts">Recreation
+                Forecast for Northern &amp; Eastern Maine</a></div>
+          </div>
+          <div><br>
+          </div>
+          <div><a href="https://www.weather.gov/gyx/" title="NWS Gray/Portland, ME (SW Maine and most of New Hampshire)">NWS
+              Gray/Portland Office<br>
+            </a></div>
+          <div><br>
+            <strong></strong> </div>
+          <div><strong> Environment Canada</strong></div>
+          <div><strong><br>
+            </strong></div>
+          <div><a href="https://weather.gc.ca/canada_e.html">Canadian Weather</a><strong><br>
+            </strong> </div>
+          <div><br>
+          </div>
+          <div><a href="https://weather.gc.ca/forecast/canada/index_e.html?id=NB"
+              title="Environment Canada New Brunswick Weather">Province of <br>
+              New Brunswick</a> </div>
+          <div><br>
+          </div>
+          <div> <a href="https://weather.gc.ca/forecast/canada/index_e.html?id=QC"
+              title="Quebec Weather from Environment Canada">Province of Québec</a>
+          </div>
+          <div><strong><br>
+            </strong></div>
+          <div><a href="https://weather.gc.ca/city/pages/nb-32_metric_e.html" title="Edmundston, NB (Environment Canada)">Edmundston,
+              NB</a><strong><br>
+            </strong></div>
+          <div><strong><br>
+            </strong></div>
+          <div><strong>Other <br>
+              Regional Resources</strong></div>
+          <div><strong><br>
+            </strong></div>
+          <div><a href="https://www.airnow.gov/?city=Fort%20Kent&amp;state=ME&amp;country=USA">Current
+              Fort Kent Air Quality</a></div>
+          <div><a href="https://www.maine.gov/mdot/cams/all/"><br>
+            </a></div>
+          <div><a href="https://www.maine.gov/mdot/cams/all/">Maine DOT Webcams</a></div>
+          <div><strong></strong><br>
+            <strong> </strong></div>
+          <div><a href="https://newengland511.org/" title="New England Road Conditions">New
+              England Road Conditions</a> </div>
+          <div><br>
+          </div>
+          <div><a href="https://www.maine.gov/dacf/mfs/wildfire_danger_report/index.html"
+              title="Wildfire Danger Report" style="text-decoration: underline;">Maine
+              Wildfire Danger Report&nbsp; </a> </div>
+          <div><br>
+          </div>
+          <div><a href="https://xmountwashington.appspot.com/csc.html?data=more"
+              title="Mount Washington Observatory (New Hampshire)">Mount
+              Washington, NH Observatory</a></div>
+          <div><a href="https://xmountwashington.appspot.com/csc.html?data=more"
+              title="Mount Washington Observatory (New Hampshire)"><br>
+            </a></div>
+          <div><strong>🌎 World Weather 🌍<br>
+            </strong></div>
+          <strong></strong><a href="https://coolwx.com/extreme/"><br>
+            Extreme World Weather</a>
+          <div style="font-size: 12px;">(over the last 3 hours)<em><br>
+            </em></div>
+          <div><span style="font-size: 13px;"><strong><br>
+              </strong></span></div>
+          <div><span style="font-size: 13px;"><strong>NWS Caribou Watches &amp;
+                Advisories</strong></span><em style="font-size: 13px;"><strong><br>
+              </strong></em><a href="https://www.weather.gov/car/"><img src="https://www.weather.gov/wwamap/png/car.png"
+                alt="NWS Caribou Watches, Warnings, and Advisories" title="Clidk for more information"
+                style="border-width: 1px; border-style: solid; width: 251px; height: 195px;"></a><br>
+            <p> </p>
+            <div><br>
+            </div>
+            <div><br>
+              <strong></strong></div>
+            <div><strong> </strong><span style="font-size: 14px;"><strong>NE
+                  Weather Chart</strong> </span><span style="font-size: 14px;"></span><span
+                style="font-size: 11px;">(Updates every 3 hours)</span><a href="https://www.wpc.ncep.noaa.gov/sfc/namnesfcwbg.gif"
+                title="Click for larger image"><img src="https://www.wpc.ncep.noaa.gov/sfc/namnesfcwbg.gif"
+                  style="width: 251px; border-width: 1px; border-style: solid; height: 194px;"
+                  alt="Northeast Weather Chart" title="Click for larger image"></a><em
+                style="font-size: 11px;"><br>
+                <br>
+              </em></div>
+            <div><em style="font-size: 11px;"><br>
+              </em></div>
+            <div style="width: 100%;"><strong>Today's Highs</strong><br>
+              <img src="https://www.weather.gov/images/erh/gis/CAR_maxt_Day1.png"
+                alt="Today's High" style="width: 251px; height: 186px;"></div>
+            <div style="width: 100%;"><strong><br>
+              </strong></div>
+            <div style="width: 100%;"><strong><br>
+              </strong></div>
+            <div style="width: 100%;"><strong><br>
+              </strong></div>
+            <div style="width: 100%;"><strong>Tonight's Low</strong><br>
+              <img src="https://www.weather.gov/images/erh/gis/CAR_mint_Day1.png"
+                alt="Tonight's Lows" style="width: 251px; height: 186px;"></div>
+            <div style="width: 100%;"><strong><br>
+              </strong></div>
+            <div style="width: 100%;"><strong></strong><br>
+            </div>
+            <div style="width: 100%;"><strong><br>
+              </strong></div>
+            <strong>24-Hour Precipitation Outlook</strong><br>
+            <strong></strong>
+            <div style="width: 100%;"><strong> </strong> <a href="https://www.weather.gov/images/erh/gis/CAR_QPF24.png"
+                title="Click for larger image"><img src="https://www.weather.gov/images/erh/gis/CAR_QPF24.png"
+                  alt="Today's Precipitation Outlook" style="width: 251px; height: 187px;"></a>
+              <div><em style="font-size: 14px;"><strong><br>
+                  </strong></em></div>
+              <div><em style="font-size: 14px;"><strong><br>
+                  </strong></em></div>
+              <div><br>
+              </div>
+              <strong> Today's Severe Weather Outlook</strong><em><br>
+                <strong></strong></em>
+              <div><em><strong> </strong> </em><a href="https://www.spc.noaa.gov/partners/outlooks/state/images/ME_swody1.png"
+                  title="Click for larger image" style="width: 50%;"><img src="https://www.spc.noaa.gov/partners/outlooks/state/images/ME_swody1.png?1713099229"
+                    title="Click for larger image" alt="Maine Thunderstorm/Severe Weather Outlook"
+                    style="width: 251px; height: 187px;"></a></div>
+              <div><em style="font-size: 14px;"><span style="font-size: 12px;"><a
+                      href="https://www.spc.noaa.gov/new/images/SPC_outlook_final_updated.png">Understanding
+                      Severe Thunderstorm <br>
+                    </a></span></em></div>
+              <div><em style="font-size: 14px;"><span style="font-size: 12px;"><a
+                      href="https://www.spc.noaa.gov/new/images/SPC_outlook_final_updated.png">Outlook
+                      Categories</a></span></em></div>
+              <div><em style="font-size: 14px;"><span style="font-size: 12px;"><a
+                      href="https://www.spc.noaa.gov/new/images/SPC_outlook_final_updated.png"><br>
+                    </a></span></em></div>
+            </div>
+            <strong></strong></div>
+          <div>
+            <div><br>
+            </div>
+            <div><br>
+            </div>
+            <div><strong>2-Day Tropical </strong><strong>Atlantic Outlook</strong><a
+                href="https://www.nhc.noaa.gov/gtwo.php?basin=atlc&amp;fdays=2"><img
+                  src="https://www.nhc.noaa.gov/xgtwo/two_atl_2d0.png" alt="2-Day Tropical Atlantic Outlook"
+                  style="width: 251px; height: 185.461px;" title="Click for more information / larger graphic"></a></div>
+            <div><br>
+            </div>
+            <div><br>
+            </div>
+            <div><br>
+            </div>
+            <div><strong>7-Day Tropical Atlantic Outlook</strong></div>
+            <div><a href="https://www.nhc.noaa.gov/gtwo.php?basin=atlc&amp;fdays=7"><img
+                  src="https://www.nhc.noaa.gov/xgtwo/two_atl_7d0.png" alt="7-Day Tropical Atlantic Outlook"
+                  style="width: 251px; height: 185.461px; border-width: 1px; border-style: solid;"
+                  title="Click for more information / larger graphic"></a></div>
+            <div>
+              <div style="font-size: 12px;"><em><br>
+                </em></div>
+              <div style="font-size: 12px;"><em><br>
+                </em></div>
+              <div style="font-size: 14px;"><br>
+                <strong>Four Seasons Trail, Madawaska, ME</strong><em><strong><br>
+                    <a href="http://www.mediamaine.org/Madawaska/camera1.jpg?"><img
+                        src="http://www.mediamaine.org/Madawaska/camera1.jpg?" alt="4-Seasons Trail Assocation"
+                        style="width: 251px; height: 141.188px;"></a></strong></em>
+                <div style="font-size: 14px;"><em style="font-size: 12px;">Located
+                    about 20 mi / 32 km E/NE of Fort Kent</em><br>
+                </div>
+                <div style="font-size: 14px;"><br>
+                </div>
+                <div style="font-size: 14px;"><br>
+                </div>
+                <div style="font-size: 14px;"><br>
+                </div>
+                <div style="font-size: 14px;"><strong><span style="font-size: 14px;">ME
+                      11 at Soucy Hill</span></strong> <a href="https://images-webcams.windy.com/09/1670193009/current/full/1670193009.jpg"><img
+                      src="https://images-webcams.windy.com/09/1670193009/current/full/1670193009.jpg"
+                      alt="ME 11 at Soucy Hill" style="width: 251px; height: 141.262px;"></a>
+                </div>
+                <div style="font-size: 14px;"><em style="font-size: 12px;">West-southwest
+                    view / Located about 25 mi <br>
+                  </em></div>
+                <div style="font-size: 14px;"><em style="font-size: 12px;">(40
+                    km) south of Fort Kent<br>
+                  </em> </div>
+                <em> </em>
+                <div style="font-size: 14px;"><br>
+                </div>
+                <div style="font-size: 14px;"><br>
+                </div>
+                <div style="font-size: 14px;"><br>
+                </div>
+                <div style="font-size: 14px;"><strong>ME 161 at Dickey, ME (St.
+                    John River)<em><br>
+                    </em></strong></div>
+                <a href="https://newengland511.org/map/Cctv/D10EC41E532A538F2610875526C174DDFC430220--3"><img
+                    src="https://newengland511.org/map/Cctv/D10EC41E532A538F2610875526C174DDFC430220--3"
+                    alt="ME 161 at Dickey Bridge" style="width: 251px; height: 203.202px;"></a></div>
+              <em></em>
+              <div style="font-size: 14px;"><em style="font-size: 12px;">Located
+                  about 30 mi / 48 km W/SW of Fort Kent</em></div>
+            </div>
+          </div>
+        </div>
+        <div style="text-align: left;"><br>
+        </div>
+        <div style="text-align: left;"><br>
+        </div>
+        <div style="text-align: left;"><br>
+        </div>
+        <div style="text-align: left;">&nbsp;</div>
+        <div style="text-align: left;"><br>
+        </div>
+        <p style="text-align: left;"> </p>
+        <div style="text-align: left;"><!-- end of LEFT side column: put your navigation menu, etc, above this line --></div>
+      </div>
+      <div id="tswsidecol">
+        <div id="tswsideproper" style="text-align: center;">
+          <!-- start of RIGHT side column: insert your navigation menu, etc, here --><strong
+            style="font-size: 14px;"><br>
+          </strong></div>
+        <div style="text-align: center;"><strong style="font-size: 14px;"><br>
+          </strong></div>
+        <div>
+          <div style="text-align: center;"><strong style="font-size: 14px;">US
+              Weather Chart</strong>
+            <div style="text-align: center;"><strong style="font-size: 14px;"></strong><a
+                href="https://s.w-x.co/staticmaps/WEB_Current_Weather_Map_1280x720.jpg?crop=16:9&amp;width=800&amp;format=pjpg&amp;auto=webp&amp;quality=60">
+              </a><a href="https://s.w-x.co/staticmaps/WEB_Current_Weather_Map_1280x720.jpg?crop=16:9&amp;width=800&amp;format=pjpg&amp;auto=webp&amp;quality=60"
+                title="Click for larger image"><img src="https://s.w-x.co/staticmaps/WEB_Current_Weather_Map_1280x720.jpg?crop=16:9&amp;width=800&amp;format=pjpg&amp;auto=webp&amp;quality=60"
+                  alt="Current Surface Map (TWC)" style="width: 251px; height: 141px;"></a></div>
+          </div>
+          <div style="text-align: center;"><strong style="font-size: 14px;"><br>
+            </strong></div>
+          <div style="text-align: center;"><strong style="font-size: 14px;"><br>
+            </strong></div>
+          <div style="text-align: center;"><span style="font-size: 14px;"><strong>National
+                Severe Weather Outlook</strong></span><br>
+            <a href="https://www.spc.noaa.gov/products/outlook/day1otlk.html"><img
+                src="https://www.spc.noaa.gov/partners/outlooks/state/swody1.png?1678542573998"
+                alt="Current Day One Severe Weather Outlook" style="height: 156.875px; width: 251px;"></a>
+            <div style="text-align: center;"><em style="font-size: 12px;"><strong><em></em></strong><em
+                  style="font-size: 12px;"></em>Learn more about <a href="https://www.spc.noaa.gov/new/images/SPC_outlook_final_updated.png"
+                  title="Click for more information">Severe Thunderstorm
+                  Outlooks</a></em></div>
+          </div>
+          <div style="font-size: 14px; text-align: center;"><br>
+            <em><strong></strong></em></div>
+          <div style="font-size: 14px; text-align: center;"><br>
+            <em><strong> </strong></em><strong> </strong></div>
+          <div style="font-size: 14px; text-align: center;"><strong>US Composite
+              Satellite</strong> </div>
+          <div style="text-align: center;"><a href="https://www.ssec.wisc.edu/data/us_comp/"><img
+                src="https://www.ssec.wisc.edu/data/us_comp/image7.jpg" title="Click for larger image"
+                alt="Real-Time US Composite Satellite Image" style="width: 251px; height: 188px;"></a><br>
+          </div>
+          <div style="font-size: 14px; text-align: center;"><em><strong></strong></em>
+          </div>
+          <div style="font-size: 14px; text-align: center;"><br>
+          </div>
+          <div style="font-size: 14px; text-align: center;"><strong><br>
+            </strong></div>
+          <div style="font-size: 14px; text-align: center;"><strong>Environment
+              Canada Weather Map<em><br>
+                <a href="https://weather.gc.ca/data/wxoimages/wocanmap0_e.jpg" title="Click for larger image"><img
+                    src="https://weather.gc.ca/data/wxoimages/wocanmap0_e.jpg" alt="Canadian Weather Map"
+                    style="width: 254px; height: 220px;"></a></em></strong></div>
+          <div style="font-size: 14px; text-align: center;"><em style="font-size: 12px;">Temperature
+              in Celsius</em><strong><br>
+            </strong></div>
+          <div style="font-size: 14px; text-align: center;"><strong><em>&nbsp;<br>
+              </em></strong></div>
+          <div style="font-size: 14px; text-align: center;"><strong><br>
+            </strong></div>
+          <div style="font-size: 14px; text-align: center;"><strong>Environment
+              Canada IR Satellite<em><br>
+                <a href="https://weather.gc.ca/data/satellite/goes_nam_1070x_100.jpg"><img
+                    src="https://weather.gc.ca/data/satellite/goes_nam_1070x_100.jpg"
+                    alt="Canadian IR Satellite" style="width: 254px; height: 197px;"></a></em></strong></div>
+          <div style="font-size: 14px; text-align: center;"><br>
+          </div>
+          <div style="font-size: 14px; text-align: center;"><strong><br>
+            </strong></div>
+          <div style="font-size: 14px; text-align: center;"><strong>North
+              America Surface Chart<br>
+              <a href="https://www.wpc.ncep.noaa.gov/sfc/lrgnamsfcwbg.gif" title="Click for larger image."><img
+                  src="https://www.wpc.ncep.noaa.gov/sfc/lrgnamsfcwbg.gif" alt="North America Surface Chart"
+                  style="width: 259px; height: 195px;"></a></strong></div>
+          <div style="font-size: 14px; text-align: center;"><br>
+          </div>
+          <div style="font-size: 14px; text-align: center;"><strong><br>
+            </strong></div>
+          <div style="font-size: 14px; text-align: center;"><strong>Storm
+              Prediction Center Activity</strong> <a href="https://www.spc.noaa.gov/products/activity_loop.gif"
+              title="Storm Prediction Center Activity Chart"><img src="https://www.spc.noaa.gov/products/activity_loop.gif"
+                alt="SPC Activity" style="width: 251px; height: 175.959px; border-width: 1px; border-style: solid;"></a><br>
+            <em><strong></strong></em></div>
+          <div style="font-size: 14px; text-align: center;"><em><strong><br>
+              </strong></em></div>
+          <div style="font-size: 14px; text-align: center;"><br>
+            <strong>Today's Excessive Rainfall Outlook</strong> <a href="https://www.wpc.ncep.noaa.gov/#page=ero"
+              title="Excessive Rainfall Outlook"><img src="https://www.wpc.ncep.noaa.gov/qpf/94ewbg.gif"
+                alt="Day 1 Excessive Rainfall Outlook" style="width: 251px; height: 175.959px; border-width: 1px; border-style: solid;"></a></div>
+          <div style="font-size: 14px; text-align: center;"><em><a href="https://www.wpc.ncep.noaa.gov/para/para_images/ERO_Categories.png">Understanding
+                ERO Categories</a><br>
+            </em></div>
+          <div style="font-size: 14px; text-align: center;"><em><strong><br>
+              </strong></em></div>
+          <div style="text-align: center;"><a href="https://www.spc.noaa.gov/partners/outlooks/state/ME/"
+              title="Click for larger image"> </a></div>
+          <div style="font-size: 14px; text-align: center;"><strong><br>
+            </strong></div>
+          <div style="font-size: 14px; text-align: center;"><strong>Current
+              Radar from NWS Caribou </strong><strong></strong><em><strong><br>
+              </strong></em> <a href="https://radar.weather.gov/?settings=v1_eyJhZ2VuZGEiOnsiaWQiOiJsb2NhbCIsImNlbnRlciI6Wy02Ni4wMTEsNDUuMjRdLCJsb2NhdGlvbiI6bnVsbCwiem9vbSI6NywiZmlsdGVyIjoiV1NSLTg4RCIsImxheWVyIjoiYnJlZl9yYXciLCJzdGF0aW9uIjoiS0NCVyJ9LCJhbmltYXRpbmciOmZhbHNlLCJiYXNlIjoic3RhbmRhcmQiLCJhcnRjYyI6ZmFsc2UsImNvdW50eSI6ZmFsc2UsImN3YSI6ZmFsc2UsInJmYyI6ZmFsc2UsInN0YXRlIjpmYWxzZSwibWVudSI6dHJ1ZSwic2hvcnRGdXNlZE9ubHkiOnRydWUsIm9wYWNpdHkiOnsiYWxlcnRzIjowLjgsImxvY2FsIjowLjYsImxvY2FsU3RhdGlvbnMiOjAuOCwibmF0aW9uYWwiOjAuNn19#/"
+              title="Current Local Radar"><img src="https://radar.weather.gov/ridge/standard/KCBW_loop.gif"
+                title="Click for larger image" alt="Local Radar" style="width: 251px; height: 228px; border-width: 1px; border-style: solid;"></a><br>
+            <br>
+            <em><strong><br>
+              </strong></em></div>
+          <div style="font-size: 14px; text-align: center;"><strong><br>
+            </strong></div>
+          <div style="font-size: 14px; text-align: center;"><strong>Maine
+              Drought Monitor</strong><br>
+            <a href="https://droughtmonitor.unl.edu/CurrentMap/StateDroughtMonitor.aspx?ME"
+              title="Click for more information"><img src="https://droughtmonitor.unl.edu/data/png/current/current_me_trd.png"
+                alt="Maine Drouht Monitor" style="width: 253px; height: 220px; border-width: 1px; border-style: solid;"
+                title="Click for larger image"></a></div>
+          <div style="font-size: 12px; text-align: center;"><br>
+          </div>
+          <div style="font-size: 14px; text-align: center;"><em><strong><br>
+              </strong></em></div>
+          <div style="font-size: 14px; text-align: center;"><em><strong><br>
+              </strong></em></div>
+          <div style="font-size: 14px; text-align: center;"><strong>Regional
+              Satellite</strong><em><strong><br>
+              </strong></em> <a href="https://www.star.nesdis.noaa.gov/GOES/sector.php?sat=G16&amp;sector=ne"
+              title="Regional Satellite"><img src="https://cdn.star.nesdis.noaa.gov/GOES16/ABI/SECTOR/ne/GEOCOLOR/thumbnail.jpg"
+                alt="Regional Satellite" style="width: 251px; height: 251px; border-width: 1px; border-style: solid;"></a><br>
+            <br>
+            <strong><br>
+            </strong></div>
+          <div style="font-size: 14px; text-align: center;"><strong>Saint John
+              River at Fort Kent</strong><em><strong><br>
+              </strong></em> <a href="https://water.weather.gov/ahps2/hydrograph.php?wfo=car&amp;gage=ftkm1"><img
+                src="https://water.weather.gov/resources/hydrographs/ftkm1_hg.png"
+                title="Click for larger image" alt="Saint John River at Fort Kent"
+                style="width: 251px; height: 141px; border-width: 1px; border-style: solid;"></a><br>
+            <div style="font-size: 12px;"><em>Ice in winter may affect gauge
+                measurement.<br>
+              </em></div>
+            <br>
+            <strong><br>
+            </strong></div>
+          <div style="font-size: 14px; text-align: center;"><strong>Fish River
+              at Fort Kent</strong><em><strong><br>
+              </strong></em> <a href="https://water.weather.gov/ahps2/hydrograph.php?wfo=car&amp;gage=fihm1"><img
+                src="https://water.weather.gov/resources/hydrographs/fihm1_hg.png"
+                title="Click for larger image" alt="Fish River at Fort Kent" style="width: 251px; height: 141px; border-width: 1px; border-style: solid;"></a><br>
+            <div style="font-size: 12px;"><em>Ice in winter may affect gauge
+                measurement.</em></div>
+            <br>
+            <div style="font-size: 12px;"><em><br>
+              </em></div>
+            <strong>Today's Sun</strong><em><strong><br>
+              </strong></em> <a href="https://sdo.gsfc.nasa.gov/assets/img/latest/latest_1024_HMIIF.jpg"><img
+                src="https://sdo.gsfc.nasa.gov/assets/img/latest/latest_1024_HMIIF.jpg"
+                title="Click for larger image" alt="Today's Sun" style="border-width: 1px; border-style: solid; width: 251px; height: 251px;"></a><br>
+            <div style="font-size: 12px;"><em>Dark areas are sunspots<br>
+              </em></div>
+            <br>
+            <strong><br>
+            </strong></div>
+          <div style="font-size: 14px; text-align: center;"><strong>Aurora
+              Outlook</strong><em><strong><br>
+              </strong></em> <a href="https://www.swpc.noaa.gov/products/aurora-30-minute-forecast"><img
+                src="https://services.swpc.noaa.gov/images/animations/ovation/north/latest.jpg"
+                title="Click for larger image" alt="Aurora Outlook" style="width: 251px; height: 251px;"></a><br>
+            <div style="font-size: 12px;"><em><span style="font-size: 12px;">Learn
+                  more about <a href="https://www.weather.gov/images/wrn/Infographics/2022/geomagnetic-storm-scales.png">Geomagnetic
+                    Storm Impacts</a></span></em><em> </em></div>
+            <em><strong><br>
+              </strong></em></div>
+          <div style="font-size: 14px; text-align: center;"><strong><br>
+            </strong></div>
+          <div style="font-size: 14px; text-align: center;"><strong>Bird
+              Migration Forecast Map</strong><em><strong><br>
+                <a href="https://birdcast.info/migration-tools/migration-forecast-maps/"
+                  title="Click for more information"><img src="https://s3.amazonaws.com/is-birdcast-predicted-prod/images/day1.jpg"
+                    alt="Bird Migration Forecast Map" style="width: 251px;"></a></strong><br>
+            </em></div>
+          <div>
+            <div style="font-size: 14px; text-align: center;"><em style="font-size: 12px;">Live
+                March 1 to June 15 &amp; Aug. 1 to Nov.15. <br>
+              </em></div>
+            <div style="font-size: 14px; text-align: center;"><em style="font-size: 12px;"><br>
+              </em></div>
+            <div style="font-size: 14px; text-align: center;"><em style="font-size: 12px;"><br>
+              </em></div>
+          </div>
+          <div style="text-align: center;"><!-- end of RIGHT side column: put your navigation menu, etc, above this line --></div>
+        </div>
+      </div>
+      <div style="clear: both;"></div>
+      <div id="tswfooter">
+        <!-- start of footer section: insert your copyright notice, etc, here -->
+        <p style="text-align: center;"><strong><strong><a href="https://www.thesitewizard.com/"
+                target="_top"><img src="https://www.thesitewizard.com/images/tsw88x31pow.gif"
+                  alt="Get free CGI scripts, PHP scripts, web pages at thesitewizard.com"
+                  style="border: medium none; margin: 10px;" height="31" width="88"></a></strong></strong><strong><strong><a
+                href="https://jigsaw.w3.org/css-validator/validator?lang=en&amp;profile=css3svg&amp;uri=https%3A%2F%2Fapexwx.github.io%2F&amp;usermedium=all&amp;vextwarning=&amp;warning=1"><strong><strong></strong></strong></a><strong><strong><a
+                    href="https://html5.validator.nu/?doc=https://apexwx.github.io/"><img
+                      src="https://apexwx.github.io/validhtml5.png" alt="W3C Validated HTML 5"
+                      style="width: 112px; height: 49px; margin: 0px;" title="Click for more information"></a></strong></strong>
+              <a href="http://jigsaw.w3.org/css-validator/validator?lang=en&amp;profile=css3svg&amp;uri=https%3A%2F%2Fapexwx.github.io%2F&amp;usermedium=all&amp;vextwarning=&amp;warning=1">
+                <img style="border: 0px none; width: 88px; height: 31px; margin: 10px;"
+                  src="https://jigsaw.w3.org/css-validator/images/vcss-blue" alt="Valid CSS!">
+              </a> </strong></strong> </p>
+        <div style="text-align: center;">Follow Apex Wx on Social Media </div>
+        <div style="text-align: center;"><a style="font-size: 12px; text-align: center;"
+            href="https://www.facebook.com/ApexWx/"><img style="border: medium none; max-width: 100%; margin: 0px; padding-bottom: 5px;"
+              title="Apex Wx on Facebook" src="https://raw.githubusercontent.com/ApexWx/ApexWx.github.io/master/outline-dark-facebook-48.png"
+              alt="Apex Wx on Facebook"></a> <a href="https://universeodon.com/@ApexWx"
+            title="Apex Wx on Mastodon"><img src="https://apexwx.github.io/mastodon.png"
+              alt="Mastodon" style="width: 44px; height: 47px; padding: 5px; margin: 0px;"
+              title="Apex Wx on Mastodon"></a><a href="https://www.threads.net/@apexwx"
+            title="Apex Wx on Threads"><img src="https://apexwx.github.io/threadslogo.png"
+              alt="Threads" style="width: 47px; height: 47px; padding: 5px;"></a><a
+            href="https://www.instagram.com/apexwx/" title="Apex Wx on Instagram"><img
+              src="https://apexwx.github.io/instagram48.png" alt="Instagram" style="width: 47px; height: 47px; padding: 5px;"></a><a
+            href="https://bsky.app/profile/apexwx.bsky.social" title="Apex Wx on Blue Sky social "><img
+              src="https://apexwx.github.io/Bsky75.png" alt="Bluesky" style="width: 47px; height: 47px; padding: 5px;"></a></div>
+        <!-- end of footer section: insert your copyright notice, etc, above this line -->
+      </div>
+    </div>
+    <script>
+                     //<![CDATA[
+                         var myDate = new Date();
+                         var hrs = myDate.getHours();
+                     
+                         var greet;
+                     
+                         if (hrs < 12 && hrs >= 3) 
+                             greet = 'Good Morning!';
+                         else if (hrs >= 12 && hrs <= 17)
+                             greet = 'Good Afternoon!';
+                         else if (hrs >= 17 && hrs <= 24)
+                             greet = 'Good Evening!';
+                         else if (hrs >=0 && hrs <= 3)
+                             greet = 'Good Early Morning!';
+                     
+                         document.getElementById('lblGreetings').innerHTML =
+                             '<b>' + greet + '<\/b>';
+                       //]]>
+                       
+                  </script>
+  </body>
+</html>

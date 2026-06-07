@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title></title>
+  </head>
+  <body>
+    <p><div id="aqi-box" style="padding: 10px; border-radius: 8px; font-family: sans-serif;">
+  Loading Air Quality for Fort Kent, ME...
+</div>
+
+<script>
+  async function fetchAQI() {
+    const apiKey = "YOUR_API_KEY_HERE";
+    const url = `https://api.airvisual.com/v2/city?city=Fort%20Kent&state=Maine&country=USA&key=${apiKey}`;
+
+    try {
+      const response = await fetch(url);
+      const data = await response.json();
+      const aqi = data.data.current.pollution.aqius;
+
+      const aqiBox = document.getElementById("aqi-box");
+
+      // Define color and description based on AQI
+      let bgColor = "", textColor = "#fff", level = "";
+
+      if (aqi <= 50) {
+        bgColor = "#009966"; level = "Good";
+      } else if (aqi <= 100) {
+        bgColor = "#ffde33"; textColor = "#000"; level = "Moderate";
+      } else if (aqi <= 150) {
+        bgColor = "#ff9933"; level = "Unhealthy for Sensitive Groups";
+      } else if (aqi <= 200) {
+        bgColor = "#cc0033"; level = "Unhealthy";
+      } else if (aqi <= 300) {
+        bgColor = "#660099"; level = "Very Unhealthy";
+      } else {
+        bgColor = "#7e0023"; level = "Hazardous";
+      }
+
+      aqiBox.style.backgroundColor = bgColor;
+      aqiBox.style.color = textColor;
+      aqiBox.innerHTML = `
+        <strong>🌫 Air Quality Index (AQI)</strong><br>
+        Fort Kent, ME: <strong>${aqi}</strong> – ${level}
+      `;
+    } catch (err) {
+      document.getElementById("aqi-box").innerHTML = "⚠️ Air Quality data unavailable.";
+      console.error("AQI fetch error:", err);
+    }
+  }
+
+  fetchAQI();
+</script><br>
+    </p>
+  </body>
+</html>

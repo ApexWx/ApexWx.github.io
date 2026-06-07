@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Single-Column Layout</title>
+    <style>
+        /* 1. Reset & Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+            
+            /* Keeps the footer pushed to the bottom if content is short */
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* 2. Layout Containers */
+        header, footer {
+            background-color: #1a1a1a;
+            color: #ffffff;
+            padding: 1.5rem 1rem;
+            text-align: center;
+        }
+
+        /* The central single column wrapper */
+        .container {
+            width: 100%;
+            max-width: 800px; /* Restricts width on large screens for ideal readability */
+            margin: 0 auto;   /* Centers the column horizontally */
+            padding: 0 1.5rem; /* Prevents text from hitting screen edges on mobile */
+        }
+
+        main {
+            flex: 1; /* Grows to fill available vertical space */
+            padding: 3rem 0;
+        }
+
+        /* 3. Typography & Elements */
+        header h1 {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        nav a {
+            color: #00bcd4;
+            text-decoration: none;
+            margin: 0 0.75rem;
+            font-size: 0.95rem;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        article h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: #1a1a1a;
+        }
+
+        article p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        .hero-image {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            background-color: #ddd; /* Placeholder color */
+            aspect-ratio: 16 / 9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+        }
+
+        footer p {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        /* 4. Responsive Adjustments */
+        @media (max-width: 600px) {
+            main {
+                padding: 1.5rem 0;
+            }
+            article h2 {
+                font-size: 1.6rem;
+            }
+            article p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+  </head>
+  <body>
+    <!-- Header Section -->
+    <header>
+      <div class="container">
+        <h1 class="text-center" style="  text-align: center;">Apex Wx</h1>
+        <h2 class="text-center" style="   text-align: center;">Fort Kent &amp;
+          the Saint John Valley, Maine<br>
+          Weather Information</h2>
+        <p><a href="https://en.wikipedia.org/wiki/Maine" title="Flag of Maine -- Click for more"><img
+              alt="Maine State Flag" class="img-center" src="https://apexwx.github.io/me.png"
+              style="width: 132px; height: 88px; left: 5px; right: 5px; padding: 5px;"
+              height="88" width="132"></a><a href="https://en.wikipedia.org/wiki/Acadia"
+            title="Flag of Acadia -- Click for more"><img alt="Flag of Acadia" class="img-center"
+              src="https://apexwx.github.io/Flag_of_Acadia.svg.png" style="width: 132px; height: 87.9px; padding: 5px;"
+              width="132"></a></p>
+        <nav> <span style="font-size: 12px;">Weather information for Fort Kent
+            &amp; the Saint John Valley since 2009</span><br>
+          <span style="font-size: 12px;">Member <a href="https://madis.ncep.noaa.gov/snow_project.shtml">APRSWXNET/CWOP</a>
+            &amp; <a href="https://weather.gladstonefamily.net/site/E0429">CWOP
+            </a>Programs</span><br>
+          <br>
+          <a href="https://apexwx.github.io/reg.html">Regional Weather</a> <a href="https://apexwx.github.io/nat.html">National
+            Weather</a> <a href="https://apexwx.github.io/trop.html">Tropical
+            Weather</a> <a href="https://apexwx.github.io/for.html">Forecast
+            Weather</a> <a href="https://apexwx.github.io/space.html"><br>
+            Space Weather/Aurora</a> <a href="https://ambientweather.net/dashboard/16e0681b266993eb92230c42d89f3fd5">Live
+            Weather Station Dashboard</a> <a href="https://www.wunderground.com/dashboard/pws/KMEFORTK7">Apex
+            Wx on WU</a> <a href="https://apexwx.github.io/dis.html">Disclaimer</a>
+        </nav>
+      </div>
+    </header>
+    <!-- Main Content Column -->
+    <main>
+      <div class="container">
+        <article>
+          <div style="text-align: center;"><label id="lblGreetings"><b>Good
+                Morning!</b></label></div>
+          <div id="localTime" style="font-weight: bold; font-size: 14px; text-align: center;">Saturday,
+            May 23, 2026 at 10:21 am EDT</div>
+          <div style="font-size: 12px; text-align: center;"><u><strong><br>
+              </strong></u></div>
+          <div style="text-align: center;"><u> </u></div>
+          <div style="font-size: 14px; text-align: center;"><u><strong>Current
+                Time (24-Hour)</strong></u> </div>
+          <div id="dualTime" style="font-weight: bold; font-size: 14px; line-height: 1.8; text-align: center;">10:21
+            EDT<br>
+            14:21 UTC</div>
+          <div style="font-size: 12px; text-align: center;">EST -5 hours / EDT
+            -4 hours from UTC</div>
+          <div style="font-size: 12px; text-align: center;">Many weather graphic
+            timestamps are in UTC / Z Time</div>
+          <div style="font-size: 12px; text-align: center;"><br>
+          </div>
+          <div style="font-size: 12px; text-align: center;"> <a href="https://www.weather.gov/SKYWARN"
+              title="NWS Skywarn Storm Spotter" target="_blank"><img src="https://raw.githubusercontent.com/ApexWx/ApexWx.github.io/master/nws%20skywarn%20storm%20spotter%20logo.jpg"
+                alt="NWS Skywarn Storm Spotter" style="width: 124px; height: 72px; max-width: 100%; padding: 5px;"></a><a
+              href="https://www.worldcampus.psu.edu/degrees-and-certificates/penn-state-online-weather-forecasting-undergraduate-certificate"
+              title="Penn State Certificate in Weather Forecasting" target="_blank"><img
+                src="https://github.com/ApexWx/ApexWx.github.io/blob/master/Penn%20State.png?raw=true"
+                alt="Penn State Certificate in Weather Forecasting" style="width: 124px; height: 72px; max-width: 100%; padding: 5px;"></a></div>
+          <div style="text-align: center;"><br>
+            <a href="https://www.buymeacoffee.com/MaineApexWx" target="_blank"><img
+                alt="Buy Me A Coffee" src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png"
+                style="height: 60px !important; width: 217px !important;" height="60"
+                width="217"></a><br>
+          </div>
+          <div class="text-center" style="text-align: center;"> <span style="font-size: 12px;">Contributions
+              help support this weather information service.</span></div>
+          <h2></h2>
+          <!-- Placeholder for an image element -->
+          <div class="hero-image">
+            <h1 class="text-center" style="text-align: center;"><img src="https://raw.githubusercontent.com/ApexWx/ApexWx.github.io/master/Apex%20banner.jpg"
+                alt="Apex Wx Website Banner"></h1>
+          </div>
+          <p>Single-column layouts are the backbone of modern, mobile-first web
+            design. By stripping away cluttered sidebars and complex grid
+            systems, you force the reader's focus directly onto the content that
+            matters most.</p>
+          <p>This approach naturally translates across devices. On a desktop
+            screen, a strict <code>max-width</code> constraint ensures that
+            line lengths don't stretch too far, preserving ideal typography
+            scaling and reading comfort. On mobile devices, the layout
+            seamlessly scales down to match the native viewport width without
+            requiring heavy media query overhauls.</p>
+          <p>Whether you are building a personal blog, a landing page, or a
+            documentation portal, starting with a robust single column
+            guarantees a clean, accessible foundation.</p>
+        </article>
+      </div>
+    </main>
+    <!-- Footer Section -->
+    <footer>
+      <div class="container">
+        <p>© 2026 Minimalist Journal. Built with clean semantic HTML &amp; CSS.</p>
+      </div>
+    </footer>
+  </body>
+</html>

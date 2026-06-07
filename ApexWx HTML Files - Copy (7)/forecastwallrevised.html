@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>Forecast Wall</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  </head>
+  <body>
+    <style>
+/* ---------- PAGE STYLE ---------- */
+body{
+    margin:0;
+    padding:10px;
+    font-family:Arial, sans-serif;
+    background:url('https://github.com/ApexWx/ApexWx.github.io/blob/master/seamless-background-simply-sky.jpg?raw=true') repeat;
+    color:black;
+    text-shadow: 0 0 3px rgba(255,255,255,0.7);
+}
+
+.container{
+    max-width:1240px;
+    margin:auto;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    background:rgba(255,255,255,0.55);
+    border-radius:6px;
+    overflow:hidden;
+    margin-bottom:10px;
+}
+
+td{
+    font-weight:bold;
+    padding:10px;
+    vertical-align:top;
+}
+
+.nav td{
+    text-align:center;
+    background:rgba(255,255,255,0.75);
+}
+
+.sectiontitle{
+    text-align:center;
+    font-size:18px;
+    background:rgba(255,255,255,0.75);
+}
+
+a{
+    color:black;
+    text-decoration:none;
+}
+
+a:hover{
+    text-decoration:underline;
+}
+
+hr{
+    border:1px solid rgba(0,0,0,0.3);
+}
+
+/* ---------- IMPROVED IMAGE STYLES ---------- */
+img{
+    width:100%;
+    height:auto;
+    max-width:600px;
+    border-radius:6px;
+    cursor:zoom-in;
+    opacity:0;
+    transition:opacity 0.4s ease;
+    
+    /* Forces sharp edges for maps (prevents blurriness on scaling) */
+    image-rendering: -webkit-optimize-contrast; 
+    image-rendering: crisp-edges;               
+    image-rendering: pixelated;                 
+}
+
+img.loaded{
+    opacity:1;
+}
+
+/* ---------- MOBILE RESPONSIVE ---------- */
+@media screen and (max-width:900px){
+    td{
+        display:block;
+        width:100%;
+        text-align:center;
+    }
+    img{
+        max-width:100%;
+    }
+}
+
+/* ---------- IMPROVED LIGHTBOX (ZOOM) ---------- */
+#lightbox{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.85);
+    display:none;
+    justify-content:center;
+    align-items:center;
+    z-index:9999;
+    cursor:zoom-out;
+}
+
+#lightbox img{
+    /* Use Viewport units to ensure image stays within screen boundaries */
+    max-width:95vw;
+    max-height:95vh;
+    width:auto;
+    height:auto;
+    border-radius:8px;
+    opacity:1;
+    
+    /* Prevents distortion while ensuring containment */
+    object-fit: contain;
+    
+    /* Set rendering to auto for large zoom to keep it smooth */
+    image-rendering: auto;
+}
+    
+    </style>
+    <div style="text-align:center; margin-bottom:10px;"> <a href="https://apexwx.github.io/"
+        style="display:inline-block; padding:8px 16px; background:rgba(255,255,255,0.75); border-radius:6px; font-weight:bold;">
+        ← Apex Wx Main Page </a> </div>
+    <div class="container">
+      <table class="nav" cellpadding="10" border="2">
+        <tbody>
+          <tr>
+            <td><a href="wall.htm">Analysis</a></td>
+            <td><a href="wallf.htm">Forecast</a></td>
+            <td><a href="wallnortheast.htm">NE</a></td>
+            <td><a href="aloft.htm">Aloft</a></td>
+            <td><a href="climate.htm">Climate</a></td>
+            <td><a href="gis.htm">GIS</a></td>
+            <td><a href="maps.htm">Maps</a></td>
+            <td><a href="marine.htm">Marine</a></td>
+            <td><a href="models.htm">Models</a></td>
+            <td><a href="nws.htm">NWS</a></td>
+            <td><a href="rad.htm">Radar</a></td>
+            <td><a href="rain.htm">Rain</a></td>
+            <td><a href="sat.htm">Satellite</a></td>
+            <td><a href="snow.htm">Snow</a></td>
+            <td><a href="surface.htm">Surface</a></td>
+            <td><a href="temps.htm">Temps</a></td>
+            <td><a href="thunder.htm">Thunder</a></td>
+            <td><a href="tropical.htm">Tropical</a></td>
+            <td><a href="wind.htm">Wind</a></td>
+          </tr>
+        </tbody>
+      </table>
+      <br>
+      <table>
+        <tbody>
+          <tr>
+            <td class="sectiontitle">Forecast Wall</td>
+          </tr>
+        </tbody>
+      </table>
+      <hr>
+      <table>
+        <tbody>
+          <tr>
+            <td>
+              <center>NOAA Rain Forecast</center>
+              <img loading="lazy" src="https://www.weather.gov/images/erh/gis/CONUS_QPF.png">
+            </td>
+            <td>
+              <center>NOAA Snow Forecast</center>
+              <img loading="lazy" src="https://www.weather.gov/images/erh/gis/CONUS_Snow.png">
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <center><a href="#top">Top of Page</a></center>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <hr>
+      <script>
+        document.addEventListener("DOMContentLoaded", function(){
+            /* IMAGE AUTO REFRESH */
+            function refreshImages(){
+                const images = document.querySelectorAll("img:not(#lightbox img)");
+                images.forEach(function(img){
+                    let src = img.src.split("?")[0];
+                    img.src = src + "?t=" + new Date().getTime();
+                });
+            }
+            setInterval(refreshImages, 300000);
+
+            /* FADE-IN ON LOAD */
+            document.querySelectorAll("img").forEach(img => {
+                if(img.complete) {
+                    img.classList.add("loaded");
+                } else {
+                    img.addEventListener("load", () => {
+                        img.classList.add("loaded");
+                    });
+                }
+            });
+
+            /* LIGHTBOX (ZOOM) */
+            const lightbox = document.getElementById("lightbox");
+            const lightboxImg = document.getElementById("lightbox-img");
+
+            document.querySelectorAll("img:not(#lightbox img)").forEach(img => {
+                img.addEventListener("click", function(e){
+                    e.stopPropagation();
+                    lightbox.style.display = "flex";
+                    lightboxImg.src = this.src;
+                });
+            });
+
+            lightbox.addEventListener("click", function(){
+                lightbox.style.display = "none";
+            });
+        });
+      </script>
+      <div id="lightbox"> <img id="lightbox-img" src=""> </div>
+    </div>
+  </body>
+</html>

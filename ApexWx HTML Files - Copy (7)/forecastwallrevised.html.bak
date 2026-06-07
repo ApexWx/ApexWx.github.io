@@ -1,0 +1,963 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>Forecast Wall</title>
+    <!-- Makes the page responsive on phones/tablets -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
+    <style>
+/* ---------- PAGE STYLE ---------- */
+body{
+    margin:0;
+    padding:10px;
+    font-family:Arial, sans-serif;
+    background:url('https://github.com/ApexWx/ApexWx.github.io/blob/master/seamless-background-simply-sky.jpg?raw=true') repeat;
+    color:black;
+    text-shadow: 0 0 3px rgba(255,255,255,0.7);
+}
+
+/* Center page width only (no background panel) */
+.container{
+    max-width:1240px;
+    margin:auto;
+}
+
+/* Tables scale and have subtle contrast */
+table{
+    width:100%;
+    border-collapse:collapse;
+    background:rgba(255,255,255,0.55);
+    border-radius:6px;
+    overflow:hidden;
+    margin-bottom:10px;
+}
+
+/* All table cells bold + spacing */
+td{
+    font-weight:bold;
+    padding:10px;
+    vertical-align:top;
+}
+
+/* Images responsive */
+img{
+    width:100%;
+    height:auto;
+    max-width:600px;
+    border-radius:6px;
+}
+
+/* Navigation styling */
+.nav td{
+    text-align:center;
+    background:rgba(255,255,255,0.75);
+}
+
+/* Section title */
+.sectiontitle{
+    text-align:center;
+    font-size:18px;
+    background:rgba(255,255,255,0.75);
+}
+
+/* Links */
+a{
+    color:black;
+    text-decoration:none;
+}
+
+/* Hover effect (nice polish) */
+a:hover{
+    text-decoration:underline;
+}
+
+/* Divider */
+hr{
+    border:1px solid rgba(0,0,0,0.3);
+}
+
+/* ---------- MOBILE RESPONSIVE ---------- */
+@media screen and (max-width:900px){
+
+    td{
+        display:block;
+        width:100%;
+        text-align:center;
+    }
+
+    img{
+        max-width:100%;
+    }
+
+}
+    /* ---------- IMAGE IMPROVEMENTS ---------- */
+
+/* Smooth fade-in when images load */
+img{
+    width:100%;
+    height:auto;
+    max-width:600px;
+    border-radius:6px;
+    cursor:zoom-in;
+    opacity:0;
+    transition:opacity 0.4s ease;
+}
+
+/* When loaded */
+img.loaded{
+    opacity:1;
+}
+
+/* ---------- LIGHTBOX (ZOOM) ---------- */
+
+#lightbox{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.85);
+    display:none;
+    justify-content:center;
+    align-items:center;
+    z-index:9999;
+    cursor:zoom-out;
+}
+
+#lightbox img{
+    max-width:95%;
+    max-height:95%;
+    border-radius:8px;
+}
+    
+    </style>
+    <div style="text-align:center; margin-bottom:10px;"> <a href="https://apexwx.github.io/"
+        style="
+      display:inline-block;      padding:8px 16px;
+      background:rgba(255,255,255,0.75);      border-radius:6px;
+      font-weight:bold;  "> ← Apex Wx Main Page </a>
+    </div>
+    <div class="container">
+      <!-- ====================================================== -->
+      <!-- NAVIGATION BAR                                         -->
+      <!-- ====================================================== -->
+      <table class="nav" cellpadding="10" border="2">
+        <tbody>
+          <tr>
+            <td><a href="wall.htm">Analysis</a></td>
+            <td><a href="wallf.htm">Forecast</a></td>
+            <td><a href="wallnortheast.htm">NE</a></td>
+            <td><a href="aloft.htm">Aloft</a></td>
+            <td><a href="climate.htm">Climate</a></td>
+            <td><a href="gis.htm">GIS</a></td>
+            <td><a href="maps.htm">Maps</a></td>
+            <td><a href="marine.htm">Marine</a></td>
+            <td><a href="models.htm">Models</a></td>
+            <td><a href="nws.htm">NWS</a></td>
+            <td><a href="rad.htm">Radar</a></td>
+            <td><a href="rain.htm">Rain</a></td>
+            <td><a href="sat.htm">Satellite</a></td>
+            <td><a href="snow.htm">Snow</a></td>
+            <td><a href="surface.htm">Surface</a></td>
+            <td><a href="temps.htm">Temps</a></td>
+            <td><a href="thunder.htm">Thunder</a></td>
+            <td><a href="tropical.htm">Tropical</a></td>
+            <td><a href="wind.htm">Wind</a></td>
+          </tr>
+        </tbody>
+      </table>
+      <br>
+      <table>
+        <tbody>
+          <tr>
+            <td class="sectiontitle">Forecast Wall</td>
+          </tr>
+        </tbody>
+      </table>
+      <hr>
+      <!-- FORECAST BLOCKS AUTO GENERATED -->
+      <table>
+        <tbody>
+          <tr>
+            <td>
+              <center>NOAA Rain Forecast</center>
+              <img loading="lazy" decoding="async" src="https://www.weather.gov/images/erh/gis/CONUS_QPF.png">
+            </td>
+            <td>
+              <center>NOAA Snow Forecast</center>
+              <img loading="lazy" decoding="async" src="https://www.weather.gov/images/erh/gis/CONUS_Snow.png">
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <center><a href="#top">Top of Page</a></center>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <hr>
+      <table>
+        <tbody>
+          <tr>
+            <td>
+              <center>NOAA Ice Forecast</center>
+              <img loading="lazy" decoding="async" src="https://www.weather.gov/images/erh/gis/CONUS_Ice.png">
+            </td>
+            <td>
+              <center>NOAA Wind Gust Forecast</center>
+              <img loading="lazy" decoding="async" src="https://www.weather.gov/images/erh/gis/CONUS_WGust.png">
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <center><a href="#top">Top of Page</a></center>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <hr>
+      <table>
+        <tbody>
+          <tr>
+            <td>
+              <center>WPC/NDFD Surface Forecast 12hr</center>
+              <img loading="lazy" decoding="async" src="http://www.wpc.ncep.noaa.gov/basicwx/94fndfd.gif">
+            </td>
+            <td>
+              <center>WPC/NDFD Surface Forecast 24hr</center>
+              <img loading="lazy" decoding="async" src="http://www.wpc.ncep.noaa.gov/basicwx/96fndfd.gif">
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <center><a href="#top">Top of Page</a></center>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <hr>
+      <table>
+        <tbody>
+          <tr>
+            <td>
+              <center>WPC/NDFD Surface Forecast 36hr</center>
+              <img loading="lazy" decoding="async" src="http://www.wpc.ncep.noaa.gov/basicwx/98fndfd.gif">
+            </td>
+            <td>
+              <center>WPC/NDFD Surface Forecast 48hr</center>
+              <img loading="lazy" decoding="async" src="http://www.wpc.ncep.noaa.gov/basicwx/99fndfd.gif">
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <center><a href="#top">Top of Page</a></center>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <hr>
+      <table>
+        <tbody>
+          <tr>
+            <td>
+              <center>NOAA 500MB Map Forecast Day 3</center>
+              <img loading="lazy" decoding="async" src="http://www.wpc.ncep.noaa.gov/medr/d3500wbg.gif">
+            </td>
+            <td>
+              <center>NOAA Surface Map Forecast Day 3</center>
+              <img loading="lazy" decoding="async" src="http://www.wpc.ncep.noaa.gov/medr/9jhwbg_conus.gif">
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <center><a href="#top">Top of Page</a></center>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <hr>
+      <table>
+        <tbody>
+          <tr>
+            <td>
+              <center>NOAA 500MB Map Forecast Day 4</center>
+              <img loading="lazy" decoding="async" src="http://www.wpc.ncep.noaa.gov/medr/d4500wbg.gif">
+            </td>
+            <td>
+              <center>NOAA Surface Map Forecast Day 4</center>
+              <img loading="lazy" decoding="async" src="http://www.wpc.ncep.noaa.gov/medr/9khwbg_conus.gif">
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <center><a href="#top">Top of Page</a></center>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <hr>
+      <table>
+        <tbody>
+          <tr>
+            <td>
+              <center>NOAA 500MB Map Forecast Day 5</center>
+              <img loading="lazy" decoding="async" src="http://www.wpc.ncep.noaa.gov/medr/d5500wbg.gif">
+            </td>
+            <td>
+              <center>NOAA Surface Map Forecast Day 5</center>
+              <img loading="lazy" decoding="async" src="http://www.wpc.ncep.noaa.gov/medr/9lhwbg_conus.gif">
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <center><a href="#top">Top of Page</a></center>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <hr>
+      <table>
+        <tbody>
+          <tr>
+            <td>
+              <center>NOAA 500MB Map Forecast Day 6</center>
+              <img loading="lazy" decoding="async" src="http://www.wpc.ncep.noaa.gov/medr/d6500wbg.gif">
+            </td>
+            <td>
+              <center>NOAA Surface Map Forecast Day 6</center>
+              <img loading="lazy" decoding="async" src="http://www.wpc.ncep.noaa.gov/medr/9mhwbg_conus.gif">
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <center><a href="#top">Top of Page</a></center>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <hr>
+      <table>
+        <tbody>
+          <tr>
+            <td>
+              <center>NOAA 500MB Map Forecast Day 7</center>
+              <img loading="lazy" decoding="async" src="http://www.wpc.ncep.noaa.gov/medr/d7500wbg.gif">
+            </td>
+            <td>
+              <center>NOAA Surface Map Forecast Day 7</center>
+              <img loading="lazy" decoding="async" src="http://www.wpc.ncep.noaa.gov/medr/9nhwbg_conus.gif">
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <center><a href="#top">Top of Page</a></center>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <hr>
+      <table>
+        <tbody>
+          <tr>
+            <td>
+              <center>OPC 48HR Forecast Pacific</center>
+              <img loading="lazy" decoding="async" src="https://ocean.weather.gov/shtml/P_48hrsfc.gif">
+            </td>
+            <td>
+              <center>OPC 48HR Forecast Atlantic</center>
+              <img loading="lazy" decoding="async" src="https://ocean.weather.gov/shtml/A_48hrsfc.gif">
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <center><a href="#top">Top of Page</a></center>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <hr>
+      <table>
+        <tbody>
+          <tr>
+            <td>
+              <center>OPC 96HR Forecast Pacific</center>
+              <img loading="lazy" decoding="async" src="https://ocean.weather.gov/shtml/P_96hrsfc.gif">
+            </td>
+            <td>
+              <center>OPC 96HR Forecast Atlantic</center>
+              <img loading="lazy" decoding="async" src="https://ocean.weather.gov/shtml/A_96hrsfc.gif">
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <center><a href="#top">Top of Page</a></center>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <hr>
+      <table>
+        <tbody>
+          <tr>
+            <td>
+              <center>ECMWF 96hr Forecast 30MB</center>
+              <img loading="lazy" decoding="async" src="https://users.met.fu-berlin.de/%7EAktuell/strat-www/wdiag/figs/ecmwf1/ecmwf30f96.png">
+            </td>
+            <td>
+              <center>ECMWF 96hr Forecast 150MB</center>
+              <img loading="lazy" decoding="async" src="https://users.met.fu-berlin.de/%7EAktuell/strat-www/wdiag/figs/ecmwf1/ecmwf150f96.png">
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <center><a href="#top">Top of Page</a></center>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <hr>
+      <table>
+        <tbody>
+          <tr>
+            <td>
+              <center>ECMWF 168hr Forecast 30MB</center>
+              <img loading="lazy" decoding="async" src="https://users.met.fu-berlin.de/%7EAktuell/strat-www/wdiag/figs/ecmwf1/ecmwf30f168.png">
+            </td>
+            <td>
+              <center>ECMWF 168hr Forecast 150MB</center>
+              <img loading="lazy" decoding="async" src="https://users.met.fu-berlin.de/%7EAktuell/strat-www/wdiag/figs/ecmwf1/ecmwf150f168.png">
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <center><a href="#top">Top of Page</a></center>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <hr>
+      <table>
+        <tbody>
+          <tr>
+            <td>
+              <center>ECMWF 240hr Forecast 30MB</center>
+              <img loading="lazy" decoding="async" src="https://users.met.fu-berlin.de/%7EAktuell/strat-www/wdiag/figs/ecmwf1/ecmwf30f240.png">
+            </td>
+            <td>
+              <center>ECMWF 240hr Forecast 150MB</center>
+              <img loading="lazy" decoding="async" src="https://users.met.fu-berlin.de/%7EAktuell/strat-www/wdiag/figs/ecmwf1/ecmwf150f240.png">
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <center><a href="#top">Top of Page </a><br>
+                <br>
+                <em style="font-size: 12px;">Depending on time of day and
+                  product release these High/Low images below may be misaligned
+                  at times.</em><br>
+                <a href="#top"></a></center>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <hr>
+      <table>
+        <tbody>
+          <tr>
+            <td>
+              <center>NWS Forecast High Temperatures Day 1</center>
+              <img loading="lazy" decoding="async" src="https://graphical.weather.gov/images/conus/MaxT1_conus.png">
+            </td>
+            <td>
+              <center>NWS Forecast Low Temperatures Day 1</center>
+              <img loading="lazy" decoding="async" src="https://graphical.weather.gov/images/conus/MinT1_conus.png">
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <center><a href="#top">Top of Page</a></center>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <hr>
+      <table>
+        <tbody>
+          <tr>
+            <td>
+              <center>NWS Forecast High Temperatures Day 2</center>
+              <img loading="lazy" decoding="async" src="https://graphical.weather.gov/images/conus/MaxT2_conus.png">
+            </td>
+            <td>
+              <center>NWS Forecast Low Temperatures Day 2</center>
+              <img loading="lazy" decoding="async" src="https://graphical.weather.gov/images/conus/MinT2_conus.png">
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <center><a href="#top">Top of Page</a></center>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <hr>
+      <table>
+        <tbody>
+          <tr>
+            <td>
+              <center>NWS Forecast High Temperatures Day 3</center>
+              <img loading="lazy" decoding="async" src="https://graphical.weather.gov/images/conus/MaxT3_conus.png">
+            </td>
+            <td>
+              <center>NWS Forecast Low Temperatures Day 3</center>
+              <img loading="lazy" decoding="async" src="https://graphical.weather.gov/images/conus/MinT3_conus.png">
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <center><a href="#top">Top of Page</a></center>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <hr>
+      <table>
+        <tbody>
+          <tr>
+            <td>
+              <center>NWS Forecast High Temperatures Day 4</center>
+              <img loading="lazy" decoding="async" src="https://graphical.weather.gov/images/conus/MaxT4_conus.png">
+            </td>
+            <td>
+              <center>NWS Forecast Low Temperatures Day 4</center>
+              <img loading="lazy" decoding="async" src="https://graphical.weather.gov/images/conus/MinT4_conus.png">
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <center><a href="#top">Top of Page</a></center>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <hr>
+      <table>
+        <tbody>
+          <tr>
+            <td>
+              <center>NWS Forecast High Temperatures Day 5</center>
+              <img loading="lazy" decoding="async" src="https://graphical.weather.gov/images/conus/MaxT5_conus.png">
+            </td>
+            <td>
+              <center>NWS Forecast Low Temperatures Day 5</center>
+              <img loading="lazy" decoding="async" src="https://graphical.weather.gov/images/conus/MinT5_conus.png">
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <center><a href="#top">Top of Page</a></center>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <hr>
+      <table>
+        <tbody>
+          <tr>
+            <td>
+              <center>NWS Forecast High Temperatures Day 6</center>
+              <img loading="lazy" decoding="async" src="https://graphical.weather.gov/images/conus/MaxT6_conus.png">
+            </td>
+            <td>
+              <center>NWS Forecast Low Temperatures Day 6</center>
+              <img loading="lazy" decoding="async" src="https://graphical.weather.gov/images/conus/MinT6_conus.png">
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <center><a href="#top">Top of Page</a></center>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <hr>
+      <table>
+        <tbody>
+          <tr>
+            <td>
+              <center>NWS Forecast High Temperatures Day 7</center>
+              <img loading="lazy" decoding="async" src="https://graphical.weather.gov/images/conus/MaxT7_conus.png">
+            </td>
+            <td>
+              <center>NWS Forecast Low Temperatures Day 7</center>
+              <img loading="lazy" decoding="async" src="https://graphical.weather.gov/images/conus/MinT7_conus.png">
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <center><a href="#top">Top of Page</a></center>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <hr>
+      <table>
+        <tbody>
+          <tr>
+            <td>
+              <center>NOAA QPF Forecasts Day 1</center>
+              <img loading="lazy" decoding="async" src="http://www.wpc.ncep.noaa.gov/qpf/fill_94qwbg.gif">
+            </td>
+            <td>
+              <center>NOAA QPF Forecasts Day 2</center>
+              <img loading="lazy" decoding="async" src="http://www.wpc.ncep.noaa.gov/qpf/fill_98qwbg.gif">
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <center><a href="#top">Top of Page</a></center>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <hr>
+      <table>
+        <tbody>
+          <tr>
+            <td>
+              <center>NOAA QPF Forecasts Day 3</center>
+              <img loading="lazy" decoding="async" src="http://www.wpc.ncep.noaa.gov/qpf/fill_99qwbg.gif">
+            </td>
+            <td>
+              <center>NOAA QPF Forecasts Day 4 &amp; 5</center>
+              <img loading="lazy" decoding="async" src="http://www.wpc.ncep.noaa.gov/qpf/95ep48iwbg_fill.gif">
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <center><a href="#top">Top of Page</a></center>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <hr>
+      <table>
+        <tbody>
+          <tr>
+            <td>
+              <center>NOAA QPF Forecasts Day 6 &amp; 7</center>
+              <img loading="lazy" decoding="async" src="http://www.wpc.ncep.noaa.gov/qpf/97ep48iwbg_fill.gif">
+            </td>
+            <td>
+              <center>NOAA QPF Forecasts 7 Day Total</center>
+              <img loading="lazy" decoding="async" src="http://www.wpc.ncep.noaa.gov/qpf/p168i.gif">
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <center><a href="#top">Top of Page</a></center>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <hr>
+      <table>
+        <tbody>
+          <tr>
+            <td>
+              <center>WPC Excessive Rainfall Outlook Day 1</center>
+              <img loading="lazy" decoding="async" src="https://www.wpc.ncep.noaa.gov/qpf/94ewbg.gif">
+            </td>
+            <td>
+              <center>WPC Excessive Rainfall Outlook Day 2</center>
+              <img loading="lazy" decoding="async" src="https://www.wpc.ncep.noaa.gov/qpf/98ewbg.gif">
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <center><a href="#top">Top of Page</a></center>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <hr>
+      <table>
+        <tbody>
+          <tr>
+            <td>
+              <center>SPC Severe Thunderstorm Outlook Day 1</center>
+              <img loading="lazy" decoding="async" src="https://www.spc.noaa.gov/products/outlook/day1otlk_1630.png">
+            </td>
+            <td>
+              <center>SPC Severe Thunderstorm Outlook Day 2</center>
+              <img loading="lazy" decoding="async" src="https://www.spc.noaa.gov/products/outlook/day2otlk_0600.png">
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <center><a href="#top">Top of Page</a></center>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <hr>
+      <table>
+        <tbody>
+          <tr>
+            <td>
+              <center>SPC Severe Thunderstorm Outlook Day 3</center>
+              <img loading="lazy" decoding="async" src="https://www.spc.noaa.gov/products/outlook/day3otlk_0730.png">
+            </td>
+            <td>
+              <center>SPC Severe Thunderstorm Outlook Day 4</center>
+              <img loading="lazy" decoding="async" src="http://www.spc.noaa.gov/products/exper/day4-8/day4prob.gif">
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <center><a href="#top">Top of Page</a></center>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <hr>
+      <table>
+        <tbody>
+          <tr>
+            <td>
+              <center>SPC Severe Thunderstorm Outlook Day 5</center>
+              <img loading="lazy" decoding="async" src="http://www.spc.noaa.gov/products/exper/day4-8/day5prob.gif">
+            </td>
+            <td>
+              <center>SPC Severe Thunderstorm Outlook Day 6</center>
+              <img loading="lazy" decoding="async" src="http://www.spc.noaa.gov/products/exper/day4-8/day6prob.gif">
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <center><a href="#top">Top of Page</a></center>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <hr>
+      <table>
+        <tbody>
+          <tr>
+            <td>
+              <center>SPC Severe Thunderstorm Outlook Day 7</center>
+              <img loading="lazy" decoding="async" src="http://www.spc.noaa.gov/products/exper/day4-8/day7prob.gif">
+            </td>
+            <td>
+              <center>SPC Severe Thunderstorm Outlook Day 8</center>
+              <img loading="lazy" decoding="async" src="http://www.spc.noaa.gov/products/exper/day4-8/day8prob.gif">
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <center><a href="#top">Top of Page</a></center>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <hr>
+      <table>
+        <tbody>
+          <tr>
+            <td>
+              <center>NHC East Pacific Hurricane Outlook</center>
+              <img loading="lazy" decoding="async" src="https://www.nhc.noaa.gov/xgtwo/two_pac_0d0.png">
+            </td>
+            <td>
+              <center>NHC Atlantic Hurricane Outlook</center>
+              <img loading="lazy" decoding="async" src="https://www.nhc.noaa.gov/xgtwo/two_atl_0d0.png">
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <center><a href="#top">Top of Page</a></center>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <hr>
+      <table>
+        <tbody>
+          <tr>
+            <td>
+              <center>NOAA Winter Outlook Day 1 Snow &gt; 4"</center>
+              <img loading="lazy" decoding="async" src="http://www.wpc.ncep.noaa.gov/wwd/day1_psnow_gt_04.gif">
+            </td>
+            <td>
+              <center>NOAA Winter Outlook Day 1 Ice &gt; 0.25"</center>
+              <img loading="lazy" decoding="async" src="http://www.wpc.ncep.noaa.gov/wwd/day1_pice_gt_25.gif">
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <center><a href="#top">Top of Page</a></center>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <hr>
+      <table>
+        <tbody>
+          <tr>
+            <td>
+              <center>NOAA Winter Outlook Day 2 Snow &gt; 4"</center>
+              <img loading="lazy" decoding="async" src="http://www.wpc.ncep.noaa.gov/wwd/day2_psnow_gt_04.gif">
+            </td>
+            <td>
+              <center>NOAA Winter Outlook Day 3 Snow &gt; 4"</center>
+              <img loading="lazy" decoding="async" src="http://www.wpc.ncep.noaa.gov/wwd/day3_psnow_gt_04.gif">
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <center><a href="#top">Top of Page</a></center>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <hr>
+      <table>
+        <tbody>
+          <tr>
+            <td>
+              <center>NOAA Winter Outlook Day 4 Snow</center>
+              <img loading="lazy" decoding="async" src="http://www.wpc.ncep.noaa.gov/wwd/pwpf_d47/gif/prbww_sn25_f096.gif">
+            </td>
+            <td>
+              <center>NOAA Winter Outlook Day 5 Snow</center>
+              <img loading="lazy" decoding="async" src="http://www.wpc.ncep.noaa.gov/wwd/pwpf_d47/gif/prbww_sn25_f120.gif">
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <center><a href="#top">Top of Page</a></center>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <hr>
+      <table>
+        <tbody>
+          <tr>
+            <td>
+              <center>NOAA Winter Outlook Day 6 Snow</center>
+              <img loading="lazy" decoding="async" src="http://www.wpc.ncep.noaa.gov/wwd/pwpf_d47/gif/prbww_sn25_f144.gif">
+            </td>
+            <td>
+              <center>NOAA Winter Outlook Day 7 Snow</center>
+              <img loading="lazy" decoding="async" src="http://www.wpc.ncep.noaa.gov/wwd/pwpf_d47/gif/prbww_sn25_f168.gif">
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <center><a href="#top">Top of Page</a></center>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <hr>
+      <table>
+        <tbody>
+          <tr>
+            <td>
+              <center>CPC Day 6-10 Temperature</center>
+              <img loading="lazy" decoding="async" src="https://www.cpc.ncep.noaa.gov/products/predictions/610day/610temp.new.gif">
+            </td>
+            <td>
+              <center>CPC Day 6-10 Precipitation </center>
+              <img loading="lazy" decoding="async" src="https://www.cpc.ncep.noaa.gov/products/predictions/814day/814temp.new.gif">
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <center><a href="#top">Top of Page</a></center>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <hr>
+      <table>
+        <tbody>
+          <tr>
+            <td>
+              <center>CPC Day 8-14 Temperature</center>
+              <img loading="lazy" decoding="async" src="https://www.cpc.ncep.noaa.gov/products/predictions/610day/610prcp.new.gif">
+            </td>
+            <td>
+              <center>CPC Day 8-14 Precipitation</center>
+              <img loading="lazy" decoding="async" src="https://www.cpc.ncep.noaa.gov/products/predictions/814day/814prcp.new.gif">
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <center><a href="#top">Top of Page</a></center>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <hr>
+      <!-- END FORECAST BLOCKS -->
+      <!-- Copy the <table> block above and replace image URLs.   -->
+      <!-- ====================================================== --> <br>
+      <!-- ====================================================== -->
+      <!-- IMAGE AUTO REFRESH SCRIPT                              -->
+      <!-- Forces weather graphics to reload to avoid caching     -->
+      <!-- Refresh interval: 5 minutes                            -->
+      <!-- ====================================================== -->
+      <script>
+
+/* ---------- WAIT FOR PAGE LOAD ---------- */
+document.addEventListener("DOMContentLoaded", function(){
+
+    /* ---------- IMAGE AUTO REFRESH ---------- */
+    function refreshImages(){
+        const images = document.querySelectorAll("img:not(#lightbox img)");
+        images.forEach(function(img){
+            let src = img.src.split("?")[0];
+            img.src = src + "?t=" + new Date().getTime();
+        });
+    }
+    setInterval(refreshImages, 300000);
+
+
+    /* ---------- FADE-IN ON LOAD ---------- */
+    document.querySelectorAll("img").forEach(img => {
+        img.addEventListener("load", () => {
+            img.classList.add("loaded");
+        });
+    });
+
+
+    /* ---------- LIGHTBOX (ZOOM) ---------- */
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = document.getElementById("lightbox-img");
+
+    document.querySelectorAll("img:not(#lightbox img)").forEach(img => {
+
+        img.style.cursor = "zoom-in"; // ensure visible cue
+
+        img.addEventListener("click", function(e){
+            e.stopPropagation();
+            lightbox.style.display = "flex";
+            lightboxImg.src = this.src;
+        });
+
+    });
+
+    /* Close when clicking anywhere */
+    lightbox.addEventListener("click", function(){
+        lightbox.style.display = "none";
+    });
+
+});
+</script> <div id="lightbox"> <img id="lightbox-img" src=""> </div>
+    </div>
+  </body>
+</html>

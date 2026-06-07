@@ -1,0 +1,139 @@
+export default {
+  async fetch(request) {
+    // Force the date calculations to lock onto Eastern Time
+    const easternStr = new Date().toLocaleString("en-US", { timeZone: "America/New_York" });
+    const today = new Date(easternStr);
+
+    const year = today.getFullYear();
+    const month = String(today.getMonth() + 1).padStart(2, "0");
+    const day = String(today.getDate()).padStart(2, "0");
+
+    // ==========================================
+    // PERIOD BOUNDARIES
+    // ==========================================
+    let monthlyStart;
+    if (today.getDate() === 1) {
+      const prevMonth = new Date(today);
+      prevMonth.setMonth(prevMonth.getMonth() - 1);
+      monthlyStart = `${prevMonth.getFullYear()}-${String(prevMonth.getMonth() + 1).padStart(2, "0")}-01`;
+    } else {
+      monthlyStart = `${year}-${month}-01`;
+    }
+    const monthlyEnd = `${year}-${month}-${day}`;
+
+    const snowSeasonYear = today.getMonth() >= 9 ? year : year - 1;
+    const seasonalStart = `${snowSeasonYear}-10-01`;
+    const seasonalEnd = `${year}-${month}-${day}`;
+
+    const ytdStart = `${year}-01-01`;
+    const ytdEnd = `${year}-${month}-${day}`;
+    const todayDate = `${year}-${month}-${day}`;
+
+    try {
+      // ==========================================
+      // PARALLEL ACIS FETCHES
+      // ==========================================
+      const [monthlyRes, snowRes, ytdRes, normalsRes, snowNormalsRes] = await Promise.all([
+        fetch("https://data.rcc-acis.org/StnData", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ sid: "172878", sdate: monthlyStart, edate: monthlyEnd, elems: ["maxt", "mint", "pcpn"] })
+        }),
+        fetch("https://data.rcc-acis.org/StnData", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ sid: "172878", sdate: seasonalStart, edate: seasonalEnd, elems: ["snow"] })
+        }),
+        fetch("https://data.rcc-acis.org/StnData", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ sid: "172878", sdate: ytdStart, edate: ytdEnd, elems: [{ name: "pcpn" }, { name: "pcpn", normal: "1" }] })
+        }),
+        fetch("https://data.rcc-acis.org/StnData", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ sid: "172878", sdate: todayDate, edate: todayDate, elems: [{ name: "maxt", normal: "1" }, { name: "mint", normal: "1" }, { name: "pcpn", normal: "1" }] })
+        }),
+        fetch("https://data.rcc-acis.org/StnData", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ sid: "172878", sdate: seasonalStart, edate: seasonalEnd, elems: [{ name: "snow", normal: "1" }] })
+        })
+      ]);
+
+      const monthlyData = await monthlyRes.json();
+      const snowData = await snowRes.json();
+      const ytdData = await ytdRes.json();
+      const normalsData = await normalsRes.json();
+      const snowNormalsData = await snowNormalsRes.json();
+
+      // Parse Today's Normals safely
+      const normalHigh = parseFloat(normalsData.data?.[0]?.[1]) || 0;
+      const normalLow = parseFloat(normalsData.data?.[0]?.[2]) || 0;
+      const normalRain = parseFloat(normalsData.data?.[0]?.[3]) || 0;
+
+      // Parse Snow Normals safely from daily records
+      let totalSeasonalSnowNormal = 0;
+      if (snowNormalsData && snowNormalsData.data) {
+        snowNormalsData.data.forEach(row => {
+          const dailyNormal = parseFloat(row[1]);
+          if (!isNaN(dailyNormal)) {
+            totalSeasonalSnowNormal += dailyNormal;
+          }
+        });
+      }
+      const seasonSnowNormal = totalSeasonalSnowNormal > 0 ? totalSeasonalSnowNormal : 99.3;
+
+      // Calculate YTD Totals safely
+      let ytdRain = 0;
+      let ytdNormalRain = 0;
+      if (ytdData && ytdData.data) {
+        ytdData.data.forEach(row => {
+          const rain = parseFloat(row[1]);
+          const normal = parseFloat(row[2]);
+          if (!isNaN(rain)) ytdRain += rain;
+          if (!isNaN(normal)) ytdNormalRain += normal;
+        });
+      }
+
+      ytdRain = Number(ytdRain.toFixed(2));
+      ytdNormalRain = Number(ytdNormalRain.toFixed(2));
+      const ytdRainDeparture = Number((ytdRain - ytdNormalRain).toFixed(2));
+
+      // Deliver cleanly formatted JSON
+      return new Response(
+        JSON.stringify({
+          monthlyRows: monthlyData.data || [],
+          seasonalRows: snowData.data || [],
+          ytdRain,
+          ytdNormalRain,
+          ytdRainDeparture,
+          seasonSnowNormal,
+          todayNormals: {
+            normalHigh,
+            normalLow,
+            normalRain
+          }
+        }),
+        {
+          headers: {
+            "Content-Type": "application/json",
+            "Access-Control-Allow-Origin": "*"
+          }
+        }
+      );
+
+    } catch (error) {
+      return new Response(
+        JSON.stringify({ error: error.message }),
+        {
+          status: 500,
+          headers: {
+            "Content-Type": "application/json",
+            "Access-Control-Allow-Origin": "*"
+          }
+        }
+      );
+    }
+  }
+};

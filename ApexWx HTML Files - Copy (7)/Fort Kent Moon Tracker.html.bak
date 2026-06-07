@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fort Kent Moon Tracker</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Configure Tailwind to use Inter font and apply custom styles -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'celestial-blue': '#2c3e50',
+                        'moon-silver': '#ecf0f1',
+                        'star-yellow': '#f1c40f',
+                        'dark-bg': '#1e293b',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom styles for background and centered layout */
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 1rem;
+        }
+        .card {
+            background-color: rgba(255, 255, 255, 0.05); /* Semi-transparent background */
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        /* Custom spinner animation */
+        .spinner {
+            border: 4px solid rgba(255, 255, 255, 0.3);
+            border-top: 4px solid #f1c40f;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+  </head>
+  <body class="text-moon-silver">
+    <div id="app-container" class="w-full max-w-2xl">
+      <!-- Header -->
+      <header class="text-center mb-8">
+        <h1 class="text-4xl sm:text-5xl font-extrabold text-star-yellow drop-shadow-lg">
+          Fort Kent Moon Tracker </h1>
+        <p class="text-lg text-gray-300 mt-2"> Aroostook County, Maine • Lat:
+          47.26° N, Long: -68.59° W </p>
+      </header>
+      <!-- Main Card Container -->
+      <div class="card p-6 md:p-8 rounded-2xl shadow-2xl space-y-6">
+        <!-- Date Selector -->
+        <div class="flex flex-col sm:flex-row items-center justify-between p-4 bg-celestial-blue/50 rounded-xl shadow-inner">
+          <label for="date-input" class="text-lg font-semibold mb-2 sm:mb-0 text-star-yellow">
+            Select Date: </label> <input id="date-input" class="p-3 rounded-lg border-2 border-celestial-blue bg-dark-bg text-moon-silver focus:ring-star-yellow focus:border-star-yellow transition w-full sm:w-auto cursor-pointer"
+            aria-label="Date selector for moon data" type="date"> </div>
+        <!-- Loading/Error State -->
+        <div id="status-message" class="hidden text-center p-6 rounded-xl bg-red-800/20 border border-red-700/50">
+          <!-- Status message (Loading spinner or Error text will go here) --> </div>
+        <!-- Astronomy Data Cards -->
+        <div id="data-container" class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+          <!-- Moonrise Card -->
+          <div class="data-card p-5 rounded-xl bg-celestial-blue/70 shadow-lg text-center transition hover:bg-celestial-blue/90">
+            <div class="text-4xl mb-2"> ☽
+              <!-- Moon Icon --> </div>
+            <p class="text-md font-medium text-gray-300">Moonrise</p>
+            <p id="moon-rise" class="text-3xl font-bold text-star-yellow mt-1">--:--</p>
+          </div>
+          <!-- Moonset Card -->
+          <div class="data-card p-5 rounded-xl bg-celestial-blue/70 shadow-lg text-center transition hover:bg-celestial-blue/90">
+            <div class="text-4xl mb-2"> ☾
+              <!-- Crescent Moon Icon --> </div>
+            <p class="text-md font-medium text-gray-300">Moonset</p>
+            <p id="moon-set" class="text-3xl font-bold text-star-yellow mt-1">--:--</p>
+          </div>
+          <!-- Moon Phase Card -->
+          <div class="data-card p-5 rounded-xl bg-celestial-blue/70 shadow-lg text-center transition hover:bg-celestial-blue/90">
+            <div id="moon-phase-icon" class="text-4xl mb-2"> 🌒
+              <!-- Full Moon Emoji as placeholder --> </div>
+            <p class="text-md font-medium text-gray-300">Current Phase</p>
+            <p id="moon-phase" class="text-xl font-bold text-moon-silver mt-1">Loading...</p>
+          </div>
+        </div>
+        <!-- Detailed Illumination -->
+        <div class="p-4 bg-celestial-blue/50 rounded-xl text-center shadow-inner">
+          <p class="text-lg font-semibold text-gray-300">Illumination:</p>
+          <p id="illumination" class="text-2xl font-bold text-star-yellow mt-1">--%</p>
+        </div>
+        <div id="citation-container" class="text-xs text-gray-400 text-center pt-4 hidden">
+          <p id="citation-text"></p>
+        </div>
+      </div>
+    </div>
+    <!-- Firebase SDK Imports (Required Boilerplate) -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+        import { getAuth, signInAnonymously, signInWithCustomToken } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
+        import { getFirestore } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+        import { setLogLevel } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+        
+        // Set log level to debug for console visibility
+        setLogLevel('Debug');
+
+        // Global variables provided by the environment
+        const appId = typeof __app_id !== 'undefined' ? __app_id : 'default-app-id';
+        const firebaseConfig = typeof __firebase_config !== 'undefined' ? JSON.parse(__firebase_config) : null;
+        const initialAuthToken = typeof __initial_auth_token !== 'undefined' ? __initial_auth_token : null;
+
+        let app = null;
+        let auth = null;
+        let db = null;
+        let userId = null;
+
+        // Initialize Firebase and authenticate
+        if (firebaseConfig) {
+            try {
+                app = initializeApp(firebaseConfig);
+                auth = getAuth(app);
+                db = getFirestore(app);
+
+                // Authenticate using the provided custom token or anonymously
+                if (initialAuthToken) {
+                    signInWithCustomToken(auth, initialAuthToken)
+                        .then((userCredential) => {
+                            userId = userCredential.user.uid;
+                            // console.log("Firebase signed in with custom token. User ID:", userId);
+                        })
+                        .catch((error) => {
+                            console.error("Custom Token Sign-In Error:", error);
+                            signInAnonymously(auth)
+                                .then(() => {
+                                    userId = auth.currentUser.uid;
+                                    // console.log("Firebase signed in anonymously as fallback. User ID:", userId);
+                                })
+                                .catch((anonError) => {
+                                    console.error("Anonymous Sign-In Error:", anonError);
+                                });
+                        });
+                } else {
+                    signInAnonymously(auth)
+                        .then((userCredential) => {
+                            userId = userCredential.user.uid;
+                            // console.log("Firebase signed in anonymously. User ID:", userId);
+                        })
+                        .catch((error) => {
+                            console.error("Anonymous Sign-In Error:", error);
+                        });
+                }
+            } catch (e) {
+                console.error("Firebase Initialization Error:", e);
+            }
+        }
+    </script>
+    <!-- Application Logic -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const dateInput = document.getElementById('date-input');
+            const statusMessage = document.getElementById('status-message');
+            const dataContainer = document.getElementById('data-container');
+            const moonRiseElement = document.getElementById('moon-rise');
+            const moonSetElement = document.getElementById('moon-set');
+            const moonPhaseElement = document.getElementById('moon-phase');
+            const moonPhaseIcon = document.getElementById('moon-phase-icon');
+            const illuminationElement = document.getElementById('illumination');
+            const citationContainer = document.getElementById('citation-container');
+            const citationText = document.getElementById('citation-text');
+
+            // Set default date to today
+            const today = new Date().toISOString().split('T')[0];
+            dateInput.value = today;
+
+            // Coordinates for Fort Kent, Maine (Source: Google Search)
+            const FORT_KENT_LAT = "47.26";
+            const FORT_KENT_LONG = "-68.59";
+            const API_KEY = "8ef618733d384d8b90a5f0a3e8ea4a5c"; // Use empty string for automatic key injection
+
+            // --- UI Functions ---
+            function showLoading() {
+                dataContainer.classList.add('hidden');
+                statusMessage.classList.remove('hidden', 'bg-red-800/20', 'border-red-700/50', 'text-red-300');
+                statusMessage.classList.add('bg-blue-800/20', 'border-blue-700/50', 'text-blue-300');
+                statusMessage.innerHTML = '<div class="flex justify-center items-center"><div class="spinner"></div><span class="ml-4 text-lg font-medium">Fetching data...</span></div>';
+                citationContainer.classList.add('hidden');
+            }
+
+            function showError(message) {
+                dataContainer.classList.add('hidden');
+                statusMessage.classList.remove('hidden', 'bg-blue-800/20', 'border-blue-700/50', 'text-blue-300');
+                statusMessage.classList.add('bg-red-800/20', 'border-red-700/50', 'text-red-300');
+                statusMessage.innerHTML = `<p class="text-lg font-semibold">Error: ${message}</p><p class="mt-1 text-sm">Please try another date.</p>`;
+                citationContainer.classList.add('hidden');
+            }
+
+            function hideStatus() {
+                statusMessage.classList.add('hidden');
+                dataContainer.classList.remove('hidden');
+            }
+
+            function updateDisplay(data) {
+                // Moonrise and Moonset
+                moonRiseElement.textContent = data.moonrise || 'N/A';
+                moonSetElement.textContent = data.moonset || 'N/A';
+
+                // Illumination
+                const illumination = parseFloat(data.moon_illumination_percentage).toFixed(1);
+                illuminationElement.textContent = `${illumination}%`;
+
+                // Moon Phase
+                const phaseName = formatPhaseName(data.moon_phase);
+                moonPhaseElement.textContent = phaseName;
+                moonPhaseIcon.innerHTML = getPhaseIcon(data.moon_phase);
+                
+                // Citation
+                citationText.textContent = `Data for ${data.date} using an external astronomy API.`;
+                citationContainer.classList.remove('hidden');
+
+                hideStatus();
+            }
+
+            function formatPhaseName(apiPhase) {
+                // Converts API_KEY_CASE to Title Case
+                return apiPhase
+                    .replace(/_/g, ' ')
+                    .toLowerCase()
+                    .split(' ')
+                    .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+                    .join(' ');
+            }
+
+            function getPhaseIcon(apiPhase) {
+                // Unicode icons for major phases
+                switch (apiPhase) {
+                    case 'NEW_MOON': return '&#127761;'; // New Moon
+                    case 'WAXING_CRESCENT': return '&#127762;'; // Waxing Crescent (or just first crescent)
+                    case 'FIRST_QUARTER': return '&#127763;'; // First Quarter
+                    case 'WAXING_GIBBOUS': return '&#127764;'; // Waxing Gibbous
+                    case 'FULL_MOON': return '&#127765;'; // Full Moon
+                    case 'WANING_GIBBOUS': return '&#127766;'; // Waning Gibbous
+                    case 'THIRD_QUARTER': return '&#127767;'; // Last Quarter
+                    case 'WANING_CRESCENT': return '&#127768;'; // Waning Crescent
+                    default: return '&#127762;'; // Default to a general moon icon
+                }
+            }
+
+
+            // --- API Logic ---
+            async function fetchAstronomyData(date, attempt = 0) {
+                const MAX_RETRIES = 3;
+                const API_URL = `https://api.ipgeolocation.io/astronomy?apiKey=${API_KEY}&lat=${FORT_KENT_LAT}&long=${FORT_KENT_LONG}&date=${date}`;
+
+                showLoading();
+
+                try {
+                    const response = await fetch(API_URL, {
+                        method: 'GET',
+                        headers: { 'Content-Type': 'application/json' }
+                    });
+
+                    if (!response.ok) {
+                        const errorBody = await response.json();
+                        throw new Error(`API returned status ${response.status}: ${errorBody.message || 'Unknown error'}`);
+                    }
+
+                    const data = await response.json();
+
+                    // Check for specific application-level errors (e.g., date out of range)
+                    if (data.status === 400 || !data.moon_phase) {
+                        throw new Error(data.message || "No data available for this date/location.");
+                    }
+                    
+                    updateDisplay(data);
+
+                } catch (error) {
+                    console.error("API Fetch Error:", error.message);
+
+                    if (attempt < MAX_RETRIES) {
+                        const delay = Math.pow(2, attempt) * 1000; // Exponential backoff: 1s, 2s, 4s
+                        // console.log(`Retrying in ${delay}ms...`);
+                        await new Promise(resolve => setTimeout(resolve, delay));
+                        return fetchAstronomyData(date, attempt + 1);
+                    } else {
+                        showError("Failed to fetch astronomy data after multiple retries. The external API may be unavailable or rate-limited.");
+                    }
+                }
+            }
+
+            // Initial load and event listener setup
+            dateInput.addEventListener('change', (event) => {
+                fetchAstronomyData(event.target.value);
+            });
+
+            // Fetch data for today on initial load
+            fetchAstronomyData(today);
+        });
+    </script>
+  </body>
+</html>

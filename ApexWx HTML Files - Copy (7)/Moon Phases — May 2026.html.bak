@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  </head>
+  <body>```html id="3m4wq1"
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moon Phases — May 2026</title>
+    <style>
+
+body {
+  margin: 0;
+  padding: 40px 20px;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to bottom, #0b1026, #1b274f);
+  color: white;
+  text-align: center;
+}
+
+.container {
+  max-width: 700px;
+  margin: auto;
+}
+
+h1 {
+  margin-bottom: 10px;
+  font-size: 2.2rem;
+}
+
+.subtitle {
+  color: #cccccc;
+  margin-bottom: 35px;
+  font-size: 1rem;
+}
+
+.phase-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.phase-card {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 14px;
+  padding: 25px;
+  transition: transform 0.2s ease;
+}
+
+.phase-card:hover {
+  transform: scale(1.03);
+}
+
+.phase-emoji {
+  font-size: 64px;
+  margin-bottom: 12px;
+}
+
+.phase-name {
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.phase-date {
+  font-size: 1rem;
+  color: #dddddd;
+}
+
+.current-phase {
+  border: 2px solid #ffd54f;
+  box-shadow: 0 0 15px rgba(255,213,79,0.5);
+}
+
+.footer {
+  margin-top: 40px;
+  font-size: 0.9rem;
+  color: #bbbbbb;
+}
+
+</style>
+    <div class="container">
+      <h1>🌙 Major Moon Phases</h1>
+      <div class="subtitle"> May 2026 Lunar Cycle </div>
+      <div class="phase-grid" id="moonGrid"> </div>
+      <div class="footer"> Automatically highlights the next upcoming major
+        lunar phase. </div>
+    </div>
+    <script>
+
+const moonPhases = [
+
+  {
+    name: "Last Quarter",
+    emoji: "🌗",
+    date: new Date("2026-05-08T17:10:00")
+  },
+
+  {
+    name: "New Moon",
+    emoji: "🌑",
+    date: new Date("2026-05-16T00:00:00")
+  },
+
+  {
+    name: "First Quarter",
+    emoji: "🌓",
+    date: new Date("2026-05-23T00:00:00")
+  },
+
+  {
+    name: "Full Moon",
+    emoji: "🌕",
+    date: new Date("2026-05-31T00:00:00")
+  }
+
+];
+
+function renderMoonPhases() {
+
+  const now = new Date();
+
+  let nextPhaseIndex = moonPhases.findIndex(
+    phase => phase.date > now
+  );
+
+  if (nextPhaseIndex === -1) {
+    nextPhaseIndex = moonPhases.length - 1;
+  }
+
+  const grid = document.getElementById("moonGrid");
+
+  moonPhases.forEach((phase, index) => {
+
+    const formattedDate = phase.date.toLocaleString('en-US', {
+      weekday: 'long',
+      month: 'long',
+      day: 'numeric',
+      year: 'numeric',
+      hour: 'numeric',
+      minute: '2-digit'
+    });
+
+    const card = document.createElement("div");
+
+    card.className =
+      "phase-card" +
+      (index === nextPhaseIndex ? " current-phase" : "");
+
+    card.innerHTML = `
+      <div class="phase-emoji">${phase.emoji}</div>
+
+      <div class="phase-name">
+        ${phase.name}
+      </div>
+
+      <div class="phase-date">
+        ${formattedDate}
+      </div>
+    `;
+
+    grid.appendChild(card);
+
+  });
+
+}
+
+renderMoonPhases();
+
+</script>```
+  </body>
+</html>

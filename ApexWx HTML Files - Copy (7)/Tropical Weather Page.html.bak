@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <title>Tropical Weather Page</title>
+    <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f8f8;
+      margin: 0;
+      background-image: url('https://raw.githubusercontent.com/ApexWx/ApexWx.github.io/refs/heads/master/seamless-background-simply-sky.jpg');
+      background-repeat: repeat;
+      background-size: cover;
+      background-attachment: fixed;
+    }
+    .nav {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      border-top: 1px solid #ccc;
+      border-bottom: 1px solid #ccc;
+    }
+    .nav.show { display: flex; }
+    .nav li { display: inline; }
+    .nav a {
+      display: inline-block;
+      padding: 10px;
+      text-decoration: none;
+      font-weight: bold;
+      color: black;
+    }
+    .nav a:hover {
+      text-decoration: underline;
+      color: #0077cc;
+    }
+    #navToggle {
+      font-size: 20px;
+      border: none;
+      background: none;
+      cursor: pointer;
+      margin: 10px auto;
+      display: block;
+    }
+    @media (min-width: 769px) {
+      .nav { display: flex; flex-direction: row; justify-content: center; }
+      #navToggle { display: none; }
+    }
+    .clock-table {
+      width: 90%;
+      max-width: 600px;
+      margin: 1em auto;
+      text-align: center;
+      border-collapse: collapse;
+    }
+    .clock-cell { font-weight: bold; }
+  </style>
+  </head>
+  <body>
+    <h2 style="text-align: center;">Tropical Weather Page</h2>
+    <div id="last-modified" style="text-align:center; font-size:14px; font-family:Arial, sans-serif; margin-top: -0.5em;"></div>
+    <div style="text-align: center;"> <button id="navToggle">☰ Menu</button>
+      <ul class="nav">
+        <li><a href="#main">Main Page</a></li>
+        <li><a href="#atl">Atlantic Outlook</a></li>
+        <li><a href="#sat">Atlantic Satellite</a></li>
+        <li><a href="#pac">Eastern Pacific Outlook</a></li>
+        <li><a href="#psat">Eastern Pacific Satellite</a></li>
+        <li><a href="#other">Other Areas</a></li>
+        <li><a href="#chart">Oceanic Wx Charts</a></li>
+      </ul>
+    </div>
+    <table class="clock-table">
+      <thead>
+        <tr>
+          <th>Eastern Time 12-Hour</th>
+          <th>Eastern Time 24-Hour</th>
+          <th>UTC / Z / Greenwich</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="clock-cell" id="et12">--</td>
+          <td class="clock-cell" id="et24">--</td>
+          <td class="clock-cell" id="utc">--</td>
+        </tr>
+      </tbody>
+    </table>
+    <main role="main"><br>
+      <div class="clock-wrapper"> </div>
+      <div id="tropical-alert" style="margin: 2em auto; max-width: 800px; background: #fff0f0; border: 1px solid #cc0000; border-radius: 6px; padding: 1em; font-family: Arial, sans-serif; font-size: 14px; display: none;"></div>
+      <div id="gulf-alert" style="margin: 2em auto; max-width: 800px; background: #fff8e0; border: 1px solid #cc9900; border-radius: 6px; padding: 1em; font-family: Arial, sans-serif; font-size: 14px; display: none;"></div>
+      <br>
+      <br>
+      <div class="row">
+        <div class="column" style="text-align: center; padding: 0.5em;"> <strong>2-Day
+            Tropical Atlantic Outlook</strong><a href="https://www.nhc.noaa.gov/gtwo.php?basin=atlc&amp;fdays=2"
+            title="Click for larger image"><img alt="2-Day Atlantic Outlook" src="https://www.nhc.noaa.gov/xgtwo/two_atl_2d0.png"
+              style="width: 100%; max-width: 625px; height: auto; border: 1px solid #ccc; display: block; margin: auto;"></a>
+        </div>
+        <div class="column" style=" padding: 0.5em;">
+          <div style="text-align: center;"><strong>7-Day Tropical Atlantic
+              Outlook</strong><br>
+            <strong></strong></div>
+          <strong> </strong> <strong></strong> <strong> </strong> <a href="https://www.nhc.noaa.gov/gtwo.php?basin=atlc&amp;fdays=5"
+            title="Click for larger image"><img alt="7-Day Tropical Atlantic Outlook"
+              src="https://www.nhc.noaa.gov/xgtwo/two_atl_7d0.png" style="width: 100%; max-width: 625px; height: auto; border: 1px solid #ccc; display: block; margin: auto;"></a>
+        </div>
+        <div class="column" style=" padding: 0.5em;">
+          <div style="text-align: center;"><strong>Atlantic Sea Surface
+              Temperatures</strong><strong></strong> <strong> </strong> <a href="https://www.nhc.noaa.gov/tafb/sst_loop/14_atl.png"
+              title="Click for larger image"><img alt="Atlantic Sea Surface Temperatures"
+                src="https://www.nhc.noaa.gov/tafb/sst_loop/14_atl.png" style="width: 100%; max-width: 625px; height: auto; border: 1px solid #ccc; display: block; margin: auto;"></a>
+          </div>
+        </div>
+      </div>
+      <br>
+      <br>
+      <br>
+      <div class="row">
+        <div class="column" style="text-align: center; padding: 0.5em;"> <strong><a
+              id="sat-0" name="sat"></a></strong><strong>Saharan Air Layer
+            Analysis (Sahara Dust)</strong><a href="https://cdn.star.nesdis.noaa.gov/GOES16/ABI/CONUS/GEOCOLOR/latest.jpg"
+            title="Click for larger image"><img alt="Sahara Air Layer" src="https://tropic.ssec.wisc.edu/real-time/sal/g16split/g16split.jpg"
+              style="width: 100%; max-width: 625px; height: auto; border: 1px solid #ccc; display: block; margin: auto;"></a>
+        </div>
+        <div class="column" style=" padding: 0.5em;">
+          <div style="text-align: center;"><strong>Atlantic Infrared Satellite
+              Mosaic</strong><br>
+            <a href="https://cdn.star.nesdis.noaa.gov/GOES16/ABI/SECTOR/ne/Sandwich/20211511811_GOES16-ABI-ne-Sandwich-2400x2400.jpg"
+              title="Click for larger image"> </a></div>
+          <div style="text-align: center;"><a href="https://tropic.ssec.wisc.edu/real-time/mosaicmain.php?&amp;basin=e&amp;prod=ir"
+              title="Click for larger image"><img alt="Atlantic Infrared Satellite Mosaic"
+                src="https://tropic.ssec.wisc.edu/real-time/mosaic/images/moseir.jpg"
+                style="width: 100%; max-width: 625px; height: auto; border: 1px solid #ccc; display: block; margin: auto;"></a>
+          </div>
+          <a href="https://www.weather.gov/images/car/WeatherStory.gif" title="Click for larger image"></a>
+        </div>
+        <div class="column" style=" padding: 0.5em;">
+          <div style="text-align: center;"><strong>Global Sea Surface
+              Temperatures</strong><br>
+            <strong></strong></div>
+          <strong> </strong> <a href="https://cdn.star.nesdis.noaa.gov/GOES16/ABI/CONUS/09/latest.jpg"
+            title="Click for larger image"><img alt="Global Sea Surface Temperatures"
+              src="https://www.psl.noaa.gov/map/images/sst/sst.daily.gif" style="width: 100%; max-width: 625px; height: auto; border: 1px solid #ccc; display: block; margin: auto;"></a>
+        </div>
+      </div>
+      <br>
+      <br>
+      <br>
+      <br>
+      <div class="row">
+        <div class="column" style="text-align: center; padding: 0.5em;"> <strong><a
+              id="temp" name="temp"></a></strong><strong><a id="sat-1" name="sat"></a>Atlantic
+            Infrared Satellite</strong><a href="https://cdn.star.nesdis.noaa.gov/GOES19/ABI/SECTOR/taw/Sandwich/20251561840_GOES19-ABI-taw-Sandwich-1800x1080.jpg"
+            title="Click for larger image"><img alt="US Highs Day 1" src="https://cdn.star.nesdis.noaa.gov/GOES19/ABI/SECTOR/taw/Sandwich/20251561840_GOES19-ABI-taw-Sandwich-450x270.jpg"
+              style="width: 100%; max-width: 625px; height: auto; border: 1px solid #ccc; display: block; margin: auto;"></a>
+        </div>
+        <div class="column" style="text-align: center; padding: 0.5em;"> <strong>Atlantic
+            True Color Satellite</strong><a href="https://cdn.star.nesdis.noaa.gov/GOES19/ABI/SECTOR/taw/GEOCOLOR/20251561840_GOES19-ABI-taw-GEOCOLOR-1800x1080.jpg"
+            title="Click for larger image"><img alt="Atlantic True Color Satellite"
+              src="https://cdn.star.nesdis.noaa.gov/GOES19/ABI/SECTOR/taw/GEOCOLOR/20251561840_GOES19-ABI-taw-GEOCOLOR-450x270.jpg"
+              style="width: 100%; max-width: 625px; height: auto; border: 1px solid #ccc; display: block; margin: auto;"></a>
+        </div>
+        <div class="column" style="text-align: center; padding: 0.5em;"> <strong>24-Hour
+            Heat Index</strong><a href="Atlantic%20Mid-level%20Water%20Vapor" title="Click for larger image"><img
+              alt="Atlantic Mid-level Water Vapor" src="https://cdn.star.nesdis.noaa.gov/GOES19/ABI/SECTOR/taw/09/20251561840_GOES19-ABI-taw-09-450x270.jpg"
+              style="width: 100%; max-width: 625px; height: auto; border: 1px solid #ccc; display: block; margin: auto;"></a>
+        </div>
+      </div>
+      <br>
+      <br>
+      <br>
+      <br>
+      <div class="row">
+        <div class="column" style="text-align: center; padding: 0.5em;"> <strong>US
+            Atlantic Coast Infrared Satellite</strong><a href="https://www.weather.gov/images/erh/gis/CONUS_AptMin.png"
+            title="Click for larger image"><img alt="US Atlantic Coast Infrared"
+              src="https://cdn.star.nesdis.noaa.gov/GOES19/ABI/SECTOR/eus/Sandwich/20251561901_GOES19-ABI-eus-Sandwich-500x500.jpg"
+              style="width: 100%; max-width: 625px; height: auto; border: 1px solid #ccc; display: block; margin: auto;"></a>
+        </div>
+        <div class="column" style="text-align: center; padding: 0.5em;"> <strong>US
+            Atlantic Coast True Color Satellite</strong><a href="https://cdn.star.nesdis.noaa.gov/GOES19/ABI/SECTOR/eus/GEOCOLOR/20251561901_GOES19-ABI-eus-GEOCOLOR-1000x1000.jpg"
+            title="Click for larger image"><img alt="US Atlantic Coast True Color Satellite"
+              src="https://cdn.star.nesdis.noaa.gov/GOES19/ABI/SECTOR/eus/GEOCOLOR/20251561901_GOES19-ABI-eus-GEOCOLOR-500x500.jpg"
+              style="width: 100%; max-width: 625px; height: auto; border: 1px solid #ccc; display: block; margin: auto;"></a>
+        </div>
+        <div class="column" style="text-align: center; padding: 0.5em;"> <strong>US
+            Atlantic Coast Mid-level Water Vapor Satellite</strong><a href="https://cdn.star.nesdis.noaa.gov/GOES19/ABI/SECTOR/eus/09/20251561901_GOES19-ABI-eus-09-1000x1000.jpg"
+            title="Click for larger image"><img alt="US Atlantic Coast Midlevel Water Vapor Satellite"
+              src="https://cdn.star.nesdis.noaa.gov/GOES19/ABI/SECTOR/eus/09/20251561901_GOES19-ABI-eus-09-500x500.jpg"
+              style="width: 100%; max-width: 625px; height: auto; border: 1px solid #ccc; display: block; margin: auto;"></a>
+        </div>
+      </div>
+      <br>
+      <br>
+      <br>
+      <br>
+      <div class="row">
+        <div class="column" style="text-align: center; padding: 0.5em;"> <strong><a
+              id="precip" name="precip"></a>Gulf of Mexico Infrared Satellite</strong><a
+            href="https://cdn.star.nesdis.noaa.gov/GOES19/ABI/SECTOR/ga/Sandwich/20251561906_GOES19-ABI-ga-Sandwich-1000x1000.jpg"
+            title="Click for larger image"><img alt="Gulf of Mexico Infrared Satellite"
+              src="https://cdn.star.nesdis.noaa.gov/GOES19/ABI/SECTOR/ga/Sandwich/20251561906_GOES19-ABI-ga-Sandwich-500x500.jpg"
+              style="width: 100%; max-width: 625px; height: auto; border: 1px solid #ccc; display: block; margin: auto;"></a>
+        </div>
+        <div class="column" style="text-align: center; padding: 0.5em;"> <strong>Gulf
+            of Mexico True Color Satellite</strong><a href="https://cdn.star.nesdis.noaa.gov/GOES19/ABI/SECTOR/ga/GEOCOLOR/20251561906_GOES19-ABI-ga-GEOCOLOR-1000x1000.jpg"
+            title="Click for larger image"><img alt="Gulf of Mexico True Color Satellite"
+              src="https://cdn.star.nesdis.noaa.gov/GOES19/ABI/SECTOR/ga/GEOCOLOR/20251561906_GOES19-ABI-ga-GEOCOLOR-500x500.jpg"
+              style="width: 100%; max-width: 625px; height: auto; border: 1px solid #ccc; display: block; margin: auto;"></a>
+        </div>
+        <div class="column" style="text-align: center; padding: 0.5em;"> <strong>Gulf
+            of Mexico Mid-level Water Vapor Satellite</strong><a href="https://cdn.star.nesdis.noaa.gov/GOES19/ABI/SECTOR/ga/09/20251561906_GOES19-ABI-ga-09-1000x1000.jpg"
+            title="Click for larger image"><img alt="Gulf of Mexico Mid-level Water Vapor Satellite"
+              src="https://cdn.star.nesdis.noaa.gov/GOES19/ABI/SECTOR/ga/09/20251561906_GOES19-ABI-ga-09-500x500.jpg"
+              style="width: 100%; max-width: 625px; height: auto; border: 1px solid #ccc; display: block; margin: auto;"></a>
+          <br>
+          <a href="https://www.weather.gov/images/erh/gis/CAR_QPF24.png" title="Click for larger image"></a>
+        </div>
+      </div>
+      <br>
+      <br>
+      <br>
+      <br>
+      <div class="row">
+        <div class="column" style="text-align: center; padding: 0.5em;"> <strong>Caribbean
+            Infrared Satellite</strong><a href="https://cdn.star.nesdis.noaa.gov/GOES16/ABI/SECTOR/car/Sandwich/latest.jpg"
+            title="Click for larger image"><img alt="Caribbean IR Sat" src="https://cdn.star.nesdis.noaa.gov/GOES19/ABI/SECTOR/car/Sandwich/20251561900_GOES19-ABI-car-Sandwich-500x500.jpg"
+              style="width: 100%; max-width: 625px; height: auto; border: 1px solid #ccc; display: block; margin: auto;"></a><a
+            href="https://www.weather.gov/images/erh/gis/CONUS_Ice.png" title="Click for larger image"></a>
+        </div>
+        <div class="column" style=" padding: 0.5em;">
+          <div style="text-align: center;"><strong>Caribbean True Color
+              Satellite<br>
+            </strong></div>
+          <a href="https://cdn.star.nesdis.noaa.gov/GOES19/ABI/SECTOR/car/GEOCOLOR/20251561930_GOES19-ABI-car-GEOCOLOR-1000x1000.jpg"
+            title="Click for larger image"><img alt="Caribbean True Color Satellite"
+              src="https://cdn.star.nesdis.noaa.gov/GOES19/ABI/SECTOR/car/GEOCOLOR/20251561930_GOES19-ABI-car-GEOCOLOR-500x500.jpg"
+              style="width: 100%; max-width: 625px; height: auto; border: 1px solid #ccc; display: block; margin: auto;"></a>
+        </div>
+        <div class="column" style=" padding: 0.5em;">
+          <div style="text-align: center;"><strong>Caribbean Mid-level Water
+              Vapor Satellite</strong><a href="https://cdn.star.nesdis.noaa.gov/GOES19/ABI/SECTOR/car/09/20251561900_GOES19-ABI-car-09-1000x1000.jpg"
+              title="Click for larger image"><img alt="Caribbean Mid-level Water Vapor Satellite"
+                src="https://cdn.star.nesdis.noaa.gov/GOES19/ABI/SECTOR/car/09/20251561900_GOES19-ABI-car-09-500x500.jpg"
+                style="width: 100%; max-width: 625px; height: auto; border: 1px solid #ccc; display: block; margin: auto;"></a>
+          </div>
+        </div>
+      </div>
+      <br>
+      <br>
+      <br>
+      <br>
+      <div class="row">
+        <div class="column" style="text-align: center; padding: 0.5em;"> <strong>Eastern
+            Pacific 2-Day Tropical Weather Outlook</strong><a href="https://www.nhc.noaa.gov/gtwo.php?basin=epac&amp;fdays=2"
+            title="Click for larger image"><img alt=" Eastern Pacific 2-Day OutlookEast Pacific 2-Day Tropical Outlook "
+              src="https://www.nhc.noaa.gov/xgtwo/two_pac_2d0.png" style="width: 100%; max-width: 625px; height: auto; border: 1px solid #ccc; display: block; margin: auto;"></a>
+        </div>
+        <div class="column" style=" padding: 0.5em;">
+          <div style="text-align: center;"><strong>Pacific Infrared Satellite
+              Mosaic<br>
+            </strong></div>
+          <a href="https://tropic.ssec.wisc.edu/real-time/mosaicmain.php?&amp;basin=w&amp;prod=ir"
+            title="Click for larger image"><img alt=" Pacific Infrared MosaicSSEC Pacific IR Mosaic "
+              src="https://tropic.ssec.wisc.edu/real-time/mosaic/images/moswir.jpg"
+              style="width: 100%; max-width: 625px; height: auto; border: 1px solid #ccc; display: block; margin: auto;"></a>
+        </div>
+        <div class="column" style=" padding: 0.5em;">
+          <div style="text-align: center;"><strong>Eastern Pacific 5-Day
+              Tropical Weather Outlook<br>
+            </strong></div>
+          <a href="https://www.nhc.noaa.gov/gtwo.php?basin=epac&amp;fdays=5" title="Click for larger image"><img
+              alt="Eastern Pacific 5-Day Outlook" src="https://www.nhc.noaa.gov/xgtwo/two_pac_5d0.png"
+              style="width: 100%; max-width: 625px; height: auto; border: 1px solid #ccc; display: block; margin: auto;"></a>
+        </div>
+      </div>
+      <br>
+      <br>
+      <br>
+      <div class="row">
+        <div class="column" style="text-align: center; padding: 0.5em;"> <strong><a
+              id="severe" name="severe"></a>Eastern East Pacific Infrared
+            Satellite</strong><a href="https://cdn.star.nesdis.noaa.gov/GOES19/ABI/SECTOR/eep/Sandwich/20251561900_GOES19-ABI-eep-Sandwich-1800x1080.jpg"
+            title="Click for larger image"><img alt="Eastern East Pacific Infrared Satellite"
+              src="https://cdn.star.nesdis.noaa.gov/GOES19/ABI/SECTOR/eep/Sandwich/20251561900_GOES19-ABI-eep-Sandwich-450x270.jpg"
+              style="width: 100%; max-width: 625px; height: auto; border: 1px solid #ccc; display: block; margin: auto;"></a>
+        </div>
+        <div class="column" style=" padding: 0.5em;">
+          <div style="text-align: center;"><strong>Eastern East Pacific True
+              Color Satellite<br>
+            </strong></div>
+          <a href="https://cdn.star.nesdis.noaa.gov/GOES19/ABI/SECTOR/eep/GEOCOLOR/20251561910_GOES19-ABI-eep-GEOCOLOR-1800x1080.jpg"
+            title="Click for larger image"><img alt="Eastern East Pacific True Color Satellite"
+              src="https://cdn.star.nesdis.noaa.gov/GOES19/ABI/SECTOR/eep/GEOCOLOR/20251561910_GOES19-ABI-eep-GEOCOLOR-450x270.jpg"
+              style="width: 100%; max-width: 625px; height: auto; border: 1px solid #ccc; display: block; margin: auto;"></a>
+        </div>
+        <div class="column" style=" padding: 0.5em;">
+          <div style="text-align: center;"><strong>Day 3 Severe Thunderstorm
+              Outlook</strong></div>
+          <a href="https://cdn.star.nesdis.noaa.gov/GOES19/ABI/SECTOR/eep/09/20251561910_GOES19-ABI-eep-09-900x540.jpg"
+            title="Click for larger image"><img alt="Eastern East Pacific Mid-level Water Vapor Satellite"
+              src="https://cdn.star.nesdis.noaa.gov/GOES19/ABI/SECTOR/eep/09/20251561910_GOES19-ABI-eep-09-450x270.jpg"
+              style="width: 100%; max-width: 625px; height: auto; border: 1px solid #ccc; display: block; margin: auto;"></a>
+        </div>
+      </div>
+      <br>
+      <br>
+      <br>
+      <div class="row">
+        <div class="column" style="text-align: center; padding: 0.5em;"> <strong><a
+              id="river" name="river"></a></strong><strong>Central Pacific 2-Day
+            Tropical Outlook</strong><a href="https://www.nhc.noaa.gov/gtwo.php?basin=cpac&amp;fdays=2"
+            title="Click for more information"><img alt="Central Pacific 2-Day Outlook"
+              src="https://www.nhc.noaa.gov/xgtwo/two_cpac_2d0.png" style="width: 100%; max-width: 625px; height: auto; border: 1px solid #ccc; display: block; margin: auto;"></a>
+        </div>
+        <div class="column" style=" padding: 0.5em;">
+          <div style="text-align: center;"><strong>Central Pacific 5-Day
+              Tropical Outlook<br>
+            </strong></div>
+          <a href="https://www.nhc.noaa.gov/gtwo.php?basin=cpac&amp;fdays=5" title="Click for larger image"><img
+              alt="Central Pacific 5-Day Outlook" src="https://www.nhc.noaa.gov/xgtwo/two_cpac_5d0.png"
+              style="width: 100%; max-width: 625px; height: auto; border: 1px solid #ccc; display: block; margin: auto;"></a>
+        </div>
+        <div class="column" style=" padding: 0.5em;">
+          <div style="text-align: center;"><strong>Tropical Weather Outlook
+              Other Regions<br>
+            </strong></div>
+          <a href="https://www.metoc.navy.mil/jtwc/jtwc.html" title="Click for more information"><img
+              alt="NW Pacific Ocean, South Pacific Ocean, &amp; Indian Ocean" src="https://www.metoc.navy.mil/jtwc/products/abpwsair.jpg"
+              style="width: 100%; max-width: 625px; height: auto; border: 1px solid #ccc; display: block; margin: auto;"></a><br>
+        </div>
+      </div>
+      <br>
+      <br>
+      <br>
+      <br>
+      <div class="row">
+        <div class="column" style="text-align: center; padding: 0.5em;"> <strong><a
+              id="river" name="river"></a>Atlantic Surface Weather Chart</strong><a
+            href="https://ocean.weather.gov/A_sfc_full_ocean_color.png" title="Click for larger image"><img
+              alt="Atlantic Surface Weather Chart" src="https://ocean.weather.gov/A_sfc_full_ocean_color.png"
+              style="width: 100%; max-width: 625px; height: auto; border: 1px solid #ccc; display: block; margin: auto;"></a>
+        </div>
+        <div class="column" style=" padding: 0.5em;">
+          <div style="text-align: center;"><strong>Alaska / Arctic Surface
+              Weather Chart</strong><strong> </strong></div>
+          <a href="https://ocean.weather.gov/shtml/arctic/UA_LATEST.gif" title="Click for larger image"><img
+              alt="Alaska / Arctic Surface Weather Chart" src="https://ocean.weather.gov/shtml/arctic/UA_LATEST.gif"
+              style="width: 100%; max-width: 625px; height: auto; border: 1px solid #ccc; display: block; margin: auto;"></a>
+        </div>
+        <div class="column" style=" padding: 0.5em;">
+          <div style="text-align: center;"><strong>Pacific Surface Weather Chart</strong><strong>
+            </strong></div>
+          <a href="https://ocean.weather.gov/P_sfc_full_ocean_color.png" title="Click for larger image"><img
+              alt="Pacific Surface Weather Chart" src="https://ocean.weather.gov/P_sfc_full_ocean_color.png"
+              style="width: 100%; max-width: 625px; height: auto; border: 1px solid #ccc; display: block; margin: auto;"></a><br>
+        </div>
+      </div>
+      <strong></strong>
+      <div class="column" style=" padding: 0.5em;"><strong> </strong> <br>
+        <div style="text-align: center;"><br>
+        </div>
+        <br>
+        <br>
+        <script>
+document.addEventListener("DOMContentLoaded", function () {
+  const nav = document.querySelector(".nav");
+  const toggle = document.getElementById("navToggle");
+  if (toggle && nav) {
+    toggle.addEventListener("click", () => {
+      nav.classList.toggle("show");
+    });
+  }
+});
+</script><a class="top-button" href="#top" title="Back to top">⬆️</a>
+        <script>
+function updateClocks() {
+  const now = new Date();
+
+  const et12 = now.toLocaleTimeString('en-US', {
+    hour: 'numeric', minute: '2-digit', hour12: true,
+    timeZone: 'America/New_York'
+  });
+
+  const et24 = now.toLocaleTimeString('en-GB', {
+    hour: '2-digit', minute: '2-digit', hour12: false,
+    timeZone: 'America/New_York'
+  });
+
+  const utc = now.toLocaleTimeString('en-GB', {
+    hour: '2-digit', minute: '2-digit', hour12: false,
+    timeZone: 'UTC'
+  });
+
+  document.getElementById('et12').textContent = et12;
+  document.getElementById('et24').textContent = et24;
+  document.getElementById('utc').textContent = utc;
+}
+setInterval(updateClocks, 1000);
+updateClocks();
+</script></div> </main>
+    <script>
+fetch("https://api.weather.gov/alerts/active?area=AT")
+  .then(response => response.json())
+  .then(data => {
+    if (data.features && data.features.length > 0) {
+      const alerts = data.features.map(f => f.properties).filter(p => p.event.includes("Tropical"));
+      if (alerts.length > 0) {
+        const alertBox = document.getElementById("tropical-alert");
+        alertBox.style.display = "block";
+        const dismissBtn = document.createElement("button");
+        dismissBtn.textContent = "Dismiss";
+        dismissBtn.style.cssText = "float:right;background:#cc0000;color:white;border:none;padding:0.3em 0.7em;border-radius:4px;cursor:pointer;";
+        dismissBtn.onclick = () => alertBox.remove();
+
+        const content = document.createElement("div");
+        content.innerHTML = "<strong>Active Tropical Alerts:</strong><br>" +
+                            alerts.map(a => a.headline).join("<br><br>");
+        alertBox.appendChild(dismissBtn);
+        alertBox.appendChild(content);
+      }
+    }
+  })
+  .catch(err => console.log("Alert fetch failed:", err));
+</script><script>
+fetch("https://api.weather.gov/alerts/active?area=FL,AL,MS,LA,TX")
+  .then(res => res.json())
+  .then(data => {
+    const alerts = data.features
+      .map(f => f.properties)
+      .filter(p => /Gulf|Marine|Tropical|Storm|Hurricane/i.test(p.event));
+
+    if (alerts.length > 0) {
+      const alertBox = document.getElementById("gulf-alert");
+      alertBox.style.display = "block";
+
+      const dismissBtn = document.createElement("button");
+      dismissBtn.textContent = "Dismiss";
+      dismissBtn.style.cssText = "float:right;background:#cc0000;color:white;border:none;padding:0.3em 0.7em;border-radius:4px;cursor:pointer;";
+      dismissBtn.onclick = () => alertBox.remove();
+
+      const content = document.createElement("div");
+      content.innerHTML = "<strong>Active Gulf of Mexico Alerts:</strong><br>" +
+        alerts.map(a => a.headline).join("<br><br>");
+
+      alertBox.appendChild(dismissBtn);
+      alertBox.appendChild(content);
+    }
+  })
+  .catch(err => console.error("Gulf alert fetch failed", err));
+</script><div id="last-updated" style="text-align:center; font-size:12px; font-family:Arial, sans-serif;"></div>
+    <script>
+document.addEventListener("DOMContentLoaded", function () {
+  const modified = new Date(document.lastModified);
+  const options = {
+    year: 'numeric', month: 'long', day: 'numeric',
+    hour: '2-digit', minute: '2-digit',
+    timeZone: 'America/New_York',
+    timeZoneName: 'short'
+  };
+  const formatted = modified.toLocaleDateString('en-US', options);
+  document.getElementById("last-updated").textContent = "Page last modified: " + formatted;
+});
+</script> <script>
+function updateClocks() {
+  const nowUTC = new Date();
+  const nowET = new Date(nowUTC.toLocaleString("en-US", { timeZone: "America/New_York" }));
+
+  const pad = n => n.toString().padStart(2, '0');
+  const h12 = nowET.getHours() % 12 || 12;
+  const ampm = nowET.getHours() >= 12 ? 'PM' : 'AM';
+
+  document.getElementById("et12").textContent = `${pad(h12)}:${pad(nowET.getMinutes())} ${ampm}`;
+  document.getElementById("et24").textContent = `${pad(nowET.getHours())}:${pad(nowET.getMinutes())}`;
+  document.getElementById("utc").textContent = `${pad(nowUTC.getUTCHours())}:${pad(nowUTC.getUTCMinutes())} UTC`;
+}
+
+setInterval(updateClocks, 1000);
+updateClocks();
+</script> <script>
+function updateClocks() {
+  const nowUTC = new Date();
+  const nowET = new Date(nowUTC.toLocaleString("en-US", { timeZone: "America/New_York" }));
+  const pad = n => n.toString().padStart(2, '0');
+  const h12 = nowET.getHours() % 12 || 12;
+  const ampm = nowET.getHours() >= 12 ? 'PM' : 'AM';
+  document.getElementById("et12").textContent = `${pad(h12)}:${pad(nowET.getMinutes())} ${ampm}`;
+  document.getElementById("et24").textContent = `${pad(nowET.getHours())}:${pad(nowET.getMinutes())}`;
+  document.getElementById("utc").textContent = `${pad(nowUTC.getUTCHours())}:${pad(nowUTC.getUTCMinutes())} UTC`;
+}
+document.addEventListener("DOMContentLoaded", function () {
+  const nav = document.querySelector(".nav");
+  const toggle = document.getElementById("navToggle");
+  if (toggle && nav) {
+    toggle.addEventListener("click", () => {
+      nav.classList.toggle("show");
+    });
+  }
+  const modElem = document.getElementById("last-modified");
+  if (modElem) {
+    const mod = new Date(document.lastModified);
+    const options = {
+      year: 'numeric', month: 'long', day: 'numeric',
+      hour: '2-digit', minute: '2-digit',
+      timeZone: 'America/New_York',
+      timeZoneName: 'short'
+    };
+    modElem.textContent = "Page last modified: " + mod.toLocaleDateString("en-US", options);
+  }
+  updateClocks();
+  setInterval(updateClocks, 1000);
+});
+</script> </body>
+</html>

@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Space Weather Dashboard</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #0d1117; /* Dark background */
+            color: #c9d1d9; /* Light text */
+        }
+        .dashboard-header {
+            background-color: #161b22;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 2px solid #30363d;
+        }
+        .dashboard-container {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 20px;
+            padding: 20px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        .data-panel, .chart-panel {
+            background-color: #161b22;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .data-panel h3, .chart-panel h3 {
+            color: #58a6ff;
+            margin-top: 0;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #30363d;
+        }
+        .metric-group {
+            margin-bottom: 15px;
+            padding: 10px 0;
+            border-bottom: 1px dashed #30363d;
+        }
+        .metric-group:last-child {
+            border-bottom: none;
+        }
+        .metric-label {
+            font-weight: bold;
+            color: #c9d1d9;
+            display: block;
+            margin-bottom: 3px;
+        }
+        .metric-value {
+            font-size: 1.5em;
+            color: #ffffff;
+        }
+        .alert-box {
+            grid-column: 1 / 3; /* Span across both columns */
+            padding: 15px;
+            border-radius: 5px;
+            text-align: center;
+            font-weight: bold;
+            margin-bottom: 20px;
+            background-color: #490200;
+            color: #ffb4a6;
+            border: 1px solid #8e0000;
+        }
+        .chart-placeholder {
+            min-height: 300px;
+            background-color: #0d1117;
+            border: 1px dashed #30363d;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            color: #58a6ff;
+            text-align: center;
+            padding: 10px;
+        }
+    </style>
+  </head>
+  <body>
+    <div class="dashboard-header">
+      <h1>🌌 Space Weather Monitoring</h1>
+      <p id="last-updated">Last Updated: Loading...</p>
+    </div>
+    <div class="dashboard-container">
+      <div id="alerts-container" class="alert-box" style="display: none;"> </div>
+      <div class="data-panel">
+        <h3>Current Conditions (Real-Time)</h3>
+        <div id="solar-wind-speed" class="metric-group"> <span class="metric-label">Solar
+            Wind Speed (Kp)</span> <span class="metric-value">... km/s</span> </div>
+        <div id="solar-wind-density" class="metric-group"> <span class="metric-label">Solar
+            Wind Density</span> <span class="metric-value">... p/cc</span> </div>
+        <div id="imf-bt" class="metric-group"> <span class="metric-label">Interplanetary
+            Mag Field (Bt)</span> <span class="metric-value">... nT</span> </div>
+        <div id="imf-bz" class="metric-group"> <span class="metric-label">IMF
+            Bz Component</span> <span class="metric-value">... nT</span> </div>
+        <div id="kp-index" class="metric-group"> <span class="metric-label">Geomagnetic
+            Kp Index</span> <span class="metric-value">...</span> </div>
+      </div>
+      <div class="chart-panel">
+        <h3>Graphical Trends (Last 24 Hours)</h3>
+        <div class="chart-section">
+          <h4>Solar Wind Speed History</h4>
+          <div id="chart-speed" class="chart-placeholder"> Placeholder for Speed
+            Chart (e.g., using Chart.js or D3.js) </div>
+        </div>
+        <div class="chart-section">
+          <h4>X-Ray Flux (Solar Flares)</h4>
+          <div id="chart-xray" class="chart-placeholder"> Placeholder for X-Ray
+            Flux Chart (Measures solar flare strength) </div>
+        </div>
+      </div>
+    </div>
+    <script>
+        // Function to simulate fetching a single data point
+        async function fetchSpaceWeatherMetric(apiEndpoint) {
+            // NOTE: In a real application, replace this switch statement with actual 'fetch' calls
+            // to a live Space Weather API (like NOAA SWPC or NASA DONKI).
+            let data;
+            switch(apiEndpoint) {
+                case 'solar-wind-speed':
+                    data = { value: (400 + Math.random() * 200).toFixed(0), unit: 'km/s' }; // 400-600 km/s
+                    break;
+                case 'solar-wind-density':
+                    data = { value: (3 + Math.random() * 7).toFixed(1), unit: 'p/cc' }; // 3-10 p/cc
+                    break;
+                case 'imf-bt':
+                    data = { value: (5 + Math.random() * 5).toFixed(1), unit: 'nT' }; // 5-10 nT
+                    break;
+                case 'imf-bz':
+                    // Bz is critical. Can be positive or negative.
+                    data = { value: (Math.random() * 6 - 3).toFixed(1), unit: 'nT' }; // -3 to +3 nT
+                    break;
+                case 'kp-index':
+                    // Kp index: 0 to 9
+                    data = { value: Math.floor(Math.random() * 5), unit: '' }; 
+                    break;
+                case 'alerts':
+                    // Simulate an occasional alert
+                    data = Math.random() > 0.8 
+                        ? { active: true, message: 'Minor G1 Geomagnetic Storm Watch in effect!' }
+                        : { active: false, message: 'All systems nominal.' };
+                    break;
+                default:
+                    data = { value: 'N/A', unit: '' };
+            }
+            return data;
+        }
+
+        // Function to update a single metric on the dashboard
+        function updateMetric(id, value, unit) {
+            const element = document.getElementById(id);
+            if (element) {
+                element.querySelector('.metric-value').textContent = `${value} ${unit}`;
+            }
+        }
+
+        // Main function to fetch all data and update the dashboard
+        async function updateDashboard() {
+            try {
+                // --- Fetch Numerical Data ---
+                const speed = await fetchSpaceWeatherMetric('solar-wind-speed');
+                updateMetric('solar-wind-speed', speed.value, speed.unit);
+
+                const density = await fetchSpaceWeatherMetric('solar-wind-density');
+                updateMetric('solar-wind-density', density.value, density.unit);
+
+                const bt = await fetchSpaceWeatherMetric('imf-bt');
+                updateMetric('imf-bt', bt.value, bt.unit);
+                
+                const bz = await fetchSpaceWeatherMetric('imf-bz');
+                updateMetric('imf-bz', bz.value, bz.unit);
+                
+                const kp = await fetchSpaceWeatherMetric('kp-index');
+                updateMetric('kp-index', kp.value, kp.unit);
+                
+                // --- Fetch Alerts ---
+                const alerts = await fetchSpaceWeatherMetric('alerts');
+                const alertBox = document.getElementById('alerts-container');
+                
+                if (alerts.active) {
+                    alertBox.style.display = 'block';
+                    alertBox.textContent = `🚨 SPACE WEATHER ALERT: ${alerts.message}`;
+                    alertBox.style.backgroundColor = '#6d1010'; // Red background for active alert
+                } else {
+                    alertBox.style.display = 'block'; // Always show status
+                    alertBox.textContent = `✅ NO ACTIVE ALERTS: ${alerts.message}`;
+                    alertBox.style.backgroundColor = '#103010'; // Green background for nominal
+                }
+
+                // --- Update Last Updated Time ---
+                document.getElementById('last-updated').textContent = 
+                    `Last Updated: ${new Date().toLocaleTimeString()} UTC`;
+                    
+                // (Chart updates would go here if a library like Chart.js were included)
+
+            } catch (error) {
+                console.error('Error fetching space weather data:', error);
+                document.getElementById('last-updated').textContent = 'Last Updated: Data Fetch Failed';
+                document.getElementById('alerts-container').style.display = 'block';
+                document.getElementById('alerts-container').textContent = '❌ ERROR: Failed to load data. Check console.';
+                document.getElementById('alerts-container').style.backgroundColor = '#6d1010';
+            }
+        }
+
+        // Initial load and set up auto-refresh (e.g., every 60 seconds)
+        document.addEventListener('DOMContentLoaded', () => {
+            updateDashboard();
+            setInterval(updateDashboard, 60000); // Refresh every 60 seconds
+        });
+    </script>
+  </body>
+</html>

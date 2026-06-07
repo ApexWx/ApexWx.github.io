@@ -1,0 +1,27 @@
+/* Make images responsive */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Responsive side-by-side columns */
+@media (max-width: 768px) {
+  #tswothersidecol, #tswsidecol {
+    float: none !important;
+    width: 100% !important;
+    display: block;
+  }
+}
+
+/* Responsive iframe (time and date clocks) */
+iframe {
+  max-width: 100%;
+}
+
+/* Ensure text blocks wrap on small screens */
+div, span, p {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+/*Add to external sytle sheet, if needed */

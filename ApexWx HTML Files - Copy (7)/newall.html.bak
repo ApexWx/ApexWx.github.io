@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>North East Wall</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+
+/* ---------- PAGE ---------- */
+body{
+    margin:0;
+    font-family:Arial, sans-serif;
+    background:url('https://github.com/ApexWx/ApexWx.github.io/blob/master/seamless-background-simply-sky.jpg?raw=true') repeat;
+}
+
+/* ---------- CONTAINER ---------- */
+.container{
+    max-width:1300px;
+    margin:auto;
+    padding:10px;
+}
+
+/* ---------- TOP BAR ---------- */
+.topbar{
+    position:sticky;
+    top:0;
+    z-index:999;
+    background:rgba(255,255,255,0.85);
+    padding:10px;
+    border-radius:8px;
+    margin-bottom:10px;
+    text-align:center;
+}
+
+.topbar a{
+    margin:4px;
+    padding:6px 10px;
+    background:rgba(255,255,255,0.8);
+    border-radius:6px;
+    text-decoration:none;
+    color:black;
+    font-weight:bold;
+}
+
+/* ---------- SEARCH ---------- */
+.searchbox{
+    width:100%;
+    padding:8px;
+    margin-bottom:10px;
+    border-radius:6px;
+    border:none;
+}
+
+/* ---------- SECTION ---------- */
+.section{
+    background:rgba(255,255,255,0.55);
+    border-radius:8px;
+    margin-bottom:12px;
+    overflow:hidden;
+}
+
+.section-header{
+    padding:10px;
+    font-weight:bold;
+    font-size:18px;
+    cursor:pointer;
+    background:rgba(255,255,255,0.75);
+}
+
+.section-content{
+    display:none;
+    padding:10px;
+}
+
+/* ---------- GRID ---------- */
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(300px,1fr));
+    gap:10px;
+}
+
+.card{
+    text-align:center;
+    font-weight:bold;
+}
+
+/* ---------- IMAGES ---------- */
+img{
+    width:100%;
+    max-width:600px;
+    border-radius:6px;
+    cursor:zoom-in;
+    opacity:0;
+    transition:opacity 0.4s ease;
+}
+
+img.loaded{
+    opacity:1;
+}
+
+/* ---------- TIMESTAMP ---------- */
+.timestamp{
+    font-size:12px;
+    margin-top:4px;
+}
+
+/* ---------- LIGHTBOX ---------- */
+#lightbox{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.9);
+    display:none;
+    justify-content:center;
+    align-items:center;
+    z-index:9999;
+}
+
+#lightbox img{
+    max-width:95%;
+    max-height:95%;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="topbar">
+<a href="https://apexwx.github.io/">← Main Page</a>
+</div>
+
+<input class="searchbox" placeholder="Filter maps (e.g. radar, snow, temp)...">
+
+<!-- ================= SECTIONS ================= -->
+
+<div class="section">
+<div class="section-header">Satellite</div>
+<div class="section-content">
+<div class="grid">
+
+<div class="card" data-tags="satellite visible">
+Visible
+<img loading="lazy" src="https://cdn.star.nesdis.noaa.gov/GOES16/ABI/SECTOR/ne/02/600x600.jpg">
+<div class="timestamp"></div>
+</div>
+
+<div class="card" data-tags="satellite geocolor">
+GeoColor
+<img loading="lazy" src="https://cdn.star.nesdis.noaa.gov/GOES16/ABI/SECTOR/ne/GEOCOLOR/600x600.jpg">
+<div class="timestamp"></div>
+</div>
+
+<div class="card" data-tags="satellite vapor">
+Water Vapor
+<img loading="lazy" src="https://cdn.star.nesdis.noaa.gov/GOES16/ABI/SECTOR/ne/09/600x600.jpg">
+<div class="timestamp"></div>
+</div>
+
+<div class="card" data-tags="satellite infrared">
+Infrared
+<img loading="lazy" src="https://cdn.star.nesdis.noaa.gov/GOES16/ABI/SECTOR/ne/Sandwich/600x600.jpg">
+<div class="timestamp"></div>
+</div>
+
+</div>
+</div>
+</div>
+
+<div class="section">
+<div class="section-header">Radar</div>
+<div class="section-content">
+<div class="grid">
+
+<div class="card" data-tags="radar northeast">
+NE Radar
+<img loading="lazy" src="http://images.intellicast.com/WxImages/RadarLoop/bgm_None_anim.gif">
+<div class="timestamp"></div>
+</div>
+
+<div class="card" data-tags="radar midatlantic">
+Mid-Atlantic Radar
+<img loading="lazy" src="http://images.intellicast.com/WxImages/RadarLoop/fcx_None_anim.gif">
+<div class="timestamp"></div>
+</div>
+
+</div>
+</div>
+</div>
+
+<div class="section">
+<div class="section-header">Surface</div>
+<div class="section-content">
+<div class="grid">
+
+<div class="card" data-tags="temp temperature">
+Temperature
+<img loading="lazy" src="http://coolwx.com/analysis/surface/current/temp.ne-large.png">
+<div class="timestamp"></div>
+</div>
+
+<div class="card" data-tags="wind">
+Wind
+<img loading="lazy" src="http://coolwx.com/analysis/surface/current/stream.ne-large.png">
+<div class="timestamp"></div>
+</div>
+
+<div class="card" data-tags="dewpoint">
+Dewpoint
+<img loading="lazy" src="http://coolwx.com/analysis/surface/current/dewp.ne-large.png">
+<div class="timestamp"></div>
+</div>
+
+<div class="card" data-tags="humidity">
+Humidity
+<img loading="lazy" src="http://coolwx.com/analysis/surface/current/rh.ne-large.png">
+<div class="timestamp"></div>
+</div>
+
+</div>
+</div>
+</div>
+
+<!-- ================= LIGHTBOX ================= -->
+<div id="lightbox">
+<img id="lightbox-img">
+</div>
+
+</div>
+
+<script>
+
+/* ---------- ACCORDION ---------- */
+document.querySelectorAll(".section-header").forEach(h=>{
+    h.onclick = ()=>{
+        const c = h.nextElementSibling;
+        c.style.display = c.style.display==="block" ? "none":"block";
+    };
+});
+
+/* ---------- IMAGE FADE-IN ---------- */
+document.querySelectorAll("img").forEach(img=>{
+    img.onload = ()=> img.classList.add("loaded");
+});
+
+/* ---------- LIGHTBOX ---------- */
+const lightbox = document.getElementById("lightbox");
+const lightboxImg = document.getElementById("lightbox-img");
+
+document.querySelectorAll("img").forEach(img=>{
+    img.onclick = function(){
+        lightbox.style.display="flex";
+        lightboxImg.src=this.src;
+    }
+});
+lightbox.onclick = ()=> lightbox.style.display="none";
+
+/* ---------- SEARCH FILTER ---------- */
+document.querySelector(".searchbox").addEventListener("input", function(){
+    let val = this.value.toLowerCase();
+    document.querySelectorAll(".card").forEach(card=>{
+        let tags = card.dataset.tags || "";
+        card.style.display = tags.includes(val) ? "block":"none";
+    });
+});
+
+/* ---------- TIMESTAMPS ---------- */
+function updateTimestamps(){
+    let now = new Date().toLocaleTimeString();
+    document.querySelectorAll(".timestamp").forEach(t=>{
+        t.textContent = "Updated: " + now;
+    });
+}
+updateTimestamps();
+
+/* ---------- AUTO REFRESH ---------- */
+setInterval(()=>{
+    document.querySelectorAll("img").forEach(img=>{
+        let src = img.src.split("?")[0];
+        img.src = src + "?t=" + new Date().getTime();
+    });
+    updateTimestamps();
+},300000);
+
+</script>
+
+</body>
+</html>

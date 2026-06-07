@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <!-- ================================================= -->
+    <!-- PAGE TITLE — EDIT THIS FOR EACH WALL               -->
+    <!-- Example: "Radar Wall" "Satellite Wall" etc         -->
+    <!-- ================================================= -->
+    <title>Master Forecast Wall Template</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <!-- ================================================= -->
+    <!-- MASTER STYLES                                     -->
+    <!-- DO NOT EDIT unless changing ALL walls              -->
+    <!-- ================================================= -->
+    <style>
+
+body{
+margin:0;
+padding:10px;
+font-family:Arial,sans-serif;
+background:url("https://github.com/ApexWx/ApexWx.github.io/blob/master/seamless-background-simply-sky.jpg?raw=true") repeat;
+-webkit-overflow-scrolling:touch;
+}
+
+.container{
+max-width:1240px;
+margin:auto;
+}
+
+img{
+width:100%;
+max-width:600px;
+height:auto;
+display:block;
+}
+
+table{
+width:100%;
+border-collapse:collapse;
+}
+
+td{
+font-weight:bold;
+padding:10px;
+vertical-align:top;
+}
+
+.sectiontitle{
+text-align:center;
+font-size:20px;
+}
+
+hr{
+border:1px solid #444;
+}
+
+/* ============================ */
+/* STICKY MASTER NAVIGATION     */
+/* DO NOT EDIT unless adding    */
+/* new walls to the system      */
+/* ============================ */
+
+.nav{
+position:sticky;
+top:0;
+background:white;
+z-index:1000;
+box-shadow:0 2px 6px rgba(0,0,0,.2);
+}
+
+.nav td{
+font-size:13px;
+white-space:nowrap;
+}
+
+/* ============================ */
+/* MOBILE OPTIMIZATION          */
+/* DO NOT EDIT                  */
+/* ============================ */
+
+@media(max-width:900px){
+
+td{
+display:block;
+width:100%;
+text-align:center;
+}
+
+img{
+max-width:100%;
+}
+
+}
+
+</style> </head>
+  <body>
+    <!-- ================================================= -->
+    <!-- MASTER NAVIGATION                                 -->
+    <!-- Edit ONLY if adding or renaming walls             -->
+    <!-- ================================================= -->
+    <table class="nav" border="2">
+      <tbody>
+        <tr>
+          <td><a href="wall.htm">Wall-A</a></td>
+          <td><a href="wallf.htm">Wall-F</a></td>
+          <td><a href="wallnortheast.htm">Wall-NE</a></td>
+          <td><a href="aloft.htm">Aloft</a></td>
+          <td><a href="climate.htm">Climate</a></td>
+          <td><a href="gis.htm">GIS</a></td>
+          <td><a href="maps.htm">Maps</a></td>
+          <td><a href="marine.htm">Marine</a></td>
+          <td><a href="models.htm">Models</a></td>
+          <td><a href="nws.htm">NWS</a></td>
+          <td><a href="rad.htm">Radar</a></td>
+          <td><a href="rain.htm">Rain</a></td>
+          <td><a href="sat.htm">Satellite</a></td>
+          <td><a href="snow.htm">Snow</a></td>
+          <td><a href="surface.htm">Surface</a></td>
+          <td><a href="temps.htm">Temps</a></td>
+          <td><a href="thunder.htm">Thunder</a></td>
+          <td><a href="tropical.htm">Tropical</a></td>
+          <td><a href="wind.htm">Wind</a></td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="container">
+      <!-- ================================================= -->
+      <!-- PAGE HEADER — EDIT TITLE FOR EACH WALL            -->
+      <!-- ================================================= -->
+      <table>
+        <tbody>
+          <tr>
+            <td class="sectiontitle"> Forecast Wall </td>
+          </tr>
+        </tbody>
+      </table>
+      <hr>
+      <!-- ================================================= -->
+      <!-- IMAGE BLOCKS                                      -->
+      <!-- THIS IS THE ONLY SECTION YOU EDIT FREQUENTLY      -->
+      <!-- ================================================= -->
+      <div id="wallContent"></div>
+    </div>
+    <!-- ================================================= -->
+    <!-- MASTER JAVASCRIPT ENGINE                          -->
+    <!-- DO NOT EDIT unless modifying all walls            -->
+    <!-- ================================================= -->
+    <script>
+
+/* ================================================= */
+/* IMAGE DATA SECTION                                */
+/*                                                   */
+/* EDIT THIS SECTION FOR EACH WALL                   */
+/*                                                   */
+/* FORMAT:                                          */
+/* ["Left Title","Left Image URL","Right Title","Right Image URL"] */
+/* ================================================= */
+
+const wallData = [
+
+["Example Map 1",
+"https://example.com/map1.png",
+"Example Map 2",
+"https://example.com/map2.png"],
+
+["Example Map 3",
+"https://example.com/map3.png",
+"Example Map 4",
+"https://example.com/map4.png"]
+
+];
+
+/* ================================================= */
+/* PAGE BUILDER                                      */
+/* DO NOT EDIT                                       */
+/* ================================================= */
+
+const container=document.getElementById("wallContent");
+
+let html="";
+
+wallData.forEach(d=>{
+
+html+=`
+
+<table>
+
+<tr>
+
+<td>
+
+<center>${d[0]}</center>
+
+<img loading="lazy" decoding="async" src="${d[1]}">
+
+</td>
+
+<td>
+
+<center>${d[2]}</center>
+
+<img loading="lazy" decoding="async" src="${d[3]}">
+
+</td>
+
+</tr>
+
+</table>
+
+<hr>
+
+`;
+
+});
+
+container.innerHTML=html;
+
+/* ================================================= */
+/* AUTO IMAGE REFRESH                                */
+/* Keeps maps updated without page reload            */
+/* DO NOT EDIT                                       */
+/* ================================================= */
+
+function refreshImages(){
+
+document.querySelectorAll("img").forEach(img=>{
+const base=img.src.split("?")[0];
+img.src=base+"?t="+Date.now();
+});
+
+}
+
+setInterval(refreshImages,300000);
+
+</script>
+  </body>
+</html>

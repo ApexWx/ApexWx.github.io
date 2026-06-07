@@ -1,0 +1,103 @@
+<div id="afd-container" style="padding: 1em; background-color: transparent; max-width: 100%;">
+  <h2 style="margin-top: 0; font-size: 16px; font-weight: bold; color: inherit;">
+    Area Forecast Discussion – Fort Kent, ME
+  </h2>
+
+  <button id="afd-toggle" style="
+      margin-bottom: 0.5em;
+      font-size: 0.9em;
+      padding: 0.4em 0.8em;
+      cursor: pointer;
+      background-color: transparent;
+      border: 1px solid currentColor;
+      border-radius: 4px;
+  ">
+    Hide Discussion
+  </button>
+
+  <button id="afd-refresh" style="
+      margin-left: 0.5em;
+      font-size: 0.9em;
+      padding: 0.4em 0.8em;
+      cursor: pointer;
+      background-color: transparent;
+      border: 1px solid currentColor;
+      border-radius: 4px;
+  ">
+    Refresh Now
+  </button>
+
+  <div id="afd-box" style="
+      max-height: 400px;
+      overflow-y: auto;
+      border: 1px solid #ccc;
+      padding: 1em;
+      background-color: transparent;
+  ">
+    <pre id="afd-content" style="
+        white-space: pre-wrap;
+        word-wrap: break-word;
+        background-color: transparent;
+        color: inherit;
+        font-family: inherit;
+        font-size: 1em;
+        line-height: 1.5;
+        margin: 0;
+        padding: 0;
+    "></pre>
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const afdContent = document.getElementById('afd-content');
+    const afdBox = document.getElementById('afd-box');
+    const refreshBtn = document.getElementById('afd-refresh');
+    const toggleBtn = document.getElementById('afd-toggle');
+    const officeId = 'CAR'; // Caribou office for Fort Kent
+    const afdUrl = `https://forecast.weather.gov/product.php?site=NWS&issuedby=${officeId}&product=AFD&format=CI&version=1&glossary=1&highlight=off`;
+
+    function fetchAFD() {
+        fetch(afdUrl)
+            .then(response => {
+                if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+                return response.text();
+            })
+            .then(html => {
+                const parser = new DOMParser();
+                const doc = parser.parseFromString(html, 'text/html');
+                const preTag = doc.querySelector('pre');
+
+                if (preTag) {
+                    afdContent.textContent = preTag.textContent.trim();
+                } else {
+                    throw new Error('AFD content not found.');
+                }
+            })
+            .catch(error => {
+                console.error('Error fetching AFD:', error);
+                afdContent.textContent = 'Error loading Area Forecast Discussion.';
+            });
+    }
+
+    // Initial fetch
+    fetchAFD();
+
+    // Auto-refresh every 30 minutes
+    setInterval(fetchAFD, 1800000);
+
+    // Refresh button
+    refreshBtn.addEventListener('click', fetchAFD);
+
+    // Toggle visibility
+    toggleBtn.addEventListener('click', function () {
+        if (afdBox.style.display === 'none') {
+            afdBox.style.display = 'block';
+            toggleBtn.textContent = 'Hide Discussion';
+        } else {
+            afdBox.style.display = 'none';
+            toggleBtn.textContent = 'Show Discussion';
+        }
+    });
+});
+</script>
