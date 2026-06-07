@@ -2178,6 +2178,10 @@ State
 async function loadLancasterAlmanacData() {
   const workerEndpoint = 'https://almanac-api.maineapexwx.workers.dev/';
 
+  // EDIT WINTER SNOW TOTALS HERE:
+  const manualSnowObs = 20.4; // Change this number when it snows
+  const manualSnowNrm = 21.4; // Normal baseline comparison value
+
   const fmtTemp = v => (v && v !== "M" && v !== "—") ? `${Math.round(v)}°` : "—";
   const fmtPrecip = (v, dec=2) => {
     if (!v || v === "M" || v === "—") return "—";
@@ -2185,19 +2189,41 @@ async function loadLancasterAlmanacData() {
     return `${parseFloat(v).toFixed(dec)}"`;
   };
 
-  // Helper to color-code and calculate departures (Regular weight text)
-  const getDepartureStyle = (obs, nrm, isRain = false) => {
+  // Helper to color-code and calculate departures with tailored units/phrases
+  const getDepartureStyle = (obs, nrm, type = "temp") => {
     const o = parseFloat(obs);
     const n = parseFloat(nrm);
+    
+    // Safety check: If either value is missing, return nothing (blank) instead of breaking
     if (isNaN(o) || isNaN(n)) return "";
     
     const diff = o - n;
-    const sign = diff >= 0 ? "+" : "";
-    const formattedDiff = diff.toFixed(isRain ? 2 : 0);
     
-    // Warm/Above = Red Hue (#d32f2f), Cool/Below = Green Hue (#2e7d32)
-    const color = diff >= 0 ? "#d32f2f" : "#2e7d32";
-    return ` <span style="color: ${color};">(${sign}${formattedDiff}${isRain ? '"' : '°'})</span>`;
+    // Check if the departure is exactly zero
+    const isZero = Math.abs(diff) < (type === "temp" ? 0.5 : 0.005);
+    
+    const sign = isZero ? "" : (diff > 0 ? "+" : "");
+    const phrase = isZero ? "normal" : (diff > 0 ? "above normal" : "below normal");
+    
+    let color = "";
+    let unit = "";
+
+    if (isZero) {
+      color = "#757575"; // Lighter gray for exactly normal values
+      unit = type === "temp" ? "° " : '" ';
+    } else if (type === "rain" || type === "snow") {
+      color = diff > 0 ? "#2e7d32" : "#b71c1c"; // Green surplus / Brick Red deficit
+      unit = '" ';
+    } else {
+      color = diff > 0 ? "#d32f2f" : "#1976d2"; // Red hot / Blue cold
+      unit = "° ";
+    }
+    
+    // Explicitly formats decimals depending on data type
+    const formattedDiff = isZero ? "0" : Math.abs(diff).toFixed(type === "temp" ? 0 : 2);
+    
+    // For zero values, formats cleanly as (0" normal) or (0° normal) without leading +/- signs
+    return ` <span style="color: ${color};">(${sign}${formattedDiff}${unit}${phrase})</span>`;
   };
 
   try {
@@ -2206,9 +2232,12 @@ async function loadLancasterAlmanacData() {
     const d = await response.json();
 
     // Calculate variations dynamically compared against climate values
-    const highDep = getDepartureStyle(d.observed.high, d.normals.high);
-    const lowDep = getDepartureStyle(d.observed.low, d.normals.low);
-    const rainDep = getDepartureStyle(d.ytd_rain.obs, d.ytd_rain.nrm, true);
+    const highDep = getDepartureStyle(d.observed.high, d.normals.high, "temp");
+    const lowDep = getDepartureStyle(d.observed.low, d.normals.low, "temp");
+    const rainDep = getDepartureStyle(d.ytd_rain.obs, d.ytd_rain.nrm, "rain");
+
+    // Calculate snow departure using the explicit "snow" unit rule
+    const snowDep = getDepartureStyle(manualSnowObs, manualSnowNrm, "snow");
 
     const html = `
 <div style="text-align: center;"><strong> 🗓️ <u>Lancaster
@@ -2235,9 +2264,9 @@ async function loadLancasterAlmanacData() {
 <p><strong><u>Precipitation</u></strong></p>
 <p>
   <strong>Rain YTD:</strong> ${fmtPrecip(d.ytd_rain.obs)} | normal: ${fmtPrecip(d.ytd_rain.nrm)}${rainDep}<br>
-  <strong>Snow 25-26:</strong> 20.4" | normal: 21.4"<br><br>
-  ❄️ Annual snowfall measured from July 1 - June 30 ❄️<br><br>
-  <em>Data source: NOAA SC-ACIS Lancaster</em>
+  <strong>Snow 25-26:</strong> ${manualSnowObs.toFixed(1)}" | normal: ${manualSnowNrm.toFixed(1)}"${snowDep}<br><br>
+  <span style="font-size: 12px;">❄️ Annual snowfall measured from July 1 - June 30 ❄️<br>
+  <em>Data source: NOAA SC-ACIS Lancaster</em></span>
 </p>
 `;
 
