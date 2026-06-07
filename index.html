@@ -439,6 +439,46 @@ body, div, span, p {
   text-decoration: none !important;
   border: none !important;
 }
+      
+      /* Live Astro Widget Layout Rules */
+.astro-card {
+  max-width: 100%;
+  margin: 15px auto;
+  padding: 15px;
+  background: transparent;
+  color: #333;
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+.astro-title {
+  font-size: 18px !important;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.astro-date {
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+  
+}
+.astro-row {
+  font-size: 15px;
+  margin-bottom: 8px;
+  line-height: 1.5;
+}
+.astro-phase-block {
+  margin: 12px 0;
+  padding: 6px;
+  font-size: 15px;
+}
+.astro-notice {
+  font-size: 13px;
+  max-width: 620px;
+  margin: 15px auto 0 auto;
+  line-height: 1.4;
+  color: #555;
+  text-align: left;
+}  
 </style> </head>
   <body>
     <div class="text-center"><br>
@@ -1161,36 +1201,29 @@ body, div, span, p {
         <hr>
         <div>
           <div>
-            <div style="font-size: 18px; text-align: center;"><strong>☀️Sun
-                &amp; Moon Information</strong><strong><span> for Fort Kent,
-                  Maine </span></strong>🌕</div>
-            <br>
-            <div style="text-align: center;">
-              <div id="sunriseSunset" style="font-size: 16px;">Loading
-                sunrise/sunset...</div>
+            <div class="astro-card"><strong>☀️<span style="font-size: 18px;">Sun
+                  &amp; Moon Information for Fort Kent, Maine </span>🌕<br>
+                <br>
+              </strong>
+              <div class="astro-date" id="astro-date">Loading date...</div>
+              <div class="astro-row"> 🌅<strong>Sunrise:</strong> <span id="astro-sunrise">--:--
+                  AM EDT</span> | 🌇<strong>Sunset:</strong> <span id="astro-sunset">--:--
+                  PM EDT</span> | <strong>Day Length:</strong> <span id="astro-day-length">--h
+                  --m</span> </div>
+              <div class="astro-row astro-phase-block"> <strong>Moon Phase:</strong>
+                <span id="astro-moon-phase">Loading phase details...</span> </div>
+              <div class="astro-row"> <strong>Moonrise</strong>🌙↑ <span id="astro-moonrise">--:--
+                  AM EDT tomorrow</span> | <strong>Moonset</strong>🌙↓ <span id="astro-moonset">--:--
+                  AM EDT today</span> </div>
             </div>
-            <div style="text-align: center;"><strong><br>
-              </strong><strong><a href="https://www.timeanddate.com/moon/phases/@4964627">Moon
-                  Phase</a>:</strong> 🌖 Waning Gibbous → 🌗 Last Quarter 6:00
-              AM EDT Mon. 8 June<span><br>
-              </span>
-              <div><strong><span><br>
-                  </span></strong></div>
-              <div><strong><span><span>Moonset</span><span>🌙</span></span><span>↓
-                  </span></strong><span>10:19 AM EDT today&nbsp;</span>
-                |&nbsp;&nbsp;<strong><span><span>Moonrise</span><span>🌙</span></span><span><strong><span>↑</span></strong>
-                  </span></strong><span>12:36 AM </span><span>EDT tomorrow</span></div>
-              <div><br>
-              </div>
-              <div style="font-size: 12px; text-align: left;"> <em><u>Notice</u>:
-                  Sun and moon times are astronomical predictions based on ideal
-                  horizon conditions and standard calculations, rather than
-                  real-time observations. Actual visibility will vary depending
-                  on your exact local topography, weather, and atmospheric
-                  distortion. More information at <a href="https://www.timeanddate.com/astronomy/@4964627">timeanddate.com</a>.<br>
-                </em></div>
-            </div>
-          </div>
+            <em style="font-size: 12px;"><dvi><b data-path-to-node="4,0" data-index-in-node="0">Notice:</b>
+                Sun and moon times above are astronomical predictions calculated
+                by US Naval Observatory (USNO), which accounts for complex
+                orbital variations, gravitational shifts, and atmospheric
+                refraction. However, actual visibility will vary depending on
+                your exact local topography, weather, and atmospheric
+                conditions. More Fort Kent Sun and Moon information at <a href="https://www.timeanddate.com/astronomy/@4964627">timeanddate.com</a>.</dvi>
+            </em></div>
           <div style="text-align: center;"> </div>
           <div>
             <div>
@@ -1231,57 +1264,55 @@ body, div, span, p {
         <div><u><strong><br>
             </strong></u></div>
         <div style="font-size: 16px; text-align: left;"><u><strong>7-Day
-              Outlook: Sat. June 6 – Fri. June 12<br>
+              Outlook: Sun. June 7 – Sat. June 13<br>
             </strong></u></div>
         <div>
           <div style="text-align: left;"><span style="color: #666666;"><em><span
-                  style="font-size: 12px;">Updated June 6 at 9:25 AM </span><span
+                  style="font-size: 12px;">Updated June 7 at 9:25 AM </span><span
                   style="font-size: 12px;">EDT <br>
                 </span></em></span></div>
           <div><strong><br>
             </strong></div>
-          <div><strong>Short-Term Forecast: Today – Monday<br>
+          <div><strong>Today – Tuesday<br>
             </strong></div>
         </div>
-        <div>An area of low pressure south of James Bay in Canada this morning
-          will move east lifting a warm front across the Valley this morning
-          into the afternoon. This will bring an 80% chance of showers this
-          afternoon with rainfall amounts in the 1/10 to 1/4-inch range. While
-          instability aloft is not great, some isolated rumbles of thunder are
-          possible this afternoon/evening. Today's highs top out in the lower
-          70s with south wind 5-10 mph with occasional gusts to around 20 mph.</div>
+        <div>Low pressure tracks from western Maine into Downeast Maine over the
+          course of the day today with high pressure building in behind the
+          system with clearing skies this afternoon and gusty north winds. Clear
+          skies overspread the Valley tonight with mostly sunny skies Monday and
+          Tuesday and mostly clear skies Monday night and partly cloudy skies
+          Tuesday night as high pressure remains in control of the Valley's
+          weather through midweek.<br>
+        </div>
         <div><br>
         </div>
-        <div> Tonight, rain wanes for a period then increases overnight as a
-          cold front associated with the low approaches bringing additional
-          rainfall. Precipitation totals in the 1/4 to 1/2-inch range are
-          expected. Lows in the upper 40s are expected with southeast wind 0-5
-          mph falling to near calm overnight.</div>
+        <div>Today, expect cloudy skies the showers likely this morning with
+          decreasing clouds and increasing winds this afternoon. High in the low
+          to mid-60s with north wind10-15 mph gusting 25-30 mph at times. Chance
+          of precipitation is 80% this morning falling to 30% this afternoon
+          with between 1/10 and 1/4-inch rainfall possible.</div>
         <div><br>
         </div>
-        <div>Mostly cloudy to overcast skies begin the day Sunday with a 60%
-          chance of showers, mainly in the morning with rainfall chances falling
-          as the day progresses and the low pressure system and associated
-          fronts move into the Maritimes. Rainfall amounts in the 1/10 to
-          1/4-inch range possible by Sunday evening. Cooler temperatures are
-          expected as high pressure builds into the region on breezy north winds
-          at 10-15 mph with gusts in the 25-30 mph range at times across the
-          SJV. Highs in the low to mid-60s. </div>
+        <div>Tonight, mostly clear skies overspread Fort Kent and the Saint John
+          Valley as high pressure builds across the region. Lows dip into the
+          low to mid-40s with north wind falling to near calm overnight.</div>
         <div><br>
         </div>
-        <div>Sunday night, mostly clear skies overspread Fort Kent and the Saint
-          John Valley as high pressure builds across the region. Lows dip into
-          the low to mid-40s with north wind 0-5 mph.</div>
+        <div>On Monday, sunny skies and warmer temperatures are expected with
+          highs in the mid-70s in Fort Kent and vicinity. North wind 4-6 mph
+          falling to near calm late in the day. Monday night features mostly
+          clear skies with temperatures in the upper 40s to around 50F. West
+          wind near calm overnight.</div>
         <div><br>
         </div>
-        <div>On Monday, sunny skies and slightly warmer temperatures are
-          expected with highs in the low 70s in Fort Kent and vicinity. North
-          wind 5-10 mph falling to near calm late in the day. Monday night
-          features mostly clear skies with temperatures in the upper 40s to low
-          50s. West wind falls to near calm overnight.</div>
+        <div>Sunny and warm conditions continue Tuesday with a high in the low
+          to mid-80s. West-northwest wind 4-6 mph. Tuesday night, mostly clear
+          skies in the evening become partly cloudy overnight as a weak
+          disturbance approaches. Lows fall into the middle 50s with west wind
+          0-7 mph.</div>
         <div><br>
         </div>
-        <div><strong>Medium-Range Forecast: Tuesday – Friday<br>
+        <div><strong>Wednesday – Saturday<br>
           </strong>
           <div>
             <div>
@@ -1289,28 +1320,37 @@ body, div, span, p {
             </div>
           </div>
         </div>
-        <div>High pressure dominates the Valley's weather Tuesday and Wednesday
-          with mostly clear to partly cloudy skies and highs in the low 80s
-          Tuesday and upper 80s Wednesday with west-northwest wind in the 0-7
-          mph range expected. </div>
+        <div>Upper level ridging builds east across the SJV midweek, though a
+          weak wave of low pressure riding over the ridge introduces some
+          instability aloft producing partly sunny skies and a slight chance of
+          showers in the afternoon/evening hours Wednesday.&nbsp; A cold front
+          slowly approaches from the west during the late week period keeping
+          partly cloudy/partly sunny skies over the region along with a chance o
+          scattered showers and isolated thunderstorms Thursday through
+          Saturday.</div>
         <div><br>
         </div>
-        <div>A cold front north of Maine and associated low pressure waves
-          brings enough instability over the region for some isolated
-          showers/thunderstorms Thursday afternoon with highs in the upper 80s
-          and dew points rising into the upper 50s/low 60s creating somewhat
-          muggy conditions as southerly flow sets up over the SJV. Thursday
-          night, partly cloudy skies with temperatures in the lower 60s and
-          south winds 0-7 mph expected.</div>
-        <div><br>
-        </div>
-        <div>Friday looks partly cloudy to mostly sunny and hot with highs in
-          the upper 80s. Southwest wind expected as a cold front trailing from a
-          low in Québec approaches from the west-northwest. At present, isolated
-          afternoon showers and thunderstorms are possible for Fort Kent and
-          vicinity. Friday night, partly cloudy skies over the area with
-          temperatures in the lower 60s and a slight chance of evening showers.
-          Light west-southwest winds in the 0-7 mph overnight.</div>
+        On Thursday, partly sunny skies will prevail with afternoon temperatures
+        reaching the lower 80s. A chance of showers will develop during the day,
+        with thunderstorms becoming possible during the afternoon and early
+        evening. Any lingering showers or thunderstorms Thursday evening will
+        gradually diminish, leaving partly cloudy skies overnight with lows
+        settling into the upper 50s.<br>
+        <br>
+        Friday will feature a mix of sunshine and fair-weather clouds, with
+        highs again reaching around the lower 80s. While much of the day will
+        remain dry, a slight chance of showers and thunderstorms will persist.
+        Cloud cover will increase Friday night as another chance of showers and
+        thunderstorms moves into the area. Overnight temperatures will remain
+        mild, falling only into the lower 60s.<br>
+        <br>
+        The unsettled pattern will continue into Saturday as the cold front
+        remains west of the region. Partly sunny skies and warm conditions will
+        support afternoon temperatures in the lower 80s, while scattered showers
+        and thunderstorms remain possible throughout the day. The chance for
+        showers and thunderstorms will continue Saturday evening before
+        gradually decreasing overnight. Mostly cloudy skies are expected
+        Saturday night, with temperatures dropping into the upper 50s.
         <div><br>
         </div>
         <div><strong>Extended Outlook</strong></div>
@@ -1318,18 +1358,16 @@ body, div, span, p {
             predictions</em></div>
         <div><br>
         </div>
-        <div>Looking ahead, partly-to-mostly cloudy skies are possible Saturday
-          through Monday June 13-15 with a chance of showers for the period in
-          association with the aforementioned cold front. Highs in the mid-80s
-          Saturday, upper 70s Sunday, and low 70s Monday with overnight
-          temperatures in the low 60s Saturday night, mid-50s Sunday night, and
-          low 50s Monday night. </div>
+        <div>Unsettled weather looks to continue Sunday through Tuesday June
+          14-16 with partly to mostly cloudy skies and scattered shower activity
+          possible through the period. Highs in the upper 70s Sunday, mid-70s
+          Monday, and low 70s Tuesday with lows in the lower to middle 50s. </div>
         <div><br>
         </div>
-        <div>NOAA's Climate Prediction Center 8-14 Day outlook for Sat. June 13
-          – Fri. June 19 indicates trends for above normal temperatures and near
-          normal to slightly above normal precipitation for the Saint John
-          Valley.</div>
+        <div>Based on current forecast model data, NOAA's Climate Prediction
+          Center 8-14 Day outlook for June 14-20 indicates trends for above
+          normal temperatures and slightly above normal precipitation for the
+          Saint John Valley.</div>
         <div>
           <div>
             <div> </div>
@@ -1397,28 +1435,33 @@ body, div, span, p {
                                     (Click to Collapse/Expand)<br>
                                     <br>
                                   </span> </summary>
-                                <div style="text-align: left;"><strong>Heavy
-                                    Rain and Severe Thunderstorm Threat Expands
-                                    Across Central and Eastern United States<br>
-                                  </strong>Weather systems moving across the
-                                  nation will bring periods of heavy rain and
-                                  severe thunderstorms from Saturday through
-                                  Sunday. Moisture flowing north from the Gulf
-                                  of Mexico will fuel storms across the Southern
-                                  Plains, Southern Rockies, and Lower
-                                  Mississippi Valley, where localized flash
-                                  flooding is possible. Additional heavy rain is
-                                  expected in parts of the Central Plains and
-                                  Middle Mississippi Valley. A cold front moving
-                                  eastward will trigger severe thunderstorms
-                                  across the Central Plains and Middle
-                                  Mississippi Valley on Saturday, then the Ohio
-                                  Valley and Northeast on Sunday. These storms
-                                  may produce damaging wind gusts, large hail,
-                                  frequent lightning, and isolated tornadoes.
-                                  Meanwhile, rain will continue across parts of
-                                  the Pacific Northwest through Sunday.</div>
-                                <div><br>
+                                <div style="text-align: left;"><strong>Active
+                                    Weather Pattern Brings Severe Storms and
+                                    Heavy Rain Threat Through Tuesday<br>
+                                  </strong>A busy stretch of weather is expected
+                                  across much of the central and eastern United
+                                  States through Tuesday. The greatest concern
+                                  will be severe thunderstorms capable of
+                                  producing damaging wind gusts, large hail,
+                                  frequent lightning, and a few tornadoes. The
+                                  highest threat is expected across parts of the
+                                  Northern Plains on Sunday and again on Tuesday
+                                  as a strong weather system moves eastward. </div>
+                                <div style="text-align: left;"><br>
+                                </div>
+                                <div style="text-align: left;">Heavy rainfall
+                                  will also be a concern from the southern
+                                  Plains into the Mississippi, Tennessee, and
+                                  Ohio Valleys. Repeated rounds of showers and
+                                  thunderstorms may lead to localized flash
+                                  flooding, especially in cities, low-lying
+                                  areas, and near small streams and creeks.
+                                  While not everyone will experience severe
+                                  weather, residents across affected regions
+                                  should remain alert for rapidly changing
+                                  conditions, strong storms, and periods of
+                                  heavy rain through the start of the week.</div>
+                                <div style="text-align: left;"><br>
                                 </div>
                                 <div>
                                   <div class="text-center"><a href="https://www.wpc.ncep.noaa.gov/NationalForecastChart/staticmaps/noaad1.png"><strong>Today's
@@ -1454,33 +1497,32 @@ body, div, span, p {
                                       <div style="margin-top: 1em;">
                                         <div class="text-center">
                                           <div style="text-align: left;"><strong>Severe
-                                              Thunderstorm Threat Expected
-                                              Across the Great Lakes, Northeast,
-                                              and Plains</strong><br>
-                                            Severe thunderstorms are expected to
-                                            develop this afternoon and evening
-                                            across parts of the Great Lakes,
-                                            Ohio Valley, and southern New
-                                            England, with additional storms
-                                            possible in the northern and
-                                            southern Plains. The greatest
-                                            concern from Indiana through
-                                            Pennsylvania, New York, New Jersey,
-                                            and southern New England is damaging
-                                            wind gusts, although some storms
-                                            could also produce large hail.
-                                            Forecasters are monitoring the
-                                            potential for a more widespread wind
-                                            damage event if storms strengthen
-                                            and organize during the afternoon
-                                            and evening. In eastern Montana and
-                                            western North Dakota, thunderstorms
-                                            are expected to form later today,
-                                            with large hail being the primary
-                                            hazard. Across parts of Texas and
-                                            Oklahoma, strong storms may also
-                                            bring damaging winds and hail before
-                                            weakening overnight.</div>
+                                              Thunderstorms Expected Across the
+                                              Northern Plains; Isolated Tornado
+                                              Risk Elsewhere</strong><br>
+                                            Strong to severe thunderstorms are
+                                            expected to develop this afternoon
+                                            and evening across parts of
+                                            southeastern Montana, northeastern
+                                            Wyoming, and the western Dakotas,
+                                            where the greatest risk for
+                                            hazardous weather exists. Some
+                                            storms may produce damaging wind
+                                            gusts, large hail, frequent
+                                            lightning, and an isolated tornado.
+                                            Storms are expected to become more
+                                            widespread and intense as they move
+                                            eastward through the evening.
+                                            Farther south, scattered
+                                            thunderstorms across the Ozarks
+                                            could also bring isolated damaging
+                                            winds and a brief tornado, although
+                                            the threat is lower and more
+                                            localized. In parts of eastern
+                                            Virginia and northeastern North
+                                            Carolina, afternoon thunderstorms
+                                            may develop along a weak front and
+                                            produce gusty winds.</div>
                                           <div style="text-align: left;"><br>
                                           </div>
                                           <div class="text-center"><strong><a href="https://www.spc.noaa.gov/products/outlook/day1otlk.html">Today's
@@ -1506,33 +1548,34 @@ body, div, span, p {
                                         <div style="margin-top: 1em; text-align: left;">
                                           <div style="margin-top: 1em; text-align: left;"><strong>Heavy
                                               Rain and Flash Flooding Threat
-                                              Spreads Across Southern and
-                                              Eastern States</strong><br>
-                                            Heavy rain and thunderstorms are
-                                            expected to affect several regions
-                                            on Saturday, raising the risk of
-                                            localized flash flooding. The
-                                            greatest concerns are across parts
-                                            of north Texas, eastern Oklahoma,
-                                            and western Arkansas, where repeated
-                                            rounds of storms may produce
-                                            prolonged periods of heavy rainfall.
-                                            Additional areas at risk include the
-                                            Ohio Valley, where a slow-moving
-                                            front will trigger multiple waves of
-                                            storms from Indiana into the central
-                                            Appalachian region. Along the upper
-                                            Texas coast, including areas near
-                                            Houston, extremely humid conditions
-                                            will support slow-moving
-                                            thunderstorms capable of producing
-                                            intense rainfall. The central Gulf
-                                            Coast, from Louisiana to the Florida
-                                            Panhandle, may also experience
-                                            repeated storms. Urban areas, roads,
-                                            low-lying locations, and small
-                                            streams will be most vulnerable to
-                                            flooding.</div>
+                                              Expands Across the Mid-Mississippi
+                                              Valley and Ozarks<br>
+                                            </strong>A widespread threat for
+                                            heavy rainfall and localized flash
+                                            flooding is expected this afternoon
+                                            through tonight across portions of
+                                            the Mid-Mississippi Valley, Ozarks,
+                                            and western Tennessee Valley.
+                                            Numerous thunderstorms are forecast
+                                            to develop as several weather
+                                            systems interact with a very warm
+                                            and moisture-rich air mass. Some
+                                            storms may produce intense downpours
+                                            capable of dropping several inches
+                                            of rain in a short period of time.
+                                            Areas that received significant
+                                            rainfall recently, including parts
+                                            of eastern Oklahoma, western
+                                            Arkansas, Illinois, and Indiana, may
+                                            be especially vulnerable because the
+                                            ground is already saturated.
+                                            Localized rainfall totals could
+                                            exceed several inches, leading to
+                                            flooding of roads, low-lying areas,
+                                            and small streams. Additional
+                                            isolated flooding is also possible
+                                            farther east into the Ohio Valley
+                                            and north into the Plains.</div>
                                           <a href="https://www.wpc.ncep.noaa.gov/qpf/excessive_rainfall_outlook_ero.php"><strong></strong></a></div>
                                         <div style="margin-top: 1em; text-align: center;"><a
                                             href="https://www.wpc.ncep.noaa.gov/qpf/excessive_rainfall_outlook_ero.php"><strong>Today's
@@ -1552,36 +1595,34 @@ body, div, span, p {
                                                 Weather Outlooks</a></span></em>
                                           <div style="text-align: left;"><strong></strong><strong></strong><strong><br>
                                             </strong></div>
-                                          <div style="text-align: left;"><strong>Critical
+                                          <div style="text-align: left;"><strong>Dangerous
                                               Fire Weather Conditions Expected
-                                              Across the Great Basin and
-                                              Southwest<br>
-                                            </strong>Dangerous fire weather
-                                            conditions are expected today across
-                                            parts of the Great Basin and
-                                            Southwest as hot, dry, and windy
-                                            weather combines with dry
-                                            vegetation. Strong winds and very
-                                            low humidity will increase the
-                                            potential for rapid wildfire growth
-                                            from Nevada and Utah into northern
-                                            Arizona and western Colorado.
-                                            Elevated fire danger will also
-                                            extend into parts of southern
-                                            Arizona and the Four Corners region.
-                                            In some locations, conditions may
-                                            briefly reach critical levels,
-                                            especially where vegetation has
-                                            become increasingly dry. Isolated
-                                            thunderstorms are possible in parts
-                                            of Idaho, Montana, Colorado,
-                                            Wyoming, and western Nebraska.
-                                            However, these storms may produce
-                                            little rainfall while generating
-                                            lightning, creating a risk of new
-                                            wildfire starts. Fast-moving storms
-                                            and dry fuels will heighten concerns
-                                            across affected areas.</div>
+                                              Across the Interior West<br>
+                                            </strong>Elevated to critical fire
+                                            weather conditions are expected
+                                            Sunday across parts of the
+                                            Southwest, Great Basin, Central
+                                            Rockies, and southern Idaho. Dry
+                                            air, gusty winds, and very dry
+                                            vegetation will combine to create an
+                                            environment where any new fire could
+                                            spread rapidly. Winds may frequently
+                                            gust between 25 and 35 mph, while
+                                            humidity levels remain extremely
+                                            low. These conditions will be
+                                            especially concerning across areas
+                                            with ongoing drought and dry fuels.
+                                            The Snake River Plain in Idaho is
+                                            also expected to see a heightened
+                                            fire danger due to similar windy and
+                                            dry conditions. A few thunderstorms
+                                            may develop from Utah into Wyoming,
+                                            but some could produce little
+                                            rainfall. These dry thunderstorms
+                                            may generate lightning capable of
+                                            starting new wildfires while also
+                                            creating sudden, erratic wind gusts
+                                            near existing fires.</div>
                                         </div>
                                       </div>
                                     </div>
@@ -2296,61 +2337,6 @@ function getCurrentSeason(date = new Date()) {
       displayDiv.classList.add(season); // Adds color class
     }
   });
-</script> <script> // Sun Times Fort Kent, Maine
-  async function fetchSunriseSunset() {
-    const lat = 47.2632;  // Fort Kent, ME
-    const lng = -68.5774;
-    const apiURL = `https://api.sunrise-sunset.org/json?lat=${lat}&lng=${lng}&formatted=0`;
-
-    try {
-      const response = await fetch(apiURL);
-      const data = await response.json();
-
-      const sunriseUTC = new Date(data.results.sunrise);
-      const sunsetUTC = new Date(data.results.sunset);
-      const dayLengthSec = data.results.day_length;
-
-      // Convert UTC times to local (Eastern Time)
-      const options = { hour: 'numeric', minute: '2-digit', timeZone: 'America/New_York' };
-      const sunriseLocal = sunriseUTC.toLocaleTimeString('en-US', options);
-      const sunsetLocal = sunsetUTC.toLocaleTimeString('en-US', options);
-
-      // Get EDT/EST abbreviation safely
-      const tzString = new Date().toLocaleTimeString('en-US', {
-        timeZone: 'America/New_York',
-        timeZoneName: 'short'
-      });
-      const tzAbbr = tzString.match(/\b(EDT|EST)\b/)?.[0] || "ET";
-
-      // Format current date
-      const now = new Date();
-      const dateStr = now.toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
-
-      // Convert daylight length from seconds to hh:mm
-      const hours = Math.floor(dayLengthSec / 3600);
-      const minutes = Math.floor((dayLengthSec % 3600) / 60);
-      const dayLengthStr = `${hours}h ${minutes}m`;
-
-   document.getElementById("sunriseSunset").innerHTML = `
-  <div class="sun-date" style="text-align: center; margin-bottom: 5px; font-weight: bold;">
-    ${dateStr}
-<br><br>
-  </div>
-  <div class="sun-info">
-    <div>🌅<strong>Sunrise</strong>: ${sunriseLocal} ${tzAbbr} | </div>
-    <div>🌇<strong>Sunset</strong>: ${sunsetLocal} ${tzAbbr} | </div>
-    <div><strong>Day Length</strong>: ${dayLengthStr}</div>
-  </div>
-`;
-
-    } catch (error) {
-      console.error("Sunrise/Sunset fetch error:", error);
-      document.getElementById("sunriseSunset").innerText = "Unable to load sunrise/sunset.";
-    }
-  }
-
-  fetchSunriseSunset();
-  setInterval(fetchSunriseSunset, 3600000); // Refresh every hour
 </script> <script> // Local Time
   function updateLocalTime() {
     const now = new Date();
@@ -2992,10 +2978,40 @@ const climateRecords = {
   "06-15": { high: [94, 1956], low: [31, 2018], rain: [1.10, 1947] }
 };
 
-// Fire execution
-loadClimateData();
-setInterval(loadClimateData, 1800000);
-    
-</script>
-  </body>
+// New Astronomy Worker Fetch Function
+  async function loadFortKentAstroData() {
+    // Replace this placeholder string with your real Cloudflare Worker URL
+    const workerEndpoint = 'https://moon-api.maineapexwx.workers.dev/';
+
+    try {
+      const response = await fetch(workerEndpoint);
+      if (!response.ok) throw new Error("Astro API returned an error status.");
+      
+      const data = await response.json();
+
+      // Map the JSON payloads securely to your HTML element IDs
+      document.getElementById('astro-date').textContent = data.date_label;
+      document.getElementById('astro-sunrise').textContent = data.sunrise;
+      document.getElementById('astro-sunset').textContent = data.sunset;
+      document.getElementById('astro-day-length').textContent = data.day_length;
+      document.getElementById('astro-moon-phase').textContent = data.moon_phase_display;
+      document.getElementById('astro-moonset').textContent = data.moonset_display;
+      document.getElementById('astro-moonrise').textContent = data.moonrise_display;
+
+    } catch (error) {
+      console.error("Failed to inject Naval astronomical predictions:", error);
+      document.getElementById('astro-date').textContent = "Data Temporarily Offline";
+    }
+  }
+
+  // --- EXECUTION SECTION ---
+  
+  // 1. Fire your existing climate sequence immediately & queue its 30-min loop
+  loadClimateData();
+  setInterval(loadClimateData, 1800000); 
+
+  // 2. Fire your new astronomy sequence immediately (No loop required)
+  loadFortKentAstroData();
+
+</script> </body>
 </html>
