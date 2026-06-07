@@ -360,7 +360,47 @@ img {
   width: auto; /* Ensure auto width */
   height: auto; /* Ensure auto height */
   max-width: 100%; /* Prevent image from exceeding container */
-
+}
+ 
+      /* Live Astro Widget Layout Rules */
+.astro-card {
+  max-width: 100%;
+  margin: 15px auto;
+  padding: 15px;
+  background: transparent;
+  color: #333;
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+.astro-title {
+  font-size: 18px !important;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.astro-date {
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+  
+}
+.astro-row {
+  font-size: 15px;
+  margin-bottom: 8px;
+  line-height: 1.5;
+}
+.astro-phase-block {
+  margin: 12px 0;
+  padding: 6px;
+  font-size: 15px;
+}
+.astro-notice {
+  font-size: 13px;
+  max-width: 620px;
+  margin: 15px auto 0 auto;
+  line-height: 1.4;
+  color: #555;
+  text-align: left;
+}      
 
 </style> </head>
   <body>
@@ -753,101 +793,52 @@ State
             </div>
           </div>
         </div>
-        <div style="text-align: center;"><strong> 🗓️ <u>Lancaster Weather
-              Almanac</u> 🗓️ </strong><br>
-          <strong> </strong></div>
-        <div>
-          <div style="text-align: center;"><span style="font-size: 12px;"><em>Non-metric
-                units unless otherwise indicated; times US Eastern</em></span></div>
+        <div id="lancaster-almanac">
+          <p><strong>Saturday, June 6</strong></p>
+          <p> <strong>High:</strong> 89° | <strong>Low:</strong> 60°<br>
+            <strong>Rainfall:</strong> 0.37" | <strong>Snowfall:</strong> —<br>
+            <em>Data source: NOAA SC-ACIS Lancaster</em> </p>
+          <p><strong>Sunday, June 7</strong></p>
+          <p> <strong>Normal High:</strong> 80° &nbsp;|&nbsp; <strong>Normal
+              Low:</strong> 58°<br>
+            <strong>Normal Daily Rainfall:</strong> 0.15" | <strong>Normal
+              Daily Snowfall:</strong> —<br>
+            <em>Data source: <a href="https://scacis.rcc-acis.org/" target="_blank">NOAA
+                SC-ACIS</a> climate normals</em> </p>
+          <p><strong>Precipitation 2026</strong></p>
+          <p> <strong>Rain YTD:</strong> 11.48" | normal: 15.78"<br>
+            <strong>Snow 25-26:</strong> 20.4" | normal: 21.4"<br>
+            ❄️ Annual snowfall measured from July 1 - June 30 ❄️<br>
+            <em>Data source: <a href="https://scacis.rcc-acis.org/" target="_blank">NOAA
+                SC-ACIS</a> climate data tracker</em> </p>
         </div>
-        <div> <u><strong><br>
-            </strong></u> <u><strong> Friday, June 5</strong></u>
-          <div>
-            <div><b>High</b>: 92°&nbsp; | <b>Low</b>: 58°
-              <div><b>Rainfall: </b>0.00" | <strong>Snowfall</strong>: 0.0"</div>
-              <div><b>Avg. Daily Wind:</b> NW at 1 mph |<strong> Max. Daily Gust</strong>:
-                9 mph</div>
-            </div>
-          </div>
-          <div>
-            <div>
-              <div> <em style="font-size: 12px;"><em style="font-size: 12px;">Data
-                    source: College Park </em></em><em style="font-size: 12px;"><em
-                    style="font-size: 12px;">Weather Station near F&amp;M</em></em></div>
-            </div>
-          </div>
-          <div>
-            <div><u><strong><br>
-                </strong></u></div>
-            <u><strong> Saturday, June 6</strong></u> </div>
-          <div> </div>
-        </div>
-        <div style="width: 810px;"><strong>Normal High: </strong>80° |<strong>&nbsp;
-            Record High</strong>: 94° (2021)<br>
-          <strong> Normal Low:&nbsp; </strong>57° |&nbsp; <strong>Record
-            Low:&nbsp; </strong>42° (2019)<br>
-          <strong>Normal Daily Rainfall: </strong>0.14"<strong> </strong>|<strong>
-            Record Rainfall</strong>: 2.20" (1986)</div>
-        <div style="width: 810px;"><strong>Normal Daily Snowfall:</strong> 0.0"
-          | <strong>Record Snowfall</strong>: —</div>
-        <div style="width: 810px;"><em><span style="font-size: 12px;">Data
-              source: </span><span style="font-size: 12px;"><span style="font-size: 12px;"><a
-                  href="https://scacis.rcc-acis.org/">NOAA SC-ACIS</a> </span>NWS
-              State College climate data</span></em><em style="font-size: 12px;">
-            since 1949<br>
-          </em></div>
-        <div style="width: 810px;"><br>
-        </div>
-        <div style="width: 810px;"><u><strong>Precipitation 2026</strong></u><br>
-          <strong></strong></div>
-        <div style="width: 810px;"><strong>Rain</strong><strong>:</strong>
-          14.05" |&nbsp; <u>normal</u>: 17.04" (<span style="color: red;">-2.99"</span>)<span
-            style="color: #009900;"></span><br>
-          <strong>Snow 25-26</strong><strong>: </strong>20.4" | <u>normal</u>:
-          21.4" (<span style="color: red;">-1.0"</span>)</div>
-        <span style="font-size: 12px;">❄️</span><span style="font-size: 12px;">
-          Annual snowfall measured from July 1 - June 30 </span><span style="font-size: 12px;">❄️</span><br>
-        <span style="font-size: 12px;"></span>
-        <div style="width: 810px;"><span style="font-size: 12px;"> <em> </em></span><em><span
-              style="font-size: 12px;">Data source: </span><span style="font-size: 12px;"><span
-                style="font-size: 12px;"><a href="https://scacis.rcc-acis.org/">NOAA
-                  SC-ACIS</a> </span>NWS State College climate data</span></em></div>
         <div>
           <div><strong></strong><strong></strong><br>
-            <strong><a href="https://www.timeanddate.com/astronomy/@4964627"> </a></strong>
             <div style="text-align: left;">
               <hr>
-              <div style="text-align: center; font-size: 16px;"><strong></strong><strong>☀️Sun
-                  &amp; Moon Information for </strong><strong>Lancaster,
-                  Pennsylvania 🌕<br>
-                </strong></div>
-            </div>
-            <strong></strong><br>
-            <strong> </strong>
-            <div>
-              <div id="sunriseSunset" style="font-size: 16px; text-align: center;">Loading
-                sunrise/sunset...</div>
-              <div style="text-align: center;"><br>
+              <div class="astro-card">
+                <div class="astro-title"> ☀️Sun &amp; Moon Information for
+                  Lancaster, Pennsylvania 🌕 </div>
+                <div class="astro-date"> <span id="astro-date">Loading data...</span>
+                </div>
+                <div class="astro-row"> 🌅<strong>Sunrise:</strong> <span id="astro-sunrise">--:--
+                    AM EDT</span> | 🌇<strong>Sunset:</strong> <span id="astro-sunset">--:--
+                    PM EDT</span> | <strong>Day Length:</strong> <span id="astro-day-length">--h
+                    --m</span> </div>
+                <div class="astro-row astro-phase-block"> <strong>Moon Phase:</strong>
+                  <span id="astro-moon-phase">Loading phase details...</span> </div>
+                <div class="astro-row"> <strong>Moonrise</strong>🌙↑ <span id="astro-moonrise">--:--
+                    AM EDT</span> | <strong>Moonset</strong>🌙↓ <span id="astro-moonset">--:--
+                    AM EDT</span> </div>
               </div>
-            </div>
-            <div style="text-align: center;"><strong><a href="https://www.timeanddate.com/moon/phases/usa/lancaster-pa">Moon
-                  Phase</a>:</strong> 🌖 Waning Gibbous → 🌗 Last Quarter 6:00
-              AM EDT Mon. 8 June<span></span><span></span><strong><span> </span></strong>
-              <div><strong><span></span></strong><span><strong><br>
-                    Moonset</strong></span><strong><span>🌙↓ </span></strong><span>11:06
-                  </span><span>am today&nbsp;</span> |&nbsp;&nbsp;<strong><span></span></strong><span><strong>Moonrise</strong></span><strong><span>🌙↑
-                    </span></strong><span>12:56 </span>am tomorrow</div>
-            </div>
-            <div style="text-align: center;"><br>
-            </div>
-            <div style="font-size: 12px; text-align: left;"><em>Notice: Sun and
-                moon times are astronomical predictions based on ideal horizon
-                conditions and standard calculations, rather than real-time
-                observations. Actual visibility will vary depending on your
-                exact local topography, weather, and atmospheric distortion.
-                More information at <a href="https://www.timeanddate.com/astronomy/usa/lancaster-pa">timeanddate.com</a>.</em>
-            </div>
-            <div>
+              <div> <em style="font-size: 12px;"><strong>Notice</strong>: Sun
+                  and moon times above are astronomical predictions calculated
+                  by US Naval Observatory (USNO), which account for complex
+                  orbital variations, gravitational shifts, and atmospheric
+                  refraction. However, actual visibility will vary depending on
+                  your exact local topography, weather, and atmospheric
+                  conditions. More Lancaster Sun and Moon information at <a href="https://www.timeanddate.com/astronomy/usa/lancaster-pa">timeanddate.com</a>.
+                </em></div>
               <div>
                 <div>
                   <hr style="margin-left: 0px; margin-right: auto;">
@@ -879,133 +870,105 @@ State
                           </strong></u>
                         <div><u><strong><br>
                             </strong></u>
-                          <div><u><strong>7-Day Outlook: Sat. June 6 – Fri. June
-                                12<br>
+                          <div><u><strong>7-Day Outlook: Sun. June 7 – Sat. June
+                                13<br>
                               </strong></u>
                             <div>
                               <div style="text-align: left;"><span style="color: #666666;"><em><span
-                                      style="font-size: 12px;">Updated June 6 at
+                                      style="font-size: 12px;">Updated June 7 at
                                       10:30 AM </span><span style="font-size: 12px;">EDT
                                       <br> </span></em></span></div>
                               <div><strong><br>
                                 </strong></div>
-                              <div><strong>Today – Monday</strong></div>
+                              <div><strong>Sun. June 7 – Tue. June 9</strong></div>
                             </div>
                           </div>
                         </div>
-                        Severe thunderstorms are expected to become more likely
-                        across central Pennsylvania this afternoon and evening
-                        as an upper-level disturbance moves out of the Great
-                        Lakes region. Scattered showers this morning will remain
-                        non-severe, but conditions will become more unstable by
-                        late afternoon. </div>
-                      <div style="text-align: left;"><br>
+                        The cold front that moved through the region will move
+                        away this morning while high pressure builds down from
+                        Québec bringing mostly clear skies to Lancaster and
+                        vicinity for the remainder of the period.<br>
                       </div>
-                      <div style="text-align: left;">Storm development will be
-                        supported by strong upper-level winds, increasing
-                        moisture, and rising instability. The greatest risk
-                        period will be late afternoon into evening, when storms
-                        may organize into lines or clusters moving southeast.
-                        Damaging winds and large hail are the main hazards, and
-                        an isolated tornado cannot be ruled out, especially in
-                        western areas of the state. Some storms may produce
-                        strong wind gusts in excess of 50 mph. Rainfall totals
-                        up to about 1-inch are possible in the west before
-                        activity weakens overnight. Conditions should improve by
-                        Sunday.<br>
+                      <div style="text-align: left;"><br>
+                        Today will be sunny with afternoon highs reaching the
+                        upper 80s, accompanied by a light northwest breeze that
+                        becomes breezy at times during the day. Tonight will be
+                        clear and comfortable, with temperatures falling into
+                        the low 60s under light north winds.<br>
                         <br>
-                        A warm and breezy day is expected today with partly
-                        sunny skies and highs reaching the low 90s. West winds
-                        will be around 6 to 13 mph, with occasional gusts up to
-                        the 20-25 mph range, adding some afternoon breeziness
-                        despite the heat. Chance of showers is 30%.<br>
+                        Monday will remain sunny but slightly cooler, with highs
+                        in the mid-80s and light northeast winds. Monday night
+                        will feature mostly clear skies and cooler conditions,
+                        with lows dropping into the mid-50s as winds become
+                        light and variable.<br>
                         <br>
-                        Tonight, showers and thunderstorms are likely, mainly
-                        before mid-evening to late evening hours. Some storms
-                        could become severe during this period. Conditions will
-                        trend toward mostly cloudy early, then gradually
-                        becoming mostly clear toward daybreak. Lows will settle
-                        into the mid-60s. West winds will generally remain light
-                        at around 5 to 10 mph. Patchy fog may develop after the
-                        early morning hours. Rainfall amounts will generally
-                        range from 1/10 to 1/4-inch, although higher amounts
-                        will be possible in thunderstorms. The chance of
-                        precipitation is 60%.<br>
-                        <br>
-                        On Sunday, patchy fog is expected early in the morning
-                        before sunrise, then conditions will quickly improve to
-                        sunny skies. High temperatures will reach the upper 80s.
-                        Northwest winds will increase slightly to around 8 to 11
-                        mph, with gusts up to around 20 mph. Sunday night will
-                        be mostly clear with lows in the low 60s and light north
-                        winds around 5-10 mph.<br>
-                        <br>
-                        Monday will continue the stretch of fair weather with
-                        sunny skies and highs in the mid-80s. Northeast winds
-                        will be light, generally 0-5 mph. Monday night will be
-                        mostly clear with cooler conditions, with lows falling
-                        into the upper 50s with light south winds.</div>
+                        Tuesday will bring another sunny and warm day with highs
+                        returning to the mid- to upper 80s and light afternoon
+                        south winds. Tuesday night will turn partly cloudy and
+                        mild, with temperatures holding in the low 60s. South
+                        winds 0-7 mph expected.</div>
                       <div style="text-align: left;">
                         <div> <br>
                           <div>
                             <div>
                               <div>
-                                <div><strong>Tuesday – Friday</strong><strong></strong></div>
-                                <div>Warm weather is expected to return next
-                                  week following a brief, modest cooldown on
-                                  Monday. Even that cooler day will still
-                                  feature above normal temperatures for most
-                                  areas. Highs through the week will generally
-                                  reach the 80s and 90s as a strong area of high
-                                  pressure builds over the eastern United
-                                  States, reinforcing a classic summerlike
-                                  pattern. </div>
-                                <div><br>
-                                </div>
-                                <div>However, forecast confidence decreases
-                                  toward the end of the week due to differences
-                                  in how weather models handle a nearby
-                                  upper-level disturbance tracking from the
-                                  South Central United States toward the Great
-                                  Lakes. While some models suggest occasional
-                                  showers, much of the region may remain dry if
-                                  the system stays farther west. Overall, a
-                                  warm, humid, and mainly dry pattern is
-                                  favored, with only limited chances for
-                                  unsettled weather at times.<br>
+                                <div><strong>Wed. June 10 – Sat. June 13</strong></div>
+                                <div>Warm weather is expected to intensify
+                                  through the middle and latter part of the
+                                  week, with the hottest conditions likely
+                                  arriving on Thursday and continuing into
+                                  Friday. Temperatures will steadily rise into
+                                  the upper 80s and lower 90s by midweek as a
+                                  strong area of high pressure builds aloft.
+                                  Early in the week, humidity will remain
+                                  relatively comfortable, but it is expected to
+                                  increase significantly by Wednesday as winds
+                                  shift and draw in more moisture from the
+                                  south.<br>
                                   <br>
-                                  Tuesday will be sunny and warm with highs in
-                                  the upper 80s. Skies will remain partly cloudy
-                                  Tuesday night with lows in the mid-60s under
-                                  light winds.<br>
-                                  <br>
-                                  On Wednesday, conditions turn a bit more
-                                  unsettled as a chance of showers and
-                                  thunderstorms develops after the early
-                                  afternoon hours. Skies will be partly sunny
-                                  with highs in the upper 80s. Wednesday night
-                                  will remain mostly cloudy with additional
-                                  chances for showers and thunderstorms during
-                                  the evening and overnight, with lows in the
-                                  upper 60s.<br>
-                                  <br>
-                                  Thursday will be hot and partly sunny with
-                                  scattered showers and thunderstorms possible
-                                  during the afternoon and evening. High
-                                  temperatures will reach the low 90s, with
-                                  overnight lows in the low 70s as clouds remain
-                                  partly in place and a few showers linger.<br>
-                                  <br>
-                                  Friday continues the warm pattern with mostly
-                                  sunny to partly cloudy skies and hot
-                                  conditions, with highs in the mid-90s. A
-                                  chance of showers and thunderstorms will
-                                  persist, mainly during the afternoon and
-                                  evening hours. Friday night will remain partly
-                                  cloudy with lows in the low 70s and a
-                                  diminishing chance of showers toward early
-                                  Saturday morning.</div>
-                              </div>
+                                  By Thursday, widespread heat in the lower to
+                                  mid 90s is possible, especially in areas away
+                                  from higher terrain, and the combination of
+                                  heat and humidity may push feels-like
+                                  temperatures near or above 100 degrees for the
+                                  first time this year. Friday is expected to
+                                  remain hot and humid before a possible cold
+                                  front brings some relief heading into the
+                                  weekend. However, temperatures are still
+                                  likely to remain above normal even after the
+                                  front passes. Scattered showers and
+                                  thunderstorms may also develop during the
+                                  week, with the highest chances toward Friday.</div>
+                                <br>
+                                Wednesday will feature partly sunny skies and
+                                warm conditions, with highs reaching the lower
+                                90s. A few showers and thunderstorms may develop
+                                during the afternoon and early evening.
+                                Overnight, additional showers and thunderstorms
+                                will remain possible before conditions become
+                                mostly cloudy, with lows in the upper 60s.<br>
+                                <br>
+                                Thursday will be the hottest day of the period,
+                                with temperatures climbing into the mid to upper
+                                90s under mostly sunny skies. A chance of
+                                afternoon and evening thunderstorms will develop
+                                once again. Warm and humid conditions will
+                                continue Thursday night with lows in the low 70s
+                                and a lingering chance of showers early.<br>
+                                <br>
+                                Friday will remain hot, with highs in the
+                                mid-90s and continued chances for showers and
+                                thunderstorms. Nighttime conditions will stay
+                                mostly cloudy and mild, with lows in the upper
+                                60s to around 70.<br>
+                                <br>
+                                By Saturday, temperatures will ease slightly
+                                into the lower 90s, but unsettled conditions
+                                will persist with a continued chance of showers
+                                and occasional thunderstorms. Saturday night
+                                will remain mostly cloudy and cooler, with lows
+                                in the upper 60s as precipitation chances
+                                gradually decrease.</div>
                               <div><br>
                               </div>
                             </div>
@@ -1020,24 +983,18 @@ State
                       <div style="text-align: left;"><br>
                       </div>
                       <div style="text-align: left;">Partly cloudy to mostly
-                        sunny and hot conditions are expected Sat. June 13 with
-                        highs in the 90s and low in the upper 60s.
-                        Afternoon/evening showers/thunderstorms possible
-                        Saturday night into Sunday. Showers and thunderstorms
-                        are possible Sunday as a cold front approaches with
-                        highs in the low 90s and overnight lows in the upper
-                        60s. For Monday, unsettled weather remains possible with
-                        uncertainty regarding a low pressure area that may move
-                        up from the Southeast. Currently, highs in the mid-80s
-                        with overnight temperatures in the low 60s Monday night.</div>
+                        sunny skies are expected Saturday and Sunday, June 13-14
+                        with highs in the low 90s and overnight temperatures in
+                        the mid- to upper 60s. Some PM thunderstorms are
+                        possible by Mon. June 15 as a cold front affects the
+                        region. Some morning showers linger Tuesday. Highs in
+                        the mid-80s Monday and Tuesday with the mid-60s for
+                        lows.</div>
                       <div style="text-align: left;"><br>
-                      </div>
-                      <div style="text-align: left;">NOAA's Climate Prediction
-                        Center 8-14 Day outlook for Sat. June 13 through Fri.
-                        June 19 indicates above normal temperature and generally
-                        above normal precipitation trends for the Lancaster and
-                        vicinity, though confidence is less certain with regards
-                        to precipitation trends.</div>
+                        NOAA's Climate Prediction Center 8-14 Day outlook for
+                        Sun. June 14 through Sat. June 20 indicates above normal
+                        temperature and above normal precipitation for the
+                        Lancaster and vicinity.</div>
                       <div>
                         <div>
                           <div>
@@ -1115,26 +1072,31 @@ State
                                 <strong> </strong></div>
                               <div style="text-align: center;"><br>
                                 <strong></strong><u><strong></strong></u><u><strong></strong></u></div>
-                              <strong></strong><strong>Heavy Rain and Severe
-                                Thunderstorm Threat Expands Across Central and
-                                Eastern United States<br>
-                              </strong>Weather systems moving across the nation
-                              will bring periods of heavy rain and severe
-                              thunderstorms from Saturday through Sunday.
-                              Moisture flowing north from the Gulf of Mexico
-                              will fuel storms across the Southern Plains,
-                              Southern Rockies, and Lower Mississippi Valley,
-                              where localized flash flooding is possible.
-                              Additional heavy rain is expected in parts of the
-                              Central Plains and Middle Mississippi Valley. A
-                              cold front moving eastward will trigger severe
-                              thunderstorms across the Central Plains and Middle
-                              Mississippi Valley on Saturday, then the Ohio
-                              Valley and Northeast on Sunday. These storms may
-                              produce damaging wind gusts, large hail, frequent
-                              lightning, and isolated tornadoes. Meanwhile, rain
-                              will continue across parts of the Pacific
-                              Northwest through Sunday.
+                              <strong></strong><strong>Active Weather Pattern
+                                Brings Severe Storms and Heavy Rain Threat
+                                Through Tuesday<br>
+                              </strong>A busy stretch of weather is expected
+                              across much of the central and eastern United
+                              States through Tuesday. The greatest concern will
+                              be severe thunderstorms capable of producing
+                              damaging wind gusts, large hail, frequent
+                              lightning, and a few tornadoes. The highest threat
+                              is expected across parts of the Northern Plains on
+                              Sunday and again on Tuesday as a strong weather
+                              system moves eastward.
+                              <div style="text-align: left;"><br>
+                              </div>
+                              <div style="text-align: left;">Heavy rainfall will
+                                also be a concern from the southern Plains into
+                                the Mississippi, Tennessee, and Ohio Valleys.
+                                Repeated rounds of showers and thunderstorms may
+                                lead to localized flash flooding, especially in
+                                cities, low-lying areas, and near small streams
+                                and creeks. While not everyone will experience
+                                severe weather, residents across affected
+                                regions should remain alert for rapidly changing
+                                conditions, strong storms, and periods of heavy
+                                rain through the start of the week.</div>
                               <div>
                                 <div class="text-center" style="text-align: center;"><a
                                     href="https://www.wpc.ncep.noaa.gov/NationalForecastChart/staticmaps/noaad1.png"><strong>Today's
@@ -1171,31 +1133,29 @@ State
                                     <div style="margin-top: 1em; text-align: center;">
                                       <div class="text-center">
                                         <div style="text-align: left;"><strong>Severe
-                                            Thunderstorm Threat Expected Across
-                                            the Great Lakes, Northeast, and
-                                            Plains</strong><br>
-                                          Severe thunderstorms are expected to
-                                          develop this afternoon and evening
-                                          across parts of the Great Lakes, Ohio
-                                          Valley, and southern New England, with
-                                          additional storms possible in the
-                                          northern and southern Plains. The
-                                          greatest concern from Indiana through
-                                          Pennsylvania, New York, New Jersey,
-                                          and southern New England is damaging
-                                          wind gusts, although some storms could
-                                          also produce large hail. Forecasters
-                                          are monitoring the potential for a
-                                          more widespread wind damage event if
-                                          storms strengthen and organize during
-                                          the afternoon and evening. In eastern
-                                          Montana and western North Dakota,
-                                          thunderstorms are expected to form
-                                          later today, with large hail being the
-                                          primary hazard. Across parts of Texas
-                                          and Oklahoma, strong storms may also
-                                          bring damaging winds and hail before
-                                          weakening overnight.</div>
+                                            Thunderstorms Expected Across the
+                                            Northern Plains; Isolated Tornado
+                                            Risk Elsewhere</strong><br>
+                                          Strong to severe thunderstorms are
+                                          expected to develop this afternoon and
+                                          evening across parts of southeastern
+                                          Montana, northeastern Wyoming, and the
+                                          western Dakotas, where the greatest
+                                          risk for hazardous weather exists.
+                                          Some storms may produce damaging wind
+                                          gusts, large hail, frequent lightning,
+                                          and an isolated tornado. Storms are
+                                          expected to become more widespread and
+                                          intense as they move eastward through
+                                          the evening. Farther south, scattered
+                                          thunderstorms across the Ozarks could
+                                          also bring isolated damaging winds and
+                                          a brief tornado, although the threat
+                                          is lower and more localized. In parts
+                                          of eastern Virginia and northeastern
+                                          North Carolina, afternoon
+                                          thunderstorms may develop along a weak
+                                          front and produce gusty winds.</div>
                                         <div><br>
                                         </div>
                                         <div class="text-center"><strong><a href="https://www.spc.noaa.gov/products/outlook/day1otlk.html">Today's
@@ -1221,31 +1181,32 @@ State
                                       <div style="margin-top: 1em; text-align: left;">
                                         <div style="margin-top: 1em; text-align: left;"><strong>Heavy
                                             Rain and Flash Flooding Threat
-                                            Spreads Across Southern and Eastern
-                                            States</strong><br>
-                                          Heavy rain and thunderstorms are
-                                          expected to affect several regions on
-                                          Saturday, raising the risk of
-                                          localized flash flooding. The greatest
-                                          concerns are across parts of north
-                                          Texas, eastern Oklahoma, and western
-                                          Arkansas, where repeated rounds of
-                                          storms may produce prolonged periods
-                                          of heavy rainfall. Additional areas at
-                                          risk include the Ohio Valley, where a
-                                          slow-moving front will trigger
-                                          multiple waves of storms from Indiana
-                                          into the central Appalachian region.
-                                          Along the upper Texas coast, including
-                                          areas near Houston, extremely humid
-                                          conditions will support slow-moving
-                                          thunderstorms capable of producing
-                                          intense rainfall. The central Gulf
-                                          Coast, from Louisiana to the Florida
-                                          Panhandle, may also experience
-                                          repeated storms. Urban areas, roads,
-                                          low-lying locations, and small streams
-                                          will be most vulnerable to flooding.</div>
+                                            Expands Across the Mid-Mississippi
+                                            Valley and Ozarks<br>
+                                          </strong>A widespread threat for heavy
+                                          rainfall and localized flash flooding
+                                          is expected this afternoon through
+                                          tonight across portions of the
+                                          Mid-Mississippi Valley, Ozarks, and
+                                          western Tennessee Valley. Numerous
+                                          thunderstorms are forecast to develop
+                                          as several weather systems interact
+                                          with a very warm and moisture-rich air
+                                          mass. Some storms may produce intense
+                                          downpours capable of dropping several
+                                          inches of rain in a short period of
+                                          time. Areas that received significant
+                                          rainfall recently, including parts of
+                                          eastern Oklahoma, western Arkansas,
+                                          Illinois, and Indiana, may be
+                                          especially vulnerable because the
+                                          ground is already saturated. Localized
+                                          rainfall totals could exceed several
+                                          inches, leading to flooding of roads,
+                                          low-lying areas, and small streams.
+                                          Additional isolated flooding is also
+                                          possible farther east into the Ohio
+                                          Valley and north into the Plains.</div>
                                         <a href="https://www.wpc.ncep.noaa.gov/qpf/excessive_rainfall_outlook_ero.php"><strong></strong></a></div>
                                       <div style="margin-top: 1em; text-align: center;"><a
                                           href="https://www.wpc.ncep.noaa.gov/qpf/excessive_rainfall_outlook_ero.php"><strong>Today's
@@ -1265,34 +1226,33 @@ State
                                               Weather Outlooks</a></span></em>
                                         <div style="text-align: left;"><strong></strong><strong></strong><strong><br>
                                           </strong></div>
-                                        <div style="text-align: left;"><strong>Critical
+                                        <div style="text-align: left;"><strong>Dangerous
                                             Fire Weather Conditions Expected
-                                            Across the Great Basin and Southwest<br>
-                                          </strong>Dangerous fire weather
-                                          conditions are expected today across
-                                          parts of the Great Basin and Southwest
-                                          as hot, dry, and windy weather
-                                          combines with dry vegetation. Strong
-                                          winds and very low humidity will
-                                          increase the potential for rapid
-                                          wildfire growth from Nevada and Utah
-                                          into northern Arizona and western
-                                          Colorado. Elevated fire danger will
-                                          also extend into parts of southern
-                                          Arizona and the Four Corners region.
-                                          In some locations, conditions may
-                                          briefly reach critical levels,
-                                          especially where vegetation has become
-                                          increasingly dry. Isolated
-                                          thunderstorms are possible in parts of
-                                          Idaho, Montana, Colorado, Wyoming, and
-                                          western Nebraska. However, these
-                                          storms may produce little rainfall
-                                          while generating lightning, creating a
-                                          risk of new wildfire starts.
-                                          Fast-moving storms and dry fuels will
-                                          heighten concerns across affected
-                                          areas. </div>
+                                            Across the Interior West<br>
+                                          </strong>Elevated to critical fire
+                                          weather conditions are expected Sunday
+                                          across parts of the Southwest, Great
+                                          Basin, Central Rockies, and southern
+                                          Idaho. Dry air, gusty winds, and very
+                                          dry vegetation will combine to create
+                                          an environment where any new fire
+                                          could spread rapidly. Winds may
+                                          frequently gust between 25 and 35 mph,
+                                          while humidity levels remain extremely
+                                          low. These conditions will be
+                                          especially concerning across areas
+                                          with ongoing drought and dry fuels.
+                                          The Snake River Plain in Idaho is also
+                                          expected to see a heightened fire
+                                          danger due to similar windy and dry
+                                          conditions. A few thunderstorms may
+                                          develop from Utah into Wyoming, but
+                                          some could produce little rainfall.
+                                          These dry thunderstorms may generate
+                                          lightning capable of starting new
+                                          wildfires while also creating sudden,
+                                          erratic wind gusts near existing
+                                          fires.</div>
                                       </div>
                                     </div>
                                   </div>
@@ -2180,5 +2140,119 @@ State
 
   fetchNWSAlerts();
   setInterval(fetchNWSAlerts, 15 * 60 * 1000);
+    
+    // Fetch and inject live USNO data for Lancaster, PA
+  async function loadLancasterAstroData() {
+    // Replace the URL string below with your actual deployed Cloudflare Worker domain path
+    const workerEndpoint = 'https://moon-api.maineapexwx.workers.dev/?lat=40.0379&lon=-76.3055';
+
+    try {
+      const response = await fetch(workerEndpoint);
+      if (!response.ok) throw new Error("Astro API returned an error status.");
+      
+      const data = await response.json();
+
+      // Dynamically inject values matching the HTML target IDs
+      document.getElementById('astro-date').textContent = data.date_label;
+      document.getElementById('astro-sunrise').textContent = data.sunrise;
+      document.getElementById('astro-sunset').textContent = data.sunset;
+      document.getElementById('astro-day-length').textContent = data.day_length;
+      document.getElementById('astro-moon-phase').textContent = data.moon_phase_display;
+      document.getElementById('astro-moonrise').textContent = data.moonrise_display;
+      document.getElementById('astro-moonset').textContent = data.moonset_display;
+
+    } catch (error) {
+      console.error("Failed to inject Lancaster astronomical predictions:", error);
+      document.getElementById('astro-date').textContent = "Data Temporarily Offline";
+      document.getElementById('astro-moon-phase').textContent = "Unable to connect to USNO source.";
+    }
+  }
+
+  // Hook into the page load event alongside your other existing functions
+  document.addEventListener("DOMContentLoaded", loadLancasterAstroData);
+</script> <script>
+/**
+ * Lancaster Almanac — Ingestion Script
+ * Pulls local Lancaster observations via Cloudflare Workers
+ */
+async function loadLancasterAlmanacData() {
+  const workerEndpoint = 'https://almanac-api.maineapexwx.workers.dev/';
+
+  const fmtTemp = v => (v && v !== "M" && v !== "—") ? `${Math.round(v)}°` : "—";
+  const fmtPrecip = (v, dec=2) => {
+    if (!v || v === "M" || v === "—") return "—";
+    if (v === "T") return "T";
+    return `${parseFloat(v).toFixed(dec)}"`;
+  };
+
+  // Helper to color-code and calculate departures (Regular weight text)
+  const getDepartureStyle = (obs, nrm, isRain = false) => {
+    const o = parseFloat(obs);
+    const n = parseFloat(nrm);
+    if (isNaN(o) || isNaN(n)) return "";
+    
+    const diff = o - n;
+    const sign = diff >= 0 ? "+" : "";
+    const formattedDiff = diff.toFixed(isRain ? 2 : 0);
+    
+    // Warm/Above = Red Hue (#d32f2f), Cool/Below = Green Hue (#2e7d32)
+    const color = diff >= 0 ? "#d32f2f" : "#2e7d32";
+    return ` <span style="color: ${color};">(${sign}${formattedDiff}${isRain ? '"' : '°'})</span>`;
+  };
+
+  try {
+    const response = await fetch(workerEndpoint);
+    if (!response.ok) throw new Error("Almanac API returned an error status.");
+    const d = await response.json();
+
+    // Calculate variations dynamically compared against climate values
+    const highDep = getDepartureStyle(d.observed.high, d.normals.high);
+    const lowDep = getDepartureStyle(d.observed.low, d.normals.low);
+    const rainDep = getDepartureStyle(d.ytd_rain.obs, d.ytd_rain.nrm, true);
+
+    const html = `
+<div style="text-align: center;"><strong> 🗓️ <u>Lancaster
+            Weather Almanac</u> 🗓️ </strong><br>
+        <strong> </strong></div>
+      <div>
+        <div style="text-align: center;"><span style="font-size: 12px;"><em>Non-metric
+              units unless otherwise indicated; times US Eastern</em></span></div>
+
+<p><strong><u>${d.date_labels.observed}</u></strong></p>
+<p>
+  <strong>High:</strong> ${fmtTemp(d.observed.high)}${highDep} | <strong>Low:</strong> ${fmtTemp(d.observed.low)}${lowDep}<br><br>
+  <strong>Rainfall:</strong> ${fmtPrecip(d.observed.rain)}<br>
+  <strong>Snowfall:</strong> ${fmtPrecip(d.observed.snow, 1)}
+</p>
+
+<p><strong><u>${d.date_labels.normal}</u></strong></p>
+<p>
+  <strong>Normal High:</strong> ${fmtTemp(d.normals.high)} &nbsp;|&nbsp; <strong>Normal Low:</strong> ${fmtTemp(d.normals.low)}<br><br>
+  <strong>Normal Daily Rainfall:</strong> ${fmtPrecip(d.normals.rain)}<br>
+  <strong>Normal Daily Snowfall:</strong> ${fmtPrecip(d.normals.snow, 1)}
+</p>
+
+<p><strong><u>Precipitation</u></strong></p>
+<p>
+  <strong>Rain YTD:</strong> ${fmtPrecip(d.ytd_rain.obs)} | normal: ${fmtPrecip(d.ytd_rain.nrm)}${rainDep}<br>
+  <strong>Snow 25-26:</strong> 20.4" | normal: 21.4"<br><br>
+  ❄️ Annual snowfall measured from July 1 - June 30 ❄️<br><br>
+  <em>Data source: NOAA SC-ACIS Lancaster</em>
+</p>
+`;
+
+    const target = document.getElementById("lancaster-almanac");
+    if (target) target.innerHTML = html;
+
+  } catch (error) {
+    console.error("Failed to inject Lancaster almanac data:", error);
+    const target = document.getElementById("lancaster-almanac");
+    if (target) {
+      target.innerHTML = `<p style="color:red;">Almanac Feed Temporarily Offline</p>`;
+    }
+  }
+}
+
+document.addEventListener("DOMContentLoaded", loadLancasterAlmanacData);
 </script> </body>
 </html>
