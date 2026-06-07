@@ -2249,14 +2249,14 @@ async function loadLancasterAlmanacData() {
 
 <p><strong><u>${d.date_labels.observed}</u></strong></p>
 <p>
-  <strong>High:</strong> ${fmtTemp(d.observed.high)}${highDep} | <strong>Low:</strong> ${fmtTemp(d.observed.low)}${lowDep}<br><br>
+  <strong>High:</strong> ${fmtTemp(d.observed.high)}${highDep} | <strong>Low:</strong> ${fmtTemp(d.observed.low)}${lowDep}<br>
   <strong>Rainfall:</strong> ${fmtPrecip(d.observed.rain)}<br>
   <strong>Snowfall:</strong> ${fmtPrecip(d.observed.snow, 1)}
 </p>
 
 <p><strong><u>${d.date_labels.normal}</u></strong></p>
 <p>
-  <strong>Normal High:</strong> ${fmtTemp(d.normals.high)} &nbsp;|&nbsp; <strong>Normal Low:</strong> ${fmtTemp(d.normals.low)}<br><br>
+  <strong>Normal High:</strong> ${fmtTemp(d.normals.high)} &nbsp;|&nbsp; <strong>Normal Low:</strong> ${fmtTemp(d.normals.low)}<br>
   <strong>Normal Daily Rainfall:</strong> ${fmtPrecip(d.normals.rain)}<br>
   <strong>Normal Daily Snowfall:</strong> ${fmtPrecip(d.normals.snow, 1)}
 </p>
@@ -2283,5 +2283,6 @@ async function loadLancasterAlmanacData() {
 }
 
 document.addEventListener("DOMContentLoaded", loadLancasterAlmanacData);
-</script> </body>
+</script>
+  </body>
 </html>
