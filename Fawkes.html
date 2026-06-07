@@ -810,7 +810,7 @@ State
             <strong>Snow 25-26:</strong> 20.4" | normal: 21.4"<br>
             ❄️ Annual snowfall measured from July 1 - June 30 ❄️<br>
             <em>Data source: <a href="https://scacis.rcc-acis.org/" target="_blank">NOAA
-                SC-ACIS</a> climate data tracker</em> </p>
+                SC-ACIS</a> climate data tracker&nbsp;</em> </p>
         </div>
         <div>
           <div><strong></strong><strong></strong><br>
@@ -2245,7 +2245,7 @@ async function loadLancasterAlmanacData() {
         <strong> </strong></div>
       <div>
         <div style="text-align: center;"><span style="font-size: 12px;"><em>Non-metric
-              units unless otherwise indicated; times US Eastern</em></span></div>
+              units unless otherwise indicated</em></span></div>
 
 <p><strong><u>${d.date_labels.observed}</u></strong></p>
 <p>
@@ -2264,7 +2264,7 @@ async function loadLancasterAlmanacData() {
 <p><strong><u>Precipitation</u></strong></p>
 <p>
   <strong>Rain YTD:</strong> ${fmtPrecip(d.ytd_rain.obs)} | normal: ${fmtPrecip(d.ytd_rain.nrm)}${rainDep}<br>
-  <strong>Snow 25-26:</strong> ${manualSnowObs.toFixed(1)}" | normal: ${manualSnowNrm.toFixed(1)}"${snowDep}<br><br>
+  <strong>Snow 25-26:</strong> ${manualSnowObs.toFixed(1)}" | normal: ${manualSnowNrm.toFixed(1)}"${snowDep}<br>
   <span style="font-size: 12px;">❄️ Annual snowfall measured from July 1 - June 30 ❄️<br>
   <em>Data source: NOAA SC-ACIS Lancaster</em></span>
 </p>
