@@ -460,7 +460,7 @@ body, div, span, p {
   border: none !important;
 }
       
-      /* Live Astro Widget Layout Rules */
+/* Live Astro Widget Layout Rules */
 .astro-card {
   max-width: 100%;
   margin: 15px auto;
@@ -478,9 +478,7 @@ body, div, span, p {
 .astro-date {
   font-weight: bold;
   margin-bottom: 15px;
-}
-  
-}
+} 
 .astro-row {
   font-size: 15px;
   margin-bottom: 8px;
@@ -498,8 +496,7 @@ body, div, span, p {
   line-height: 1.4;
   color: #555;
   text-align: left;
-}  
-      
+}     
 .astro-phase-table {
   font-size: 15px;
   line-height: 1.5;
@@ -1251,14 +1248,15 @@ body, div, span, p {
                   AM EDT tomorrow</span> | <strong>Moonset</strong>🌙↓ <span id="astro-moonset">--:--
                   AM EDT today</span> </div>
             </div>
-            <em style="font-size: 12px;"><dvi><b data-path-to-node="4,0" data-index-in-node="0">Notice:</b>
-                Sun and moon times above are astronomical predictions calculated
-                by US Naval Observatory (USNO), which accounts for complex
+            <div style="font-size: 12px;"> <em> <strong>Notice:</strong> Sun
+                and moon times above are astronomical predictions calculated by
+                the US Naval Observatory (USNO), which accounts for complex
                 orbital variations, gravitational shifts, and atmospheric
                 refraction. However, actual visibility will vary depending on
                 your exact local topography, weather, and atmospheric
-                conditions. More Fort Kent Sun and Moon information at <a href="https://www.timeanddate.com/astronomy/@4964627">timeanddate.com</a>.</dvi>
-            </em></div>
+                conditions. More Fort Kent Sun and Moon information at <a href="https://www.timeanddate.com/astronomy/@4964627">timeanddate.com</a>.
+              </em> </div>
+          </div>
           <div style="text-align: center;"> </div>
           <div>
             <div>
@@ -3051,6 +3049,5 @@ const climateRecords = {
   // 2. Fire your new astronomy sequence immediately (No loop required)
   loadFortKentAstroData();
 
-</script>
-  </body>
+</script> </body>
 </html>
