@@ -864,7 +864,7 @@ State
           </div>
         </div>
         <div class="live-station" style="font-size:14px;">
-          <details>
+          <details open="">
             <summary style="cursor: pointer; text-align: center; font-size: 1.2em; font-weight: bold;">
               📊Lancaster Weather Almanac 📊 <span style="font-size: 13px; font-weight: normal; color: #555; display: block; margin-top: 2px;">(Click
                 to Collapse/Expand)</span> </summary>
@@ -1021,7 +1021,7 @@ State
               <div style="text-align:left;"> <span style="font-size:12px;"> <em>Climate
                     data source: <a href="https://scacis.rcc-acis.org/"> NOAA
                       RCC ACIS</a></em></span><em><span style="font-size:12px;">
-                    with Lancaster weather records dating to 1929. Climate
+                    with Lancaster weather records dating to 1948/1949. Climate
                     normals and historical records are sourced via NOAA/ACIS
                     data feeds and are intended for informational purposes only.
                     Data can occasionally contain provisional values or missing
@@ -2665,6 +2665,5 @@ const lnsClimateRecords = {
 // ======================================================
 loadClimateData();
 setInterval(loadClimateData, 1800000); // Auto-refresh data array every 30 minutes
-</script>
-  </body>
+</script> </body>
 </html>
