@@ -29,20 +29,40 @@
       background: inherit;
     }
 
-    @media (max-width: 768px) {
-      .container {
-        grid-template-columns: 1fr;
-      }
-    }
-     
+ .container {
+  display: grid;
+  grid-template-columns: 25% 50% 25%;
+  min-height: 80vh;
+}
 
-    /* Responsive images container */
-    .inline-images {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      justify-content: center;
-    }
+.column {
+  padding: 1rem;
+  background: inherit;
+}
+
+@media (max-width: 768px) {
+
+  .container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #center-column {
+    order: 1;
+  }
+
+  #left-column {
+    order: 2;
+  }
+
+  #right-column {
+    order: 3;
+  }
+
+  .inline-images {
+    justify-content: center;
+  }
+}
 
     .inline-images img {
       max-width: 100%;
@@ -479,6 +499,12 @@ body, div, span, p {
   color: #555;
   text-align: left;
 }  
+      
+.astro-phase-table {
+  font-size: 15px;
+  line-height: 1.5;
+  margin: 8px 0;
+}
 </style> </head>
   <body>
     <div class="text-center"><br>
@@ -1212,6 +1238,15 @@ body, div, span, p {
                   --m</span> </div>
               <div class="astro-row astro-phase-block"> <strong>Moon Phase:</strong>
                 <span id="astro-moon-phase">Loading phase details...</span> </div>
+              <div class="astro-row astro-phase-table">
+                <div class="astro-row astro-phase-table"> <strong>June 2026
+                    Major Moon Phases</strong></div>
+                <div class="astro-row astro-phase-table">🌗 <strong>Jun 8</strong>
+                  Last Quarter | 🌑 <strong>Jun 14</strong> New Moon | 🌓 <strong>Jun
+                    21</strong> First Quarter | 🌕 <strong>Jun 29</strong> Full
+                  Moon <br>
+                </div>
+              </div>
               <div class="astro-row"> <strong>Moonrise</strong>🌙↑ <span id="astro-moonrise">--:--
                   AM EDT tomorrow</span> | <strong>Moonset</strong>🌙↓ <span id="astro-moonset">--:--
                   AM EDT today</span> </div>
