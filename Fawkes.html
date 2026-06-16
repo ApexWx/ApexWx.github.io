@@ -471,7 +471,26 @@ img {
 .rain-neutral {
   color: #aaaaaa !important; /* Soft Gray for exactly normal */
 }
+.sun-grid {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  justify-content: center;
+  gap: 8px 35px;
+  text-align: center;
+  margin: 8px 0;
+}
+.moon-phase-grid {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 15px 50px;
+  justify-content: center;
+  text-align: center;
+  margin: 8px auto;
+}
 
+.moon-phase-item {
+  line-height: 1.3;
+}
 </style> </head>
   <body>
     <header id="page-header">
@@ -1040,21 +1059,35 @@ State
                   Lancaster, Pennsylvania 🌕 </div>
                 <div class="astro-date"> <span id="astro-date">Loading data...</span>
                 </div>
-                <div class="astro-row"> 🌅<strong>Sunrise:</strong> <span id="astro-sunrise">--:--
-                    AM EDT</span> | 🌇<strong>Sunset:</strong> <span id="astro-sunset">--:--
-                    PM EDT</span> | <strong>Day Length:</strong> <span id="astro-day-length">--h
+                <div class="sun-grid">
+                  <div> 🌄 <strong>Dawn</strong><br>
+                    <span id="astro-dawn">--:-- AM EDT</span> </div>
+                  <div> 🌅 <strong>Sunrise</strong><br>
+                    <span id="astro-sunrise">--:-- AM EDT</span> </div>
+                  <div> 🌇 <strong>Sunset</strong><br>
+                    <span id="astro-sunset">--:-- PM EDT</span> </div>
+                  <div> 🌆 <strong>Dusk</strong><br>
+                    <span id="astro-dusk">--:-- PM EDT</span> </div>
+                </div>
+                <div class="astro-row"> <strong>Day Length:</strong> <span id="astro-day-length">--h
                     --m</span> </div>
                 <div class="astro-row astro-phase-table">
-                  <div class="astro-row astro-phase-table"> <strong><br>
-                      June 2026 Major Moon Phases</strong></div>
-                  <div class="astro-row astro-phase-table">🌗 <strong>Jun 8</strong>
-                    Last Quarter | 🌑 <strong>Jun 14</strong> New Moon | 🌓 <strong>Jun
-                      21</strong> First Quarter | 🌕 <strong>Jun 29</strong>
-                    Full Moon <br>
+                  <div class="astro-row astro-phase-table"><strong><u><br>
+                        June 2026 Major Moon Phases</u></strong> </div>
+                  <div class="moon-phase-grid">
+                    <div class="moon-phase-item"> 🌗 <strong>Jun 8</strong><br>
+                      Last Quarter </div>
+                    <div class="moon-phase-item"> 🌑 <strong>Jun 14</strong><br>
+                      New Moon </div>
+                    <div class="moon-phase-item"> 🌓 <strong>Jun 21</strong><br>
+                      First Quarter </div>
+                    <div class="moon-phase-item"> 🌕 <strong>Jun 29</strong><br>
+                      Full Moon </div>
                   </div>
                 </div>
                 <div class="astro-row astro-phase-block"> <strong>Current Moon
-                    Phase:</strong> <span id="astro-moon-phase">Loading phase
+                    Phase</strong><strong><br>
+                  </strong> <span id="astro-moon-phase">Loading phase
                     details...</span> </div>
                 <div class="astro-row"> <strong>Moonrise</strong>🌙↑ <span id="astro-moonrise">--:--
                     AM EDT</span> | <strong>Moonset</strong>🌙↓ <span id="astro-moonset">--:--
@@ -1074,9 +1107,9 @@ State
                   <div style="text-align: center;"><strong><span style="font-variant: small-caps;">The
                         Week Ahead for Lancaster, Pennsylvania &amp; the Lower
                         Susquehanna Valley<br>
-                      </span></strong><em style="font-size: 12px;"><span style="color: #666666;">Outlooks
+                      </span></strong><span style="font-size: 12px;"><span style="color: #666666;">Outlooks
                         typically updated 7–9 AM ET weekdays and 8–10 AM ET
-                        weekends &amp; holidays</span></em> <strong><span style="font-variant: small-caps;">
+                        weekends &amp; holidays</span></span> <strong><span style="font-variant: small-caps;">
                       </span></strong></div>
                 </div>
                 <div>
@@ -1099,121 +1132,138 @@ State
                           </strong></u>
                         <div><u><strong><br>
                             </strong></u>
-                          <div><u><strong>7-Day Outlook: Monday, June 15 –
-                                Sunday, June 21<br>
+                          <div><u><strong>7-Day Outlook: Tuesday, June 16 –
+                                Monday, June 22<br>
                               </strong></u>
                             <div>
-                              <div style="text-align: center;"><span style="color: #666666;"><em><span
-                                      style="font-size: 12px;">Updated June 15
-                                      at 10:45 AM </span><span style="font-size: 12px;">EDT
-                                      </span><span style="font-size: 12px;"><br>
-                                    </span></em></span></div>
-                              <div><strong><br>
-                                </strong></div>
-                              <div style="text-align: left;"><strong>Mon. June
-                                  15 – Wed. June 17</strong></div>
+                              <div style="text-align: center;"><span style="color: #666666;"><span
+                                    style="font-size: 12px;">Updated June 16 at
+                                    11:15 AM </span><span style="font-size: 12px;">EDT</span></span></div>
+                            </div>
+                            <span style="color: #666666;"><em><span style="font-size: 12px;">&nbsp;</span><span
+                                  style="font-size: 12px;"> </span></em></span>
+                            <div>
+                              <div style="text-align: left;"><strong>Tue. June
+                                  16 – Thu. June 18</strong></div>
                             </div>
                           </div>
                         </div>
-                        <div style="text-align: left;">A dry and cooler air mass
-                          is moving across the region, bringing low humidity and
-                          generally pleasant weather to start the week. Skies
-                          will gradually clear this morning, although a few
-                          clouds may redevelop this afternoon with daytime
-                          heating. A brief period of patchy morning fog is
-                          possible in some sheltered locations, but wind may
-                          limit its development. Tonight will be cool with lows
-                          in the low 50s and generally calm conditions. Tuesday
-                          will be similar to today, with mostly dry weather,
-                          light winds, and slightly warmer temperatures.
-                          Overall, conditions will remain quiet, dry, and
-                          seasonably comfortable through midweek.</div>
+                        <div style="text-align: left;">An area of high pressure
+                          over the Mid-Atlantic States will promote light winds,
+                          low humidity, mostly sunny skies and comfortable
+                          conditions across the Lower Susquehanna Valley today
+                          with high temperatures in the upper 70s. Clouds will
+                          gradually increase tonight in advance of a weak
+                          disturbance, and isolated showers or thunderstorms may
+                          then dot the Lower Susquehanna Valley on Wednesday.
+                          However, most areas will remain dry, and severe
+                          weather is not anticipated.</div>
                         <div style="text-align: left;"><br>
-                          Mostly sunny conditions are expected today with a
-                          pleasant and dry air mass in place. High temperatures
-                          will reach the upper 70s. Northwest winds will be
-                          moderate at 10 to 15 mph with occasional gusts near 20
-                          mph, gradually easing by evening. Skies will clear
-                          further tonight with lows falling into the low to
-                          mid-50s. Winds will remain from the northwest at 5 to
-                          10 mph early, becoming calm late at night.<br>
+                        </div>
+                        <div style="text-align: left;"> Southwesterly winds of
+                          8-16 mph will also direct warmer air back into the
+                          region during the middle of the week with high
+                          temperatures in the low-to-mid 80s Wednesday
+                          afternoon. After a warm and dry Wednesday night,
+                          another batch of showers and thunderstorms will impact
+                          northern Maryland and southeastern Pennsylvania
+                          Thursday morning well ahead of a cold front. Once
+                          again, severe weather is unlikely, and clouds should
+                          ultimately decrease Thursday afternoon with no more
+                          than an additional shower or two in spots. Ahead of
+                          the front, southwesterly winds will be sustained at
+                          12-25 mph with gusts up to 40 mph Thursday afternoon,
+                          and high temperatures should approach or even reach
+                          the 90-degree mark.</div>
+                        <div style="text-align: left;"><br>
+                        </div>
+                        <div style="text-align: left;">Today will feature sunny
+                          skies with temperatures rising into the upper 70s and
+                          a light southwest wind. Tonight will remain partly
+                          cloudy with lows in the upper 50s, and only a slight
+                          chance of showers or thunderstorms developing toward
+                          the early morning hours as light southeast winds
+                          continue.<br>
                           <br>
-                          Tuesday will remain dry and seasonable with mostly
-                          sunny skies and highs in the upper 70s. Winds will be
-                          light from the west. Tuesday night will feature
-                          increasing clouds with a slight chance of showers
-                          developing after the early morning hours, with lows in
-                          the upper 50s and light southeast winds.<br>
+                          On Wednesday, conditions will become more humid and
+                          unstable with partly sunny skies and highs reaching
+                          the low to mid-80s. A chance of showers is expected
+                          through the morning into early afternoon, followed by
+                          a slight chance of showers and thunderstorms later in
+                          the day. Winds will be from the south at light speeds
+                          in the 5 to 10 mph range. Wednesday night will trend
+                          mostly clear early, then become mostly cloudy with
+                          lows in the mid-60s and light southeast winds.<br>
                           <br>
-                          Wednesday will turn more unsettled with a chance of
-                          showers and a few thunderstorms developing during the
-                          afternoon. Highs will reach the low to mid-80s with
-                          light south winds becoming southwest at 5 to 10 mph.
-                          Wednesday night will remain mostly cloudy with lows in
-                          the mid-60s.<br>
+                          Thursday will be the most active day, with warmer and
+                          more humid conditions and highs reaching the upper 80s
+                          to low 90s. Showers and thunderstorms are possible
+                          from late morning into the afternoon, with a 50
+                          percent chance of precipitation. Some storms could
+                          produce brief heavy rain, while most rainfall amounts
+                          remain light outside of thunderstorms. South winds
+                          will increase into the 10 to 15 mph range before
+                          shifting westward during the afternoon, with gusts
+                          25-35 mph. Thursday night will remain partly cloudy
+                          with a slight chance of showers and lows in the
+                          mid-60s.<br>
                         </div>
                         <div style="text-align: left;"><br>
                         </div>
                         <div>
                           <div>
                             <div style="text-align: left;">
-                              <div><strong>Thu. June 18 – Sun. June 21</strong></div>
-                              A strong, moisture-rich weather system will move
-                              toward the region Thursday, bringing the potential
-                              for showers and thunderstorms as a cold front
-                              approaches. Winds aloft will be strong and
-                              moisture levels will be high, which could support
-                              organized storms if sufficient surface heating
-                              develops. </div>
+                              <div><strong>Fri. June 19 – Mon. June 22</strong></div>
+                              High pressure builds Friday through Sunday with
+                              mostly clear skies and near seasonal temperatures.
+                              A warm front lifts towards the region Monday with
+                              increasing clouds and chances of showers and
+                              thunderstorms. Scattered showers and a few
+                              thunderstorms are possible Monday evening with
+                              clearing skies overnight as high pressure builds
+                              in from the Great Lakes.</div>
                             <div style="text-align: left;"><br>
-                              However, uncertainty remains, as early-day clouds
-                              or morning convection may limit heating and reduce
-                              the intensity of afternoon storms. Additional
-                              overnight or early morning showers could also
-                              stabilize the atmosphere and delay stronger
-                              development. Because of these competing factors,
-                              the timing and severity of any storms remain
-                              uncertain.<br>
+                              On Juneteenth, a few showers are possible mainly
+                              during the morning into early afternoon, then
+                              conditions improve to mostly sunny skies with
+                              highs in the upper 70s to low 80s and a low chance
+                              of rain around 30 percent. Friday night will be
+                              mostly clear with lows in the upper 50s to around
+                              60.<br>
                               <br>
-                              Thursday will be mostly cloudy and hot with highs
-                              in the lower 90s. Showers and thunderstorms are
-                              likely by the afternoon, with continued chances
-                              into Thursday night as temperatures fall into the
-                              mid-60s.<br>
+                              Saturday will be sunny and pleasant with highs in
+                              the low to mid-80s and light winds, followed by a
+                              clear and comfortable Saturday night with lows in
+                              the upper 50s. Sunday continues the fair weather
+                              trend with sunny skies and highs in the mid-80s,
+                              while Sunday night turns partly cloudy with lows
+                              in the low 60s.<br>
                               <br>
-                              Conditions improve heading into the weekend.
-                              Friday will be partly sunny with highs in the low
-                              80s and light winds, followed by clear and cool
-                              nights in the upper 50s to around 60. </div>
+                              By Monday, moisture and instability increase,
+                              bringing a chance of showers and thunderstorms
+                              with partly sunny skies and highs in the mid-80s.
+                              Rain chances increase to around 40 to 50 percent,
+                              with the potential for showers and thunderstorms
+                              continuing into Monday night under mostly cloudy
+                              skies and lows in the low to mid-60s.</div>
                             <div style="text-align: left;"><br>
-                              Saturday will remain sunny and warm with highs in
-                              the low to mid-80s and light winds. Sunday will
-                              stay warm with highs in the mid-80s, although a
-                              slight chance of showers and thunderstorms may
-                              return by Sunday night with lows in the low 60s.</div>
-                            <div style="text-align: left;"><br>
-                              <strong>Extended Outlook for Mon. June 22 - Sun.
-                                June 28<br>
+                              <strong>Extended Outlook for Tue. June 23 - Mon.
+                                June 29</strong><strong><br>
                               </strong>
                               <div><span style="color: #666666;"><em style="font-size: 12px;">For
                                     guidance rather than precise predictions due
                                     to increasing forecast uncertainty</em></span></div>
                               <div><span style="color: #666666;"><em style="font-size: 12px;"></em></span></div>
                               <br>
-                              A generally unsettled weather pattern is expected
-                              across the Lancaster, Pennsylvania area through
-                              the mid- to late week period, with temperatures
-                              remaining seasonable and moisture levels gradually
-                              increasing. High temperatures will mainly range
-                              through the upper 70s to lower 80s each afternoon,
-                              while overnight lows hold in the upper 50s to low
-                              60s.<br>
-                              <br>
-                              <strong> </strong>NOAA's Climate Prediction
-                              Center outlook for Mon. June 22 through Sun. June
-                              28 indicates slightly below normal temperatures
-                              and slightly above normal precipitation for
-                              Lancaster and vicinity.</div>
+                              Partly cloudy to mostly clear skies with highs in
+                              the low 80s Tuesday through Thursday and the
+                              mid-80s Friday. Overnight temperatures in the
+                              lower 60s. Chance of isolated to scattered
+                              showers/thunderstorms for the period. NOAA's
+                              Climate Prediction Center outlook for June 23-29
+                              indicates slightly below normal temperatures and
+                              slightly above normal precipitation for Lancaster
+                              and vicinity.</div>
                             <div> </div>
                           </div>
                         </div>
@@ -1289,7 +1339,7 @@ State
                               <div>
                                 <hr style="margin-left: 0px; margin-right: auto;"><u><strong><span
                                       style="font-variant: small-caps;"></span></strong></u></div>
-                              <details open="">
+                              <details>
                                 <summary style="cursor: pointer; text-align: center; font-size: 1.2em; font-weight: bold;">
                                   <span style="font-size: 18px;">🇺🇸 </span><span
                                     style="font-size: 18px;">US National Weather
@@ -1299,28 +1349,29 @@ State
                                     to expand/collapse) </span> </summary>
                                 <div style="text-align: center;"><br>
                                   <strong></strong><u><strong></strong></u><u><strong></strong></u></div>
-                                <strong></strong><strong></strong><strong>Cooler
-                                  Air Settles Across the East While Heavy Rain
-                                  Threat Grows Along the Gulf Coast<br>
-                                </strong>A much cooler air mass is spreading
-                                across much of the eastern and central United
-                                States, bringing a welcome break from recent
-                                warmth. Rain across New England is moving out,
-                                while temperatures from the Plains to the
-                                Northeast fall to levels well below normal for
-                                mid-June. Many areas will see comfortable highs
-                                mainly in the 70s and lower 80s. Meanwhile, the
-                                greatest weather concern will be along the Gulf
-                                Coast from South Texas into Louisiana, where a
-                                prolonged period of heavy rain is expected
-                                through the middle of the week. Several inches
-                                of rain may fall, raising the risk of flooding
-                                in vulnerable locations. Forecasters are also
-                                monitoring the potential for tropical
-                                development near the Texas coast. Elsewhere, the
-                                Pacific Northwest will begin to cool after a
-                                brief heat wave, while hot conditions persist
-                                across the Desert Southwest.<br>
+                                <strong></strong><strong></strong><strong>Severe
+                                  Storms in the Midwest and Flooding Rains Along
+                                  the Gulf Coast<br>
+                                </strong>A cooler and drier air mass from Canada
+                                is spreading across much of the eastern United
+                                States, bringing below-normal temperatures to
+                                many areas. At the same time, two fast-moving
+                                storm systems will track across the northern
+                                states. The stronger system is expected to
+                                trigger severe thunderstorms across parts of the
+                                Midwest, Great Lakes, and Ohio Valley on
+                                Wednesday. Some storms may produce damaging
+                                winds, large hail, tornadoes, and localized
+                                flash flooding. Farther south, a prolonged
+                                period of heavy rain is expected from South
+                                Texas into Louisiana. Several inches of rain
+                                could fall through Thursday, increasing the risk
+                                of flash flooding and significant water-related
+                                impacts. Forecasters are also monitoring the
+                                potential for tropical development near the
+                                Texas Gulf Coast. Meanwhile, temperatures along
+                                the West Coast will gradually cool, although
+                                desert areas will remain extremely hot.<br>
                                 <br>
                                 <div style="text-align: left;"></div>
                                 <div>
@@ -1358,38 +1409,34 @@ State
                                       <div style="text-align: center;"><strong></strong><strong></strong><strong></strong><strong></strong><strong></strong><strong></strong><strong></strong><strong></strong><strong></strong><strong></strong><strong></strong><strong></strong><strong></strong></div>
                                       <div style="margin-top: 1em; text-align: center;">
                                         <div class="text-center">
-                                          <div style="text-align: left;"><strong>Isolated
-                                              Strong Storms Possible Across
-                                              Parts of the Plains and Upper
-                                              Midwest<br>
-                                            </strong>A few strong to severe
-                                            thunderstorms are possible this
-                                            afternoon and evening across
-                                            portions of the southern High Plains
-                                            and the Upper Midwest. The greatest
-                                            threats will be isolated large hail
-                                            and damaging wind gusts, although
-                                            widespread severe weather is not
-                                            expected. Across eastern New Mexico,
-                                            southeastern Colorado, southwest
-                                            Kansas, and nearby areas,
-                                            thunderstorms are expected to
-                                            develop during the afternoon and may
-                                            organize into clusters as they move
-                                            southeastward. Some storms could
-                                            produce large hail and locally
-                                            strong winds. Farther north,
-                                            scattered thunderstorms are forecast
-                                            across the Dakotas and parts of
-                                            Minnesota. While moisture will be
-                                            somewhat limited, strengthening
-                                            winds in the atmosphere could allow
-                                            a few storms to produce gusty to
-                                            damaging winds. Along the Gulf Coast
-                                            and Southeast, isolated storms may
-                                            also become briefly strong, but the
-                                            overall severe weather threat
-                                            remains low and localized. </div>
+                                          <div style="text-align: left;"><strong>Scattered
+                                              Severe Storms Possible Across the
+                                              Plains, Midwest, and Gulf Coast<br>
+                                            </strong>Strong to severe
+                                            thunderstorms are possible today and
+                                            tonight across parts of the northern
+                                            Great Plains, Midwest, Great Lakes,
+                                            and portions of the Gulf Coast.
+                                            While storms are expected to be
+                                            scattered rather than widespread,
+                                            some could become intense enough to
+                                            produce damaging wind gusts, large
+                                            hail, and a few tornadoes. The
+                                            greatest concerns include areas near
+                                            southern Lake Michigan, parts of
+                                            Kansas and Missouri, and locations
+                                            along the northern Gulf Coast.
+                                            Additional thunderstorms may develop
+                                            later today across the Dakotas and
+                                            surrounding areas, with some capable
+                                            of producing strong winds and hail.
+                                            Weather conditions vary considerably
+                                            from region to region, making it
+                                            difficult to pinpoint exactly where
+                                            the strongest storms will occur.
+                                            Residents in affected areas should
+                                            remain alert for rapidly changing
+                                            weather conditions through tonight.</div>
                                           <div><br>
                                           </div>
                                           <div class="text-center"><strong><a href="https://www.spc.noaa.gov/products/outlook/day1otlk.html">Today's
@@ -1414,36 +1461,35 @@ State
                                       <div style="margin-top: 1em;">
                                         <div style="margin-top: 1em; text-align: left;">
                                           <div style="margin-top: 1em; text-align: left;"><strong
-                                              data-start="0" data-end="86">Serious
-                                              Flash Flood Threat Develops Along
-                                              the Texas Gulf Coast and Parts of
-                                              Mississippi<br>
-                                            </strong>A dangerous flash flooding
-                                            situation is expected to develop
-                                            today across much of the Texas Gulf
-                                            Coast, South Texas, and portions of
-                                            west-central Mississippi. Extremely
-                                            moist tropical air moving inland
-                                            from the Gulf of Mexico will create
-                                            conditions capable of producing
-                                            intense rainfall rates and repeated
-                                            rounds of thunderstorms. In South
-                                            Texas and along the Texas coast,
-                                            some storms may produce several
-                                            inches of rain in just a few hours,
-                                            with localized areas receiving much
-                                            higher totals. Flooding could become
-                                            widespread, especially in urban
-                                            areas and locations where storms
-                                            repeatedly move over the same
-                                            communities. Farther east, parts of
-                                            Louisiana and Mississippi face a
-                                            heightened flood risk as numerous
-                                            thunderstorms develop along a
-                                            stalled front. Areas with already
-                                            saturated ground will be especially
-                                            vulnerable to rapid flash flooding
-                                            through this evening.</div>
+                                              data-start="0" data-end="86">Significant
+                                              Flash Flood Risk Across the Texas
+                                              and Louisiana Gulf Coast<br>
+                                            </strong>A significant heavy rain
+                                            and flash flood threat is expected
+                                            today across parts of the Texas Gulf
+                                            Coast, Louisiana, and western
+                                            Mississippi. Deep tropical moisture
+                                            moving north from the Gulf of Mexico
+                                            will interact with a front moving
+                                            southward, creating favorable
+                                            conditions for repeated rounds of
+                                            thunderstorms. The heaviest rainfall
+                                            is expected during the morning and
+                                            early afternoon, with some areas
+                                            potentially receiving very high
+                                            rainfall totals in a short period of
+                                            time. Locations from coastal Texas
+                                            through Louisiana and into western
+                                            Mississippi face the greatest risk
+                                            of flooding, especially where storms
+                                            repeatedly move over the same areas.
+                                            Flash flooding could develop quickly
+                                            in vulnerable locations, including
+                                            low-lying and urban areas.
+                                            Conditions are expected to gradually
+                                            improve by this evening as the
+                                            heaviest rain shifts away and storm
+                                            activity weakens.</div>
                                           <a href="https://www.wpc.ncep.noaa.gov/qpf/excessive_rainfall_outlook_ero.php"><strong></strong></a></div>
                                         <div style="margin-top: 1em; text-align: center;"><a
                                             href="https://www.wpc.ncep.noaa.gov/qpf/excessive_rainfall_outlook_ero.php"><strong>Today's
@@ -1462,32 +1508,34 @@ State
                                               more about <a href="https://www.spc.noaa.gov/misc/about.html#FireWx">Fire
                                                 Weather Outlooks</a></span></em>
                                           <div style="text-align: left;"><strong></strong><strong></strong><strong><br>
-                                            </strong><strong>Dry and Windy
-                                              Conditions Increase Wildfire Risk
-                                              Across Parts of the Plains and
-                                              Rockies</strong><br>
-                                            Elevated wildfire danger is expected
-                                            this afternoon across portions of
-                                            eastern Wyoming, the Nebraska
-                                            Panhandle, and nearby areas as dry
-                                            air and gusty winds combine with
-                                            receptive vegetation. A cold front
-                                            moving through the region will bring
-                                            stronger northwesterly winds, while
-                                            daytime heating lowers humidity
-                                            levels to very dry values. These
-                                            conditions can allow fires to start
-                                            more easily and spread more rapidly
-                                            if they develop. Additional pockets
-                                            of elevated fire weather are
-                                            possible across parts of the eastern
-                                            Great Basin, Four Corners region,
-                                            and Central Rockies. Although the
-                                            threat is expected to be more
-                                            localized in these areas, low
-                                            humidity and locally strong winds
-                                            could still support increased fire
-                                            activity.</div>
+                                            </strong><strong>Dangerous Fire
+                                              Weather Conditions Expected Across
+                                              Parts of the Pacific Northwest and
+                                              Interior West</strong><br>
+                                            Critical fire weather conditions are
+                                            expected today across portions of
+                                            eastern Washington and north-central
+                                            Oregon, with elevated wildfire
+                                            danger extending into parts of
+                                            Idaho, Nevada, Utah, and the
+                                            Rockies. Strong west to northwest
+                                            winds combined with very dry air and
+                                            warm temperatures will create
+                                            favorable conditions for rapid fire
+                                            growth. In the Columbia Basin,
+                                            sustained winds of 20 to 25 mph with
+                                            stronger gusts will occur alongside
+                                            low humidity levels, increasing the
+                                            risk that any new or existing fires
+                                            could spread quickly. Similar
+                                            conditions are expected across the
+                                            northern Great Basin and portions of
+                                            the Rockies, where hot temperatures,
+                                            dry vegetation, and gusty winds will
+                                            further heighten wildfire concerns.
+                                            Residents should exercise extreme
+                                            caution with any activity that could
+                                            spark a fire today.</div>
                                         </div>
                                       </div>
                                     </div>
@@ -2134,62 +2182,6 @@ State
 
   // Refresh every 3 hours (3 * 60 * 60 * 1000 ms = 10,800,000 ms)
   setInterval(fetchForecast, 10800000);
-</script> <script> // Sun Times Lancaster, PA
-  async function fetchSunriseSunset() {
-    // Lancaster, PA coordinates
-    const lat = 40.0379;  
-    const lng = -76.3055;
-    const apiURL = `https://api.sunrise-sunset.org/json?lat=${lat}&lng=${lng}&formatted=0`;
-
-    try {
-      const response = await fetch(apiURL);
-      const data = await response.json();
-
-      const sunriseUTC = new Date(data.results.sunrise);
-      const sunsetUTC = new Date(data.results.sunset);
-      const dayLengthSec = data.results.day_length;
-
-      // Convert UTC times to local (Eastern Time)
-      const options = { hour: 'numeric', minute: '2-digit', timeZone: 'America/New_York' };
-      const sunriseLocal = sunriseUTC.toLocaleTimeString('en-US', options);
-      const sunsetLocal = sunsetUTC.toLocaleTimeString('en-US', options);
-
-      // Get EDT/EST abbreviation safely
-      const tzString = new Date().toLocaleTimeString('en-US', {
-        timeZone: 'America/New_York',
-        timeZoneName: 'short'
-      });
-      const tzAbbr = tzString.match(/\b(EDT|EST)\b/)?.[0] || "ET";
-
-      // Format current date
-      const now = new Date();
-      const dateStr = now.toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
-
-      // Convert daylight length from seconds to hh:mm
-      const hours = Math.floor(dayLengthSec / 3600);
-      const minutes = Math.floor((dayLengthSec % 3600) / 60);
-      const dayLengthStr = `${hours}h ${minutes}m`;
-
-   document.getElementById("sunriseSunset").innerHTML = `
-   <div class="sun-date" style="text-align: center; margin-bottom: 5px; font-weight: bold;">
-    ${dateStr}
-<br><br>
-  </div>
-  <div class="sun-info">
-    <div>🌅 <strong>Sunrise</strong>: ${sunriseLocal} ${tzAbbr} |</div>
-    <div>🌇 <strong>Sunset</strong>: ${sunsetLocal} ${tzAbbr} |</div>
-    <div><strong>Day Length</strong>: ${dayLengthStr}</div>
-  </div>
-`;
-
-    } catch (error) {
-      console.error("Sunrise/Sunset fetch error:", error);
-      document.getElementById("sunriseSunset").innerText = "Unable to load sunrise/sunset.";
-    }
-  }
-
-  fetchSunriseSunset();
-  setInterval(fetchSunriseSunset, 3600000); // Refresh every hour
 </script> <script> // Local Time
   function updateLocalTime() {
     const now = new Date();
@@ -2396,8 +2388,11 @@ State
 
       // Dynamically inject values matching the HTML target IDs
       document.getElementById('astro-date').textContent = data.date_label;
-      document.getElementById('astro-sunrise').textContent = data.sunrise;
-      document.getElementById('astro-sunset').textContent = data.sunset;
+      document.getElementById('astro-dawn').textContent = data.dawn;
+document.getElementById('astro-sunrise').textContent = data.sunrise;
+document.getElementById('astro-sunset').textContent = data.sunset;
+document.getElementById('astro-dusk').textContent = data.dusk;
+document.getElementById('astro-day-length').textContent = data.day_length;
       document.getElementById('astro-day-length').textContent = data.day_length;
       document.getElementById('astro-moon-phase').textContent = data.moon_phase_display;
       document.getElementById('astro-moonrise').textContent = data.moonrise_display;
@@ -2410,8 +2405,11 @@ State
     }
   }
 
-  // Hook into the page load event alongside your other existing functions
-  document.addEventListener("DOMContentLoaded", loadLancasterAstroData);
+ // Load immediately and refresh hourly
+document.addEventListener("DOMContentLoaded", () => {
+    loadLancasterAstroData();
+    setInterval(loadLancasterAstroData, 3600000);
+});
 </script> <script>
 // ======================================================
 // LANCASTER (LNS) CLIMATE DATA
@@ -3037,5 +3035,6 @@ const lnsClimateRecords = {
 // ======================================================
 loadClimateData();
 setInterval(loadClimateData, 1800000); // Auto-refresh data array every 30 minutes
-</script> </body>
+</script>
+  </body>
 </html>

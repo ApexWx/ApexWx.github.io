@@ -510,6 +510,27 @@ body, div, span, p {
   line-height: 1.5;
   margin: 8px 0;
 }
+.moon-phase-grid {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 15px 50px;
+  justify-content: center;
+  text-align: center;
+  margin: 8px auto;
+}
+
+.moon-phase-item {
+  line-height: 1.3;
+}
+      
+.sun-grid {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  justify-content: center;
+  gap: 8px 35px;
+  text-align: center;
+  margin: 8px 0;
+}
 </style> </head>
   <body>
     <div class="text-center">
@@ -1239,22 +1260,35 @@ body, div, span, p {
                 <br>
               </strong>
               <div class="astro-date" id="astro-date">Loading date...</div>
-              <div class="astro-row"> 🌅<strong>Sunrise:</strong> <span id="astro-sunrise">--:--
-                  AM EDT</span> | 🌇<strong>Sunset:</strong> <span id="astro-sunset">--:--
-                  PM EDT</span> | <strong>Day Length:</strong> <span id="astro-day-length">--h
-                  --m</span> </div>
+              <div class="sun-grid">
+                <div> 🌄 <strong>Dawn</strong><br>
+                  <span id="astro-dawn"></span> </div>
+                <div> 🌅 <strong>Sunrise</strong><br>
+                  <span id="astro-sunrise"></span> </div>
+                <div> 🌇 <strong>Sunset</strong><br>
+                  <span id="astro-sunset"></span> </div>
+                <div> 🌆 <strong>Dusk</strong><br>
+                  <span id="astro-dusk"></span> </div>
+              </div>
+              <div class="astro-row"> <strong>Day Length:</strong> <span id="astro-day-length"></span>
+              </div>
               <div class="astro-row astro-phase-table">
-                <div class="astro-row astro-phase-table"> <strong><br>
-                    <u> June 2026 Major Moon Phases</u></strong></div>
-                <div class="astro-row astro-phase-table">🌗 <strong>Jun 8</strong>
-                  Last Quarter | 🌑 <strong>Jun 14</strong> New Moon | 🌓 <strong>Jun
-                    21</strong> First Quarter | 🌕 <strong>Jun 29</strong> Full
-                  Moon <br>
+                <div class="astro-row astro-phase-table"><strong><u><br>
+                      June 2026 Major Moon Phases</u></strong> </div>
+                <div class="moon-phase-grid">
+                  <div class="moon-phase-item"> 🌗 <strong>Jun 8</strong><br>
+                    Last Quarter </div>
+                  <div class="moon-phase-item"> 🌑 <strong>Jun 14</strong><br>
+                    New Moon </div>
+                  <div class="moon-phase-item"> 🌓 <strong>Jun 21</strong><br>
+                    First Quarter </div>
+                  <div class="moon-phase-item"> 🌕 <strong>Jun 29</strong><br>
+                    Full Moon </div>
                 </div>
               </div>
               <div class="astro-row astro-phase-block"> <strong>Current Moon
-                  Phase:</strong> <span id="astro-moon-phase">Loading phase
-                  details...</span> </div>
+                  Phase</strong><br>
+                <span id="astro-moon-phase">Loading phase details...</span> </div>
               <div class="astro-row"> <strong>Moonrise</strong>🌙↑ <span id="astro-moonrise">--:--
                   AM EDT tomorrow</span> | <strong>Moonset</strong>🌙↓ <span id="astro-moonset">--:--
                   AM EDT today</span> </div>
@@ -1280,10 +1314,10 @@ body, div, span, p {
                       Maine</span></strong></div>
                 <div class="text-center" style="font-size: 12px;"><strong><span
                       style="font-variant: small-caps;"></span></strong><span style="color: #333333;"><span
-                      style="font-size: 13px;"><span style="color: #333333;"></span></span></span><em
+                      style="font-size: 13px;"><span style="color: #333333;"></span></span></span><span
                     style="font-size: 12px;"><span style="color: #666666;">Outlooks
                       typically updated 7–9 AM ET weekdays and 8–10 AM ET
-                      weekends &amp; holidays</span></em> </div>
+                      weekends &amp; holidays</span></span> </div>
                 <span style="font-size: 12px;"><em style="color: #666666;"></em></span>
                 <div><span style="font-size: 12px;"><em style="color: #666666;"></em></span>
                   <div style="text-align: left;">
@@ -1314,10 +1348,10 @@ body, div, span, p {
               Outlook: Tuesday, June 16 – Monday, June 22<br>
             </strong></u></div>
         <div>
-          <div style="text-align: center;"><span style="color: #666666;"><em><span
-                  style="font-size: 12px;">Updated June 16 at 8:30 AM </span><span
-                  style="font-size: 12px;">EDT </span><span style="font-size: 12px;"><br>
-                </span></em></span></div>
+          <div style="text-align: center;"><span style="color: #666666;"><span style="font-size: 12px;">Updated
+                June 16 at 8:30 AM </span><span style="font-size: 12px;">EDT </span><span
+                style="font-size: 12px;"><br>
+              </span></span></div>
           <div><strong><br>
             </strong></div>
           <div><strong>Tue. June 16 – Thu. June 18<br>
@@ -1334,11 +1368,11 @@ body, div, span, p {
         <div><br>
         </div>
         <div>Mostly sunny skies are expected Wednesday as high pressure
-          continues to build across the region. High temperatures
-          in the upper 70s/low 80s Wednesday with southwest wind 0-5 mph. Partly
-          cloudy skies develop as strengthening low pressure crosses the Great
-          Lakes into Ontario/Québec Wednesday night. Overnight temperatures in
-          the low 50s and south winds near calm.</div>
+          continues to build across the region. High temperatures in the upper
+          70s/low 80s Wednesday with southwest wind 0-5 mph. Partly cloudy skies
+          develop as strengthening low pressure crosses the Great Lakes into
+          Ontario/Québec Wednesday night. Overnight temperatures in the low 50s
+          and south winds near calm.</div>
         <div><br>
         </div>
         <div> Strong low pressure approaches Thursday and crosses the region
@@ -1401,9 +1435,8 @@ body, div, span, p {
         <div>Sunday, mostly cloudy skies early then partly sunny skies in the
           afternoon with a 40% chance of showers along with a chance of isolated
           afternoon thunderstorms. High in the upper 60s with northwest wind 0-7
-          mph.
-          Sunday night, partly cloudy skies with a 10% chance of showers and a
-          low in the upper 40s/near 50. Northwest wind 0-7 mph.</div>
+          mph. Sunday night, partly cloudy skies with a 10% chance of showers
+          and a low in the upper 40s/near 50. Northwest wind 0-7 mph.</div>
         <div><br>
           Monday looks partly sunny with a high in the low 70s. A 40% chance of
           scattered afternoon showers and isolated thunderstorms are possible.
@@ -1415,9 +1448,9 @@ body, div, span, p {
         <div><strong>Extended Outlook for Tue. June 23 - Mon. June 29<br>
           </strong></div>
         <div><span style="color: #666666;"><em style="font-size: 12px;">For
-              guidance only rather than precise predictions due to forecast
-              model uncertainty..<br>
-            </em></span></div>
+              guidance rather than precise predictions due to increasing
+              forecast uncertainty</em></span><span style="color: #666666;"><em
+              style="font-size: 12px;"> </em></span></div>
         <div><span style="color: #666666;"><em style="font-size: 12px;"><br>
             </em></span></div>
         <div>Tuesday remains partly sunny with a 40% chance of scattered showers
@@ -1427,9 +1460,9 @@ body, div, span, p {
           of Thursday, followed by increasing clouds Thursday night and a wetter
           pattern on Friday into Saturday morning. High temperatures will
           generally in the mid-70s, while nighttime lows will remain in the
-          mid-50s. NOAA's Climate Prediction Center outlook through June 29 indicates
-          near normal temperatures and slightly above normal precipitation for
-          the Saint John Valley.</div>
+          mid-50s. NOAA's Climate Prediction Center outlook for June 23- 29
+          indicates near normal temperatures and slightly above normal
+          precipitation for the Saint John Valley.</div>
         <div>
           <div>
             <div> </div>
@@ -3469,6 +3502,8 @@ const climateRecords = {
       document.getElementById('astro-date').textContent = data.date_label;
       document.getElementById('astro-sunrise').textContent = data.sunrise;
       document.getElementById('astro-sunset').textContent = data.sunset;
+      document.getElementById("astro-dawn").textContent = data.dawn;
+      document.getElementById("astro-dusk").textContent = data.dusk;
       document.getElementById('astro-day-length').textContent = data.day_length;
       document.getElementById('astro-moon-phase').textContent = data.moon_phase_display;
       document.getElementById('astro-moonset').textContent = data.moonset_display;
