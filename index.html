@@ -910,26 +910,23 @@
             <div style="font-size: 14px;">
               <div style="font-size: 12px;"><br>
               </div>
-              <div style="font-size:14px;font-weight:bold;"> Current Time
-                (24-Hour)
-              </div>
+              <div style="font-size:14px;font-weight:bold;"> <u>Current Time
+                  (24-Hour) </u></div>
               <div id="local24Time" style="font-size:13px;font-weight:bold;margin-bottom:10px;">
-                Loading...
-              </div>
-              <div style="font-size:14px;font-weight:bold;"> Weather Time (UTC /
-                Z)
-              </div>
+                Loading... </div>
               <div id="utcTime" style="font-size:13px;font-weight:bold;margin-bottom:10px;">
-                Loading...
-              </div>
-              <details>
-                <summary style="font-size:12px;"> What is UTC / Z Time? </summary>
+                Loading... </div>
+              <details open="">
+                <summary style="font-size:12px;"> What is UTC Time? </summary>
                 <div style="font-size:12px;"> UTC (Coordinated Universal Time),
                   also called Zulu (Z) Time, is the standard time reference used
                   by meteorologists, weather models, satellites, aviation, and
-                  NOAA products worldwide. During Daylight Saving Time, Eastern
-                  Daylight Time (EDT) is 4 hours behind UTC. During Standard
-                  Time, Eastern Standard Time (EST) is 5 hours behind UTC.</div>
+                  NOAA products worldwide. For example, the NE Weather Chart
+                  displays times, such as "1800Z Surface Analysis" = 1400 ET =
+                  2:00 PM. During Daylight Saving Time, Eastern Daylight Time
+                  (EDT) is 4 hours behind UTC. During Standard Time, Eastern
+                  Standard Time (EST) is 5 hours behind UTC. See <a href="https://www.timeanddate.com/">timeanddate.com</a>
+                  for more time zone information.</div>
               </details>
               <div style="text-align: center; font-size: 12px;"><br>
               </div>
@@ -1477,7 +1474,7 @@
                               </div>
                               <div style="margin-top: 1em; text-align:
                                              center;">
-                                <details open="">
+                                <details>
                                   <summary style="cursor: pointer;
                                                    text-align: center; font-size: 1.2em;                                  font-weight: bold;">
                                     🇺🇸 US National Weather Outlook 🇺🇸 <span
@@ -1941,7 +1938,7 @@
                                                 </span>| <a href="https://www.noaa.gov/jetstream">JetStream</a>
                                                 (NOAA) | <a href="https://www.theweatherprediction.com/">Weather
                                                   Prediction</a> (aka Haby
-                                                Hints) </div>
+                                                Hints)</div>
                                               <div style="text-align:
                                                                      left;"><br>
                                               </div>
@@ -1949,11 +1946,7 @@
                                                                      left;"><em>For
                                                   additional, more technical,
                                                   weather/climate resources,
-                                                  click <a href="wxlinks26.html">here</a>.</em>
-                                              </div>
-                                              <div style="text-align:
-                                                                     left;"><br>
-                                              </div>
+                                                  click <a href="wxlinks26.html">here</a>.</em></div>
                                             </div>
                                             <div>
                                               <hr> </div>
@@ -2514,7 +2507,7 @@ function updateDualTime() {
     `${String(now.getHours()).padStart(2,'0')}:${String(now.getMinutes()).padStart(2,'0')} ${tz}`;
 
   document.getElementById("utcTime").textContent =
-    `${String(now.getUTCHours()).padStart(2,'0')}:${String(now.getUTCMinutes()).padStart(2,'0')} UTC / Z`;
+    `${String(now.getUTCHours()).padStart(2,'0')}:${String(now.getUTCMinutes()).padStart(2,'0')} UTC`;
 }
 
 updateDualTime();
