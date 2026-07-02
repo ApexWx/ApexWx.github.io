@@ -962,6 +962,7 @@
             <u> </u>
             <div style="font-size: 14px;"><u><strong>Current Time (24-Hour)</strong></u>
             </div>
+            <div id="dualTime" style="font-weight: bold; font-size: 1.1em; margin-top: 5px;"></div>
             <div style="font-size: 12px;">EST -5 hours / EDT -4 hours from UTC </div>
             <div>
               <div style="text-align: center;">
@@ -2443,28 +2444,29 @@
 
             alt="Bluesky" style="padding: 5px; width: 54px; height: 54px;" border="0"></a></div>
     </footer>
-    <script> // Greeting for Time of Day
-         //<![CDATA[
-         var myDate = new Date();
-         var hrs = myDate.getHours();
-         
-         var greet;
-         
-         if (hrs < 12 && hrs >= 3)
-         greet = 'Good Morning!';
-         else if (hrs >= 12 && hrs <= 17)
-         greet = 'Good Afternoon!';
-         else if (hrs >= 17 && hrs <= 24)
-         greet = 'Good Evening!';
-         else if (hrs >=0 && hrs <= 3)
-         greet = 'Good Early Morning!';
-         
-         document.getElementById('lblGreetings').innerHTML =
-         '<b>' + greet + '<\/b>';
-         //]]>
-         
-      </script>
-    <script> // 7-Day Weather Forecast Lancaster, PA
+    <script> // Greeting for Time of Day (Safe Version)
+    //<![CDATA[
+    const greetingEl = document.getElementById('lblGreetings');
+    
+    // Only run the greeting logic if the element exists on this page
+    if (greetingEl) {
+        var myDate = new Date();
+        var hrs = myDate.getHours();
+        var greet;
+        
+        if (hrs < 12 && hrs >= 3)
+            greet = 'Good Morning!';
+        else if (hrs >= 12 && hrs <= 17)
+            greet = 'Good Afternoon!';
+        else if (hrs >= 17 && hrs <= 24)
+            greet = 'Good Evening!';
+        else if (hrs >=0 && hrs <= 3)
+            greet = 'Good Early Morning!';
+            
+        greetingEl.innerHTML = '<b>' + greet + '<\/b>';
+    }
+    //]]>
+</script> <script> // 7-Day Weather Forecast Lancaster, PA
          async function fetchForecast() {
          try {
          const response = await fetch('https://api.weather.gov/points/40.04,-76.30');
@@ -2498,68 +2500,72 @@
          // Refresh every 3 hours (3 * 60 * 60 * 1000 ms = 10,800,000 ms)
          setInterval(fetchForecast, 10800000);
       </script>
-    <script> // Local Time
-         function updateLocalTime() {
-         const now = new Date();
-         
-         const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-         const months = [
-         "January", "February", "March", "April", "May", "June",
-         "July", "August", "September", "October", "November", "December"
-         ];
-         
-         const dayName = days[now.getDay()];
-         const monthName = months[now.getMonth()];
-         const day = now.getDate();
-         const year = now.getFullYear();
-         
-         let hour = now.getHours();
-         const minute = now.getMinutes().toString().padStart(2, '0');
-         const ampm = hour >= 12 ? 'pm' : 'am';
-         hour = hour % 12 || 12;
-         
-         const options = { timeZoneName: 'short' };
-         const tz = new Intl.DateTimeFormat('en-US', options).formatToParts(now)
-         .find(part => part.type === 'timeZoneName').value;
-         
-         const output = `${dayName}, ${monthName} ${day}, ${year} at ${hour}:${minute} ${ampm} ${tz}`;
-         
-         document.getElementById("localTime").textContent = output;
-         }
-         
-         updateLocalTime(); // Initial call
-         setInterval(updateLocalTime, 60000); // Update every minute
-      </script>
-    <script> // 24-Hour Clocks
-         function updateDualTime() {
-         const now = new Date();
-         
-         // Format local time (24-hour) with EST/EDT abbreviation
-         const localHour = now.getHours().toString().padStart(2, '0');
-         const localMinute = now.getMinutes().toString().padStart(2, '0');
-         const tz = new Intl.DateTimeFormat('en-US', { timeZoneName: 'short' })
-         .formatToParts(now)
-         .find(part => part.type === 'timeZoneName').value;
-         const localTime = `${localHour}:${localMinute} ${tz}`;
-         
-         // Format UTC time (24-hour)
-         const utcHour = now.getUTCHours().toString().padStart(2, '0');
-         const utcMinute = now.getUTCMinutes().toString().padStart(2, '0');
-         const utcTime = `${utcHour}:${utcMinute} UTC`;
-         
-         // Output to div
-         document.getElementById("dualTime").innerHTML = `${localTime}<br>${utcTime}`;
-         }
-         
-         updateDualTime(); // Initial call
-         setInterval(updateDualTime, 60000); // Update every minute
-      </script>
-    <script> // Toggle Menu
-         function toggleMenu() {
-         const menu = document.getElementById('menuLinks');
-         menu.classList.toggle('show');
-         }
-      </script>
+    <script> // Local Time (Safe Version)
+    function updateLocalTime() {
+        // Find the element first
+        const timeEl = document.getElementById("localTime");
+        
+        // If it doesn't exist on this page, exit gracefully without crashing!
+        if (!timeEl) return;
+        
+        const now = new Date();
+        
+        const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+        const months = [
+            "January", "February", "March", "April", "May", "June",
+            "July", "August", "September", "October", "November", "December"
+        ];
+        
+        const dayName = days[now.getDay()];
+        const monthName = months[now.getMonth()];
+        const day = now.getDate();
+        const year = now.getFullYear();
+        
+        let hour = now.getHours();
+        const minute = now.getMinutes().toString().padStart(2, '0');
+        const ampm = hour >= 12 ? 'pm' : 'am';
+        hour = hour % 12 || 12;
+        
+        const options = { timeZoneName: 'short' };
+        const tz = new Intl.DateTimeFormat('en-US', options).formatToParts(now)
+            .find(part => part.type === 'timeZoneName').value;
+        
+        const output = `${dayName}, ${monthName} ${day}, ${year} at ${hour}:${minute} ${ampm} ${tz}`;
+        
+        timeEl.textContent = output;
+    }
+    
+    updateLocalTime(); // Initial call
+    setInterval(updateLocalTime, 60000); // Update every minute
+</script> <script> // 24-Hour Clocks
+    function updateDualTime() {
+        const dualTimeEl = document.getElementById("dualTime");
+        
+        // If the element isn't found, exit quietly instead of crashing the page
+        if (!dualTimeEl) return;
+        
+        const now = new Date();
+        
+        // Format local time (24-hour) with EST/EDT abbreviation
+        const localHour = now.getHours().toString().padStart(2, '0');
+        const localMinute = now.getMinutes().toString().padStart(2, '0');
+        const tz = new Intl.DateTimeFormat('en-US', { timeZoneName: 'short' })
+            .formatToParts(now)
+            .find(part => part.type === 'timeZoneName').value;
+        const localTime = `${localHour}:${localMinute} ${tz}`;
+        
+        // Format UTC time (24-hour)
+        const utcHour = now.getUTCHours().toString().padStart(2, '0');
+        const utcMinute = now.getUTCMinutes().toString().padStart(2, '0');
+        const utcTime = `${utcHour}:${utcMinute} UTC`;
+        
+        // Inject the formatted times right into the layout
+        dualTimeEl.innerHTML = `${localTime}<br>${utcTime}`;
+    }
+    
+    updateDualTime(); // Run immediately on load
+    setInterval(updateDualTime, 60000); // Refresh every 60 seconds
+</script>
     <script> // Seasons
          function getCurrentSeason(date = new Date()) {
          const month = date.getMonth() + 1;
