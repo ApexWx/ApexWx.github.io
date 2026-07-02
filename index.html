@@ -3220,7 +3220,10 @@ setInterval(updateDualTime, 1000 * 60);
              let totalLow = 0;
              let validHighs = 0;
              let validLows = 0;
-             
+             let totalSnow = 0;
+             let maxSnow = 0;
+             let maxSnowDate = "";
+             let snowDays = 0;
          
              // ==================================================
              // MONTHLY DATA LOOP
@@ -3256,8 +3259,28 @@ setInterval(updateDualTime, 1000 * 60);
                  }
                }
              });
-             
-            
+ console.log("BEFORE LOOP totalSnow =", totalSnow);
+console.log("seasonalRows =", seasonalRows);
+             // ==================================================
+             // SEASONAL SNOW LOOP
+             // ==================================================
+             seasonalRows.forEach(row => {
+               const date = row[0];
+               let snow = 0;
+               if (row[1] !== "M" && row[1] !== "T") {
+                 snow = parseFloat(row[1]) || 0;
+               }
+         
+               if (snow > 0) {
+                 totalSnow += snow;
+                 snowDays++;
+                 if (snow > maxSnow) {
+                   maxSnow = snow;
+                   maxSnowDate = date;
+                 }
+               }
+             });
+console.log("AFTER LOOP totalSnow =", totalSnow);
              // ==================================================
              // CALCULATE AVERAGES
              // ==================================================
@@ -3265,7 +3288,7 @@ setInterval(updateDualTime, 1000 * 60);
              const avgLow = validLows > 0 ? totalLow / validLows : 0;
              const avgMonthlyMean = (avgHigh + avgLow) / 2;
              const avgRain = monthlyRows.length > 0 ? totalRain / monthlyRows.length : 0;
-             
+             const avgSnow = snowDays > 0 ? totalSnow / snowDays : 0;
          
              // Render Stats to DOM
              document.getElementById("climate-month-rain").innerHTML = `${totalRain.toFixed(2)} in<br><span class="metric">${(totalRain * 25.4).toFixed(1)} mm</span>`;
@@ -3304,38 +3327,9 @@ setInterval(updateDualTime, 1000 * 60);
              document.getElementById("ytd-rain-departure").innerHTML = `<span class="${rainDepClass}">${ytdRainDeparture > 0 ? "+" : ""}${ytdRainDeparture.toFixed(2)} in</span><br><span class="metric ${rainDepClass}">${(ytdRainDeparture * 25.4).toFixed(1)} mm</span>`;
          
              // ==================================================
-             // SNOW SEASON
+             // NEW SIMPLIFIED SNOW DEPARTURE RENDERING
              // ==================================================
-const snowStats = seasonalRows.reduce((acc, row) => {
-
-  const snow = parseFloat(row?.[1]);
-
-  if (!Number.isFinite(snow) || snow <= 0) return acc;
-
-  acc.total += snow;
-  acc.days += 1;
-
-  if (snow > acc.max) {
-    acc.max = snow;
-    acc.maxDate = row[0];
-  }
-
-  return acc;
-
-}, {
-  total: 0,
-  days: 0,
-  max: 0,
-  maxDate: ""
-});
-
-const observedSeasonalSnow = snowStats.total;
-const snowDays = snowStats.days;
-const maxSnow = snowStats.max;
-const maxSnowDate = snowStats.maxDate;
-
-const avgSnow = snowDays > 0 ? observedSeasonalSnow / snowDays : 0;
-
+             const observedSeasonalSnow = totalSnow;
              document.getElementById("season-snow").innerHTML = `${observedSeasonalSnow.toFixed(1)} in<br><span class="metric">${(observedSeasonalSnow * 2.54).toFixed(1)} cm</span>`;
          
              const snowDeparture = observedSeasonalSnow - seasonSnowNormal;
