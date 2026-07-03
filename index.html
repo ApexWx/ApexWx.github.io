@@ -5,476 +5,11 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <title>Apex Wx Weather Information Fort Kent, Maine</title>
     <script defer="defer" src="https://cdnres.willyweather.com/widget/warning/loadView.html?id=157826"></script>
-    <style>
-            body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: url('https://github.com/ApexWx/ApexWx.github.io/blob/master/seamless-background-simply-sky.jpg?raw=true') repeat;
-            }
-            header, footer {
-            text-align: center;
-            padding: 1rem;
-            background: inherit;
-            }
-            .container {
-            display: grid;
-            grid-template-columns: 25% 50% 25%;
-            min-height: 80vh; /* adjust as needed */
-            }
-            .column {
-            padding: 1rem;
-            background: inherit;
-            }
-            .container {
-            display: grid;
-            grid-template-columns: 25% 50% 25%;
-            min-height: 80vh;
-            }
-            .column {
-            padding: 1rem;
-            background: inherit;
-            }
-            @media (max-width: 768px) {
-            .container {
-            display: flex;
-            flex-direction: column;
-            }
-            #center-column {
-            order: 1;
-            }
-            #left-column {
-            order: 2;
-            }
-            #right-column {
-            order: 3;
-            }
-            .inline-images {
-            justify-content: center;
-            }
-            }
-            .inline-images img {
-            max-width: 100%;
-            height: auto;
-            }
-            @media (max-width: 768px) {
-            .container {
-            grid-template-columns: 1fr;
-            }
-            .inline-images {
-            justify-content: center;
-            }
-            }
-            .sun-info {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 6px;  /* smaller space between items */
-            font-size: 1rem;
-            justify-content: center; /* CHANGE THIS: aligns items to the middle horizontally */
-            }
-            .sun-info > div {
-            flex: 0 0 auto;
-            white-space: nowrap;
-            }
-            @media (max-width: 600px) {
-            .sun-info {
-            flex-direction: column;
-            gap: 2px;
-            }
-            }
-            #weather-widget {
-            font-family: Arial, sans-serif;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 1em;
-            background: transparent;  /* Transparent background for widget */
-            color: #333;
-            }
-            .fw-container h2 {
-            font-size: 1.5rem;
-            text-align: center;
-            margin-bottom: 1rem;
-            }
-            .fw-forecast {
-            background: transparent;  /* Transparent background for forecast */
-            padding: 1em;
-            border-radius: 8px;
-            }
-            .fw-forecast .fw-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 10px;
-            margin-bottom: 1.5em;
-            }
-            .fw-forecast img {
-            width: 48px;
-            height: 48px;
-            flex-shrink: 0;
-            }
-            .fw-text {
-            font-size: 1rem;
-            }
-            .fw-day {
-            font-weight: bold;  /* Bold day names */
-            }
-            @media (max-width: 600px) {
-            .fw-forecast .fw-item {
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            }
-            .fw-forecast img {
-            margin-bottom: 0.5em;
-            }
-            }
-            #season-display {
-            font-size: 16px;
-            font-weight: bold;
-            margin-top: 10px;
-            }
-            /* Text color for each season */
-            .winter {
-            color: #0277bd; /* Cool blue */
-            }
-            .spring {
-            color: #2e7d32; /* Fresh green */
-            }
-            .summer {
-            color: #ef6c00; /* Warm orange */
-            }
-            .fall {
-            color: #d84315; /* Earthy red-orange */
-            }
-            .alert-container {
-            margin-top: 1em;
-            font-family: sans-serif;
-            }
-            .alert-box {
-            border-left: 5px solid;
-            padding: 12px 15px;
-            border-radius: 4px;
-            font-size: 1rem;
-            line-height: 1.4;
-            background-color: #f9f9f9;
-            }
-            .alert-minor {
-            border-color: #ffcc00;
-            background-color: #fff8e1;
-            }
-            .alert-moderate {
-            border-color: #ffa726;
-            background-color: #fff3e0;
-            }
-            .alert-severe {
-            border-color: #ef5350;
-            background-color: #fdecea;
-            }
-            .alert-extreme {
-            border-color: #b71c1c;
-            background-color: #fce4e4;
-            }
-            .alert-box strong {
-            display: block;
-            margin-bottom: 5px;
-            }
-            .alert-box a {
-            color: #0056b3;
-            text-decoration: underline;
-            }
-            .alert-close {
-            background: transparent;
-            border: none;
-            font-size: 1.2rem;
-            font-weight: bold;
-            color: #444;
-            float: right;
-            cursor: pointer;
-            margin: -5px -8px 5px 8px;
-            }
-            .alert-close:hover {
-            color: #000;
-            }
-            @media (max-width: 600px) {
-            .alert-box {
-            font-size: 0.95rem;
-            padding: 10px 12px;
-            }
-            }
-            /* Responsive fixes */
-            div[style*="width: 810px"],
-            div[style*="width: 830px"],
-            div[style*="width: 800px"] {
-            max-width: 100%;
-            width: 100% !important;
-            box-sizing: border-box;
-            }
-            img {
-            max-width: 100% !important;
-            height: auto !important;
-            }
-            @media (max-width: 768px) {
-            #tswothersidecol, #tswsidecol {
-            float: none !important;
-            width: 100% !important;
-            display: block;
-            }
-            }
-            iframe {
-            max-width: 100%;
-            }
-            div, span, p {
-            word-wrap: break-word;
-            overflow-wrap: break-word;
-            }
-            .alert-toggle {
-            background: none;
-            border: none;
-            color: #0056b3;
-            text-decoration: underline;
-            cursor: pointer;
-            font-size: 0.9rem;
-            margin-top: 6px;
-            padding: 0;
-            }
-            .alert-toggle:hover {
-            color: #003d80;
-            }
-            .responsive-table {
-            width: 100%;
-            border-collapse: collapse;
-            background-color: transparent;
-            }
-            .responsive-table td, .responsive-table th {
-            padding: 10px;
-            border: none;
-            text-align: left;
-            vertical-align: top;
-            }
-            @media screen and (max-width: 600px) {
-            .responsive-table td, .responsive-table th {
-            display: block;
-            width: 100%;
-            }
-            }
-            .responsive-table tr {
-            display: block;
-            margin-bottom: 15px;
-            }
-            .responsive-menu {
-            padding: 10px;
-            font-family: Arial, sans-serif;
-            }
-            .responsive-menu .menu-toggle {
-            background-color: #444;
-            color: white;
-            padding: 10px 15px;
-            font-size: 16px;
-            border: none;
-            cursor: pointer;
-            display: none;
-            }
-            .responsive-menu .menu-links a {
-            color: #1E3A8A;        /* Tailwind dark blue */
-            font-weight: bold;     /* Bold before hover */
-            padding: 8px 12px;
-            text-decoration: none;
-            display: inline-block;
-            }
-            .responsive-menu .menu-links a:hover {
-            background-color: #555;
-            color: white;          /* White on hover */
-            }
-            @media (max-width: 768px) {
-            .responsive-menu .menu-toggle {
-            display: block;
-            }
-            .responsive-menu .menu-links {
-            display: none;
-            flex-direction: column;
-            }
-            .responsive-menu .menu-links a {
-            display: block;
-            border-top: 1px solid #444;
-            }
-            .responsive-menu .menu-links.show {
-            display: flex;
-            }
-            }
-            body, div, span, p {
-            word-wrap: break-word;
-            overflow-wrap: break-word;
-            word-break: break-word;
-            }
-            .column {
-            min-width: 0;
-            }
-            * {
-            box-sizing: border-box;
-            }
-            .text-center { text-align: center; }
-            .mt-sm { margin-top: 0.5rem; }
-            .font-sm { font-size: 12px; }
-            .live-station {
-            margin: 20px auto;
-            max-width: 900px;
-            text-align: center;
-            }
-            .station-box {
-            background: rgba(255,255,255,0.15);
-            border-radius: 8px;
-            padding: 15px;
-            }
-            .station-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit,minmax(150px,1fr));
-            gap: 10px;
-            }
-            .station-item {
-            padding: 8px;
-            }
-            .station-label {
-            font-size: 12px;
-            color: #666;
-            font-weight: bold;
-            text-transform: uppercase; /* Makes it a neat, small capitalized header */
-            letter-spacing: 0.5px;      /* Adds a little space between letters */
-            }
-            .station-value {
-            font-size: 18px;
-            line-height: 1.15;
-            }
-            .metric {
-            display: block;
-            font-size: 0.68em;
-            color: #666;
-            line-height: 1.1;
-            margin-top: 2px;
-            }      
-            /* Custom utility to strip out spacing gaps for the pressure trend line */
-            .pressure-trend-line {
-            display: block;
-            font-size: 13px;
-            line-height: 1;
-            margin-top: 2px;
-            }
-            .departure-positive {
-            color: #c0392b;   /* warm anomaly */
-            font-weight: bold;
-            }
-            .departure-negative {
-            color: #2166ac;   /* cool anomaly */
-            font-weight: bold;
-            }
-            .departure-neutral {
-            color: #666;
-            }
-            /* Rainfall Departure Color Coding */
-            .rain-positive {
-            color: #1a7f43 !important; /* Richer, darker forest green that pops against the sky background */
-            font-weight: bold;
-            }
-            .rain-negative {
-            color: #e67e22 !important; /* Warm Orange/Brown for below normal / dry weather */
-            font-weight: bold;
-            }
-            .rain-neutral {
-            color: #aaaaaa !important; /* Soft Gray for exactly normal */
-            }
-            #page-footer a img {
-            display: inline-block;
-            vertical-align: middle;
-            }
-            #page-footer a {
-            text-decoration: none !important;
-            border: none !important;
-            }
-            /* Live Astro Widget Layout Rules */
-            /* Card Container */
-            .astro-card {
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 20px;
-            text-align: center;
-            font-family: sans-serif;
-            }
-            /* Headings & Dates */
-            .astro-title {
-            font-size: 18px;
-            margin: 0 0 10px 0;
-            font-weight: bold;
-            }
-            .astro-date {
-            font-size: 14px;
-            font-weight: bold;
-            margin-bottom: 20px;
-            }
-            .astro-section-heading {
-            font-size: 15px;
-            font-weight: bold;
-            text-decoration: underline;
-            margin: 15px 0;
-            }
-            /* Spacing Layout Elements */
-            .astro-row {
-            margin: 15px 0;
-            line-height: 1.5;
-            }
-            .highlight-row {
-            font-size: 15px;
-            margin-top: 20px;
-            }
-            .current-phase {
-            background-color: rgba(0, 0, 0, 0.03); /* Subtle backdrop tint */
-            padding: 10px;
-            border-radius: 6px;
-            }
-            .astro-divider {
-            border: 0;
-            border-top: 1px solid #eeeeee;
-            margin: 20px 0;
-            }
-            /* Responsive Grids */
-            .sun-grid, .moon-phase-grid, .moon-rise-set-grid {
-            display: grid;
-            gap: 15px;
-            margin: 15px 0;
-            }
-            /* Grid Column Rules */
-            .sun-grid {
-            grid-template-columns: repeat(4, 1fr); /* 4 even columns on desktop */
-            }
-            .moon-phase-grid {
-            grid-template-columns: repeat(4, 1fr); /* 4 even columns on desktop */
-            }
-            .moon-rise-set-grid {
-            grid-template-columns: repeat(2, 1fr); /* 2 even columns on desktop */
-            }
-            .astro-item, .moon-phase-item {
-            padding: 8px;
-            line-height: 1.4;
-            }
-            /* Notice Text */
-            .astro-notice {
-            max-width: 600px;
-            margin: 15px auto 0 auto;
-            font-size: 12px;
-            line-height: 1.6;
-            color: #666666;
-            }
-            /* Mobile Responsive Fixes (Screens under 500px) */
-            @media screen and (max-width: 500px) {
-            .sun-grid, .moon-phase-grid {
-            grid-template-columns: repeat(2, 1fr); /* Becomes a clean 2x2 layout on phones */
-            }
-            .moon-rise-set-grid {
-            grid-template-columns: 1fr; /* Stacks completely flat on tiny screens */
-            }
-            }
-         </style>
+    <link rel="stylesheet" href="styles26.css">
   </head>
   <body><!-- Insert this in your HTML body where you want the menu --><br>
     <header id="page-header">
-      <nav aria-label="Site Navigation" class="responsive-menu"> <button class="menu-toggle"
-
+      <nav aria-label="Site Navigation" class="responsive-menu"> <button class="menu-toggle"
           onclick="toggleMenu()">☰ Menu</button>
         <div class="menu-links" id="menuLinks"> <a href="https://apexwx.github.io/reg.html">Regional
             Weather</a> <a href="https://apexwx.github.io/nat.html">National
@@ -485,32 +20,22 @@
             Weather Station Dashboard</a> <a href="https://www.wunderground.com/dashboard/pws/KMEFORTK7">Apex
             Wx on WU</a> <a href="https://apexwx.github.io/dis.html">Disclaimer</a>
         </div>
-        <div> <strong style="font-size: 18px;">Current Conditions</strong> <span
-
-            style="color: #757575;"> <em><span style="font-size:
+        <div> <strong style="font-size: 18px;">Current Conditions</strong><span
+            style="color: #757575;"><em><span style="font-size:
                12px;"><br>
               </span></em> <span style="font-size: 12px;">Updates hourly</span>
           </span> </div>
-        <div class="text-center"><a href="https://www.weather.gov/images/car/obs/CurrentT.png"><img
-
-              alt="Current Temperatures" loading="lazy" src="https://www.weather.gov/images/car/obs/CurrentT.png"
-
-              style="width: 250px; margin: 8px; height: 210px;" title="Current Temperatures--Click for larger image"></a><a
-
-            href="https://www.weather.gov/images/car/obs/CurrentDewPt.png"><img
-
-              alt="Current Dew Point" loading="lazy" src="https://www.weather.gov/images/car/obs/CurrentDewPt.png"
-
+        <div class="text-center"><a href="https://www.weather.gov/images/car/obs/CurrentT.png"><img
+              alt="Current Temperatures" loading="lazy" src="https://www.weather.gov/images/car/obs/CurrentT.png"
+              style="width: 250px; margin: 8px; height: 210px;" title="Current Temperatures--Click for larger image"></a><a
+            href="https://www.weather.gov/images/car/obs/CurrentDewPt.png"><img
+              alt="Current Dew Point" loading="lazy" src="https://www.weather.gov/images/car/obs/CurrentDewPt.png"
               style="width: 250px; margin: 8px;" title="Current Dew
-               Points -- Click for larger image"></a><a href="https://www.weather.gov/images/car/obs/CurrentRH.png"><img
-
-              alt="Current Relative Humidity" loading="lazy" src="https://www.weather.gov/images/car/obs/CurrentRH.png"
-
+               Points -- Click for larger image"></a><a href="https://www.weather.gov/images/car/obs/CurrentRH.png"><img
+              alt="Current Relative Humidity" loading="lazy" src="https://www.weather.gov/images/car/obs/CurrentRH.png"
               style="width: 250px; margin: 8px;" title="Current Relative
-               Humidity--Click for larger image"></a> <a href="https://www.weather.gov/images/car/obs/CurrentGusts.png"><img
-
-              alt="Current Wind Gusts-" loading="lazy" src="https://www.weather.gov/images/car/obs/CurrentGusts.png"
-
+               Humidity--Click for larger image"></a> <a href="https://www.weather.gov/images/car/obs/CurrentGusts.png"><img
+              alt="Current Wind Gusts-" loading="lazy" src="https://www.weather.gov/images/car/obs/CurrentGusts.png"
               style="width: 250px; margin: 8px; height: 210px;" title="Current Wind Gusts--Click for larger image"></a></div>
       </nav>
     </header>
@@ -518,14 +43,12 @@
       <div class="container" id="main-container">
         <div class="column left" id="left-column" style="font-size: 16px;">
           <div class="text-center">
-            <div class="text-center"><strong style="font-size: 14px;"> <a href="https://www.airnow.gov/?city=Fort%20Kent&amp;state=ME&amp;country=USA"
-
+            <div class="text-center"><strong style="font-size: 14px;"> <a href="https://www.airnow.gov/?city=Fort%20Kent&amp;state=ME&amp;country=USA"
                   style="border: none; border-radius: 25px;"> Fort Kent Air
                   Quality Index</a></strong><br>
             </div>
             <div style="font-size: 12px; text-align: center;">
-              <div><strong><u><iframe title="Example Widget with Forecast" src="https://widget.airnow.gov/aq-dial-widget-with-forecast/?city=FortKent&amp;state=ME&amp;country=USA"
-
+              <div><strong><u><iframe title="Example Widget with Forecast" src="https://widget.airnow.gov/aq-dial-widget-with-forecast/?city=FortKent&amp;state=ME&amp;country=USA"
                       style="border: none; border-radius: 25px;" height="230" width="230"></iframe></u></strong></div>
               <br>
             </div>
@@ -536,11 +59,9 @@
                 Caribou Watches &amp; Advisories</strong></span><em style="font-size: 13px;"></em><br>
             <em style="font-size: 13px;"></em> </div>
           <div class="text-center">
-            <div><em style="font-size: 13px;"></em><a href="https://www.weather.gov/car/"><img
-
+            <div><em style="font-size: 13px;"></em><a href="https://www.weather.gov/car/"><img
                   alt="NWS Caribou
-                  Watches, Warnings, and Advisories" loading="lazy" src="https://www.weather.gov/wwamap/png/car.png"
-
+                  Watches, Warnings, and Advisories" loading="lazy" src="https://www.weather.gov/wwamap/png/car.png"
                   style="border-width: 1px; border-style: solid; width:
                   251px; height: 195px;" title="Clidk for more
                   information"></a></div>
@@ -553,14 +74,11 @@
             <div class="text-center"><span style="font-size: 14px;"><strong>NE
                   Weather Chart</strong></span><span style="font-size: 14px;"></span>
             </div>
-            <div class="text-center"><span style="font-size: 11px;"></span><a href="https://www.wpc.ncep.noaa.gov/sfc/namnesfcwbg.gif"
-
+            <div class="text-center"><span style="font-size: 11px;"></span><a href="https://www.wpc.ncep.noaa.gov/sfc/namnesfcwbg.gif"
                 title="Click for larger image"><img alt="Northeast Weather
-                  Chart" loading="lazy" src="https://www.wpc.ncep.noaa.gov/sfc/namnesfcwbg.gif"
-
+                  Chart" loading="lazy" src="https://www.wpc.ncep.noaa.gov/sfc/namnesfcwbg.gif"
                   style="width: 251px; border-width: 1px; border-style:
-                  solid; height: 194px;" title="Click for larger image"></a><em
-
+                  solid; height: 194px;" title="Click for larger image"></a><em
                 style="font-size:
                   11px;"><br>
               </em> </div>
@@ -570,10 +88,8 @@
             </div>
             <div style="font-size: 14px; text-align: center;"><strong>Regional
                 Radar from NWS Caribou </strong><br>
-              <a href="https://radar.weather.gov/?settings=v1_eyJhZ2VuZGEiOnsiaWQiOiJsb2NhbCIsImNlbnRlciI6Wy02Ni4wMTEsNDUuMjRdLCJsb2NhdGlvbiI6bnVsbCwiem9vbSI6NywiZmlsdGVyIjoiV1NSLTg4RCIsImxheWVyIjoiYnJlZl9yYXciLCJzdGF0aW9uIjoiS0NCVyJ9LCJhbmltYXRpbmciOmZhbHNlLCJiYXNlIjoic3RhbmRhcmQiLCJhcnRjYyI6ZmFsc2UsImNvdW50eSI6ZmFsc2UsImN3YSI6ZmFsc2UsInJmYyI6ZmFsc2UsInN0YXRlIjpmYWxzZSwibWVudSI6dHJ1ZSwic2hvcnRGdXNlZE9ubHkiOnRydWUsIm9wYWNpdHkiOnsiYWxlcnRzIjowLjgsImxvY2FsIjowLjYsImxvY2FsU3RhdGlvbnMiOjAuOCwibmF0aW9uYWwiOjAuNn19#/"
-
-                title="Current Local Radar"><img alt="Local Radar" loading="lazy"
-
+              <a href="https://radar.weather.gov/?settings=v1_eyJhZ2VuZGEiOnsiaWQiOiJsb2NhbCIsImNlbnRlciI6Wy02Ni4wMTEsNDUuMjRdLCJsb2NhdGlvbiI6bnVsbCwiem9vbSI6NywiZmlsdGVyIjoiV1NSLTg4RCIsImxheWVyIjoiYnJlZl9yYXciLCJzdGF0aW9uIjoiS0NCVyJ9LCJhbmltYXRpbmciOmZhbHNlLCJiYXNlIjoic3RhbmRhcmQiLCJhcnRjYyI6ZmFsc2UsImNvdW50eSI6ZmFsc2UsImN3YSI6ZmFsc2UsInJmYyI6ZmFsc2UsInN0YXRlIjpmYWxzZSwibWVudSI6dHJ1ZSwic2hvcnRGdXNlZE9ubHkiOnRydWUsIm9wYWNpdHkiOnsiYWxlcnRzIjowLjgsImxvY2FsIjowLjYsImxvY2FsU3RhdGlvbnMiOjAuOCwibmF0aW9uYWwiOjAuNn19#/"
+                title="Current Local Radar"><img alt="Local Radar" loading="lazy"
                   src="https://radar.weather.gov/ridge/standard/KCBW_loop.gif" style="width: 251px; height: 228px; border-width: 1px;
                      border-style: solid;" title="Click for larger image"></a><br>
             </div>
@@ -581,10 +97,8 @@
             </div>
             <div style="width: 100%; text-align: center;"><br>
               <strong style="font-size: 14px;">Today's High</strong><br>
-              <a href="https://www.weather.gov/images/car/winter/MaxT_1.png"><img
-
-                  alt="Today's High" loading="lazy" src="https://www.weather.gov/images/car/winter/MaxT_1.png"
-
+              <a href="https://www.weather.gov/images/car/winter/MaxT_1.png"><img
+                  alt="Today's High" loading="lazy" src="https://www.weather.gov/images/car/winter/MaxT_1.png"
                   style="width: 251px; height: 186px;" title="Click for
                      larger image"></a> </div>
             <div style="width: 100%; text-align: center;"><strong style="font-size: 14px;"><br>
@@ -593,15 +107,12 @@
               </strong> </div>
             <div style="width: 100%; text-align: center;"><strong style="font-size: 14px;">Today's
                 Heat Index ("Feels Like")</strong><br>
-              <a href="https://www.weather.gov/images/car/heat/MaxApparentT_Day1.png"><img
-
-                  alt="Heat Index" loading="lazy" src="https://www.weather.gov/images/car/heat/MaxApparentT_Day1.png"
-
+              <a href="https://www.weather.gov/images/car/heat/MaxApparentT_Day1.png"><img
+                  alt="Heat Index" loading="lazy" src="https://www.weather.gov/images/car/heat/MaxApparentT_Day1.png"
                   style="width: 251px; height: 186px;" title="Click for
                      larger image"></a><span style="font-size: 12px;"><a href="https://www.weather.gov/car/heat"><br>
                 </a></span> </div>
-            <div style="width: 100%; text-align: center;"><span style="font-size: 12px;"><a
-
+            <div style="width: 100%; text-align: center;"><span style="font-size: 12px;"><a
                   href="https://www.weather.gov/car/heat"><em>Excessive Heat
                     Information</em></a></span><br>
               <span style="font-size: 12px;"></span> </div>
@@ -611,10 +122,8 @@
             </div>
             <div style="width: 100%; text-align: center;"><strong style="font-size: 14px;">Tonight's
                 Low</strong><br>
-              <a href="https://www.weather.gov/images/car/winter/MinT_2.png"><img
-
-                  alt="Tonight's Lows" loading="lazy" src="https://www.weather.gov/images/car/winter/MinT_2.png"
-
+              <a href="https://www.weather.gov/images/car/winter/MinT_2.png"><img
+                  alt="Tonight's Lows" loading="lazy" src="https://www.weather.gov/images/car/winter/MinT_2.png"
                   style="width: 251px; height: 186px;" title="Click for
                      larger image"><br>
               </a> </div>
@@ -624,10 +133,8 @@
             </div>
             <div style="width: 100%; text-align: center;"><strong style="font-size: 14px;">Tonight's
                 Wind Chill ("Feels Like")</strong><br>
-              <a href="https://www.weather.gov/images/car/winter/MinWindChill_1.png"><img
-
-                  alt="Wind Chill" loading="lazy" src="https://www.weather.gov/images/car/winter/MinWindChill_1.png"
-
+              <a href="https://www.weather.gov/images/car/winter/MinWindChill_1.png"><img
+                  alt="Wind Chill" loading="lazy" src="https://www.weather.gov/images/car/winter/MinWindChill_1.png"
                   style="width: 251px; height: 186px;" title="Click for
                      larger image"></a> </div>
             <div style="width: 100%; text-align: center;"><br>
@@ -637,11 +144,9 @@
             <div style="width: 100%; text-align: center;"> <strong style="font-size: 14px;">Today's
                 Probability of Precipitation</strong><br>
               <div>
-                <div><a href="https://www.weather.gov/images/car/winter/PoP_Day1.png"
-
+                <div><a href="https://www.weather.gov/images/car/winter/PoP_Day1.png"
                     title="Click for larger image"><img alt="Probability
-                        of Precipitation" loading="lazy" src="https://www.weather.gov/images/car/winter/PoP_Day1.png"
-
+                        of Precipitation" loading="lazy" src="https://www.weather.gov/images/car/winter/PoP_Day1.png"
                       style="width: 251px; height: 187px;"></a></div>
               </div>
             </div>
@@ -651,22 +156,18 @@
             </div>
             <div class="text-center"><strong style="font-size: 14px;">Tonight's
                 Probability of Precipitation<br>
-              </strong><img alt="Tonight's  Probability of Precipitation" src="https://www.weather.gov/images/car/winter/PoP_Night2.png"
-
+              </strong><img alt="Tonight's  Probability of Precipitation" src="https://www.weather.gov/images/car/winter/PoP_Night2.png"
                 style="width: 251px; height: 187px;"><br>
             </div>
             <div>
-              <div class="text-center"><em style="font-size: 14px;"></em><strong
-
+              <div class="text-center"><em style="font-size: 14px;"></em><strong
                   style="font-size: 14px;"><br>
                 </strong> </div>
               <div class="text-center"> </div>
               <div style="text-align: center; font-size: 14px;"><strong>3-Day
                   Precipitation Totals<br>
-                  <a href="https://www.weather.gov/images/car/winter/QPF_72hr.png"><img
-
-                      alt="72-Hour Precipitation Totals" loading="lazy" src="https://www.weather.gov/images/car/winter/QPF_72hr.png"
-
+                  <a href="https://www.weather.gov/images/car/winter/QPF_72hr.png"><img
+                      alt="72-Hour Precipitation Totals" loading="lazy" src="https://www.weather.gov/images/car/winter/QPF_72hr.png"
                       style="width: 251px;"></a></strong> </div>
               <div class="text-center"><em style="font-size: 14px;"><br>
                 </em> </div>
@@ -674,12 +175,9 @@
                 </em> </div>
               <div class="text-center"><span style="font-size: 14px;"><strong>Winter
                     Storm Severity Index (WSSI)</strong></span> </div>
-              <div class="text-center"><a href="https://www.wpc.ncep.noaa.gov/wwd/wssi/images/WSSI_Overall_Day1_CAR_Day1.png"><img
-
-                    alt="Day 1 Winter Storm Severity Index (WSSI)" loading="lazy"
-
-                    src="https://www.wpc.ncep.noaa.gov/wwd/wssi/images/WSSI_Overall_Day1_CAR_Day1.png"
-
+              <div class="text-center"><a href="https://www.wpc.ncep.noaa.gov/wwd/wssi/images/WSSI_Overall_Day1_CAR_Day1.png"><img
+                    alt="Day 1 Winter Storm Severity Index (WSSI)" loading="lazy"
+                    src="https://www.wpc.ncep.noaa.gov/wwd/wssi/images/WSSI_Overall_Day1_CAR_Day1.png"
                     style="width: 251px;" title="Click for larger image"></a></div>
               <div class="text-center"><span style="font-size: 14px;"><strong style="font-size: 12px;"><br>
                   </strong></span> </div>
@@ -688,11 +186,9 @@
               <div class="text-center"><span style="font-size: 14px;"><strong>Snowfall
                     Outlook</strong><br>
                 </span> </div>
-              <div class="text-center"><a href="https://www.wpc.ncep.noaa.gov/Prob_Precip/idss-map/mapgen.php?office=CAR&amp;summary=true&amp;pointpreferences=CAR&amp;ptype=prob_sn&amp;product=expected"
-
+              <div class="text-center"><a href="https://www.wpc.ncep.noaa.gov/Prob_Precip/idss-map/mapgen.php?office=CAR&amp;summary=true&amp;pointpreferences=CAR&amp;ptype=prob_sn&amp;product=expected"
                   title="Click for larger image"><img alt="Snowfall
-                     Outlook" loading="lazy" src="https://www.wpc.ncep.noaa.gov/Prob_Precip/idss-map/mapgen.php?office=CAR&amp;summary=true&amp;pointpreferences=CAR&amp;ptype=prob_sn&amp;product=expected"
-
+                     Outlook" loading="lazy" src="https://www.wpc.ncep.noaa.gov/Prob_Precip/idss-map/mapgen.php?office=CAR&amp;summary=true&amp;pointpreferences=CAR&amp;ptype=prob_sn&amp;product=expected"
                     style="width: 251px; height: 186.681px;"></a><em style="font-size: 14px;"></em><br>
                 <em style="font-size: 14px;"></em> </div>
             </div>
@@ -702,11 +198,9 @@
               <div class="text-center"><span style="font-size: 14px;"><strong>Ice
                     Accumulation Outlook<br>
                   </strong></span> </div>
-              <div class="text-center"><a href="https://www.wpc.ncep.noaa.gov/Prob_Precip/idss-map/mapgen.php?office=CAR&amp;summary=true&amp;pointpreferences=CAR&amp;ptype=prob_ice&amp;product=expected"
-
+              <div class="text-center"><a href="https://www.wpc.ncep.noaa.gov/Prob_Precip/idss-map/mapgen.php?office=CAR&amp;summary=true&amp;pointpreferences=CAR&amp;ptype=prob_ice&amp;product=expected"
                   title="Click for larger image"><img alt="Ice
-                     Accumulation Outlook" loading="lazy" src="https://www.wpc.ncep.noaa.gov/Prob_Precip/idss-map/mapgen.php?office=CAR&amp;summary=true&amp;pointpreferences=CAR&amp;ptype=prob_ice&amp;product=expected"
-
+                     Accumulation Outlook" loading="lazy" src="https://www.wpc.ncep.noaa.gov/Prob_Precip/idss-map/mapgen.php?office=CAR&amp;summary=true&amp;pointpreferences=CAR&amp;ptype=prob_ice&amp;product=expected"
                     style="width: 251px; height: 186.681px;"></a></div>
             </div>
             <div>
@@ -717,11 +211,9 @@
               <div class="text-center"><span style="font-size: 14px;"><strong>3-Day
                     Maximum Wind Gust<br>
                   </strong></span> </div>
-              <div class="text-center"><a href="https://www.weather.gov/images/car/winter/MaxGust_Day1.png"
-
+              <div class="text-center"><a href="https://www.weather.gov/images/car/winter/MaxGust_Day1.png"
                   title="Click for larger image"><img alt="72-Hour Maximum
-                     Wind Gust" loading="lazy" src="https://www.weather.gov/images/car/winter/MaxGust_Next72.png"
-
+                     Wind Gust" loading="lazy" src="https://www.weather.gov/images/car/winter/MaxGust_Next72.png"
                     style="width: 251px; height: 186.681px;"></a></div>
               <div class="text-center"><br>
               </div>
@@ -731,17 +223,13 @@
               </div>
               <div class="text-center"><strong> Today's Severe Weather Outlook</strong><br>
               </div>
-              <div class="text-center"><a href="https://www.spc.noaa.gov/partners/outlooks/state/images/ME_swody1.png"
-
-                  style="width: 50%;" title="Click for larger image"><img alt="Maine Thunderstorm/Severe Weather Outlook"
-
-                    loading="lazy" src="https://www.spc.noaa.gov/partners/outlooks/state/images/ME_swody1.png?t=$%7BDate.now%28%29%7D%60;"
-
+              <div class="text-center"><a href="https://www.spc.noaa.gov/partners/outlooks/state/images/ME_swody1.png"
+                  style="width: 50%;" title="Click for larger image"><img alt="Maine Thunderstorm/Severe Weather Outlook"
+                    loading="lazy" src="https://www.spc.noaa.gov/partners/outlooks/state/images/ME_swody1.png?t=$%7BDate.now%28%29%7D%60;"
                     style="width: 251px; height: 187px;" title="Click for
                      larger image"><br>
                 </a> </div>
-              <div class="text-center"><em style="font-size: 14px;"><span style="font-size: 12px;"><a
-
+              <div class="text-center"><em style="font-size: 14px;"><span style="font-size: 12px;"><a
                       href="https://www.spc.noaa.gov/new/images/SPC_outlook_final_updated.png">Severe
                       Thunderstorm</a></span></em><em style="font-size:
                         14px;"><span style="font-size: 12px;"><a href="https://www.spc.noaa.gov/new/images/SPC_outlook_final_updated.png">
@@ -753,12 +241,9 @@
                 </span> </div>
               <div class="text-center"> <br>
                 <strong>Today's Tornado Outlook</strong><br>
-                <div><a href="https://www.spc.noaa.gov/partners/outlooks/state/images/ME_swody1_TORN.png?t=$%7BDate.now%28%29%7D%60;"
-
-                    style="width: 50%;" title="Click for larger image"><img alt="Maine Tornado Outlook"
-
-                      loading="lazy" src="https://www.spc.noaa.gov/partners/outlooks/state/images/ME_swody1_TORN.png?t=$%7BDate.now%28%29%7D%60;"
-
+                <div><a href="https://www.spc.noaa.gov/partners/outlooks/state/images/ME_swody1_TORN.png?t=$%7BDate.now%28%29%7D%60;"
+                    style="width: 50%;" title="Click for larger image"><img alt="Maine Tornado Outlook"
+                      loading="lazy" src="https://www.spc.noaa.gov/partners/outlooks/state/images/ME_swody1_TORN.png?t=$%7BDate.now%28%29%7D%60;"
                       style="width: 251px; height: 187px;" title="Click
                         for larger image"></a></div>
               </div>
@@ -768,12 +253,9 @@
               </div>
               <div class="text-center"> <br>
                 <strong>Today's Severe Wind Outlook</strong><br>
-                <div><a href="https://www.spc.noaa.gov/partners/outlooks/state/images/ME_swody1_WIND.png?t=$%7BDate.now%28%29%7D%60;"
-
-                    style="width: 50%;" title="Click for larger image"><img alt="Maine Severe Wind Outlook"
-
-                      loading="lazy" src="https://www.spc.noaa.gov/partners/outlooks/state/images/ME_swody1_WIND.png?t=$%7BDate.now%28%29%7D%60;"
-
+                <div><a href="https://www.spc.noaa.gov/partners/outlooks/state/images/ME_swody1_WIND.png?t=$%7BDate.now%28%29%7D%60;"
+                    style="width: 50%;" title="Click for larger image"><img alt="Maine Severe Wind Outlook"
+                      loading="lazy" src="https://www.spc.noaa.gov/partners/outlooks/state/images/ME_swody1_WIND.png?t=$%7BDate.now%28%29%7D%60;"
                       style="width: 251px; height: 187px;" title="Click
                         for larger image"></a></div>
               </div>
@@ -783,12 +265,9 @@
               </div>
               <div class="text-center"> <br>
                 <strong>Today's Severe Hail Outlook</strong><br>
-                <div><a href="https://www.spc.noaa.gov/partners/outlooks/state/images/ME_swody1_HAIL.png?t=$%7BDate.now%28%29%7D%60;"
-
-                    style="width: 50%;" title="Click for larger image"><img alt="Maine Severe Hail Outlook"
-
-                      loading="lazy" src="https://www.spc.noaa.gov/partners/outlooks/state/images/ME_swody1_HAIL.png?t=$%7BDate.now%28%29%7D%60;"
-
+                <div><a href="https://www.spc.noaa.gov/partners/outlooks/state/images/ME_swody1_HAIL.png?t=$%7BDate.now%28%29%7D%60;"
+                    style="width: 50%;" title="Click for larger image"><img alt="Maine Severe Hail Outlook"
+                      loading="lazy" src="https://www.spc.noaa.gov/partners/outlooks/state/images/ME_swody1_HAIL.png?t=$%7BDate.now%28%29%7D%60;"
                       style="width: 251px; height: 187px;" title="Click
                         for larger image"></a></div>
               </div>
@@ -800,10 +279,8 @@
               </div>
               <div style="font-size: 14px; text-align: center;"><strong> Today's
                   Fire Weather Outlook<br>
-                  <a href="https://www.spc.noaa.gov/partners/outlooks/state/images/ME_fwody1.png?1751871752"><img
-
-                      alt="Today's Maine Fire Weather Outlook" loading="lazy" src="https://www.spc.noaa.gov/partners/outlooks/state/images/ME_fwody1.png?t=$%7BDate.now%28%29%7D%60;"
-
+                  <a href="https://www.spc.noaa.gov/partners/outlooks/state/images/ME_fwody1.png?1751871752"><img
+                      alt="Today's Maine Fire Weather Outlook" loading="lazy" src="https://www.spc.noaa.gov/partners/outlooks/state/images/ME_fwody1.png?t=$%7BDate.now%28%29%7D%60;"
                       style="width: 251px;"></a></strong> </div>
               <div style="font-size: 14px; text-align: center;"><br>
                 <br>
@@ -813,10 +290,8 @@
                   <a href="https://www.fortkentoc.org/"><strong>Fort Kent
                       Outdoor Center</strong></a><br>
                   <strong></strong> </div>
-                <div class="text-center"><a href="https://webcam.fortkentoc.org/webcam/image.jpg"><img
-
-                      alt="Fort Kent Outdoor Center" loading="lazy" src="https://webcam.fortkentoc.org/webcam/image.jpg"
-
+                <div class="text-center"><a href="https://webcam.fortkentoc.org/webcam/image.jpg"><img
+                      alt="Fort Kent Outdoor Center" loading="lazy" src="https://webcam.fortkentoc.org/webcam/image.jpg"
                       style="width: 251px; height: 203.202px;"></a><em style="font-size: 12px;"><br>
                   </em> </div>
                 <div class="text-center"><em style="font-size: 12px;">47°23'N /
@@ -834,10 +309,8 @@
                 <div class="text-center"><strong><a href="https://www.fourseasonstrail.org/">
                     </a>Mont Farlagne Route 2, Canada<a href="https://www.fourseasonstrail.org/">
                     </a> </strong> </div>
-                <div class="text-center"><a href="https://511.gnb.ca/map/Cctv/20?t=1777324020"><img
-
-                      alt="Mont Farlagne Route 2 NB Canada" loading="lazy" src="https://511.gnb.ca/map/Cctv/20?t=1777323870"
-
+                <div class="text-center"><a href="https://511.gnb.ca/map/Cctv/20?t=1777324020"><img
+                      alt="Mont Farlagne Route 2 NB Canada" loading="lazy" src="https://511.gnb.ca/map/Cctv/20?t=1777323870"
                       style="width: 251px; height: 144px;"></a></div>
                 <div class="text-center"><em style="font-size: 12px;">Near
                     Edmonston, New Brunswick, Canada</em><strong style="font-size: 12px;"><br>
@@ -853,15 +326,12 @@
                 <div class="text-center"> <strong>St. John River @ Dickey
                     Bridge, Allagash<br>
                   </strong>
-                  <div class="text-center"><a href="https://www1.maine.gov/mdot/maps/cameras/dickey_Public.jpg"
-
+                  <div class="text-center"><a href="https://www1.maine.gov/mdot/maps/cameras/dickey_Public.jpg"
                       title="St. John River at Dickey"><img alt="St. John
-                           River at Dickey, ME" loading="lazy" src="https://www1.maine.gov/mdot/maps/cameras/dickey_Public.jpg"
-
+                           River at Dickey, ME" loading="lazy" src="https://www1.maine.gov/mdot/maps/cameras/dickey_Public.jpg"
                         style="width: 251px; height: 144px;"></a></div>
                   <div class="text-center"><em><span style="font-size:
-                           12px;">Approx. 32 mi / 51 km WSW of Fort Kent</span></em><strong
-
+                           12px;">Approx. 32 mi / 51 km WSW of Fort Kent</span></em><strong
                       style="font-size: 12px;"><br>
                     </strong> </div>
                   <div class="text-center"><strong style="font-size:
@@ -875,20 +345,14 @@
                     <div class="text-center"> <br>
                       <strong>Mt. Katahdin<br>
                       </strong>
-                      <div class="text-center"><a href="https://www.neoc.com/wp-content/webcam/camera1.jpg"
-
-                          title="Mt. Katahdin (New England Outdoor Center)"><img
-
-                            alt="Katahdin (New England Outdoor Center)" loading="lazy"
-
-                            src="https://www.neoc.com/wp-content/webcam/camera1.jpg"
-
+                      <div class="text-center"><a href="https://www.neoc.com/wp-content/webcam/camera1.jpg"
+                          title="Mt. Katahdin (New England Outdoor Center)"><img
+                            alt="Katahdin (New England Outdoor Center)" loading="lazy"
+                            src="https://www.neoc.com/wp-content/webcam/camera1.jpg"
                             style="width: 251px; height: 144px;"></a></div>
-                      <div class="text-center"><a href="https://www.neoc.com/webcams/"><em><span
-
+                      <div class="text-center"><a href="https://www.neoc.com/webcams/"><em><span
                               style="font-size: 12px;">New England Outdoor
-                              Center</span></em></a><em style="font-size: 12px;"><span
-
+                              Center</span></em></a><em style="font-size: 12px;"><span
                             style="color: #0000ee;"> </span><br>
                           ~90 miles south of Fort Kent</em><br>
                       </div>
@@ -897,15 +361,12 @@
                       <div class="text-center"> <br>
                         <strong>US Route 1 @ Van Buren, ME<br>
                         </strong>
-                        <div class="text-center"><a href="https://newengland511.org/map/Cctv/2253?t=1775931089"
-
+                        <div class="text-center"><a href="https://newengland511.org/map/Cctv/2253?t=1775931089"
                             title="St. John River at Dickey"><img alt="US
-                                    1 @ Van Buren, ME" loading="lazy" src="https://newengland511.org/map/Cctv/2253?t=1775931089"
-
+                                    1 @ Van Buren, ME" loading="lazy" src="https://newengland511.org/map/Cctv/2253?t=1775931089"
                               style="width: 251px; height: 144px;"></a></div>
                         <div class="text-center"><em><span style="font-size: 12px;">Approx.
-                              32 mi / 51 km SE of Fort Kent, ME</span></em><strong
-
+                              32 mi / 51 km SE of Fort Kent, ME</span></em><strong
                             style="font-size: 12px;"></strong> </div>
                       </div>
                       <div class="text-center"><br>
@@ -918,12 +379,9 @@
                       </div>
                       <div class="text-center"><strong>Bird Migration Forecast
                           Map</strong></div>
-                      <div class="text-center"><a href="https://birdcast.org/migration-tools/migration-forecast-maps/"
-
-                          title="Click for more information"><img alt="Bird Migration Forecast Map"
-
-                            loading="lazy" src="https://s3.amazonaws.com/is-birdcast-predicted-prod/images/day1.jpg"
-
+                      <div class="text-center"><a href="https://birdcast.org/migration-tools/migration-forecast-maps/"
+                          title="Click for more information"><img alt="Bird Migration Forecast Map"
+                            loading="lazy" src="https://s3.amazonaws.com/is-birdcast-predicted-prod/images/day1.jpg"
                             style="height: 250px; width: 251px;"><br>
                         </a> </div>
                       <div class="text-center"><em style="font-size:
@@ -944,24 +402,18 @@
           <div>
             <div class="text-center">
               <div class="inline-images">
-                <div class="text-center"><a href="https://en.wikipedia.org/wiki/Maine"
-
+                <div class="text-center"><a href="https://en.wikipedia.org/wiki/Maine"
                     title="Flag
                         of Maine -- Click for more"><img alt="Maine State
-                        Flag" class="img-center" loading="lazy" src="https://apexwx.github.io/me.png"
-
+                        Flag" class="img-center" loading="lazy" src="https://apexwx.github.io/me.png"
                       style="width:
-                        132px; height: 88px; left: 5px; right: 5px; padding:                    5px;"></a><a
-
-                    href="https://en.wikipedia.org/wiki/Acadia" title="Flag of Acadia -- Click for more"><img
-
-                      alt="Flag of Acadia" class="img-center" loading="lazy" src="https://apexwx.github.io/Flag_of_Acadia.svg.png"
-
+                        132px; height: 88px; left: 5px; right: 5px; padding:                    5px;"></a><a
+                    href="https://en.wikipedia.org/wiki/Acadia" title="Flag of Acadia -- Click for more"><img
+                      alt="Flag of Acadia" class="img-center" loading="lazy" src="https://apexwx.github.io/Flag_of_Acadia.svg.png"
                       style="width: 132px; height: 87.9px; padding: 5px;"></a><br>
                 </div>
               </div>
-              <div class="text-center"><a href="https://en.wikipedia.org/wiki/Acadia"
-
+              <div class="text-center"><a href="https://en.wikipedia.org/wiki/Acadia"
                   title="Flag
                      of Acadia -- Click for more"> </a></div>
             </div>
@@ -972,11 +424,9 @@
                   </a>Programs<br>
               </span> </div>
             <span style="font-size: 12px;"> </span><br>
-            <div class="text-center"><strong><a href="https://apexwx-github-io.translate.goog/?_x_tr_sl=auto&amp;_x_tr_tl=fr&amp;_x_tr_hl=en&amp;_x_tr_pto=wapp"
-
+            <div class="text-center"><strong><a href="https://apexwx-github-io.translate.goog/?_x_tr_sl=auto&amp;_x_tr_tl=fr&amp;_x_tr_hl=en&amp;_x_tr_pto=wapp"
                   title="Translate this website into French">Traduire en
-                  français</a> / </strong><a href="https://apexwx-github-io.translate.goog/?_x_tr_sl=en&amp;_x_tr_tl=es&amp;_x_tr_hl=en&amp;_x_tr_pto=wapp"
-
+                  français</a> / </strong><a href="https://apexwx-github-io.translate.goog/?_x_tr_sl=en&amp;_x_tr_tl=es&amp;_x_tr_hl=en&amp;_x_tr_pto=wapp"
                 title="Translate into Spanish"><strong>Traducir al español</strong></a>
             </div>
           </div>
@@ -1010,29 +460,20 @@
               </details>
               <div style="text-align: center; font-size: 12px;"><br>
               </div>
-              <div style="text-align: center; font-size: 12px;"> <a href="https://www.weather.gov/SKYWARN"
-
+              <div style="text-align: center; font-size: 12px;"> <a href="https://www.weather.gov/SKYWARN"
                   target="_blank" title="NWS
-                     Skywarn Storm Spotter"><img alt="NWS Skywarn Storm Spotter"
-
-                    loading="lazy" src="https://raw.githubusercontent.com/ApexWx/ApexWx.github.io/master/nws%20skywarn%20storm%20spotter%20logo.jpg"
-
+                     Skywarn Storm Spotter"><img alt="NWS Skywarn Storm Spotter"
+                    loading="lazy" src="https://raw.githubusercontent.com/ApexWx/ApexWx.github.io/master/nws%20skywarn%20storm%20spotter%20logo.jpg"
                     style="width: 124px;
-                     height: 72px; max-width: 100%; padding: 5px;"></a><a href="https://www.worldcampus.psu.edu/degrees-and-certificates/penn-state-online-weather-forecasting-undergraduate-certificate"
-
-                  target="_blank" title="Penn State Certificate in Weather Forecasting"><img
-
-                    alt="Penn State Certificate in Weather Forecasting" loading="lazy"
-
-                    src="https://github.com/ApexWx/ApexWx.github.io/blob/master/Penn%20State.png?raw=true"
-
+                     height: 72px; max-width: 100%; padding: 5px;"></a><a href="https://www.worldcampus.psu.edu/degrees-and-certificates/penn-state-online-weather-forecasting-undergraduate-certificate"
+                  target="_blank" title="Penn State Certificate in Weather Forecasting"><img
+                    alt="Penn State Certificate in Weather Forecasting" loading="lazy"
+                    src="https://github.com/ApexWx/ApexWx.github.io/blob/master/Penn%20State.png?raw=true"
                     style="width: 124px; height: 72px; max-width: 100%;
                      padding: 5px;"></a></div>
               <div class="text-center"> <br>
-                <div style="text-align: center; font-size: 12px;"> <a href="https://www.buymeacoffee.com/MaineApexWx"
-
-                    target="_blank"><img alt="Buy Me A Coffee" loading="lazy" src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png"
-
+                <div style="text-align: center; font-size: 12px;"> <a href="https://www.buymeacoffee.com/MaineApexWx"
+                    target="_blank"><img alt="Buy Me A Coffee" loading="lazy" src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png"
                       style="height: 60px !important; width: 217px
                            !important;"></a><br>
                   <div class="text-center"> <span style="font-size:
@@ -1304,8 +745,7 @@
                       normals and historical records are sourced via NOAA/ACIS
                       data feeds and are intended for informational purposes
                       only. Data can occasionally contain provisional values or
-                      missing periods due to automated reporting delays.</span></em><span
-
+                      missing periods due to automated reporting delays.</span></em><span
                     style="font-size:12px;"></span><span style="font-size:
                            12px;"></span><em style="font-size: 12px;"></em> </div>
               </div>
@@ -1359,8 +799,7 @@
                   orbital variations, gravitational shifts, and atmospheric
                   refraction. However, actual visibility will vary depending on
                   your exact local topography, weather, and atmospheric
-                  conditions. More local sun and moon information at <a href="https://www.timeanddate.com/astronomy/@4964627"
-
+                  conditions. More local sun and moon information at <a href="https://www.timeanddate.com/astronomy/@4964627"
                     target="_blank">timeanddate.com</a>.</em> </div>
             </div>
             <div style="text-align: center;"> </div>
@@ -1404,8 +843,7 @@
               </strong></u> </div>
           <div>
             <div style="text-align: left;"><span style="color: #666666;"><span style="font-size: 12px;">Updated
-                  July 3 at 8:00 AM </span><span style="font-size: 12px;">EDT </span><span
-
+                  July 3 at 8:00 AM </span><span style="font-size: 12px;">EDT </span><span
                   style="font-size: 12px;"><br>
                 </span></span> </div>
             <div><strong><br>
@@ -1519,8 +957,7 @@
               Weather Overview for Fort Kent &amp; Vicinity </strong>🌤️ </div>
           <div style="font-size: 12px; text-align: center;"><span style="color: #666666;"><em>Updated
                 every 3-6 hours from NWS Caribou</em></span> </div>
-          <i style="color: #999999;"><span style="font-size: 12px;"></span></i><strong
-
+          <i style="color: #999999;"><span style="font-size: 12px;"></span></i><strong
             style="font-size: 12px;"></strong>
           <div>
             <div>
@@ -1537,8 +974,7 @@
                                   <div class="fw-forecast" id="forecast">Loading
                                     forecast... </div>
                                 </div>
-                                <a href="https://forecast.weather.gov/MapClick.php?zoneid=MEZ001&amp;FcstType=text&amp;TextType=2"><strong
-
+                                <a href="https://forecast.weather.gov/MapClick.php?zoneid=MEZ001&amp;FcstType=text&amp;TextType=2"><strong
                                     style="font-size: 14px;"></strong></a> </div>
                               <div> <em style="font-size: 12px;"></em>
                                 <!-- Regional Satellite Section -->
@@ -1549,27 +985,22 @@
                                   <em style="font-size: 16px;"> <br>
                                     <a href="https://weather.cod.edu/data/satellite/local/New_Brunswick/current/New_Brunswick.truecolor.jpg">
                                       <img alt="Regional Visible
-                                                   Satellite" loading="lazy" src="https://weather.cod.edu/data/satellite/local/New_Brunswick/current/New_Brunswick.truecolor.jpg"
-
+                                                   Satellite" loading="lazy" src="https://weather.cod.edu/data/satellite/local/New_Brunswick/current/New_Brunswick.truecolor.jpg"
                                         style="width: auto;" title="Click
                                                    for larger image"> </a> <br>
                                   </em> </div>
-                                <div style="font-size: 16px;"> <span style="color: #666666;"><em
-
+                                <div style="font-size: 16px;"> <span style="color: #666666;"><em
                                       style="font-size: 12px;"> Credit: College
                                       of DuPage / NOAA GOES-19 Imagery: True
-                                      Color (day) and Shortwave IR (night)</em><em
-
+                                      Color (day) and Shortwave IR (night)</em><em
                                       style="font-size: 12px;"><em style="font-size: 12px;"></em></em></span>
                                 </div>
-                                <div style="font-size: 16px;"><span style="color: #666666;"><em
-
+                                <div style="font-size: 16px;"><span style="color: #666666;"><em
                                       style="font-size: 12px;"><em style="font-size: 12px;"><br>
                                       </em> </em></span> </div>
                                 <div>
                                   <hr style="margin-left: 0px;
-                                                   margin-right: auto;"> <u><strong><span
-
+                                                   margin-right: auto;"> <u><strong><span
                                         style="font-variant: small-caps;"></span></strong></u>
                                 </div>
                               </div>
@@ -1578,8 +1009,7 @@
                                 <details open="">
                                   <summary style="cursor: pointer;
                                                    text-align: center; font-size: 1.2em;                                  font-weight: bold;">
-                                    🇺🇸 US National Weather Outlook 🇺🇸 <span
-
+                                    🇺🇸 US National Weather Outlook 🇺🇸 <span
                                       style="
                                                       font-size:13px; font-weight:normal;                                    color:#555; display:block;                                                      margin-top:2px;">
                                       (Click to Collapse/Expand)<br>
@@ -1614,14 +1044,11 @@
                                     <div class="text-center"> <a href="https://www.wpc.ncep.noaa.gov/NationalForecastChart/staticmaps/noaad1.png"><strong>Today's
                                           Forecast Chart</strong></a><br>
                                       <div>
-                                        <div class="text-center"><a href="https://www.wpc.ncep.noaa.gov/NationalForecastChart/map.php"
-
+                                        <div class="text-center"><a href="https://www.wpc.ncep.noaa.gov/NationalForecastChart/map.php"
                                             title="Click for interactive
                                                             chart"><img alt="National
-                                                            Forecast Chart" loading="lazy"
-
-                                              src="https://www.wpc.ncep.noaa.gov/NationalForecastChart/staticmaps/noaad1.png"
-
+                                                            Forecast Chart" loading="lazy"
+                                              src="https://www.wpc.ncep.noaa.gov/NationalForecastChart/staticmaps/noaad1.png"
                                               style="height: 369px; width:
                                                             555px;"></a></div>
                                       </div>
@@ -1635,12 +1062,10 @@
                                               <div class="text-center"><strong><strong><strong><strong><strong><strong>🌪️</strong></strong></strong>⛈️
                                                       </strong></strong>Severe
                                                   Weather Outlook </strong><strong><strong><strong><strong><strong><strong><strong><strong></strong></strong>⛈️</strong></strong></strong>🌪️<br>
-                                                    </strong></strong></strong><em><span
-
+                                                    </strong></strong></strong><em><span
                                                     style="font-size:
                                                                         12px;">Learn
-                                                    more about <a href="https://www.spc.noaa.gov/new/images/SPC_outlook_final_updated.png"
-
+                                                    more about <a href="https://www.spc.noaa.gov/new/images/SPC_outlook_final_updated.png"
                                                       title="Click for
                                                                         more information">Severe
                                                       Thunderstorm Outlooks</a></span></em><br>
@@ -1682,27 +1107,21 @@
                                               thunderstorms approach.</div>
                                             <div style="text-align: left;"><br>
                                             </div>
-                                            <div class="text-center"> <strong><a
-
+                                            <div class="text-center"> <strong><a
                                                   href="https://www.spc.noaa.gov/products/outlook/day1otlk.html">Today's
                                                   Severe Weather Chart</a></strong>
-                                              <div class="text-center"><a href="https://www.spc.noaa.gov/products/outlook/day1otlk.html"
-
+                                              <div class="text-center"><a href="https://www.spc.noaa.gov/products/outlook/day1otlk.html"
                                                   title="Click for more
-                                                                     information"><img
-
+                                                                     information"><img
                                                     alt="Thunderstorm /
-                                                                     Severe Weather                                                  Outlook"
-
-                                                    loading="lazy" src="https://www.spc.noaa.gov/partners/outlooks/state/swody1.png?1678542573998"
-
+                                                                     Severe Weather                                                  Outlook"
+                                                    loading="lazy" src="https://www.spc.noaa.gov/partners/outlooks/state/swody1.png?1678542573998"
                                                     style="height: 320px;
                                                                      width: 555px;"></a></div>
                                             </div>
                                             <div style="text-align: left;"> <br>
                                               <div class="text-center"><strong>🌧️Excessive
-                                                  Rainfall Outlook</strong> 🌧️<em><span
-
+                                                  Rainfall Outlook</strong> 🌧️<em><span
                                                     style="font-size:
                                                                         12px;"></span></em><br>
                                                 <em><span style="font-size:
@@ -1718,8 +1137,7 @@
                                                                text-align: left;">
                                             <div style="margin-top: 1em;
                                                                   text-align: left;">
-                                              <p data-end="86" data-start="0"><strong
-
+                                              <p data-end="86" data-start="0"><strong
                                                   data-end="86" data-start="0">Heavy
                                                   Rain May Lead to Localized
                                                   Flash Flooding in Parts of the
@@ -1761,16 +1179,12 @@
                                                 Excessive Rainfall Chart</strong></a>
                                             <div style="font-size: 14px;
                                                                   text-align: center;">
-                                              <a href="https://www.wpc.ncep.noaa.gov/#page=ero"
-
+                                              <a href="https://www.wpc.ncep.noaa.gov/#page=ero"
                                                 title="Excessive Rainfall
-                                                                  Outlook"><img
-
+                                                                  Outlook"><img
                                                   alt="Day 1
-                                                                  Excessive Rainfall                                                Outlook"
-
-                                                  loading="lazy" src="https://www.wpc.ncep.noaa.gov/qpf/94ewbg.gif"
-
+                                                                  Excessive Rainfall                                                Outlook"
+                                                  loading="lazy" src="https://www.wpc.ncep.noaa.gov/qpf/94ewbg.gif"
                                                   style="width: 553px;
                                                                   height: 175.959px;                                                border-width: 1px;                                                                  border-style: solid;"></a></div>
                                           </div>
@@ -1815,22 +1229,16 @@
                                   </div>
                                   <div style="text-align: left;"><br>
                                   </div>
-                                  <div class="text-center"> <a href="https://www.spc.noaa.gov/products/fire_wx/fwdy1.html"><strong
-
+                                  <div class="text-center"> <a href="https://www.spc.noaa.gov/products/fire_wx/fwdy1.html"><strong
                                         style="font-size: 16px;">Today's Fire
                                         Weather Chart</strong></a>
                                     <div style="font-size: 14px;
-                                                      text-align: center;"><strong
-
-                                        style="font-size: 14px;"></strong> <a href="https://www.spc.noaa.gov/products/fire_wx/fwdy1.html"
-
-                                        title="Click for more information"><img
-
+                                                      text-align: center;"><strong
+                                        style="font-size: 14px;"></strong> <a href="https://www.spc.noaa.gov/products/fire_wx/fwdy1.html"
+                                        title="Click for more information"><img
                                           alt="Today's Fire Weather
-                                                         Outlook" loading="lazy"
-
-                                          src="https://www.spc.noaa.gov/products/fire_wx/day1otlk_fire.gif"
-
+                                                         Outlook" loading="lazy"
+                                          src="https://www.spc.noaa.gov/products/fire_wx/day1otlk_fire.gif"
                                           style="width: 555px; height:
                                                          171px; border-radius: 1px / 0px;                                        border-width: 1px; border-style:                                                         solid;"></a>
                                     </div>
@@ -1860,8 +1268,7 @@
                                             <strong>🇺🇸 NOAA/National Weather
                                               Service Weather Information</strong><br>
                                             <div style="text-align: left;">
-                                              <div><a href="https://www.weather.gov/"
-
+                                              <div><a href="https://www.weather.gov/"
                                                   title="NWS Caribou
                                                                      (northern and eastern                                                Maine">US
                                                   National Weather Service</a> |
@@ -1871,13 +1278,10 @@
                                                 | <a href="https://www.wpc.ncep.noaa.gov/medr/medr.shtml">Medium
                                                   Range Forecast Discussion</a>
                                                 | <a href="https://www.wpc.ncep.noaa.gov/discussions/hpcdiscussions.php?disc=pmdepd">Extended
-                                                  Forecast Discussion</a> | <a
-
+                                                  Forecast Discussion</a> | <a
                                                   href="https://www.spc.noaa.gov/">
-                                                  Storm Predication Center</a> |<a
-
-                                                  href="https://www.cpc.ncep.noaa.gov/"><span
-
+                                                  Storm Predication Center</a> |<a
+                                                  href="https://www.cpc.ncep.noaa.gov/"><span
                                                     style="color: black;"> </span>Climate
                                                   Prediction Center</a> | <a href="https://www.tsunami.gov/">Tsunami
                                                   Warning System</a> | <a href="https://www.wpc.ncep.noaa.gov/discussions/hpcdiscussions.php?disc=nathilo&amp;version=0&amp;fmt=reg">US
@@ -1886,10 +1290,8 @@
                                               <div><br>
                                               </div>
                                               <div> <strong><img alt="ME
-                                                                        Flag" loading="lazy"
-
-                                                    src="https://github.com/ApexWx/ApexWx.github.io/blob/master/us-me.gif?raw=true"
-
+                                                                        Flag" loading="lazy"
+                                                    src="https://github.com/ApexWx/ApexWx.github.io/blob/master/us-me.gif?raw=true"
                                                     style="width: 21px;
                                                                         height: 14px;">󠁵󠁳󠁭󠁥󠁿
                                                   NWS Caribou Weather
@@ -1897,31 +1299,25 @@
                                                 </strong> <br>
                                                 <div><a href="https://forecast.weather.gov/MapClick.php?zoneid=MEZ001">ME
                                                     Zone 001 Forecast for
-                                                    Northwest Aroostook</a> | <a
-
+                                                    Northwest Aroostook</a> | <a
                                                     href="https://www.weather.gov/car/winter">Winter
-                                                    Weather Forecasts</a> | <a
-
+                                                    Weather Forecasts</a> | <a
                                                     href="https://forecast.weather.gov/product.php?site=CAR&amp;issuedby=CAR&amp;product=AFD&amp;format=CI&amp;version=1&amp;glossary=1&amp;highlight=off">
                                                     Area Forecast Discussion</a>
-                                                  | <a href="https://www.weather.gov/wrh/climate?wfo=car"
-
+                                                  | <a href="https://www.weather.gov/wrh/climate?wfo=car"
                                                     title="NWS Caribou
                                                                            Regional Climate Data">NWS
                                                     Caribou Regional Climate
                                                     Data</a> | <a href="https://www.youtube.com/@NWSCaribou">NWS
                                                     Caribou YouTube Channel</a>
-                                                  | <a href="https://www.weather.gov/car/recreation"
-
+                                                  | <a href="https://www.weather.gov/car/recreation"
                                                     title="Recreation
                                                                            Forecasts">Recreation
                                                     Forecast for Northern &amp;
-                                                    Eastern Maine</a> | <a href="https://www.weather.gov/gyx/"
-
+                                                    Eastern Maine</a> | <a href="https://www.weather.gov/gyx/"
                                                     title="NWS
                                                                            Gray/Portland, ME (SW                                                  Maine and most of New                                                                           Hampshire)">NWS
-                                                    Gray/Portland Office</a><span
-
+                                                    Gray/Portland Office</a><span
                                                     style="color:
                                                                            #0000ee;">
                                                   </span>| <a href="https://forecast.weather.gov/product.php?site=NWS&amp;issuedby=GYX&amp;product=RWR&amp;format=CI&amp;version=1&amp;glossary=1&amp;highlight=off">Regional
@@ -1937,11 +1333,9 @@
                                                       DOT Cams</a> | <a href="https://newengland511.org/">New
                                                       England Road Conditions</a>
                                                     | <a href="https://www.maine.gov/dacf/mfs/wildfire_danger_report/index.html">Maine
-                                                      Wildfire Report</a> | <a
-
+                                                      Wildfire Report</a> | <a
                                                       href="https://xmountwashington.appspot.com/csc.html?data=more">Mount
-                                                      Washington, NH Observatory</a><span
-
+                                                      Washington, NH Observatory</a><span
                                                       style="color:
                                                                               #0000ee;">
                                                     </span>| <a href="https://weathercams.faa.gov/map/-68.96846,46.73046,-66.85908,47.44111/cameraSite/606/details/camera/12222">Northern
@@ -1962,8 +1356,7 @@
                                                     NB</a> | <a href="https://weather.gc.ca/en/location/index.html?coords=45.955,-66.646">Fredericton,
                                                     NB</a> | <a href="https://weather.gc.ca/en/location/index.html?coords=45.276,-66.078">Saint
                                                     John, NB</a> | <a href="https://weather.gc.ca/forecast/canada/index_e.html?id=QC">
-                                                    Province of Québec</a> | <a
-
+                                                    Province of Québec</a> | <a
                                                     href="https://weather.gc.ca/en/location/index.html?coords=46.811,-71.225">Québec
                                                     City, QC</a> | <a href="https://weather.gc.ca/en/location/index.html?coords=45.529,-73.562">Montréal,
                                                     QC</a><span style="color:
@@ -1982,8 +1375,7 @@
                                                 Temperature Extremes</a> | <a href="https://eldoradoweather.com/climate/world-extremes2/world-temp-rainfall-extremes.php?extremes=Cana">Canadian
                                                 Temperature Extremes</a><span style="color: #0000ee;">
                                               </span>| <a href="https://eldoradoweather.com/climate/world-extremes2/world-temp-rainfall-extremes.php?extremes=Eur">Europe
-                                                Temperatures Extremes</a> | <a
-
+                                                Temperatures Extremes</a> | <a
                                                 href="https://eldoradoweather.com/climate/world-extremes2/world-temp-rainfall-extremes.php?extremes=North">Northern
                                                 Hemisphere</a> | <a href="https://eldoradoweather.com/climate/world-extremes2/world-temp-rainfall-extremes.php?extremes=South">Southern
                                                 Hemisphere</a> | <a href="https://earth.nullschool.net/">Earth
@@ -2021,8 +1413,7 @@
                                                   Image Galleries</a> | <a href="https://www.space.com/">Space.com</a>
                                                 | <a href="https://www.nasa.gov/">National
                                                   Aeronautics and Space
-                                                  Administration (NASA)</a> | <a
-
+                                                  Administration (NASA)</a> | <a
                                                   href="https://spaceflightnow.com/">
                                                   Spaceflight Now</a> | <a href="https://www.nasa.gov/spot-the-station/">NASA's
                                                   ISS Sighting Opportunities</a>
@@ -2030,36 +1421,26 @@
                                                   &amp; Telescope's: This Week's
                                                   Sky at a Glance</a><span style="color: #0000ee;">
                                                 </span>| <a href="https://www.spaceweather.com/">Space
-                                                  Weather</a><span style="color: black;"><span
-
+                                                  Weather</a><span style="color: black;"><span
                                                     style="color:
                                                                         #0000ee;">
-                                                  </span>| </span><span style="color: #0000ee;"><a
-
+                                                  </span>| </span><span style="color: #0000ee;"><a
                                                     href="https://stellarium-web.org/">Stellarium
-                                                    Web Online Star Map</a></span><span
-
-                                                  style="color: #0000ee;"><span
-
-                                                    style="color: black;"> | <a
-
+                                                    Web Online Star Map</a></span><span
+                                                  style="color: #0000ee;"><span
+                                                    style="color: black;"> | <a
                                                       href="https://www.heavens-above.com/">Heavens
                                                       Above</a></span> </span>|
                                                 <a href="https://www.timeanddate.com/moon/@4964627">Moon
-                                                  Times for Fort Kent, Maine</a><span
-
+                                                  Times for Fort Kent, Maine</a><span
                                                   style="color: #0000ee;"> </span>|
-                                                <span style="color: #0000ee;"><a
-
+                                                <span style="color: #0000ee;"><a
                                                     href="apexsunmoon.html" title="Fort Kent Sun &amp; Moon Tracker">Fort
                                                     Kent Sun &amp; Moon Data</a></span><br>
                                                 <span style="color:
-                                                                        #0000ee;"><span
-
-                                                    style="color: black;"></span></span><span
-
-                                                  style="color: #0000ee;"><span
-
+                                                                        #0000ee;"><span
+                                                    style="color: black;"></span></span><span
+                                                  style="color: #0000ee;"><span
                                                     style="color: black;"></span></span>
                                               </div>
                                               <div style="text-align:
@@ -2131,16 +1512,14 @@
               </div>
             </div>
           </div>
-          <div style="text-align: left; font-size: 12px;"><em style="font-size: 12px;"></em><u><span
-
+          <div style="text-align: left; font-size: 12px;"><em style="font-size: 12px;"></em><u><span
                 style="border-radius:
                0px;"><br>
               </span></u> </div>
           <div style="text-align: left; font-size: 12px;"> <strong>Weather
               Notice</strong>: This information is based on available computer
             models and data and may not reflect current conditions or later
-            forecast updates. Always visit <span style="font-size: 12px;"><a href="https://www.weather.gov/car/"
-
+            forecast updates. Always visit <span style="font-size: 12px;"><a href="https://www.weather.gov/car/"
                 title="NWS Caribou,
                   Maine">NWS Caribou</a> </span> at
             https://www.weather.gov/car/ for the latest official watches,
@@ -2197,13 +1576,10 @@
         <div class="column right" id="right-column">
           <div class="text-center"><strong style="font-size: 14px;">US Surface
               Weather Chart</strong> </div>
-          <div style="text-align: center; font-size: 12px;"><strong style="font-size: 14px;"></strong><a
-
+          <div style="text-align: center; font-size: 12px;"><strong style="font-size: 14px;"></strong><a
               href="https://s.w-x.co/staticmaps/WEB_Current_Weather_Map_1280x720.jpg?crop=16:9&amp;width=800&amp;format=pjpg&amp;auto=webp&amp;quality=60">
-            </a><a href="https://www.wpc.ncep.noaa.gov/sfc/usfntsfcwbg.gif" title="Click for larger image"><img
-
-                alt="Current Surface Analysis/Weather Chart" loading="lazy" src="https://www.wpc.ncep.noaa.gov/sfc/usfntsfcwbg.gif"
-
+            </a><a href="https://www.wpc.ncep.noaa.gov/sfc/usfntsfcwbg.gif" title="Click for larger image"><img
+                alt="Current Surface Analysis/Weather Chart" loading="lazy" src="https://www.wpc.ncep.noaa.gov/sfc/usfntsfcwbg.gif"
                 style="width: 251px; height: 188.586px;"></a> </div>
           <div style="text-align: center; font-size: 12px;"> <a href="https://www.noaa.gov/jetstream/wxmaps"><em>How
                 to read weather maps</em></a> </div>
@@ -2213,14 +1589,11 @@
           <div class="text-center"><br>
             <strong style="font-size: 14px;">US Visible/Infrared Satellite<br>
             </strong> </div>
-          <div class="text-center"> <a href="https://weather.cod.edu/data/satellite/continental/conus/current/conus.truecolor.jpg"
-
+          <div class="text-center"> <a href="https://weather.cod.edu/data/satellite/continental/conus/current/conus.truecolor.jpg"
               title="Click for larger image"><img alt="True Color
-               Satellite Image of CONUS" loading="lazy" src="https://weather.cod.edu/data/satellite/continental/conus/current/conus.truecolor.jpg"
-
+               Satellite Image of CONUS" loading="lazy" src="https://weather.cod.edu/data/satellite/continental/conus/current/conus.truecolor.jpg"
                 style="width: 251px; height: 141.188px; border-radius: 0px
-               / 0%; border-width: 0px; border-style: none; margin: 0px;              padding: 0px;"
-
+               / 0%; border-width: 0px; border-style: none; margin: 0px;              padding: 0px;"
                 title="Click for larger image"></a><em style="font-size: 12px;"><br>
             </em> </div>
           <div class="text-center"><em style="font-size: 12px;">College of
@@ -2232,25 +1605,20 @@
           <div>
             <div style="font-size: 14px; text-align: center;"><strong>US Weather
                 Radar<em><br>
-                  <a href="https://radar.weather.gov/ridge/standard/CONUS-LARGE_loop.gif"
-
-                    title="Click for larger image"><img alt="Live NOAA US Radar"
-
-                      loading="lazy" src="https://radar.weather.gov/ridge/standard/CONUS-LARGE_loop.gif"
-
+                  <a href="https://radar.weather.gov/ridge/standard/CONUS-LARGE_loop.gif"
+                    title="Click for larger image"><img alt="Live NOAA US Radar"
+                      loading="lazy" src="https://radar.weather.gov/ridge/standard/CONUS-LARGE_loop.gif"
                       style="width: 254px; height: 197px;"></a></em></strong> </div>
             <div style="font-size: 14px; text-align: center;"><br>
             </div>
             <div style="font-size: 14px; text-align: center;"><br>
             </div>
-            <div style="font-size: 14px; text-align: center;"><span style="font-size: 14px;"><strong
-
+            <div style="font-size: 14px; text-align: center;"><span style="font-size: 14px;"><strong
                   style="font-size: 13px;">US Advisories, Watches, &amp;
                   Warnings</strong></span><br>
               <a href="https://www.weather.gov/" title="Click for more
                      information"><img alt="National Advisories, Watches, and
-                     Warnings" loading="lazy" src="https://www.weather.gov/wwamap/png/US.png"
-
+                     Warnings" loading="lazy" src="https://www.weather.gov/wwamap/png/US.png"
                   style="height: 156.25px; width: 250px;"></a> </div>
             <div style="font-size: 14px; text-align: center;"><strong><br>
                 <br>
@@ -2258,11 +1626,9 @@
             <div class="text-center"><span style="font-size: 14px;"><strong style="font-size: 13px;">US
                   Precipitation Outlook<br>
                 </strong></span> </div>
-            <div style="font-size: 14px; text-align: center;"> <a href="https://www.weather.gov/images/erh/gis/CONUS_QPF.png"
-
+            <div style="font-size: 14px; text-align: center;"> <a href="https://www.weather.gov/images/erh/gis/CONUS_QPF.png"
                 title="Excessive Rainfall Outlook"><img alt="US
-                  Precipitation Outlook" loading="lazy" src="https://www.weather.gov/images/erh/gis/CONUS_QPF.png"
-
+                  Precipitation Outlook" loading="lazy" src="https://www.weather.gov/images/erh/gis/CONUS_QPF.png"
                   style="width: 251px; height: 175.959px; border-width:
                   0px; border-style: solid;"></a></div>
             <div style="font-size: 14px; text-align: center;"><br>
@@ -2271,11 +1637,9 @@
               <span style="font-size: 14px;"><strong style="font-size:
                      13px;">US Snowfall Outlook<br>
                 </strong></span>
-              <div style="font-size: 14px; text-align: center;"> <a href="https://www.weather.gov/images/erh/gis/CONUS_Snow.png"
-
+              <div style="font-size: 14px; text-align: center;"> <a href="https://www.weather.gov/images/erh/gis/CONUS_Snow.png"
                   title="Excessive Rainfall Outlook"><img alt="US Snow
-                     Outlook" loading="lazy" src="https://www.weather.gov/images/erh/gis/CONUS_Snow.png"
-
+                     Outlook" loading="lazy" src="https://www.weather.gov/images/erh/gis/CONUS_Snow.png"
                     style="width: 251px; height: 175.959px; border-width:
                      0px; border-style: solid;"></a></div>
               <div class="text-center"><br>
@@ -2283,10 +1647,8 @@
               <div class="text-center"><br>
               </div>
               <div class="text-center"><strong>Yesterday's Storm Reports</strong></div>
-              <a href="https://www.spc.noaa.gov/climo/reports/"><img alt="Yesterday's SPC Storm Reports"
-
-                  loading="lazy" src="https://www.spc.noaa.gov/climo/reports/yesterday.gif"
-
+              <a href="https://www.spc.noaa.gov/climo/reports/"><img alt="Yesterday's SPC Storm Reports"
+                  loading="lazy" src="https://www.spc.noaa.gov/climo/reports/yesterday.gif"
                   style="width: 251px;"></a> </div>
             <div style="font-size: 14px; text-align: center;"><br>
             </div>
@@ -2295,11 +1657,9 @@
             <div style="font-size: 14px; text-align: center;"> <strong style="font-size: 16px;">Today's
                 High Temperatures<br>
               </strong>
-              <div class="text-center"> <a href="https://graphical.weather.gov/GraphicalNDFD.php?width=2000&amp;timezone=EDT&amp;sector=CONUS&amp;element=maxt&amp;n=1"
-
+              <div class="text-center"> <a href="https://graphical.weather.gov/GraphicalNDFD.php?width=2000&amp;timezone=EDT&amp;sector=CONUS&amp;element=maxt&amp;n=1"
                   title="Click for HD image"><img alt="US High
-                     Temeperature Outlook" loading="lazy" src="https://graphical.weather.gov/GraphicalNDFD.php?width=515&amp;timezone=EDT&amp;sector=CONUS&amp;element=maxt&amp;n=1"
-
+                     Temeperature Outlook" loading="lazy" src="https://graphical.weather.gov/GraphicalNDFD.php?width=515&amp;timezone=EDT&amp;sector=CONUS&amp;element=maxt&amp;n=1"
                     style="height: 248px; width: 251px;"></a></div>
               <div class="text-center">
                 <div class="text-center"> </div>
@@ -2307,19 +1667,15 @@
                 </div>
                 <div class="text-center"><strong>Tonight's Low Temperatures<br>
                   </strong> </div>
-                <div class="text-center"><a href="https://graphical.weather.gov/GraphicalNDFD.php?width=2000&amp;timezone=EDT&amp;sector=CONUS&amp;element=mint&amp;n=1"
-
+                <div class="text-center"><a href="https://graphical.weather.gov/GraphicalNDFD.php?width=2000&amp;timezone=EDT&amp;sector=CONUS&amp;element=mint&amp;n=1"
                     title="Click for HD image"><img alt="US Low Temperture
-                        Outlook" loading="lazy" src="https://graphical.weather.gov/GraphicalNDFD.php?width=515&amp;timezone=EDT&amp;sector=CONUS&amp;element=mint&amp;n=1"
-
+                        Outlook" loading="lazy" src="https://graphical.weather.gov/GraphicalNDFD.php?width=515&amp;timezone=EDT&amp;sector=CONUS&amp;element=mint&amp;n=1"
                       style="height: 250px; width: 251px;"></a></div>
               </div>
               <div style="font-size: 14px; text-align: center;"> <br>
                 <strong>8-14 Day Temperature Outlook</strong><br>
-                <div class="text-center"> <a href="https://www.cpc.ncep.noaa.gov/products/predictions/814day/814temp.new.gif"><img
-
-                      alt="8-14 Day Temperature Outlook" loading="lazy" src="https://www.cpc.ncep.noaa.gov/products/predictions/814day/814temp.new.gif"
-
+                <div class="text-center"> <a href="https://www.cpc.ncep.noaa.gov/products/predictions/814day/814temp.new.gif"><img
+                      alt="8-14 Day Temperature Outlook" loading="lazy" src="https://www.cpc.ncep.noaa.gov/products/predictions/814day/814temp.new.gif"
                       style="width: 251px;" title="Click for larger image"></a>
                 </div>
                 <div class="text-center"><br>
@@ -2327,10 +1683,8 @@
                 <div class="text-center"><br>
                 </div>
                 <div class="text-center"><strong>8-14 Day Precipitation Outlook</strong></div>
-                <div class="text-center"> <a href="https://www.cpc.ncep.noaa.gov/products/predictions/814day/814prcp.new.gif"><img
-
-                      alt="8-14 Day Precipitation Outlook" loading="lazy" src="https://www.cpc.ncep.noaa.gov/products/predictions/814day/814prcp.new.gif"
-
+                <div class="text-center"> <a href="https://www.cpc.ncep.noaa.gov/products/predictions/814day/814prcp.new.gif"><img
+                      alt="8-14 Day Precipitation Outlook" loading="lazy" src="https://www.cpc.ncep.noaa.gov/products/predictions/814day/814prcp.new.gif"
                       style="width: 251px;" title="Click for larger image"></a><br>
                   <div style="font-size: 16px;"><em style="font-size:
                            12px;"><a href="https://www.cpc.ncep.noaa.gov/" style="font-size: 12px;">NOAA
@@ -2342,10 +1696,8 @@
             </div>
             <div class="text-center"><strong>2-Day Tropical </strong><strong>Atlantic
                 Outlook</strong> </div>
-            <div style="font-size: 14px; text-align: center;"> <a href="https://www.nhc.noaa.gov/gtwo.php?basin=atlc&amp;fdays=2"><img
-
-                  alt="2-Day Tropical Atlantic Outlook" loading="lazy" src="https://www.nhc.noaa.gov/xgtwo/two_atl_2d0.png"
-
+            <div style="font-size: 14px; text-align: center;"> <a href="https://www.nhc.noaa.gov/gtwo.php?basin=atlc&amp;fdays=2"><img
+                  alt="2-Day Tropical Atlantic Outlook" loading="lazy" src="https://www.nhc.noaa.gov/xgtwo/two_atl_2d0.png"
                   style="width: 251px; height: 185.461px;" title="Click
                      for more information / larger graphic"></a>
               <div><em style="font-size: 12px;">Graphics update June - November</em><br>
@@ -2355,10 +1707,8 @@
               <div><br>
               </div>
               <div><strong>7-Day Tropical Atlantic Outlook</strong></div>
-              <div><a href="https://www.nhc.noaa.gov/gtwo.php?basin=atlc&amp;fdays=7"><img
-
-                    alt="7-Day Tropical Atlantic Outlook" loading="lazy" src="https://www.nhc.noaa.gov/xgtwo/two_atl_7d0.png"
-
+              <div><a href="https://www.nhc.noaa.gov/gtwo.php?basin=atlc&amp;fdays=7"><img
+                    alt="7-Day Tropical Atlantic Outlook" loading="lazy" src="https://www.nhc.noaa.gov/xgtwo/two_atl_7d0.png"
                     style="width: 251px; height: 185.461px; border-width:
                      1px; border-style: solid;" title="Click for more
                      information / larger graphic"></a></div>
@@ -2371,26 +1721,20 @@
           <div> <br>
             <div style="font-size: 14px; text-align: center;"> <strong>Northeast
                 Regional Satellite</strong><br>
-              <a href="https://cdn.star.nesdis.noaa.gov/GOES19/ABI/SECTOR/ne/GEOCOLOR/latest.jpg"
-
-                title="Regional Satellite"><img alt="Regional Satellite" loading="lazy"
-
-                  src="https://cdn.star.nesdis.noaa.gov/GOES16/ABI/SECTOR/ne/GEOCOLOR/thumbnail.jpg"
-
+              <a href="https://cdn.star.nesdis.noaa.gov/GOES19/ABI/SECTOR/ne/GEOCOLOR/latest.jpg"
+                title="Regional Satellite"><img alt="Regional Satellite" loading="lazy"
+                  src="https://cdn.star.nesdis.noaa.gov/GOES16/ABI/SECTOR/ne/GEOCOLOR/thumbnail.jpg"
                   style="width: 251px; height: 251px; border-width: 1px;
                      border-style: solid;"></a> </div>
             <div style="font-size: 14px; text-align: center;"><br>
             </div>
             <div style="font-size: 14px; text-align: center;"> <br>
               <strong>Northeast Severe Weather Outlook<br>
-                <a href="https://graphical.weather.gov/GraphicalNDFD.php?width=515&amp;timezone=EDT&amp;sector=NORTHEAST&amp;element=convoutlook&amp;n=1"><img
-
-                    alt="Northeast Severe Weather Outlook" loading="lazy" src="https://graphical.weather.gov/GraphicalNDFD.php?width=515&amp;timezone=EDT&amp;sector=NORTHEAST&amp;element=convoutlook&amp;n=1"
-
+                <a href="https://graphical.weather.gov/GraphicalNDFD.php?width=515&amp;timezone=EDT&amp;sector=NORTHEAST&amp;element=convoutlook&amp;n=1"><img
+                    alt="Northeast Severe Weather Outlook" loading="lazy" src="https://graphical.weather.gov/GraphicalNDFD.php?width=515&amp;timezone=EDT&amp;sector=NORTHEAST&amp;element=convoutlook&amp;n=1"
                     style="width: 251px;"></a><br>
               </strong>
-              <div class="text-center"><em style="font-size: 14px;"><span style="font-size: 12px;"><a
-
+              <div class="text-center"><em style="font-size: 14px;"><span style="font-size: 12px;"><a
                       href="https://www.spc.noaa.gov/new/images/SPC_outlook_final_updated.png">Severe
                       Thunderstorm Outlook Categories</a></span></em> <br>
               </div>
@@ -2401,11 +1745,9 @@
             </div>
             <div style="font-size: 14px; text-align: center;"> <strong>Northeast
                 Precipitation Outlook</strong>
-              <div><a href="https://graphical.weather.gov/GraphicalNDFD.php?width=515&amp;timezone=EDT&amp;sector=NORTHEAST&amp;element=qpf&amp;n=2"
-
+              <div><a href="https://graphical.weather.gov/GraphicalNDFD.php?width=515&amp;timezone=EDT&amp;sector=NORTHEAST&amp;element=qpf&amp;n=2"
                   title="Click for more information"><img alt="NE
-                     Precipitation Outlook" loading="lazy" src="https://graphical.weather.gov/GraphicalNDFD.php?width=515&amp;timezone=EDT&amp;sector=NORTHEAST&amp;element=qpf&amp;n=2"
-
+                     Precipitation Outlook" loading="lazy" src="https://graphical.weather.gov/GraphicalNDFD.php?width=515&amp;timezone=EDT&amp;sector=NORTHEAST&amp;element=qpf&amp;n=2"
                     style="width: 250px; height: 185.938px; border-width:
                      1px; border-style: solid;"></a></div>
               <div class="text-center"><br>
@@ -2414,11 +1756,9 @@
               </div>
               <div class="text-center"><strong>Northeast Snowfall Outlook<br>
                 </strong> </div>
-              <div class="text-center"><a href="https://graphical.weather.gov/GraphicalNDFD.php?width=515&amp;timezone=EDT&amp;sector=NORTHEAST&amp;element=snowamt&amp;n=2"
-
+              <div class="text-center"><a href="https://graphical.weather.gov/GraphicalNDFD.php?width=515&amp;timezone=EDT&amp;sector=NORTHEAST&amp;element=snowamt&amp;n=2"
                   title="Click for larger image"><img alt="Regional Snow
-                     Accumulation" loading="lazy" src="https://graphical.weather.gov/GraphicalNDFD.php?width=515&amp;timezone=EDT&amp;sector=NORTHEAST&amp;element=snowamt&amp;n=2"
-
+                     Accumulation" loading="lazy" src="https://graphical.weather.gov/GraphicalNDFD.php?width=515&amp;timezone=EDT&amp;sector=NORTHEAST&amp;element=snowamt&amp;n=2"
                     style="width: 250px; height: 185.938px;"></a></div>
               <div class="text-center"><br>
               </div>
@@ -2427,11 +1767,9 @@
               <div class="text-center"> <strong>Northeast Ice Accumulation
                   Outlook<br>
                 </strong>
-                <div class="text-center"><a href="https://graphical.weather.gov/GraphicalNDFD.php?width=515&amp;timezone=EDT&amp;sector=NORTHEAST&amp;element=iceaccum&amp;n=2"
-
+                <div class="text-center"><a href="https://graphical.weather.gov/GraphicalNDFD.php?width=515&amp;timezone=EDT&amp;sector=NORTHEAST&amp;element=iceaccum&amp;n=2"
                     title="Click for larger image"><img alt="Regional Ice
-                        Accumulation" loading="lazy" src="https://graphical.weather.gov/GraphicalNDFD.php?width=515&amp;timezone=EDT&amp;sector=NORTHEAST&amp;element=iceaccum&amp;n=2"
-
+                        Accumulation" loading="lazy" src="https://graphical.weather.gov/GraphicalNDFD.php?width=515&amp;timezone=EDT&amp;sector=NORTHEAST&amp;element=iceaccum&amp;n=2"
                       style="width: 250px; height: 185.938px;"></a></div>
               </div>
             </div>
@@ -2439,22 +1777,18 @@
             </div>
             <div style="font-size: 14px; text-align: center;"><br>
               <strong>Northeast Wind Gust Outlook</strong><br>
-              <a href="https://graphical.weather.gov/GraphicalNDFD.php?width=515&amp;timezone=EDT&amp;sector=NORTHEAST&amp;element=windgust&amp;n=4"
-
+              <a href="https://graphical.weather.gov/GraphicalNDFD.php?width=515&amp;timezone=EDT&amp;sector=NORTHEAST&amp;element=windgust&amp;n=4"
                 title="Click for more information"><img alt="NE Wind
-                     Gusts" loading="lazy" src="https://graphical.weather.gov/GraphicalNDFD.php?width=515&amp;timezone=EDT&amp;sector=NORTHEAST&amp;element=windgust&amp;n=4"
-
+                     Gusts" loading="lazy" src="https://graphical.weather.gov/GraphicalNDFD.php?width=515&amp;timezone=EDT&amp;sector=NORTHEAST&amp;element=windgust&amp;n=4"
                   style="width: 253px; height: 220px; border-width: 1px;
                      border-style: solid;" title="Click for larger image"></a> </div>
             <div style="font-size: 14px; text-align: center;"><br>
             </div>
             <div style="font-size: 14px; text-align: center;"><br>
               <strong>Northeast Wave Height Outlook</strong><br>
-              <a href="https://graphical.weather.gov/GraphicalNDFD.php?width=515&amp;timezone=EDT&amp;sector=NORTHEAST&amp;element=waveheight&amp;n=5"
-
+              <a href="https://graphical.weather.gov/GraphicalNDFD.php?width=515&amp;timezone=EDT&amp;sector=NORTHEAST&amp;element=waveheight&amp;n=5"
                 title="Click for more information"><img alt="NE Wave
-                     Height" loading="lazy" src="https://graphical.weather.gov/GraphicalNDFD.php?width=515&amp;timezone=EDT&amp;sector=NORTHEAST&amp;element=waveheight&amp;n=5"
-
+                     Height" loading="lazy" src="https://graphical.weather.gov/GraphicalNDFD.php?width=515&amp;timezone=EDT&amp;sector=NORTHEAST&amp;element=waveheight&amp;n=5"
                   style="width: 253px; height: 220px; border-width: 1px;
                      border-style: solid;" title="Click for larger image"></a> </div>
             <div style="font-size: 14px; text-align: center;"><br>
@@ -2463,11 +1797,9 @@
             </div>
             <div style="font-size: 14px; text-align: center;"><strong>Maine
                 Drought Monitor</strong><br>
-              <a href="https://droughtmonitor.unl.edu/CurrentMap/StateDroughtMonitor.aspx?ME"
-
+              <a href="https://droughtmonitor.unl.edu/CurrentMap/StateDroughtMonitor.aspx?ME"
                 title="Click for more information"><img alt="Maine Drouht
-                     Monitor" loading="lazy" src="https://droughtmonitor.unl.edu/data/png/current/current_me_trd.png"
-
+                     Monitor" loading="lazy" src="https://droughtmonitor.unl.edu/data/png/current/current_me_trd.png"
                   style="width: 253px; height: 220px; border-width: 1px;
                      border-style: solid;" title="Click for larger image"></a> </div>
             <div style="font-size: 14px; text-align: center;"><br>
@@ -2477,8 +1809,7 @@
             <div style="font-size: 14px; text-align: center;"> <strong>Saint
                 John River at Fort Kent</strong><br>
               <a href="https://water.noaa.gov/gauges/ftkm1"><img alt="Saint
-                     John River at Fort Kent" loading="lazy" src="https://water.noaa.gov/resources/hydrographs/ftkm1_hg.png"
-
+                     John River at Fort Kent" loading="lazy" src="https://water.noaa.gov/resources/hydrographs/ftkm1_hg.png"
                   style="width: 251px; height: 141px; border-width: 1px;
                      border-style: solid;" title="Click for larger image"></a><br>
               <div style="font-size: 12px;"><em>Ice in winter may affect gauge
@@ -2492,8 +1823,7 @@
             <div style="font-size: 14px; text-align: center;"> <strong>Fish
                 River at Fort Kent</strong><br>
               <a href="https://water.noaa.gov/gauges/fihm1"><img alt="Fish
-                     River at Fort Kent" loading="lazy" src="https://water.noaa.gov/resources/hydrographs/fihm1_hg.png"
-
+                     River at Fort Kent" loading="lazy" src="https://water.noaa.gov/resources/hydrographs/fihm1_hg.png"
                   style="width: 251px; height: 141px; border-width: 1px;
                      border-style: solid;" title="Click for larger image"></a><br>
               <div style="font-size: 12px;"><em>Ice in winter may affect gauge
@@ -2505,10 +1835,8 @@
             </div>
             <div style="font-size: 14px; text-align: center;"> <strong>Allagash
                 River above Allagash</strong><br>
-              <a href="https://water.noaa.gov/gauges/ALLM1"><img alt="Allagash River above Allagash"
-
-                  loading="lazy" src="https://water.noaa.gov/resources/hydrographs/allm1_hg.png"
-
+              <a href="https://water.noaa.gov/gauges/ALLM1"><img alt="Allagash River above Allagash"
+                  loading="lazy" src="https://water.noaa.gov/resources/hydrographs/allm1_hg.png"
                   style="width: 251px; height: 141px; border-width: 1px;
                      border-style: solid;" title="Click for larger image"></a><br>
               <div style="font-size: 12px;"><em>Ice in winter may affect gauge
@@ -2519,10 +1847,8 @@
             <div style="font-size: 14px; text-align: center;"><br>
               <strong>St. John River at Dickey<br>
               </strong> </div>
-            <div style="font-size: 14px; text-align: center;"> <a href="https://water.noaa.gov/gauges/01010500"><img
-
-                  alt="St. John River at Dickey" loading="lazy" src="https://water.noaa.gov/resources/hydrographs/dicm1_hg.png"
-
+            <div style="font-size: 14px; text-align: center;"> <a href="https://water.noaa.gov/gauges/01010500"><img
+                  alt="St. John River at Dickey" loading="lazy" src="https://water.noaa.gov/resources/hydrographs/dicm1_hg.png"
                   style="width: 251px; height: 141px; border-width: 1px;
                      border-style: solid;" title="Click for larger image"></a><br>
               <div style="font-size: 12px;"><em>Ice in winter may affect gauge
@@ -2536,11 +1862,9 @@
             </div>
             <div style="font-size: 14px; text-align: center;"> <strong>Environment
                 Canada Weather Map<em><br>
-                  <a href="https://weather.gc.ca/data/wxoimages/wocanmap0_e.jpg"
-
+                  <a href="https://weather.gc.ca/data/wxoimages/wocanmap0_e.jpg"
                     title="Click for larger image"><img alt="Canadian
-                     Weather Map" loading="lazy" src="https://weather.gc.ca/data/wxoimages/wocanmap0_e.jpg"
-
+                     Weather Map" loading="lazy" src="https://weather.gc.ca/data/wxoimages/wocanmap0_e.jpg"
                       style="width: 254px; height: 220px;"></a></em></strong>
               <div style="font-size: 14px; text-align: center;"><em style="font-size: 12px;">Temperature
                   in Celsius</em> </div>
@@ -2553,10 +1877,8 @@
             </div>
             <div style="font-size: 14px; text-align: center;"> <strong>Today's
                 Sun</strong><br>
-              <a href="https://sdo.gsfc.nasa.gov/assets/img/latest/latest_1024_HMIIF.jpg"><img
-
-                  alt="Today's Sun" loading="lazy" src="https://sdo.gsfc.nasa.gov/assets/img/latest/latest_1024_HMIIF.jpg"
-
+              <a href="https://sdo.gsfc.nasa.gov/assets/img/latest/latest_1024_HMIIF.jpg"><img
+                  alt="Today's Sun" loading="lazy" src="https://sdo.gsfc.nasa.gov/assets/img/latest/latest_1024_HMIIF.jpg"
                   style="border-width: 1px; border-style: solid; width:
                      251px; height: 251px;" title="Click for larger image"></a>
               <div style="font-size: 12px;"><em><a href="https://svs.gsfc.nasa.gov/3988/">HMI
@@ -2569,10 +1891,8 @@
             </div>
             <div style="font-size: 14px; text-align: center;"> <strong>Aurora
                 Outlook</strong><br>
-              <a href="https://www.swpc.noaa.gov/products/aurora-30-minute-forecast"><img
-
-                  alt="Aurora Outlook" loading="lazy" src="https://services.swpc.noaa.gov/images/animations/ovation/north/latest.jpg"
-
+              <a href="https://www.swpc.noaa.gov/products/aurora-30-minute-forecast"><img
+                  alt="Aurora Outlook" loading="lazy" src="https://services.swpc.noaa.gov/images/animations/ovation/north/latest.jpg"
                   style="width: 251px; height: 251px;" title="Click for
                      larger image"></a><br>
               <div style="font-size: 12px;"><em><span style="font-size:
@@ -2591,42 +1911,31 @@
       <!-- Footer -->
       <footer id="page-footer">
         <p style="text-align: center; margin-bottom: 15px;"> <a href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fapexwx.github.io%2F">
-            <img alt="W3C Validated HTML 5" loading="lazy" src="https://apexwx.github.io/validhtml5.png"
-
+            <img alt="W3C Validated HTML 5" loading="lazy" src="https://apexwx.github.io/validhtml5.png"
               style="width:
                112px; height: 49px; margin: 0px;" title="Click for more
                information"> </a> <a href="http://jigsaw.w3.org/css-validator/validator?lang=en&amp;profile=css3svg&amp;uri=https%3A%2F%2Fapexwx.github.io%2F&amp;usermedium=all&amp;vextwarning=&amp;warning=1">
-            <img alt="Valid CSS!" loading="lazy" src="https://jigsaw.w3.org/css-validator/images/vcss-blue"
-
+            <img alt="Valid CSS!" loading="lazy" src="https://jigsaw.w3.org/css-validator/images/vcss-blue"
               style="border: 0px none; width: 88px; height: 31px; margin:
                10px;"> </a> </p>
         <div class="text-center">Follow Apex Wx on Social Media</div>
         <a style="font-size: 12px;
           text-align: center;" href="https://www.facebook.com/ApexWx/"><img style="border: medium none;
-            max-width: 100%; margin: 0px; padding-bottom: 5px; width:            42px; height: 47px;"
-
-            title="Apex Wx on Facebook" src="https://raw.githubusercontent.com/ApexWx/ApexWx.github.io/master/outline-dark-facebook-48.png"
-
-            alt="Apex Wx on Facebook"></a> <a href="https://universeodon.com/@ApexWx"
-
+            max-width: 100%; margin: 0px; padding-bottom: 5px; width:            42px; height: 47px;"
+            title="Apex Wx on Facebook" src="https://raw.githubusercontent.com/ApexWx/ApexWx.github.io/master/outline-dark-facebook-48.png"
+            alt="Apex Wx on Facebook"></a> <a href="https://universeodon.com/@ApexWx"
           title="Apex Wx on
-          Mastodon"><img src="https://apexwx.github.io/mastodon.png" alt="Mastodon"
-
+          Mastodon"><img src="https://apexwx.github.io/mastodon.png" alt="Mastodon"
             style="width: 49px; height: 49px; padding: 5px; margin:
-            0px;" title="Apex Wx on Mastodon"></a><a href="https://www.threads.net/@apexwx"
-
+            0px;" title="Apex Wx on Mastodon"></a><a href="https://www.threads.net/@apexwx"
           title="Apex Wx on
-          Threads"><img src="https://apexwx.github.io/threadslogo.png" alt="Threads"
-
-            style="width: 47px; height: 47px; padding: 5px;"></a><a href="https://www.instagram.com/apexwx/"
-
+          Threads"><img src="https://apexwx.github.io/threadslogo.png" alt="Threads"
+            style="width: 47px; height: 47px; padding: 5px;"></a><a href="https://www.instagram.com/apexwx/"
           title="Apex Wx on
-          Instagram"><img src="https://apexwx.github.io/instagram48.png" alt="Instagram"
-
+          Instagram"><img src="https://apexwx.github.io/instagram48.png" alt="Instagram"
             style="width: 52px; height: 53px; padding:
             5px;"></a><a href="https://bsky.app/profile/apexwx.bsky.social" title="Apex
-          Wx on Blue Sky social "><img src="https://apexwx.github.io/bsky1.png"
-
+          Wx on Blue Sky social "><img src="https://apexwx.github.io/bsky1.png"
             alt="Bluesky" style="padding: 5px; width: 54px; height: 54px;"></a>
       </footer>
       <script>
@@ -3091,638 +2400,8 @@ setInterval(updateDualTime, 1000 * 60);
          setInterval(updateStation, 60000);
          
       </script>
+      <script src="climate.js"></script>
       <script>
-         // ======================================================
-         // FORT KENT CLIMATE DATA
-         // ======================================================
-         
-         async function loadClimateData() {
-           
-           console.log("LOAD CLIMATE DATA STARTED");
-           
-           try {
-             const response = await fetch(
-               "https://fortkent-acis.maineapexwx.workers.dev/"
-             );
-         
-             const climate = await response.json();
-         
-             // ==================================================
-             // UNPACK DATASETS FROM WORKER
-             // ==================================================
-             const monthlyRows = climate.monthlyRows;
-             const seasonalRows = climate.seasonalRows || [];
-             const ytdRain = climate.ytdRain || 0;
-             const ytdRainDeparture = climate.ytdRainDeparture || 0;
-             const seasonSnowNormal =
-  Number.isFinite(climate.seasonSnowNormal)
-    ? climate.seasonSnowNormal
-    : 99.3;
-         
-             const todayNormals = climate.todayNormals || {
-               normalHigh: 0,
-               normalLow: 0,
-               normalRain: 0
-             };
-               
-             // ==================================================
-             // YESTERDAY'S COMPLETE CLIMATE OBSERVATION
-             // ==================================================
-             const easternTimeStr = new Date().toLocaleString("en-US", { timeZone: "America/New_York" });
-             const todayObj = new Date(easternTimeStr);
-             const todayStr = `${todayObj.getFullYear()}-${String(todayObj.getMonth() + 1).padStart(2, "0")}-${String(todayObj.getDate()).padStart(2, "0")}`;
-         
-             const latestRow = [...monthlyRows]
-               .reverse()
-               .find(row =>
-                 row[0] !== todayStr &&
-                 row[1] !== "M" &&
-                 row[2] !== "M" &&
-                 row[1] !== "" &&
-                 row[2] !== ""
-               );
-               
-             if (!latestRow) {
-               console.warn("No valid climate observations found.");
-               return;
-             }
-         
-             const yesterdayDate = latestRow[0];
-         
-             const yesterdayHigh = (latestRow[1] !== "M" && latestRow[1] !== "") ? parseFloat(latestRow[1]) : null;
-             const yesterdayLow = (latestRow[2] !== "M" && latestRow[2] !== "") ? parseFloat(latestRow[2]) : null;
-             const yesterdayRain = (latestRow[3] !== "M" && latestRow[3] !== "T") ? parseFloat(latestRow[3]) || 0 : 0;
-         
-             // ==================================================
-             // DAILY NORMALS & RECORDS LOOKUP
-             // ==================================================
-             let normHigh = todayNormals.normalHigh;
-             let normLow = todayNormals.normalLow;
-             let normRain = todayNormals.normalRain;
-         
-             const localKey = `${String(todayObj.getMonth() + 1).padStart(2, "0")}-${String(todayObj.getDate()).padStart(2, "0")}`;
-             const fallbackRec = climateRecords[localKey] || { high: [90, "----"], low: [28, "----"], rain: [2.73, "----"] };
-             
-             let recHighVal = fallbackRec.high[0];
-             let recHighYear = fallbackRec.high[1];
-             let recLowVal = fallbackRec.low[0];
-             let recLowYear = fallbackRec.low[1];
-             let recRainVal = fallbackRec.rain[0];
-             let recRainYear = fallbackRec.rain[1];
-         
-             // Render Normals to DOM
-             document.getElementById("normal-high").innerHTML =
-               `${Number(normHigh).toFixed(0)}°F<br><span class="metric">${((Number(normHigh) - 32) * 5 / 9).toFixed(1)}°C</span>`;
-         
-             document.getElementById("normal-low").innerHTML =
-               `${Number(normLow).toFixed(0)}°F<br><span class="metric">${((Number(normLow) - 32) * 5 / 9).toFixed(1)}°C</span>`;
-         
-             document.getElementById("normal-rain").innerHTML =
-               `${Number(normRain).toFixed(2)} in<br><span class="metric">${(Number(normRain) * 25.4).toFixed(1)} mm</span>`;
-         
-             // Render Records to DOM
-             document.getElementById("record-high").innerHTML =
-               `${parseFloat(recHighVal).toFixed(0)}°F<br><span class="metric">${((parseFloat(recHighVal) - 32) * 5 / 9).toFixed(1)}°C</span><span class="metric">${recHighYear}</span>`;
-         
-             document.getElementById("record-low").innerHTML =
-               `${parseFloat(recLowVal).toFixed(0)}°F<br><span class="metric">${((parseFloat(recLowVal) - 32) * 5 / 9).toFixed(1)}°C</span><span class="metric">${recLowYear}</span>`;
-         
-             document.getElementById("record-rain").innerHTML =
-               `${parseFloat(recRainVal).toFixed(2)} in<br><span class="metric">${(parseFloat(recRainVal) * 25.4).toFixed(1)} mm</span><span class="metric">${recRainYear}</span>`;
-         
-             // ==================================================
-             // DEPARTURES
-             // ==================================================
-             let highDeparture = yesterdayHigh !== null ? yesterdayHigh - normHigh : null;
-             let lowDeparture = yesterdayLow !== null ? yesterdayLow - normLow : null;
-             
-             let totalRain = 0;
-             let maxRain = 0;
-             let maxTemp = -999;
-             let maxTempDate = "";
-             let minTemp = 999;
-             let minTempDate = "";
-             let totalHigh = 0;
-             let totalLow = 0;
-             let validHighs = 0;
-             let validLows = 0;
-             let totalSnow = 0;
-             let maxSnow = 0;
-             let maxSnowDate = "";
-             let snowDays = 0;
-         
-             // ==================================================
-             // MONTHLY DATA LOOP
-             // ==================================================
-             monthlyRows.forEach(row => {
-               const date = row[0];
-               const high = parseFloat(row[1]);
-               const low = parseFloat(row[2]);
-         
-               let rain = 0;
-               if (row[3] !== "M" && row[3] !== "T") {
-                 rain = parseFloat(row[3]) || 0;
-               }
-         
-               totalRain += rain;
-               if (rain > maxRain) { maxRain = rain; }
-         
-               if (!isNaN(high)) {
-                 totalHigh += high;
-                 validHighs++;
-                 if (high > maxTemp) {
-                   maxTemp = high;
-                   maxTempDate = date;
-                 }
-               }
-         
-               if (!isNaN(low)) {
-                 totalLow += low;
-                 validLows++;
-                 if (low < minTemp) {
-                   minTemp = low;
-                   minTempDate = date;
-                 }
-               }
-             });
- console.log("BEFORE LOOP totalSnow =", totalSnow);
-console.log("seasonalRows =", seasonalRows);
-             // ==================================================
-             // SEASONAL SNOW LOOP
-             // ==================================================
-             seasonalRows.forEach(row => {
-               const date = row[0];
-               let snow = 0;
-               if (row[1] !== "M" && row[1] !== "T") {
-                 snow = parseFloat(row[1]) || 0;
-               }
-         
-               if (snow > 0) {
-                 totalSnow += snow;
-                 snowDays++;
-                 if (snow > maxSnow) {
-                   maxSnow = snow;
-                   maxSnowDate = date;
-                 }
-               }
-             });
-console.log("AFTER LOOP totalSnow =", totalSnow);
-             // ==================================================
-             // CALCULATE AVERAGES
-             // ==================================================
-             const avgHigh = validHighs > 0 ? totalHigh / validHighs : 0;
-             const avgLow = validLows > 0 ? totalLow / validLows : 0;
-             const avgMonthlyMean = (avgHigh + avgLow) / 2;
-             const avgRain = monthlyRows.length > 0 ? totalRain / monthlyRows.length : 0;
-             const avgSnow = snowDays > 0 ? totalSnow / snowDays : 0;
-         
-             // Render Stats to DOM
-             document.getElementById("climate-month-rain").innerHTML = `${totalRain.toFixed(2)} in<br><span class="metric">${(totalRain * 25.4).toFixed(1)} mm</span>`;
-             document.getElementById("climate-max-rain").innerHTML = `${maxRain.toFixed(2)} in<br><span class="metric">${(maxRain * 25.4).toFixed(1)} mm</span>`;
-             document.getElementById("climate-avg-rain").innerHTML = `${avgRain.toFixed(2)} in/day<br><span class="metric">${(avgRain * 25.4).toFixed(1)} mm/day</span>`;
-             
-             document.getElementById("climate-max-temp").innerHTML = `${maxTemp.toFixed(0)}°F<br><span class="metric">${((maxTemp - 32) * 5 / 9).toFixed(1)}°C</span><span class="metric">${maxTempDate}</span>`;
-             document.getElementById("climate-min-temp").innerHTML = `${minTemp.toFixed(0)}°F<br><span class="metric">${((minTemp - 32) * 5 / 9).toFixed(1)}°C</span><span class="metric">${minTempDate}</span>`;
-             document.getElementById("climate-avg-high").innerHTML = `${avgHigh.toFixed(1)}°F<br><span class="metric">${((avgHigh - 32) * 5 / 9).toFixed(1)}°C</span>`;
-             document.getElementById("climate-avg-low").innerHTML = `${avgLow.toFixed(1)}°F<br><span class="metric">${((avgLow - 32) * 5 / 9).toFixed(1)}°C</span>`;
-             document.getElementById("climate-monthly-mean").innerHTML = `${avgMonthlyMean.toFixed(1)}°F<br><span class="metric">${((avgMonthlyMean - 32) * 5 / 9).toFixed(1)}°C</span>`;   
-               
-             document.getElementById("yesterday-high").innerHTML = yesterdayHigh !== null
-               ? `${yesterdayHigh.toFixed(0)}°F<br><span class="metric">${((yesterdayHigh - 32) * 5 / 9).toFixed(1)}°C</span><span class="metric">${yesterdayDate}</span>`
-               : "--";
-             
-             if (highDeparture !== null && !isNaN(highDeparture)) {
-               const highDepC = highDeparture * 5 / 9;
-               const depClass = highDeparture > 0 ? "departure-positive" : highDeparture < 0 ? "departure-negative" : "departure-neutral";
-               document.getElementById("yesterday-high-departure").innerHTML = `<span class="${depClass}">${highDeparture > 0 ? "+" : ""}${Math.round(highDeparture)}°F</span><br><span class="metric ${depClass}">${highDepC > 0 ? "+" : ""}${highDepC.toFixed(1)}°C</span><span class="metric">${yesterdayDate}</span>`;
-             }
-         
-             document.getElementById("yesterday-low").innerHTML = yesterdayLow !== null
-               ? `${yesterdayLow.toFixed(0)}°F<br><span class="metric">${((yesterdayLow - 32) * 5 / 9).toFixed(1)}°C</span><span class="metric">${yesterdayDate}</span>`
-               : "--";
-         
-             if (lowDeparture !== null && !isNaN(lowDeparture)) {
-               const lowDepC = lowDeparture * 5 / 9;
-               const depClass = lowDeparture > 0 ? "departure-positive" : lowDeparture < 0 ? "departure-negative" : "departure-neutral";
-               document.getElementById("yesterday-low-departure").innerHTML = `<span class="${depClass}">${lowDeparture > 0 ? "+" : ""}${Math.round(lowDeparture)}°F</span><br><span class="metric ${depClass}">${lowDepC > 0 ? "+" : ""}${lowDepC.toFixed(1)}°C</span><span class="metric">${yesterdayDate}</span>`;
-             }
-               
-             document.getElementById("ytd-rain").innerHTML = `${ytdRain.toFixed(2)} in<br><span class="metric">${(ytdRain * 25.4).toFixed(1)} mm</span>`;
-         
-             const rainDepClass = ytdRainDeparture > 0 ? "rain-positive" : ytdRainDeparture < 0 ? "rain-negative" : "rain-neutral";
-             document.getElementById("ytd-rain-departure").innerHTML = `<span class="${rainDepClass}">${ytdRainDeparture > 0 ? "+" : ""}${ytdRainDeparture.toFixed(2)} in</span><br><span class="metric ${rainDepClass}">${(ytdRainDeparture * 25.4).toFixed(1)} mm</span>`;
-         
-             // ==================================================
-             // NEW SIMPLIFIED SNOW DEPARTURE RENDERING
-             // ==================================================
-             const observedSeasonalSnow = totalSnow;
-             document.getElementById("season-snow").innerHTML = `${observedSeasonalSnow.toFixed(1)} in<br><span class="metric">${(observedSeasonalSnow * 2.54).toFixed(1)} cm</span>`;
-         
-             const snowDeparture = observedSeasonalSnow - seasonSnowNormal;
-             const snowDepClass = snowDeparture > 0 ? "rain-positive" : snowDeparture < 0 ? "rain-negative" : "rain-neutral";
-             document.getElementById("season-snow-departure").innerHTML = `<span class="${snowDepClass}">${snowDeparture > 0 ? "+" : ""}${snowDeparture.toFixed(1)} in</span><br><span class="metric ${snowDepClass}">${snowDeparture > 0 ? "+" : ""}${(snowDeparture * 2.54).toFixed(1)} cm</span>`;
-         
-             document.getElementById("largest-snow").innerHTML = `${maxSnow.toFixed(1)} in<br><span class="metric">${(maxSnow * 2.54).toFixed(1)} cm</span><span class="metric">${maxSnowDate || "N/A"}</span>`;
-             document.getElementById("avg-snow").innerHTML = `${avgSnow.toFixed(1)} in/event<br><span class="metric">${(avgSnow * 2.54).toFixed(1)} cm</span>`;
-             document.getElementById("snow-days").textContent = snowDays;
-             document.getElementById("climate-days").textContent = monthlyRows.length;
-         
-             // ==================================================
-             // FIX OBS PERIOD LAYOUT
-             // ==================================================
-             let periodEndRow = monthlyRows[monthlyRows.length - 1];
-             if (periodEndRow && (periodEndRow[1] === "M" || periodEndRow[2] === "M")) {
-               periodEndRow = monthlyRows[monthlyRows.length - 2] || periodEndRow;
-             }
-         
-             const startDateStr = monthlyRows[0][0];
-             const endDateStr = periodEndRow[0];
-         
-             if (startDateStr === endDateStr) {
-               document.getElementById("climate-period").innerHTML = startDateStr;
-             } else {
-               document.getElementById("climate-period").innerHTML = `${startDateStr} <span style="opacity: 0.6; font-size: 0.95em;">through</span> ${endDateStr}`;
-             }
-         
-             document.getElementById("climate-update").textContent = new Date().toLocaleString();
-         
-           } catch(error) {
-             console.error("Climate data error:", error);
-             document.getElementById("climate-update").textContent = "Unable to retrieve climate data";
-           }
-         }
-         
-         // ======================================================
-         // DAILY RECORDS LOCAL FALLBACK DICTIONARY
-         // ======================================================
-         const climateRecords = {
-           "01-01": { high: [48, 1937], low: [-37, 1972], rain: [0.77, 1945] },
-           "01-02": { high: [55, 1893], low: [-32, 2014], rain: [0.84, 1982] },
-           "01-03": { high: [41, 1979], low: [-32, 2014], rain: [0.83, 1979] },
-           "01-04": { high: [49, 1950], low: [-32, 1947], rain: [1.10, 1999] },
-           "01-05": { high: [50, 1950], low: [-30, 1893], rain: [1.05, 2018] },
-           "01-06": { high: [46, 1946], low: [-27, 1957], rain: [1.26, 1931] },
-           "01-07": { high: [49, 1946], low: [-28, 1894], rain: [0.70, 1938] },
-           "01-08": { high: [41, 2008], low: [-27, 2015], rain: [0.80, 1958] },
-           "01-09": { high: [44, 1956], low: [-32, 1976], rain: [1.05, 1956] },
-           "01-10": { high: [47, 1978], low: [-36, 1894], rain: [0.59, 1964] },
-           "01-11": { high: [42, 2016], low: [-40, 1894], rain: [1.05, 1997] },
-           "01-12": { high: [46, 1983], low: [-37, 1976], rain: [1.30, 2020] },
-           "01-13": { high: [49, 2018], low: [-36, 1976], rain: [1.10, 2018] },
-           "01-14": { high: [48, 1972], low: [-42, 1957], rain: [0.80, 2023] },
-           "01-15": { high: [50, 2013], low: [-42, 1957], rain: [1.50, 2006] },
-           "01-16": { high: [49, 1995], low: [-40, 2009], rain: [0.95, 1999] },
-           "01-17": { high: [38, 1995], low: [-40, 2009], rain: [1.33, 1995] },
-           "01-18": { high: [44, 1996], low: [-38, 1979], rain: [0.83, 1941] },
-           "01-19": { high: [48, 2006], low: [-35, 1997], rain: [0.81, 2006] },
-           "01-20": { high: [59, 1937], low: [-31, 1994], rain: [1.40, 1930] },
-           "01-21": { high: [40, 1944], low: [-31, 1950], rain: [1.06, 2019] },
-           "01-22": { high: [46, 1957], low: [-39, 1893], rain: [1.39, 1979] },
-           "01-23": { high: [44, 1957], low: [-35, 1954], rain: [0.69, 1958] },
-           "01-24": { high: [42, 1992], low: [-31, 1948], rain: [1.11, 2018] },
-           "01-25": { high: [49, 1999], low: [-31, 1994], rain: [1.20, 2017] },
-           "01-26": { high: [57, 1950], low: [-37, 2009], rain: [1.53, 1938] },
-           "01-27": { high: [54, 1950], low: [-37, 2009], rain: [1.40, 1986] },
-           "01-28": { high: [51, 1986], low: [-33, 2022], rain: [1.67, 1996] },
-           "01-29": { high: [46, 1994], low: [-34, 1971], rain: [0.85, 1977] },
-           "01-30": { high: [46, 1994], low: [-40, 1951], rain: [1.45, 1945] },
-           "01-31": { high: [47, 2013], low: [-32, 1975], rain: [0.79, 1969] },
-           "02-01": { high: [46, 2013], low: [-41, 1955], rain: [0.66, 1942] },
-           "02-02": { high: [47, 2016], low: [-41, 1962], rain: [1.35, 2008] },
-           "02-03": { high: [48, 1976], low: [-30, 1971], rain: [1.65, 2021] },
-           "02-04": { high: [45, 1973], low: [-40, 1948], rain: [1.20, 1972] },
-           "02-05": { high: [43, 2016], low: [-36, 1985], rain: [1.00, 1954] },
-           "02-06": { high: [41, 1947], low: [-35, 1989], rain: [1.24, 1947] },
-           "02-07": { high: [41, 1957], low: [-34, 1993], rain: [0.74, 1943] },
-           "02-08": { high: [46, 1951], low: [-32, 1893], rain: [1.30, 1951] },
-           "02-09": { high: [49, 1970], low: [-31, 1944], rain: [0.87, 2022] },
-           "02-10": { high: [48, 1990], low: [-38, 1948], rain: [0.91, 1969] },
-           "02-11": { high: [47, 1966], low: [-35, 1975], rain: [0.72, 1940] },
-           "02-12": { high: [52, 1981], low: [-35, 1975], rain: [1.15, 1955] },
-           "02-13": { high: [45, 1984], low: [-33, 1975], rain: [0.80, 1988] },
-           "02-14": { high: [45, 1972], low: [-30, 1967], rain: [1.19, 1966] },
-           "02-15": { high: [44, 1972], low: [-31, 1894], rain: [1.25, 2007] },
-           "02-16": { high: [43, 1984], low: [-37, 1943], rain: [1.10, 1939] },
-           "02-17": { high: [49, 1981], low: [-35, 1997], rain: [0.94, 2025] },
-           "02-18": { high: [45, 1981], low: [-41, 1967], rain: [1.00, 2022] },
-           "02-19": { high: [50, 1954], low: [-41, 1966], rain: [0.60, 1959] },
-           "02-20": { high: [52, 1981], low: [-42, 1966], rain: [0.75, 1972] },
-           "02-21": { high: [59, 1994], low: [-38, 1993], rain: [0.82, 2013] },
-           "02-22": { high: [50, 1953], low: [-33, 1993], rain: [0.78, 1947] },
-           "02-23": { high: [53, 1990], low: [-25, 1963], rain: [0.90, 2022] },
-           "02-24": { high: [56, 1981], low: [-27, 1972], rain: [0.95, 1934] },
-           "02-25": { high: [50, 2020], low: [-37, 1972], rain: [2.19, 2016] },
-           "02-26": { high: [47, 1984], low: [-28, 1972], rain: [1.22, 1965] },
-           "02-27": { high: [50, 1976], low: [-30, 1970], rain: [0.86, 1946] },
-           "02-28": { high: [59, 2000], low: [-26, 1982], rain: [0.92, 2020] },
-           "02-29": { high: [41, 2000], low: [-21, 2008], rain: [0.80, 1984] },
-           "03-01": { high: [55, 1894], low: [-33, 1982], rain: [0.87, 2013] },
-           "03-02": { high: [49, 1954], low: [-32, 2001], rain: [0.92, 1930] },
-           "03-03": { high: [50, 1964], low: [-32, 2001], rain: [2.24, 1947] },
-           "03-04": { high: [54, 1894], low: [-34, 2001], rain: [1.08, 1971] },
-           "03-05": { high: [60, 1894], low: [-27, 1967], rain: [1.03, 1991] },
-           "03-06": { high: [65, 1894], low: [-22, 2015], rain: [0.75, 2004] },
-           "03-07": { high: [60, 1894], low: [-31, 1968], rain: [1.08, 2011] },
-           "03-08": { high: [54, 1894], low: [-28, 1989], rain: [0.98, 2011] },
-           "03-09": { high: [57, 2012], low: [-28, 1984], rain: [2.80, 2005] },
-           "03-10": { high: [58, 2026], low: [-28, 1972], rain: [0.81, 1963] },
-           "03-11": { high: [58, 1894], low: [-28, 1972], rain: [0.93, 2024] },
-           "03-12": { high: [56, 1894], low: [-21, 1948], rain: [1.10, 2026] },
-           "03-13": { high: [60, 1977], low: [-24, 1984], rain: [1.06, 1959] },
-           "03-14": { high: [56, 1996], low: [-23, 1948], rain: [0.96, 1993] },
-           "03-15": { high: [52, 1996], low: [-19, 1967], rain: [1.97, 1984] },
-           "03-16": { high: [58, 2025], low: [-18, 1956], rain: [0.70, 1937] },
-           "03-17": { high: [62, 2025], low: [-26, 1967], rain: [0.85, 2007] },
-           "03-18": { high: [55, 2012], low: [-29, 1967], rain: [1.77, 1972] },
-           "03-19": { high: [64, 2012], low: [-23, 1976], rain: [0.80, 1894] },
-           "03-20": { high: [55, 1970], low: [-19, 2004], rain: [0.88, 1991] },
-           "03-21": { high: [75, 2012], low: [-12, 1967], rain: [0.80, 2008] },
-           "03-22": { high: [77, 2012], low: [-10, 1967], rain: [1.51, 1942] },
-           "03-23": { high: [70, 2012], low: [-20, 1893], rain: [1.25, 1955] },
-           "03-24": { high: [65, 1979], low: [-19, 2008], rain: [1.33, 1968] },
-           "03-25": { high: [63, 1987], low: [-19, 2008], rain: [0.70, 1953] },
-           "03-26": { high: [70, 1987], low: [-17, 2008], rain: [1.17, 1979] },
-           "03-27": { high: [69, 1986], low: [-7, 1972], rain: [1.49, 1955] },
-           "03-28": { high: [63, 1993], low: [-13, 1974], rain: [0.72, 1953] },
-           "03-29": { high: [65, 1993], low: [-7, 1974], rain: [0.97, 2016] },
-           "03-30": { high: [77, 1962], low: [-7, 1974], rain: [1.12, 2010] },
-           "03-31": { high: [67, 1962], low: [-8, 1954], rain: [1.10, 1981] },
-           "04-01": { high: [59, 2004], low: [-7, 1964], rain: [0.74, 1987] },
-           "04-02": { high: [70, 1986], low: [-9, 1964], rain: [1.34, 1976] },
-           "04-03": { high: [68, 2010], low: [-6, 1893], rain: [1.10, 2005] },
-           "04-04": { high: [80, 2010], low: [-2, 1978], rain: [0.90, 2005] },
-           "04-05": { high: [68, 2010], low: [-2, 2003], rain: [1.65, 1933] },
-           "04-06": { high: [62, 2010], low: [-12, 2015], rain: [1.20, 2007] },
-           "04-07": { high: [60, 1962], low: [-7, 1893], rain: [2.55, 1929] },
-           "04-08": { high: [61, 2021], low: [-5, 1943], rain: [0.74, 1933] },
-           "04-09": { high: [69, 1945], low: [3, 1974], rain: [0.71, 1964] },
-           "04-10": { high: [76, 1945], low: [5, 1977], rain: [1.40, 2010] },
-           "04-11": { high: [77, 1945], low: [-4, 1938], rain: [1.22, 1996] },
-           "04-12": { high: [83, 1945], low: [9, 1967], rain: [0.91, 1978] },
-           "04-13": { high: [81, 1945], low: [4, 1985], rain: [1.83, 1940] },
-           "04-14": { high: [78, 1945], low: [1, 1985], rain: [1.00, 1971] },
-           "04-15": { high: [66, 1969], low: [10, 2018], rain: [0.78, 1955] },
-           "04-16": { high: [66, 1987], low: [9, 2011], rain: [1.10, 2000] },
-           "04-17": { high: [78, 2012], low: [3, 2003], rain: [0.97, 1954] },
-           "04-18": { high: [71, 2008], low: [5, 2003], rain: [1.29, 1983] },
-           "04-19": { high: [68, 1987], low: [7, 1944], rain: [0.53, 1942] },
-           "04-20": { high: [74, 1931], low: [10, 1974], rain: [0.72, 2019] },
-           "04-21": { high: [78, 1954], low: [8, 1947], rain: [0.75, 1950] },
-           "04-22": { high: [82, 1987], low: [13, 2026], rain: [1.60, 1930] },
-           "04-23": { high: [77, 1954], low: [18, 2013], rain: [1.38, 1958] },
-           "04-24": { high: [81, 1942], low: [18, 1944], rain: [1.90, 2000] },
-           "04-25": { high: [79, 1942], low: [15, 1962], rain: [1.10, 1928] },
-           "04-26": { high: [77, 2009], low: [14, 1947], rain: [0.86, 1983] },
-           "04-27": { high: [76, 1937], low: [16, 1966], rain: [0.97, 2018] },
-           "04-28": { high: [83, 1990], low: [14, 1947], rain: [1.69, 1945] },
-           "04-29": { high: [76, 1986], low: [0, 1947], rain: [2.00, 1928] },
-           "04-30": { high: [79, 1986], low: [21, 1943], rain: [2.90, 2008] },
-           "05-01": { high: [80, 2004], low: [21, 1977], rain: [1.20, 2026] },
-           "05-02": { high: [83, 1970], low: [19, 1974], rain: [1.00, 2017] },
-           "05-03": { high: [82, 1942], low: [19, 1974], rain: [1.33, 1929] },
-           "05-04": { high: [88, 1944], low: [23, 1985], rain: [1.24, 1947] },
-           "05-05": { high: [86, 1999], low: [23, 1957], rain: [0.92, 2011] },
-           "05-06": { high: [84, 1999], low: [20, 1985], rain: [1.32, 1946] },
-           "05-07": { high: [85, 1964], low: [20, 1966], rain: [1.08, 2026] },
-           "05-08": { high: [82, 1957], low: [17, 1950], rain: [0.86, 1967] },
-           "05-09": { high: [83, 1982], low: [20, 1985], rain: [1.21, 1958] },
-           "05-10": { high: [88, 1953], low: [20, 1956], rain: [1.05, 1999] },
-           "05-11": { high: [85, 1953], low: [25, 1951], rain: [0.80, 1954] },
-           "05-12": { high: [93, 1893], low: [22, 1966], rain: [1.08, 1989] },
-           "05-13": { high: [95, 1893], low: [23, 2002], rain: [1.20, 1938] },
-           "05-14": { high: [89, 2022], low: [23, 1947], rain: [0.93, 1985] },
-           "05-15": { high: [88, 1954], low: [22, 1947], rain: [0.80, 1953] },
-           "05-16": { high: [87, 1974], low: [25, 1957], rain: [1.19, 1938] },
-           "05-17": { high: [85, 1954], low: [22, 1957], rain: [2.22, 1997] },
-           "05-18": { high: [83, 1942], low: [23, 1957], rain: [1.48, 1948] },
-           "05-19": { high: [89, 2017], low: [20, 1944], rain: [1.29, 2025] },
-           "05-20": { high: [90, 1951], low: [26, 2000], rain: [0.96, 1937] },
-           "05-21": { high: [87, 2003], low: [28, 1957], rain: [1.47, 1975] },
-           "05-22": { high: [89, 2012], low: [27, 1982], rain: [1.37, 1973] },
-           "05-23": { high: [92, 1977], low: [25, 1982], rain: [1.05, 1976] },
-           "05-24": { high: [92, 1992], low: [27, 1956], rain: [1.60, 1984] },
-           "05-25": { high: [90, 1977], low: [24, 1956], rain: [1.00, 1928] },
-           "05-26": { high: [91, 1950], low: [24, 1956], rain: [1.34, 2013] },
-           "05-27": { high: [87, 2020], low: [26, 1956], rain: [1.19, 1939] },
-           "05-28": { high: [90, 1978], low: [28, 1994], rain: [2.73, 2022] },
-           "05-29": { high: [93, 2020], low: [27, 1985], rain: [1.10, 1973] },
-           "05-30": { high: [89, 1960], low: [26, 1941], rain: [1.26, 1993] },
-           "05-31": { high: [88, 1937], low: [29, 1964], rain: [1.13, 1979] },
-           "06-01": { high: [91, 2023], low: [28, 2020], rain: [1.25, 2025] },
-           "06-02": { high: [92, 2023], low: [29, 1998], rain: [1.30, 1994] },
-           "06-03": { high: [90, 1963], low: [31, 1988], rain: [1.18, 2013] },
-           "06-04": { high: [88, 1990], low: [29, 1953], rain: [1.14, 2001] },
-           "06-05": { high: [90, 1893], low: [29, 2000], rain: [0.74, 1952] },
-           "06-06": { high: [86, 1976], low: [29, 1894], rain: [1.08, 1952] },
-           "06-07": { high: [91, 1976], low: [29, 1948], rain: [1.28, 1983] },
-           "06-08": { high: [91, 2021], low: [30, 1951], rain: [2.00, 1930] },
-           "06-09": { high: [93, 1893], low: [31, 1943], rain: [3.92, 2011] },
-           "06-10": { high: [88, 1984], low: [29, 1958], rain: [1.78, 1950] },
-           "06-11": { high: [91, 1942], low: [31, 2018], rain: [1.60, 2006] },
-           "06-12": { high: [92, 1942], low: [30, 1950], rain: [1.55, 1976] },
-           "06-13": { high: [96, 1893], low: [34, 1976], rain: [1.34, 1996] },
-           "06-14": { high: [95, 1956], low: [32, 2002], rain: [1.18, 1928] },
-           "06-15": { high: [94, 1956], low: [31, 1965], rain: [1.10, 1947] },
-           "06-16": { high: [92, 1988], low: [34, 1984], rain: [1.04, 1942] },
-           "06-17": { high: [92, 1994], low: [33, 1964], rain: [1.02, 1976] },
-           "06-18": { high: [93, 1955], low: [35, 1939], rain: [1.57, 2023] },
-           "06-19": { high: [94, 2020], low: [33, 1956], rain: [0.96, 1984] },
-           "06-20": { high: [94, 2020], low: [32, 1948], rain: [1.80, 1894] },
-           "06-21": { high: [94, 1941], low: [36, 2022], rain: [1.69, 2006] },
-           "06-22": { high: [92, 1938], low: [35, 1948], rain: [1.50, 1954] },
-           "06-23": { high: [91, 2003], low: [33, 1948], rain: [1.87, 1992] },
-           "06-24": { high: [93, 1947], low: [35, 1984], rain: [1.77, 2024] },
-           "06-25": { high: [91, 1995], low: [34, 1941], rain: [3.19, 1973] },
-           "06-26": { high: [93, 1946], low: [34, 1965], rain: [1.19, 1940] },
-           "06-27": { high: [94, 1944], low: [34, 2010], rain: [1.80, 2012] },
-           "06-28": { high: [95, 1893], low: [34, 1893], rain: [1.75, 1987] },
-           "06-29": { high: [98, 1893], low: [36, 1980], rain: [1.40, 2008] },
-           "06-30": { high: [93, 1947], low: [39, 1938], rain: [1.64, 1948] },
-           "07-01": { high: [92, 1946], low: [39, 1938], rain: [1.13, 1971] },
-           "07-02": { high: [89, 1997], low: [33, 1965], rain: [1.17, 1958] },
-           "07-03": { high: [91, 2002], low: [34, 1962], rain: [1.48, 1953] },
-           "07-04": { high: [92, 1939], low: [37, 1982], rain: [1.65, 1960] },
-           "07-05": { high: [94, 1983], low: [37, 1982], rain: [1.13, 1938] },
-           "07-06": { high: [93, 1939], low: [41, 1966], rain: [2.18, 1951] },
-           "07-07": { high: [94, 1952], low: [35, 1965], rain: [1.15, 1947] },
-           "07-08": { high: [94, 1952], low: [40, 1946], rain: [1.59, 1985] },
-           "07-09": { high: [94, 1955], low: [40, 1942], rain: [1.41, 2004] },
-           "07-10": { high: [96, 1955], low: [40, 1969], rain: [2.13, 2005] },
-           "07-11": { high: [91, 1987], low: [41, 1982], rain: [1.33, 1989] },
-           "07-12": { high: [91, 1943], low: [41, 1940], rain: [1.45, 1984] },
-           "07-13": { high: [91, 1950], low: [41, 1956], rain: [2.31, 1976] },
-           "07-14": { high: [90, 1950], low: [43, 1990], rain: [0.73, 1962] },
-           "07-15": { high: [94, 1952], low: [40, 1950], rain: [3.50, 1928] },
-           "07-16": { high: [94, 1952], low: [39, 1946], rain: [1.20, 1972] },
-           "07-17": { high: [91, 1953], low: [40, 1948], rain: [1.42, 1958] },
-           "07-18": { high: [95, 1953], low: [41, 1951], rain: [1.16, 1928] },
-           "07-19": { high: [93, 1953], low: [43, 1993], rain: [0.74, 2022] },
-           "07-20": { high: [93, 1991], low: [39, 1943], rain: [1.82, 1996] },
-           "07-21": { high: [93, 1991], low: [43, 1957], rain: [1.18, 1931] },
-           "07-22": { high: [90, 1937], low: [39, 1992], rain: [1.05, 2022] },
-           "07-23": { high: [94, 1952], low: [41, 1962], rain: [1.84, 1947] },
-           "07-24": { high: [95, 1941], low: [40, 1964], rain: [1.69, 1987] },
-           "07-25": { high: [94, 1939], low: [38, 2002], rain: [1.25, 2009] },
-           "07-26": { high: [94, 1939], low: [40, 1946], rain: [1.25, 2024] },
-           "07-27": { high: [94, 1939], low: [40, 1946], rain: [1.30, 2018] },
-           "07-28": { high: [91, 1989], low: [39, 1977], rain: [2.82, 2006] },
-           "07-29": { high: [91, 1959], low: [38, 1953], rain: [3.68, 1939] },
-           "07-30": { high: [92, 1960], low: [39, 1952], rain: [2.00, 2009] },
-           "07-31": { high: [91, 1988], low: [38, 1953], rain: [1.26, 1939] },
-           "08-01": { high: [92, 1944], low: [39, 1961], rain: [1.19, 1959] },
-           "08-02": { high: [92, 1975], low: [39, 1953], rain: [1.82, 2008] },
-           "08-03": { high: [93, 1975], low: [38, 1953], rain: [1.93, 1939] },
-           "08-04": { high: [92, 1938], low: [36, 1960], rain: [1.36, 1974] },
-           "08-05": { high: [91, 1990], low: [38, 1947], rain: [2.10, 1973] },
-           "08-06": { high: [90, 1990], low: [40, 1994], rain: [3.02, 1981] },
-           "08-07": { high: [93, 1937], low: [38, 1953], rain: [2.41, 1981] },
-           "08-08": { high: [92, 1937], low: [41, 1997], rain: [1.75, 2018] },
-           "08-09": { high: [89, 1970], low: [39, 1964], rain: [1.99, 1958] },
-           "08-10": { high: [90, 2001], low: [37, 1979], rain: [1.61, 1976] },
-           "08-11": { high: [91, 1995], low: [38, 1960], rain: [3.11, 1976] },
-           "08-12": { high: [94, 1944], low: [38, 1979], rain: [2.22, 1937] },
-           "08-13": { high: [93, 2025], low: [35, 1941], rain: [2.06, 2004] },
-           "08-14": { high: [94, 1947], low: [36, 1950], rain: [3.32, 2004] },
-           "08-15": { high: [92, 2002], low: [36, 1961], rain: [2.00, 1927] },
-           "08-16": { high: [95, 1944], low: [36, 1956], rain: [2.20, 1984] },
-           "08-17": { high: [92, 1940], low: [36, 1960], rain: [1.20, 1959] },
-           "08-18": { high: [90, 1940], low: [39, 1957], rain: [2.00, 1981] },
-           "08-19": { high: [97, 1960], low: [37, 2005], rain: [2.56, 1958] },
-           "08-20": { high: [95, 1960], low: [37, 1956], rain: [1.83, 1991] },
-           "08-21": { high: [88, 1943], low: [36, 1957], rain: [2.61, 1960] },
-           "08-22": { high: [92, 1976], low: [36, 1950], rain: [1.37, 2009] },
-           "08-23": { high: [89, 1976], low: [33, 1957], rain: [2.95, 1971] },
-           "08-24": { high: [88, 1948], low: [36, 1978], rain: [1.29, 1986] },
-           "08-25": { high: [88, 1950], low: [33, 1978], rain: [1.49, 1963] },
-           "08-26": { high: [91, 1937], low: [33, 1940], rain: [1.82, 1982] },
-           "08-27": { high: [92, 1952], low: [35, 1940], rain: [2.45, 1961] },
-           "08-28": { high: [93, 1952], low: [32, 1978], rain: [1.47, 1959] },
-           "08-29": { high: [91, 1952], low: [32, 1986], rain: [2.33, 2011] },
-           "08-30": { high: [90, 1937], low: [31, 1982], rain: [1.15, 2020] },
-           "08-31": { high: [90, 2010], low: [32, 2002], rain: [1.77, 1991] },
-           "09-01": { high: [92, 1996], low: [33, 1947], rain: [2.90, 2005] },
-           "09-02": { high: [91, 1942], low: [34, 1947], rain: [2.10, 1989] },
-           "09-03": { high: [89, 1999], low: [33, 1950], rain: [1.15, 1983] },
-           "09-04": { high: [85, 2010], low: [31, 1989], rain: [3.49, 1972] },
-           "09-05": { high: [90, 1953], low: [33, 1989], rain: [1.50, 2010] },
-           "09-06": { high: [89, 1948], low: [31, 2000], rain: [1.60, 1969] },
-           "09-07": { high: [88, 1948], low: [30, 1893], rain: [2.17, 1979] },
-           "09-08": { high: [89, 1948], low: [31, 1952], rain: [1.10, 1893] },
-           "09-09": { high: [85, 1948], low: [31, 1942], rain: [1.60, 2016] },
-           "09-10": { high: [90, 2002], low: [30, 2018], rain: [2.15, 2004] },
-           "09-11": { high: [88, 1989], low: [28, 1949], rain: [2.65, 1999] },
-           "09-12": { high: [86, 1948], low: [28, 1985], rain: [2.00, 1954] },
-           "09-13": { high: [90, 1951], low: [28, 1950], rain: [1.17, 1963] },
-           "09-14": { high: [88, 1951], low: [27, 1950], rain: [1.15, 1987] },
-           "09-15": { high: [83, 1993], low: [27, 1952], rain: [1.64, 1996] },
-           "09-16": { high: [90, 1939], low: [27, 1959], rain: [2.23, 1932] },
-           "09-17": { high: [87, 1939], low: [26, 1984], rain: [2.00, 1941] },
-           "09-18": { high: [90, 1942], low: [26, 1978], rain: [1.85, 1948] },
-           "09-19": { high: [89, 1942], low: [26, 2014], rain: [1.50, 1945] },
-           "09-20": { high: [86, 1968], low: [27, 1947], rain: [1.59, 2023] },
-           "09-21": { high: [85, 1968], low: [26, 2020], rain: [0.60, 1980] },
-           "09-22": { high: [87, 1965], low: [19, 1950], rain: [0.98, 1966] },
-           "09-23": { high: [88, 1965], low: [28, 1979], rain: [1.20, 1990] },
-           "09-24": { high: [85, 1936], low: [24, 1995], rain: [0.74, 1930] },
-           "09-25": { high: [83, 2017], low: [23, 1939], rain: [2.62, 1970] },
-           "09-26": { high: [89, 2017], low: [24, 1995], rain: [2.20, 1961] },
-           "09-27": { high: [82, 2017], low: [20, 1947], rain: [2.17, 2005] },
-           "09-28": { high: [76, 2020], low: [24, 1947], rain: [1.85, 1985] },
-           "09-29": { high: [81, 2014], low: [20, 1947], rain: [4.82, 2003] },
-           "09-30": { high: [81, 2020], low: [14, 1995], rain: [1.20, 2006] },
-           "10-01": { high: [75, 1954], low: [14, 1995], rain: [1.45, 2015] },
-           "10-02": { high: [80, 1983], low: [25, 1949], rain: [1.15, 1977] },
-           "10-03": { high: [79, 1968], low: [26, 1937], rain: [1.43, 1970] },
-           "10-04": { high: [80, 2005], low: [20, 1944], rain: [2.00, 1952] },
-           "10-05": { high: [81, 1946], low: [23, 1999], rain: [1.05, 2017] },
-           "10-06": { high: [83, 1946], low: [23, 1955], rain: [1.90, 1983] },
-           "10-07": { high: [82, 2025], low: [19, 1965], rain: [1.13, 1991] },
-           "10-08": { high: [80, 2025], low: [16, 1964], rain: [2.21, 2023] },
-           "10-09": { high: [78, 1970], low: [23, 1963], rain: [1.06, 1948] },
-           "10-10": { high: [81, 2011], low: [19, 1963], rain: [1.48, 1976] },
-           "10-11": { high: [74, 1949], low: [17, 1986], rain: [1.04, 1971] },
-           "10-12": { high: [77, 1938], low: [19, 1956], rain: [1.31, 1963] },
-           "10-13": { high: [82, 1938], low: [19, 1987], rain: [1.88, 1948] },
-           "10-14": { high: [77, 1938], low: [18, 1972], rain: [1.62, 2020] },
-           "10-15": { high: [75, 1995], low: [22, 1936], rain: [2.28, 2022] },
-           "10-16": { high: [77, 1968], low: [17, 1972], rain: [2.50, 2005] },
-           "10-17": { high: [82, 1947], low: [16, 1995], rain: [1.60, 1931] },
-           "10-18": { high: [79, 1947], low: [17, 1978], rain: [1.43, 2020] },
-           "10-19": { high: [81, 1947], low: [14, 1972], rain: [1.95, 2022] },
-           "10-20": { high: [75, 1963], low: [11, 1959], rain: [2.25, 1966] },
-           "10-21": { high: [71, 2017], low: [13, 1972], rain: [2.20, 2006] },
-           "10-22": { high: [69, 1979], low: [10, 1960], rain: [1.44, 2016] },
-           "10-23": { high: [75, 2007], low: [17, 2008], rain: [1.00, 2016] },
-           "10-24": { high: [79, 1979], low: [17, 2008], rain: [2.18, 2019] },
-           "10-25": { high: [75, 1963], low: [17, 2008], rain: [1.50, 1951] },
-           "10-26": { high: [74, 1963], low: [16, 1962], rain: [2.05, 2005] },
-           "10-27": { high: [70, 1947], low: [10, 1960], rain: [2.15, 2017] },
-           "10-28": { high: [73, 1947], low: [7, 1960], rain: [1.01, 2003] },
-           "10-29": { high: [70, 1989], low: [15, 1973], rain: [1.78, 1958] },
-           "10-30": { high: [69, 1960], low: [10, 1962], rain: [1.65, 2003] },
-           "10-31": { high: [74, 1942], low: [9, 1944], rain: [1.73, 1939] },
-           "11-01": { high: [71, 1956], low: [10, 1972], rain: [3.50, 2019] },
-           "11-02": { high: [73, 1950], low: [10, 1995], rain: [1.04, 1941] },
-           "11-03": { high: [68, 1944], low: [13, 1965], rain: [1.85, 1966] },
-           "11-04": { high: [71, 1977], low: [4, 2002], rain: [1.90, 2007] },
-           "11-05": { high: [66, 1948], low: [9, 2020], rain: [1.85, 1950] },
-           "11-06": { high: [71, 2022], low: [12, 1953], rain: [0.95, 1982] },
-           "11-07": { high: [72, 2022], low: [11, 1953], rain: [0.88, 1940] },
-           "11-08": { high: [65, 1938], low: [1, 2002], rain: [0.90, 1951] },
-           "11-09": { high: [66, 1975], low: [8, 2002], rain: [1.40, 1947] },
-           "11-10": { high: [67, 2020], low: [-1, 1965], rain: [0.85, 1958] },
-           "11-11": { high: [71, 2020], low: [-1, 1965], rain: [2.42, 1962] },
-           "11-12": { high: [67, 2020], low: [5, 1949], rain: [1.29, 1984] },
-           "11-13": { high: [58, 1982], low: [3, 2004], rain: [1.45, 1968] },
-           "11-14": { high: [58, 1951], low: [0, 2019], rain: [1.18, 2003] },
-           "11-15": { high: [58, 1951], low: [0, 2019], rain: [1.10, 2006] },
-           "11-16": { high: [61, 2008], low: [1, 2018], rain: [2.15, 1937] },
-           "11-17": { high: [64, 1989], low: [1, 2019], rain: [0.97, 2016] },
-           "11-18": { high: [63, 2006], low: [-2, 2019], rain: [1.07, 1977] },
-           "11-19": { high: [60, 1987], low: [-2, 1964], rain: [1.60, 1932] },
-           "11-20": { high: [64, 1953], low: [-2, 1986], rain: [0.92, 2015] },
-           "11-21": { high: [64, 1953], low: [0, 1978], rain: [1.02, 1954] },
-           "11-22": { high: [52, 1956], low: [-6, 1978], rain: [1.39, 1986] },
-           "11-23": { high: [61, 1953], low: [-13, 1964], rain: [1.94, 2005] },
-           "11-24": { high: [57, 1953], low: [-8, 1964], rain: [1.32, 1967] },
-           "11-25": { high: [55, 2014], low: [-14, 1956], rain: [1.31, 1947] },
-           "11-26": { high: [56, 1953], low: [-1, 1938], rain: [1.89, 1971] },
-           "11-27": { high: [60, 2001], low: [-5, 1978], rain: [1.65, 1950] },
-           "11-28": { high: [56, 1999], low: [-3, 1949], rain: [1.55, 2013] },
-           "11-29": { high: [54, 1950], low: [-2, 2002], rain: [1.25, 2003] },
-           "11-30": { high: [59, 1963], low: [-11, 1995], rain: [1.32, 1963] },
-           "12-01": { high: [60, 2011], low: [-13, 1978], rain: [1.45, 1987] },
-           "12-02": { high: [56, 2020], low: [-12, 1978], rain: [1.23, 2004] },
-           "12-03": { high: [52, 1939], low: [-16, 1893], rain: [1.18, 1939] },
-           "12-04": { high: [51, 1939], low: [-28, 1940], rain: [1.55, 1893] },
-           "12-05": { high: [56, 1950], low: [-25, 1893], rain: [0.82, 1990] },
-           "12-06": { high: [52, 1938], low: [-14, 2014], rain: [1.51, 1938] },
-           "12-07": { high: [56, 2001], low: [-19, 1991], rain: [1.60, 1983] },
-           "12-08": { high: [55, 1982], low: [-16, 1964], rain: [2.00, 1927] },
-           "12-09": { high: [48, 1951], low: [-21, 1986], rain: [0.76, 1950] },
-           "12-10": { high: [46, 1974], low: [-26, 1958], rain: [0.76, 1973] },
-           "12-11": { high: [53, 1966], low: [-19, 1988], rain: [1.77, 1957] },
-           "12-12": { high: [53, 1969], low: [-26, 1980], rain: [2.50, 2024] },
-           "12-13": { high: [47, 2015], low: [-27, 1977], rain: [0.92, 2010] },
-           "12-14": { high: [52, 2010], low: [-30, 1893], rain: [1.34, 2010] },
-           "12-15": { high: [47, 2019], low: [-21, 1943], rain: [1.19, 2019] },
-           "12-16": { high: [47, 1975], low: [-24, 1980], rain: [1.25, 1893] },
-           "12-17": { high: [54, 1960], low: [-25, 1951], rain: [1.30, 1927] },
-           "12-18": { high: [45, 1984], low: [-20, 1958], rain: [2.65, 1973] },
-           "12-19": { high: [55, 2023], low: [-20, 1893], rain: [1.00, 2023] },
-           "12-20": { high: [51, 2025], low: [-26, 1951], rain: [0.85, 1939] },
-           "12-21": { high: [52, 1957], low: [-30, 2008], rain: [1.48, 1973] },
-           "12-22": { high: [52, 1957], low: [-33, 1980], rain: [1.88, 2018] },
-           "12-23": { high: [49, 2018], low: [-32, 1980], rain: [1.08, 2009] },
-           "12-24": { high: [51, 2004], low: [-25, 1943], rain: [1.08, 2022] },
-           "12-25": { high: [50, 1964], low: [-25, 1975], rain: [0.83, 1941] },
-           "12-26": { high: [56, 2020], low: [-22, 1980], rain: [1.35, 2005] },
-           "12-27": { high: [52, 1964], low: [-26, 1962], rain: [2.41, 2005] },
-           "12-28": { high: [45, 1936], low: [-24, 1990], rain: [0.92, 2009] },
-           "12-29": { high: [50, 1982], low: [-26, 1951], rain: [1.05, 1940] },
-           "12-30": { high: [45, 2003], low: [-33, 1989], rain: [1.20, 2023] },
-           "12-31": { high: [47, 1936], low: [-24, 1937], rain: [0.94, 1942] }
-         };
          
          // Astronomy Worker Fetch Function
            async function loadFortKentAstroData() {
