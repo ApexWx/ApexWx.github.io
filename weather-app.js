@@ -207,23 +207,35 @@ async function loadClimateData() {
 }
 
 async function loadFortKentAstroData() {
+  const workerEndpoint = 'https://moon-api.maineapexwx.workers.dev/';
+  
   try {
-    const response = await fetch('https://moon-api.maineapexwx.workers.dev/');
-    if (!response.ok) throw new Error("Astro API error.");
+    const response = await fetch(workerEndpoint);
+    if (!response.ok) throw new Error("Astro API returned an error status.");
+    
     const data = await response.json();
+    
+    // Defensive Helper: Safely updates text only if the element actually exists on the page
+    const updateElement = (id, value) => {
+      const el = document.getElementById(id);
+      if (el) el.textContent = value;
+    };
 
-    document.getElementById('astro-date').textContent = data.date_label;
-    document.getElementById('astro-sunrise').textContent = data.sunrise;
-    document.getElementById('astro-sunset').textContent = data.sunset;
-    document.getElementById("astro-dawn").textContent = data.dawn;
-    document.getElementById("astro-dusk").textContent = data.dusk;
-    document.getElementById('astro-day-length').textContent = data.day_length;
-    document.getElementById('astro-moon-phase').textContent = data.moon_phase_display;
-    document.getElementById('astro-moonset').textContent = data.moonset_display;
-    document.getElementById('astro-moonrise').textContent = data.moonrise_display;
+    // Map the JSON payloads securely to your HTML element IDs
+    updateElement('astro-date', data.date_label);
+    updateElement('astro-sunrise', data.sunrise);
+    updateElement('astro-sunset', data.sunset);
+    updateElement('astro-dawn', data.dawn);
+    updateElement('astro-dusk', data.dusk);
+    updateElement('astro-day-length', data.day_length);
+    updateElement('astro-moon-phase', data.moon_phase_display);
+    updateElement('astro-moonset', data.moonset_display);
+    updateElement('astro-moonrise', data.moonrise_display);
+
   } catch (error) {
-    console.error("Failed to inject astro predictions:", error);
-    document.getElementById('astro-date').textContent = "Data Temporarily Offline";
+    console.error("Failed to inject Naval astronomical predictions:", error);
+    const el = document.getElementById('astro-date');
+    if (el) el.textContent = "Data Temporarily Offline";
   }
 }
 
