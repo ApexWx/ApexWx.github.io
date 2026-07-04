@@ -201,7 +201,7 @@ async function fetchNWSAlerts() {
                     <div class="alert-description" id="desc-${alertId}">
                         ${shouldCollapse ? shortText : description}
                     </div>
-                    ${shouldCollapse ? `<button class="alert-toggle" onclick="toggleAlert('${alertId}', \`${description.replace(/`/g, "\`")}\`)">Read more</button>` : ""}
+                    ${shouldCollapse ? `<button class="alert-toggle">Read more</button>` : ""}
                     <div style="margin-top: 8px;">
                         <a href="${link}" target="_blank" rel="noopener">View full alert from NWS</a>
                     </div>
@@ -210,6 +210,14 @@ async function fetchNWSAlerts() {
                     </div>
                 `;
                 alertDiv.appendChild(alertBox);
+
+                // Safe internal memory registration to prevent quote/backtick syntax crashes
+                if (shouldCollapse) {
+                    const toggleBtn = alertBox.querySelector(".alert-toggle");
+                    if (toggleBtn) {
+                        toggleBtn.addEventListener('click', () => toggleAlert(alertId, description));
+                    }
+                }
             });
         } else {
             alertDiv.innerHTML = "";
@@ -220,7 +228,7 @@ async function fetchNWSAlerts() {
     }
 }
 
-// Explicitly bind helper functions to the window object so inline HTML element click events can target them safely
+// Dismiss handler optimized to drop elements cleanly by dataset attribute
 window.dismissAlert = function(alertId) {
     let dismissed = JSON.parse(localStorage.getItem("dismissedAlertIds") || "[]");
     if (!dismissed.includes(alertId)) {
@@ -228,20 +236,26 @@ window.dismissAlert = function(alertId) {
         localStorage.setItem("dismissedAlertIds", JSON.stringify(dismissed));
     }
     const alertBox = document.querySelector(`[data-alert-id="${alertId}"]`);
-    if (alertBox) alertBox.style.display = 'none';
+    if (alertBox) alertBox.remove(); // Drops the box out of the layout seamlessly
 };
 
-window.toggleAlert = function(alertId, fullText) {
-    const descEl = document.getElementById(`desc-${alertId}`);
-    const btn = descEl.nextElementSibling;
-    const isCollapsed = btn.textContent === "Read more";
+// Safe container-scoped toggle that completely skips breaking global #ID URL lookups
+window.toggleAlert = function(alertId, fullDescription) {
+    const alertBox = document.querySelector(`[data-alert-id="${alertId}"]`);
+    if (!alertBox) return;
+
+    const descDiv = alertBox.querySelector('.alert-description');
+    const toggleBtn = alertBox.querySelector('.alert-toggle');
     
-    if (isCollapsed) {
-        descEl.textContent = fullText;
-        btn.textContent = "Show less";
-    } else {
-        descEl.textContent = fullText.slice(0, 300).trim() + "...";
-        btn.textContent = "Read more";
+    if (descDiv && toggleBtn) {
+        const isCollapsed = toggleBtn.textContent === "Read more";
+        if (isCollapsed) {
+            descDiv.textContent = fullDescription;
+            toggleBtn.textContent = "Show less";
+        } else {
+            descDiv.textContent = fullDescription.slice(0, 300).trim() + "...";
+            toggleBtn.textContent = "Read more";
+        }
     }
 };
 
