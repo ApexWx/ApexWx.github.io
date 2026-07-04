@@ -41,32 +41,40 @@ function toggleMenu() {
   }
 }
 
-// Dismiss weather alert box (called by inline HTML onclick)
+// Dismiss weather alert box (optimized to handle full URL alert IDs safely)
 function dismissAlert(alertId) {
-  let dismissed = JSON.parse(localStorage.getItem("dismissedAlertIds") || "[]");
-  if (!dismissed.includes(alertId)) {
-    dismissed.push(alertId);
-    localStorage.setItem("dismissedAlertIds", JSON.stringify(dismissed));
+  const storedDismissedIds = JSON.parse(localStorage.getItem("dismissedAlertIds") || "[]");
+  if (!storedDismissedIds.includes(alertId)) {
+    storedDismissedIds.push(alertId);
+    localStorage.setItem("dismissedAlertIds", JSON.stringify(storedDismissedIds));
   }
+  
+  // Uses safe attribute lookup instead of querySelector('#' + URL) which crashes the engine
   const alertBox = document.querySelector(`[data-alert-id="${alertId}"]`);
   if (alertBox) {
-    alertBox.style.display = 'none';
+    alertBox.remove(); // Removes the alert container from view entirely
   }
 }
 
-// Toggle text expansion for collapsed alerts
-function toggleAlert(alertId, fullText) {
-  const descEl = document.getElementById(`desc-${alertId}`);
-  const btn = document.getElementById(`btn-${alertId}`);
-  if (!descEl || !btn) return;
+// Toggle text expansion for collapsed alerts (class-based lookup to bypass URL characters)
+function toggleAlert(alertId, fullDescription) {
+  // Find the parent element box via its safe attribute wrapper
+  const alertBox = document.querySelector(`[data-alert-id="${alertId}"]`);
+  if (!alertBox) return;
 
-  const isCollapsed = btn.textContent === "Read more";
-  if (isCollapsed) {
-    descEl.textContent = fullText;
-    btn.textContent = "Show less";
-  } else {
-    descEl.textContent = fullText.slice(0, 300).trim() + "...";
-    btn.textContent = "Read more";
+  // Locate the internal classes instead of looking up problematic #IDs
+  const descDiv = alertBox.querySelector('.alert-description');
+  const toggleBtn = alertBox.querySelector('.alert-toggle');
+
+  if (descDiv && toggleBtn) {
+    const isCollapsed = toggleBtn.innerText === "Read more";
+    if (isCollapsed) {
+      descDiv.textContent = fullDescription;
+      toggleBtn.innerText = "Read less";
+    } else {
+      descDiv.textContent = fullDescription.slice(0, 300).trim() + "...";
+      toggleBtn.innerText = "Read more";
+    }
   }
 }
 
@@ -195,9 +203,9 @@ async function fetchNWSAlerts() {
         `;
         alertDiv.appendChild(alertBox);
 
-        // Safe event registration replacing messy HTML backtick escaping strings
+        // FIXED: Query by class (.alert-toggle) instead of matching the problematic URL ID string (#btn-...)
         if (shouldCollapse) {
-          const toggleBtn = alertBox.querySelector(`#btn-${alertId}`);
+          const toggleBtn = alertBox.querySelector(".alert-toggle");
           if (toggleBtn) {
             toggleBtn.addEventListener('click', () => toggleAlert(alertId, description));
           }
