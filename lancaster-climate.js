@@ -23,26 +23,30 @@
          normalRain: 0.15
          };
          
-         // ==================================================
+     // ==================================================
          // YESTERDAY'S COMPLETE CLIMATE OBSERVATION
          // ==================================================
          const easternTimeStr = new Date().toLocaleString("en-US", { timeZone: "America/New_York" });
          const todayObj = new Date(easternTimeStr);
          const todayStr = `${todayObj.getFullYear()}-${String(todayObj.getMonth() + 1).padStart(2, "0")}-${String(todayObj.getDate()).padStart(2, "0")}`;
+         const hrs = parseInt(new Date().toLocaleString("en-US", { hour: "numeric", hour12: false, timeZone: "America/New_York" }));
          
          const latestRow = [...monthlyRows]
          .reverse()
-         .find(row =>
-         row[0] !== todayStr &&
-         row[1] !== "M" &&
-         row[2] !== "M" &&
-         row[1] !== "" &&
-         row[2] !== ""
-         );
+         .find(row => {
+             // Before 10 AM Eastern, skip today's row because data isn't complete yet.
+             // Past 10 AM Eastern, allow today's row to be used if it has valid observations!
+             if (hrs < 10 && row[0] === todayStr) return false;
+             
+             return row[1] !== "M" &&
+                    row[2] !== "M" &&
+                    row[1] !== "" &&
+                    row[2] !== "";
+         });
          
          if (!latestRow) {
-         console.warn("No valid climate observations found for Lancaster.");
-         return;
+             console.warn("No valid climate observations found for Lancaster.");
+             return;
          }
          
          const yesterdayDate = latestRow[0];
