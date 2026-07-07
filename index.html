@@ -565,11 +565,9 @@
             <hr> </div>
           <div class="live-station" style="font-size:14px;">
             <details>
-              <summary style="cursor: pointer; text-align: center;
-                     font-size: 1.2em; font-weight: bold;"> 📊 Fort Kent Weather
-                Almanac 📊 <span style="font-size: 13px;
-                        font-weight: normal; color: #555; display: block;                margin-top: 2px;">(Click
-                  to Collapse/Expand)</span> </summary>
+              <summary style="cursor: pointer; text-align: center; font-size: 1.2em; font-weight: bold;">
+                📊 Fort Kent Weather Almanac 📊 <span style="font-size: 13px; font-weight: normal; color: #555; display: block; margin-top: 2px;">
+                  (Click to Collapse/Expand) </span> </summary>
               <div class="live-station" style="font-size:14px;"> <strong>NOAA
                   Climate Summary</strong><br>
                 <br>
@@ -577,176 +575,188 @@
                 </div>
                 <div class="station-box">
                   <!-- YESTERDAY -->
-                  <div style="margin-bottom:20px;">
-                    <div class="station-label" style="font-size:15px;">
-                      Yesterday's Conditions </div>
-                    <div style="font-size:11px; color:#666;
-                              margin-bottom:8px;"> Observed conditions from the
-                      previous calendar day </div>
-                    <div class="station-grid">
-                      <div class="station-item">
-                        <div class="station-label">High Temperature</div>
-                        <div class="station-value" id="yesterday-high">--</div>
+                  <div class="station-box">
+                    <div style="margin-bottom:20px;">
+                      <div class="station-label" style="font-size:15px;">Yesterday's
+                        Conditions</div>
+                      <div style="font-size:11px; color:#666; margin-bottom:8px;">
+                        Observed conditions from the previous calendar day </div>
+                      <div class="station-grid">
+                        <div class="station-item">
+                          <div class="station-label">High Temperature</div>
+                          <div class="station-value" id="yesterday-high">--</div>
+                        </div>
+                        <div class="station-item">
+                          <div class="station-label">Departure from Normal High</div>
+                          <div class="station-value" id="yesterday-high-departure">--</div>
+                        </div>
+                        <div class="station-item">
+                          <div class="station-label">Low Temperature</div>
+                          <div class="station-value" id="yesterday-low">--</div>
+                        </div>
+                        <div class="station-item">
+                          <div class="station-label">Departure from Normal Low</div>
+                          <div class="station-value" id="yesterday-low-departure">--</div>
+                        </div>
+                        <div class="station-item">
+                          <div class="station-label">Rainfall</div>
+                          <div class="station-value" id="yesterday-rain">--</div>
+                        </div>
+                        <div class="station-item">
+                          <div class="station-label">Rain Departure from Normal</div>
+                          <div class="station-value" id="yesterday-rain-departure">--</div>
+                        </div>
+                        <div class="station-item">
+                          <div class="station-label">Snowfall</div>
+                          <div class="station-value" id="yesterday-snow">--</div>
+                        </div>
+                        <div class="station-item">
+                          <div class="station-label">Current Snow Depth</div>
+                          <div class="station-value" id="yesterday-snow-depth">--</div>
+                        </div>
                       </div>
-                      <div class="station-item">
-                        <div class="station-label">Departure from Normal High</div>
-                        <div class="station-value" id="yesterday-high-departure">--</div>
+                    </div>
+                    <!-- TODAY'S NORMALS & RECORDS -->
+                    <div style="margin-bottom:20px;">
+                      <div class="station-label" style="font-size:15px;">Today's
+                        Climate Normals &amp; Records</div>
+                      <div style="font-size:11px; color:#666; margin-bottom:8px;">
+                        Climate normals and records for today's calendar date </div>
+                      <div class="station-grid">
+                        <div class="station-item">
+                          <div class="station-label">Today's Normal High</div>
+                          <div class="station-value" id="normal-high">--</div>
+                        </div>
+                        <div class="station-item">
+                          <div class="station-label">Today's Record High</div>
+                          <div class="station-value" id="record-high">90°F</div>
+                        </div>
+                        <div class="station-item">
+                          <div class="station-label">Today's Normal Low</div>
+                          <div class="station-value" id="normal-low">--</div>
+                        </div>
+                        <div class="station-item">
+                          <div class="station-label">Today's Record Low</div>
+                          <div class="station-value" id="record-low">28°F</div>
+                        </div>
+                        <div class="station-item">
+                          <div class="station-label">Today's Normal Rainfall</div>
+                          <div class="station-value" id="normal-rain">--</div>
+                        </div>
+                        <div class="station-item">
+                          <div class="station-label">Today's Record Rainfall</div>
+                          <div class="station-value" id="record-rain"> 2.73 in<br>
+                            <span class="metric">2022</span> </div>
+                        </div>
+                        <div class="station-item">
+                          <div class="station-label">Year-to-Date Rainfall</div>
+                          <div class="station-value" id="ytd-rain">--</div>
+                        </div>
+                        <div class="station-item">
+                          <div class="station-label">Year-to-Date Departure from
+                            Normal Rainfall</div>
+                          <div class="station-value" id="ytd-rain-departure">--</div>
+                        </div>
                       </div>
-                      <div class="station-item">
-                        <div class="station-label">Low Temperature</div>
-                        <div class="station-value" id="yesterday-low">--</div>
+                    </div>
+                    <!-- MONTHLY SUMMARY -->
+                    <div style="margin-bottom:20px;">
+                      <div class="station-label" style="font-size:15px;">Monthly
+                        Climate Summary</div>
+                      <div style="font-size:11px; color:#666; margin-bottom:8px;">
+                        Month-to-date climate statistics </div>
+                      <div class="station-grid">
+                        <div class="station-item">
+                          <div class="station-label">Warmest Day This Month</div>
+                          <div class="station-value" id="climate-max-temp">--</div>
+                        </div>
+                        <div class="station-item">
+                          <div class="station-label">Coldest Day This Month</div>
+                          <div class="station-value" id="climate-min-temp">--</div>
+                        </div>
+                        <div class="station-item">
+                          <div class="station-label">Average Daily High</div>
+                          <div class="station-value" id="climate-avg-high">--</div>
+                        </div>
+                        <div class="station-item">
+                          <div class="station-label">Average Daily Low</div>
+                          <div class="station-value" id="climate-avg-low">--</div>
+                        </div>
+                        <div class="station-item">
+                          <div class="station-label">Avg Monthly Temp</div>
+                          <div class="station-value" id="climate-monthly-mean">--</div>
+                        </div>
+                        <div class="station-item">
+                          <div class="station-label">Monthly Rainfall Total</div>
+                          <div class="station-value" id="climate-month-rain">--</div>
+                        </div>
+                        <div class="station-item">
+                          <div class="station-label">Wettest Day This Month</div>
+                          <div class="station-value" id="climate-max-rain">--</div>
+                        </div>
+                        <div class="station-item">
+                          <div class="station-label">Average Rainfall / Day</div>
+                          <div class="station-value" id="climate-avg-rain">--</div>
+                        </div>
                       </div>
-                      <div class="station-item">
-                        <div class="station-label">Departure from Normal Low</div>
-                        <div class="station-value" id="yesterday-low-departure">--</div>
+                    </div>
+                    <!-- SNOW SEASON -->
+                    <div style="margin-bottom:20px;">
+                      <div class="station-label" style="font-size:15px;">Snow
+                        Season Summary</div>
+                      <div style="font-size:11px; color:#666; margin-bottom:8px;">
+                        Seasonal snowfall statistics (July 1 – June 30) </div>
+                      <div class="station-grid">
+                        <div class="station-item">
+                          <div class="station-label">Snowfall This Season</div>
+                          <div class="station-value" id="season-snow">--</div>
+                        </div>
+                        <div class="station-item">
+                          <div class="station-label">Departure from Normal</div>
+                          <div class="station-value" id="season-snow-departure">--</div>
+                        </div>
+                        <div class="station-item">
+                          <div class="station-label">Largest Snowstorm</div>
+                          <div class="station-value" id="largest-snow">--</div>
+                        </div>
+                        <div class="station-item">
+                          <div class="station-label">Average Snowfall / Event</div>
+                          <div class="station-value" id="avg-snow">--</div>
+                        </div>
+                        <div class="station-item">
+                          <div class="station-label">Snowfall Days</div>
+                          <div class="station-value" id="snow-days">--</div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- STATISTICS -->
+                    <div>
+                      <div class="station-label" style="font-size:15px;">Data
+                        Statistics</div>
+                      <div style="font-size:11px; color:#666; margin-bottom:8px;">
+                        NOAA ACIS retrieval information </div>
+                      <div class="station-grid">
+                        <div class="station-item">
+                          <div class="station-label">Days Observed</div>
+                          <div class="station-value" id="climate-days">--</div>
+                        </div>
+                        <div class="station-item">
+                          <div class="station-label">Observation Period</div>
+                          <div class="station-value" id="climate-period">--</div>
+                        </div>
                       </div>
                     </div>
                   </div>
-                  <!-- TODAY'S NORMALS & RECORDS -->
-                  <div style="margin-bottom:20px;">
-                    <div class="station-label" style="font-size:15px;"> Today's
-                      Climate Normals &amp; Records </div>
-                    <div style="font-size:11px; color:#666;
-                              margin-bottom:8px;"> Climate normals and records
-                      for today's calendar date </div>
-                    <div class="station-grid">
-                      <div class="station-item">
-                        <div class="station-label">Today's Normal High</div>
-                        <div class="station-value" id="normal-high">66°F</div>
-                      </div>
-                      <div class="station-item">
-                        <div class="station-label">Today's Record High</div>
-                        <div class="station-value" id="record-high">90°F</div>
-                      </div>
-                      <div class="station-item">
-                        <div class="station-label">Today's Normal Low</div>
-                        <div class="station-value" id="normal-low">41°F</div>
-                      </div>
-                      <div class="station-item">
-                        <div class="station-label">Today's Record Low</div>
-                        <div class="station-value" id="record-low">28°F</div>
-                      </div>
-                      <div class="station-item">
-                        <div class="station-label">Today's Normal Rainfall</div>
-                        <div class="station-value" id="normal-rain">--</div>
-                      </div>
-                      <div class="station-item">
-                        <div class="station-label">Today's Record Rainfall</div>
-                        <div class="station-value" id="record-rain"> 2.73 in<br>
-                          <span class="metric">2022</span> </div>
-                      </div>
-                      <div class="station-item">
-                        <div class="station-label">Year-to-Date Rainfall</div>
-                        <div class="station-value" id="ytd-rain">--</div>
-                      </div>
-                      <div class="station-item">
-                        <div class="station-label">Year-to-Date Departure from
-                          Normal Rainfall </div>
-                        <div class="station-value" id="ytd-rain-departure">--</div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- MONTHLY SUMMARY -->
-                  <div style="margin-bottom:20px;">
-                    <div class="station-label" style="font-size:15px;"> Monthly
-                      Climate Summary </div>
-                    <div style="font-size:11px; color:#666;
-                              margin-bottom:8px;"> Month-to-date climate
-                      statistics </div>
-                    <div class="station-grid">
-                      <div class="station-item">
-                        <div class="station-label">Warmest Day This Month</div>
-                        <div class="station-value" id="climate-max-temp">--</div>
-                      </div>
-                      <div class="station-item">
-                        <div class="station-label">Coldest Day This Month</div>
-                        <div class="station-value" id="climate-min-temp">--</div>
-                      </div>
-                      <div class="station-item">
-                        <div class="station-label">Average Daily High</div>
-                        <div class="station-value" id="climate-avg-high">--</div>
-                      </div>
-                      <div class="station-item">
-                        <div class="station-label">Average Daily Low</div>
-                        <div class="station-value" id="climate-avg-low">--</div>
-                      </div>
-                      <div class="station-item">
-                        <div class="station-label">Avg Monthly Temp</div>
-                        <div class="station-value" id="climate-monthly-mean">--</div>
-                      </div>
-                      <div class="station-item">
-                        <div class="station-label">Monthly Rainfall Total</div>
-                        <div class="station-value" id="climate-month-rain">--</div>
-                      </div>
-                      <div class="station-item">
-                        <div class="station-label">Wettest Day This Month</div>
-                        <div class="station-value" id="climate-max-rain">--</div>
-                      </div>
-                      <div class="station-item">
-                        <div class="station-label">Average Rainfall / Day</div>
-                        <div class="station-value" id="climate-avg-rain">--</div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- SNOW SEASON -->
-                  <div style="margin-bottom:20px;">
-                    <div class="station-label" style="font-size:15px;"> Snow
-                      Season Summary </div>
-                    <div style="font-size:11px; color:#666;
-                              margin-bottom:8px;"> Seasonal snowfall statistics
-                      (July 1 – June 30) </div>
-                    <div class="station-grid">
-                      <div class="station-item">
-                        <div class="station-label">Snowfall This Season</div>
-                        <div class="station-value" id="season-snow">--</div>
-                      </div>
-                      <div class="station-item">
-                        <div class="station-label">Departure from Normal</div>
-                        <div class="station-value" id="season-snow-departure">--</div>
-                      </div>
-                      <div class="station-item">
-                        <div class="station-label">Largest Snowstorm</div>
-                        <div class="station-value" id="largest-snow">--</div>
-                      </div>
-                      <div class="station-item">
-                        <div class="station-label">Average Snowfall / Event</div>
-                        <div class="station-value" id="avg-snow">--</div>
-                      </div>
-                      <div class="station-item">
-                        <div class="station-label">Snowfall Days</div>
-                        <div class="station-value" id="snow-days">--</div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- STATISTICS -->
-                  <div>
-                    <div class="station-label" style="font-size:15px;"> Data
-                      Statistics </div>
-                    <div style="font-size:11px; color:#666;
-                              margin-bottom:8px;"> NOAA ACIS retrieval
-                      information </div>
-                    <div class="station-grid">
-                      <div class="station-item">
-                        <div class="station-label">Days Observed</div>
-                        <div class="station-value" id="climate-days">--</div>
-                      </div>
-                      <div class="station-item">
-                        <div class="station-label">Observation Period</div>
-                        <div class="station-value" id="climate-period">--</div>
-                      </div>
-                    </div>
-                  </div>
+                  <div style="text-align:left;"> <span style="font-size:12px;">
+                      <em>Climate data source: <a href="https://scacis.rcc-acis.org/">NOAA
+                          RCC ACIS</a></em> </span> <em> <span style="font-size:12px;">
+                        with Fort Kent weather records dating to 1893. Climate
+                        normals and historical records are sourced via NOAA/ACIS
+                        data feeds and are intended for informational purposes
+                        only. Data can occasionally contain provisional values
+                        or missing periods due to automated reporting delays. </span>
+                    </em> </div>
                 </div>
-                <div style="text-align:left;"> <span style="font-size:12px;"> <em>Climate
-                      data source: <a href="https://scacis.rcc-acis.org/"> NOAA
-                        RCC ACIS</a></em></span><em><span style="font-size:12px;">
-                      with Fort Kent weather records dating to 1893. Climate
-                      normals and historical records are sourced via NOAA/ACIS
-                      data feeds and are intended for informational purposes
-                      only. Data can occasionally contain provisional values or
-                      missing periods due to automated reporting delays.</span></em><span
-                    style="font-size:12px;"></span><span style="font-size:
-                           12px;"></span><em style="font-size: 12px;"></em> </div>
               </div>
             </details>
           </div>

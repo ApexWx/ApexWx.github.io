@@ -3,258 +3,310 @@
          // ======================================================
          
          async function loadClimateData() {
-           
-           console.log("LOAD CLIMATE DATA STARTED");
-           
-           try {
-             const response = await fetch(
-               "https://fortkent-acis.maineapexwx.workers.dev/"
-             );
-         
-             const climate = await response.json();
-         
-             // ==================================================
-             // UNPACK DATASETS FROM WORKER
-             // ==================================================
-             const monthlyRows = climate.monthlyRows;
-             const seasonalRows = climate.seasonalRows || [];
-             const ytdRain = climate.ytdRain || 0;
-             const ytdRainDeparture = climate.ytdRainDeparture || 0;
-             const seasonSnowNormal =
-  Number.isFinite(climate.seasonSnowNormal)
-    ? climate.seasonSnowNormal
-    : 99.3;
-         
-             const todayNormals = climate.todayNormals || {
-               normalHigh: 0,
-               normalLow: 0,
-               normalRain: 0
-             };
-               
-             // ==================================================
-             // YESTERDAY'S COMPLETE CLIMATE OBSERVATION
-             // ==================================================
-             const easternTimeStr = new Date().toLocaleString("en-US", { timeZone: "America/New_York" });
-             const todayObj = new Date(easternTimeStr);
-             const todayStr = `${todayObj.getFullYear()}-${String(todayObj.getMonth() + 1).padStart(2, "0")}-${String(todayObj.getDate()).padStart(2, "0")}`;
-         
-             const latestRow = [...monthlyRows]
-               .reverse()
-               .find(row =>
-                 row[0] !== todayStr &&
-                 row[1] !== "M" &&
-                 row[2] !== "M" &&
-                 row[1] !== "" &&
-                 row[2] !== ""
-               );
-               
-             if (!latestRow) {
-               console.warn("No valid climate observations found.");
-               return;
-             }
-         
-             const yesterdayDate = latestRow[0];
-         
-             const yesterdayHigh = (latestRow[1] !== "M" && latestRow[1] !== "") ? parseFloat(latestRow[1]) : null;
-             const yesterdayLow = (latestRow[2] !== "M" && latestRow[2] !== "") ? parseFloat(latestRow[2]) : null;
-             const yesterdayRain = (latestRow[3] !== "M" && latestRow[3] !== "T") ? parseFloat(latestRow[3]) || 0 : 0;
-         
-             // ==================================================
-             // DAILY NORMALS & RECORDS LOOKUP
-             // ==================================================
-             let normHigh = todayNormals.normalHigh;
-             let normLow = todayNormals.normalLow;
-             let normRain = todayNormals.normalRain;
-         
-             const localKey = `${String(todayObj.getMonth() + 1).padStart(2, "0")}-${String(todayObj.getDate()).padStart(2, "0")}`;
-             const fallbackRec = climateRecords[localKey] || { high: [90, "----"], low: [28, "----"], rain: [2.73, "----"] };
-             
-             let recHighVal = fallbackRec.high[0];
-             let recHighYear = fallbackRec.high[1];
-             let recLowVal = fallbackRec.low[0];
-             let recLowYear = fallbackRec.low[1];
-             let recRainVal = fallbackRec.rain[0];
-             let recRainYear = fallbackRec.rain[1];
-         
-             // Render Normals to DOM
-             document.getElementById("normal-high").innerHTML =
-               `${Number(normHigh).toFixed(0)}°F<br><span class="metric">${((Number(normHigh) - 32) * 5 / 9).toFixed(1)}°C</span>`;
-         
-             document.getElementById("normal-low").innerHTML =
-               `${Number(normLow).toFixed(0)}°F<br><span class="metric">${((Number(normLow) - 32) * 5 / 9).toFixed(1)}°C</span>`;
-         
-             document.getElementById("normal-rain").innerHTML =
-               `${Number(normRain).toFixed(2)} in<br><span class="metric">${(Number(normRain) * 25.4).toFixed(1)} mm</span>`;
-         
-             // Render Records to DOM
-             document.getElementById("record-high").innerHTML =
-               `${parseFloat(recHighVal).toFixed(0)}°F<br><span class="metric">${((parseFloat(recHighVal) - 32) * 5 / 9).toFixed(1)}°C</span><span class="metric">${recHighYear}</span>`;
-         
-             document.getElementById("record-low").innerHTML =
-               `${parseFloat(recLowVal).toFixed(0)}°F<br><span class="metric">${((parseFloat(recLowVal) - 32) * 5 / 9).toFixed(1)}°C</span><span class="metric">${recLowYear}</span>`;
-         
-             document.getElementById("record-rain").innerHTML =
-               `${parseFloat(recRainVal).toFixed(2)} in<br><span class="metric">${(parseFloat(recRainVal) * 25.4).toFixed(1)} mm</span><span class="metric">${recRainYear}</span>`;
-         
-             // ==================================================
-             // DEPARTURES
-             // ==================================================
-             let highDeparture = yesterdayHigh !== null ? yesterdayHigh - normHigh : null;
-             let lowDeparture = yesterdayLow !== null ? yesterdayLow - normLow : null;
-             
-             let totalRain = 0;
-             let maxRain = 0;
-             let maxTemp = -999;
-             let maxTempDate = "";
-             let minTemp = 999;
-             let minTempDate = "";
-             let totalHigh = 0;
-             let totalLow = 0;
-             let validHighs = 0;
-             let validLows = 0;
-             let totalSnow = 0;
-             let maxSnow = 0;
-             let maxSnowDate = "";
-             let snowDays = 0;
-         
-             // ==================================================
-             // MONTHLY DATA LOOP
-             // ==================================================
-             monthlyRows.forEach(row => {
-               const date = row[0];
-               const high = parseFloat(row[1]);
-               const low = parseFloat(row[2]);
-         
-               let rain = 0;
-               if (row[3] !== "M" && row[3] !== "T") {
-                 rain = parseFloat(row[3]) || 0;
-               }
-         
-               totalRain += rain;
-               if (rain > maxRain) { maxRain = rain; }
-         
-               if (!isNaN(high)) {
-                 totalHigh += high;
-                 validHighs++;
-                 if (high > maxTemp) {
-                   maxTemp = high;
-                   maxTempDate = date;
-                 }
-               }
-         
-               if (!isNaN(low)) {
-                 totalLow += low;
-                 validLows++;
-                 if (low < minTemp) {
-                   minTemp = low;
-                   minTempDate = date;
-                 }
-               }
-             });
-             // ==================================================
-             // SEASONAL SNOW LOOP
-             // ==================================================
-             seasonalRows.forEach(row => {
-               const date = row[0];
-               let snow = 0;
-               if (row[1] !== "M" && row[1] !== "T") {
-                 snow = parseFloat(row[1]) || 0;
-               }
-         
-               if (snow > 0) {
-                 totalSnow += snow;
-                 snowDays++;
-                 if (snow > maxSnow) {
-                   maxSnow = snow;
-                   maxSnowDate = date;
-                 }
-               }
-             });
-console.log("AFTER LOOP totalSnow =", totalSnow);
-             // ==================================================
-             // CALCULATE AVERAGES
-             // ==================================================
-             const avgHigh = validHighs > 0 ? totalHigh / validHighs : 0;
-             const avgLow = validLows > 0 ? totalLow / validLows : 0;
-             const avgMonthlyMean = (avgHigh + avgLow) / 2;
-             const avgRain = monthlyRows.length > 0 ? totalRain / monthlyRows.length : 0;
-             const avgSnow = snowDays > 0 ? totalSnow / snowDays : 0;
-         
-             // Render Stats to DOM
-             document.getElementById("climate-month-rain").innerHTML = `${totalRain.toFixed(2)} in<br><span class="metric">${(totalRain * 25.4).toFixed(1)} mm</span>`;
-             document.getElementById("climate-max-rain").innerHTML = `${maxRain.toFixed(2)} in<br><span class="metric">${(maxRain * 25.4).toFixed(1)} mm</span>`;
-             document.getElementById("climate-avg-rain").innerHTML = `${avgRain.toFixed(2)} in/day<br><span class="metric">${(avgRain * 25.4).toFixed(1)} mm/day</span>`;
-             
-             document.getElementById("climate-max-temp").innerHTML = `${maxTemp.toFixed(0)}°F<br><span class="metric">${((maxTemp - 32) * 5 / 9).toFixed(1)}°C</span><span class="metric">${maxTempDate}</span>`;
-             document.getElementById("climate-min-temp").innerHTML = `${minTemp.toFixed(0)}°F<br><span class="metric">${((minTemp - 32) * 5 / 9).toFixed(1)}°C</span><span class="metric">${minTempDate}</span>`;
-             document.getElementById("climate-avg-high").innerHTML = `${avgHigh.toFixed(1)}°F<br><span class="metric">${((avgHigh - 32) * 5 / 9).toFixed(1)}°C</span>`;
-             document.getElementById("climate-avg-low").innerHTML = `${avgLow.toFixed(1)}°F<br><span class="metric">${((avgLow - 32) * 5 / 9).toFixed(1)}°C</span>`;
-             document.getElementById("climate-monthly-mean").innerHTML = `${avgMonthlyMean.toFixed(1)}°F<br><span class="metric">${((avgMonthlyMean - 32) * 5 / 9).toFixed(1)}°C</span>`;   
-               
-             document.getElementById("yesterday-high").innerHTML = yesterdayHigh !== null
-               ? `${yesterdayHigh.toFixed(0)}°F<br><span class="metric">${((yesterdayHigh - 32) * 5 / 9).toFixed(1)}°C</span><span class="metric">${yesterdayDate}</span>`
-               : "--";
-             
-             if (highDeparture !== null && !isNaN(highDeparture)) {
-               const highDepC = highDeparture * 5 / 9;
-               const depClass = highDeparture > 0 ? "departure-positive" : highDeparture < 0 ? "departure-negative" : "departure-neutral";
-               document.getElementById("yesterday-high-departure").innerHTML = `<span class="${depClass}">${highDeparture > 0 ? "+" : ""}${Math.round(highDeparture)}°F</span><br><span class="metric ${depClass}">${highDepC > 0 ? "+" : ""}${highDepC.toFixed(1)}°C</span><span class="metric">${yesterdayDate}</span>`;
-             }
-         
-             document.getElementById("yesterday-low").innerHTML = yesterdayLow !== null
-               ? `${yesterdayLow.toFixed(0)}°F<br><span class="metric">${((yesterdayLow - 32) * 5 / 9).toFixed(1)}°C</span><span class="metric">${yesterdayDate}</span>`
-               : "--";
-         
-             if (lowDeparture !== null && !isNaN(lowDeparture)) {
-               const lowDepC = lowDeparture * 5 / 9;
-               const depClass = lowDeparture > 0 ? "departure-positive" : lowDeparture < 0 ? "departure-negative" : "departure-neutral";
-               document.getElementById("yesterday-low-departure").innerHTML = `<span class="${depClass}">${lowDeparture > 0 ? "+" : ""}${Math.round(lowDeparture)}°F</span><br><span class="metric ${depClass}">${lowDepC > 0 ? "+" : ""}${lowDepC.toFixed(1)}°C</span><span class="metric">${yesterdayDate}</span>`;
-             }
-               
-             document.getElementById("ytd-rain").innerHTML = `${ytdRain.toFixed(2)} in<br><span class="metric">${(ytdRain * 25.4).toFixed(1)} mm</span>`;
-         
-             const rainDepClass = ytdRainDeparture > 0 ? "rain-positive" : ytdRainDeparture < 0 ? "rain-negative" : "rain-neutral";
-             document.getElementById("ytd-rain-departure").innerHTML = `<span class="${rainDepClass}">${ytdRainDeparture > 0 ? "+" : ""}${ytdRainDeparture.toFixed(2)} in</span><br><span class="metric ${rainDepClass}">${(ytdRainDeparture * 25.4).toFixed(1)} mm</span>`;
-         
-             // ==================================================
-             // NEW SIMPLIFIED SNOW DEPARTURE RENDERING
-             // ==================================================
-             const observedSeasonalSnow = totalSnow;
-             document.getElementById("season-snow").innerHTML = `${observedSeasonalSnow.toFixed(1)} in<br><span class="metric">${(observedSeasonalSnow * 2.54).toFixed(1)} cm</span>`;
-         
-             const snowDeparture = observedSeasonalSnow - seasonSnowNormal;
-             const snowDepClass = snowDeparture > 0 ? "rain-positive" : snowDeparture < 0 ? "rain-negative" : "rain-neutral";
-             document.getElementById("season-snow-departure").innerHTML = `<span class="${snowDepClass}">${snowDeparture > 0 ? "+" : ""}${snowDeparture.toFixed(1)} in</span><br><span class="metric ${snowDepClass}">${snowDeparture > 0 ? "+" : ""}${(snowDeparture * 2.54).toFixed(1)} cm</span>`;
-         
-             document.getElementById("largest-snow").innerHTML = `${maxSnow.toFixed(1)} in<br><span class="metric">${(maxSnow * 2.54).toFixed(1)} cm</span><span class="metric">${maxSnowDate || "N/A"}</span>`;
-             document.getElementById("avg-snow").innerHTML = `${avgSnow.toFixed(1)} in/event<br><span class="metric">${(avgSnow * 2.54).toFixed(1)} cm</span>`;
-             document.getElementById("snow-days").textContent = snowDays;
-             document.getElementById("climate-days").textContent = monthlyRows.length;
-         
-             // ==================================================
-             // FIX OBS PERIOD LAYOUT
-             // ==================================================
-             let periodEndRow = monthlyRows[monthlyRows.length - 1];
-             if (periodEndRow && (periodEndRow[1] === "M" || periodEndRow[2] === "M")) {
-               periodEndRow = monthlyRows[monthlyRows.length - 2] || periodEndRow;
-             }
-         
-             const startDateStr = monthlyRows[0][0];
-             const endDateStr = periodEndRow[0];
-         
-             if (startDateStr === endDateStr) {
-               document.getElementById("climate-period").innerHTML = startDateStr;
-             } else {
-               document.getElementById("climate-period").innerHTML = `${startDateStr} <span style="opacity: 0.6; font-size: 0.95em;">through</span> ${endDateStr}`;
-             }
-         
-             document.getElementById("climate-update").textContent = new Date().toLocaleString();
-         
-           } catch(error) {
-             console.error("Climate data error:", error);
-             document.getElementById("climate-update").textContent = "Unable to retrieve climate data";
-           }
-         }
+  
+  console.log("LOAD CLIMATE DATA STARTED");
+  
+  try {
+    const response = await fetch(
+      "https://fortkent-acis.maineapexwx.workers.dev/"
+    );
+
+    const climate = await response.json();
+
+    // ==================================================
+    // UNPACK DATASETS FROM WORKER
+    // ==================================================
+    const monthlyRows = climate.monthlyRows;
+    const seasonalRows = climate.seasonalRows || [];
+    const ytdRain = climate.ytdRain || 0;
+    const ytdRainDeparture = climate.ytdRainDeparture || 0;
+    const seasonSnowNormal =
+Number.isFinite(climate.seasonSnowNormal)
+? climate.seasonSnowNormal
+: 99.3;
+
+    const todayNormals = climate.todayNormals || {
+      normalHigh: 0,
+      normalLow: 0,
+      normalRain: 0
+    };
+      
+    // ==================================================
+    // YESTERDAY'S COMPLETE CLIMATE OBSERVATION
+    // ==================================================
+    const easternTimeStr = new Date().toLocaleString("en-US", { timeZone: "America/New_York" });
+    const todayObj = new Date(easternTimeStr);
+    const todayStr = `${todayObj.getFullYear()}-${String(todayObj.getMonth() + 1).padStart(2, "0")}-${String(todayObj.getDate()).padStart(2, "0")}`;
+
+    const latestRow = [...monthlyRows]
+      .reverse()
+      .find(row =>
+        row[0] !== todayStr &&
+        row[1] !== "M" &&
+        row[2] !== "M" &&
+        row[1] !== "" &&
+        row[2] !== ""
+      );
+      
+    if (!latestRow) {
+      console.warn("No valid climate observations found.");
+      return;
+    }
+
+    const yesterdayDate = latestRow[0];
+
+    const yesterdayHigh = (latestRow[1] !== "M" && latestRow[1] !== "") ? parseFloat(latestRow[1]) : null;
+    const yesterdayLow = (latestRow[2] !== "M" && latestRow[2] !== "") ? parseFloat(latestRow[2]) : null;
+    const yesterdayRain = (latestRow[3] !== "M" && latestRow[3] !== "T") ? parseFloat(latestRow[3]) || 0 : 0;
+
+    // ==================================================
+    // DAILY NORMALS & RECORDS LOOKUP
+    // ==================================================
+    let normHigh = todayNormals.normalHigh;
+    let normLow = todayNormals.normalLow;
+    let normRain = todayNormals.normalRain;
+
+    const localKey = `${String(todayObj.getMonth() + 1).padStart(2, "0")}-${String(todayObj.getDate()).padStart(2, "0")}`;
+    const fallbackRec = climateRecords[localKey] || { high: [90, "----"], low: [28, "----"], rain: [2.73, "----"] };
+    
+    let recHighVal = fallbackRec.high[0];
+    let recHighYear = fallbackRec.high[1];
+    let recLowVal = fallbackRec.low[0];
+    let recLowYear = fallbackRec.low[1];
+    let recRainVal = fallbackRec.rain[0];
+    let recRainYear = fallbackRec.rain[1];
+
+    // Render Normals to DOM
+    document.getElementById("normal-high").innerHTML =
+      `${Number(normHigh).toFixed(0)}°F<br><span class="metric">${((Number(normHigh) - 32) * 5 / 9).toFixed(1)}°C</span>`;
+
+    document.getElementById("normal-low").innerHTML =
+      `${Number(normLow).toFixed(0)}°F<br><span class="metric">${((Number(normLow) - 32) * 5 / 9).toFixed(1)}°C</span>`;
+
+    document.getElementById("normal-rain").innerHTML =
+      `${Number(normRain).toFixed(2)} in<br><span class="metric">${(Number(normRain) * 25.4).toFixed(1)} mm</span>`;
+
+    // Render Records to DOM
+    document.getElementById("record-high").innerHTML =
+      `${parseFloat(recHighVal).toFixed(0)}°F<br><span class="metric">${((parseFloat(recHighVal) - 32) * 5 / 9).toFixed(1)}°C</span><span class="metric">${recHighYear}</span>`;
+
+    document.getElementById("record-low").innerHTML =
+      `${parseFloat(recLowVal).toFixed(0)}°F<br><span class="metric">${((parseFloat(recLowVal) - 32) * 5 / 9).toFixed(1)}°C</span><span class="metric">${recLowYear}</span>`;
+
+    document.getElementById("record-rain").innerHTML =
+      `${parseFloat(recRainVal).toFixed(2)} in<br><span class="metric">${(parseFloat(recRainVal) * 25.4).toFixed(1)} mm</span><span class="metric">${recRainYear}</span>`;
+
+    // ==================================================
+    // DEPARTURES
+    // ==================================================
+    let highDeparture = yesterdayHigh !== null ? yesterdayHigh - normHigh : null;
+    let lowDeparture = yesterdayLow !== null ? yesterdayLow - normLow : null;
+    
+    let totalRain = 0;
+    let maxRain = 0;
+    let maxTemp = -999;
+    let maxTempDate = "";
+    let minTemp = 999;
+    let minTempDate = "";
+    let totalHigh = 0;
+    let totalLow = 0;
+    let validHighs = 0;
+    let validLows = 0;
+    let totalSnow = 0;
+    let maxSnow = 0;
+    let maxSnowDate = "";
+    let snowDays = 0;
+
+    // ==================================================
+    // MONTHLY DATA LOOP
+    // ==================================================
+    monthlyRows.forEach(row => {
+      const date = row[0];
+      const high = parseFloat(row[1]);
+      const low = parseFloat(row[2]);
+
+      let rain = 0;
+      if (row[3] !== "M" && row[3] !== "T") {
+        rain = parseFloat(row[3]) || 0;
+      }
+
+      totalRain += rain;
+      if (rain > maxRain) { maxRain = rain; }
+
+      if (!isNaN(high)) {
+        totalHigh += high;
+        validHighs++;
+        if (high > maxTemp) {
+          maxTemp = high;
+          maxTempDate = date;
+        }
+      }
+
+      if (!isNaN(low)) {
+        totalLow += low;
+        validLows++;
+        if (low < minTemp) {
+          minTemp = low;
+          minTempDate = date;
+        }
+      }
+    });
+    // ==================================================
+    // SEASONAL SNOW LOOP
+    // ==================================================
+    seasonalRows.forEach(row => {
+      const date = row[0];
+      let snow = 0;
+      if (row[1] !== "M" && row[1] !== "T") {
+        snow = parseFloat(row[1]) || 0;
+      }
+
+      if (snow > 0) {
+        totalSnow += snow;
+        snowDays++;
+        if (snow > maxSnow) {
+          maxSnow = snow;
+          maxSnowDate = date;
+        }
+      }
+    });
+    console.log("AFTER LOOP totalSnow =", totalSnow);
+    // ==================================================
+    // CALCULATE AVERAGES
+    // ==================================================
+    const avgHigh = validHighs > 0 ? totalHigh / validHighs : 0;
+    const avgLow = validLows > 0 ? totalLow / validLows : 0;
+    const avgMonthlyMean = (avgHigh + avgLow) / 2;
+    const avgRain = monthlyRows.length > 0 ? totalRain / monthlyRows.length : 0;
+    const avgSnow = snowDays > 0 ? totalSnow / snowDays : 0;
+
+    // Render Stats to DOM
+    document.getElementById("climate-month-rain").innerHTML = `${totalRain.toFixed(2)} in<br><span class="metric">${(totalRain * 25.4).toFixed(1)} mm</span>`;
+    document.getElementById("climate-max-rain").innerHTML = `${maxRain.toFixed(2)} in<br><span class="metric">${(maxRain * 25.4).toFixed(1)} mm</span>`;
+    document.getElementById("climate-avg-rain").innerHTML = `${avgRain.toFixed(2)} in/day<br><span class="metric">${(avgRain * 25.4).toFixed(1)} mm/day</span>`;
+    
+    document.getElementById("climate-max-temp").innerHTML = `${maxTemp.toFixed(0)}°F<br><span class="metric">${((maxTemp - 32) * 5 / 9).toFixed(1)}°C</span><span class="metric">${maxTempDate}</span>`;
+    document.getElementById("climate-min-temp").innerHTML = `${minTemp.toFixed(0)}°F<br><span class="metric">${((minTemp - 32) * 5 / 9).toFixed(1)}°C</span><span class="metric">${minTempDate}</span>`;
+    document.getElementById("climate-avg-high").innerHTML = `${avgHigh.toFixed(1)}°F<br><span class="metric">${((avgHigh - 32) * 5 / 9).toFixed(1)}°C</span>`;
+    document.getElementById("climate-avg-low").innerHTML = `${avgLow.toFixed(1)}°F<br><span class="metric">${((avgLow - 32) * 5 / 9).toFixed(1)}°C</span>`;
+    document.getElementById("climate-monthly-mean").innerHTML = `${avgMonthlyMean.toFixed(1)}°F<br><span class="metric">${((avgMonthlyMean - 32) * 5 / 9).toFixed(1)}°C</span>`;   
+      
+   // ==================================================
+    // RENDER YESTERDAY'S METRICS (UPDATED CONFIGURATION)
+    // ==================================================
+    if (climate.yesterdayMetrics) {
+      const ym = climate.yesterdayMetrics;
+
+      // Render Core Temperatures
+      document.getElementById("yesterday-high").innerHTML = ym.high === "--" 
+        ? "--" 
+        : `${parseFloat(ym.high).toFixed(0)}°F<br><span class="metric">${((parseFloat(ym.high) - 32) * 5 / 9).toFixed(1)}°C</span><span class="metric">${yesterdayDate}</span>`;
+      
+      document.getElementById("yesterday-low").innerHTML = ym.low === "--" 
+        ? "--" 
+        : `${parseFloat(ym.low).toFixed(0)}°F<br><span class="metric">${((parseFloat(ym.low) - 32) * 5 / 9).toFixed(1)}°C</span><span class="metric">${yesterdayDate}</span>`;
+      
+      // Style and Render Temperature Departures
+      const hdEl = document.getElementById("yesterday-high-departure");
+      if (ym.highDeparture !== "--") {
+        const hdF = parseFloat(ym.highDeparture);
+        const hdC = hdF * 5 / 9;
+        const sign = hdF > 0 ? "+" : "";
+        const depClass = hdF > 0 ? "departure-positive" : hdF < 0 ? "departure-negative" : "departure-neutral";
+        hdEl.innerHTML = `<span class="${depClass}">${sign}${Math.round(hdF)}°F</span><br><span class="metric ${depClass}">${sign}${hdC.toFixed(1)}°C</span><span class="metric">${yesterdayDate}</span>`;
+      } else {
+        hdEl.innerHTML = `--<br><span class="metric">--</span><span class="metric">${yesterdayDate}</span>`;
+      }
+
+      const ldEl = document.getElementById("yesterday-low-departure");
+      if (ym.lowDeparture !== "--") {
+        const ldF = parseFloat(ym.lowDeparture);
+        const ldC = ldF * 5 / 9;
+        const sign = ldF > 0 ? "+" : "";
+        const depClass = ldF > 0 ? "departure-positive" : ldF < 0 ? "departure-negative" : "departure-neutral";
+        ldEl.innerHTML = `<span class="${depClass}">${sign}${Math.round(ldF)}°F</span><br><span class="metric ${depClass}">${sign}${ldC.toFixed(1)}°C</span><span class="metric">${yesterdayDate}</span>`;
+      } else {
+        ldEl.innerHTML = `--<br><span class="metric">--</span><span class="metric">${yesterdayDate}</span>`;
+      }
+
+      // Render Moisture Values
+      if (ym.rain === "--" || ym.rain === "T") {
+        document.getElementById("yesterday-rain").innerHTML = ym.rain === "T" ? `Trace<br><span class="metric">0.0 mm</span><span class="metric">${yesterdayDate}</span>` : "--";
+      } else {
+        const rVal = parseFloat(ym.rain) || 0;
+        document.getElementById("yesterday-rain").innerHTML = `${rVal.toFixed(2)} in<br><span class="metric">${(rVal * 25.4).toFixed(1)} mm</span><span class="metric">${yesterdayDate}</span>`;
+      }
+
+      if (ym.snow === "--" || ym.snow === "T") {
+        document.getElementById("yesterday-snow").innerHTML = ym.snow === "T" ? `Trace<br><span class="metric">0.0 cm</span><span class="metric">${yesterdayDate}</span>` : "--";
+      } else {
+        const sVal = parseFloat(ym.snow) || 0;
+        document.getElementById("yesterday-snow").innerHTML = `${sVal.toFixed(1)} in<br><span class="metric">${(sVal * 2.54).toFixed(1)} cm</span><span class="metric">${yesterdayDate}</span>`;
+      }
+
+      if (ym.snowDepth === "--" || ym.snowDepth === "T") {
+        document.getElementById("yesterday-snow-depth").innerHTML = ym.snowDepth === "T" ? `Trace<br><span class="metric">0.0 cm</span><span class="metric">${yesterdayDate}</span>` : "--";
+      } else {
+        const sdVal = parseFloat(ym.snowDepth) || 0;
+        document.getElementById("yesterday-snow-depth").innerHTML = `${Math.round(sdVal)} in<br><span class="metric">${(sdVal * 2.54).toFixed(1)} cm</span><span class="metric">${yesterdayDate}</span>`;
+      }
+
+      // Style and Render Rain Departure
+      const rdEl = document.getElementById("yesterday-rain-departure");
+      if (ym.rainDeparture !== "--") {
+        const rdF = parseFloat(ym.rainDeparture);
+        const rdMm = rdF * 25.4;
+        const sign = rdF > 0 ? "+" : "";
+        const rainDepClass = rdF > 0 ? "rain-positive" : rdF < 0 ? "rain-negative" : "rain-neutral";
+        rdEl.innerHTML = `<span class="${rainDepClass}">${sign}${rdF.toFixed(2)} in</span><br><span class="metric ${rainDepClass}">${sign}${rdMm.toFixed(1)} mm</span><span class="metric">${yesterdayDate}</span>`;
+      } else {
+        rdEl.innerHTML = `--<br><span class="metric">--</span><span class="metric">${yesterdayDate}</span>`;
+      }
+    }
+    document.getElementById("ytd-rain").innerHTML = `${ytdRain.toFixed(2)} in<br><span class="metric">${(ytdRain * 25.4).toFixed(1)} mm</span>`;
+
+    const rainDepClass = ytdRainDeparture > 0 ? "rain-positive" : ytdRainDeparture < 0 ? "rain-negative" : "rain-neutral";
+    document.getElementById("ytd-rain-departure").innerHTML = `<span class="${rainDepClass}">${ytdRainDeparture > 0 ? "+" : ""}${ytdRainDeparture.toFixed(2)} in</span><br><span class="metric ${rainDepClass}">${(ytdRainDeparture * 25.4).toFixed(1)} mm</span>`;
+
+    // ==================================================
+    // NEW SIMPLIFIED SNOW DEPARTURE RENDERING
+    // ==================================================
+    const observedSeasonalSnow = totalSnow;
+    document.getElementById("season-snow").innerHTML = `${observedSeasonalSnow.toFixed(1)} in<br><span class="metric">${(observedSeasonalSnow * 2.54).toFixed(1)} cm</span>`;
+
+    const snowDeparture = observedSeasonalSnow - seasonSnowNormal;
+    const snowDepClass = snowDeparture > 0 ? "rain-positive" : snowDeparture < 0 ? "rain-negative" : "rain-neutral";
+    document.getElementById("season-snow-departure").innerHTML = `<span class="${snowDepClass}">${snowDeparture > 0 ? "+" : ""}${snowDeparture.toFixed(1)} in</span><br><span class="metric ${snowDepClass}">${snowDeparture > 0 ? "+" : ""}${(snowDeparture * 2.54).toFixed(1)} cm</span>`;
+
+    document.getElementById("largest-snow").innerHTML = `${maxSnow.toFixed(1)} in<br><span class="metric">${(maxSnow * 2.54).toFixed(1)} cm</span><span class="metric">${maxSnowDate || "N/A"}</span>`;
+    document.getElementById("avg-snow").innerHTML = `${avgSnow.toFixed(1)} in/event<br><span class="metric">${(avgSnow * 2.54).toFixed(1)} cm</span>`;
+    document.getElementById("snow-days").textContent = snowDays;
+    document.getElementById("climate-days").textContent = monthlyRows.length;
+
+    // ==================================================
+    // FIX OBS PERIOD LAYOUT
+    // ==================================================
+    let periodEndRow = monthlyRows[monthlyRows.length - 1];
+    if (periodEndRow && (periodEndRow[1] === "M" || periodEndRow[2] === "M")) {
+      periodEndRow = monthlyRows[monthlyRows.length - 2] || periodEndRow;
+    }
+
+    const startDateStr = monthlyRows[0][0];
+    const endDateStr = periodEndRow[0];
+
+    if (startDateStr === endDateStr) {
+      document.getElementById("climate-period").innerHTML = startDateStr;
+    } else {
+      document.getElementById("climate-period").innerHTML = `${startDateStr} <span style="opacity: 0.6; font-size: 0.95em;">through</span> ${endDateStr}`;
+    }
+
+    document.getElementById("climate-update").textContent = new Date().toLocaleString();
+
+  } catch(error) {
+    console.error("Climate data error:", error);
+    document.getElementById("climate-update").textContent = "Unable to retrieve climate data";
+  }
+}
          
          // ======================================================
          // DAILY RECORDS LOCAL FALLBACK DICTIONARY
