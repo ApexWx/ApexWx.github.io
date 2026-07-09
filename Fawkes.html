@@ -438,7 +438,7 @@
           </div>
         </div>
         <div class="live-station" style="font-size:14px;">
-          <details>
+          <details open="">
             <summary style="cursor: pointer; text-align: center;
               font-size: 1.2em; font-weight: bold;"> 📊Lancaster Weather Almanac
               📊 <span style="font-size: 13px; font-weight:
@@ -463,7 +463,7 @@
                       <div class="station-value" id="yesterday-high">--</div>
                     </div>
                     <div class="station-item">
-                      <div class="station-label">Departure from Normal High </div>
+                      <div class="station-label">Departure from Normal High</div>
                       <div class="station-value" id="yesterday-high-departure">--</div>
                     </div>
                     <div class="station-item">
@@ -471,143 +471,145 @@
                       <div class="station-value" id="yesterday-low">--</div>
                     </div>
                     <div class="station-item">
-                      <div class="station-label">Departure from Normal Low </div>
+                      <div class="station-label">Departure from Normal Low</div>
                       <div class="station-value" id="yesterday-low-departure">--</div>
                     </div>
                   </div>
-                </div>
-                <!-- TODAY'S NORMALS & RECORDS -->
-                <div style="margin-bottom:20px;">
-                  <div class="station-label" style="font-size:15px;"> Today's
-                    Climate Normals &amp; Records </div>
-                  <div style="font-size:11px; color:#666;
+                  <!-- TODAY'S NORMALS & RECORDS -->
+                  <div style="margin-bottom:20px;">
+                    <div class="station-label" style="font-size:15px;"><br>
+                    </div>
+                    <div class="station-label" style="font-size:15px;">Today's
+                      Climate Normals &amp; Records </div>
+                    <div style="font-size:11px; color:#666;
                     margin-bottom:8px;"> Climate normals and records for today's
-                    calendar date </div>
-                  <div class="station-grid">
-                    <div class="station-item">
-                      <div class="station-label">Today's Normal High</div>
-                      <div class="station-value" id="normal-high">66°F</div>
-                    </div>
-                    <div class="station-item">
-                      <div class="station-label">Today's Record High</div>
-                      <div class="station-value" id="record-high">90°F</div>
-                    </div>
-                    <div class="station-item">
-                      <div class="station-label">Today's Normal Low</div>
-                      <div class="station-value" id="normal-low">41°F</div>
-                    </div>
-                    <div class="station-item">
-                      <div class="station-label">Today's Record Low</div>
-                      <div class="station-value" id="record-low">28°F</div>
-                    </div>
-                    <div class="station-item">
-                      <div class="station-label">Today's Normal Rainfall</div>
-                      <div class="station-value" id="normal-rain">--</div>
-                    </div>
-                    <div class="station-item">
-                      <div class="station-label">Today's Record Rainfall</div>
-                      <div class="station-value" id="record-rain"> 2.73 in<br>
-                        <span class="metric">2022</span> </div>
-                    </div>
-                    <div class="station-item">
-                      <div class="station-label">Year-to-Date Rainfall</div>
-                      <div class="station-value" id="ytd-rain">--</div>
-                    </div>
-                    <div class="station-item">
-                      <div class="station-label">Year-to-Date Departure from
-                        Normal Rainfall </div>
-                      <div class="station-value" id="ytd-rain-departure">--</div>
+                      calendar date </div>
+                    <div class="station-grid">
+                      <div class="station-item">
+                        <div class="station-label">Today's Normal High</div>
+                        <div class="station-value" id="normal-high">66°F</div>
+                      </div>
+                      <div class="station-item">
+                        <div class="station-label">Today's Record High</div>
+                        <div class="station-value" id="record-high">90°F</div>
+                      </div>
+                      <div class="station-item">
+                        <div class="station-label">Today's Normal Low</div>
+                        <div class="station-value" id="normal-low">41°F</div>
+                      </div>
+                      <div class="station-item">
+                        <div class="station-label">Today's Record Low</div>
+                        <div class="station-value" id="record-low">28°F</div>
+                      </div>
+                      <div class="station-item">
+                        <div class="station-label">Today's Normal Rainfall</div>
+                        <div class="station-value" id="normal-rain">--</div>
+                      </div>
+                      <div class="station-item">
+                        <div class="station-label">Today's Record Rainfall</div>
+                        <div class="station-value" id="record-rain"> 2.73 in<br>
+                          <span class="metric">2022</span> </div>
+                      </div>
+                      <div class="station-item">
+                        <div class="station-label">Year-to-Date Rainfall</div>
+                        <div class="station-value" id="ytd-rain">--</div>
+                      </div>
+                      <div class="station-item">
+                        <div class="station-label">Year-to-Date Departure from
+                          Normal Rainfall </div>
+                        <div class="station-value" id="ytd-rain-departure">--</div>
+                      </div>
                     </div>
                   </div>
-                </div>
-                <!-- MONTHLY SUMMARY -->
-                <div style="margin-bottom:20px;">
-                  <div class="station-label" style="font-size:15px;"> Monthly
-                    Climate Summary </div>
-                  <div style="font-size:11px; color:#666;
+                  <!-- MONTHLY SUMMARY -->
+                  <div style="margin-bottom:20px;">
+                    <div class="station-label" style="font-size:15px;"> Monthly
+                      Climate Summary </div>
+                    <div style="font-size:11px; color:#666;
                     margin-bottom:8px;"> Month-to-date climate statistics </div>
-                  <div class="station-grid">
-                    <div class="station-item">
-                      <div class="station-label">Warmest Day This Month</div>
-                      <div class="station-value" id="climate-max-temp">--</div>
-                    </div>
-                    <div class="station-item">
-                      <div class="station-label">Coldest Day This Month</div>
-                      <div class="station-value" id="climate-min-temp">--</div>
-                    </div>
-                    <div class="station-item">
-                      <div class="station-label">Average Daily High</div>
-                      <div class="station-value" id="climate-avg-high">--</div>
-                    </div>
-                    <div class="station-item">
-                      <div class="station-label">Average Daily Low</div>
-                      <div class="station-value" id="climate-avg-low">--</div>
-                    </div>
-                    <div class="station-item">
-                      <div class="station-label">Avg Monthly Temp</div>
-                      <div class="station-value" id="climate-monthly-mean">--</div>
-                    </div>
-                    <div class="station-item">
-                      <div class="station-label">Monthly Rainfall Total</div>
-                      <div class="station-value" id="climate-month-rain">--</div>
-                    </div>
-                    <div class="station-item">
-                      <div class="station-label">Wettest Day This Month</div>
-                      <div class="station-value" id="climate-max-rain">--</div>
-                    </div>
-                    <div class="station-item">
-                      <div class="station-label">Average Rainfall / Day</div>
-                      <div class="station-value" id="climate-avg-rain">--</div>
+                    <div class="station-grid">
+                      <div class="station-item">
+                        <div class="station-label">Warmest Day This Month</div>
+                        <div class="station-value" id="climate-max-temp">--</div>
+                      </div>
+                      <div class="station-item">
+                        <div class="station-label">Coldest Day This Month</div>
+                        <div class="station-value" id="climate-min-temp">--</div>
+                      </div>
+                      <div class="station-item">
+                        <div class="station-label">Average Daily High</div>
+                        <div class="station-value" id="climate-avg-high">--</div>
+                      </div>
+                      <div class="station-item">
+                        <div class="station-label">Average Daily Low</div>
+                        <div class="station-value" id="climate-avg-low">--</div>
+                      </div>
+                      <div class="station-item">
+                        <div class="station-label">Avg Monthly Temp</div>
+                        <div class="station-value" id="climate-monthly-mean">--</div>
+                      </div>
+                      <div class="station-item">
+                        <div class="station-label">Monthly Rainfall Total</div>
+                        <div class="station-value" id="climate-month-rain">--</div>
+                      </div>
+                      <div class="station-item">
+                        <div class="station-label">Wettest Day This Month</div>
+                        <div class="station-value" id="climate-max-rain">--</div>
+                      </div>
+                      <div class="station-item">
+                        <div class="station-label">Average Rainfall / Day</div>
+                        <div class="station-value" id="climate-avg-rain">--</div>
+                      </div>
                     </div>
                   </div>
-                </div>
-                <!-- SNOW SEASON -->
-                <div style="margin-bottom:20px;">
-                  <div class="station-label" style="font-size:15px;">Snow Season
-                    Summary </div>
-                  <div style="font-size:11px; color:#666;
+                  <!-- SNOW SEASON -->
+                  <div style="margin-bottom:20px;">
+                    <div class="station-label" style="font-size:15px;">Snow
+                      Season Summary </div>
+                    <div style="font-size:11px; color:#666;
                     margin-bottom:8px;">Seasonal snowfall statistics (July 1 –
-                    June 30) </div>
-                  <div class="station-grid">
-                    <div class="station-item">
-                      <div class="station-label">Snowfall This Season</div>
-                      <div class="station-value" id="season-snow">--</div>
-                    </div>
-                    <div class="station-item">
-                      <div class="station-label">Departure from Normal</div>
-                      <div class="station-value" id="season-snow-departure">--</div>
+                      June 30) </div>
+                    <div class="station-grid">
+                      <div class="station-item">
+                        <div class="station-label">Snowfall This Season</div>
+                        <div class="station-value" id="season-snow">--</div>
+                      </div>
+                      <div class="station-item">
+                        <div class="station-label">Departure from Normal</div>
+                        <div class="station-value" id="season-snow-departure">--</div>
+                      </div>
                     </div>
                   </div>
-                </div>
-                <!-- STATISTICS -->
-                <div>
-                  <div class="station-label" style="font-size:15px;"> Data
-                    Statistics </div>
-                  <div style="font-size:11px; color:#666;
+                  <!-- STATISTICS -->
+                  <div>
+                    <div class="station-label" style="font-size:15px;"> Data
+                      Statistics </div>
+                    <div style="font-size:11px; color:#666;
                     margin-bottom:8px;"> NOAA ACIS retrieval information</div>
-                  <div class="station-grid">
-                    <div class="station-item">
-                      <div class="station-label">Days Observed This Month </div>
-                      <div class="station-value" id="climate-days">--</div>
-                    </div>
-                    <div class="station-item">
-                      <div class="station-label">Observation Period</div>
-                      <div class="station-value" id="climate-period">--</div>
+                    <div class="station-grid">
+                      <div class="station-item">
+                        <div class="station-label">Days Observed This Month </div>
+                        <div class="station-value" id="climate-days">--</div>
+                      </div>
+                      <div class="station-item">
+                        <div class="station-label">Observation Period</div>
+                        <div class="station-value" id="climate-period">--</div>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-              <div style="text-align:left;"> <span style="font-size:12px;"> <em>Climate
-                    data source: <a href="https://scacis.rcc-acis.org/"> NOAA
-                      RCC ACIS</a></em></span><em><span style="font-size:12px;">
-                    with Lancaster weather records dating to 1948/1949. Climate
-                    normals and historical records are sourced via NOAA/ACIS
-                    data feeds and are intended for informational purposes only.
-                    Data can occasionally contain provisional values or missing
-                    periods due to automated reporting delays.</span></em><span
-                  style="font-size:12px;"></span><span style="font-size: 12px;"></span><em
-                  style="font-size:
+                <div style="text-align:left;"> <span style="font-size:12px;"> <em>Climate
+                      data source: <a href="https://scacis.rcc-acis.org/"> NOAA
+                        RCC ACIS</a></em></span><em><span style="font-size:12px;">
+                      with Lancaster weather records dating to 1948/1949.
+                      Climate normals and historical records are sourced via
+                      NOAA/ACIS data feeds and are intended for informational
+                      purposes only. Data can occasionally contain provisional
+                      values or missing periods due to automated reporting
+                      delays.</span></em><span style="font-size:12px;"></span><span
+                    style="font-size: 12px;"></span><em style="font-size:
                   12px;"></em> </div>
+              </div>
             </div>
           </details>
         </div>
@@ -693,116 +695,126 @@
                           <div style="text-align: left;">
                             <div>
                               <div style="text-align: center;"><u><strong></strong></u><u><strong>7-Day
-                                    Outlook: Wed. July 8 – Tue. July 14, 2026</strong></u><br>
-                                <u><strong> </strong></u></div>
-                              <div>
-                                <div style="text-align: center;"><span style="color: #666666;"><span
-                                      style="font-size: 12px;">Updated July 8 at
-                                      9:35 AM </span><span style="font-size: 12px;">EDT
-                                      </span><span style="font-size: 12px;"></span></span></div>
-                              </div>
+                                    Outlook: Thu. July 9 – Wed. July 15, 2026</strong></u><br>
+                                <u><strong> </strong></u>
+                                <div>
+                                  <div style="text-align: center;"><span style="color: #666666;"><span
+                                        style="font-size: 12px;">Updated July 9
+                                        at 9:05 AM </span><span style="font-size: 12px;">EDT</span></span></div>
+                                </div>
+                                <span style="color: #666666;"><span style="font-size: 12px;"></span><span
+                                    style="font-size: 12px;"></span></span></div>
+                              <div> </div>
                               <div>
                                 <div><strong><br>
                                   </strong></div>
-                                <div><strong>Wed. July 8 – Fri. July 10</strong></div>
+                                <strong><u>Note</u>: </strong>The 7-day outlook
+                                will not be updated Friday, July 10, 2026.
+                                Regular updates are planned to resume Saturday,
+                                July 11, 2026. Website graphics and the daily
+                                weather overview below will update
+                                automatically.
+                                <div><strong><br>
+                                  </strong></div>
+                                <div><strong>Thu. July 9 – Sat. July 11</strong></div>
                               </div>
                             </div>
-                            <div> </div>
-                            Seasonably warm and mostly dry weather will continue
-                            today across the Lower Susquehanna Valley as high
-                            pressure provides partly to mostly sunny skies.
-                            Afternoon highs will reach the low to middle 80s,
-                            with calm winds and comfortable conditions for
-                            outdoor activities. Clouds will gradually increase
-                            tonight as warmer and more humid air begins to move
-                            into the region, with overnight lows in the upper
-                            60s.<br>
+                            A warm and humid weather pattern will continue
+                            across the Lower Susquehanna Valley as southwesterly
+                            winds bring in warmer air from the western Atlantic.
+                            A disturbance moving through the central
+                            Appalachians and Mid-Atlantic will trigger scattered
+                            showers and thunderstorms today, with the greatest
+                            chance during the afternoon and early evening hours.
+                            Some storms may be slow-moving and produce locally
+                            heavy downpours, frequent lightning, and isolated
+                            damaging wind gusts. Brief flash flooding is
+                            possible, especially in low-lying, urban, and
+                            poor-drainage areas, although most streams and
+                            creeks should remain within their banks. High
+                            temperatures will reach the lower to middle 80s with
+                            humid conditions continuing.<br>
                             <br>
-                            High pressure will shift offshore later this week,
-                            allowing increasing moisture and humidity to return.
-                            A disturbance moving through the region will bring a
-                            good chance of showers and thunderstorms on
-                            Thursday, especially during the afternoon and
-                            evening. High temperatures will climb into the
-                            middle 80s, with overnight lows in the upper 60s to
-                            around 70°F. Some storms may be slow-moving and
-                            capable of producing locally heavy downpours,
-                            frequent lightning, and isolated damaging wind
-                            gusts. Rainfall amounts will generally range from
-                            around a quarter to half an inch, although locally
-                            higher amounts are possible in thunderstorms. Brief
-                            flooding of urban areas, low-lying locations, and
-                            poor drainage areas is possible.<br>
+                            Showers and thunderstorms will diminish this
+                            evening, followed by a warm and muggy night with
+                            lows in the upper 60s to around 70 degrees. Another
+                            round of thunderstorms is expected Friday as a weak
+                            cold front moves southeast across the region. With
+                            temperatures rising into the upper 80s and dewpoints
+                            in the lower 70s, the atmosphere will become
+                            unstable, allowing storms to develop quickly during
+                            the afternoon. The main threats will be damaging
+                            wind gusts, frequent lightning, and torrential
+                            rainfall. Storms should move somewhat faster than
+                            today, reducing the overall flooding threat, but
+                            downed trees, power outages, and travel disruptions
+                            are possible.<br>
                             <br>
-                            A weak cold front will move through on Friday,
-                            bringing another round of showers and thunderstorms.
-                            Temperatures will rise into the upper 80s to around
-                            90°F ahead of the front, with high humidity making
-                            it feel warmer. Overnight lows Friday night will
-                            fall into the middle to upper 60s. Friday afternoon
-                            and evening storms may produce strong wind gusts,
-                            frequent lightning, and torrential rainfall. Storms
-                            should move more quickly than those on Thursday,
-                            which may reduce the overall flooding threat, but
-                            localized impacts such as downed trees or power
-                            lines remain possible in the strongest storms.<br>
-                            <br>
-                            Cooler and less humid conditions are expected behind
-                            the front heading into the weekend.</div>
+                            The cold front will continue to move through Friday
+                            night, with a few lingering showers and
+                            thunderstorms possible before ending. Temperatures
+                            will become more comfortable overnight, with lows in
+                            the upper 60s. Saturday will feature partly sunny
+                            skies, lower humidity, and a small chance for an
+                            afternoon shower or thunderstorm. High temperatures
+                            will remain warm, reaching the middle 80s, followed
+                            by a cooler and quieter night with lows in the lower
+                            60s.</div>
                         </div>
                         <div style="text-align: left;"><br>
                         </div>
                         <div>
                           <div>
-                            <div style="text-align: left;"><strong>Sat. July 11
-                                – Tue. July 14</strong><strong><br>
-                              </strong>Forecast confidence decreases slightly
-                              heading into the weekend as the exact timing and
-                              position of a cold front remain somewhat
-                              uncertain. Saturday will depend on how quickly the
-                              front moves south of the region. If the boundary
-                              lingers nearby, there could be a chance for a few
-                              scattered showers and thunderstorms, mainly across
-                              southern Pennsylvania. However, if the front
-                              shifts farther south more quickly, most areas will
-                              remain dry. Regardless, Saturday is expected to
-                              feature partly to mostly sunny skies with
-                              seasonably warm temperatures in the mid 80s and
-                              overnight lows in the lower to middle 60s.<br>
+                            <div style="text-align: left;"><strong>Sun. July 12
+                                – Wed. July 15</strong><strong><br>
+                              </strong>Much drier and more comfortable weather
+                              will return Sunday as the cold front moves south
+                              of the region and high pressure begins to build
+                              in. Increasing sunshine, lower rain chances, and a
+                              more stable atmosphere will bring a quieter
+                              weather pattern. Temperatures will remain warm,
+                              with highs in the middle 80s and overnight lows in
+                              the lower to middle 60s.<br>
                               <br>
-                              By Sunday, most forecast guidance indicates the
-                              front will be well south of the area, resulting in
-                              mainly dry conditions with mostly sunny skies.
-                              Temperatures will remain warm, with highs in the
-                              mid-80s and overnight lows in the lower to middle
-                              60s. Humidity levels should gradually improve as
-                              the front moves away.<br>
+                              High pressure will continue to dominate through
+                              the first part of next week, bringing mostly sunny
+                              skies and dry conditions. Temperatures will
+                              gradually warm, with highs reaching the middle 80s
+                              Monday and around 90 degrees Tuesday. By
+                              Wednesday, temperatures will climb into the lower
+                              to middle 90s under sunny skies, bringing a period
+                              of hot summer weather. Overnight lows will remain
+                              mild, mainly in the upper 60s to around 70
+                              degrees.<br>
                               <br>
-                              High pressure will continue to influence the
-                              region into early next week, bringing mostly sunny
-                              skies and dry weather. Monday will be another warm
-                              day with highs in the mid 80s and overnight lows
-                              in the mid-60s. By Tuesday, temperatures will
-                              trend warmer, with sunny skies and highs
-                              approaching the upper 80s to around 90°F.
-                              Overnight temperatures will remain mild, generally
-                              in the upper 60s under mostly clear skies.</div>
+                              A cold front dropping south from the north will
+                              approach Wednesday night into Thursday. This front
+                              may bring a chance for showers and thunderstorms,
+                              mainly Wednesday evening into the overnight hours.
+                              A few storms could produce brief heavy rainfall,
+                              but widespread severe weather is not expected at
+                              this time. Cooler and more seasonable conditions
+                              are likely behind the front later in the week.</div>
                             <div style="text-align: left;"><br>
                             </div>
                             <div style="text-align: left;"><strong>Extended
-                                Outlook: Wed. July 15 – Tue. July 21</strong><strong></strong></div>
-                            <div style="text-align: left;">A cold front will
-                              cross the state from the northwest Wednesday into
-                              Thursday, bringing a chance of showers and
-                              thunderstorms to the Lower Susquehanna Valley.
-                              High pressure will bring mostly sunny skies
-                              through the weekend, with some showers and
-                              thunderstorms possible by Sunday. High
-                              temperatures will range from the upper 80s to
-                              lower 90s, with overnight lows in the middle to
-                              upper 60s. Climate trends indicate near normal
-                              temperatures and above normal precipitation for
-                              the period.</div>
+                                Outlook: Thu. July 16 – Wed. July 22</strong></div>
+                            <div style="text-align: left;">Based on the National
+                              Weather Service Climate Prediction Center outlook
+                              for July 16 through July 22, 2026, Lancaster,
+                              Pennsylvania, is expected to experience near
+                              normal temperatures. A persistent upper-level
+                              atmospheric trough over the northeastern United
+                              States will successfully shield the region from
+                              the extreme heat wave impacting the central
+                              states. Additionally, precipitation is forecast to
+                              remain near normal for mid-July. While a wetter
+                              pattern remains focused just to the south,
+                              Lancaster will likely see standard summer
+                              conditions, which typically include localized
+                              afternoon showers and thunderstorms rather than
+                              widespread rainfall. Highs in the low 90s with
+                              lows in the mid-60s for the period.</div>
                             <div><br>
                             </div>
                             <div style="text-align: left;"><em style="font-size: 12px;">Outlooks
@@ -899,28 +911,29 @@
                                 <div style="text-align: center;"><br>
                                   <strong></strong><u><strong></strong></u><u><strong></strong></u>
                                 </div>
-                                <strong></strong><strong></strong><strong>Dangerous
-                                  Heat Continues as Severe Storm and Flood
-                                  Threat Shifts East<br>
-                                </strong>Dangerous heat will continue across the
-                                Southeast and parts of the Southwest through
-                                midweek, with above-normal temperatures, high
-                                humidity, and warm nights increasing the risk of
-                                heat-related illnesses. Meanwhile, a slow-moving
-                                cold front will trigger rounds of showers and
-                                thunderstorms across the nation's midsection. On
-                                Wednesday, the greatest risk for severe weather
-                                will extend from the Central Plains into the
-                                Upper and Middle Mississippi Valley, where
-                                damaging winds, large hail, frequent lightning,
-                                and a few tornadoes are possible. Heavy rainfall
-                                may also produce localized flash flooding. By
-                                Thursday, the severe weather and flood threat
-                                will shift into the Ohio and Middle Mississippi
-                                Valleys while additional strong storms develop
-                                across the Central and Southern High Plains.
-                                Scattered thunderstorms are also expected across
-                                the Southwest and Southeast.<br>
+                                <strong></strong><strong></strong><strong>Severe
+                                  Storms, Heavy Rain, and Dangerous Heat
+                                  Continue<br>
+                                </strong>A slow-moving cold front will bring
+                                multiple rounds of showers and thunderstorms
+                                across much of the eastern and central United
+                                States through Friday. The greatest threat for
+                                severe weather will extend from the Mid-Atlantic
+                                through the Ohio Valley and into parts of the
+                                central and northern High Plains, where damaging
+                                wind gusts, large hail, frequent lightning, and
+                                a few tornadoes will be possible. Heavy rainfall
+                                may also lead to localized flash flooding,
+                                especially in urban areas, along small streams,
+                                and in low-lying locations. Farther south,
+                                dangerous heat and humidity will continue across
+                                the Southeast, increasing the risk of
+                                heat-related illnesses. Extreme heat will also
+                                persist across parts of the Southwest and the
+                                Rockies. Meanwhile, scattered afternoon and
+                                evening thunderstorms will develop across the
+                                Southwest, Great Basin, and Northern Plains as
+                                additional weather systems move through.<br>
                                 <br>
                                 <div>
                                   <div class="text-center" style="text-align: center;">
@@ -962,31 +975,37 @@
                                       <div style="margin-top: 1em;
                                         text-align: center;">
                                         <div class="text-center">
-                                          <div style="text-align: left;"><strong></strong><strong>Strong
-                                              Thunderstorms May Bring Damaging
-                                              Winds and Hail Across Parts of the
-                                              Central United States<br>
-                                            </strong>A cold front moving across
-                                            the central United States will spark
-                                            scattered thunderstorms this
-                                            afternoon and evening, with the
-                                            greatest risk stretching from the
-                                            Central Plains into the Missouri
-                                            Valley and Upper Mississippi Valley.
-                                            Some storms could become severe,
-                                            producing damaging wind gusts, large
-                                            hail, frequent lightning, and heavy
-                                            downpours. The highest potential for
-                                            damaging winds appears to be across
-                                            parts of southern Nebraska, although
-                                            severe storms are possible elsewhere
-                                            within the risk area. Isolated
-                                            severe thunderstorms may also
+                                          <div style="text-align: left;"><strong></strong><strong>Severe
+                                              Thunderstorms Expected Across
+                                              Parts of the Plains, Midwest, and
+                                              East<br>
+                                            </strong>Strong to severe
+                                            thunderstorms are expected to
                                             develop across portions of the
-                                            northern High Plains and from North
-                                            Carolina into southern Virginia,
-                                            where very warm and humid conditions
-                                            will support strong wind gusts. </div>
+                                            central and northern Plains this
+                                            afternoon and evening as a weather
+                                            disturbance moves through the
+                                            region. The greatest threats will be
+                                            damaging wind gusts and large hail,
+                                            with a few storms capable of
+                                            producing very large hail across
+                                            parts of North Dakota. Farther
+                                            south, organized thunderstorms may
+                                            produce damaging winds across
+                                            Kansas. Additional severe
+                                            thunderstorms are possible from the
+                                            Ozarks into the lower Ohio Valley,
+                                            where warm, humid air will fuel
+                                            strong storms capable of producing
+                                            damaging winds. Thunderstorms moving
+                                            into the Mid-Atlantic later today
+                                            may also become severe with strong
+                                            wind gusts. Across southeastern
+                                            Arizona, isolated thunderstorms
+                                            could produce locally damaging winds
+                                            during the late afternoon and
+                                            evening as monsoonal moisture
+                                            remains in place.<strong></strong></div>
                                           <div style="text-align: left;"><br>
                                           </div>
                                           <div class="text-center"> <strong><a
@@ -1019,34 +1038,32 @@
                                           text-align: left;">
                                           <div style="margin-top: 1em;
                                             text-align: left;"><strong>Heavy
-                                              Rainfall May Lead to Localized
+                                              Rainfall May Trigger Localized
                                               Flash Flooding Across Parts of the
-                                              Central United States<br>
-                                            </strong>A slow-moving weather
-                                            pattern will bring the threat of
-                                            heavy rainfall and localized flash
-                                            flooding from the Central Plains
-                                            into the Upper Great Lakes today.
-                                            Repeated rounds of thunderstorms may
-                                            develop along a nearly stationary
-                                            front, with some areas receiving
-                                            several inches of rain in a short
-                                            period. The greatest concern is
-                                            across parts of Nebraska, Iowa,
-                                            Minnesota, Wisconsin, and Michigan,
-                                            where rainfall rates could overwhelm
-                                            drainage systems and lead to
-                                            flooding of roads, small streams,
-                                            and low-lying areas. Additional
-                                            thunderstorms may also produce
-                                            isolated flash flooding across
-                                            portions of the Central and Northern
-                                            High Plains. Elsewhere, scattered
-                                            thunderstorms from eastern Texas
-                                            through the Tennessee and Ohio
-                                            Valleys into the Mid-Atlantic may
-                                            bring brief heavy downpours, but
-                                            widespread flooding is less likely.</div>
+                                              Central and Eastern United States<br>
+                                            </strong>Heavy rainfall is expected
+                                            to develop across parts of the
+                                            central and eastern United States
+                                            today, with the greatest flash flood
+                                            risk extending from the central High
+                                            Plains to the Mid-Atlantic.
+                                            Slow-moving or repeatedly developing
+                                            thunderstorms may produce several
+                                            inches of rain in a short period,
+                                            increasing the risk of flash
+                                            flooding in urban areas, along small
+                                            streams, and in other flood-prone
+                                            locations. The greatest concern
+                                            exists across portions of the
+                                            Mid-Atlantic, the middle Mississippi
+                                            Valley, and the Ohio Valley, where
+                                            thunderstorms may merge and
+                                            repeatedly move over the same areas.
+                                            Additional heavy rain is possible
+                                            across the central High Plains,
+                                            while isolated flash flooding may
+                                            also develop across parts of
+                                            Arizona.</div>
                                           <a href="https://www.wpc.ncep.noaa.gov/qpf/excessive_rainfall_outlook_ero.php"><strong></strong></a>
                                         </div>
                                         <div style="margin-top: 1em;
@@ -1073,33 +1090,35 @@
                                           <div style="text-align: left;"><strong></strong><strong></strong><strong><br>
                                             </strong><strong>Critical Fire
                                               Weather Conditions Continue Across
-                                              Parts of the West<br>
-                                            </strong>Critical fire weather
-                                            conditions are expected across much
-                                            of the western United States as dry
-                                            air, gusty winds, and isolated
-                                            thunderstorms increase the risk of
-                                            rapidly spreading wildfires. A dry
-                                            cold front will move through the
-                                            Pacific Northwest and into the
-                                            northern Rockies, bringing sustained
-                                            winds with higher gusts across the
-                                            Inland Northwest. Extremely dry air
-                                            will persist ahead of the front
-                                            across the Great Basin, southeastern
-                                            California, northern Arizona, and
-                                            parts of western Colorado, creating
-                                            favorable conditions for wildfire
-                                            growth. Isolated to scattered
-                                            thunderstorms are also expected from
-                                            the northern Great Basin into the
-                                            Four Corners region. While some
-                                            storms may produce beneficial
-                                            rainfall, others could generate
-                                            lightning with little precipitation,
-                                            increasing the potential for new
-                                            wildfire starts in areas with very
-                                            dry vegetation.</div>
+                                              the West<br>
+                                            </strong>Dry, windy weather will
+                                            continue to create elevated to
+                                            critical fire weather conditions
+                                            across much of the western United
+                                            States today. The greatest concern
+                                            extends from inland southern
+                                            California through the southern
+                                            Great Basin and into the Four
+                                            Corners region, where low humidity
+                                            and gusty winds will support rapid
+                                            wildfire growth. Existing large
+                                            wildfires may become more active,
+                                            especially across parts of Nevada,
+                                            Utah, and western Colorado, where
+                                            extremely dry vegetation remains in
+                                            place. Isolated dry thunderstorms
+                                            are also expected from northeastern
+                                            Nevada into western Colorado,
+                                            bringing lightning with little
+                                            rainfall and increasing the
+                                            potential for new wildfire starts.
+                                            Farther east, portions of the
+                                            Carolinas and eastern Georgia may
+                                            experience locally elevated fire
+                                            weather conditions this afternoon
+                                            before scattered showers and
+                                            thunderstorms develop later in the
+                                            day.</div>
                                         </div>
                                       </div>
                                     </div>
