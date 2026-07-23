@@ -229,38 +229,49 @@ Number.isFinite(climate.seasonSnowNormal)
         ldEl.innerHTML = `--<br><span class="metric">--</span><span class="metric">${yesterdayDate}</span>`;
       }
 
-      // Render Moisture Values
-      if (ym.rain === "--" || ym.rain === "T") {
-        document.getElementById("yesterday-rain").innerHTML = ym.rain === "T" ? `Trace<br><span class="metric">0.0 mm</span><span class="metric">${yesterdayDate}</span>` : "--";
-      } else {
-        const rVal = parseFloat(ym.rain) || 0;
-        document.getElementById("yesterday-rain").innerHTML = `${rVal.toFixed(2)} in<br><span class="metric">${(rVal * 25.4).toFixed(1)} mm</span><span class="metric">${yesterdayDate}</span>`;
+    // Render Moisture Values (Safely)
+      const yestRainEl = document.getElementById("yesterday-rain");
+      if (yestRainEl) {
+        if (ym.rain === "--" || ym.rain === "T") {
+          yestRainEl.innerHTML = ym.rain === "T" ? `Trace<br><span class="metric">0.0 mm</span><span class="metric">${yesterdayDate}</span>` : "--";
+        } else {
+          const rVal = parseFloat(ym.rain) || 0;
+          yestRainEl.innerHTML = `${rVal.toFixed(2)} in<br><span class="metric">${(rVal * 25.4).toFixed(1)} mm</span><span class="metric">${yesterdayDate}</span>`;
+        }
       }
 
-      if (ym.snow === "--" || ym.snow === "T") {
-        document.getElementById("yesterday-snow").innerHTML = ym.snow === "T" ? `Trace<br><span class="metric">0.0 cm</span><span class="metric">${yesterdayDate}</span>` : "--";
-      } else {
-        const sVal = parseFloat(ym.snow) || 0;
-        document.getElementById("yesterday-snow").innerHTML = `${sVal.toFixed(1)} in<br><span class="metric">${(sVal * 2.54).toFixed(1)} cm</span><span class="metric">${yesterdayDate}</span>`;
+      const yestSnowEl = document.getElementById("yesterday-snow");
+      if (yestSnowEl) {
+        if (ym.snow === "--" || ym.snow === "T") {
+          yestSnowEl.innerHTML = ym.snow === "T" ? `Trace<br><span class="metric">0.0 cm</span><span class="metric">${yesterdayDate}</span>` : "--";
+        } else {
+          const sVal = parseFloat(ym.snow) || 0;
+          yestSnowEl.innerHTML = `${sVal.toFixed(1)} in<br><span class="metric">${(sVal * 2.54).toFixed(1)} cm</span><span class="metric">${yesterdayDate}</span>`;
+        }
       }
 
-      if (ym.snowDepth === "--" || ym.snowDepth === "T") {
-        document.getElementById("yesterday-snow-depth").innerHTML = ym.snowDepth === "T" ? `Trace<br><span class="metric">0.0 cm</span><span class="metric">${yesterdayDate}</span>` : "--";
-      } else {
-        const sdVal = parseFloat(ym.snowDepth) || 0;
-        document.getElementById("yesterday-snow-depth").innerHTML = `${Math.round(sdVal)} in<br><span class="metric">${(sdVal * 2.54).toFixed(1)} cm</span><span class="metric">${yesterdayDate}</span>`;
+      const yestSnowDepthEl = document.getElementById("yesterday-snow-depth");
+      if (yestSnowDepthEl) {
+        if (ym.snowDepth === "--" || ym.snowDepth === "T") {
+          yestSnowDepthEl.innerHTML = ym.snowDepth === "T" ? `Trace<br><span class="metric">0.0 cm</span><span class="metric">${yesterdayDate}</span>` : "--";
+        } else {
+          const sdVal = parseFloat(ym.snowDepth) || 0;
+          yestSnowDepthEl.innerHTML = `${Math.round(sdVal)} in<br><span class="metric">${(sdVal * 2.54).toFixed(1)} cm</span><span class="metric">${yesterdayDate}</span>`;
+        }
       }
 
-      // Style and Render Rain Departure
+      // Style and Render Rain Departure (Safely)
       const rdEl = document.getElementById("yesterday-rain-departure");
-      if (ym.rainDeparture !== "--") {
-        const rdF = parseFloat(ym.rainDeparture);
-        const rdMm = rdF * 25.4;
-        const sign = rdF > 0 ? "+" : "";
-        const rainDepClass = rdF > 0 ? "rain-positive" : rdF < 0 ? "rain-negative" : "rain-neutral";
-        rdEl.innerHTML = `<span class="${rainDepClass}">${sign}${rdF.toFixed(2)} in</span><br><span class="metric ${rainDepClass}">${sign}${rdMm.toFixed(1)} mm</span><span class="metric">${yesterdayDate}</span>`;
-      } else {
-        rdEl.innerHTML = `--<br><span class="metric">--</span><span class="metric">${yesterdayDate}</span>`;
+      if (rdEl) {
+        if (ym.rainDeparture !== "--") {
+          const rdF = parseFloat(ym.rainDeparture);
+          const rdMm = rdF * 25.4;
+          const sign = rdF > 0 ? "+" : "";
+          const rainDepClass = rdF > 0 ? "rain-positive" : rdF < 0 ? "rain-negative" : "rain-neutral";
+          rdEl.innerHTML = `<span class="${rainDepClass}">${sign}${rdF.toFixed(2)} in</span><br><span class="metric ${rainDepClass}">${sign}${rdMm.toFixed(1)} mm</span><span class="metric">${yesterdayDate}</span>`;
+        } else {
+          rdEl.innerHTML = `--<br><span class="metric">--</span><span class="metric">${yesterdayDate}</span>`;
+        }
       }
     }
     document.getElementById("ytd-rain").innerHTML = `${ytdRain.toFixed(2)} in<br><span class="metric">${(ytdRain * 25.4).toFixed(1)} mm</span>`;
