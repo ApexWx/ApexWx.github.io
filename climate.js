@@ -326,7 +326,10 @@ const climateUpdateEl = document.getElementById("climate-update");
 if (climateUpdateEl) {
   climateUpdateEl.textContent = new Date().toLocaleString();
 }
-         
+} catch (error) {
+  console.error("Error loading climate data:", error);
+}
+}           
          // ======================================================
          // DAILY RECORDS LOCAL FALLBACK DICTIONARY
          // ======================================================
