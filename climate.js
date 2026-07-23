@@ -268,44 +268,63 @@ Number.isFinite(climate.seasonSnowNormal)
     const rainDepClass = ytdRainDeparture > 0 ? "rain-positive" : ytdRainDeparture < 0 ? "rain-negative" : "rain-neutral";
     document.getElementById("ytd-rain-departure").innerHTML = `<span class="${rainDepClass}">${ytdRainDeparture > 0 ? "+" : ""}${ytdRainDeparture.toFixed(2)} in</span><br><span class="metric ${rainDepClass}">${(ytdRainDeparture * 25.4).toFixed(1)} mm</span>`;
 
-    // ==================================================
-    // NEW SIMPLIFIED SNOW DEPARTURE RENDERING
-    // ==================================================
-    const observedSeasonalSnow = totalSnow;
-    document.getElementById("season-snow").innerHTML = `${observedSeasonalSnow.toFixed(1)} in<br><span class="metric">${(observedSeasonalSnow * 2.54).toFixed(1)} cm</span>`;
+   // ==================================================
+// NEW SIMPLIFIED SNOW DEPARTURE RENDERING
+// ==================================================
+const observedSeasonalSnow = totalSnow;
+const elSeasonSnow = document.getElementById("season-snow");
+if (elSeasonSnow) {
+  elSeasonSnow.innerHTML = `${observedSeasonalSnow.toFixed(1)} in<br><span class="metric">${(observedSeasonalSnow * 2.54).toFixed(1)} cm</span>`;
+}
 
-    const snowDeparture = observedSeasonalSnow - seasonSnowNormal;
-    const snowDepClass = snowDeparture > 0 ? "rain-positive" : snowDeparture < 0 ? "rain-negative" : "rain-neutral";
-    document.getElementById("season-snow-departure").innerHTML = `<span class="${snowDepClass}">${snowDeparture > 0 ? "+" : ""}${snowDeparture.toFixed(1)} in</span><br><span class="metric ${snowDepClass}">${snowDeparture > 0 ? "+" : ""}${(snowDeparture * 2.54).toFixed(1)} cm</span>`;
+const snowDeparture = observedSeasonalSnow - seasonSnowNormal;
+const snowDepClass = snowDeparture > 0 ? "rain-positive" : snowDeparture < 0 ? "rain-negative" : "rain-neutral";
 
-    document.getElementById("largest-snow").innerHTML = `${maxSnow.toFixed(1)} in<br><span class="metric">${(maxSnow * 2.54).toFixed(1)} cm</span><span class="metric">${maxSnowDate || "N/A"}</span>`;
-    document.getElementById("avg-snow").innerHTML = `${avgSnow.toFixed(1)} in/event<br><span class="metric">${(avgSnow * 2.54).toFixed(1)} cm</span>`;
-    document.getElementById("snow-days").textContent = snowDays;
-    document.getElementById("climate-days").textContent = monthlyRows.length;
+// Optional chaining (?.) avoids crashing if the element doesn't exist
+document.getElementById("season-snow-departure")?.setAttribute("innerHTML", `<span class="${snowDepClass}">${snowDeparture > 0 ? "+" : ""}${snowDeparture.toFixed(1)} in</span><br><span class="metric ${snowDepClass}">${snowDeparture > 0 ? "+" : ""}${(snowDeparture * 2.54).toFixed(1)} cm</span>`);
+if (document.getElementById("season-snow-departure")) {
+  document.getElementById("season-snow-departure").innerHTML = `<span class="${snowDepClass}">${snowDeparture > 0 ? "+" : ""}${snowDeparture.toFixed(1)} in</span><br><span class="metric ${snowDepClass}">${snowDeparture > 0 ? "+" : ""}${(snowDeparture * 2.54).toFixed(1)} cm</span>`;
+}
 
-    // ==================================================
-    // FIX OBS PERIOD LAYOUT
-    // ==================================================
-    let periodEndRow = monthlyRows[monthlyRows.length - 1];
-    if (periodEndRow && (periodEndRow[1] === "M" || periodEndRow[2] === "M")) {
-      periodEndRow = monthlyRows[monthlyRows.length - 2] || periodEndRow;
-    }
+if (document.getElementById("largest-snow")) {
+  document.getElementById("largest-snow").innerHTML = `${maxSnow.toFixed(1)} in<br><span class="metric">${(maxSnow * 2.54).toFixed(1)} cm</span><span class="metric">${maxSnowDate || "N/A"}</span>`;
+}
 
-    const startDateStr = monthlyRows[0][0];
-    const endDateStr = periodEndRow[0];
+if (document.getElementById("avg-snow")) {
+  document.getElementById("avg-snow").innerHTML = `${avgSnow.toFixed(1)} in/event<br><span class="metric">${(avgSnow * 2.54).toFixed(1)} cm</span>`;
+}
 
-    if (startDateStr === endDateStr) {
-      document.getElementById("climate-period").innerHTML = startDateStr;
-    } else {
-      document.getElementById("climate-period").innerHTML = `${startDateStr} <span style="opacity: 0.6; font-size: 0.95em;">through</span> ${endDateStr}`;
-    }
+if (document.getElementById("snow-days")) {
+  document.getElementById("snow-days").textContent = snowDays;
+}
 
-    document.getElementById("climate-update").textContent = new Date().toLocaleString();
+if (document.getElementById("climate-days")) {
+  document.getElementById("climate-days").textContent = monthlyRows.length;
+}
 
-  } catch(error) {
-    console.error("Climate data error:", error);
-    document.getElementById("climate-update").textContent = "Unable to retrieve climate data";
+// ==================================================
+// FIX OBS PERIOD LAYOUT
+// ==================================================
+let periodEndRow = monthlyRows[monthlyRows.length - 1];
+if (periodEndRow && (periodEndRow[1] === "M" || periodEndRow[2] === "M")) {
+  periodEndRow = monthlyRows[monthlyRows.length - 2] || periodEndRow;
+}
+
+const startDateStr = monthlyRows[0][0];
+const endDateStr = periodEndRow[0];
+
+const climatePeriodEl = document.getElementById("climate-period");
+if (climatePeriodEl) {
+  if (startDateStr === endDateStr) {
+    climatePeriodEl.innerHTML = startDateStr;
+  } else {
+    climatePeriodEl.innerHTML = `${startDateStr} <span style="opacity: 0.6; font-size: 0.95em;">through</span> ${endDateStr}`;
   }
+}
+
+const climateUpdateEl = document.getElementById("climate-update");
+if (climateUpdateEl) {
+  climateUpdateEl.textContent = new Date().toLocaleString();
 }
          
          // ======================================================
