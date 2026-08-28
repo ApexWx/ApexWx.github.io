@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	 <meta name="viewport" content="width=device-width, initial-scale=1">
+	 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+    <script src="https://cdnres.willyweather.com/widget/warning/loadView.html?id=126547"></script>
+	<style>
+	.layout {
+  width: 100%;
+
+  display: grid;
+  grid:
+    "header header header" auto
+    "leftSide body rightSide" 1fr
+    "footer footer footer" auto
+    / auto 1fr auto;
+  gap: 8px;
+}
+
+body {
+	font-family: Arial, Helvetica, sans-serif ;
+	background-image: url('https://github.com/ApexWx/ApexWx.github.io/blob/master/seamless-background-simply-sky.jpg?raw=true');
+	background-color: transparent;
+}
+
+iframe {
+   border: none;
+}
+
+.header { grid-area: header; }
+.leftSide { grid-area: leftSide; }
+.body { grid-area: body; }
+.rightSide { grid-area: rightSide; }
+.footer { grid-area: footer; }
+</style>
+    <title>Fawkes House Weather for Lancaster, PA and Vicinity</title>
+	
+ </head>
+  <body>
+    <section class="layout">
+  <div class="header">  <!-- Start of Header Section -->    
+  <div style="text-align: center;"><a><img src="https://raw.githubusercontent.com/ApexWx/ApexWx.github.io/master/Apex%20banner.jpg">
+  <!-- end of header section: insert your logo, etc, above this line --></div>
+
+  <div class="leftSide">2</div>
+  <div class="body">
+  <div style="text-align: center;">
+  <h2><strong>Apex Wx<br>
+  Fawkes House & the Lower Susquehanna Valley, PA<br>
+  Weather Information</strong></h2>
+  </div>
+				<div style="text-align: center;"> <a href="https://en.wikipedia.org/wiki/Pennsylvania"><img
+
+                  src="https://apexwx.github.io/pa.png" alt="Pennsylvania State Flag" style="width: 144px; height: 108px;"></a>
+				  </div>
+				<div style="text-align: center;"><strong><label id="lblGreetings"></label></strong>
+				</div>
+				<div style="text-align: center;"> <iframe src="https://free.timeanddate.com/clock/i9cmhi8l/n23/tct/pct/ftb/tt0/ts1/ta1"
+
+                  allowtransparency="true" height="18" width="343"></iframe></div>
+				  <div style="text-align: center; font-size: 14px; margin-top: 10px;"><strong>Lancaster Air Quality Index</strong></div>
+				  <div style="text-align: center;">
+				  <iframe title="Lancaster Air Quality Index" src="https://widget.airnow.gov/aq-dial-widget/?city=Lancaster&amp;state=PA&amp;country=USA"
+
+                            style="border-radius: 25px;" height="230" width="230"></iframe></div>
+<hr>							
+				<div style="text-align: left;"><strong>Lancaster Wx Almanac</strong></div>
+<p style="text-align: left; text-size: 12px;>Measurements in United States customary units unless otherwise indicated.</p><br>
+
+<p style="text-align: left; margin-top: 10px;"><strong><u>Wednesday, June 12</u><strong><br>
+<strong>High:</strong> 82° at 5:42 pm / Low: 53° at 5:46 am<br>
+<strong>Precipitation:</strong> 0.00 in<br>
+<strong>Snow:</strong> 0.0 in<br>
+<strong>Daily Wind:</strong> <u>Avg Dir/Speed</u>: SE @ 1 mph / <u>Max. Gust: 10 mph at 12:04 pm</u><br>
+<p-style="text align: left; text-size: 12px;><em>Source: Personal Weather Station on State Street west of F&M College</em></p>
+
+<p style="text-align: left; margin-top: 10px;><strong><u>Thursday, June 13</u></strong>
+<strong>Normal High:</strong> 82°  / <strong>Record High:</strong> 97° in 2017<br>
+<strong>Normal Low:</strong>  59° /  <strong>Record Low:</strong>  42° in 1979<br>
+<strong>Year-to-Date Precipitation:</strong> 21.82 in / avg. 18.04 in = +3.78 in<br>
+<strnog>Snow 2023-24:</strong> 13.1 in / avg. 21.4 in = -8.3 in<br>
+<p style="text align: left; text-size: 12px;><em>Annual snowfall measured from July 1. / Source: NOAA SC-ACIS climate data collected since 1948</em><br>
+
+<div style="text-align: left;">
+                  <strong><a href="https://www.timeanddate.com/astronomy/usa/lancaster-pa">Lancaster,
+                    PA, USA</a> — Sun and Moon Times</strong></div>
+
+<div style="text-align: left;"><a href="https://www.timeanddate.com/moon/phases/usa/lancaster-pa">Moon
+                    Phase</a>: 🌒 Waxing Crescent → 🌓 First Quarter at 1:18 am
+                  Fri. June 14, 2024</div>
+<hr>				  
+				  
+				  
+				</div>
+  <div class="rightSide">4</div>
+  <div class="footer">5</div>
+</section>
+<script>
+                     //<![CDATA[
+                         var myDate = new Date();
+                         var hrs = myDate.getHours();
+                     
+                         var greet;
+                     
+                         if (hrs < 12 && hrs >= 3) 
+                             greet = 'Good Morning!';
+                         else if (hrs >= 12 && hrs <= 17)
+                             greet = 'Good Afternoon!';
+                         else if (hrs >= 17 && hrs <= 24)
+                             greet = 'Good Evening!';
+                         else if (hrs >=0 && hrs <= 3)
+                             greet = 'Good Early Morning!';
+                     
+                         document.getElementById('lblGreetings').innerHTML =
+                             '<b>' + greet + '<\/b>';
+                       //]]>
+                       
+                  </script>
+  </body>
+</html>
