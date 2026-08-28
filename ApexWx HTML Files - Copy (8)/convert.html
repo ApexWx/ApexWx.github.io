@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>convert</title>
+  </head>
+  <body>
+    <p></p>
+    <div style="font-size:14px;" align="center">
+      <b>Convert Fahrenheit to Celsius <u>OR</u> Celsius to Fahrenheit</b>
+      <form name="form" style="width:200px; border: 1px solid #960000; margin-top:6px; font-size:13px; padding:5px;">
+        <table>
+          <tbody>
+            <tr>
+              <td>Fahrenheit: </td>
+              <td>
+                <input style="font-size:13px; " name="F" value="32" size="10" onkeyup="C.value = 100/(212-32) * (this.value - 32 )"
+                  type="text">°</td>
+            </tr>
+            <tr>
+              <td>Celsius: </td>
+              <td><input style="font-size:13px; " name="C" value="0" size="10" onkeyup="F.value = (212-32)/100 * this.value + 32 "
+                  type="text">°
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </form>
+      <br>
+      <p></p>
+    </div>
+  </body>
+</html>

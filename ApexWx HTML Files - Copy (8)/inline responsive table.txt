@@ -1,0 +1,33 @@
+<div style="overflow-x:auto;">
+                <table style="width:100%; border-collapse:collapse; text-align:center; font-family:sans-serif;">
+                  <thead>
+                    <tr style="background-color:#f2f2f2;">
+                      <th style="border:1px solid #ddd; padding:8px;">Day</th>
+                      <th style="border:1px solid #ddd; padding:8px;">Highs</th>
+                      <th style="border:1px solid #ddd; padding:8px;">Lows</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td style="border:1px solid #ddd; padding:8px;">Tuesday</td>
+                      <td style="border:1px solid #ddd; padding:8px;">Low 60s</td>
+                      <td style="border:1px solid #ddd; padding:8px;">Mid-30s</td>
+                    </tr>
+                    <tr>
+                      <td style="border:1px solid #ddd; padding:8px;">Wednesday</td>
+                      <td style="border:1px solid #ddd; padding:8px;">Mid-50s</td>
+                      <td style="border:1px solid #ddd; padding:8px;">Low 30s</td>
+                    </tr>
+                    <tr>
+                      <td style="border:1px solid #ddd; padding:8px;">Thursday</td>
+                      <td style="border:1px solid #ddd; padding:8px;">Low 60s</td>
+                      <td style="border:1px solid #ddd; padding:8px;">Mid-30s</td>
+                    </tr>
+                    <tr>
+                      <td style="border:1px solid #ddd; padding:8px;">Friday</td>
+                      <td style="border:1px solid #ddd; padding:8px;">Mid-60s</td>
+                      <td style="border:1px solid #ddd; padding:8px;">Low 40s</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>Forecast Wall</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+body{
+margin:0;
+padding:10px;
+font-family:Arial, sans-serif;
+background:url('https://github.com/ApexWx/ApexWx.github.io/blob/master/seamless-background-simply-sky.jpg?raw=true') repeat;
+color:black;
+}
+
+.container{max-width:1240px;margin:auto;}
+
+table{width:100%;border-collapse:collapse;}
+
+td{font-weight:bold;padding:10px;vertical-align:top;}
+
+img{width:100%;height:auto;max-width:600px;}
+
+.sectiontitle{text-align:center;font-size:18px;}
+
+hr{border:1px solid #444;}
+
+@media screen and (max-width:900px){
+td{display:block;width:100%;text-align:center;}
+img{max-width:100%;}
+}
+</style> </head>
+  <body>
+    <div class="container"> <a id="top"></a>
+      <table>
+        <tbody>
+          <tr>
+            <td class="sectiontitle">Forecast Wall</td>
+          </tr>
+        </tbody>
+      </table>
+      <hr>
+      <div id="forecastBlocks"></div>
+    </div>
+    <script>
+
+const data=[
+{t1:"NOAA Rain Forecast",i1:"https://www.weather.gov/images/erh/gis/CONUS_QPF.png",t2:"NOAA Snow Forecast",i2:"https://www.weather.gov/images/erh/gis/CONUS_Snow.png"},
+{t1:"NOAA Ice Forecast",i1:"https://www.weather.gov/images/erh/gis/CONUS_Ice.png",t2:"NOAA Wind Gust Forecast",i2:"https://www.weather.gov/images/erh/gis/CONUS_WGust.png"},
+{t1:"WPC/NDFD Surface Forecast 12hr",i1:"http://www.wpc.ncep.noaa.gov/basicwx/94fndfd.gif",t2:"WPC/NDFD Surface Forecast 24hr",i2:"http://www.wpc.ncep.noaa.gov/basicwx/96fndfd.gif"},
+{t1:"WPC/NDFD Surface Forecast 36hr",i1:"http://www.wpc.ncep.noaa.gov/basicwx/98fndfd.gif",t2:"WPC/NDFD Surface Forecast 48hr",i2:"http://www.wpc.ncep.noaa.gov/basicwx/99fndfd.gif"},
+{t1:"NOAA 500MB Map Forecast Day 3",i1:"http://www.wpc.ncep.noaa.gov/medr/d3500wbg.gif",t2:"NOAA Surface Map Forecast Day 3",i2:"http://www.wpc.ncep.noaa.gov/medr/9jhwbg_conus.gif"},
+{t1:"NOAA 500MB Map Forecast Day 4",i1:"http://www.wpc.ncep.noaa.gov/medr/d4500wbg.gif",t2:"NOAA Surface Map Forecast Day 4",i2:"http://www.wpc.ncep.noaa.gov/medr/9khwbg_conus.gif"},
+{t1:"NOAA 500MB Map Forecast Day 5",i1:"http://www.wpc.ncep.noaa.gov/medr/d5500wbg.gif",t2:"NOAA Surface Map Forecast Day 5",i2:"http://www.wpc.ncep.noaa.gov/medr/9lhwbg_conus.gif"},
+{t1:"NOAA 500MB Map Forecast Day 6",i1:"http://www.wpc.ncep.noaa.gov/medr/d6500wbg.gif",t2:"NOAA Surface Map Forecast Day 6",i2:"http://www.wpc.ncep.noaa.gov/medr/9mhwbg_conus.gif"},
+{t1:"NOAA 500MB Map Forecast Day 7",i1:"http://www.wpc.ncep.noaa.gov/medr/d7500wbg.gif",t2:"NOAA Surface Map Forecast Day 7",i2:"http://www.wpc.ncep.noaa.gov/medr/9nhwbg_conus.gif"},
+{t1:"SPC Severe Thunderstorm Outlook Day 1",i1:"https://www.spc.noaa.gov/products/outlook/day1otlk_1630.png",t2:"SPC Severe Thunderstorm Outlook Day 2",i2:"https://www.spc.noaa.gov/products/outlook/day2otlk_0600.png"},
+{t1:"SPC Severe Thunderstorm Outlook Day 3",i1:"https://www.spc.noaa.gov/products/outlook/day3otlk_0730.png",t2:"SPC Severe Thunderstorm Outlook Day 4",i2:"http://www.spc.noaa.gov/products/exper/day4-8/day4prob.gif"},
+{t1:"SPC Severe Thunderstorm Outlook Day 5",i1:"http://www.spc.noaa.gov/products/exper/day4-8/day5prob.gif",t2:"SPC Severe Thunderstorm Outlook Day 6",i2:"http://www.spc.noaa.gov/products/exper/day4-8/day6prob.gif"},
+{t1:"SPC Severe Thunderstorm Outlook Day 7",i1:"http://www.spc.noaa.gov/products/exper/day4-8/day7prob.gif",t2:"SPC Severe Thunderstorm Outlook Day 8",i2:"http://www.spc.noaa.gov/products/exper/day4-8/day8prob.gif"},
+{t1:"CPC Day 6-10 Temperature",i1:"https://www.cpc.ncep.noaa.gov/products/predictions/610day/610temp.new.gif",t2:"CPC Day 8-14 Temperature",i2:"https://www.cpc.ncep.noaa.gov/products/predictions/814day/814temp.new.gif"},
+{t1:"CPC Day 6-10 Precipitation",i1:"https://www.cpc.ncep.noaa.gov/products/predictions/610day/610prcp.new.gif",t2:"CPC Day 8-14 Precipitation",i2:"https://www.cpc.ncep.noaa.gov/products/predictions/814day/814prcp.new.gif"}
+];
+
+const container=document.getElementById("forecastBlocks");
+
+data.forEach(d=>{
+container.innerHTML+=`
+<table>
+<tr>
+<td>
+<center>${d.t1}</center>
+<img loading="lazy" decoding="async" src="${d.i1}">
+</td>
+
+<td>
+<center>${d.t2}</center>
+<img loading="lazy" decoding="async" src="${d.i2}">
+</td>
+</tr>
+
+<tr>
+<td colspan="2"><center><a href="#top">Top of Page</a></center></td>
+</tr>
+</table>
+<hr>
+`;
+});
+
+function refreshImages(){
+document.querySelectorAll("img").forEach(img=>{
+let src=img.src.split("?")[0];
+img.src=src+"?t="+new Date().getTime();
+});
+}
+
+setInterval(refreshImages,300000);
+
+</script> </body>
+</html>

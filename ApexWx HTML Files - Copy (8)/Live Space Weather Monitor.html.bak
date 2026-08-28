@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Space Weather Monitor</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #0d1a26;
+            color: #e6e6e6;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        h1 {
+            color: #4CAF50;
+            text-align: center;
+        }
+        #status {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+            padding: 10px 20px;
+            border-radius: 5px;
+            background-color: #1a2f47;
+            border-left: 5px solid #4CAF50;
+        }
+        #weather-container {
+            width: 90%;
+            max-width: 800px;
+            background-color: #1a2f47;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+        .event-card {
+            border: 1px solid #3a5775;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            background-color: #0d1a26;
+        }
+        .event-card h3 {
+            color: #64B5F6;
+            margin-top: 0;
+            border-bottom: 1px dashed #3a5775;
+            padding-bottom: 5px;
+        }
+        .event-card p {
+            margin: 5px 0;
+        }
+        .event-card p strong {
+            color: #E6E6FA; /* Light Lavender */
+        }
+        .no-data {
+            text-align: center;
+            font-size: 1.5em;
+            color: #FFC107;
+            padding: 30px;
+        }
+    </style>
+  </head>
+  <body>
+    <h1>🚀 Live Geomagnetic Storm (GST) Monitor</h1>
+    <div id="status"> Last Updated: <span id="last-updated">...</span> </div>
+    <div id="weather-container">
+      <p class="no-data">Loading space weather data...</p>
+    </div>
+    <script>
+        // --- Configuration ---
+        const NASA_DONKI_API_URL = "https://api.nasa.gov/DONKI/GST";
+        // NOTE: Using the 'DEMO_KEY' is allowed for educational and testing purposes.
+        // For production, you must register for your own key on the NASA API website.
+        const API_KEY = "DEMO_KEY"; 
+        // Update frequency in milliseconds (e.g., 5 minutes = 5 * 60 * 1000 = 300000)
+        const UPDATE_INTERVAL = 300000; // 5 minutes
+
+        // --- Utility Functions ---
+
+        /**
+         * Fetches and displays Geomagnetic Storm (GST) data.
+         */
+        async function fetchSpaceWeather() {
+            const container = document.getElementById('weather-container');
+            const statusElement = document.getElementById('status');
+            const lastUpdatedElement = document.getElementById('last-updated');
+            
+            // Get today's date for the API query
+            const today = new Date().toISOString().split('T')[0];
+            // Fetch for events that started in the last 7 days
+            const sevenDaysAgo = new Date(Date.now() - 7 * 24 * 60 * 60 * 1000).toISOString().split('T')[0];
+            
+            const apiUrl = `${NASA_DONKI_API_URL}?startDate=${sevenDaysAgo}&endDate=${today}&api_key=${API_KEY}`;
+
+            try {
+                // Update status while fetching
+                container.innerHTML = '<p class="no-data">Fetching new data...</p>';
+                statusElement.style.borderLeftColor = '#FFC107'; // Yellow for loading
+
+                const response = await fetch(apiUrl);
+
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+
+                const data = await response.json();
+                renderSpaceWeather(data, container);
+
+                // Update status on success
+                lastUpdatedElement.textContent = new Date().toLocaleTimeString();
+                statusElement.style.borderLeftColor = '#4CAF50'; // Green for success
+
+            } catch (error) {
+                console.error("Could not fetch space weather data: ", error);
+                container.innerHTML = '<p class="no-data" style="color: #F44336;">' + 
+                                       '🚨 Error loading data. Please check console. ' + 
+                                       'API might be down or rate limit exceeded. 🚨</p>';
+                statusElement.style.borderLeftColor = '#F44336'; // Red for error
+            }
+        }
+
+        /**
+         * Renders the fetched data onto the webpage.
+         * @param {Array} data - The array of Geomagnetic Storm objects.
+         * @param {HTMLElement} container - The DOM element to render into.
+         */
+        function renderSpaceWeather(data, container) {
+            container.innerHTML = ''; // Clear previous content
+
+            if (data.length === 0) {
+                container.innerHTML = '<p class="no-data">No Geomagnetic Storm (GST) events reported in the last 7 days.</p>';
+                return;
+            }
+
+            // 
+
+            data.forEach((event, index) => {
+                const card = document.createElement('div');
+                card.className = 'event-card';
+                
+                // Get the Kp Index and the NOAA G-Scale for the strongest storm period
+                const kpIndex = event.allKpIndex?.[0] || { kpIndex: 'N/A', gScale: 'N/A' };
+
+                card.innerHTML = `
+                    <h3>Geomagnetic Storm Event #${data.length - index}</h3>
+                    <p><strong>Start Time (UTC):</strong> ${new Date(event.startTime).toUTCString()}</p>
+                    <p><strong>Observed Kp Index:</strong> ${kpIndex.kpIndex} 
+                       <span style="color: ${kpIndex.gScale === 'G1' ? '#FFC107' : kpIndex.gScale === 'G2' ? '#FF9800' : kpIndex.gScale === 'G3' ? '#F44336' : kpIndex.gScale === 'G4' ? '#9C27B0' : kpIndex.gScale === 'G5' ? '#000000' : '#E6E6FA'};">
+                       (${kpIndex.gScale || 'No Scale'})</span></p>
+                    <p><strong>Classification:</strong> ${event.gstID.includes('GST') ? 'Reported Geomagnetic Storm' : 'Event Reported'}</p>
+                    <p><strong>Message:</strong> ${event.messageType || 'No message available.'}</p>
+                    <p><strong>Source:</strong> NOAA/SWPC</p>
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        // --- Initialization and Auto-Update ---
+
+        // 1. Fetch data immediately upon page load
+        fetchSpaceWeather();
+
+        // 2. Set up regular updates
+        setInterval(fetchSpaceWeather, UPDATE_INTERVAL);
+
+    </script>
+  </body>
+</html>

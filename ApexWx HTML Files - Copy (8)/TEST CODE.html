@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Test NWS Multi-Alert Display</title>
+    <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+
+    .alert-container {
+      margin-top: 1em;
+    }
+
+    .alert-box {
+      border-left: 5px solid;
+      padding: 12px 15px;
+      border-radius: 4px;
+      font-size: 1rem;
+      line-height: 1.4;
+      background-color: #f9f9f9;
+      margin-bottom: 1em;
+    }
+
+    .alert-minor {
+      border-color: #ffcc00;
+      background-color: #fff8e1;
+    }
+
+    .alert-moderate {
+      border-color: #ffa726;
+      background-color: #fff3e0;
+    }
+
+    .alert-severe {
+      border-color: #ef5350;
+      background-color: #fdecea;
+    }
+
+    .alert-extreme {
+      border-color: #b71c1c;
+      background-color: #fce4e4;
+    }
+
+    .alert-box strong {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .alert-close {
+      background: transparent;
+      border: none;
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #444;
+      float: right;
+      cursor: pointer;
+      margin: -5px -8px 5px 8px;
+    }
+
+    .alert-close:hover {
+      color: #000;
+    }
+
+    .alert-toggle {
+      background: none;
+      border: none;
+      color: #0056b3;
+      text-decoration: underline;
+      cursor: pointer;
+      font-size: 0.9rem;
+      margin-top: 6px;
+      padding: 0;
+    }
+  </style>
+  </head>
+  <body>
+    <h2>🧪 Test NWS Multiple Alerts</h2>
+    <div id="weatherAlert" class="alert-container">Loading alerts...</div>
+    <script>
+  async function fetchMockAlerts() {
+    const data = {
+      features: [
+        {
+          id: "mock-1",
+          properties: {
+            headline: "Severe Thunderstorm Warning",
+            description: "A severe thunderstorm is occurring with damaging winds and hail possible. Take shelter now.",
+            severity: "Severe",
+            url: "https://www.weather.gov/",
+            sent: new Date().toISOString()
+          }
+        },
+        {
+          id: "mock-2",
+          properties: {
+            headline: "Flood Advisory",
+            description: "Excessive rainfall is causing flooding in low-lying and poor drainage areas. Do not drive through flooded roads.",
+            severity: "Moderate",
+            url: "https://www.weather.gov/",
+            sent: new Date().toISOString()
+          }
+        }
+      ]
+    };
+
+    const alertDiv = document.getElementById("weatherAlert");
+    alertDiv.innerHTML = "";
+
+    data.features.forEach((feature) => {
+      const alert = feature.properties;
+      const alertId = feature.id;
+
+      const title = alert.headline;
+      const description = alert.description;
+      const severityRaw = alert.severity || "Unknown";
+      const severity = severityRaw.toLowerCase();
+      const link = alert.url;
+      const updated = new Date(alert.sent).toLocaleString('en-US', {
+        dateStyle: 'medium',
+        timeStyle: 'short',
+        timeZone: 'America/New_York'
+      });
+
+      const severityClass = {
+        minor: "alert-minor",
+        moderate: "alert-moderate",
+        severe: "alert-severe",
+        extreme: "alert-extreme"
+      }[severity] || "alert-moderate";
+
+      const shouldCollapse = description.length > 300 && !["severe", "extreme"].includes(severity);
+      const shortText = description.slice(0, 300).trim() + "...";
+
+      const alertBox = document.createElement("div");
+      alertBox.className = `alert-box ${severityClass}`;
+      alertBox.setAttribute("data-alert-id", alertId);
+      alertBox.innerHTML = `
+        <button class="alert-close" onclick="this.parentElement.remove()" aria-label="Dismiss alert">&times;</button>
+        <strong>⚠️ Weather Alert (${severityRaw}):</strong>
+        <strong>${title}</strong>
+        <div class="alert-description" id="desc-${alertId}">
+          ${shouldCollapse ? shortText : description}
+        </div>
+        ${shouldCollapse ? `<button class="alert-toggle" onclick="toggleAlert('${alertId}', \`${description.replace(/`/g, "\`")}\`)">Read more</button>` : ""}
+        <div style="margin-top: 8px;">
+          <a href="${link}" target="_blank" rel="noopener">View full alert from NWS</a>
+        </div>
+        <div style="margin-top: 6px; font-size: 0.9em; color: #555;">
+          Last updated: ${updated}
+        </div>
+      `;
+      alertDiv.appendChild(alertBox);
+    });
+  }
+
+  function toggleAlert(alertId, fullText) {
+    const descEl = document.getElementById(`desc-${alertId}`);
+    const btn = descEl.nextElementSibling;
+    const isCollapsed = btn.textContent === "Read more";
+
+    if (isCollapsed) {
+      descEl.textContent = fullText;
+      btn.textContent = "Show less";
+    } else {
+      descEl.textContent = fullText.slice(0, 300).trim() + "...";
+      btn.textContent = "Read more";
+    }
+  }
+
+  fetchMockAlerts();
+</script>
+  </body>
+</html>

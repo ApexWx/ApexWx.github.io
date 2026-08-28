@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Space Weather Dashboard</title>
+    <style>
+    :root {
+      --bg-main: #020611;
+      --bg-card: rgba(255,255,255,0.06);
+      --text-main: #e6ecff;
+      --text-muted: #aeb8ff;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        animation: none !important;
+        transition: none !important;
+        scroll-behavior: auto !important;
+      }
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      background: radial-gradient(circle at top, #0b1d3a, var(--bg-main) 70%);
+      color: var(--text-main);
+      line-height: 1.6;
+    }
+
+    header {
+      padding: 1.5rem;
+      text-align: center;
+      background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0));
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
+      letter-spacing: 0.05em;
+    }
+
+    header p {
+      margin-top: 0.5rem;
+      color: #b9c6ff;
+    }
+
+    main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1.5rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .card {
+      background: var(--bg-card);
+      border-radius: 18px;
+      padding: 1.25rem;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+      overflow: hidden; /* prevents content overflow */
+    }
+
+    .card h2 {
+      margin-top: 0;
+      font-size: 1.1rem;
+      color: #dfe5ff;
+    }
+
+    .value {
+      font-size: 2rem;
+      font-weight: 600;
+      margin: 0.5rem 0;
+      word-break: break-word; /* fixes X-ray overflow */
+    }
+
+    .meta {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    iframe {
+      width: 100%;
+      height: 260px;
+      border: none;
+      border-radius: 12px;
+    }
+
+    canvas {
+      width: 100% !important;
+      height: 200px !important;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.85rem;
+      color: #9aa6ff;
+    }
+
+    .loading {
+      opacity: 0.6;
+      font-style: italic;
+    }
+  </style>
+  </head>
+  <body>
+    <header role="banner">
+      <h1>Space Weather Dashboard</h1>
+      <p>Live solar and geomagnetic conditions affecting Earth</p>
+    </header>
+    <main role="main">
+      <section class="card" id="kp-card" aria-labelledby="kp-heading">
+        <h2 id="kp-heading">Geomagnetic Activity (Kp Index)</h2>
+        <div class="value loading" aria-live="polite">Loading…</div>
+        <div class="meta">Aurora visibility increases above Kp 5</div>
+        <canvas id="kpChart" aria-label="Kp index trend chart" role="img"></canvas>
+      </section>
+      <section class="card" id="solar-wind-card" aria-labelledby="wind-heading">
+        <h2 id="wind-heading">Solar Wind &amp; CME Conditions</h2>
+        <div class="value loading">Loading…</div>
+        <div class="meta">Speed (km/s) · Density (p/cm³)</div>
+      </section>
+      <section class="card" id="xray-card" aria-labelledby="xray-heading">
+        <h2 id="xray-heading">Solar X-ray Activity</h2>
+        <div class="value loading">Loading…</div>
+        <div class="meta">GOES X-ray flux (W/m²)</div>
+        <canvas id="xrayChart" aria-label="Solar X-ray flux trend" role="img"></canvas>
+      </section>
+      <section class="card" aria-labelledby="aurora-heading">
+        <h2 id="aurora-heading">Aurora Forecast Map</h2>
+        <iframe title="NOAA Aurora Forecast Map" src="https://services.swpc.noaa.gov/images/animations/ovation/north/latest.jpg"
+          aria-describedby="aurora-desc"></iframe>
+        <div class="meta" id="aurora-desc">Estimated auroral oval for the
+          Northern Hemisphere</div>
+      </section>
+      <section class="card" id="alerts-card" aria-labelledby="alerts-heading">
+        <h2 id="alerts-heading">Space Weather Alerts</h2>
+        <div class="meta loading">Fetching alerts…</div>
+      </section>
+    </main>
+    <footer role="contentinfo"> Data sources: NOAA Space Weather Prediction
+      Center (SWPC)<br>
+      Educational / informational use only
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+  const KP_URL = "https://services.swpc.noaa.gov/json/planetary_k_index_1m.json";
+  const XRAY_URL = "https://services.swpc.noaa.gov/json/goes/primary/xrays-1-day.json";
+  const WIND_URL = "https://services.swpc.noaa.gov/json/solar-wind/plasma-1-day.json";
+  const ALERTS_URL = "https://services.swpc.noaa.gov/products/alerts.json";
+
+  let kpChart, xrayChart;
+
+  async function loadKp() {
+    const res = await fetch(KP_URL);
+    const data = await res.json();
+    const latest = data[data.length - 1];
+    document.querySelector("#kp-card .value").textContent = latest.kp_index;
+
+    const labels = data.slice(-24).map(d => d.time_tag.slice(11,16));
+    const values = data.slice(-24).map(d => d.kp_index);
+
+    if (!kpChart) {
+      kpChart = new Chart(document.getElementById("kpChart"), {
+        type: 'line',
+        data: { labels, datasets: [{ data: values, tension: 0.3 }] },
+        options: { plugins: { legend: { display: false } }, scales: { y: { beginAtZero: true } } }
+      });
+    } else {
+      kpChart.data.labels = labels;
+      kpChart.data.datasets[0].data = values;
+      kpChart.update();
+    }
+  }
+
+  async function loadSolarWind() {
+    const res = await fetch(WIND_URL);
+    const data = await res.json();
+    const latest = data[data.length - 1];
+    document.querySelector("#solar-wind-card .value").textContent = `${latest.speed} km/s · ${latest.density}`;
+  }
+
+  async function loadXray() {
+    const res = await fetch(XRAY_URL);
+    const data = await res.json();
+    const latest = data[data.length - 1];
+    document.querySelector("#xray-card .value").textContent = latest.flux;
+
+    const labels = data.slice(-24).map(d => d.time_tag.slice(11,16));
+    const values = data.slice(-24).map(d => d.flux);
+
+    if (!xrayChart) {
+      xrayChart = new Chart(document.getElementById("xrayChart"), {
+        type: 'line',
+        data: { labels, datasets: [{ data: values, tension: 0.3 }] },
+        options: { plugins: { legend: { display: false } } }
+      });
+    } else {
+      xrayChart.data.labels = labels;
+      xrayChart.data.datasets[0].data = values;
+      xrayChart.update();
+    }
+  }
+
+  async function loadAlerts() {
+    const container = document.querySelector("#alerts-card .meta");
+    container.classList.remove("loading");
+    const res = await fetch(ALERTS_URL);
+    const data = await res.json();
+    if (!data || data.length === 0) {
+      container.textContent = "No active alerts.";
+      return;
+    }
+    container.innerHTML = data.slice(0,3).map(a => `<strong>${a.product_id}</strong>: ${a.message}`).join('<br><br>');
+  }
+
+  function refreshAll() {
+    loadKp();
+    loadSolarWind();
+    loadXray();
+    loadAlerts();
+  }
+
+  refreshAll();
+  setInterval(refreshAll, 5 * 60 * 1000);
+</script>
+  </body>
+</html>

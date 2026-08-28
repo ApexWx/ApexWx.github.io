@@ -1,0 +1,24 @@
+<div style="font-size: 12px;"><span style="color: #999999;"><em><br>
+                                    <br>
+                                  </em></span></div>
+                              <div style="font-size: 16px; color: #999999;"><strong
+
+                                  style="color: black;">Regional Satellite</strong><em
+
+                                  style="font-size: 16px;"><br>
+                                  <a href="https://weather.cod.edu/data/satellite/local/New_Brunswick/current/New_Brunswick.truecolor.jpg"><img
+
+                                      src="https://weather.cod.edu/data/satellite/local/New_Brunswick/current/New_Brunswick.truecolor.jpg"
+
+                                      alt="Regional Visible Satellite" title="Click for larger image"
+
+                                      style="width: auto;"></a><br>
+                                </em></div>
+                              <div style="font-size: 16px; color: #999999;"><em
+
+                                  style="font-size: 12px;">College of DuPage /
+                                  NOAA GOES-19 Imagery (Day; Visible / Night:
+                                  Infrared)<br>
+                                  <br>
+                                  <div style="font-soze: 12px;"> </div>
+                                </em></div>

@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apex Wx | Fort Kent &amp; Saint John Valley Weather</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=Roboto+Mono:wght@500&amp;display=swap"
+      rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #0d1117;
+            --card-bg: rgba(22, 27, 34, 0.9);
+            --border-color: #30363d;
+            --accent-blue: #58a6ff; /* High contrast blue */
+            --text-main: #e6edf3;
+            --text-muted: #8b949e;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background: var(--bg-dark) url('https://github.com/ApexWx/ApexWx.github.io/blob/master/seamless-background-simply-sky.jpg?raw=true') repeat;
+            color: var(--text-main);
+            line-height: 1.5;
+        }
+
+        /* STICKY HEADER & NAV */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(13, 17, 23, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-color);
+            padding: 10px 0;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .nav-container a {
+            color: var(--accent-blue);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            padding: 5px 10px;
+            border-radius: 4px;
+            transition: background 0.2s;
+        }
+
+        .nav-container a:hover {
+            background: rgba(88, 166, 255, 0.1);
+        }
+
+        /* MAIN LAYOUT */
+        .dashboard {
+            display: grid;
+            grid-template-columns: 300px 1fr 300px;
+            gap: 20px;
+            max-width: 1400px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+
+        /* CARD STYLE FOR WIDGETS */
+        .widget-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 15px;
+            margin-bottom: 20px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+            text-align: center;
+        }
+
+        .widget-card h3 {
+            font-size: 0.9rem;
+            color: var(--accent-blue);
+            text-transform: uppercase;
+            margin-top: 0;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+        }
+
+        /* BANNER & CENTER HEADERS */
+        .hero-banner {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .hero-banner img {
+            max-width: 100%;
+            border-radius: 8px;
+        }
+
+        /* IMAGES */
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 6px;
+            transition: transform 0.2s;
+        }
+
+        img:hover {
+            transform: scale(1.02);
+        }
+
+        /* GRID FOR CURRENT CONDITIONS */
+        .current-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        /* RESPONSIVE FIXES */
+        @media (max-width: 1024px) {
+            .dashboard {
+                grid-template-columns: 1fr;
+            }
+            .column.side {
+                order: 2;
+            }
+        }
+
+        .translate-links a {
+            color: #fff;
+            font-size: 0.8rem;
+            margin: 0 10px;
+        }
+
+        .footer-credits {
+            text-align: center;
+            padding: 40px;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav class="nav-container"> <a href="https://apexwx.github.io/reg.html">Regional</a>
+        <a href="https://apexwx.github.io/nat.html">National</a> <a href="https://apexwx.github.io/trop.html">Tropical</a>
+        <a href="https://apexwx.github.io/for.html">Forecast</a> <a href="https://apexwx.github.io/space.html">Space</a>
+        <a href="https://ambientweather.net/dashboard/16e0681b266993eb92230c42d89f3fd5">Live
+          Dashboard</a> </nav>
+    </header>
+    <div class="dashboard">
+      <aside class="column side">
+        <div class="widget-card">
+          <h3>Air Quality Index</h3>
+          <iframe src="https://widget.airnow.gov/aq-dial-widget/?city=Fort%20Kent&amp;state=ME&amp;country=USA"
+            style="border: none; border-radius: 15px;" height="230" width="230"></iframe>
+        </div>
+        <div class="widget-card">
+          <h3>NWS Caribou Hazards</h3>
+          <a href="https://www.weather.gov/car/"><img src="https://www.weather.gov/wwamap/png/car.png"
+              alt="Hazards Map"></a> </div>
+        <div class="widget-card">
+          <h3>Current Radar</h3>
+          <a href="https://radar.weather.gov/"><img src="https://radar.weather.gov/ridge/standard/KCBW_loop.gif"
+              alt="Local Radar"></a> </div>
+        <div class="widget-card">
+          <h3>Today's Temps</h3>
+          <p>Highs</p>
+          <img src="https://www.weather.gov/images/car/winter/MaxT_1.png" alt="Today's High">
+          <p>Lows</p>
+          <img src="https://www.weather.gov/images/car/winter/MinT_2.png" alt="Tonight's Low">
+        </div>
+      </aside>
+      <main class="column main">
+        <div class="hero-banner"> <img src="https://raw.githubusercontent.com/ApexWx/ApexWx.github.io/master/Apex%20banner.jpg"
+            alt="Apex Wx Banner">
+          <h1>Apex Wx</h1>
+          <p>Fort Kent &amp; The Saint John Valley, Maine</p>
+          <div class="translate-links"> <a href="#">Traduire en français</a> |
+            <a href="#">Traducir al español</a> </div>
+        </div>
+        <div class="widget-card">
+          <h3>Current Conditions Summary</h3>
+          <div class="current-grid"> <img src="https://www.weather.gov/images/car/obs/CurrentT.png"
+              alt="Temp"> <img src="https://www.weather.gov/images/car/obs/CurrentDewPt.png"
+              alt="Dew Point"> <img src="https://www.weather.gov/images/car/obs/CurrentRH.png"
+              alt="Humidity"> <img src="https://www.weather.gov/images/car/obs/CurrentGusts.png"
+              alt="Wind Gusts"> </div>
+          <p><small>Updates Hourly</small></p>
+        </div>
+        <div class="widget-card">
+          <h3>Winter Storm Severity (WSSI)</h3>
+          <img src="https://www.wpc.ncep.noaa.gov/wwd/wssi/images/WSSI_Overall_Day1_CAR_Day1.png"
+            style="width: 100%; max-width: 600px;"> </div>
+        <div class="widget-card">
+          <h3>Snowfall Outlook</h3>
+          <img src="https://www.wpc.ncep.noaa.gov/Prob_Precip/idss-map/mapgen.php?office=CAR&amp;summary=true&amp;product=expected"
+            style="width: 100%; max-width: 600px;"> </div>
+      </main>
+      <aside class="column side">
+        <div class="widget-card">
+          <h3>Severe Weather Outlook</h3>
+          <img src="https://www.spc.noaa.gov/partners/outlooks/state/images/ME_swody1.png"
+            alt="Severe Outlook"> </div>
+        <div class="widget-card">
+          <h3>Fort Kent Outdoor Center</h3>
+          <a href="https://webcam.fortkentoc.org/webcam/image.jpg"> <img src="https://webcam.fortkentoc.org/webcam/image.jpg"
+              alt="Trail Cam"> </a>
+          <p><small>47°23'N / 68°59'W</small></p>
+        </div>
+        <div class="widget-card">
+          <h3>National Lows</h3>
+          <img src="https://graphical.weather.gov/GraphicalNDFD.php?width=515&amp;timezone=EDT&amp;sector=CONUS&amp;element=mint&amp;n=1"
+            alt="US Lows"> </div>
+        <div class="widget-card">
+          <h3>Fire Weather</h3>
+          <img src="https://www.spc.noaa.gov/partners/outlooks/state/images/ME_fwody1.png"
+            alt="Fire Outlook"> </div>
+      </aside>
+    </div>
+    <footer class="footer-credits">
+      <p>Weather information for Fort Kent since 2009. Member APRSWXNET/CWOP
+        Programs.</p>
+      <p>© 2026 Apex Wx</p>
+    </footer>
+  </body>
+</html>

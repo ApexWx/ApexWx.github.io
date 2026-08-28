@@ -1,0 +1,140 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Forecast Operations Wall</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<style>
+body{
+margin:0;
+padding:10px;
+font-family:Arial,sans-serif;
+background:#e8f2ff;
+-webkit-overflow-scrolling:touch;
+}
+
+.container{
+max-width:1240px;
+margin:auto;
+}
+
+img{
+width:100%;
+max-width:600px;
+height:auto;
+display:block;
+}
+
+table{
+width:100%;
+border-collapse:collapse;
+}
+
+td{
+font-weight:bold;
+padding:10px;
+vertical-align:top;
+}
+
+.nav{
+position:sticky;
+top:0;
+background:white;
+z-index:1000;
+box-shadow:0 2px 6px rgba(0,0,0,.2);
+}
+
+.nav td{
+font-size:13px;
+white-space:nowrap;
+}
+
+@media(max-width:900px){
+td{
+display:block;
+width:100%;
+text-align:center;
+}
+}
+</style>
+</head>
+
+<body>
+
+<table class="nav" border="2">
+<tr>
+<td><a href="?wall=wall-a">Wall-A</a></td>
+<td><a href="?wall=radar">Radar</a></td>
+<td><a href="?wall=satellite">Satellite</a></td>
+<td><a href="?wall=tropical">Tropical</a></td>
+</tr>
+</table>
+
+<div class="container">
+
+<h2 id="title"></h2>
+<div id="wallContent"></div>
+
+</div>
+
+<script>
+
+/* Detect wall from URL */
+const params = new URLSearchParams(window.location.search);
+const wall = params.get("wall") || "wall-a";
+
+/* Load wall data file */
+const script = document.createElement("script");
+script.src = "walls/" + wall + ".js";
+document.body.appendChild(script);
+
+/* Build wall layout */
+function buildWall(title,data){
+
+document.getElementById("title").innerText = title;
+
+let html="";
+
+data.forEach(d=>{
+
+html+=`
+<table>
+<tr>
+
+<td>
+<center>${d[0]}</center>
+<img loading="lazy" decoding="async" src="${d[1]}">
+</td>
+
+<td>
+<center>${d[2]}</center>
+<img loading="lazy" decoding="async" src="${d[3]}">
+</td>
+
+</tr>
+</table>
+<hr>
+`;
+
+});
+
+document.getElementById("wallContent").innerHTML = html;
+
+}
+
+/* Auto refresh maps every 5 minutes */
+function refreshImages(){
+document.querySelectorAll("img").forEach(img=>{
+const base = img.src.split("?")[0];
+img.src = base + "?t=" + Date.now();
+});
+}
+
+setInterval(refreshImages,300000);
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>NWS Alerts for Lancaster, PA</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+    body {
+      font-family: system-ui, sans-serif;
+      margin: 1rem;
+      background: #f0f0f5;
+    }
+
+    #weatherAlertsContainer {
+      max-width: 600px;
+      margin: auto;
+    }
+
+    .alert-box {
+      background: #fff;
+      border-left: 6px solid #ccc;
+      padding: 1em;
+      margin: 1em 0;
+      border-radius: 6px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .alert-title {
+      font-weight: bold;
+      font-size: 1.1em;
+      margin-bottom: 0.5em;
+    }
+
+    .alert-desc {
+      margin-bottom: 0.5em;
+    }
+
+    .dismiss-btn {
+      background: #ccc;
+      border: none;
+      padding: 0.4em 0.7em;
+      border-radius: 4px;
+      font-size: 0.9em;
+      cursor: pointer;
+    }
+
+    @media (max-width: 600px) {
+      body {
+        margin: 0.5rem;
+      }
+    }
+  </style>
+  </head>
+  <body>
+    <h2 style="text-align: center;">NWS Alerts – Lancaster, PA</h2>
+    <div id="weatherAlertsContainer"></div>
+    <script>
+    const zone = "PAZ066"; // Lancaster, PA
+    const containerId = "weatherAlertsContainer";
+    const updateInterval = 5 * 60 * 1000; // 5 minutes
+
+    async function fetchNWSAlerts() {
+      const apiURL = `https://api.weather.gov/alerts/active/zone/${zone}`;
+      try {
+        const response = await fetch(apiURL);
+        const data = await response.json();
+        renderAlerts(data.features);
+      } catch (error) {
+        console.error("Error fetching NWS alerts:", error);
+      }
+    }
+
+    function renderAlerts(alerts) {
+      const container = document.getElementById(containerId);
+      const dismissed = JSON.parse(localStorage.getItem("dismissedAlerts") || "[]");
+      container.innerHTML = "";
+
+      const activeAlerts = alerts.filter(alert => !dismissed.includes(alert.id));
+      if (activeAlerts.length === 0) {
+        const none = document.createElement("p");
+        none.textContent = "No active alerts.";
+        container.appendChild(none);
+        return;
+      }
+
+      activeAlerts.forEach(alert => {
+        const box = document.createElement("div");
+        box.className = "alert-box";
+        box.style.borderLeftColor = getSeverityColor(alert.properties.severity);
+
+        const title = document.createElement("div");
+        title.className = "alert-title";
+        title.textContent = alert.properties.event;
+
+        const desc = document.createElement("div");
+        desc.className = "alert-desc";
+        desc.textContent = alert.properties.headline || alert.properties.description;
+
+        const dismiss = document.createElement("button");
+        dismiss.className = "dismiss-btn";
+        dismiss.textContent = "Dismiss";
+        dismiss.onclick = () => {
+          dismissed.push(alert.id);
+          localStorage.setItem("dismissedAlerts", JSON.stringify(dismissed));
+          renderAlerts(alerts);
+        };
+
+        box.appendChild(title);
+        box.appendChild(desc);
+        box.appendChild(dismiss);
+        container.appendChild(box);
+      });
+    }
+
+    function getSeverityColor(severity) {
+      switch (severity) {
+        case "Extreme": return "#d32f2f";
+        case "Severe": return "#f57c00";
+        case "Moderate": return "#fbc02d";
+        case "Minor": return "#1976d2";
+        default: return "#757575";
+      }
+    }
+
+    fetchNWSAlerts();
+    setInterval(fetchNWSAlerts, updateInterval);
+  </script>
+  </body>
+</html>

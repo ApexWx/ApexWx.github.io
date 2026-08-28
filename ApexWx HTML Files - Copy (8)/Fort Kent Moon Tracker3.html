@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fort Kent Moon Tracker</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Configure Tailwind to use Inter font and apply custom styles -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'celestial-blue': '#2c3e50',
+                        'moon-silver': '#ecf0f1',
+                        'star-yellow': '#f1c40f',
+                        'dark-bg': '#1e293b',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom styles for background and centered layout */
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 1rem;
+        }
+        .card {
+            background-color: rgba(255, 255, 255, 0.05); /* Semi-transparent background */
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        /* Custom spinner animation */
+        .spinner {
+            border: 4px solid rgba(255, 255, 255, 0.3);
+            border-top: 4px solid #f1c40f;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        #moon-canvas {
+            display: block;
+            margin: 0 auto;
+            border-radius: 50%;
+            background-color: #0d111c; /* Background color simulating night sky */
+        }
+    </style>
+  </head>
+  <body class="text-moon-silver">
+    <div id="app-container" class="w-full max-w-2xl">
+      <!-- Header -->
+      <header class="text-center mb-8">
+        <h1 class="text-4xl sm:text-5xl font-extrabold text-star-yellow drop-shadow-lg">
+          Fort Kent Moon Tracker </h1>
+        <p class="text-lg text-gray-300 mt-2"> Aroostook County, Maine • Lat:
+          47.26° N, Long: -68.59° W </p>
+      </header>
+      <!-- Main Card Container -->
+      <div class="card p-6 md:p-8 rounded-2xl shadow-2xl space-y-6">
+        <!-- Date Selector -->
+        <div class="flex flex-col sm:flex-row items-center justify-between p-4 bg-celestial-blue/50 rounded-xl shadow-inner">
+          <label for="date-input" class="text-lg font-semibold mb-2 sm:mb-0 text-star-yellow">
+            Select Date: </label> <input id="date-input" class="p-3 rounded-lg border-2 border-celestial-blue bg-dark-bg text-moon-silver focus:ring-star-yellow focus:border-star-yellow transition w-full sm:w-auto cursor-pointer"
+            aria-label="Date selector for moon data" type="date"> </div>
+        <!-- Loading/Error State -->
+        <div id="status-message" class="hidden text-center p-6 rounded-xl bg-red-800/20 border border-red-700/50">
+          <!-- Status message (Loading spinner or Error text will go here) --> </div>
+        <!-- Moon Graphic Display -->
+        <div class="text-center p-4"> <canvas id="moon-canvas" width="120" height="120"
+            class="shadow-2xl ring-4 ring-star-yellow/30"></canvas> </div>
+        <!-- Astronomy Data Cards -->
+        <div id="data-container" class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+          <!-- Moonrise Card -->
+          <div class="data-card p-5 rounded-xl bg-celestial-blue/70 shadow-lg text-center transition hover:bg-celestial-blue/90">
+            <div class="text-4xl mb-2"> ☽
+              <!-- Moon Icon --> </div>
+            <p class="text-md font-medium text-gray-300">Moonrise</p>
+            <p id="moon-rise" class="text-3xl font-bold text-star-yellow mt-1">--:--</p>
+          </div>
+          <!-- Moonset Card -->
+          <div class="data-card p-5 rounded-xl bg-celestial-blue/70 shadow-lg text-center transition hover:bg-celestial-blue/90">
+            <div class="text-4xl mb-2"> ☾
+              <!-- Crescent Moon Icon --> </div>
+            <p class="text-md font-medium text-gray-300">Moonset</p>
+            <p id="moon-set" class="text-3xl font-bold text-star-yellow mt-1">--:--</p>
+          </div>
+          <!-- Moon Phase Card -->
+          <div class="data-card p-5 rounded-xl bg-celestial-blue/70 shadow-lg text-center transition hover:bg-celestial-blue/90">
+            <div class="text-4xl mb-2"> 🌒 </div>
+            <p class="text-md font-medium text-gray-300">Current Phase</p>
+            <p id="moon-phase" class="text-xl font-bold text-moon-silver mt-1">Loading...</p>
+          </div>
+        </div>
+        <!-- Detailed Illumination -->
+        <div class="p-4 bg-celestial-blue/50 rounded-xl text-center shadow-inner">
+          <p class="text-lg font-semibold text-gray-300">Illumination:</p>
+          <p id="illumination" class="text-2xl font-bold text-star-yellow mt-1">--%</p>
+        </div>
+        <div id="citation-container" class="text-xs text-gray-400 text-center pt-4 hidden">
+          <p id="citation-text"></p>
+        </div>
+      </div>
+    </div>
+    <!-- Firebase SDK Imports (Required Boilerplate) -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+        import { getAuth, signInAnonymously, signInWithCustomToken } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
+        import { getFirestore, setLogLevel } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+        
+        // Set log level to debug for console visibility
+        setLogLevel('Debug');
+
+        // Global variables provided by the environment
+        const appId = typeof __app_id !== 'undefined' ? __app_id : 'default-app-id';
+        const firebaseConfig = typeof __firebase_config !== 'undefined' ? JSON.parse(__firebase_config) : null;
+        const initialAuthToken = typeof __initial_auth_token !== 'undefined' ? __initial_auth_token : null;
+
+        let app = null;
+        let auth = null;
+        let db = null;
+        window.userId = null; 
+
+        // Initialize Firebase and authenticate
+        if (firebaseConfig) {
+            try {
+                app = initializeApp(firebaseConfig);
+                auth = getAuth(app);
+                db = getFirestore(app);
+
+                const signInPromise = initialAuthToken
+                    ? signInWithCustomToken(auth, initialAuthToken)
+                    : signInAnonymously(auth);
+                
+                signInPromise
+                    .then((userCredential) => {
+                        window.userId = userCredential.user.uid;
+                    })
+                    .catch((error) => {
+                        console.error("Firebase Sign-In Error (continuing without authentication):", error);
+                    });
+
+            } catch (e) {
+                console.error("Firebase Initialization Error (App will run without data saving):", e);
+            }
+        }
+    </script>
+    <!-- Application Logic -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const dateInput = document.getElementById('date-input');
+            const statusMessage = document.getElementById('status-message');
+            const dataContainer = document.getElementById('data-container');
+            const moonRiseElement = document.getElementById('moon-rise');
+            const moonSetElement = document.getElementById('moon-set');
+            const moonPhaseElement = document.getElementById('moon-phase');
+            const illuminationElement = document.getElementById('illumination');
+            const citationContainer = document.getElementById('citation-container');
+            const citationText = document.getElementById('citation-text');
+            
+            const moonCanvas = document.getElementById('moon-canvas');
+            const ctx = moonCanvas.getContext('2d');
+            const CANVAS_SIZE = 120;
+            const CENTER = CANVAS_SIZE / 2;
+            const RADIUS = 50;
+            const SHADOW_COLOR = '#2c3e50'; // Color of the dark/unilluminated portion
+
+            // Set default date to today
+            const today = new Date().toISOString().split('T')[0];
+            dateInput.value = today;
+
+            // Coordinates for Fort Kent, Maine (Source: Google Search)
+            const FORT_KENT_LAT = "47.26";
+            const FORT_KENT_LONG = "-68.59";
+            const API_KEY = "8ef618733d384d8b90a5f0a3e8ea4a5c"; // Using empty string for automatic key injection (removed hardcoded key)
+
+            // --- UI Functions ---
+            function showLoading() {
+                dataContainer.classList.add('hidden');
+                statusMessage.classList.remove('hidden', 'bg-red-800/20', 'border-red-700/50', 'text-red-300');
+                statusMessage.classList.add('bg-blue-800/20', 'border-blue-700/50', 'text-blue-300');
+                statusMessage.innerHTML = '<div class="flex justify-center items-center"><div class="spinner"></div><span class="ml-4 text-lg font-medium">Fetching data...</span></div>';
+                citationContainer.classList.add('hidden');
+            }
+
+            function showError(message) {
+                dataContainer.classList.add('hidden');
+                statusMessage.classList.remove('hidden', 'bg-blue-800/20', 'border-blue-700/50', 'text-blue-300');
+                statusMessage.classList.add('bg-red-800/20', 'border-red-700/50', 'text-red-300');
+                statusMessage.innerHTML = `<p class="text-lg font-semibold">Error: ${message}</p><p class="mt-1 text-sm">Please try another date.</p>`;
+                citationContainer.classList.add('hidden');
+                // Clear the moon canvas on error
+                ctx.clearRect(0, 0, CANVAS_SIZE, CANVAS_SIZE);
+            }
+
+            function hideStatus() {
+                statusMessage.classList.add('hidden');
+                dataContainer.classList.remove('hidden');
+            }
+
+            function formatPhaseName(apiPhase) {
+                // Converts API_KEY_CASE to Title Case
+                return apiPhase
+                    .replace(/_/g, ' ')
+                    .toLowerCase()
+                    .split(' ')
+                    .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+                    .join(' ');
+            }
+
+            function updateDisplay(data) {
+                // Moonrise and Moonset
+                moonRiseElement.textContent = data.moonrise || 'N/A';
+                moonSetElement.textContent = data.moonset || 'N/A';
+
+                // Illumination
+                const illumination = parseFloat(data.moon_illumination_percentage);
+                illuminationElement.textContent = `${illumination.toFixed(1)}%`;
+
+                // Moon Phase Name
+                const phaseName = formatPhaseName(data.moon_phase);
+                moonPhaseElement.textContent = phaseName;
+                
+                // Draw the graphic
+                drawMoonPhase(illumination, data.moon_phase);
+
+                // Citation
+                citationText.textContent = `Data for ${data.date} using an external astronomy API.`;
+                citationContainer.classList.remove('hidden');
+
+                hideStatus();
+            }
+            
+            // --- Refactored Canvas Drawing Logic for Accuracy ---
+            function drawMoonPhase(illumination, phase) {
+                // Thresholds to handle floating point errors near 0% and 100%
+                const NEW_MOON_THRESHOLD = 0.5;
+                const FULL_MOON_THRESHOLD = 99.5;
+
+                // Clear the canvas
+                ctx.clearRect(0, 0, CANVAS_SIZE, CANVAS_SIZE);
+
+                // 1. Draw the Star-Yellow Border
+                ctx.beginPath();
+                ctx.arc(CENTER, CENTER, RADIUS + 2, 0, Math.PI * 2);
+                ctx.strokeStyle = 'rgba(241, 196, 15, 0.4)'; 
+                ctx.lineWidth = 2;
+                ctx.stroke();
+
+                const I = illumination / 100;
+
+                // --- Explicit Full Moon Case (>= 99.5%) ---
+                if (illumination >= FULL_MOON_THRESHOLD) {
+                    ctx.beginPath();
+                    ctx.arc(CENTER, CENTER, RADIUS, 0, Math.PI * 2);
+                    ctx.fillStyle = 'white'; 
+                    ctx.fill();
+                    return; // Exit after drawing full white disk
+                }
+                
+                // --- Explicit New Moon Case (<= 0.5%) ---
+                if (illumination <= NEW_MOON_THRESHOLD) {
+                    ctx.beginPath();
+                    ctx.arc(CENTER, CENTER, RADIUS, 0, Math.PI * 2);
+                    ctx.fillStyle = SHADOW_COLOR; 
+                    ctx.fill();
+                    return; // Exit after drawing full dark disk
+                }
+
+                // --- Partial Phases (The complex drawing logic) ---
+
+                // 2. Draw the full white moon (Base for the illuminated disk)
+                ctx.beginPath();
+                ctx.arc(CENTER, CENTER, RADIUS, 0, Math.PI * 2);
+                ctx.fillStyle = 'white'; 
+                ctx.fill();
+
+                const isWaxing = phase.includes('WAXING') || phase.includes('FIRST_QUARTER');
+                
+                // Shadow color
+                ctx.fillStyle = SHADOW_COLOR; 
+                
+                ctx.beginPath();
+                
+                // Shadow properties based on illumination
+                const shadowWidth = RADIUS * 2 * (1 - I); // Total width of the shadowed section
+                const ellipseRadiusX = shadowWidth / 2;
+
+                if (I <= 0.5) { 
+                    // Crescent Phases (Shadow is larger than a half-moon. Use Half-Circle + Ellipse)
+                    
+                    if (isWaxing) {
+                        // Waxing Crescent: Shadow covers the left half (Part A)
+                        ctx.arc(CENTER, CENTER, RADIUS, Math.PI * 0.5, Math.PI * 1.5, true); 
+                        
+                        // Part B: Elliptical Arc to complete the shadow (moves right)
+                        const ellipseCenterX = CENTER + (RADIUS - ellipseRadiusX); 
+                        ctx.ellipse(ellipseCenterX, CENTER, ellipseRadiusX, RADIUS, 0, Math.PI * 1.5, Math.PI * 0.5, false);
+
+                    } else { 
+                        // Waning Crescent: Shadow covers the right half (Part A)
+                        ctx.arc(CENTER, CENTER, RADIUS, Math.PI * 1.5, Math.PI * 0.5, true); 
+                        
+                        // Part B: Elliptical Arc to complete the shadow (moves left)
+                        const ellipseCenterX = CENTER - (RADIUS - ellipseRadiusX);
+                        ctx.ellipse(ellipseCenterX, CENTER, ellipseRadiusX, RADIUS, 0, Math.PI * 0.5, Math.PI * 1.5, false);
+                    }
+
+                } else { 
+                    // Gibbous Phases (Shadow is smaller than a half-moon. Draw only the small crescent shadow area)
+
+                    if (isWaxing) {
+                        // Waxing Gibbous: Shadow is the small crescent on the left side
+                        const ellipseCenterX = CENTER - RADIUS + ellipseRadiusX; 
+                        
+                        // 1. Start at bottom pole (Math.PI * 0.5)
+                        ctx.moveTo(CENTER, CENTER + RADIUS);
+                        // 2. Draw the circular limb arc (left edge of the moon)
+                        ctx.arc(CENTER, CENTER, RADIUS, Math.PI * 0.5, Math.PI * 1.5, true); 
+                        // 3. Draw the elliptical arc (terminator) back to bottom pole
+                        ctx.ellipse(ellipseCenterX, CENTER, ellipseRadiusX, RADIUS, 0, Math.PI * 1.5, Math.PI * 0.5, true);
+                        
+                    } else { 
+                        // Waning Gibbous: Shadow is the small crescent on the right side (FIXED)
+                        const ellipseCenterX = CENTER + RADIUS - ellipseRadiusX; 
+
+                        // 1. Start at bottom pole (Math.PI * 0.5)
+                        ctx.moveTo(CENTER, CENTER + RADIUS);
+                        // 2. Draw the circular limb arc (right edge of the moon)
+                        ctx.arc(CENTER, CENTER, RADIUS, Math.PI * 0.5, Math.PI * 1.5, false); 
+                        // 3. Draw the elliptical arc (terminator) back to bottom pole
+                        ctx.ellipse(ellipseCenterX, CENTER, ellipseRadiusX, RADIUS, 0, Math.PI * 1.5, Math.PI * 0.5, false);
+                    }
+                }
+                
+                ctx.closePath();
+                ctx.fill();
+            }
+
+            // --- API Logic ---
+            async function fetchAstronomyData(date, attempt = 0) {
+                const MAX_RETRIES = 3;
+                const API_URL = `https://api.ipgeolocation.io/astronomy?apiKey=${API_KEY}&lat=${FORT_KENT_LAT}&long=${FORT_KENT_LONG}&date=${date}`;
+
+                showLoading();
+
+                try {
+                    const response = await fetch(API_URL, {
+                        method: 'GET',
+                        headers: { 'Content-Type': 'application/json' }
+                    });
+
+                    if (!response.ok) {
+                        const errorBody = await response.json().catch(() => ({ message: 'Failed to parse error response.' }));
+                        throw new Error(`API returned status ${response.status}: ${errorBody.message || 'Unknown server error'}`);
+                    }
+
+                    const data = await response.json();
+
+                    // Check for specific application-level errors (e.g., date out of range or missing data)
+                    if (!data.moon_phase) {
+                        throw new Error(data.message || "Astronomy data is incomplete for this date/location.");
+                    }
+                    
+                    updateDisplay(data);
+
+                } catch (error) {
+                    console.error("API Fetch Error:", error.message);
+
+                    if (attempt < MAX_RETRIES) {
+                        const delay = Math.pow(2, attempt) * 1000; // Exponential backoff: 1s, 2s, 4s
+                        await new Promise(resolve => setTimeout(resolve, delay));
+                        return fetchAstronomyData(date, attempt + 1);
+                    } else {
+                        showError("Failed to fetch astronomy data after multiple retries. Please check your network or try a different date.");
+                    }
+                }
+            }
+
+            // Initial load and event listener setup
+            dateInput.addEventListener('change', (event) => {
+                fetchAstronomyData(event.target.value);
+            });
+
+            // Draw a default state on initial load (New Moon 0%)
+            drawMoonPhase(0, 'NEW_MOON'); 
+            
+            // Fetch data for today on initial load
+            fetchAstronomyData(today);
+        });
+    </script>
+  </body>
+</html>

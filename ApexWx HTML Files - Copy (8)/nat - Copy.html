@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>National Maps and Charts</title>
+    <style>
+* {
+  box-sizing: border-box;
+}
+
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 5px;
+}
+
+/* Clearfix (clear floats) */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 500px) {
+  .column {
+    width: 100%;
+  }
+}
+  
+  /* navigation bar */
+  .nav{
+    border:1px solid #ccc;
+    border-width:1px 0;
+    list-style:none;
+    margin:0;
+    padding:0;
+    text-align:center;
+}
+.nav li{
+    display:inline;
+}
+.nav a{
+    display:inline-block;
+    padding:10px;
+}
+      
+body {
+	font-family: Arial, Helvetica, sans-serif ;
+	background-color: #F8F8F8;
+}
+img {
+	max-width: 100% ;
+	width: auto ;
+	height: auto ;
+}
+input, select, button, textarea {
+	max-width: 100% ;
+}
+meter, progress, output {
+	max-width: 100% ;
+}
+       div.a {
+  font-size: 15px;
+}
+  
+</style> </head>
+  <body>
+    <h2 style="text-align: center;">National Maps &amp; Charts</h2>
+    <p></p>
+    <p></p>
+    <ul class="nav">
+      <li><a href="https://apexwx.github.io/">Main Page</a></li>
+      <li><a href="#sat">Satellite</a></li>
+      <li><a href="#severe">Severe Weather</a></li>
+      <li><a href="#temp">Temperature</a></li>
+      <li><a href="#precip">Precipitation</a></li>
+      <li><a href="#fire">Fire Weather </a><a href="#trends">Trends</a><br>
+      </li>
+    </ul>
+    <br>
+    <div class="a"> Click maps and charts for larger versions, loops, etc. Most
+      graphics update automatically--check timestamps for currency. During
+      updates, maintenance, network outages, etc., graphics may be temporarily
+      unavailable. Graphic sources include NOAA, NWS, University of Wisconsin,
+      Weather Underground, and various other organizations. All products
+      produced by the US government or affiliated organizations are public
+      domain unless otherwise labeled.<br>
+      <br>
+      <u>Note</u>: For US Eastern Time on maps and charts, subtract 4 hours
+      (Daylight Saving Time) or 5 hours (Standard Time) from UTC / Z timestamp
+      on the maps and charts. UTC / Z / GMT = Coordinated Universal Time / Zulu
+      Time / Greenwich Mean Time -- Time is based on 0° longitude running
+      through the Royal Observatory in Greenwich, London, UK. It is the same all
+      year round and is not affected by Daylight Saving Time (aka Summer Time)
+      clock changes. Using UTC allows weather services and others to avoid time
+      zone conversions. Visit <a title="timeanddate.com" href="https://www.timeanddate.com/">timeanddate.com</a>
+      for more time zone conversion information and additional time-related
+      data.</div>
+    <br>
+    <br>
+    <table style="width: 50%; text-align: left; margin-left: auto; margin-right: auto;"
+      border="0">
+      <tbody>
+        <tr align="center">
+          <td rowspan="1" colspan="3"><strong>Current Time US Eastern and UTC /
+              Z</strong></td>
+        </tr>
+        <tr>
+          <td style="text-align: center;"><strong>ET 12-Hour</strong></td>
+          <td style="text-align: center;"><strong>ET 24-Hour</strong></td>
+          <td style="text-align: center;"><strong>UTC / Z</strong></td>
+        </tr>
+        <tr>
+          <td style="text-align: center; width: 181px;"><br>
+            <iframe src="https://freesecure.timeanddate.com/clock/i7b14drd/n5278/ts1/ta1"
+              height="19" frameborder="0" width="126"></iframe><br>
+          </td>
+          <td style="text-align: center; width: 146px;"><br>
+            <iframe src="https://freesecure.timeanddate.com/clock/i7athxrb/n5278/th1/ts1/ta1"
+              height="19" frameborder="0" width="69"></iframe><br>
+          </td>
+          <td style="text-align: center; width: 167px;"><br>
+            <iframe src="https://freesecure.timeanddate.com/clock/i7allsch/th1/ts1/ta1"
+              height="19" frameborder="0" width="70"></iframe><br>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <br>
+    <br>
+    <div class="row">
+      <div class="column" style="text-align: center;"> <strong>National Weather
+          Map</strong><a href="https://www.wpc.ncep.noaa.gov/NationalForecastChart/map.php"
+          title="Click for interactive image"><img src="https://www.wpc.ncep.noaa.gov/NationalForecastChart/staticmaps/noaad1.png"
+            style="width: 100%; border-width: 1px; border-style: solid;" alt="National Weather Chart"></a>
+      </div>
+      <div class="column">
+        <div style="text-align: center;"><strong>National Watches and
+            Warnings--click for more information</strong><br>
+          <strong></strong></div>
+        <strong> </strong> <strong></strong> <strong> </strong> <a href="https://www.weather.gov/"
+          title="Click for larger image"><img src="https://forecast.weather.gov/wwamap/png/US.png"
+            style="width: 100%; border-width: 1px; border-style: solid;" alt="National Watches and Warnings"></a>
+      </div>
+      <div class="column">
+        <div style="text-align: center;"><strong>National Radar</strong><strong></strong>
+          <strong> </strong> <a href="https://s.w-x.co/staticmaps/wu/wu/wxtype1200_cur/conus/animate.png"
+            title="Click for larger image"><img src="https://s.w-x.co/staticmaps/wu/wu/wxtype1200_cur/conus/animate.png"
+              style="width: 100%; border-width: 1px; border-style: solid;" alt="National Radar"></a>
+        </div>
+      </div>
+    </div>
+    <br>
+    <br>
+    <a href="#top"><i>Top of Page</i><br>
+    </a><br>
+    <div class="row">
+      <div class="column" style="text-align: center;"> <strong><a name="sat" id="sat"></a>National
+          Geocolor Satellite</strong><a href="https://cdn.star.nesdis.noaa.gov/GOES16/ABI/CONUS/GEOCOLOR/latest.jpg"
+          title="Click for larger image"><img src="https://cdn.star.nesdis.noaa.gov/GOES16/ABI/CONUS/GEOCOLOR/625x375.jpg"
+            style="width: 100%; border-width: 1px; border-style: solid;" alt="National Geocolor Satellite"></a>
+      </div>
+      <div class="column">
+        <div style="text-align: center;"><strong>National Infrared Satellite</strong><br>
+          <a href="https://cdn.star.nesdis.noaa.gov/GOES16/ABI/SECTOR/ne/Sandwich/20211511811_GOES16-ABI-ne-Sandwich-2400x2400.jpg"
+            title="Click for larger image"> </a></div>
+        <div style="text-align: center;"><a href="https://cdn.star.nesdis.noaa.gov/GOES16/ABI/CONUS/Sandwich/2500x1500.jpg"
+            title="Click for larger image"><img src="https://cdn.star.nesdis.noaa.gov/GOES16/ABI/CONUS/Sandwich/625x375.jpg"
+              style="width: 100%; border-width: 1px; border-style: solid;" alt="National Infrared"></a>
+        </div>
+        <a href="https://www.weather.gov/images/car/WeatherStory.gif" title="Click for larger image"></a>
+      </div>
+      <div class="column">
+        <div style="text-align: center;"><strong>National Water Vapor Satellite</strong><br>
+          <strong></strong></div>
+        <strong> </strong> <a href="https://cdn.star.nesdis.noaa.gov/GOES16/ABI/CONUS/09/latest.jpg"
+          title="Click for larger image"><img src="https://cdn.star.nesdis.noaa.gov/GOES16/ABI/CONUS/09/625x375.jpg"
+            style="width: 100%; border-width: 1px; border-style: solid;" alt="National Water Vapor Satellite"></a>
+      </div>
+    </div>
+    <br>
+    <br>
+    <a href="#top"><i>Top of Page</i></a><br>
+    <br>
+    <div class="row">
+      <div class="column" style="text-align: center;"> <strong><a name="temp" id="temp"></a>Today's
+          Highs</strong><a href="https://www.weather.gov/images/erh/gis/CONUS_maxt_Day1.png"
+          title="Click for larger image"><img src="https://www.weather.gov/images/erh/gis/CONUS_maxt_Day1.png"
+            style="width: 100%; border-width: 1px; border-style: solid;" alt="US Highs Day 1"></a>
+      </div>
+      <div class="column" style="text-align: center;"> <strong>Tonight's Lows</strong><a
+          href="https://www.weather.gov/images/erh/gis/CONUS_mint_Day1.png" title="Click for larger image"><img
+            src="https://www.weather.gov/images/erh/gis/CONUS_mint_Day1.png" style="width: 100%; border-width: 1px; border-style: solid;"
+            alt="Day 1 Lows"></a> </div>
+      <div class="column" style="text-align: center;"> <strong>24-Hour Heat
+          Index</strong><a href="https://www.weather.gov/images/erh/gis/CONUS_AptMax.png"
+          title="Click for larger image"><img src="https://www.weather.gov/images/erh/gis/CONUS_AptMax.png"
+            style="width: 100%; border-width: 1px; border-style: solid;" alt="24-Hour Heat Index"></a>
+      </div>
+    </div>
+    <br>
+    <br>
+    <a href="#top"><i>Top of Page</i></a><br>
+    <br>
+    <div class="row">
+      <div class="column" style="text-align: center;"> <strong>24-Hour Wind
+          Chill</strong><a href="https://www.weather.gov/images/erh/gis/CONUS_AptMin.png"
+          title="Click for larger image"><img src="https://www.weather.gov/images/erh/gis/CONUS_AptMin.png"
+            style="width: 100%; border-width: 1px; border-style: solid;" alt="24-Hour Wind Chill"></a>
+      </div>
+      <div class="column" style="text-align: center;"> <strong>Tomorrow's Highs</strong><a
+          href="https://www.weather.gov/images/erh/gis/CONUS_maxt_Day2.png" title="Click for larger image"><img
+            src="https://www.weather.gov/images/erh/gis/CONUS_maxt_Day2.png" style="width: 100%; border-width: 1px; border-style: solid;"
+            alt="Day 2 Highs"></a> </div>
+      <div class="column" style="text-align: center;"> <strong>Tomorrow Night's
+          Lows</strong><a href="https://www.weather.gov/images/erh/gis/CONUS_mint_Day2.png"
+          title="Click for larger image"><img src="https://www.weather.gov/images/erh/gis/CONUS_mint_Day2.png"
+            style="width: 100%; border-width: 1px; border-style: solid;" alt="Day 2 Lows"></a>
+      </div>
+    </div>
+    <br>
+    <br>
+    <a href="#top"><i>Top of Page</i></a><br>
+    <br>
+    <div class="row">
+      <div class="column" style="text-align: center;"> <strong><a name="precip"
+            id="precip"></a>24-Hour Forecast Precipitation</strong><a href="https://www.weather.gov/images/erh/gis/CONUS_QPF24.png"
+          title="Click for larger image"><img src="https://www.weather.gov/images/erh/gis/CONUS_QPF24.png"
+            style="width: 100%; border-width: 1px; border-style: solid;" alt="24-Hour Forecast Precipitation"></a>
+      </div>
+      <div class="column" style="text-align: center;"> <strong>3-Day Forecast
+          Precipitation</strong><a href="https://www.weather.gov/images/erh/gis/CONUS_QPF.png"
+          title="Click for larger image"><img src="https://www.weather.gov/images/erh/gis/CONUS_QPF.png"
+            style="width: 100%; border-width: 1px; border-style: solid;" alt="3-Day Forecast Precipitation"></a>
+      </div>
+      <div class="column" style="text-align: center;"> <strong>3-Day Snowfall
+          Outlook</strong><a href="https://www.weather.gov/images/erh/gis/CONUS_Snow.png"
+          title="Click for larger image"><img src="https://www.weather.gov/images/erh/gis/CONUS_Snow.png"
+            style="width: 100%; border-width: 1px; border-style: solid;" alt="3-Day Snowfall Outlook"></a>
+        <br>
+        <a href="https://www.weather.gov/images/erh/gis/CAR_QPF24.png" title="Click for larger image"></a>
+      </div>
+    </div>
+    <br>
+    <br>
+    <a href="#top"><i>Top of Page</i></a><br>
+    <br>
+    <div class="row">
+      <div class="column" style="text-align: center;"> <strong>3-Day Ice
+          Accumulation Outlook</strong><a href="https://www.weather.gov/images/erh/gis/CONUS_Ice.png"
+          title="Click for larger image"><img src="https://www.weather.gov/images/erh/gis/CONUS_Ice.png"
+            style="width: 100%; border-width: 1px; border-style: solid;" alt="3-Day Ice Accumulation Outlook"></a>
+      </div>
+      <div class="column">
+        <div style="text-align: center;"><strong>7-Day Precipitation Trend<br>
+          </strong></div>
+        <a href="https://hprcc.unl.edu/products/maps/acis/7dPDataUS.png" title="Click for larger image"><img
+            src="https://hprcc.unl.edu/products/maps/acis/7dPDataUS.png" alt="7-Day Precipitation Trend"
+            style="width: 100%; border-width: 1px; border-style: solid;"></a> </div>
+      <div class="column">
+        <div style="text-align: center;"><strong>30 Day Precipitation Trend</strong><a
+            href="https://hprcc.unl.edu/products/maps/acis/30dPDataUS.png" title="Click for larger image"><img
+              src="https://hprcc.unl.edu/products/maps/acis/30dPDataUS.png" alt="30-Day Precipitation Trend"
+              style="width: 100%; border-width: 1px; border-style: solid;"></a>
+        </div>
+      </div>
+    </div>
+    <br>
+    <br>
+    <a href="mailto:#top"><i>Top of Page</i></a><br>
+    <br>
+    <div class="row">
+      <div class="column" style="text-align: center;">&nbsp; <strong>Day 1
+          Excessive Rainfall Outlook</strong><a href="https://www.wpc.ncep.noaa.gov/qpf/94ewbg.gif?1622663947874"
+          title="Click for larger image"><img src="https://www.wpc.ncep.noaa.gov/qpf/94ewbg.gif?1622663947874"
+            style="width: 100%; border-width: 1px; border-style: solid;" alt="Day 1 Excessive Rainfall Outlook"></a>
+      </div>
+      <div class="column">
+        <div style="text-align: center;"><strong>Day 1 Forecast Precipitation
+            Totals<br>
+          </strong></div>
+        <a href="https://www.wpc.ncep.noaa.gov/qpf/fill_94qwbg.gif" title="Click for larger image"><img
+            src="https://www.wpc.ncep.noaa.gov/qpf/fill_94qwbg.gif" alt="Day 1 QPF"
+            style="width: 100%; border-width: 1px; border-style: solid;"></a> </div>
+      <div class="column">
+        <div style="text-align: center;"><strong>Day 7 Forecast Precipitation
+            Totals<br>
+          </strong></div>
+        <a href="https://www.wpc.ncep.noaa.gov/qpf/p168i.gif" title="Click for larger image"><img
+            src="https://www.wpc.ncep.noaa.gov/qpf/p168i.gif" alt="Day 7 QPF" style="width: 100%; border-width: 1px; border-style: solid;"></a>
+      </div>
+    </div>
+    <br>
+    <br>
+    <a href="#top"><i>Top of Page</i><br>
+    </a><br>
+    <div class="row">
+      <div class="column" style="text-align: center;"> <strong><a name="severe"
+            id="severe"></a>Day 1 Severe Thunderstorm Outlook</strong><a href="https://www.weather.gov/images/erh/gis/CONUS_convoutlook_day1.png"
+          title="Click for larger image"><img src="https://www.weather.gov/images/erh/gis/CONUS_convoutlook_day1.png"
+            style="width: 100%; border-width: 1px; border-style: solid;" alt="Day 1 Severe Severe Outlook"></a>
+      </div>
+      <div class="column">
+        <div style="text-align: center;"><strong>Day 2 Severe Thunderstorm
+            Outlook<br>
+          </strong></div>
+        <a href="https://www.spc.noaa.gov/public/state/images/ME_swody2.png" title="Click for larger image"><img
+            src="https://www.weather.gov/images/erh/gis/CONUS_convoutlook_day2.png"
+            alt="Day 2 Severe Outlook" style="width:100%"></a> </div>
+      <div class="column">
+        <div style="text-align: center;"><strong>Day 3 Severe Thunderstorm
+            Outlook</strong></div>
+        <a href="https://www.weather.gov/images/erh/gis/CONUS_convoutlook_day3.png"
+          title="Click for larger image"><img src="https://www.weather.gov/images/erh/gis/CONUS_convoutlook_day3.png"
+            alt="Day 3 Severe Outlook" style="width:100%"></a> </div>
+    </div>
+    <br>
+    <br>
+    <a href="#top"><i>Top of Page</i><br>
+    </a><br>
+    <div class="row">
+      <div class="column" style="text-align: center;"> <strong><a name="river"
+            id="river"></a>SPC Mesoscale Discussions</strong><a href="https://www.spc.noaa.gov/products/md/"
+          title="Click for more information"><img src="https://www.spc.noaa.gov/products/md/validmd.png"
+            style="width: 100%; border-width: 1px; border-style: solid;" alt="SPC Mesoscale Discussions"></a>
+      </div>
+      <div class="column">
+        <div style="text-align: center;"><strong>Today's SPC Storm Reports<br>
+          </strong></div>
+        <a href="https://www.spc.noaa.gov/climo/reports/today.html" title="Click for more information"><img
+            src="https://www.spc.noaa.gov/climo/reports/today.gif" alt="Today's Storm Reports"
+            style="width: 100%; border-width: 1px; border-style: solid;"></a> </div>
+      <div class="column">
+        <div style="text-align: center;"><strong>Yesterday's SPC Storm Reports<br>
+          </strong></div>
+        <a href="https://www.spc.noaa.gov/climo/reports/yesterday.html" title="Click for more information"><img
+            src="https://www.spc.noaa.gov/climo/reports/yesterday.gif" alt="Yesterday's SPC Storm Reports"
+            style="width: 100%; border-width: 1px; border-style: solid;"></a><br>
+      </div>
+    </div>
+    <br>
+    <a href="#top"><i>Top of Page</i></a><br>
+    <br>
+    <br>
+    <div class="row">
+      <div class="column" style="text-align: center;"> <strong><a name="river"
+            id="river"></a>Monthly Drought Outlook</strong><a href="https://www.cpc.ncep.noaa.gov/products/expert_assessment/month_drought.png"
+          title="Click for larger image"><img src="https://www.cpc.ncep.noaa.gov/products/expert_assessment/month_drought.png"
+            style="width: 100%; border-width: 1px; border-style: solid;" alt="Monthly Drought Outlook"></a>
+      </div>
+      <div class="column">
+        <div style="text-align: center;"><strong>3-Day Wind Gust Outlook<br>
+          </strong></div>
+        <a href="https://www.weather.gov/images/erh/gis/CONUS_WGust.png" title="Click for larger image"><img
+            src="https://www.weather.gov/images/erh/gis/CONUS_WGust.png" alt="3-Day Wind Gust Outlook"
+            style="width:100%"></a> </div>
+      <div class="column">
+        <div style="text-align: center;"><strong>3-Day Maximum Wave Height<br>
+          </strong></div>
+        <a href="https://www.weather.gov/images/erh/gis/CONUS_WaveH.png" title="Click for larger image"><img
+            src="https://www.weather.gov/images/erh/gis/CONUS_WaveH.png" alt="3-Day Maximum Wave Height"
+            style="width: 100%; border-width: 1px; border-style: solid;"></a><br>
+      </div>
+    </div>
+    <br>
+    <a href="#top"><i>Top of Page</i></a><br>
+    <br>
+    <br>
+    <div class="row">
+      <div class="column" style="text-align: center;"> <strong><a name="trends"
+            id="trends"></a>Current Temperature Anomaly</strong><a href="https://climatereanalyzer.org/wx_frames/gfs/ds/gfs_nh-sat1_t2anom_1-day.png"
+          title="Click for larger image"><img src="https://climatereanalyzer.org/wx_frames/gfs/ds/gfs_nh-sat1_t2anom_1-day.png"
+            style="width: 100%; border-width: 1px; border-style: solid;" alt="Current Temperature Anomaly"><br>
+        </a>
+        <div style="text-align: center;"><br>
+        </div>
+        <a href="https://droughtmonitor.unl.edu/data/png/current/current_me_trd.png"
+          title="Click for larger image"><br>
+        </a> </div>
+      <div class="column">
+        <div style="text-align: center;"><strong>7-Day Temperature Trend<br>
+          </strong></div>
+        <a href="https://hprcc.unl.edu/products/maps/acis/7dTDeptUS.png" title="Click for larger image"><img
+            src="https://hprcc.unl.edu/products/maps/acis/7dTDeptUS.png" alt="7-Day Temperature Trend"
+            style="width: 100%; border-style: solid; border-width: 1px;"><br>
+        </a>
+        <div style="text-align: center;"><br>
+        </div>
+      </div>
+      <div class="column">
+        <div style="text-align: center;"><strong>30-Day Temperature Trend<br>
+          </strong></div>
+        <a href="https://hprcc.unl.edu/products/maps/acis/30dTDeptUS.png" title="Click for larger image"><img
+            src="https://hprcc.unl.edu/products/maps/acis/30dTDeptUS.png" alt="30-Day Temperature Trend"
+            style="width: 100%; border-width: 1px; border-style: solid;"></a><br>
+        <div style="text-align: center;"><br>
+        </div>
+      </div>
+    </div>
+    <a href="#top"><i>Top of Page</i></a><br>
+    <br>
+    <br>
+    <div class="row">
+      <div class="column" style="text-align: center;"> <strong><a name="fire" id="fire"></a>Day
+          1 Fire Weather Outlook</strong><a href="https://www.spc.noaa.gov/products/fire_wx/day1otlk_fire.gif"
+          title="Click for larger image"><img src="https://www.spc.noaa.gov/products/fire_wx/day1otlk_fire.gif"
+            style="width: 100%; border-width: 1px; border-style: solid;" alt="Fire Wx Day 1"><br>
+        </a>
+        <div style="text-align: center;"><br>
+        </div>
+        <a href="https://droughtmonitor.unl.edu/data/png/current/current_me_trd.png"
+          title="Click for larger image"><br>
+        </a> </div>
+      <div class="column">
+        <div style="text-align: center;"><strong>Day 2 Fire Weather Outlook<br>
+          </strong></div>
+        <a href="https://www.spc.noaa.gov/products/fire_wx/day2otlk_fire.gif" title="Click for larger image"><img
+            src="https://www.spc.noaa.gov/products/fire_wx/day2otlk_fire.gif" alt="Day 2 Fire Weather Outlook"
+            style="width: 100%; border-style: solid; border-width: 1px;"><br>
+        </a>
+        <div style="text-align: center;"><br>
+        </div>
+      </div>
+      <div class="column">
+        <div style="text-align: center;"><strong>Day 3-8 Day Fire Weather
+            Outlook<br>
+          </strong></div>
+        <a href="https://www.spc.noaa.gov/products/exper/fire_wx/imgs/day38otlk_fire.gif"
+          title="Click for larger image"><img src="https://www.spc.noaa.gov/products/exper/fire_wx/imgs/day38otlk_fire.gif"
+            alt="Day 3-8 Fire Weather Outlook" style="width: 100%; border-width: 1px; border-style: solid;"></a><br>
+        <div style="text-align: center;"><br>
+        </div>
+      </div>
+    </div>
+    <br>
+    <a href="#top"><i>Top of Page</i></a><br>
+    <br>
+    <br>
+    <div class="column" style="text-align: center;"> <strong>Day 1 Fire Weather
+        Outlook</strong><a href="https://fsapps.nwcg.gov/afm/index.php" title="Click for larger image"><img
+          src="https://fsapps.nwcg.gov/afm/data/lg_fire/lg_fire_nifc.png" style="width: 100%; border-width: 1px; border-style: solid;"
+          alt="Current Large Fires"><br>
+      </a>
+      <div style="text-align: center;"><br>
+      </div>
+      <div style="text-align: left;"><br>
+        <a href="#top"><i>Top of Page</i></a><br>
+      </div>
+      <a href="https://droughtmonitor.unl.edu/data/png/current/current_me_trd.png"
+        title="Click for larger image"><br>
+      </a> </div>
+    <div class="column">
+      <div style="text-align: center;"><strong>Current Month's Wildfire Outlook<br>
+        </strong></div>
+      <a href="https://www.predictiveservices.nifc.gov/outlooks/month1_outlook.png"
+        title="Click for larger image"><img src="https://www.predictiveservices.nifc.gov/outlooks/month1_outlook.png"
+          alt="Current Month Wildfire Outlook" style="width: 100%; border-style: solid; border-width: 1px;"><br>
+      </a></div>
+    <div style="text-align: center;"><strong>Next Month's Wildfire Outlook </strong></div>
+    <strong></strong>
+    <div class="column"><strong> </strong> <a href="https://www.predictiveservices.nifc.gov/outlooks/month2_outlook.png"
+        title="Click for larger image"><img src="https://www.predictiveservices.nifc.gov/outlooks/month2_outlook.png"
+          alt="Next Month's Wildfire Outlook" style="width: 100%; border-width: 1px; border-style: solid;"></a><br>
+      <div style="text-align: center;"><br>
+      </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <p> </p>
+    <br>
+    <p><br>
+    </p>
+    <p><br>
+    </p>
+  </body>
+</html>

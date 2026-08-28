@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fort Kent, ME Weather</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to top right, #4facfe, #00f2fe);
+      margin: 0;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      color: #333;
+    }
+
+    h1 {
+      margin-bottom: 1rem;
+      color: #fff;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
+    }
+
+    .weather-container {
+      background: #ffffffdd;
+      border-radius: 1rem;
+      padding: 2rem;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      max-width: 800px;
+      width: 100%;
+    }
+
+    .forecast-period {
+      border-bottom: 1px solid #ccc;
+      padding: 1rem 0;
+      text-align: center;
+    }
+
+    .forecast-period:last-child {
+      border-bottom: none;
+    }
+
+    .forecast-period img {
+      width: 60px;
+      height: 60px;
+      margin-top: 0.5rem;
+    }
+
+    @media (max-width: 600px) {
+      .forecast-period {
+        font-size: 0.9rem;
+      }
+
+      .forecast-period img {
+        width: 40px;
+        height: 40px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Fort Kent, ME Weather Forecast</h1>
+  <div class="weather-container" id="weather-info">
+    <p>Loading forecast...</p>
+  </div>
+
+  <script>
+    const lat = 47.25;
+    const lon = -68.58;
+
+    async function fetchWeather() {
+      try {
+        const pointResponse = await fetch(`https://api.weather.gov/points/${lat},${lon}`, {
+          headers: {
+            'User-Agent': 'FortKentWeatherApp (your.email@example.com)'
+          }
+        });
+        const pointData = await pointResponse.json();
+        const forecastUrl = pointData.properties.forecast;
+
+        const forecastResponse = await fetch(forecastUrl, {
+          headers: {
+            'User-Agent': 'FortKentWeatherApp (your.email@example.com)'
+          }
+        });
+        const forecastData = await forecastResponse.json();
+        displayWeather(forecastData.properties.periods);
+      } catch (error) {
+        document.getElementById('weather-info').innerHTML = '<p>Error loading weather data.</p>';
+        console.error('Weather fetch failed:', error);
+      }
+    }
+
+    function displayWeather(periods) {
+      const container = document.getElementById('weather-info');
+      container.innerHTML = periods.slice(0, 6).map(period => `
+        <div class="forecast-period">
+          <h2>${period.name}</h2>
+          <p><strong>Temp:</strong> ${period.temperature}°${period.temperatureUnit}</p>
+          <p><strong>Condition:</strong> ${period.shortForecast}</p>
+          <img src="${period.icon}" alt="${period.shortForecast}">
+        </div>
+      `).join('');
+    }
+
+    fetchWeather();
+    setInterval(fetchWeather, 600000); // refresh every 10 minutes
+  </script>
+</body>
+</html>
