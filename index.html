@@ -773,18 +773,13 @@
                 <div class="astro-row highlight-row"> <strong>Day Length:</strong>
                   <span id="astro-day-length"></span> </div>
                 <hr class="astro-divider">
-                <div class="astro-section-heading">September 2026 Major Moon
-                  Phases</div>
-                <div class="moon-phase-grid">
-                  <div class="moon-phase-item">🌗 <strong>Sep 4</strong><br>
-                    Last Quarter </div>
-                  <div class="moon-phase-item">🌑 <strong>Sep 10</strong><br>
-                    New Moon </div>
-                  <div class="moon-phase-item">🌓<strong> Sep 18</strong><br>
-                    First Quarter </div>
-                  <div class="moon-phase-item">🌕 <strong>Sep 26</strong><br>
-                    Full Moon </div>
+                <!-- =========================================================
+     UPCOMING MOON PHASES — USNO API     Displays next four major lunar phases automatically     ========================================================= -->
+                <div class="astro-section-heading">Upcoming Moon Phases</div>
+                <div class="moon-phase-grid" id="moon-phase-grid">
+                  <div class="moon-phase-item"> Loading moon phases... </div>
                 </div>
+                <!-- END UPCOMING MOON PHASES — USNO API -->
                 <hr class="astro-divider">
                 <div class="astro-row current-phase"> <strong>Current Moon
                     Phase</strong><br>
@@ -1872,6 +1867,155 @@
       </footer>
       <script src="climate.js"></script>
       <script src="fortkent-weather.js" defer="defer"></script> <br>
+      <!-- =========================================================
+     UPCOMING MOON PHASES — USNO API     Displays next four major lunar phases automatically     ========================================================= -->
+      <script>
+document.addEventListener("DOMContentLoaded", () => {
+
+  const moonGrid = document.getElementById("moon-phase-grid");
+
+  if (!moonGrid) {
+    return;
+  }
+
+  /*
+   * USNO returns primary moon phases in Universal Time (UTC).
+   * We convert those UTC instants to Eastern Time for Lancaster.
+   */
+
+  const phaseEmoji = {
+    "New Moon": "🌑",
+    "First Quarter": "🌓",
+    "Full Moon": "🌕",
+    "Last Quarter": "🌗"
+  };
+
+  const easternTimeZone = "America/New_York";
+
+  function getTodayEastern() {
+    const now = new Date();
+
+    const parts = new Intl.DateTimeFormat("en-CA", {
+      timeZone: easternTimeZone,
+      year: "numeric",
+      month: "2-digit",
+      day: "2-digit"
+    }).formatToParts(now);
+
+    const values = {};
+
+    parts.forEach(part => {
+      if (part.type !== "literal") {
+        values[part.type] = part.value;
+      }
+    });
+
+    return `${values.year}-${values.month}-${values.day}`;
+  }
+
+  function formatPhaseDate(date) {
+    return new Intl.DateTimeFormat("en-US", {
+      timeZone: easternTimeZone,
+      month: "short",
+      day: "numeric"
+    }).format(date);
+  }
+
+  function parseUSNODate(item) {
+
+    const hourMinute = String(item.time).split(":");
+
+    const hour = Number(hourMinute[0]);
+    const minute = Number(hourMinute[1]);
+
+    return new Date(Date.UTC(
+      Number(item.year),
+      Number(item.month) - 1,
+      Number(item.day),
+      hour,
+      minute,
+      0
+    ));
+  }
+
+  async function loadMoonPhases() {
+
+    try {
+
+      const today = getTodayEastern();
+
+      const apiURL =
+        `https://aa.usno.navy.mil/api/moon/phases/date?date=${today}&nump=8`;
+
+      const response = await fetch(apiURL, {
+        cache: "no-store"
+      });
+
+      if (!response.ok) {
+        throw new Error(
+          `USNO API returned HTTP ${response.status}`
+        );
+      }
+
+      const data = await response.json();
+
+      if (!Array.isArray(data.phasedata)) {
+        throw new Error("USNO API returned no phase data.");
+      }
+
+      const now = new Date();
+
+      const upcomingPhases = data.phasedata
+        .map(item => ({
+          name: item.phase,
+          date: parseUSNODate(item)
+        }))
+        .filter(item => item.date > now)
+        .slice(0, 4);
+
+      if (upcomingPhases.length < 4) {
+        throw new Error(
+          "Fewer than four upcoming moon phases were returned."
+        );
+      }
+
+      moonGrid.innerHTML = upcomingPhases
+        .map(item => {
+
+          const emoji =
+            phaseEmoji[item.name] || "🌙";
+
+          const displayDate =
+            formatPhaseDate(item.date);
+
+          return `
+            <div class="moon-phase-item">
+              ${emoji} <strong>${displayDate}</strong><br>
+              ${item.name}
+            </div>
+          `;
+        })
+        .join("");
+
+    } catch (error) {
+
+      console.error(
+        "Unable to load upcoming moon phases:",
+        error
+      );
+
+      moonGrid.innerHTML = `
+        <div class="moon-phase-item">
+          Moon phase information temporarily unavailable.
+        </div>
+      `;
+    }
+  }
+
+  loadMoonPhases();
+
+});
+</script><!-- END UPCOMING MOON PHASES — USNO API -->
       <p></p>
     </main>
   </body>
