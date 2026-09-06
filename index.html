@@ -1498,10 +1498,6 @@
                 Weather Service warnings.</span></p>
             <div style="text-align: left;"><br>
             </div>
-            <div>
-              <script>
-                     document.write("This website was last modified " + " " +document.lastModified);
-                  </script> </div>
             <br>
             <br>
             <div style="text-align: center;"><br>
@@ -1871,13 +1867,17 @@
             style="width: 52px; height: 53px; padding:
             5px;"></a><a href="https://bsky.app/profile/apexwx.bsky.social" title="Apex
           Wx on Blue Sky social "><img src="https://apexwx.github.io/bsky1.png"
-            alt="Bluesky" style="padding: 5px; width: 54px; height: 54px;"></a>
-      </footer>
-      <script src="climate.js"></script>
-      <script src="fortkent-weather.js" defer="defer"></script> <br>
-      <!-- =========================================================
+            alt="Bluesky" style="padding: 5px; width: 54px; height: 54px;"></a></footer>
+      <div>
+        <div style="text-align: center; font-size: 12px;">
+          <script>
+      document.write("This website was last modified " + " " + document.lastModified);
+   </script>
+        </div>
+        <br>
+        <!-- =========================================================
      UPCOMING MOON PHASES — USNO API     Displays next four major lunar phases automatically     ========================================================= -->
-      <script>
+        <script>
 document.addEventListener("DOMContentLoaded", () => {
 
   const moonGrid = document.getElementById("moon-phase-grid");
@@ -2024,7 +2024,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
 });
 </script><!-- END UPCOMING MOON PHASES — USNO API -->
-      <p></p>
+        <p></p>
+      </div>
     </main>
   </body>
 </html>
