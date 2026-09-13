@@ -169,6 +169,42 @@ img {
 .rain-negative { color: #e67e22 !important; font-weight: bold; }
 .rain-neutral  { color: #aaaaaa !important; font-weight: bold; }
 
+/* =========================================================
+   COLLAPSIBLE SUN & MOON INFORMATION
+   ========================================================= */
+
+.astro-details {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.astro-summary {
+  cursor: pointer;
+  list-style: none;
+  font-weight: bold;
+  text-align: center;
+  padding: 10px 15px;
+}
+
+.astro-summary::-webkit-details-marker {
+  display: none;
+}
+
+.astro-toggle {
+  display: inline-block;
+  margin-right: 8px;
+  font-size: 0.85em;
+  transition: transform 0.2s ease;
+}
+
+.astro-details[open] .astro-toggle {
+  transform: rotate(90deg);
+}
+
+.astro-details[open] .astro-summary {
+  margin-bottom: 10px;
+}
+
 /* ======================================================
    LIVE ASTRONOMY CARD LAYOUT
    ====================================================== */
