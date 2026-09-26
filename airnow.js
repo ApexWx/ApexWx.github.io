@@ -196,46 +196,21 @@ function renderCurrent(container, current) {
   wrapper.appendChild(badge);
 
 
-  /* Show the forecast pollutant only when
-   it meaningfully controls the forecast. */
+  /* Primary pollutant */
 
-const categoryNumbers =
-  Array.isArray(day.pollutants)
-    ? day.pollutants.map(
-        item => item.categoryNumber
-      )
-    : [];
+  const primary =
+    document.createElement("div");
 
-const categoriesDiffer =
-  categoryNumbers.length > 1 &&
-  new Set(categoryNumbers).size > 1;
+  primary.className =
+    "airnow-primary";
 
-const showPollutant =
-  day.primaryPollutant &&
-  (
-    day.aqi !== null &&
-    day.aqi !== undefined
-    ||
-    categoriesDiffer
-  );
-
-if (showPollutant) {
-
-  const pollutant =
-    document.createElement("span");
-
-  pollutant.className =
-    "airnow-forecast-pollutant";
-
-  pollutant.textContent =
+  primary.textContent =
+    "Primary pollutant: " +
     formatPollutant(
-      day.primaryPollutant
+      current.primaryPollutant
     );
 
-  category.appendChild(
-    pollutant
-  );
-}
+  wrapper.appendChild(primary);
 
 
   /* Observation time */
@@ -252,7 +227,7 @@ if (showPollutant) {
   wrapper.appendChild(observed);
 
 
-  /* Other pollutants */
+  /* Other current pollutants */
 
   if (
     Array.isArray(current.pollutants) &&
@@ -317,11 +292,6 @@ function renderForecast(container, days) {
   grid.className =
     "airnow-forecast-grid";
 
-  /*
-   * Show the first three forecast days.
-   * The Worker can retain additional days
-   * without making the public card too large.
-   */
 
   days.slice(0, 3).forEach(
     function (day) {
@@ -359,6 +329,7 @@ function renderForecast(container, days) {
       category.style.color =
         day.textColor || "#000000";
 
+
       const categoryText =
         document.createElement("span");
 
@@ -370,10 +341,8 @@ function renderForecast(container, days) {
       );
 
 
-      /*
-       * Numerical forecast AQI is optional.
-       * Maine DEP may provide category only.
-       */
+      /* Numerical forecast AQI,
+         when supplied */
 
       if (
         day.aqi !== null &&
@@ -393,9 +362,40 @@ function renderForecast(container, days) {
       }
 
 
-      /* Primary forecast pollutant */
+      /*
+       * Show pollutant when it actually
+       * helps explain the forecast.
+       *
+       * Numerical AQI:
+       * show the controlling pollutant.
+       *
+       * Category-only forecast:
+       * show pollutant only when categories
+       * differ among pollutants.
+       */
 
-      if (day.primaryPollutant) {
+      const categoryNumbers =
+        Array.isArray(day.pollutants)
+          ? day.pollutants.map(
+              item => item.categoryNumber
+            )
+          : [];
+
+      const categoriesDiffer =
+        categoryNumbers.length > 1 &&
+        new Set(categoryNumbers).size > 1;
+
+      const showPollutant =
+        day.primaryPollutant &&
+        (
+          (
+            day.aqi !== null &&
+            day.aqi !== undefined
+          ) ||
+          categoriesDiffer
+        );
+
+      if (showPollutant) {
 
         const pollutant =
           document.createElement("span");
@@ -423,7 +423,6 @@ function renderForecast(container, days) {
 
   container.appendChild(grid);
 }
-
 
 /* =========================================================
    HELPERS
