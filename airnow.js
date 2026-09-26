@@ -196,21 +196,46 @@ function renderCurrent(container, current) {
   wrapper.appendChild(badge);
 
 
-  /* Primary pollutant */
+  /* Show the forecast pollutant only when
+   it meaningfully controls the forecast. */
 
-  const primary =
-    document.createElement("div");
+const categoryNumbers =
+  Array.isArray(day.pollutants)
+    ? day.pollutants.map(
+        item => item.categoryNumber
+      )
+    : [];
 
-  primary.className =
-    "airnow-primary";
+const categoriesDiffer =
+  categoryNumbers.length > 1 &&
+  new Set(categoryNumbers).size > 1;
 
-  primary.textContent =
-    "Primary pollutant: " +
+const showPollutant =
+  day.primaryPollutant &&
+  (
+    day.aqi !== null &&
+    day.aqi !== undefined
+    ||
+    categoriesDiffer
+  );
+
+if (showPollutant) {
+
+  const pollutant =
+    document.createElement("span");
+
+  pollutant.className =
+    "airnow-forecast-pollutant";
+
+  pollutant.textContent =
     formatPollutant(
-      current.primaryPollutant
+      day.primaryPollutant
     );
 
-  wrapper.appendChild(primary);
+  category.appendChild(
+    pollutant
+  );
+}
 
 
   /* Observation time */
