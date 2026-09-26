@@ -1,0 +1,203 @@
+/* =========================================================
+   APEX WX — AIRNOW AIR QUALITY COMPONENT
+   Shared by Fort Kent and Lancaster
+   ========================================================= */
+
+.airnow-section {
+  width: 100%;
+  max-width: 650px;
+  margin: 24px auto;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.airnow-card {
+  border: 1px solid #c8c8c8;
+  border-radius: 12px;
+  background: #ffffff;
+  padding: 18px;
+  box-sizing: border-box;
+}
+
+.airnow-heading {
+  font-size: 19px;
+  font-weight: bold;
+  margin-bottom: 3px;
+}
+
+.airnow-area {
+  font-size: 12px;
+  color: #666666;
+  margin-bottom: 16px;
+}
+
+.airnow-section-title {
+  font-size: 13px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin: 10px 0 8px;
+}
+
+/* -------------------------
+   Current AQI
+   ------------------------- */
+
+.airnow-current {
+  margin-bottom: 15px;
+}
+
+.airnow-current-badge {
+  display: inline-block;
+  min-width: 145px;
+  padding: 12px 22px;
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+
+.airnow-current-value {
+  display: block;
+  font-size: 34px;
+  font-weight: bold;
+  line-height: 1.05;
+}
+
+.airnow-current-category {
+  display: block;
+  font-size: 15px;
+  font-weight: bold;
+  margin-top: 5px;
+}
+
+.airnow-primary {
+  font-size: 13px;
+  margin-top: 8px;
+}
+
+.airnow-observed {
+  font-size: 11px;
+  color: #666666;
+  margin-top: 4px;
+}
+
+/* -------------------------
+   Other current pollutants
+   ------------------------- */
+
+.airnow-pollutants {
+  font-size: 12px;
+  margin: 8px 0 14px;
+}
+
+.airnow-pollutant-item {
+  display: inline-block;
+  margin: 2px 8px;
+}
+
+/* -------------------------
+   Forecast grid
+   ------------------------- */
+
+.airnow-forecast-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin: 8px auto 14px;
+}
+
+.airnow-forecast-day {
+  border: 1px solid #d2d2d2;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #fafafa;
+}
+
+.airnow-forecast-date {
+  font-size: 12px;
+  font-weight: bold;
+  padding: 7px 4px;
+  background: #f0f0f0;
+}
+
+.airnow-forecast-category {
+  padding: 9px 5px;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.airnow-forecast-aqi {
+  display: block;
+  font-size: 11px;
+  font-weight: normal;
+  margin-top: 3px;
+}
+
+.airnow-forecast-pollutant {
+  font-size: 10px;
+  font-weight: normal;
+  margin-top: 2px;
+}
+
+/* -------------------------
+   Messages / attribution
+   ------------------------- */
+
+.airnow-unavailable {
+  font-size: 13px;
+  font-style: italic;
+  color: #666666;
+  padding: 10px;
+}
+
+.airnow-footer {
+  border-top: 1px solid #dddddd;
+  margin-top: 12px;
+  padding-top: 9px;
+  font-size: 11px;
+  color: #666666;
+  line-height: 1.45;
+}
+
+.airnow-footer a {
+  color: inherit;
+}
+
+.airnow-loading {
+  font-size: 13px;
+  color: #666666;
+  padding: 20px 5px;
+}
+
+/* -------------------------
+   Small screens
+   ------------------------- */
+
+@media (max-width: 500px) {
+
+  .airnow-card {
+    padding: 14px 10px;
+  }
+
+  .airnow-forecast-grid {
+    grid-template-columns: 1fr;
+    gap: 7px;
+  }
+
+  .airnow-forecast-day {
+    display: grid;
+    grid-template-columns: 42% 58%;
+    align-items: stretch;
+  }
+
+  .airnow-forecast-date {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .airnow-forecast-category {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}

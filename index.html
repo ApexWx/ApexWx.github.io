@@ -6,6 +6,8 @@
     <title>Apex Wx Weather Information Fort Kent, Maine</title>
     <script defer="defer" src="https://cdnres.willyweather.com/widget/warning/loadView.html?id=157826"></script>
     <link rel="stylesheet" href="styles26.css">
+    <link rel="stylesheet" href="airnow.css">
+    <script src="airnow.js" defer="defer"></script>
   </head>
   <body><!-- Insert this in your HTML body where you want the menu --><br>
     <header id="page-header">
@@ -562,6 +564,26 @@
                   winter).<br>
                 </em></div>
             </div>
+            <section class="airnow-section">
+              <div class="airnow-card" data-site="fortkent">
+                <div class="airnow-heading"> 🌿 Air Quality </div>
+                <div class="airnow-area"> Fort Kent &amp; Northern Maine </div>
+                <div class="airnow-loading"> Loading current air quality... </div>
+                <div class="airnow-content" style="display: none;">
+                  <div class="airnow-section-title"> Current Air Quality </div>
+                  <div class="airnow-current-container"> </div>
+                  <div class="airnow-section-title"> Air Quality Forecast </div>
+                  <div class="airnow-forecast-container"> </div>
+                  <div class="airnow-footer"> EPA AirNow / Maine Department of
+                    Environmental Protection<br>
+                    Current observations are preliminary and subject to
+                    revision.<br>
+                    <a href="https://www.airnow.gov/?city=Fort%20Kent&amp;state=ME&amp;country=USA"
+                      target="_blank" rel="noopener"> More air quality
+                      information </a> </div>
+                </div>
+              </div>
+            </section>
             <hr style="margin-left: auto; margin-right: auto;"> </div>
           <div class="live-station" style="font-size: 14px; text-align: center;">
             <details>
