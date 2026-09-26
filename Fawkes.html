@@ -7,7 +7,9 @@
     <script defer="defer" src="https://cdnres.willyweather.com/widget/warning/loadView.html?id=157825"></script>
     <title>Fawkes House Weather Lancaster, PA</title>
     <link rel="stylesheet" href="lan-styles26.css">
+    <link rel="stylesheet" href="airnow26.css">
     <script src="fawkes-dashboard.js" defer="defer"></script>
+    <script src="airnow.js" defer="defer"></script>
   </head>
   <body>
     <header id="page-header">&nbsp;<!-- Insert this in your HTML body where you want the menu -->
@@ -452,6 +454,26 @@
                   padding: 5px;"></a> </div>
                 </div>
               </div>
+              <section class="airnow-section">
+                <div class="airnow-card" data-site="lancaster">
+                  <div class="airnow-heading"> 🌿 Air Quality </div>
+                  <div class="airnow-area"> Lancaster &amp; Susquehanna Valley </div>
+                  <div class="airnow-loading"> Loading current air quality... </div>
+                  <div class="airnow-content" style="display: none;">
+                    <div class="airnow-section-title"> Current Air Quality </div>
+                    <div class="airnow-current-container"> </div>
+                    <div class="airnow-section-title"> Air Quality Forecast </div>
+                    <div class="airnow-forecast-container"> </div>
+                    <div class="airnow-footer"> EPA AirNow / Pennsylvania
+                      Department of Environmental Protection<br>
+                      Current observations are preliminary and subject to
+                      revision.<br>
+                      <a href="https://www.airnow.gov/?city=Lancaster&amp;state=PA&amp;country=USA"
+                        target="_blank" rel="noopener"> More air quality
+                        information </a> </div>
+                  </div>
+                </div>
+              </section>
               <div style="text-align: center;">
                 <hr> </div>
             </div>
