@@ -341,26 +341,29 @@ function renderForecast(container, days) {
       );
 
 
-      /* Numerical forecast AQI,
-         when supplied */
+     /* Numerical forecast AQI.
+   If AirNow supplies only a category,
+   display AQI N/A to preserve the
+   forecast-card layout. */
 
-      if (
-        day.aqi !== null &&
-        day.aqi !== undefined
-      ) {
+const aqi =
+  document.createElement("span");
 
-        const aqi =
-          document.createElement("span");
+aqi.className =
+  "airnow-forecast-aqi";
 
-        aqi.className =
-          "airnow-forecast-aqi";
+if (
+  day.aqi !== null &&
+  day.aqi !== undefined
+) {
+  aqi.textContent =
+    "AQI " + day.aqi;
+} else {
+  aqi.textContent =
+    "AQI N/A";
+}
 
-        aqi.textContent =
-          "AQI " + day.aqi;
-
-        category.appendChild(aqi);
-      }
-
+category.appendChild(aqi);
 
       /*
        * Show pollutant when it actually
