@@ -389,14 +389,7 @@ category.appendChild(aqi);
         new Set(categoryNumbers).size > 1;
 
       const showPollutant =
-        day.primaryPollutant &&
-        (
-          (
-            day.aqi !== null &&
-            day.aqi !== undefined
-          ) ||
-          categoriesDiffer
-        );
+  Boolean(day.primaryPollutant);
 
       if (showPollutant) {
 
