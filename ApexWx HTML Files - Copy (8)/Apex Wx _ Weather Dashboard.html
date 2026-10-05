@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apex Wx | Fort Kent &amp; Saint John Valley Weather</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=Roboto+Mono:wght@500&amp;display=swap"
+      rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #0d1117;
+            --card-bg: rgba(22, 27, 34, 0.9);
+            --border-color: #30363d;
+            --accent-blue: #58a6ff;
+            --text-main: #e6edf3;
+            --text-muted: #8b949e;
+            --nav-bg: rgba(13, 17, 23, 0.95);
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background: var(--bg-dark) url('https://github.com/ApexWx/ApexWx.github.io/blob/master/seamless-background-simply-sky.jpg?raw=true') repeat;
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        /* NAVIGATION & HEADER */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: var(--nav-bg);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-color);
+            padding: 10px 0;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .nav-container a {
+            color: var(--accent-blue);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            padding: 6px 12px;
+            border-radius: 4px;
+        }
+
+        /* LAYOUT GRID */
+        .dashboard-wrapper {
+            max-width: 1400px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+
+        .main-grid {
+            display: grid;
+            grid-template-columns: 300px 1fr 300px;
+            gap: 20px;
+        }
+
+        /* CARD COMPONENT */
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 15px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+        }
+
+        .card h3 {
+            font-size: 0.9rem;
+            color: var(--accent-blue);
+            text-transform: uppercase;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 8px;
+            margin: 0 0 15px 0;
+            text-align: center;
+        }
+
+        /* IMAGES */
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 6px;
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* RESOURCE LISTS */
+        .resource-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .link-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .link-list li {
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+        }
+
+        .link-list a {
+            color: var(--text-main);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .link-list a:hover {
+            color: var(--accent-blue);
+            text-decoration: underline;
+        }
+
+        /* MOBILE OPTIMIZATION */
+        @media (max-width: 1100px) {
+            .main-grid { grid-template-columns: 1fr; }
+            .side-col { order: 2; }
+        }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav class="nav-container"> <a href="#forecast">Forecast</a> <a href="#radar">Radar</a>
+        <a href="#cams">Webcams</a> <a href="#resources">Resources</a> <a href="https://ambientweather.net/dashboard/16e0681b266993eb92230c42d89f3fd5">Live
+          Dashboard</a> </nav>
+    </header>
+    <div class="dashboard-wrapper">
+      <div style="text-align: center; margin-bottom: 30px;"> <img src="https://raw.githubusercontent.com/ApexWx/ApexWx.github.io/master/Apex%20banner.jpg"
+          style="max-width: 800px; border-radius: 0;">
+        <h1 style="margin: 10px 0 5px 0;">Apex Wx</h1>
+        <p style="color: var(--text-muted); margin: 0;">Weather for Fort Kent
+          &amp; The Saint John Valley since 2009</p>
+      </div>
+      <div class="main-grid">
+        <aside class="side-col">
+          <div class="card">
+            <h3>Air Quality</h3>
+            <iframe src="https://widget.airnow.gov/aq-dial-widget/?city=Fort%20Kent&amp;state=ME&amp;country=USA"
+              style="border: none;" height="230" width="100%"></iframe> </div>
+          <div class="card">
+            <h3>Regional Radar</h3>
+            <img src="https://radar.weather.gov/ridge/standard/KCBW_loop.gif" alt="Radar">
+          </div>
+          <div class="card">
+            <h3>Local Hazards</h3>
+            <img src="https://www.weather.gov/wwamap/png/car.png" alt="NWS Caribou">
+          </div>
+        </aside>
+        <main class="center-col">
+          <div class="card" id="forecast">
+            <h3>Current Conditions</h3>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+              <img src="https://www.weather.gov/images/car/obs/CurrentT.png"> <img
+                src="https://www.weather.gov/images/car/obs/CurrentDewPt.png"> <img
+                src="https://www.weather.gov/images/car/obs/CurrentRH.png"> <img
+                src="https://www.weather.gov/images/car/obs/CurrentGusts.png"> </div>
+          </div>
+          <div class="card">
+            <h3>Winter Severity &amp; Snowfall</h3>
+            <img src="https://www.wpc.ncep.noaa.gov/wwd/wssi/images/WSSI_Overall_Day1_CAR_Day1.png">
+            <div style="margin-top: 15px;"> <img src="https://www.wpc.ncep.noaa.gov/Prob_Precip/idss-map/mapgen.php?office=CAR&amp;summary=true&amp;product=expected">
+            </div>
+          </div>
+        </main>
+        <aside class="side-col">
+          <div class="card" id="cams">
+            <h3>Fort Kent Outdoor Center</h3>
+            <img src="https://webcam.fortkentoc.org/webcam/image.jpg"> </div>
+          <div class="card">
+            <h3>Four Seasons Trail</h3>
+            <img src="https://www.mediamaine.org/Madawaska/fourseasonstrail/WebCam/camera1.jpg">
+          </div>
+          <div class="card">
+            <h3>Severe Weather</h3>
+            <img src="https://www.spc.noaa.gov/partners/outlooks/state/images/ME_swody1.png">
+          </div>
+        </aside>
+      </div>
+      <h2 id="resources" style="text-align: center; color: var(--accent-blue); margin-top: 50px; text-transform: uppercase;">Weather
+        Resources &amp; Links</h2>
+      <div class="resource-grid">
+        <div class="card">
+          <h3>National (NOAA/NWS)</h3>
+          <ul class="link-list">
+            <li><a href="https://www.weather.gov/car/">NWS Caribou Home</a></li>
+            <li><a href="https://www.spc.noaa.gov/">Storm Prediction Center</a></li>
+            <li><a href="https://www.nhc.noaa.gov/">National Hurricane Center</a></li>
+            <li><a href="https://www.wpc.ncep.noaa.gov/">Weather Prediction
+                Center</a></li>
+            <li><a href="https://www.swpc.noaa.gov/">Space Weather Prediction</a></li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Regional &amp; Canada</h3>
+          <ul class="link-list">
+            <li><a href="https://weather.gc.ca/city/pages/nb-24_metric_e.html">Environment
+                Canada (Edmundston)</a></li>
+            <li><a href="https://www.weather.gov/nerfc/">Northeast River
+                Forecast Center</a></li>
+            <li><a href="https://www.maine.gov/mema/">Maine Emergency Management</a></li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Astronomy &amp; Space</h3>
+          <ul class="link-list">
+            <li><a href="https://weather.gc.ca/astro/index_e.html">Clear Sky
+                Forecast (Canada)</a></li>
+            <li><a href="https://www.spaceweather.com/">SpaceWeather.com</a></li>
+            <li><a href="https://www.aurora-service.org/aurora-forecast/">Aurora
+                Service Forecast</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <footer style="text-align: center; padding: 50px; color: var(--text-muted); font-size: 0.8rem;">
+      <p>Member APRSWXNET/CWOP Programs | Apex Wx © 2026</p>
+    </footer>
+  </body>
+</html>

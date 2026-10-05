@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <title>National Maps and Charts</title>
+    <style>
+* { box-sizing: border-box; }
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f8f8f8;
+  background-image: url('https://raw.githubusercontent.com/ApexWx/ApexWx.github.io/refs/heads/master/seamless-background-simply-sky.jpg');
+  background-repeat: repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  margin: 0;
+}
+
+/* === MENU STYLE START === */
+.nav {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+}
+
+.nav.show {
+  display: flex;
+}
+
+.nav li {
+  display: inline;
+}
+
+.nav a {
+  display: inline-block;
+  padding: 10px;
+  text-decoration: none;
+  font-weight: bold;
+  color: black;
+}
+
+.nav a:hover {
+  text-decoration: underline;
+  color: #0077cc;
+}
+
+#navToggle {
+  font-size: 20px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  margin: 10px auto;
+  display: block;
+}
+
+@media (min-width: 769px) {
+  .nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+  #navToggle {
+    display: none;
+  }
+}
+/* === MENU STYLE END === */
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+  justify-content: center;
+  margin-bottom: 2em;
+}
+
+.column {
+  flex: 1 1 300px;
+  min-width: 280px;
+  max-width: 100%;
+  box-sizing: border-box;
+  padding: 0.5em;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  border: 1px solid #ccc;
+  display: block;
+  margin: auto;
+}
+
+.clock-table {
+  width: 90%;
+  max-width: 600px;
+  margin: 1em auto;
+  text-align: center;
+  border-collapse: collapse;
+}
+
+.clock-cell {
+  font-weight: bold;
+}
+</style> </head>
+  <body>
+    <h2 style="text-align: center;">National Maps &amp; Charts</h2>
+    <div id="last-modified" style="text-align:center; font-size:14px; font-family:Arial, sans-serif; margin-top: -0.5em;"></div>
+    <p></p>
+    <p></p>
+    <!-- === START NAVIGATION MENU === -->
+    <div style="text-align: center;"> <button id="navToggle">☰ Menu</button>
+      <ul class="nav">
+        <li><a href="https://apexwx.github.io/">Home</a></li>
+        <li><a href="#satellite">Satellite</a></li>
+        <li><a href="#severe">Severe Weather</a></li>
+        <li><a href="#temperature">Temperature</a></li>
+        <li><a href="#precip">Precipitation</a></li>
+        <li><a href="#fire">Fire Weather</a></li>
+        <li><a href="#trends">Trends</a></li>
+      </ul>
+    </div>
+    <!-- === END NAVIGATION MENU === -->
+    <table class="clock-table">
+      <thead>
+        <tr>
+          <th>Eastern Time 12-Hour</th>
+          <th>Eastern Time 24-Hour</th>
+          <th>UTC / Z / Greenwich</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="clock-cell" id="et12">--</td>
+          <td class="clock-cell" id="et24">--</td>
+          <td class="clock-cell" id="utc">--</td>
+        </tr>
+      </tbody>
+    </table>
+    <div style="text-align: center;"><em style="font-size: 12px;">Graphics
+        update automatically -- check image timestamps for most recent
+        updates/valid periods.</em></div>
+    <br>
+    <div class="row">
+      <div class="column" style="text-align: center;"> <strong><a id="main"></a>National
+          Weather Map</strong><a href="https://www.wpc.ncep.noaa.gov/NationalForecastChart/map.php"
+          title="Click for interactive image"><img alt="National Weather Chart"
+            src="https://www.wpc.ncep.noaa.gov/NationalForecastChart/staticmaps/noaad1.png"
+            style="width: 100%; border-width: 1px; border-style: solid;"></a> </div>
+      <div class="column">
+        <div style="text-align: center;"><strong>National Watches and Warnings</strong><br>
+          <strong></strong></div>
+        <strong> </strong> <strong></strong> <strong> </strong> <a href="https://www.weather.gov/"
+          title="Click for larger image"><img alt="National Watches and Warnings"
+            src="https://forecast.weather.gov/wwamap/png/US.png" style="width: 541px; border-width: 1px; border-style: solid; height: 339px;"></a>
+      </div>
+      <div class="column">
+        <div style="text-align: center;"><strong>National Radar</strong><strong></strong>
+          <strong> </strong> <a href="https://s.w-x.co/staticmaps/wu/wu/wxtype1200_cur/conus/animate.png"
+            title="Click for larger image"><img alt="National Radar" src="https://s.w-x.co/staticmaps/wu/wu/wxtype1200_cur/conus/animate.png"
+              style="width: 100%; border-width: 1px; border-style: solid;"></a>
+        </div>
+      </div>
+    </div>
+    <br>
+    <br>
+    <a href="#top"><i>Top of Page</i><br>
+    </a><br>
+    <div class="row">
+      <div class="column" style="text-align: center;"> <strong><a id="satellite"></a><a
+            id="satellite"></a>National True Color Satellite</strong><a href="https://cdn.star.nesdis.noaa.gov/GOES16/ABI/CONUS/GEOCOLOR/latest.jpg"
+          title="Click for larger image"><img alt="National Geocolor Satellite"
+            src="https://cdn.star.nesdis.noaa.gov/GOES16/ABI/CONUS/GEOCOLOR/625x375.jpg"
+            style="width: 100%; border-width: 1px; border-style: solid;"></a> </div>
+      <div class="column">
+        <div style="text-align: center;"><strong>National Infrared Satellite</strong><br>
+          <a href="https://cdn.star.nesdis.noaa.gov/GOES16/ABI/SECTOR/ne/Sandwich/20211511811_GOES16-ABI-ne-Sandwich-2400x2400.jpg"
+            title="Click for larger image"> </a></div>
+        <div style="text-align: center;"><a href="https://cdn.star.nesdis.noaa.gov/GOES16/ABI/CONUS/Sandwich/2500x1500.jpg"
+            title="Click for larger image"><img alt="National Infrared" src="https://cdn.star.nesdis.noaa.gov/GOES16/ABI/CONUS/Sandwich/625x375.jpg"
+              style="width: 100%; border-width: 1px; border-style: solid;"></a>
+        </div>
+        <a href="https://www.weather.gov/images/car/WeatherStory.gif" title="Click for larger image"></a>
+      </div>
+      <div class="column">
+        <div style="text-align: center;"><strong>National Water Vapor Satellite</strong><br>
+          <strong></strong></div>
+        <strong> </strong> <a href="https://cdn.star.nesdis.noaa.gov/GOES16/ABI/CONUS/09/latest.jpg"
+          title="Click for larger image"><img alt="National Water Vapor Satellite"
+            src="https://cdn.star.nesdis.noaa.gov/GOES16/ABI/CONUS/09/625x375.jpg"
+            style="width: 100%; border-width: 1px; border-style: solid;"></a> </div>
+    </div>
+    <br>
+    <br>
+    <a href="#top"><i>Top of Page</i></a><br>
+    <br>
+    <div class="row">
+      <div class="column" style="text-align: center;"> <strong><a id="temperature"></a><a
+            id="temperature"></a>Today's Highs</strong><a href="https://www.weather.gov/images/erh/gis/CONUS_maxt_Day1.png"
+          title="Click for larger image"><img alt="US Highs Day 1" src="https://www.weather.gov/images/erh/gis/CONUS_maxt_Day1.png"
+            style="width: 100%; border-width: 1px; border-style: solid;"></a> </div>
+      <div class="column" style="text-align: center;"> <strong>Tonight's Lows</strong><a
+          href="https://www.weather.gov/images/erh/gis/CONUS_mint_Day1.png" title="Click for larger image"><img
+            alt="Day 1 Lows" src="https://www.weather.gov/images/erh/gis/CONUS_mint_Day1.png"
+            style="width: 100%; border-width: 1px; border-style: solid;"></a> </div>
+      <div class="column" style="text-align: center;"> <strong>24-Hour Heat
+          Index</strong><a href="https://www.weather.gov/images/erh/gis/CONUS_AptMax.png"
+          title="Click for larger image"><img alt="24-Hour Heat Index" src="https://www.weather.gov/images/erh/gis/CONUS_AptMax.png"
+            style="width: 100%; border-width: 1px; border-style: solid;"></a> </div>
+    </div>
+    <br>
+    <br>
+    <a href="#top"><i>Top of Page</i></a><br>
+    <br>
+    <div class="row">
+      <div class="column" style="text-align: center;"> <strong>24-Hour Wind
+          Chill</strong><a href="https://www.weather.gov/images/erh/gis/CONUS_AptMin.png"
+          title="Click for larger image"><img alt="24-Hour Wind Chill" src="https://www.weather.gov/images/erh/gis/CONUS_AptMin.png"
+            style="width: 100%; border-width: 1px; border-style: solid;"></a> </div>
+      <div class="column" style="text-align: center;"> <strong>Tomorrow's Highs</strong><a
+          href="https://www.weather.gov/images/erh/gis/CONUS_maxt_Day2.png" title="Click for larger image"><img
+            alt="Day 2 Highs" src="https://www.weather.gov/images/erh/gis/CONUS_maxt_Day2.png"
+            style="width: 100%; border-width: 1px; border-style: solid;"></a> </div>
+      <div class="column" style="text-align: center;"> <strong>Tomorrow Night's
+          Lows</strong><a href="https://www.weather.gov/images/erh/gis/CONUS_mint_Day2.png"
+          title="Click for larger image"><img alt="Day 2 Lows" src="https://www.weather.gov/images/erh/gis/CONUS_mint_Day2.png"
+            style="width: 100%; border-width: 1px; border-style: solid;"></a> </div>
+    </div>
+    <br>
+    <br>
+    <a href="#top"><i>Top of Page</i></a><br>
+    <br>
+    <div class="row">
+      <div class="column" style="text-align: center;"> <strong><a id="precip"></a>24-Hour
+          Forecast Precipitation</strong><a href="https://www.weather.gov/images/erh/gis/CONUS_QPF24.png"
+          title="Click for larger image"><img alt="24-Hour Forecast Precipitation"
+            src="https://www.weather.gov/images/erh/gis/CONUS_QPF24.png" style="width: 100%; border-width: 1px; border-style: solid;"></a>
+      </div>
+      <div class="column" style="text-align: center;"> <strong>3-Day Forecast
+          Precipitation</strong><a href="https://www.weather.gov/images/erh/gis/CONUS_QPF.png"
+          title="Click for larger image"><img alt="3-Day Forecast Precipitation"
+            src="https://www.weather.gov/images/erh/gis/CONUS_QPF.png" style="width: 100%; border-width: 1px; border-style: solid;"></a>
+      </div>
+      <div class="column" style="text-align: center;"> <strong>3-Day Snowfall
+          Outlook</strong><a href="https://www.weather.gov/images/erh/gis/CONUS_Snow.png"
+          title="Click for larger image"><img alt="3-Day Snowfall Outlook" src="https://www.weather.gov/images/erh/gis/CONUS_Snow.png"
+            style="width: 100%; border-width: 1px; border-style: solid;"></a> <br>
+        <a href="https://www.weather.gov/images/erh/gis/CAR_QPF24.png" title="Click for larger image"></a>
+      </div>
+    </div>
+    <br>
+    <br>
+    <a href="#top"><i>Top of Page</i></a><br>
+    <br>
+    <div class="row">
+      <div class="column" style="text-align: center;"> <strong>3-Day Ice
+          Accumulation Outlook</strong><a href="https://www.weather.gov/images/erh/gis/CONUS_Ice.png"
+          title="Click for larger image"><img alt="3-Day Ice Accumulation Outlook"
+            src="https://www.weather.gov/images/erh/gis/CONUS_Ice.png" style="width: 100%; border-width: 1px; border-style: solid;"></a>
+      </div>
+      <div class="column">
+        <div style="text-align: center;"><strong>7-Day Precipitation Trend<br>
+          </strong></div>
+        <a href="https://hprcc.unl.edu/products/maps/acis/7dPDataUS.png" title="Click for larger image"><img
+            alt="7-Day Precipitation Trend" src="https://hprcc.unl.edu/products/maps/acis/7dPDataUS.png"
+            style="width: 100%; border-width: 1px; border-style: solid;"></a> </div>
+      <div class="column">
+        <div style="text-align: center;"><strong>30 Day Precipitation Trend</strong><a
+            href="https://hprcc.unl.edu/products/maps/acis/30dPDataUS.png" title="Click for larger image"><img
+              alt="30-Day Precipitation Trend" src="https://hprcc.unl.edu/products/maps/acis/30dPDataUS.png"
+              style="width: 100%; border-width: 1px; border-style: solid;"></a>
+        </div>
+      </div>
+    </div>
+    <br>
+    <br>
+    <a href="mailto:#top"><i>Top of Page</i></a><br>
+    <br>
+    <div class="row">
+      <div class="column" style="text-align: center;"> <strong>Day 1 Excessive
+          Rainfall Outlook</strong><a href="https://www.wpc.ncep.noaa.gov/qpf/94ewbg.gif?1622663947874"
+          title="Click for larger image"><img alt="Day 1 Excessive Rainfall Outlook"
+            src="https://www.wpc.ncep.noaa.gov/qpf/94ewbg.gif?1622663947874" style="width: 100%; border-width: 1px; border-style: solid;"></a>
+      </div>
+      <div class="column">
+        <div style="text-align: center;"><strong>Day 1 Forecast Precipitation
+            Totals<br>
+          </strong></div>
+        <a href="https://www.wpc.ncep.noaa.gov/qpf/fill_94qwbg.gif" title="Click for larger image"><img
+            alt="Day 1 QPF" src="https://www.wpc.ncep.noaa.gov/qpf/fill_94qwbg.gif"
+            style="width: 100%; border-width: 1px; border-style: solid;"></a> </div>
+      <div class="column">
+        <div style="text-align: center;"><strong>Day 7 Forecast Precipitation
+            Totals<br>
+          </strong></div>
+        <a href="https://www.wpc.ncep.noaa.gov/qpf/p168i.gif" title="Click for larger image"><img
+            alt="Day 7 QPF" src="https://www.wpc.ncep.noaa.gov/qpf/p168i.gif" style="width: 100%; border-width: 1px; border-style: solid;"></a>
+      </div>
+    </div>
+    <br>
+    <br>
+    <a href="#top"><i>Top of Page</i><br>
+    </a><br>
+    <div class="row">
+      <div class="column" style="text-align: center;"> <strong><a id="severe" name="severe"></a>Day
+          1 Severe Thunderstorm Outlook</strong><a href="https://www.spc.noaa.gov/partners/outlooks/state/swody1.png?1749232401460"
+          title="Click for larger image"><img alt="Day 1 Severe Severe Outlook"
+            src="https://www.spc.noaa.gov/partners/outlooks/state/swody1.png?1749232401460"
+            style="width: 100%; border-width: 1px; border-style: solid;"></a> </div>
+      <div class="column">
+        <div style="text-align: center;"><strong>Day 2 Severe Thunderstorm
+            Outlook<br>
+          </strong></div>
+        <a href="https://www.spc.noaa.gov/partners/outlooks/state/swody2.png?1749232401460"
+          title="Click for larger image"><img alt="Day 2 Severe Outlook" src="https://www.spc.noaa.gov/partners/outlooks/state/swody2.png?1749232401460"
+            style="width:100%"></a> </div>
+      <div class="column">
+        <div style="text-align: center;"><strong>Day 3 Severe Thunderstorm
+            Outlook</strong></div>
+        <a href="https://www.spc.noaa.gov/partners/outlooks/state/swody3.png?1749232401460"
+          title="Click for larger image"><img alt="Day 3 Severe Outlook" src="https://www.spc.noaa.gov/partners/outlooks/state/swody3.png?1749232401460"
+            style="width:100%"></a> </div>
+    </div>
+    <br>
+    <br>
+    <a href="#top"><i>Top of Page</i><br>
+    </a><br>
+    <div class="row">
+      <div class="column" style="text-align: center;"> <strong><a id="river" name="river"></a>SPC
+          Mesoscale Discussions</strong><a href="https://www.spc.noaa.gov/products/md/"
+          title="Click for more information"><img alt="SPC Mesoscale Discussions"
+            src="https://www.spc.noaa.gov/products/md/validmd.png" style="width: 100%; border-width: 1px; border-style: solid;"></a>
+      </div>
+      <div class="column">
+        <div style="text-align: center;"><strong>Today's SPC Storm Reports<br>
+          </strong></div>
+        <a href="https://www.spc.noaa.gov/climo/reports/today.html" title="Click for more information"><img
+            alt="Today's Storm Reports" src="https://www.spc.noaa.gov/climo/reports/today.gif"
+            style="width: 100%; border-width: 1px; border-style: solid;"></a> </div>
+      <div class="column">
+        <div style="text-align: center;"><strong>Yesterday's SPC Storm Reports<br>
+          </strong></div>
+        <a href="https://www.spc.noaa.gov/climo/reports/yesterday.html" title="Click for more information"><img
+            alt="Yesterday's SPC Storm Reports" src="https://www.spc.noaa.gov/climo/reports/yesterday.gif"
+            style="width: 100%; border-width: 1px; border-style: solid;"></a><br>
+      </div>
+    </div>
+    <br>
+    <a href="#top"><i>Top of Page</i></a><br>
+    <br>
+    <br>
+    <div class="row">
+      <div class="column" style="text-align: center;"> <strong><a id="river" name="river"></a>Monthly
+          Drought Outlook</strong><a href="https://www.cpc.ncep.noaa.gov/products/expert_assessment/month_drought.png"
+          title="Click for larger image"><img alt="Monthly Drought Outlook" src="https://www.cpc.ncep.noaa.gov/products/expert_assessment/month_drought.png"
+            style="width: 100%; border-width: 1px; border-style: solid;"></a> </div>
+      <div class="column">
+        <div style="text-align: center;"><strong>3-Day Wind Gust Outlook<br>
+          </strong></div>
+        <a href="https://www.weather.gov/images/erh/gis/CONUS_WGust.png" title="Click for larger image"><img
+            alt="3-Day Wind Gust Outlook" src="https://www.weather.gov/images/erh/gis/CONUS_WGust.png"
+            style="width:100%"></a> </div>
+      <div class="column">
+        <div style="text-align: center;"><strong>3-Day Maximum Wave Height<br>
+          </strong></div>
+        <a href="https://www.weather.gov/images/erh/gis/CONUS_WaveH.png" title="Click for larger image"><img
+            alt="3-Day Maximum Wave Height" src="https://www.weather.gov/images/erh/gis/CONUS_WaveH.png"
+            style="width: 100%; border-width: 1px; border-style: solid;"></a><br>
+      </div>
+    </div>
+    <br>
+    <a href="#top"><i>Top of Page</i></a><br>
+    <br>
+    <br>
+    <div class="row">
+      <div class="column" style="text-align: center;"> <strong><a id="trends"></a>Current
+          Temperature Anomaly</strong><a href="https://climatereanalyzer.org/" title="Click for more information"><img
+            alt="Current Temperature Anomaly" src="https://climatereanalyzer.org/wx/todays-weather/maps/gfs_nh-sat1_t2anom_d1.png"
+            style="width: 100%; border-width: 1px; border-style: solid;"><br>
+        </a>
+        <div style="text-align: center;"><br>
+        </div>
+        <a href="https://droughtmonitor.unl.edu/data/png/current/current_me_trd.png"
+          title="Click for larger image"><br>
+        </a> </div>
+      <div class="column">
+        <div style="text-align: center;"><strong>7-Day Temperature Trend<br>
+          </strong></div>
+        <a href="https://hprcc.unl.edu/products/maps/acis/7dTDeptUS.png" title="Click for larger image"><img
+            alt="7-Day Temperature Trend" src="https://hprcc.unl.edu/products/maps/acis/7dTDeptUS.png"
+            style="width: 450px; border-style: solid; border-width: 1px; height: 450px;"><br>
+        </a>
+        <div style="text-align: center;"><br>
+        </div>
+      </div>
+      <div class="column">
+        <div style="text-align: center;"><strong>30-Day Temperature Trend<br>
+          </strong></div>
+        <a href="https://hprcc.unl.edu/products/maps/acis/30dTDeptUS.png" title="Click for larger image"><img
+            alt="30-Day Temperature Trend" src="https://hprcc.unl.edu/products/maps/acis/30dTDeptUS.png"
+            style="width: 454px; border-width: 1px; border-style: solid; height: 454px;"></a><br>
+        <div style="text-align: center;"><br>
+        </div>
+      </div>
+    </div>
+    <a href="#top"><i>Top of Page</i></a><br>
+    <br>
+    <br>
+    <div class="row">
+      <div class="column" style="text-align: center;"> <strong><a id="fire"></a>Day
+          1 Fire Weather Outlook</strong><a href="https://www.spc.noaa.gov/products/fire_wx/day1otlk_fire.gif"
+          title="Click for larger image"><img alt="Fire Wx Day 1" src="https://www.spc.noaa.gov/products/fire_wx/day1otlk_fire.gif"
+            style="width: 100%; border-width: 1px; border-style: solid;"><br>
+        </a>
+        <div style="text-align: center;"><br>
+        </div>
+        <a href="https://droughtmonitor.unl.edu/data/png/current/current_me_trd.png"
+          title="Click for larger image"> </a> </div>
+      <div class="column">
+        <div style="text-align: center;"><strong>Day 2 Fire Weather Outlook<br>
+          </strong></div>
+        <a href="https://www.spc.noaa.gov/products/fire_wx/day2otlk_fire.gif" title="Click for larger image"><img
+            alt="Day 2 Fire Weather Outlook" src="https://www.spc.noaa.gov/products/fire_wx/day2otlk_fire.gif"
+            style="width: 100%; border-style: solid; border-width: 1px;"><br>
+        </a>
+        <div style="text-align: center;"><br>
+        </div>
+      </div>
+      <div class="column">
+        <div style="text-align: center;"><strong>Day 3-8 Day Fire Weather
+            Outlook<br>
+          </strong></div>
+        <a href="https://www.spc.noaa.gov/products/exper/fire_wx/imgs/day38otlk_fire.gif"
+          title="Click for larger image"><img alt="Day 3-8 Fire Weather Outlook"
+            src="https://www.spc.noaa.gov/products/exper/fire_wx/imgs/day38otlk_fire.gif"
+            style="width: 100%; border-width: 1px; border-style: solid;"></a><br>
+        <div style="text-align: center;"><br>
+        </div>
+        <script>function updateClocks() {
+  const nowUTC = new Date();
+  const nowET = new Date(nowUTC.toLocaleString("en-US", { timeZone: "America/New_York" }));
+  const pad = n => n.toString().padStart(2, '0');
+  const h12 = nowET.getHours() % 12 || 12;
+  const ampm = nowET.getHours() >= 12 ? 'PM' : 'AM';
+  document.getElementById("et12").textContent = `${pad(h12)}:${pad(nowET.getMinutes())} ${ampm}`;
+  document.getElementById("et24").textContent = `${pad(nowET.getHours())}:${pad(nowET.getMinutes())}`;
+  document.getElementById("utc").textContent = `${pad(nowUTC.getUTCHours())}:${pad(nowUTC.getUTCMinutes())} UTC`;
+}
+setInterval(updateClocks, 1000);
+updateClocks();
+
+document.addEventListener("DOMContentLoaded", function () {
+  const nav = document.querySelector(".nav");
+  const toggle = document.getElementById("navToggle");
+  if (toggle && nav) {
+    toggle.addEventListener("click", () => {
+      nav.classList.toggle("show");
+    });
+  }
+  const mod = new Date(document.lastModified);
+  const options = {
+    year: 'numeric', month: 'long', day: 'numeric',
+    hour: '2-digit', minute: '2-digit',
+    timeZone: 'America/New_York',
+    timeZoneName: 'short'
+  };
+  document.getElementById("last-modified").textContent = "Page last modified: " + mod.toLocaleDateString("en-US", options);
+});
+</script><!-- === START MENU SCRIPT === -->
+        <script>
+document.addEventListener("DOMContentLoaded", function () {
+  const nav = document.querySelector(".nav");
+  const toggle = document.getElementById("navToggle");
+  if (toggle && nav) {
+    toggle.addEventListener("click", () => {
+      nav.classList.toggle("show");
+    });
+  }
+});
+</script><!-- === END MENU SCRIPT === --></div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>weather tables</title>
+    <style>
+  /* Container to manage the layout width */
+  .weather-card {
+    max-width: 600px;
+    margin: 20px auto;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    color: #333; /* Change to #fff if your background is dark */
+    background: transparent;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 20px;
+  }
+
+  .weather-header {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.05);
+    padding-bottom: 10px;
+  }
+
+  /* Grid system for responsiveness */
+  .weather-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+  }
+
+  .weather-item {
+    padding: 10px;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.1); /* Subtle contrast */
+  }
+
+  .label {
+    display: block;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    opacity: 0.7;
+    margin-bottom: 4px;
+  }
+
+  .value {
+    font-size: 1.1rem;
+    font-weight: 500;
+  }
+
+  .record-sub {
+    font-size: 0.85rem;
+    display: block;
+    margin-top: 2px;
+  }
+
+  .weather-footer {
+    margin-top: 20px;
+    font-size: 0.7rem;
+    opacity: 0.6;
+    line-height: 1.4;
+  }
+
+  .weather-footer a {
+    color: inherit;
+    text-decoration: underline;
+  }
+
+  /* Collapse to single column on mobile */
+  @media (max-width: 480px) {
+    .weather-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+  </head>
+  <body>
+    <div class="weather-card">
+      <div class="weather-header">Thursday, May 7</div>
+      <div class="weather-grid">
+        <!-- Temperature Section -->
+        <div class="weather-item"> <span class="label">Normal High / Low</span>
+          <span class="value">58° | 35°</span> </div>
+        <div class="weather-item"> <span class="label">Record High</span> <span
+            class="value">85°</span> <span class="record-sub">(1964)</span> </div>
+        <div class="weather-item"> <span class="label">Record Low</span> <span
+            class="value">20°</span> <span class="record-sub">(1966)</span> </div>
+        <!-- Precipitation Section -->
+        <div class="weather-item"> <span class="label">Normal Rain / Snow</span>
+          <span class="value">0.11" / 0.0"</span> </div>
+        <div class="weather-item"> <span class="label">Record Rain</span> <span
+            class="value">0.90"</span> <span class="record-sub">(2003)</span> </div>
+        <div class="weather-item"> <span class="label">Record Snow</span> <span
+            class="value">5.7"</span> <span class="record-sub">(1966)</span> </div>
+      </div>
+      <div class="weather-footer"> Source: <a href="https://scacis.rcc-acis.org/">NOAA
+          SC-ACIS</a><br>
+        NWS Caribou climate data | Records since 1893 </div>
+    </div>
+  </body>
+</html>

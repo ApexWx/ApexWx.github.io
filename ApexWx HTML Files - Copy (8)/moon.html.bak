@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Current Lunar Phase</title>
+  <style>
+    #moon-phase {
+      text-align: center;
+      font-family: Arial, sans-serif;
+    }
+    #moon-icon {
+      width: 100px;
+      height: 100px;
+      background-size: cover;
+      margin: 20px auto;
+    }
+  </style>
+</head>
+<body>
+  <div id="moon-phase">
+    <h1>Current Lunar Phase</h1>
+    <div id="moon-icon"></div>
+    <p id="moon-name"></p>
+    <p id="moon-illumination"></p>
+  </div>
+
+  <script>
+    async function fetchMoonPhase() {
+      const url = 'https://aa.usno.navy.mil/api/moon/phases/date?date=2025-05-21&nump=1';
+
+      try {
+        const response = await fetch(url);
+        const data = await response.json();
+        const moonPhase = data.phasedata[0]; // Get the current moon phase
+
+        const moonIconUrl = `https://www.usno.navy.mil/USNO/astronomical-applications/data-services/images/moonphases/${moonPhase.phase.toLowerCase()}.png`;
+
+        document.getElementById('moon-icon').style.backgroundImage = `url(${moonIconUrl})`;
+        document.getElementById('moon-name').textContent = `Phase: ${moonPhase.phase}`;
+        document.getElementById('moon-illumination').textContent = `Illumination: ${moonPhase.illumination}%`;
+      } catch (error) {
+        console.error('Error fetching moon phase data:', error);
+      }
+    }
+
+    fetchMoonPhase();
+  </script>
+</body>
+</html>

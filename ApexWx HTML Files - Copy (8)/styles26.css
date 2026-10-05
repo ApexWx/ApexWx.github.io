@@ -1,0 +1,420 @@
+/* ======================================================
+   GLOBAL RESETS & CORE LAYOUT
+   ====================================================== */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: url('https://github.com/ApexWx/ApexWx.github.io/blob/master/seamless-background-simply-sky.jpg?raw=true') repeat;
+}
+
+body, div, span, p {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+header, footer {
+  text-align: center;
+  padding: 1rem;
+  background: inherit;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 25% 50% 25%;
+  min-height: 80vh;
+}
+
+.column {
+  padding: 1rem;
+  background: inherit;
+  min-width: 0;
+}
+
+iframe {
+  max-width: 100%;
+}
+
+img {
+  max-width: 100% !important;
+  height: auto !important;
+}
+
+/* Utilities */
+.text-center { text-align: center; }
+.mt-sm { margin-top: 0.5rem; }
+.font-sm { font-size: 12px; }
+
+/* ======================================================
+   LIVE HARDWARE STATION WIDGET
+   ====================================================== */
+.live-station {
+  margin: 20px auto;
+  max-width: 900px;
+  text-align: center;
+}
+
+.station-box {
+  background: rgba(255,255,255,0.15);
+  border-radius: 8px;
+  padding: 15px;
+}
+
+.station-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 10px;
+}
+
+.station-item {
+  padding: 8px;
+}
+
+.station-label {
+  font-size: 12px;
+  color: #666;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.station-value {
+  font-size: 18px;
+  line-height: 1.15;
+}
+
+.metric {
+  display: block;
+  font-size: 0.68em;
+  color: #666;
+  line-height: 1.1;
+  margin-top: 2px;
+}  
+
+.pressure-trend-line {
+  display: block;
+  font-size: 13px;
+  line-height: 1;
+  margin-top: 2px;
+}
+
+/* ======================================================
+   FORECAST WIDGET & TEXT DECORATIONS
+   ====================================================== */
+#weather-widget {
+  font-family: Arial, sans-serif;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 1em;
+  background: transparent;
+  color: #333;
+}
+
+.fw-container h2 {
+  font-size: 1.5rem;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.fw-forecast {
+  background: transparent;
+  padding: 1em;
+  border-radius: 8px;
+}
+
+.fw-forecast .fw-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 1.5em;
+}
+
+.fw-forecast img {
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+}
+
+.fw-text {
+  font-size: 1rem;
+}
+
+.fw-day {
+  font-weight: bold;
+}
+
+/* ======================================================
+   CLIMATE, SEASONS & DEPARTURES
+   ====================================================== */
+#season-display {
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.winter { color: #0277bd; }
+.spring { color: #2e7d32; }
+.summer { color: #ef6c00; }
+.fall   { color: #d84315; }
+
+.departure-positive { color: #c0392b; font-weight: bold; }
+.departure-negative { color: #2166ac; font-weight: bold; }
+.departure-neutral  { color: #666; }
+
+.rain-positive { color: #1a7f43 !important; font-weight: bold; }
+.rain-negative { color: #e67e22 !important; font-weight: bold; }
+.rain-neutral  { color: #aaaaaa !important; font-weight: bold; }
+
+/* ======================================================
+   LIVE ASTRONOMY CARD LAYOUT
+   ====================================================== */
+.astro-card {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+  font-family: sans-serif;
+}
+
+.astro-title {
+  font-size: 18px;
+  margin: 0 0 10px 0;
+  font-weight: bold;
+}
+
+.astro-date {
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.astro-section-heading {
+  font-size: 15px;
+  font-weight: bold;
+  text-decoration: underline;
+  margin: 15px 0;
+}
+
+.astro-row {
+  margin: 15px 0;
+  line-height: 1.5;
+}
+
+.highlight-row {
+  font-size: 15px;
+  margin-top: 20px;
+}
+
+.current-phase {
+  background-color: rgba(0, 0, 0, 0.03);
+  padding: 10px;
+  border-radius: 6px;
+}
+
+.astro-divider {
+  border: 0;
+  border-top: 1px solid #eeeeee;
+  margin: 20px 0;
+}
+
+.sun-grid, .moon-phase-grid, .moon-rise-set-grid {
+  display: grid;
+  gap: 15px;
+  margin: 15px 0;
+}
+
+.sun-grid, .moon-phase-grid {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.moon-rise-set-grid {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.astro-item, .moon-phase-item {
+  padding: 8px;
+  line-height: 1.4;
+}
+
+.astro-notice {
+  max-width: 600px;
+  margin: 15px auto 0 auto;
+  font-size: 12px;
+  line-height: 1.6;
+  color: #666666;
+}
+
+.sun-info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  font-size: 1rem;
+  justify-content: center;
+}
+
+.sun-info > div {
+  flex: 0 0 auto;
+  white-space: nowrap;
+}
+
+/* ======================================================
+   WEATHER HAZARDS / ALERTS SYSTEM
+   ====================================================== */
+.alert-container {
+  margin-top: 1em;
+  font-family: sans-serif;
+}
+
+.alert-box {
+  border-left: 5px solid;
+  padding: 12px 15px;
+  border-radius: 4px;
+  font-size: 1rem;
+  line-height: 1.4;
+  background-color: #f9f9f9;
+}
+
+.alert-minor    { border-color: #ffcc00; background-color: #fff8e1; }
+.alert-moderate { border-color: #ffa726; background-color: #fff3e0; }
+.alert-severe   { border-color: #ef5350; background-color: #fdecea; }
+.alert-extreme  { border-color: #b71c1c; background-color: #fce4e4; }
+
+.alert-box strong { display: block; margin-bottom: 5px; }
+.alert-box a { color: #0056b3; text-decoration: underline; }
+
+.alert-close {
+  background: transparent;
+  border: none;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #444;
+  float: right;
+  cursor: pointer;
+  margin: -5px -8px 5px 8px;
+}
+
+.alert-close:hover { color: #000; }
+
+.alert-toggle {
+  background: none;
+  border: none;
+  color: #0056b3;
+  text-decoration: underline;
+  cursor: pointer;
+  font-size: 0.9rem;
+  margin-top: 6px;
+  padding: 0;
+}
+
+.alert-toggle:hover { color: #003d80; }
+
+/* ======================================================
+   RESPONSIVE DATA TABLES & NAVIGATION MENUS
+   ====================================================== */
+.responsive-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: transparent;
+}
+
+.responsive-table td, .responsive-table th {
+  padding: 10px;
+  border: none;
+  text-align: left;
+  vertical-align: top;
+}
+
+.responsive-menu {
+  padding: 10px;
+  font-family: Arial, sans-serif;
+}
+
+.responsive-menu .menu-toggle {
+  background-color: #444;
+  color: white;
+  padding: 10px 15px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  display: none;
+}
+
+.responsive-menu .menu-links a {
+  color: #1E3A8A;
+  font-weight: bold;
+  padding: 8px 12px;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.responsive-menu .menu-links a:hover {
+  background-color: #555;
+  color: white;
+}
+
+#page-footer a img { display: inline-block; vertical-align: middle; }
+#page-footer a { text-decoration: none !important; border: none !important; }
+
+/* Inline layout fixes */
+div[style*="width: 810px"],
+div[style*="width: 830px"],
+div[style*="width: 800px"] {
+  max-width: 100%;
+  width: 100% !important;
+  box-sizing: border-box;
+}
+
+/* ======================================================
+   MEDIA QUERIES (Responsive Breakpoints)
+   ====================================================== */
+@media (max-width: 768px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+  }
+  #center-column { order: 1; }
+  #left-column   { order: 2; }
+  #right-column  { order: 3; }
+  
+  .inline-images { justify-content: center; }
+  
+  #tswothersidecol, #tswsidecol {
+    float: none !important;
+    width: 100% !important;
+    display: block;
+  }
+  
+  .responsive-menu .menu-toggle { display: block; }
+  .responsive-menu .menu-links { display: none; flex-direction: column; }
+  .responsive-menu .menu-links a { display: block; border-top: 1px solid #444; }
+  .responsive-menu .menu-links.show { display: flex; }
+}
+
+@media screen and (max-width: 600px) {
+  .fw-forecast .fw-item {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .fw-forecast img { margin-bottom: 0.5em; }
+  
+  .sun-info { flex-direction: column; gap: 2px; }
+  
+  .alert-box { font-size: 0.95rem; padding: 10px 12px; }
+  
+  .responsive-table tr { display: block; margin-bottom: 15px; }
+  .responsive-table td, .responsive-table th { display: block; width: 100%; }
+}
+
+@media screen and (max-width: 500px) {
+  .sun-grid, .moon-phase-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .moon-rise-set-grid {
+    grid-template-columns: 1fr;
+  }
+}

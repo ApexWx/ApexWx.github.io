@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <title>Space Weather</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f8f8;
+      background-image: url('https://raw.githubusercontent.com/ApexWx/ApexWx.github.io/refs/heads/master/seamless-background-simply-sky.jpg');
+      background-repeat: repeat;
+      background-size: cover;
+      background-attachment: fixed;
+      margin: 0;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    /* Match trop.html nav styles */
+    .nav {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      border-top: 1px solid #ccc;
+      border-bottom: 1px solid #ccc;
+    }
+
+    .nav.show {
+      display: flex;
+    }
+
+    .nav li {
+      display: inline;
+    }
+
+    .nav a {
+      display: inline-block;
+      padding: 10px;
+      text-decoration: none;
+      font-weight: bold;
+      color: black;
+      transition: color 0.2s ease, text-decoration 0.2s ease;
+    }
+
+    .nav a:hover {
+      text-decoration: underline;
+      color: #0077cc;
+    }
+
+    #navToggle {
+      font-size: 20px;
+      border: none;
+      background: none;
+      cursor: pointer;
+      margin: 10px auto;
+      display: block;
+    }
+
+    @media (min-width: 769px) {
+      .nav {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+      }
+
+      #navToggle {
+        display: none;
+      }
+    }
+
+    .clock-table {
+      width: 90%;
+      max-width: 600px;
+      margin: 1em auto;
+      text-align: center;
+      border-collapse: collapse;
+    }
+
+    .clock-cell {
+      font-weight: bold;
+    }
+
+    .alert-box {
+      margin: 1em auto;
+      padding: 1em;
+      max-width: 600px;
+      border: 1px solid #888;
+      border-left: 5px solid #f00;
+      background-color: #fff3f3;
+      position: relative;
+    }
+
+    .dismiss-btn {
+      position: absolute;
+      top: 5px;
+      right: 10px;
+      border: none;
+      background: none;
+      font-size: 18px;
+      cursor: pointer;
+    }
+
+    .column {
+      float: left;
+      width: 33.33%;
+      padding: 5px;
+    }
+
+    .row::after {
+      content: "";
+      clear: both;
+      display: table;
+    }
+
+    @media screen and (max-width: 768px) {
+      .column {
+        width: 100%;
+      }
+    }
+  </style>
+  </head>
+  <body>
+    <h2 style="text-align: center;">Space Weather</h2>
+    <div id="last-modified" style="text-align: center; font-size: 14px; color: #555;"></div>
+    <div style="text-align: center; font-size: 12px;"><em> <br>
+        Graphics update automatically -- check image timestamps for most recent
+        updates/valid periods. </em></div>
+    <!-- Responsive Menu --> <button id="navToggle">☰ Menu</button>
+    <ul class="nav">
+      <li><a href="https://apexwx.github.io/">Home</a></li>
+      <li><a href="#cur">Today's Sun</a></li>
+      <li><a href="#flare">Solar Flare Activity</a></li>
+      <li><a href="#act">Solar Radiation and Aurora</a></li>
+    </ul>
+    <!-- Clock -->
+    <table class="clock-table">
+      <thead>
+        <tr>
+          <th>Eastern Time 12-Hour</th>
+          <th>Eastern Time 24-Hour</th>
+          <th>UTC / Z / Greenwich</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td id="et12" class="clock-cell">--</td>
+          <td id="et24" class="clock-cell">--</td>
+          <td id="utc" class="clock-cell">--</td>
+        </tr>
+      </tbody>
+    </table>
+    <!-- Space Weather Alert -->
+    <div id="space-weather-alert" class="alert-box" style="display: none;"> <button
+        class="dismiss-btn" onclick="dismissAlert()">✖</button>
+      <div id="alert-content">Loading space weather alert...</div>
+    </div>
+    <u><strong>Notices</strong></u><br>
+    <ul>
+      <li>For more information regarding solar activity, visit the <strong>Space
+          Weather Prediction Center</strong> at <a href="https://www.swpc.noaa.gov/">https://www.swpc.noaa.gov/</a>.
+        See also the current <a href="https://www.swpc.noaa.gov/products/forecast-discussion">NOAA
+          Space Weather Forecast Discussion</a></li>
+      <li>More solar activity information can also be found at Solar Ham.com: <a
+          href="https://www.solarham.net/">https://www.solarham.net/</a></li>
+      <li>Information about space weather conditions, access data and services,
+        and learn about space weather at <a href="https://www.spaceweather.gc.ca/index-en.php">Spaceweather
+          Canada</a></li>
+      <li><u><strong>Caution</strong></u>: Enjoy the solar images on this and
+        other web pages. <strong><u style="color: red;">Never attempt to look
+            directly at the sun--permanent eye damage can result</u>.</strong></li>
+    </ul>
+    <p> <strong></strong></p>
+    <p></p>
+    <br>
+    <br>
+    <div class="row">
+      <div class="column" style="text-align: center;"> <strong><a name="cur" id="cur"></a><a
+            href="https://www.thesuntoday.org/">Today's Sun</a></strong><a href="https://sdo.gsfc.nasa.gov/assets/img/latest/latest_1024_HMIIF.jpg"
+          title="Click for larger image"><img src="https://www.spaceweatherlive.com/images/SDO/SDO_HMIIF_512.jpg"
+            style="width: 100%; border-width: 1px; border-style: solid;" alt="Today's Sun"></a><br>
+        <span style="font-size: 12px;"> Visit NASA's <a href="https://sdo.gsfc.nasa.gov/">Solar
+            Dynamics Observatory</a> (SDO) for more images and information.<br>
+          Sunspots are areas that appear dark on the surface of the Sun. They
+          appear dark because they are cooler than other parts of the Sun’s
+          surface. Solar flares are a sudden explosion of energy caused by
+          tangling, crossing or reorganizing of magnetic field lines near
+          sunspots. Numbers are the current </span><span style="font-size: 12px;"><span>NOAA/SWPC
+            s</span>unspot regions.<br>
+        </span></div>
+      <div class="column" style="text-align: center;"><a href="https://www.swpc.noaa.gov/phenomena/coronal-holes"><strong>Coronal
+            Holes</strong></a> <strong></strong> <strong> </strong> <a href="https://sdo.gsfc.nasa.gov/assets/img/latest/latest_1024_0193.jpg"
+          title="Click for larger image"><img src="https://sdo.gsfc.nasa.gov/assets/img/latest/latest_1024_0193.jpg"
+            style="width: 100%; border-width: 1px; border-style: solid;" alt="Coronal Holes"></a><br>
+        <span style="font-size: 12px;">View <a href="https://sdo.gsfc.nasa.gov/data/latest48.php?q=0193"
+            title="48-hour coronal hole video" style="color: #1855d9; text-decoration: underline;">48-hour
+            video</a>. Coronal holes are the primary solar wind source.</span> </div>
+      <div class="column">
+        <div style="text-align: center;"><a href="https://nso.edu/for-public/sun-science/prominence-filaments/"><strong>Prominence
+              &amp; Filaments </strong></a></div>
+        <strong></strong> <strong> </strong> <a href="https://sdo.gsfc.nasa.gov/assets/img/latest/latest_1024_0304.jpg"
+          title="Click for larger image"><img src="https://sdo.gsfc.nasa.gov/assets/img/latest/latest_1024_0304.jpg"
+            style="width: 100%; border-width: 1px; border-style: solid;" alt="Filaments and prominences"><br>
+        </a>
+        <div style="text-align: center;"><a href="https://sdo.gsfc.nasa.gov/assets/img/latest/latest_1024_0304.jpg"
+            title="Click for larger image"></a> <span style="font-size: 12px;">View
+            <a href="https://sdo.gsfc.nasa.gov/data/latest48.php?q=0304" title="48-hour video">48-hour
+              video</a></span></div>
+      </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <div class="row">
+      <div class="column" style="text-align: center;"> <strong><a name="flare"
+            id="flare"></a><a href="https://www.spaceweather.com/glossary/kp.html"
+            title="K Index Explained">Planetary K Index</a></strong><a href="https://www.swpc.noaa.gov/products/planetary-k-index"
+          title="Click for larger image"><img src="https://services.swpc.noaa.gov/images/station-k-index.png?time=1715018409000"
+            style="width: 490px; border-width: 1px; border-style: solid; height: 503px;"
+            alt="Planetary K-Index"></a><br>
+        <div style="text-align: center; font-size: 12px;">The K-index, and by
+          extension the Planetary K-index, are used to characterize the
+          magnitude of geomagnetic storms. Kp is an excellent indicator of
+          disturbances in the Earth's magnetic field and is used by SWPC to
+          decide whether geomagnetic alerts and warnings need to be issued for
+          users who are affected by these disturbances.<br>
+          <a href="https://sunearthday.nasa.gov/swac/tutorials/mag_kp.php">Click
+            for a tutorial</a>.<span style="font-size: 12px;"> </span></div>
+      </div>
+      <div class="column" style="text-align: center;"><a href="https://en.wikipedia.org/wiki/Large_Angle_and_Spectrometric_Coronagraph"
+          title="What is LASCO?"><strong>SOHO LASCO C2 Coronagraph</strong></a>
+        <strong></strong> <strong> </strong> <a href="https://iswa.ccmc.gsfc.nasa.gov/iswa_data_tree/observation/solar/soho/lasco-c2/2021/06/20210604_1727_c2.png"
+          title="Click for larger image"><img src="https://services.swpc.noaa.gov/images/animations/lasco-c2/latest.jpg"
+            style="width: 100%; border-width: 1px; border-style: solid;" alt="Coronal Holes"></a><br>
+        <span style="font-size: 12px;">The LASCO C2 coronagraph monitors the
+          corona and can detect the emergence of coronal mass ejections.. White
+          circle indicates the occluded solar disk.</span> </div>
+      <div class="column">
+        <div style="text-align: center;"><strong><a href="https://en.wikipedia.org/wiki/Large_Angle_and_Spectrometric_Coronagraph"
+              title="What is LASCO?">SOHO LASCO C3 Coronagraph</a><br>
+          </strong></div>
+        <strong></strong> <strong> </strong> <a href="https://iswa.ccmc.gsfc.nasa.gov/iswa_data_tree/observation/solar/soho/lasco-c3-roll-corrected/2021/06/20210604_1731_c3.png"
+          title="Click for larger image"><img src="https://services.swpc.noaa.gov/images/animations/lasco-c3/latest.jpg"
+            style="width: 100%; border-width: 1px; border-style: solid;" alt="SOHO LASCO C3 Coronagraph"><br>
+        </a>
+        <div style="text-align: center;"><a href="https://sdo.gsfc.nasa.gov/assets/img/latest/latest_1024_0304.jpg"
+            title="Click for larger image"></a> <span style="font-size: 12px;">The
+            Large Angle and Spectrometric Coronagraph (LASCO) C3 coronagraph
+            monitors the inner heliosphere from from and can track the
+            propagation of coronal mass ejections previously seen by LASCO C2.
+            White cirle denotes the occluded solar disk.<a href="https://sdo.gsfc.nasa.gov/data/latest48.php?q=0304"
+              title="48-hour video"></a></span></div>
+      </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <div class="row">
+      <div class="column" style="text-align: center;"> <a name="act" id="act"></a><strong>Solar
+          Radiation Activity</strong> <a href="https://cdn.star.nesdis.noaa.gov/GOES16/ABI/SECTOR/ne/Sandwich/20211511811_GOES16-ABI-ne-Sandwich-2400x2400.jpg"
+          title="Click for larger image"> </a>
+        <div style="text-align: center;"><a href="https://services.swpc.noaa.gov/images/swx-overview-small.gif"
+            title="Click for larger image"><img src="https://services.swpc.noaa.gov/images/swx-overview-small.gif"
+              style="width: 461px; border-width: 1px; border-style: solid; height: 467px;"
+              alt="Solar Radiation Activity"><br>
+          </a>
+          <div style="text-align: center;"><span style="font-size: 12px;">Visit
+              <a href="https://www.swpc.noaa.gov/noaa-scales-explanation" title="NOAA Space Weather Scales Key"
+                style="color: #1855d9; text-decoration: underline;">NOAA Space
+                Weather Scales</a> for an explanation of the intensity scales
+              used in the graphs</span><em><strong style="font-size: 12px;">.</strong></em></div>
+          <div style="text-align: center;"><em><strong style="font-size: 12px;"><br>
+              </strong></em></div>
+          <div style="text-align: center;"><em><strong style="font-size: 12px;"><br>
+              </strong></em></div>
+          <a href="https://www.psl.noaa.gov/map/images/sst/sst.daily.gif" title="Click for larger image"></a></div>
+      </div>
+      <div class="column">
+        <div style="text-align: center;"><strong>Sunspot Regions Chart</strong><a
+            href="https://www.swpc.noaa.gov/products/solar-synoptic-map" title="Click for larger image"><img
+              src="https://services.swpc.noaa.gov/images/synoptic-map.jpg" style="width: 498px; border-width: 1px; border-style: solid; height: 504px;"
+              alt="Daily Sunspot Analysis"></a></div>
+        <div><span style="font-size: 12px;">Click image for more information (on
+            website click "Details" for explanation of chart markings).</span></div>
+        <a href="https://www.weather.gov/images/car/WeatherStory.gif" title="Click for larger image"></a>
+      </div>
+      <div class="column">
+        <div style="text-align: center;">
+          <div><strong><a name="aurora" id="aurora">Aurora Forecast</a></strong></div>
+          <strong></strong></div>
+        <strong> </strong> <a href="https://services.swpc.noaa.gov/images/animations/ovation/north/latest.jpg"
+          title="Click for larger image"><img src="https://services.swpc.noaa.gov/images/animations/ovation/north/latest.jpg"
+            style="width: 100%; border-width: 1px; border-style: solid;" alt="Aurora Forecast"></a><br>
+        <div style="text-align: center;"><span style="font-size: 12px;">The <a
+              href="https://www.swpc.noaa.gov/products/aurora-30-minute-forecast">Aurora
+              Forecast Model</a> shows the intensity and location of predicted
+            auroras.</span></div>
+        <div> </div>
+      </div>
+      <script>
+    function updateClocks() {
+      const nowUTC = new Date();
+      const nowET = new Date(nowUTC.toLocaleString("en-US", { timeZone: "America/New_York" }));
+
+      const pad = n => n.toString().padStart(2, '0');
+
+      const h12 = nowET.getHours() % 12 || 12;
+      const ampm = nowET.getHours() >= 12 ? 'PM' : 'AM';
+
+      document.getElementById("et12").textContent = `${pad(h12)}:${pad(nowET.getMinutes())} ${ampm}`;
+      document.getElementById("et24").textContent = `${pad(nowET.getHours())}:${pad(nowET.getMinutes())}`;
+      document.getElementById("utc").textContent = `${pad(nowUTC.getUTCHours())}:${pad(nowUTC.getUTCMinutes())} UTC`;
+    }
+
+    setInterval(updateClocks, 1000);
+    updateClocks();
+
+    async function fetchSpaceWeatherAlert() {
+      const alertBox = document.getElementById("space-weather-alert");
+      const alertContent = document.getElementById("alert-content");
+
+      try {
+        const res = await fetch("https://services.swpc.noaa.gov/products/alerts.json");
+        const alerts = await res.json();
+
+        const filtered = alerts.filter(alert =>
+          alert.message.includes("NOAA") && /G[3-5]/.test(alert.message)
+        );
+
+        const latest = filtered[0];
+
+        if (latest) {
+          alertBox.style.display = "block";
+          alertContent.innerHTML = `<p>${latest.message}</p>`;
+        } else {
+          alertBox.style.display = "none";
+        }
+      } catch (err) {
+        console.error("Error fetching space weather alerts:", err);
+      }
+    }
+
+    function dismissAlert() {
+      document.getElementById("space-weather-alert").style.display = "none";
+    }
+
+    fetchSpaceWeatherAlert();
+    setInterval(fetchSpaceWeatherAlert, 5 * 60 * 1000);
+
+    // Toggle for mobile menu
+    document.addEventListener("DOMContentLoaded", function () {
+      const nav = document.querySelector(".nav");
+      const toggle = document.getElementById("navToggle");
+      if (toggle && nav) {
+        toggle.addEventListener("click", () => {
+          nav.classList.toggle("show");
+        });
+      }
+
+      // Last Modified Timestamp
+      const mod = new Date(document.lastModified);
+      const options = {
+        year: 'numeric', month: 'long', day: 'numeric',
+        hour: '2-digit', minute: '2-digit',
+        timeZone: 'America/New_York',
+        timeZoneName: 'short'
+      };
+      document.getElementById("last-modified").textContent =
+        "Page last modified: " + mod.toLocaleDateString("en-US", options);
+    });
+  </script> </div>
+  </body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moon Phase - Fort Kent, ME</title>
+    <style>
+    body {
+      font-family: sans-serif;
+      font-size: 1.2em;
+      padding: 20px;
+    }
+  </style>
+  </head>
+  <body>
+    <div id="moon-phase">Loading moon phase...</div>
+    <script>
+    const moonPhaseSymbols = [
+      "🌑 New Moon",
+      "🌒 Waxing Crescent",
+      "🌓 First Quarter",
+      "🌔 Waxing Gibbous",
+      "🌕 Full Moon",
+      "🌖 Waning Gibbous",
+      "🌗 Last Quarter",
+      "🌘 Waning Crescent"
+    ];
+
+    const phaseName = (phase) => {
+      const names = [
+        "New Moon",
+        "Waxing Crescent",
+        "First Quarter",
+        "Waxing Gibbous",
+        "Full Moon",
+        "Waning Gibbous",
+        "Last Quarter",
+        "Waning Crescent"
+      ];
+      return names[Math.round(phase * 7)];
+    };
+
+    const phaseSymbol = (phase) => {
+      return moonPhaseSymbols[Math.round(phase * 7)];
+    };
+
+    const fetchMoonPhase = async () => {
+      const lat = 47.2584;
+      const lon = -68.5777;
+      const response = await fetch(`https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&daily=moon_phase&timezone=America/New_York`);
+      const data = await response.json();
+      const today = new Date();
+      const index = data.daily.time.findIndex(d => d === today.toISOString().split("T")[0]);
+      const phase = data.daily.moon_phase[index];
+      const currentPhase = phaseSymbol(phase);
+      const currentPhaseName = phaseName(phase);
+
+      // Get upcoming new moon using USNO fallback (static example)
+      const nextNewMoon = {
+        date: new Date("2025-05-26T23:02:00-04:00"),
+        label: "New Moon",
+        symbol: "🌑"
+      };
+
+      const dateString = nextNewMoon.date.toLocaleString("en-US", {
+        weekday: "short",
+        month: "short",
+        day: "numeric",
+        hour: "numeric",
+        minute: "2-digit",
+        hour12: true,
+        timeZone: "America/New_York"
+      });
+
+      const moonText = `Moon Phase: ${currentPhase} ${currentPhaseName} → ${nextNewMoon.symbol} ${nextNewMoon.label} @ ${dateString}`;
+      document.getElementById("moon-phase").textContent = moonText;
+    };
+
+    fetchMoonPhase();
+  </script>
+  </body>
+</html>

@@ -1,0 +1,2 @@
+Notice
+Weather information compiled by Apex Wx is based on computer weather models, personal weather station data, and information from NOAA, the National Weather Service, and other weather data providers available at time of update. Visit NWS Caribou at https://www.weather.gov/car/ for the latest official watches, warnings, and advisories for northern Maine.

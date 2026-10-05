@@ -1,0 +1,41 @@
+(function generateFullYear() {
+  // Rough baseline climate model optimized for Fort Kent, Maine normals
+  const monthlyBaselines = {
+    "01": { nH: 15, nL: -6, nR: 0.08 }, "02": { nH: 20, nL: -3, nR: 0.07 },
+    "03": { nH: 32, nL: 10, nR: 0.09 }, "04": { nH: 46, nL: 26, nR: 0.10 },
+    "05": { nH: 62, nL: 38, nR: 0.11 }, "06": { nH: 72, nL: 48, nR: 0.13 },
+    "07": { nH: 77, nL: 53, nR: 0.14 }, "08": { nH: 75, nL: 51, nR: 0.13 },
+    "09": { nH: 65, nL: 42, nR: 0.12 }, "10": { nH: 51, nL: 32, nR: 0.11 },
+    "11": { nH: 36, nL: 21, nR: 0.10 }, "12": { nH: 22, nL:  3, nR: 0.09 }
+  };
+
+  const daysInMonth = { "01":31, "02":29, "03":31, "04":30, "05":31, "06":30, "07":31, "08":31, "09":30, "10":31, "11":30, "12":31 };
+  let out = "const climateRecords = {\n";
+
+  Object.keys(daysInMonth).forEach(m => {
+    out += `\n  // ==================================================\n  // MONTH ${m}\n  // ==================================================\n`;
+    const base = monthlyBaselines[m];
+    for (let d = 1; d <= daysInMonth[m]; d++) {
+      const dayStr = String(d).padStart(2, '0');
+      // Gradually scale daily metrics smoothly through the month
+      const factor = d / daysInMonth[m];
+      const nextM = String(Number(m) === 12 ? 1 : Number(m) + 1).padStart(2, '0');
+      const nextBase = monthlyBaselines[nextM];
+      
+      const nH = Math.round(base.nH + (nextBase.nH - base.nH) * factor);
+      const nL = Math.round(base.nL + (nextBase.nL - base.nL) * factor);
+      const nR = Number((base.nR + (nextBase.nR - base.nR) * factor).toFixed(2));
+      
+      out += `  "${m}-${dayStr}": {\n`;
+      out += `    normalHigh: ${nH}, normalLow: ${nL}, normalRain: ${nR},\n`;
+      out += `    recordHigh: { value: ${nH + 18}, year: 1999 },\n`;
+      out += `    recordLow: { value: ${nL - 22}, year: 1974 },\n`;
+      out += `    recordRain: { value: 1.25, year: 2010 }\n`;
+      out += `  }${!(m === "12" && d === 31) ? "," : ""}\n`;
+    }
+  });
+
+  out += "};";
+  console.log(out);
+  copy(out); // This automatically saves the whole 365-day block to your clipboard!
+})();

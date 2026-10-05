@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>Northeast Map Wall</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <style>
+        /* ---------- PAGE STYLE ---------- */
+        body {
+            margin: 0;
+            padding: 10px;
+            font-family: Arial, sans-serif;
+            background: url('https://github.com/ApexWx/ApexWx.github.io/blob/master/seamless-background-simply-sky.jpg?raw=true') repeat;
+            color: black;
+            text-shadow: 0 0 3px rgba(255, 255, 255, 0.7);
+        }
+
+        .container {
+            max-width: 1240px;
+            margin: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: rgba(255, 255, 255, 0.55);
+            border-radius: 6px;
+            overflow: hidden;
+            margin-bottom: 10px;
+        }
+
+        td {
+            font-weight: bold;
+            padding: 10px;
+            vertical-align: top;
+            text-align: center;
+        }
+
+        .sectiontitle {
+            font-size: 18px;
+            background: rgba(255, 255, 255, 0.75);
+        }
+
+        .nav td {
+            background: rgba(255, 255, 255, 0.75);
+            font-size: 13px;
+            padding: 8px 2px;
+        }
+
+        a { color: black; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        hr { border: 1px solid rgba(0, 0, 0, 0.3); margin: 15px 0; }
+
+        /* ---------- IMPROVED IMAGE STYLES ---------- */
+        img {
+            width: 100%;
+            height: auto;
+            max-width: 600px;
+            border-radius: 6px;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            display: block;
+            margin: 10px auto;
+            cursor: zoom-in;
+            /* Prevents map blurriness */
+            image-rendering: -webkit-optimize-contrast;
+            image-rendering: crisp-edges;
+            image-rendering: pixelated;
+        }
+
+        img.loaded { opacity: 1; }
+
+        /* ---------- LIGHTBOX (ZOOM) ---------- */
+        #lightbox {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            cursor: zoom-out;
+        }
+
+        #lightbox img { 
+            max-width: 95vw;
+            max-height: 95vh;
+            width: auto;
+            height: auto;
+            border-radius: 8px; 
+            opacity: 1; 
+            object-fit: contain;
+            image-rendering: auto;
+        }
+
+        @media screen and (max-width:900px) {
+            td { display: block; width: 100%; }
+            img { max-width: 100%; }
+        }
+    </style>
+  </head>
+  <body>
+    <div style="text-align:center; margin-bottom:10px;"> <a href="https://apexwx.github.io/"
+        style="display:inline-block; padding:8px 16px; background:rgba(255,255,255,0.75); border-radius:6px; font-weight:bold;">
+        ← Back to main page </a> </div>
+    <div class="container" id="top">
+      <table class="nav" border="2">
+        <tbody>
+          <tr>
+            <td><a href="wall.htm">Wall-A</a></td>
+            <td><a href="wallf.htm">Wall-F</a></td>
+            <td><a href="wallnortheast.htm">Wall-NE</a></td>
+            <td><a href="aloft.htm">Aloft</a></td>
+            <td><a href="climate.htm">Climate</a></td>
+            <td><a href="gis.htm">GIS</a></td>
+            <td><a href="maps.htm">Maps</a></td>
+            <td><a href="marine.htm">Marine</a></td>
+            <td><a href="models.htm">Models</a></td>
+            <td><a href="nws.htm">NWS</a></td>
+            <td><a href="rad.htm">Radar</a></td>
+            <td><a href="rain.htm">Rain</a></td>
+            <td><a href="sat.htm">Satellite</a></td>
+            <td><a href="snow.htm">Snow</a></td>
+            <td><a href="surface.htm">Surface</a></td>
+            <td><a href="temps.htm">Temps</a></td>
+            <td><a href="thunder.htm">Thunder</a></td>
+            <td><a href="tropical.htm">Tropical</a></td>
+            <td><a href="wind.htm">Wind</a></td>
+          </tr>
+        </tbody>
+      </table>
+      <table>
+        <tbody>
+          <tr>
+            <td class="sectiontitle">Northeast Wall</td>
+          </tr>
+        </tbody>
+      </table>
+      <hr>
+      <table>
+        <tbody>
+          <tr>
+            <td>NOAA Advisories Map - Click for DETAIL!<a href="https://www.weather.gov/erh/"
+                target="_blank"><img src="https://weather.gov/wwamap/png/erhregional.png"></a></td>
+            <td>Legend<a href="https://www.weather.gov/erh/" target="_blank"><img
+                  src="advise-bottom.png"></a></td>
+          </tr>
+          <tr>
+            <td colspan="2"><a href="#top"><i>Top of Page</i></a></td>
+          </tr>
+        </tbody>
+      </table>
+      <hr>
+      <table>
+        <tbody>
+          <tr>
+            <td>Visible<img src="https://cdn.star.nesdis.noaa.gov/GOES16/ABI/SECTOR/ne/02/600x600.jpg"></td>
+            <td>GeoColor<img src="https://cdn.star.nesdis.noaa.gov/GOES16/ABI/SECTOR/ne/GEOCOLOR/600x600.jpg"></td>
+          </tr>
+          <tr>
+            <td>Vapor<img src="https://cdn.star.nesdis.noaa.gov/GOES16/ABI/SECTOR/ne/09/600x600.jpg"></td>
+            <td>Infrared<img src="https://cdn.star.nesdis.noaa.gov/GOES16/ABI/SECTOR/ne/Sandwich/600x600.jpg"></td>
+          </tr>
+          <tr>
+            <td colspan="2"><a href="#top"><i>Top of Page</i></a></td>
+          </tr>
+        </tbody>
+      </table>
+      <hr>
+      <table>
+        <tbody>
+          <tr>
+            <td>Northeast Radar<img src="https://radar.weather.gov/ridge/standard/NORTHEAST_loop.gif"></td>
+            <td>Mid-Atlantic Radar<img src="https://radar.weather.gov/ridge/standard/MIDATLANTIC_loop.gif"></td>
+          </tr>
+          <tr>
+            <td>Northeast Lightning<img src="https://www.blitzortung.org/Images/image_b_ny.png"></td>
+            <td>Southeast Lightning<img src="https://www.blitzortung.org/Images/image_b_fl.png"></td>
+          </tr>
+          <tr>
+            <td colspan="2"><a href="#top"><i>Top of Page</i></a></td>
+          </tr>
+        </tbody>
+      </table>
+      <hr>
+      <table>
+        <tbody>
+          <tr>
+            <td>Temp<img src="http://coolwx.com/analysis/surface/current/temp.ne-large.png"></td>
+            <td>Wind<img src="http://coolwx.com/analysis/surface/current/stream.ne-large.png"></td>
+          </tr>
+          <tr>
+            <td>Dewpoint<img src="http://coolwx.com/analysis/surface/current/dewp.ne-large.png"></td>
+            <td>Humidity<img src="http://coolwx.com/analysis/surface/current/rh.ne-large.png"></td>
+          </tr>
+          <tr>
+            <td colspan="2"><a href="#top"><i>Top of Page</i></a></td>
+          </tr>
+        </tbody>
+      </table>
+      <hr>
+      <table>
+        <tbody>
+          <tr>
+            <td>6 Hour Temp Trend<img src="https://www.wpc.ncep.noaa.gov/exper/change/tmpf_latest_06_ne.gif"></td>
+            <td>24 Hour Temp Trend<img src="https://www.wpc.ncep.noaa.gov/exper/change/tmpf_latest_24_ne.gif"></td>
+          </tr>
+          <tr>
+            <td>7 Day Temp Trend<img src="https://hprcc.unl.edu/products/maps/acis/nrcc/7dTDeptNRCC.png"></td>
+            <td>30 Day Temp Trend<img src="https://hprcc.unl.edu/products/maps/acis/nrcc/30dTDeptNRCC.png"></td>
+          </tr>
+          <tr>
+            <td colspan="2"><a href="#top"><i>Top of Page</i></a></td>
+          </tr>
+        </tbody>
+      </table>
+      <hr>
+      <table>
+        <tbody>
+          <tr>
+            <td>7 Day Precip Trend<img src="https://hprcc.unl.edu/products/maps/acis/nrcc/7dPDeptNRCC.png"></td>
+            <td>30 Day Precip Trend<img src="https://hprcc.unl.edu/products/maps/acis/nrcc/30dPDeptNRCC.png"></td>
+          </tr>
+          <tr>
+            <td colspan="2"><a href="#top"><i>Top of Page</i></a></td>
+          </tr>
+        </tbody>
+      </table>
+      <hr>
+      <table>
+        <tbody>
+          <tr>
+            <td>6 Hour Dewpoint Trend<img src="https://www.wpc.ncep.noaa.gov/exper/change/dwpf_latest_06_ne.gif"></td>
+            <td>24 Hour Dewpoint Trend<img src="https://www.wpc.ncep.noaa.gov/exper/change/dwpf_latest_24_ne.gif"></td>
+          </tr>
+          <tr>
+            <td>6 Hour Pressure Tendency<img src="https://www.wpc.ncep.noaa.gov/exper/change/pres_latest_06_ne.gif"></td>
+            <td>24 Hour Pressure Tendency<img src="https://www.wpc.ncep.noaa.gov/exper/change/pres_latest_24_ne.gif"></td>
+          </tr>
+          <tr>
+            <td colspan="2"><a href="#top"><i>Top of Page</i></a></td>
+          </tr>
+        </tbody>
+      </table>
+      <hr>
+      <table>
+        <tbody>
+          <tr>
+            <td>Northeast Rain<img src="http://www.weather.gov/images/erh/gis/NE_QPF.png"></td>
+            <td>Middle Atlantic Rain<img src="http://www.weather.gov/images/erh/gis/MA_QPF.png"></td>
+          </tr>
+          <tr>
+            <td>Northeast Snow<img src="http://www.weather.gov/images/erh/gis/NE_Snow.png"></td>
+            <td>Middle Atlantic Snow<img src="http://www.weather.gov/images/erh/gis/MA_Snow.png"></td>
+          </tr>
+          <tr>
+            <td>Northeast Ice<img src="http://www.spia-index.com/WDP-files/NE_total_ice04.png"></td>
+            <td>South East Ice<img src="http://www.spia-index.com/WDP-files/SE_total_ice04.png"></td>
+          </tr>
+          <tr>
+            <td colspan="2"><a href="#top"><i>Top of Page</i></a></td>
+          </tr>
+        </tbody>
+      </table>
+      <hr>
+      <table>
+        <tbody>
+          <tr>
+            <td>Severe Risk NE Day 1<img src="https://graphical.weather.gov/GraphicalNDFD.php?width=1040&amp;timezone=EDT&amp;sector=NORTHEAST&amp;element=convoutlook&amp;n=1"
+                alt="NE Day 1 Severe"></td>
+            <td>Severe Risk Mid-Atlantic Day 1<img src="https://graphical.weather.gov/GraphicalNDFD.php?width=1040&amp;timezone=EDT&amp;sector=NEMETRO&amp;element=convoutlook&amp;n=1"
+                alt="Mid-Atlantic Day 1 Severe"></td>
+          </tr>
+          <tr>
+            <td>Severe Risk NE Day 2<img src="http://www.weather.gov/images/erh/gis/NE_convectiveoutlook_day2.png"></td>
+            <td>Severe Risk MA Day 2<img src="http://www.weather.gov/images/erh/gis/MA_convectiveoutlook_day2.png"></td>
+          </tr>
+          <tr>
+            <td>Severe Risk NE Day 3<img src="http://www.weather.gov/images/erh/gis/NE_convectiveoutlook_day3.png"></td>
+            <td>Severe Risk MA Day 3<img src="http://www.weather.gov/images/erh/gis/MA_convectiveoutlook_day3.png"></td>
+          </tr>
+          <tr>
+            <td colspan="2"><a href="#top"><i>Top of Page</i></a></td>
+          </tr>
+        </tbody>
+      </table>
+      <hr>
+      <table>
+        <tbody>
+          <tr>
+            <td>Wind 00-06hr<img src="http://www.spia-index.com/WDP-files/NE_wspdSPIA01.png"></td>
+            <td>Wind 06-12hr<img src="http://www.spia-index.com/WDP-files/NE_wspdSPIA02.png"></td>
+          </tr>
+          <tr>
+            <td>Wind 12-18hr<img src="http://www.spia-index.com/WDP-files/NE_wspdSPIA03.png"></td>
+            <td>Wind 18-24hr<img src="http://www.spia-index.com/WDP-files/NE_wspdSPIA04.png"></td>
+          </tr>
+          <tr>
+            <td>Max Wind Gust NE<img src="https://www.weather.gov/images/erh/gis/NE_WGust.png"></td>
+            <td>Max Wind Gust MA<img src="https://www.weather.gov/images/erh/gis/MA_WGust.png"></td>
+          </tr>
+          <tr>
+            <td>Max Wave Height NE<img src="https://www.weather.gov/images/erh/gis/NE_WaveH.png"></td>
+            <td>Max Wave Height MA<img src="https://www.weather.gov/images/erh/gis/MA_WaveH.png"></td>
+          </tr>
+          <tr>
+            <td colspan="2"><a href="#top"><i>Top of Page</i></a></td>
+          </tr>
+        </tbody>
+      </table>
+      <hr>
+      <table>
+        <tbody>
+          <tr>
+            <td>6-Hour Forecast<img src="https://graphical.weather.gov/images/nemetro/Wx1_nemetro.png"></td>
+            <td>12-Hour Forecast<img src="https://graphical.weather.gov/images/nemetro/Wx3_nemetro.png"></td>
+          </tr>
+          <tr>
+            <td>18-Hour Forecast<img src="https://graphical.weather.gov/images/nemetro/Wx5_nemetro.png"></td>
+            <td>24-Hour Forecast<img src="https://graphical.weather.gov/images/nemetro/Wx7_nemetro.png"></td>
+          </tr>
+          <tr>
+            <td>30-Hour Forecast<img src="https://graphical.weather.gov/images/nemetro/Wx9_nemetro.png"></td>
+            <td>36-Hour Forecast<img src="https://graphical.weather.gov/images/nemetro/Wx11_nemetro.png"></td>
+          </tr>
+          <tr>
+            <td>42-Hour Forecast<img src="https://graphical.weather.gov/images/nemetro/Wx13_nemetro.png"></td>
+            <td>48-Hour Forecast<img src="https://graphical.weather.gov/images/nemetro/Wx15_nemetro.png"></td>
+          </tr>
+          <tr>
+            <td colspan="2"><a href="#top"><i>Top of Page</i></a></td>
+          </tr>
+        </tbody>
+      </table>
+      <hr>
+      <table>
+        <tbody>
+          <tr>
+            <td>Day 1 High<img src="http://graphical.weather.gov/images/northeast/MaxT1_northeast.png"></td>
+            <td>Day 1 Low<img src="http://graphical.weather.gov/images/northeast/MinT1_northeast.png"></td>
+          </tr>
+          <tr>
+            <td>Day 2 High<img src="http://graphical.weather.gov/images/northeast/MaxT2_northeast.png"></td>
+            <td>Day 2 Low<img src="http://graphical.weather.gov/images/northeast/MinT2_northeast.png"></td>
+          </tr>
+          <tr>
+            <td>Day 3 High<img src="http://graphical.weather.gov/images/northeast/MaxT3_northeast.png"></td>
+            <td>Day 3 Low<img src="http://graphical.weather.gov/images/northeast/MinT3_northeast.png"></td>
+          </tr>
+          <tr>
+            <td>Day 4 High<img src="http://graphical.weather.gov/images/northeast/MaxT4_northeast.png"></td>
+            <td>Day 4 Low<img src="http://graphical.weather.gov/images/northeast/MinT4_northeast.png"></td>
+          </tr>
+          <tr>
+            <td>Day 5 High<img src="http://graphical.weather.gov/images/northeast/MaxT5_northeast.png"></td>
+            <td>Day 5 Low<img src="http://graphical.weather.gov/images/northeast/MinT5_northeast.png"></td>
+          </tr>
+          <tr>
+            <td>Day 6 High<img src="http://graphical.weather.gov/images/northeast/MaxT6_northeast.png"></td>
+            <td>Day 6 Low<img src="http://graphical.weather.gov/images/northeast/MinT6_northeast.png"></td>
+          </tr>
+          <tr>
+            <td>Day 7 High<img src="http://graphical.weather.gov/images/northeast/MaxT7_northeast.png"></td>
+            <td>Day 7 Low<img src="http://graphical.weather.gov/images/northeast/MinT7_northeast.png"></td>
+          </tr>
+          <tr>
+            <td colspan="2"><a href="#top"><i>Top of Page</i></a></td>
+          </tr>
+        </tbody>
+      </table>
+      <table class="nav" border="2">
+        <tbody>
+          <tr>
+            <td><a href="wall.htm">Wall-A</a></td>
+            <td><a href="wallf.htm">Wall-F</a></td>
+            <td><a href="wallnortheast.htm">Wall-NE</a></td>
+            <td><a href="aloft.htm">Aloft</a></td>
+            <td><a href="climate.htm">Climate</a></td>
+            <td><a href="gis.htm">GIS</a></td>
+            <td><a href="maps.htm">Maps</a></td>
+            <td><a href="marine.htm">Marine</a></td>
+            <td><a href="models.htm">Models</a></td>
+            <td><a href="nws.htm">NWS</a></td>
+            <td><a href="rad.htm">Radar</a></td>
+            <td><a href="rain.htm">Rain</a></td>
+            <td><a href="sat.htm">Satellite</a></td>
+            <td><a href="snow.htm">Snow</a></td>
+            <td><a href="surface.htm">Surface</a></td>
+            <td><a href="temps.htm">Temps</a></td>
+            <td><a href="thunder.htm">Thunder</a></td>
+            <td><a href="tropical.htm">Tropical</a></td>
+            <td><a href="wind.htm">Wind</a></td>
+          </tr>
+        </tbody>
+      </table>
+      <div id="lightbox"><img id="lightbox-img" src=""></div>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function(){
+            // Refresh images every 5 minutes
+            setInterval(function(){
+                document.querySelectorAll("img:not(#lightbox img)").forEach(img => {
+                    let src = img.src.split("?")[0];
+                    img.src = src + "?t=" + new Date().getTime();
+                });
+            }, 300000);
+
+            // Handle Fade-in
+            document.querySelectorAll("img").forEach(img => {
+                if (img.complete) img.classList.add("loaded");
+                img.addEventListener("load", () => img.classList.add("loaded"));
+            });
+
+            // Zoom functionality
+            const lb = document.getElementById("lightbox");
+            const lbImg = document.getElementById("lightbox-img");
+            document.querySelectorAll("img:not(#lightbox img)").forEach(img => {
+                img.addEventListener("click", (e) => {
+                    e.stopPropagation();
+                    lb.style.display = "flex";
+                    lbImg.src = img.src;
+                });
+            });
+            lb.addEventListener("click", () => lb.style.display = "none");
+        });
+    </script>
+  </body>
+</html>

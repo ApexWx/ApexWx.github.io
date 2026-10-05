@@ -1,0 +1,73 @@
+async function fetchNWSAlerts() {
+  const zone = "PAZ066"; // Lancaster County, PA
+  const apiURL = `https://api.weather.gov/alerts/active/zone/${zone}`;
+
+  try {
+    const response = await fetch(apiURL);
+    const data = await response.json();
+    const alertDiv = document.getElementById("weatherAlert");
+
+    if (data.features.length > 0) {
+      let html = "";
+
+      data.features.forEach(feature => {
+        const alert = feature.properties;
+        const alertId = feature.id;
+        const storedDismissedId = localStorage.getItem(`dismissed-${alertId}`);
+
+        if (alertId !== storedDismissedId) {
+          const title = alert.headline || "Weather Alert";
+          const description = alert.description || "";
+          const severityRaw = alert.severity || "Unknown";
+          const severity = severityRaw.toLowerCase();
+          const link = alert.url || "https://www.weather.gov/ctp/";
+          const updated = new Date(alert.sent).toLocaleString('en-US', {
+            dateStyle: 'medium',
+            timeStyle: 'short',
+            timeZone: 'America/New_York'
+          });
+
+          const severityClass = {
+            minor: "alert-minor",
+            moderate: "alert-moderate",
+            severe: "alert-severe",
+            extreme: "alert-extreme"
+          }[severity] || "alert-moderate";
+
+          html += `
+            <div class="alert-box ${severityClass}" data-alert-id="${alertId}">
+              <button class="alert-close" onclick="dismissAlert('${alertId}')" aria-label="Dismiss alert">&times;</button>
+              <strong>⚠️ Weather Alert (${severityRaw === "Unknown" ? "Severity Unknown" : severityRaw}):</strong>
+              <strong>${title}</strong>
+              <div>${description}</div>
+              <div style="margin-top: 8px;">
+                <a href="${link}" target="_blank" rel="noopener">View full alert from NWS</a>
+              </div>
+              <div style="margin-top: 6px; font-size: 0.9em; color: #555;">
+                Last updated: ${updated}
+              </div>
+            </div>
+          `;
+        }
+      });
+
+      alertDiv.innerHTML = html || ""; // display or clear if all dismissed
+    } else {
+      alertDiv.innerHTML = ""; // No active alerts
+    }
+  } catch (error) {
+    console.error("NWS Alert fetch error:", error);
+    document.getElementById("weatherAlert").innerText = "Unable to load weather alerts.";
+  }
+}
+
+function dismissAlert(alertId) {
+  localStorage.setItem(`dismissed-${alertId}`, alertId);
+  const alertBox = document.querySelector(`[data-alert-id="${alertId}"]`);
+  if (alertBox) {
+    alertBox.style.display = 'none';
+  }
+}
+
+fetchNWSAlerts();
+setInterval(fetchNWSAlerts, 15 * 60 * 1000); // Refresh every 15 minutes

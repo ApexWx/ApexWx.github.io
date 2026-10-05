@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Three Column Layout Corrected</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: url('https://github.com/ApexWx/ApexWx.github.io/blob/master/seamless-background-simply-sky.jpg?raw=true') repeat;
+    }
+
+    header, footer {
+      text-align: center;
+      padding: 1rem;
+      background: inherit;
+    }
+
+    .container {
+      display: grid;
+      grid-template-columns: 20% 60% 20%;
+      min-height: 80vh; /* adjust as needed */
+    }
+
+    .column {
+      padding: 1rem;
+      background: inherit;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== HEADER SECTION ===== -->
+  <header id="page-header">
+    <h1>Header</h1>
+  </header>
+
+  <!-- ===== MAIN THREE COLUMN GRID CONTAINER ===== -->
+  <div class="container" id="main-container">
+
+    <!-- ===== LEFT COLUMN (20%) ===== -->
+    <div class="column left" id="left-column">
+      <p>Left Column (20%)</p>
+    </div>
+
+    <!-- ===== CENTER COLUMN (60%) ===== -->
+    <div class="column center" id="center-column">
+      <p>Center Column (60%)</p>
+      <p>Additional center content example.</p>
+    </div>
+
+    <!-- ===== RIGHT COLUMN (20%) ===== -->
+    <div class="column right" id="right-column">
+      <p>Right Column (20%)</p>
+      <p>Additional right content example.</p>
+    </div>
+
+  </div>
+
+  <!-- ===== FOOTER SECTION ===== -->
+  <footer id="page-footer">
+    <p>Footer</p>
+  </footer>
+
+</body>
+</html>

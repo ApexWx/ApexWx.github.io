@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fawkes House Weather</title>
+    <style>
+      /* Responsive image and iframe */
+      img, iframe {
+        max-width: 100%;
+        height: auto;
+      }
+
+      /* Wrapper for scrollable wide content */
+      .responsive-container {
+        max-width: 100%;
+        overflow-x: auto;
+      }
+
+      /* Mobile layout adjustments */
+      @media (max-width: 600px) {
+        body {
+          padding: 8px;
+        }
+
+        #tswcontent, #tswothersidecol, #tswsidecol {
+          width: 100% !important;
+          display: block;
+        }
+
+        .sun-info {
+          flex-direction: column;
+          gap: 4px;
+        }
+
+        .fw-forecast .fw-item {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .fw-forecast img {
+          margin-bottom: 0.5em;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="tswcontainer">
+      <div style="text-align:center">
+        <img src="https://raw.githubusercontent.com/ApexWx/ApexWx.github.io/master/Apex%20banner.jpg" alt="Apex Wx Banner" style="border: none;">
+      </div>
+
+      <div id="tswcentrecombo">
+        <div id="tswcontent" style="font-size: 16px;">
+          <div style="text-align: center;">
+            <h2>Apex Wx</h2>
+            <h2 style="color: black; font-family: sans-serif; font-weight: 400;">Lancaster & the Lower Susquehanna Valley, PA Weather Information</h2>
+            <a href="https://en.wikipedia.org/wiki/Pennsylvania">
+              <img src="https://github.com/ApexWx/ApexWx.github.io/blob/master/pa.png?raw=true" alt="PA Flag" style="height: 108px; margin: 10px;">
+            </a>
+            <a href="https://en.wikipedia.org/wiki/Lancaster,_Pennsylvania">
+              <img src="https://github.com/ApexWx/ApexWx.github.io/blob/master/us-palan.png?raw=true" alt="Lancaster Flag" style="height: 108px; margin: 10px;">
+            </a>
+            <br><span style="font-size: 12px;">Weather info since 2009</span>
+          </div>
+
+          <div id="timeWidget" style="text-align:center; font-family:Arial, sans-serif; font-size:14px;">
+            <div><u><b>Current Time (24-Hour)</b></u></div>
+            <div id="etTime" style="font-weight:bold;">Loading ET...</div>
+            <div id="utcTime" style="font-weight:bold;">Loading UTC...</div>
+          </div>
+
+          <div style="text-align:center; margin-top: 1em;">
+            <form style="width:200px; border:1px solid #960000; font-size:13px; padding:5px; display:inline-block;">
+              <b>Temperature Converter</b>
+              <table style="width:100%; font-size:13px;">
+                <tr>
+                  <td>Fahrenheit:</td>
+                  <td><input name="F" value="32" onkeyup="this.form.C.value = (100/180)*(this.value - 32)" type="text" style="width:60px;">°</td>
+                </tr>
+                <tr>
+                  <td>Celsius:</td>
+                  <td><input name="C" value="0" onkeyup="this.form.F.value = (180/100)*this.value + 32" type="text" style="width:60px;">°</td>
+                </tr>
+              </table>
+            </form>
+          </div>
+
+          <div style="text-align: center; margin-top: 1em;">
+            <a href="https://www.airnow.gov/?city=Lancaster&state=PA&country=USA">Lancaster Air Quality Index</a><br>
+            <iframe src="https://widget.airnow.gov/aq-dial-widget/?city=Lancaster&state=PA&country=USA" style="border: none; border-radius: 25px;" height="230" width="230" title="Air Quality Widget"></iframe>
+          </div>
+
+          <div class="responsive-container">
+            <div style="width: 810px;">
+              <p><strong>Friday - Sunday</strong><br>
+              Rainy weather is expected across Lancaster County due to a cold front and an upper-level trough. Off-and-on showers and possible thunderstorms will persist throughout the weekend.</p>
+
+              <p><strong>Monday - Thursday</strong><br>
+              A series of weak storm systems will keep the region unsettled into next week, with increased chances of rain and moderate temperatures.</p>
+            </div>
+          </div>
+
+          <div class="responsive-container">
+            <img src="https://www.cpc.ncep.noaa.gov/products/predictions/long_range/lead14/off15_temp.gif" alt="Temperature Trend">
+            <img src="https://www.cpc.ncep.noaa.gov/products/predictions/long_range/lead14/off15_prcp.gif" alt="Precipitation Trend">
+          </div>
+
+          <footer style="font-size: 12px; margin-top: 2em;">
+            <p>Apex Wx is operated by Joseph Becker, PhD. Forecasts and observations from multiple sources.</p>
+            <p>Sun/Moon data from <a href="https://www.timeanddate.com/">timeanddate.com</a>. NOAA warning banner by <a href="https://www.willyweather.com/">WillyWeather</a>.</p>
+            <p>Logo by Joanna Becker ©2016</p>
+            <script>document.write("This website was last modified " + document.lastModified);</script>
+          </footer>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

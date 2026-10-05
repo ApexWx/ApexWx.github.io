@@ -1,0 +1,174 @@
+export default {
+  async fetch(request, env, ctx) {
+    // 1. Anchor timestamps explicitly to Maine time zone
+    const formatter = new Intl.DateTimeFormat("en-US", {
+      timeZone: "America/New_York",
+      year: "numeric",
+      month: "2-digit",
+      day: "2-digit"
+    });
+    
+    const parts = formatter.formatToParts(new Date());
+    const year = parts.find(p => p.type === 'year').value;
+    const month = parts.find(p => p.type === 'month').value;
+    const day = parts.find(p => p.type === 'day').value;
+    
+    // Today string (YYYY-MM-DD)
+    const todayStr = `${year}-${month}-${day}`;
+    
+    // Calculate Yesterday string safely across date boundaries
+    const yesterdayObj = new Date(new Date().toLocaleString("en-US", { timeZone: "America/New_York" }));
+    yesterdayObj.setDate(yesterdayObj.getDate() - 1);
+    const yParts = formatter.formatToParts(yesterdayObj);
+    const yesterdayStr = `${yParts.find(p => p.type === 'year').value}-${yParts.find(p => p.type === 'month').value}-${yParts.find(p => p.type === 'day').value}`;
+
+    // Define dates for Monthly summaries & Seasonal snow parameters
+    const currentYear = yesterdayObj.getFullYear();
+    const monthlyStart = `${year}-${month}-01`;
+    const monthlyEnd = todayStr; 
+    
+    const seasonStartYear = (yesterdayObj.getMonth() >= 6) ? currentYear : currentYear - 1;
+    const seasonStart = `${seasonStartYear}-07-01`;
+    const seasonEnd = todayStr;
+
+    try {
+      // 2. FETCH YESTERDAY'S NORMALS FOR DEPARTURES
+      const yesterdayNormRes = await fetch("https://data.rcc-acis.org/StnData", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          sid: "172878",
+          sdate: yesterdayStr,
+          edate: yesterdayStr,
+          elems: [
+            { name: "maxt", normal: "v2020", duration: "dly" },
+            { name: "mint", normal: "v2020", duration: "dly" },
+            { name: "pcpn", normal: "v2020", duration: "dly" }
+          ]
+        })
+      });
+      const yesterdayNormData = await yesterdayNormRes.json();
+      
+      const yesterdayNormals = {
+        normalHigh: parseFloat(yesterdayNormData.data?.[0]?.[1]) || 0,
+        normalLow: parseFloat(yesterdayNormData.data?.[0]?.[2]) || 0,
+        normalRain: parseFloat(yesterdayNormData.data?.[0]?.[3]) || 0
+      };
+
+      // 3. FETCH TODAY'S ACTUAL NORMALS FOR THE FRONT CARDS
+      const todayNormRes = await fetch("https://data.rcc-acis.org/StnData", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          sid: "172878",
+          sdate: todayStr,
+          edate: todayStr,
+          elems: [
+            { name: "maxt", normal: "v2020", duration: "dly" },
+            { name: "mint", normal: "v2020", duration: "dly" },
+            { name: "pcpn", normal: "v2020", duration: "dly" }
+          ]
+        })
+      });
+      const todayNormData = await todayNormRes.json();
+      
+      const todayNormals = {
+        normalHigh: parseFloat(todayNormData.data?.[0]?.[1]) || 0,
+        normalLow: parseFloat(todayNormData.data?.[0]?.[2]) || 0,
+        normalRain: parseFloat(todayNormData.data?.[0]?.[3]) || 0
+      };
+
+      // 4. FETCH THE REGULAR MONTHLY TRACKING DATA
+      const monthlyRes = await fetch("https://data.rcc-acis.org/StnData", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          sid: "172878",
+          sdate: monthlyStart,
+          edate: monthlyEnd,
+          elems: ["maxt", "mint", "pcpn"]
+        })
+      });
+      const monthlyData = await monthlyRes.json();
+
+      // 5. FETCH ACCUMULATED YTD RAIN & DEPARTURES
+      const ytdRes = await fetch("https://data.rcc-acis.org/StnData", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          sid: "172878",
+          sdate: `${year}-01-01`,
+          edate: yesterdayStr,
+          elems: [
+            { name: "pcpn", add: "sum" },
+            { name: "pcpn", normal: "v2020", add: "sum" }
+          ]
+        })
+      });
+      const ytdData = await ytdRes.json();
+      const ytdRain = parseFloat(ytdData.data?.[0]?.[1]) || 0;
+      const ytdNormalRainTotal = parseFloat(ytdData.data?.[0]?.[2]) || 0;
+      const ytdRainDeparture = ytdRain - ytdNormalRainTotal;
+
+      // 6. FETCH SEASONAL SNOW TRACKING
+      const seasonalRes = await fetch("https://data.rcc-acis.org/StnData", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          sid: "172878",
+          sdate: seasonStart,
+          edate: seasonEnd,
+          elems: ["snow"]
+        })
+      });
+      const seasonalData = await seasonalRes.json();
+
+      const snowNormRes = await fetch("https://data.rcc-acis.org/StnData", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          sid: "172878",
+          sdate: seasonStart,
+          edate: yesterdayStr,
+          elems: [{ name: "snow", normal: "v2020", add: "sum" }]
+        })
+      });
+      const snowNormData = await snowNormRes.json();
+      
+      let observedSnowTotal = 0;
+      if (seasonalData.data) {
+        seasonalData.data.forEach(row => {
+          if (row[1] !== "M" && row[1] !== "T" && row[0] !== todayStr) {
+            observedSnowTotal += parseFloat(row[1]) || 0;
+          }
+        });
+      }
+      const normalSnowTotal = parseFloat(snowNormData.data?.[0]?.[1]) || 0;
+      const seasonSnowDeparture = observedSnowTotal - normalSnowTotal;
+
+      // RETURN PERFECTLY BALANCED PAYLOAD
+      const payload = {
+        monthlyRows: monthlyData.data || [],
+        seasonalRows: seasonalData.data || [],
+        yesterdayNormals: yesterdayNormals, 
+        todayNormals: todayNormals,          // <-- New distinct data point
+        ytdRain: ytdRain,
+        ytdRainDeparture: ytdRainDeparture,
+        seasonSnowDeparture: seasonSnowDeparture
+      };
+
+      return new Response(JSON.stringify(payload), {
+        headers: {
+          "Content-Type": "application/json",
+          "Access-Control-Allow-Origin": "*"
+        }
+      });
+
+    } catch (err) {
+      return new Response(JSON.stringify({ error: err.message }), {
+        status: 500,
+        headers: { "Access-Control-Allow-Origin": "*" }
+      });
+    }
+  }
+};

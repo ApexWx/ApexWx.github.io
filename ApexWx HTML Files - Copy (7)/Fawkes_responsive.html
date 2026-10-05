@@ -1,0 +1,1583 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <title>Fawkes House Weather</title>
+    <meta name="generator" content="thesitewizard.com's Layout Wizard 4.0.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="all" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="tswnavbar.css">
+    <script src="https://cdnres.willyweather.com/widget/warning/loadView.html?id=126547"></script>
+    <script>
+  function getCurrentSeason(date = new Date()) {
+    const month = date.getMonth() + 1;
+    const day = date.getDate();
+
+    if ((month === 12 && day >= 21) || (month <= 2) || (month === 3 && day < 20)) {
+      return "winter";
+    } else if ((month === 3 && day >= 20) || (month >= 4 && month <= 5) || (month === 6 && day < 21)) {
+      return "spring";
+    } else if ((month === 6 && day >= 21) || (month >= 7 && month <= 8) || (month === 9 && day < 22)) {
+      return "summer";
+    } else {
+      return "fall";
+    }
+  }
+
+  function getSeasonEmoji(season) {
+    switch (season) {
+      case "winter": return "🌨️";
+      case "spring": return "🌸";
+      case "summer": return "☀️";
+      case "fall":   return "🍂";
+      default: return "";
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", function() {
+    const season = getCurrentSeason();
+    const emoji = getSeasonEmoji(season);
+    const displayDiv = document.getElementById("season-display");
+
+    if (displayDiv) {
+      const capitalizedSeason = season.charAt(0).toUpperCase() + season.slice(1);
+      displayDiv.textContent = `${emoji} Current season: ${capitalizedSeason}`;
+      displayDiv.classList.add(season); // Adds color class
+    }
+  });
+</script> <script>
+  async function fetchNWSAlerts() {
+    const zone = "PAZ066"; // Lancaster County, PA
+    const apiURL = `https://api.weather.gov/alerts/active/zone/${zone}`;
+
+    try {
+      const response = await fetch(apiURL);
+      const data = await response.json();
+      const alertDiv = document.getElementById("weatherAlert");
+
+      if (data.features.length > 0) {
+        const alert = data.features[0].properties;
+        const alertId = data.features[0].id;
+        const storedDismissedId = localStorage.getItem("dismissedAlertId");
+
+        if (alertId !== storedDismissedId) {
+          const title = alert.headline;
+          const description = alert.description;
+          const severityRaw = alert.severity || "Unknown";
+          const severity = severityRaw.toLowerCase();
+          const link = alert.url || "https://www.weather.gov/ctp/";
+          const updated = new Date(alert.sent).toLocaleString('en-US', {
+            dateStyle: 'medium',
+            timeStyle: 'short',
+            timeZone: 'America/New_York'
+          });
+
+          const severityClass = {
+            minor: "alert-minor",
+            moderate: "alert-moderate",
+            severe: "alert-severe",
+            extreme: "alert-extreme"
+          }[severity] || "alert-moderate";
+
+          alertDiv.innerHTML = `
+            <div class="alert-box ${severityClass}" data-alert-id="${alertId}">
+              <button class="alert-close" onclick="dismissAlert('${alertId}')" aria-label="Dismiss alert">&times;</button>
+              <strong>⚠️ Weather Alert (${severityRaw === "Unknown" ? "Severity Unknown" : severityRaw}):</strong>
+              <strong>${title}</strong>
+              <div>${description}</div>
+              <div style="margin-top: 8px;">
+                <a href="${link}" target="_blank" rel="noopener">View full alert from NWS</a>
+              </div>
+              <div style="margin-top: 6px; font-size: 0.9em; color: #555;">
+                Last updated: ${updated}
+              </div>
+            </div>
+          `;
+        } else {
+          alertDiv.innerHTML = ""; // Alert dismissed by user
+        }
+      } else {
+        alertDiv.innerHTML = ""; // No active alerts
+      }
+    } catch (error) {
+      console.error("NWS Alert fetch error:", error);
+      document.getElementById("weatherAlert").innerText = "Unable to load weather alerts.";
+    }
+  }
+
+  function dismissAlert(alertId) {
+    localStorage.setItem("dismissedAlertId", alertId);
+    const alertBox = document.querySelector(`[data-alert-id="${alertId}"]`);
+    if (alertBox) {
+      alertBox.style.display = 'none';
+    }
+  }
+
+  fetchNWSAlerts();
+  setInterval(fetchNWSAlerts, 15 * 60 * 1000); // Refresh every 15 minutes
+</script> <style>
+       .alert-container {
+    margin-top: 1em;
+    font-family: sans-serif;
+  }
+
+  .alert-box {
+    border-left: 5px solid;
+    padding: 12px 15px;
+    border-radius: 4px;
+    font-size: 1rem;
+    line-height: 1.4;
+    background-color: #f9f9f9;
+    position: relative;
+  }
+
+  .alert-minor {
+    border-color: #ffcc00;
+    background-color: #fff8e1;
+  }
+
+  .alert-moderate {
+    border-color: #ffa726;
+    background-color: #fff3e0;
+  }
+
+  .alert-severe {
+    border-color: #ef5350;
+    background-color: #fdecea;
+  }
+
+  .alert-extreme {
+    border-color: #b71c1c;
+    background-color: #fce4e4;
+  }
+
+  .alert-box strong {
+    display: block;
+    margin-bottom: 5px;
+  }
+
+  .alert-box a {
+    color: #0056b3;
+    text-decoration: underline;
+  }
+
+  .alert-close {
+    background: transparent;
+    border: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #444;
+    float: right;
+    cursor: pointer;
+    margin: -5px -8px 5px 8px;
+  }
+
+  .alert-close:hover {
+    color: #000;
+  }
+
+  @media (max-width: 600px) {
+    .alert-box {
+      font-size: 0.95rem;
+      padding: 10px 12px;
+    }
+  }
+    .sun-info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;  /* smaller space between items */
+    font-size: 1rem;
+    justify-content: flex-start; /* aligns items to the left horizontally */
+  }
+
+  .sun-info > div {
+    flex: 0 0 auto;
+    white-space: nowrap;
+  }
+
+  @media (max-width: 600px) {
+    .sun-info {
+      flex-direction: column;
+      gap: 2px;
+    }
+  }
+    #weather-widget {
+      font-family: Arial, sans-serif;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 1em;
+      background: transparent;
+      color: #333;
+    }
+
+    .fw-container h2 {
+      font-size: 1.5rem;
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+
+    .fw-forecast {
+      background: transparent;
+      padding: 1em;
+      border-radius: 8px;
+    }
+
+    .fw-forecast .fw-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin-bottom: 1.5em;
+    }
+
+    .fw-forecast img {
+      width: 48px;
+      height: 48px;
+      flex-shrink: 0;
+    }
+
+    .fw-text {
+      font-size: 1rem;
+    }
+
+    .fw-day {
+      font-weight: bold;
+    }
+
+    @media (max-width: 600px) {
+      .fw-forecast .fw-item {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .fw-forecast img {
+        margin-bottom: 0.5em;
+      }
+    }
+    #season-display {
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 10px;
+  }
+
+  /* Text color for each season */
+  .winter {
+    color: #0277bd; /* Cool blue */
+  }
+
+  .spring {
+    color: #2e7d32; /* Fresh green */
+  }
+
+  .summer {
+    color: #ef6c00; /* Warm orange */
+  }
+
+  .fall {
+    color: #d84315; /* Earthy red-orange */
+  }
+  
+/* Responsive fixes */
+div[style*="width: 810px"],
+div[style*="width: 830px"],
+div[style*="width: 800px"] {
+  max-width: 100%;
+  width: 100% !important;
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+@media (max-width: 768px) {
+  #tswothersidecol, #tswsidecol {
+    float: none !important;
+    width: 100% !important;
+    display: block;
+  }
+}
+
+iframe {
+  max-width: 100%;
+}
+
+div, span, p {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+</style>
+  </head>
+  <body>
+    <div id="tswcontainer">
+      <div><!-- start of header section: insert your logo, etc, here --> <br class="Apple-interchange-newline">
+        <p style="text-align: center;"><img src="https://raw.githubusercontent.com/ApexWx/ApexWx.github.io/master/Apex%20banner.jpg"
+
+            alt="Apex Wx Banner" style="border: medium none; max-width: 100%;"></p>
+        <!-- end of header section: insert your logo, etc, above this line --></div>
+      <div id="tswcentrecombo">
+        <div id="tswcontent" style="font-size: 16px;">
+          <div id="tswcontproper">
+            <!-- start of content column: insert your content here -->
+            <div style="text-align: center;">
+              <div style="text-align:center">
+                <h2 style="text-align: center;">Apex Wx<br>
+                </h2>
+                <h2 style="color: black; font-family: sans-serif; font-weight: 400; line-height: 1.4; margin: 0px 0px 30px; text-align: center;"><strong>Lancaster
+                    &amp; the </strong><strong>Lower Susquehanna Valley, PA<br>
+                    Weather Information</strong></h2>
+                <a href="https://en.wikipedia.org/wiki/Pennsylvania"><img src="https://apexwx.github.io/pa.png"
+
+                    alt="Pennsylvania State Flag" style="width: 144px; height: 108px;"></a></div>
+              <div><span style="font-size: 12px;">Weather information for
+                  Lancaster, PA since 2017</span><br>
+                <span style="font-size: 12px;">A Gold Award 2024<span style="color: black;"></span>
+                  Weather Site by the <a href="https://www.metoffice.gov.uk/">Met
+                    Office UK</a> <br>
+                  Member <a href="https://madis.ncep.noaa.gov/snow_project.shtml">APRSWXNET/CWOP</a>
+                  Program</span></div>
+              <a href="https://en.wikipedia.org/wiki/Pennsylvania"></a></div>
+          </div>
+          <div style="font-size: 16px;"><br>
+            <div style="text-align: center;"><label id="lblGreetings"><b>Good
+                  Afternoon!</b></label></div>
+            <p> </p>
+            <div style="text-align: center;"> <iframe src="https://free.timeanddate.com/clock/i8jrr8ph/n198/tct/pct/ftb/tt0/ts1"
+
+                style="background-color:transparent; border: none;" height="18"
+
+                width="311"></iframe></div>
+            <p> </p>
+            <div style="text-align: center;"> <strong style="font-size: 14px;">Lancaster
+                Air Quality Index</strong> </div>
+            <div style="text-align: center;"><iframe title="Lancaster Air Quality Index"
+
+                src="https://widget.airnow.gov/aq-dial-widget/?city=Lancaster&amp;state=PA&amp;country=USA"
+
+                style="border: none; border-radius: 25px;" height="230" width="230"></iframe>
+              <br>
+              <span style="font-size: 12px;">Click "AirNow" for more information</span></div>
+          </div>
+          <div style="font-size: 16px;"><br>
+          </div>
+          <div style="font-size: 16px;"><br>
+          </div>
+          <div>
+            <hr><em style="font-size: 14px;"><span style="font-size: 12px;"></span><strong
+
+                style="font-size: 12px;"></strong></em>
+            <div style="text-align: left;"><strong><u><br>
+                </u></strong></div>
+            <div style="text-align: left;"><strong><strong>🗓️ </strong><u>Lancaster
+                  Weather Almanac</u> </strong><strong>🗓️&nbsp;</strong>
+              <div style="text-align: left;"><span style="font-size: 12px;"><em>Non-metric
+                    units unless otherwise indicated. | </em></span><span style="font-size: 12px;"><em>All
+                    times are local time for Lancaster. </em></span><em style="font-size: 12px;"></em><strong
+
+                  style="font-size: 12px;"><em></em></strong></div>
+              <div style="text-align: left;"><em style="font-size: 12px;"></em></div>
+            </div>
+            <div style="text-align: left;"><strong></strong><em style="font-size: 12px;"></em><strong></strong>
+            </div>
+          </div>
+          <div><br>
+            <strong></strong><em style="font-size: 12px;"><em style="font-size: 12px;">
+              </em></em><em style="font-size: 12px;"><em style="font-size: 12px;"></em></em></div>
+          <div>
+            <div> <u><strong>May 2025</strong></u><br>
+              <strong>High</strong>: 86° on 5/2 |&nbsp; <strong>Low</strong>:
+              45° on 5/10<br>
+              <strong>Rain</strong>: 11.21" (avg. 3.65")&nbsp; | <strong>Snow</strong>:
+              0.0" (avg. 0.0")<br>
+              <strong>Wind: Avg. Dir. &amp; Speed</strong>: SE @ 2 mph&nbsp; | <strong>Max.
+                Gust</strong>: 29 mph on 5/14<strong><u><br>
+                </u></strong></div>
+            <div style="font-size: 12px;">𝘚𝘰𝘶𝘳𝘤𝘦: 𝘊𝘰𝘭𝘭𝘦𝘨𝘦 𝘗𝘢𝘳𝘬
+              𝘱𝘦𝘳𝘴𝘰𝘯𝘢𝘭 𝘸𝘦𝘢𝘵𝘩𝘦𝘳 𝘴𝘵𝘢𝘵𝘪𝘰𝘯 &amp; 𝘕𝘖𝘈𝘈
+              𝘚𝘊-𝘈𝘊𝘐𝘚 𝘕𝘞𝘚 𝘚𝘵𝘢𝘵𝘦 𝘊𝘰𝘭𝘭𝘦𝘨𝘦 𝘥𝘢𝘵𝘢<strong><u><br>
+                  <br>
+                </u></strong></div>
+            <div> <u><strong>Tuesday, June 3</strong></u><strong><u></u></strong></div>
+            <div>
+              <div>
+                <div>
+                  <div>
+                    <div><b>High</b>: 84° @ 4:22 pm |&nbsp; <b>Low</b>: 51° @
+                      5:33 am<br>
+                      <strong>Rain</strong>:&nbsp; 0.00" |<strong> Snow</strong>:
+                      0.0"</div>
+                    <div><b>Daily Wind: </b>SE @&nbsp; 1 mph&nbsp; |&nbsp; <strong><u>Max.
+                          Gust</u>:</strong> 9 mph @ 2:43 pm<br>
+                      <em style="font-size: 12px;"><em style="font-size: 12px;">Source:
+                          College Park personal weather station</em></em></div>
+                    <div><em style="font-size: 12px;"><em style="font-size: 12px;"><br>
+                        </em></em></div>
+                  </div>
+                </div>
+              </div>
+              <u><strong>Wednesday, June 4</strong></u><strong><u><br>
+                </u></strong></div>
+            <div style="width: 810px;"><strong>Norm. High: </strong>80° |<strong>&nbsp;
+                Record</strong>: 91° (2020)<br>
+              <strong> Norm. Low:&nbsp; </strong>56° |&nbsp; <strong>Record: </strong>33°
+              (2019)<br>
+              <strong>Norm. Daily Precipitation: </strong>0.14" | <strong>Record</strong>:
+              0.99" (2003)</div>
+            <div style="width: 810px;"><strong>Norm. Daily Snowfall:</strong>
+              0.0" | <strong>Record</strong>: 0.0"</div>
+            <div style="width: 810px;"><em style="font-size: 12px;">Source: </em><em
+
+                style="font-size: 12px;"><em style="font-size: 12px;"><a href="https://scacis.rcc-acis.org/">NOAA
+                    SC-ACIS</a> </em>NWS State College climate data collected
+                since 1948/49<br>
+              </em></div>
+            <div style="width: 810px;"><br>
+            </div>
+            <div style="width: 810px;"><u><strong>Precipitation 2025</strong></u><br>
+              <strong></strong></div>
+            <div style="width: 810px;"><strong>Rain</strong><strong>:</strong>
+              19.33"&nbsp; |&nbsp; <u>avg</u>. 16.76" (+ 2.57")<span style="color: #009900;"></span><br>
+              <strong>Snow</strong><strong>: </strong>16.0"&nbsp; |&nbsp; <u>avg</u>.&nbsp;
+              21.4"&nbsp; <span style="color: red;">(-5.4")</span><br>
+              <span style="color: red;"></span><span style="color: red;"></span></div>
+            <div> <em style="font-size: 12px;">Annual snowfall measured from
+                July 1 - June 30</em><em style="font-size: 12px;"><br>
+              </em></div>
+            <div>
+              <div id="season-display" style="text-align: left;">Loading
+                season...</div>
+            </div>
+            <div style="text-align: center;"><strong><a href="https://www.timeanddate.com/astronomy/usa/lancaster-pa"><br>
+                </a></strong></div>
+            <div style="text-align: left;"><strong><a href="https://www.timeanddate.com/astronomy/usa/lancaster-pa">Lancaster,
+                  Pennsylvania, USA</a> — Sun and Moon Times</strong></div>
+            <div><br>
+            </div>
+            <div>
+              <div id="sunriseSunset" style="text-align: left; font-size: 16px;">Loading
+                sunrise/sunset...</div>
+              <br>
+            </div>
+            <div><a href="https://www.timeanddate.com/moon/phases/usa/lancaster-pa">Moon
+                Phase</a>: 🌔 Waxing Gibbous → 🌕 Full "Strawberry" Moon @ 2:44
+              am Wed. 11 June</div>
+            <div><br>
+              &nbsp;<strong>Moonrise</strong>: 2:24 pm (today) | <strong>Moonset</strong>:
+              2:22 am (tomorrow)</div>
+            <div><br>
+            </div>
+            <div>
+              <div>
+                <hr style="margin-left: 0px; margin-right: auto;">
+                <div style="text-align: center;"><u><strong><span style="font-variant: small-caps;"></span></strong></u><strong><span
+
+                      style="font-variant: small-caps;">The Week Ahead for
+                      Lancaster &amp; the Lower Susquehanna Valley</span></strong></div>
+                <u><strong><span style="font-variant: small-caps;"></span></strong></u>
+                <div style="text-align: center;"> <u> <strong><span style="font-variant: small-caps;"></span></strong>
+                  </u></div>
+                <div>
+                  <div style="text-align: center;"><u> </u></div>
+                  <div style="text-align: center;"><br>
+                  </div>
+                  <div style="text-align: left;">
+                    <div style="text-align: center;"><span style="font-size: 12px;"><strong>
+                        </strong></span><strong>⚠️ <a href="https://forecast.weather.gov/product.php?site=NWS&amp;issuedby=CTP&amp;product=HWO">Current
+                          NWS State College Hazardous Weather Outlook</a></strong>
+                      ⚠️</div>
+                    <div style="text-align: center;"><br>
+                    </div>
+                    <div style="text-align: center;">
+                      <div id="weatherAlert" class="alert-container"></div>
+                      <br>
+                    </div>
+                    <u><strong><br>
+                      </strong></u></div>
+                  <div style="text-align: left;"><u><strong>7-Day Outlook: Wed.
+                        June 4 - Tue</strong></u><u><strong>. June 10</strong></u>
+                    <div style="text-align: left;"><strong><span style="font-size: 12px;">Updated:
+                          </span><span style="font-size: 12px;"><span style="color: #3333ff;">Wednesday,
+                            4 June 2025 at 10:02 am EDT</span></span></strong></div>
+                    <div style="text-align: left;"><u><strong></strong></u><strong></strong><u><strong></strong></u>
+                      <u><strong></strong></u><u><strong></strong></u><u><strong></strong></u><u><strong></strong></u><u><strong></strong></u></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div><br>
+            </div>
+          </div>
+          <div>
+            <div>
+              <div>
+                <div>High pressure offshore will bring another warm, dry day
+                  with hazy sunshine across the Lower Susquehanna Valley thanks
+                  for Canadian wildfire smoke aloft. Temperatures peak in the
+                  mid-80s today with partly cloudy skies overnight and
+                  temperatures in the lower 60s.</div>
+                <div><br>
+                </div>
+                <div>A cold front slowly approaches western Pennsylvania
+                  tomorrow with partly sunny skies and southerly flow
+                  overspreading the Lancaster region. Highs climb into the
+                  mid-to-upper 80s with partly cloudy skies becoming
+                  increasingly cloudy as the cold front with waves of low
+                  pressure moving along it drifting into northwestern PA.
+                  Overnight lows fall into the mid-60s.</div>
+                <div><br>
+                </div>
+                <div>Mostly cloudy skies overspread the region Friday a the cold
+                  front and associated low pressure areas gradually move into
+                  western Pennsylvania with increasing chances of showers,
+                  mainly in the afternoon, for Fawkes House and vicinity.
+                  Rainfall amounts in the 1/10 to 1/4-inch range are currently
+                  anticipated by Friday evening. Mostly cloudy skies remain
+                  across the region Friday night with rain likely. Lows in the
+                  mid-60s are expected.</div>
+                <div><br>
+                </div>
+                <div>Recent forecast models are indicating a trend toward wetter
+                  weather on Saturday. A low pressure system is expected to
+                  develop west of the region along the stalled front and move
+                  eastward toward central Pennsylvania. By Saturday morning,
+                  this low pressure area is likely to be positioned over western
+                  Pennsylvania, increasing the chances of rain from late Friday
+                  through Saturday.<br>
+                  <br>
+                  The exact location of the low-pressure center is still
+                  uncertain, which could affect how much rain falls. Current
+                  model estimates suggest rainfall amounts between half an inch
+                  and one inch. There is a higher chance for thunderstorms on
+                  Saturday afternoon and evening, but the risk of severe weather
+                  appears low due to limited atmospheric support for strong
+                  storms.<br>
+                  <br>
+                  The front is expected to move east of Pennsylvania by Sunday,
+                  allowing high pressure to build in behind it. This will likely
+                  bring drier weather and near-normal temperatures to end the
+                  weekend. Rain chances return on Monday as another weather
+                  system approaches from the west.</div>
+              </div>
+              <div><br>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div>
+              <div>
+                <div><strong>7-Day Forecast Summary</strong></div>
+                <div><i><span style="font-size: 12px;">Automatic updates</span></i><br>
+                  <div>
+                    <div id="weather-widget">
+                      <div class="fw-container">
+                        <div class="fw-forecast" id="forecast">Loading
+                          forecast...</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <strong>Current Month Climate Trends</strong><u> <em><span style="font-size: 12px;"></span></em><strong>
+            </strong><em style="font-size: 12px;"></em> </u>
+          <div><a href="https://www.cpc.ncep.noaa.gov/products/predictions/814day/814temp.new.gif"
+
+              title="Click for larger image"><img src="https://www.cpc.ncep.noaa.gov/products/predictions/long_range/lead14/off15_temp.gif"
+
+                alt="Current Month Temperature Outlook " style="width: 300px; height: 231.818px; border-radius: 0px; border-width: 0px; border-style: solid; padding: 5px;"></a><a
+
+              href="https://www.cpc.ncep.noaa.gov/products/predictions/814day/814prcp.new.gif"
+
+              title="Click for larger image"><img src="https://www.cpc.ncep.noaa.gov/products/predictions/long_range/lead14/off15_prcp.gif"
+
+                alt="Current Month Precipitation Outlook" style="width: 300px; height: 233px; border-width: 0px; border-style: solid; padding: 5px;"></a></div>
+          <em style="font-size: 12px;">Source: <a href="https://www.cpc.ncep.noaa.gov/">NOAA
+              Climate Predication Center</a></em><a href="https://www.cpc.ncep.noaa.gov/products/predictions/814day/814prcp.new.gif"></a><u><strong></strong></u>
+          <div> </div>
+          <div style="text-align: left; font-size: 12px;">
+            <div></div>
+            <div style="font-size: 16px;">
+              <hr style="margin-left: 0px; margin-right: auto;"><u><strong><span
+
+                    style="font-variant: small-caps;"></span></strong></u></div>
+            <div style="font-size: 16px;">
+              <div>
+                <div style="text-align: left;">
+                  <div><br>
+                  </div>
+                  <u><strong>US National Weather</strong></u>
+                  <div style="text-align: left;">
+                    <div><br>
+                    </div>
+                    <strong>June 4: Areas of Excessive Rainfall, Severe
+                      Thunderstorms, and Wildfire Smoke Today<br>
+                    </strong>Scattered to numerous severe thunderstorms are
+                    expected to expand further east each day from the southern
+                    High Plains to the Tennessee and Lower Ohio Valleys today
+                    through Saturday. Heavy to excessive rainfall may bring
+                    flooding to parts of the Four Corners/Desert Southwest,
+                    coastal Carolinas, and Midwest regions today. Wildfire smoke
+                    will continue unhealthy air quality in the Midwest today.
+                    <div><br>
+                    </div>
+                    <div> </div>
+                    <div><strong></strong>
+                      <div><strong>Thunderstorm/Severe Weather Outlook</strong><strong>
+                          June 4<br>
+                        </strong></div>
+                      <div><strong></strong>Isolated severe thunderstorms are
+                        possible later this afternoon into the evening across
+                        portions of the southern High Plains. Hail and wind are
+                        the primary concerns. Locally damaging winds may
+                        accompany convection that develops from the lower Great
+                        Lakes into eastern Texas.</div>
+                      <div><br>
+                      </div>
+                      <div><strong>National High and Low Temperature</strong><strong>
+                          Tue.</strong><strong> June 3<br>
+                        </strong></div>
+                    </div>
+                    <div>
+                      <div>
+                        <div>
+                          <div>
+                            <div>
+                              <div>
+                                <div>
+                                  <div>
+                                    <div>
+                                      <div>
+                                        <div>
+                                          <div>
+                                            <div style="text-align: left;">
+                                              <div>
+                                                <div style="font-size: 12px;"><em>Source:
+                                                    <a href="https://www.wpc.ncep.noaa.gov/discussions/hpcdiscussions.php?disc=nathilo&amp;version=0&amp;fmt=reg">Weather
+                                                      Predication Center</a> |
+                                                    excluding Alaska and Hawai'i</em></div>
+                                                <div style="text-indent: 30px;"><u><strong></strong></u></div>
+                                                <div><br>
+                                                </div>
+                                                <div style="text-indent: 30px;"><u><strong>High</strong></u></div>
+                                                <div style="text-indent: 30px;"><u><strong></strong></u>109°
+                                                  at Death Valley, CA</div>
+                                                <div style="text-indent: 30px;">109°
+                                                  at Stovepipe Wells, CA</div>
+                                                <div style="text-indent: 30px;"><br>
+                                                </div>
+                                                <div style="text-indent: 30px;"><u><strong>Low</strong></u></div>
+                                                <div style="text-indent: 30px;">19°
+                                                  at 32 miles west southwest of
+                                                  Bynum, MT</div>
+                                                <div style="text-indent: 30px;">19°
+                                                  at 13 miles north of White
+                                                  Sulphur Springs, MT</div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div style="text-indent: 30px;"><br>
+                  </div>
+                </div>
+              </div>
+              <div style="text-align: left;">
+                <div><strong style="font-size: 16px;"><u>Today's National High
+                      &amp; Low Temperature Outlook</u><br>
+                  </strong><span style="font-size: 16px;"><em style="font-size: 12px;">Click
+                      images for higher resolution</em></span><br>
+                  <span style="font-size: 16px;"> </span></div>
+                <div><strong style="font-size: 16px;"><br>
+                  </strong></div>
+                <div><a href="https://graphical.weather.gov/GraphicalNDFD.php?width=2000&amp;timezone=EDT&amp;sector=CONUS&amp;element=maxt&amp;n=1"
+
+                    title="Click for larger Image"><img src="https://graphical.weather.gov/GraphicalNDFD.php?width=515&amp;timezone=EDT&amp;sector=CONUS&amp;element=maxt&amp;n=1"
+
+                      alt="US Max Temperatures Today" style="font-size: 16px; width: 300px; height: 226.019px;"></a>&nbsp;&nbsp;&nbsp;
+                  &nbsp;&nbsp; &nbsp;&nbsp; <a href="https://graphical.weather.gov/GraphicalNDFD.php?width=2000&amp;timezone=EDT&amp;sector=CONUS&amp;element=mint&amp;n=1"
+
+                    title="Click for larger image" style="width: 251px;"><img src="https://graphical.weather.gov/GraphicalNDFD.php?width=515&amp;timezone=EDT&amp;sector=CONUS&amp;element=mint&amp;n=1"
+
+                      alt="Tonight's Low Temperatures" style="width: 300px; height: 226.019px;"></a></div>
+              </div>
+            </div>
+            <div style="font-size: 16px;">
+              <div style="text-align: left;"> </div>
+              <div><strong style="font-size: 16px;"><br>
+                </strong></div>
+              <div><strong><br>
+                </strong></div>
+              <div><strong>Today's National Forecast Chart &amp; Severe Weather
+                  / Thunderstorm Outlook</strong>
+                <div style="text-align: left;"><strong></strong><strong style="font-size: 16px;"></strong><br>
+                  <strong style="font-size: 16px;"> </strong></div>
+                <div><a href="https://www.wpc.ncep.noaa.gov/NationalForecastChart/map.php"
+
+                    title="Click for larger interactive image"><img src="https://www.wpc.ncep.noaa.gov/NationalForecastChart/staticmaps/noaad1.png"
+
+                      alt="Today's National Forecast Chart" style="font-size: 16px; width: 300px; height: 226.019px;"></a>&nbsp;&nbsp;&nbsp;
+                  &nbsp;&nbsp; &nbsp;&nbsp; <a href="https://www.spc.noaa.gov/partners/outlooks/state/swody1.png?1678542573998"
+
+                    title="Click for larger image"><img src="https://www.spc.noaa.gov/partners/outlooks/state/swody1.png?1678542573998"
+
+                      alt="Today's Severe Weather / Thunderstorm Oultook" style="width: 300px; height: 226.019px;"></a></div>
+                <div><em><span style="font-size: 12px;">Learn more about <a href="https://www.spc.noaa.gov/new/images/SPC_outlook_final_updated.png"
+
+                        title="Click for more information">Severe Thunderstorm
+                        Outlooks</a></span></em></div>
+                <span style="font-size: 12px;"><br>
+                </span> </div>
+            </div>
+            <div style="text-align: left;">
+              <div> </div>
+              <div> </div>
+              <div> <strong></strong> <strong></strong>
+                <div>
+                  <div> </div>
+                </div>
+              </div>
+            </div>
+            <div style="text-align: left;">
+              <div style="text-align: left;"><u></u><u>Notices</u></div>
+              <u> </u><br>
+              Apex Wx is a private weather information service unaffiliated with
+              NOAA/NWS operated by Joseph Becker, PhD. Dr. Becker holds a
+              certification in weather forecasting from Penn State University
+              and is a trained NWS Storm Spotter.</div>
+            <div style="text-align: left;"><br>
+              <em style="font-size: 12px;"> </em><span style="font-size: 12px;">Weather
+                information compiled by Apex Wx is based on computer weather
+                models, personal weather station data, and information from
+                NOAA, the National Weather Service, and other weather data
+                providers available at time of update and may not reflect
+                current conditions or later forecast updates</span><span style="font-size: 12px;">.</span><span
+
+                style="font-size: 12px;"> Visit <a href="https://www.weather.gov/car/%20"
+
+                  title="NWS Caribou, Maine">NWS Caribou</a> for the latest
+                official watches, warnings, and advisories for northern Maine.</span></div>
+            <div style="text-align: left;"><span style="font-size: 12px;"><br>
+              </span></div>
+            <div style="text-align: left;"><span style="font-size: 12px;"></span>
+              Sun/Moon data from <a href="https://www.timeanddate.com/">timeanddate.com</a>.<br>
+              <br>
+              NOAA Warning Banner provided by <a href="https://www.willyweather.com/">WillyWeather.com</a>.<br>
+              <br>
+              Apex Wx logo by Joanna Becker ©2016 (Visit <a href="https://www.bushiandbrush.com/">Bushi
+                and Brush Arts Dojo</a>)</div>
+            <div style="text-align: left;">
+              <script>
+                           document.write("This website was last modified " + " " +document.lastModified);
+                        </script><br>
+            </div>
+            <br>
+          </div>
+          <div>
+            <div style="text-align: left;"> </div>
+            <div> </div>
+            <div> <strong></strong> <strong></strong>
+              <div style="text-align: left;">
+                <div style="text-align: left;"> </div>
+              </div>
+            </div>
+            <strong><em></em></strong> <br>
+            &nbsp;
+            <!-- end of content column: put your content above this line --> </div>
+        </div>
+        <div id="tswothersidecol" style="font-size: 14px;">
+          <div id="tswothersideproper">
+            <!-- start of LEFT side column: insert your navigation menu, etc, here -->
+            <p></p>
+            <div id="tswcssbuttons">
+              <ul>
+                <li><a href="https://apexwx.github.io/pareg.html">Regional
+                    Weather</a></li>
+                <li><a href="https://apexwx.github.io/nat.html">National Weather</a></li>
+                <li><a href="https://apexwx.github.io/trop.html">Tropical
+                    Weather</a></li>
+                <li><a href="https://apexwx.github.io/for.html">Forecasts</a></li>
+                <li><a href="https://apexwx.github.io/space.html">Space
+                    Weather/Aurora</a></li>
+                <li><a href="https://ambientweather.net/dashboard/f2d6a870a62ed991d4ac0bf1d0482a3f">College
+                    Park Wx Dashboard</a></li>
+                <li><a href="https://www.wunderground.com/weather/us/pa/lancaster/KPALANCA196">Lancaster
+                    Wx on WU</a></li>
+                <li><a href="https://apexwx.github.io/dis.html">Disclaimer</a></li>
+              </ul>
+            </div>
+          </div>
+          <div><br>
+          </div>
+          <div>
+            <p><strong>Official <br>
+                Government Forecasts</strong></p>
+            <p><a href="https://www.weather.gov/" title="NWS Caribou (northern and eastern Maine">US
+                National Weather Service<br>
+              </a> </p>
+            <div><a href="https://www.wpc.ncep.noaa.gov/">Weather Prediction
+                Center</a></div>
+            <div><br>
+            </div>
+            <div><a href="https://www.wpc.ncep.noaa.gov/discussions/hpcdiscussions.php?disc=pmdspd">Short
+                Range Forecast Discussion</a></div>
+            <div><br>
+            </div>
+            <div><a href="https://www.wpc.ncep.noaa.gov/medr/medr.shtml">Medium
+                Range Forecast Discussion <br>
+              </a></div>
+            <div><br>
+            </div>
+            <div><a href="https://www.wpc.ncep.noaa.gov/discussions/hpcdiscussions.php?disc=pmdepd">Extended
+                Forecast Discussion</a></div>
+            <div><br>
+            </div>
+            <div><a href="https://www.spc.noaa.gov/">Storm Predication Center</a><br>
+            </div>
+            <div><br>
+            </div>
+            <div><a href="https://www.cpc.ncep.noaa.gov/products/predictions/814day/814temp.new.gif">Climate
+                Prediction Center</a></div>
+            <div><br>
+            </div>
+            <div><a href="https://www.wpc.ncep.noaa.gov/discussions/hpcdiscussions.php?disc=nathilo&amp;version=0&amp;fmt=reg">National
+                High and Low Temperatures</a><br>
+              (excluding Alaska &amp; Hawaii)</div>
+            <p> </p>
+            <div style="text-align: left;"> <strong>NWS State College, PA</strong></div>
+            <div style="text-align: left;"><strong></strong><br>
+              <a href="https://forecast.weather.gov/MapClick.php?CityName=Lancaster&amp;state=PA&amp;site=CTP&amp;textField1=40.0418&amp;textField2=-76.3012&amp;e=1#.Y8FkkXbMK38">7-Day
+                Forecast for Lancaster, Pennsylvania</a><br>
+              <em style="font-size: 12px;"> Click for the latest official
+                forecast information. Updated 24/7<br>
+              </em>
+              <p><a href="https://forecast.weather.gov/MapClick.php?zoneid=PAZ066">Zone
+                  Area Forecast for Lancaster County</a> (PAZ066)</p>
+              <p><a href="https://www.weather.gov/ctp/winter">Winter Weather
+                  Forecasts</a><br>
+                <em style="font-size: 12px;">Click for the latest official
+                  forecast details</em></p>
+              <a href="https://forecast.weather.gov/product.php?site=ctp&amp;issuedby=CTP&amp;product=AFD">Area
+                Forecast Discussion</a> <br>
+              <div> <em style="font-size: 12px;">NWS forecasters' technical
+                  discussion with glossary</em></div>
+            </div>
+            <div style="text-align: left;"><a href="https://www.weather.gov/gyx/"
+
+                title="NWS Gray/Portland, ME (SW Maine and most of New Hampshire)"><br>
+              </a> </div>
+            <div style="text-align: left;"> <a href="https://w2.weather.gov/climate/xmacis.php?wfo=ctp"
+
+                title="NWS State College Regional Climate Data">NWS State
+                College<br>
+                Regional Climate Data</a><br>
+              <div style="font-size: 12px;"><em>regional weather records,
+                  averages, etc.</em> </div>
+              <div style="font-size: 12px;"><em><br>
+                </em> </div>
+            </div>
+            <div style="text-align: left;"><a href="https://www.cpc.ncep.noaa.gov/">Climate
+                Prediction Center</a></div>
+            <div style="text-align: left;"><br>
+            </div>
+            <div style="text-align: left;"><strong>Other <br>
+                Regional Resources</strong><a href="https://newengland511.org/"
+
+                title="New England Road Conditions"><br>
+              </a> </div>
+            <div style="text-align: left;"><a href="https://newengland511.org/"
+
+                title="New England Road Conditions"><br>
+              </a> </div>
+            <div style="text-align: left;"><a href="https://www.511pa.com/" title="Pennsylvania Road Conditions">Pennsylvania
+                <br> Road Conditions</a> </div>
+            <div style="text-align: left;"><a href="https://www.weather.gov/nerfc/"
+
+                title="Northeast River Forecast Center"><br>
+              </a> </div>
+            <div style="text-align: left;"><a href="https://www.weather.gov/marfc/"
+
+                title="Middle Atlantic River Forecast Center">Middle Atlantic<br>
+              </a><a href="https://www.weather.gov/marfc/" title="Middle Atlantic River Forecast Center">River
+                </a><a href="https://www.weather.gov/marfc/" title="Middle Atlantic River Forecast Center">Forecast
+                Center</a><br>
+              <br>
+              <a href="https://www.wrh.noaa.gov/mesowest/getobext.php?sid=KLNS&amp;wfo=LNS&amp;num=72"
+
+                title="KLNS Current Conditions">Current Conditions Lan</a><a href="https://www.wrh.noaa.gov/mesowest/getobext.php?sid=KLNS&amp;wfo=LNS&amp;num=72"
+
+                title="KLNS Current Conditions">caster Airport<br>
+                (KLNS)</a> </div>
+            <div style="text-align: center; width: 278px;">
+              <p> </p>
+              <div style="text-align: left;"><strong style="font-size: 13px;">NWS
+                  State College Watches &amp; Warnings</strong><br>
+                <a href="https://www.weather.gov/ctp/" title="Click for more information"><img
+
+                    src="https://www.weather.gov/wwamap/png/ctp.png" alt="NWS State College Watches, Warnings, and Advisories"
+
+                    title="Clidk for more information" style="border-width: 1px; border-style: solid; height: 194.277px; width: 251px;"></a><em
+
+                  style="font-size: 12px;"></em><br>
+                <em style="font-size: 12px;"> </em></div>
+            </div>
+            <div style="text-align: left; width: 277px;"><br>
+            </div>
+            <div style="text-align: left; width: 277px;"><br>
+            </div>
+            <div style="text-align: center; width: 278px;">
+              <div style="text-align: left;"><strong style="font-size: 13px;">Northeast
+                  Weather Chart</strong></div>
+              <div style="text-align: left;"><a href="https://www.wpc.ncep.noaa.gov/sfc/namnesfcwbg.gif"
+
+                  title="Click for larger image"><img src="https://www.wpc.ncep.noaa.gov/sfc/namnesfcwbg.gif"
+
+                    alt="NE Weather Chart" style="height: 188.586px; border-width: 1px; border-style: solid; width: 251px;"></a></div>
+            </div>
+            <div style="text-align: left; width: 278px;"><br>
+            </div>
+            <div style="text-align: left; width: 278px;"><br>
+            </div>
+            <div style="text-align: left; width: 278px;"><strong>Today's Highs</strong><br>
+              <a href="https://www.weather.gov/images/erh/gis/CTP_maxt_Day1.png"><img
+
+                  src="https://www.weather.gov/images/erh/gis/CTP_maxt_Day1.png"
+
+                  alt="Today's High" style="width: 251px; height: 186px;"></a>
+              <div style="width: 100%;"><strong><br>
+                </strong></div>
+              <div style="width: 100%;"><br>
+                <strong>Heat Index</strong><br>
+                <a href="https://www.weather.gov/images/erh/gis/CTP_AptMax.png"><img
+
+                    src="https://www.weather.gov/images/erh/gis/CTP_AptMax.png"
+
+                    alt="24-Hour Heat Index" style="width: 251px; height: 186px;"></a></div>
+              <div style="width: 100%;"><strong><br>
+                </strong></div>
+              <div style="width: 100%;"><strong><br>
+                </strong></div>
+              <div style="width: 100%;"><strong>Tonight's Low</strong><br>
+                <a href="https://www.weather.gov/images/erh/gis/CTP_mint_Day1.png"><img
+
+                    src="https://www.weather.gov/images/erh/gis/CTP_mint_Day1.png"
+
+                    alt="Tonight's Lows" style="width: 251px; height: 186px;"></a></div>
+            </div>
+            <div style="text-align: left; width: 278px;"><br>
+            </div>
+            <div style="text-align: left; width: 278px;"><br>
+            </div>
+            <div style="text-align: left; width: 278px;"><strong>Wind Chill</strong><br>
+              <a href="https://www.weather.gov/images/erh/gis/CTP_AptMin.png"><img
+
+                  src="https://www.weather.gov/images/erh/gis/CTP_AptMin.png" alt="24-Hour Wind Chill"
+
+                  style="width: 251px; height: 186px;"></a></div>
+            <div style="text-align: left; width: 278px;"><br>
+            </div>
+            <div style="text-align: left; width: 278px;"><br>
+            </div>
+            <div style="text-align: center; width: 278px;">
+              <div style="text-align: left;"><strong style="font-size: 14px;">24-Hour
+Precipitation
+                  Outlook</strong></div>
+              <div style="text-align: left;"><a href="https://www.weather.gov/images/erh/gis/CTP_QPF24.png"
+
+                  title="Click for larger image"><img src="https://www.weather.gov/images/erh/gis/CTP_QPF24.png"
+
+                    alt="24-Hour Liquid Precipitation Outlook" style="width: 251px; height: 186.681px;"></a></div>
+            </div>
+            <div style="text-align: center; width: 278px;"><br>
+            </div>
+            <div style="text-align: center; width: 278px;"><br>
+              <div style="text-align: left;"><strong style="font-size: 14px;">Snowfall
+                  Outlook</strong></div>
+              <div style="text-align: left;"><a href="https://www.weather.gov/images/erh/gis/CTP_Snow.png"
+
+                  title="Click for larger image"><img src="https://www.weather.gov/images/erh/gis/CTP_Snow.png"
+
+                    alt="Snowfall Outlook" style="width: 251px; height: 186.681px;"></a></div>
+            </div>
+            <div style="text-align: center; width: 278px;"><br>
+            </div>
+            <div style="text-align: center; width: 278px;"><br>
+            </div>
+            <div style="text-align: center; width: 278px;">
+              <div style="text-align: left;"><strong style="font-size: 14px;">Ice
+                  Outlook</strong></div>
+              <div style="text-align: left;"><a href="https://www.weather.gov/images/erh/gis/CTP_Ice.png"
+
+                  title="Click for larger image"><img src="https://www.weather.gov/images/erh/gis/CTP_Ice.png"
+
+                    alt="Ice Accumulation Outlook" style="width: 251px; height: 186.681px;"></a></div>
+            </div>
+            <div style="text-align: center; width: 278px;"><br>
+            </div>
+            <div style="text-align: center; width: 278px;"><br>
+            </div>
+            <div style="text-align: center; width: 278px;">
+              <div style="text-align: left;"><strong>Wind Gusts</strong></div>
+              <div style="text-align: left;"><a href="https://www.weather.gov/images/erh/gis/CTP_WGust.png"
+
+                  title="Click for more information"><img src="https://www.weather.gov/images/erh/gis/CTP_WGust.png"
+
+                    alt="Maximum Wind Gust" style="width: 246px; height: 210px; border-width: 1px; border-style: solid;"></a></div>
+            </div>
+            <div style="text-align: center; width: 278px;"><br>
+            </div>
+            <div style="text-align: center; width: 278px;"><br>
+              <div style="text-align: left;"><strong style="font-size: 14px;">Today's
+                  Severe Weather Outlook</strong></div>
+            </div>
+            <div style="text-align: left; width: 278px;"><a href="https://www.spc.noaa.gov/partners/outlooks/state/images/PA_swody1.png?1718107988"
+
+                title="Click for larger image."><img src="https://www.spc.noaa.gov/partners/outlooks/state/images/PA_swody1.png?1718107988"
+
+                  alt="Today's Severe Weather Outlook" style="width: 251px; height: 188.25px;"></a></div>
+            <div style="text-align: center; width: 278px;"><br>
+            </div>
+            <div style="text-align: center; width: 278px;"><br>
+            </div>
+            <div style="text-align: left; width: 278px;">
+              <div><strong style="font-size: 14px;">Tropical Activity Atlantic
+                  Ocean</strong></div>
+              <a href="https://www.nhc.noaa.gov/gtwo.php?basin=atlc&amp;fdays=7"><img
+
+                  src="https://www.nhc.noaa.gov/xgtwo/two_atl_7d0.png" alt="7-Day Tropical Atlantic Outlook"
+
+                  style="width: 251px; height: 185px; border-width: 1px; border-style: solid;"></a></div>
+            <div style="text-align: left; width: 278px; font-size: 12px;"><em>Season
+                = June 1 - Nov. 30</em></div>
+            <div style="text-align: left; width: 278px;"><br>
+            </div>
+            <div style="text-align: center; width: 278px;">
+              <div style="text-align: left;"><br>
+                <strong><span>College Park Weather Station Cam</span></strong>
+                <div style="text-align: left;"><strong><span style="font-size: 12px;"></span><span
+
+                      style="font-size: 16px;"></span></strong> <strong style="font-size: 16px;"></strong>
+                  <strong style="font-size: 16px;"><span style="font-size: 14px;"></span></strong>
+                  <a href="https://images.ambientweather.net/F4CFA279EC77/latest.jpg"
+
+                    title="Current Local Radar"><img src="https://images.ambientweather.net/F4CFA279EC77/latest.jpg"
+
+                      title="Click for larger image" alt="College Park PWS Lancaster, PA"
+
+                      style="width: 251px; height: 141.188px;"></a> </div>
+                <div style="text-align: left;"><em style="font-size: 12px;">Near
+                    F&amp;M College, Lancaster, PA -- West view</em></div>
+              </div>
+              <div style="text-align: left;"><span style="font-size: 14px;"><strong><br>
+                  </strong></span></div>
+              <div style="text-align: left;"><span style="font-size: 14px;"><strong><br>
+                  </strong></span></div>
+              <div style="text-align: left;"><span style="font-size: 14px;"><strong>Downtown
+                    Lancaster Weather Cam</strong></span><a href="https://instacam.earthnetworks.com/instacamimg/LNCPC/LNCPC_l.jpg?rnd=0"
+
+                  title="Current Local Radar"><img src="https://instacam.earthnetworks.com/instacamimg/LNCPC/LNCPC_l.jpg?rnd=0"
+
+                    title="Click for larger image" alt="Downtown Lancaster Webcam"
+
+                    style="width: 251px; height: 141px;"></a></div>
+              <div style="font-size: 14px; text-align: left;"><em><span style="font-size: 12px;">The
+                    Holiday Inn in downtown Lancaster, PA<br>
+                    South view<br>
+                  </span></em></div>
+              <div style="font-size: 14px; text-align: left;"><strong style="font-size: 14px;"><em><br>
+                  </em></strong></div>
+              <div style="font-size: 14px; text-align: left;"><strong style="font-size: 14px;"><em><br>
+                  </em></strong> </div>
+              <div style="font-size: 14px; text-align: left;"><strong>PSU
+                  Southeast Ag Research &amp; Extension Center</strong></div>
+              <div style="font-size: 14px; text-align: left;"><strong><span style="font-size: 14px;"></span></strong>
+                <a href="https://climate.met.psu.edu/features/pemn_images/images/LNCR01_CURRENT.JPG"
+
+                  title="Click for more information"><img src="https://climate.met.psu.edu/features/pemn_images/images/LNCR01_CURRENT.JPG"
+
+                    title="Click for larger image" alt="PSU Southeast Ag Research and Extension Center"
+
+                    style="width: 251px; height: 141px;"></a><br>
+                <em style="font-size: 12px;">6.7 mi northwest of Fawkes House<br>
+                </em></div>
+            </div>
+          </div>
+          <div><br>
+          </div>
+          <div><br>
+          </div>
+          <div><strong>Lititz Weather Cam</strong></div>
+          <a href="https://instacam.earthnetworks.com/instacamimg/LTTZA/LTTZA_l.jpg?rnd=0"><img
+
+              src="https://instacam.earthnetworks.com/instacamimg/LTTZA/LTTZA_l.jpg?rnd=0"
+
+              alt="Lititz Weather Cam" title="Click for larger image" style="width: 251px; height: 141px;"></a>
+        </div>
+        <div><br>
+        </div>
+        <div><br>
+        </div>
+        <div><br>
+        </div>
+        <div><em style="font-size: 12px;">&nbsp;Lititz Springs Inn &amp; Spa</em></div>
+        <div><br>
+        </div>
+        <p> </p>
+        <!-- end of LEFT side column: put your navigation menu, etc, above this line -->
+        <div style="clear: both;"></div>
+      </div>
+      <div id="tswsidecol">
+        <div id="tswsideproper" style="text-align: center;">
+          <!-- start of RIGHT side column: insert your navigation menu, etc, here --><strong
+
+            style="font-size: 14px;"><br>
+          </strong></div>
+        <div><strong style="font-size: 14px;"><br>
+          </strong></div>
+        <div>
+          <div style="text-align: center;"><strong style="font-size: 14px;">US
+              Surface Weather Chart</strong></div>
+          <div style="text-align: center; font-size: 12px;"><strong style="font-size: 14px;"></strong><a
+
+              href="https://s.w-x.co/staticmaps/WEB_Current_Weather_Map_1280x720.jpg?crop=16:9&amp;width=800&amp;format=pjpg&amp;auto=webp&amp;quality=60">
+            </a><a href="https://www.wpc.ncep.noaa.gov/sfc/bwsfc.gif" title="Click for larger image"><img
+
+                src="https://www.wpc.ncep.noaa.gov/sfc/bwsfc.gif" alt="Current Surface Map"
+
+                style="width: 251px; height: 141px;"></a></div>
+          <div style="text-align: center;"><strong style="font-size: 14px;"><br>
+            </strong></div>
+          <div style="text-align: center;"><strong style="font-size: 14px;"><br>
+            </strong></div>
+          <div style="text-align: center;"><strong style="font-size: 14px;">Continental
+              US Satellite<br>
+            </strong></div>
+          <div style="text-align: center;"><strong></strong><strong></strong> <a
+
+              href="https://weather.cod.edu/data/satellite/continental/conus/current/conus.truecolor.jpg"
+
+              title="Click for larger image"><img src="https://weather.cod.edu/data/satellite/continental/conus/current/conus.truecolor.jpg"
+
+                alt="True Color Satellite Image of CONUS" style="width: 251px; height: 141.188px; border-radius: 1px / 0px; border-width: 1px; border-style: solid;"></a></div>
+          <div style="text-align: center;"><em>College of DuPage NEXLAB</em></div>
+          <div style="text-align: center;"><br>
+          </div>
+          <div style="text-align: center;"><br>
+          </div>
+          <div style="text-align: center;"><span style="font-size: 14px;"><strong
+
+                style="font-size: 13px;">US Advisories, Watches, &amp; Warnings</strong></span><br>
+            <a href="https://www.weather.gov/" title="Click for more information"><img
+
+                src="https://www.weather.gov/wwamap/png/US.png" alt="National Advisories, Watches, and Warnings"
+
+                style="height: 156.25px; width: 250px;"></a>
+            <div style="font-size: 14px; text-align: center;"></div>
+          </div>
+          <div style="text-align: center;"><br>
+          </div>
+          <div style="text-align: center;"><br>
+          </div>
+          <div style="text-align: center;"><strong style="font-size: 14px;">Storm
+              Prediction Center Activity</strong></div>
+          <div style="text-align: center;"><strong></strong><em><strong> <a href="https://www.spc.noaa.gov/products/activity_loop.gif"
+
+                  title="Storm Prediction Center Activity Chart"><img src="https://www.spc.noaa.gov/products/activity_loop.gif"
+
+                    alt="SPC Activity" style="width: 251px; height: 175.959px; border-width: 1px; border-style: solid;"></a><br>
+              </strong></em>
+            <div style="font-size: 14px;"><em><strong><br>
+                </strong></em></div>
+            <div style="font-size: 14px;"><em><strong><br>
+                </strong></em></div>
+          </div>
+          <div style="font-size: 14px; text-align: center;"><strong>Current
+              Excessive Rainfall Outlook</strong></div>
+          <div style="font-size: 14px; text-align: center;"><strong></strong> <a
+
+              href="https://www.wpc.ncep.noaa.gov/#page=ero" title="Excessive Rainfall Outlook"><img
+
+                src="https://www.wpc.ncep.noaa.gov/qpf/94ewbg.gif" alt="Day 1 Excessive Rainfall Outlook"
+
+                style="width: 251px; height: 175.959px; border-width: 1px; border-style: solid;"></a>
+            <div style="font-size: 14px;"><a href="https://www.wpc.ncep.noaa.gov/para/para_images/ERO_Categories.png"
+
+                style="font-size: 12px;">Understanding ERO Categories</a></div>
+            <div style="font-size: 14px;"><em><strong><br>
+                </strong></em></div>
+            <div style="font-size: 14px;"><em><strong><br>
+                </strong></em></div>
+          </div>
+          <div style="text-align: center;"><strong style="font-size: 14px;">Today's
+              US Fire Weather Outlook</strong></div>
+          <div style="text-align: center;"><strong></strong><img src="https://www.spc.noaa.gov/products/fire_wx/day1otlk_fire.gif"
+
+              alt="Today's Fire Weather Outlook" style="width: 251px; height: 171px;">
+          </div>
+          <div style="text-align: center;"><br>
+          </div>
+          <div style="text-align: center;"><br>
+          </div>
+          <div style="text-align: center;">
+            <div style="font-size: 14px;"><strong>Local Radar from NWS State
+                College</strong><em><strong></strong></em><br>
+              <em><strong></strong></em></div>
+            <div><em><strong> </strong></em><a href="https://radar.weather.gov/?settings=v1_eyJhZ2VuZGEiOnsiaWQiOiJsb2NhbCIsImNlbnRlciI6Wy03OC4wMDMsNDAuOTI0XSwibG9jYXRpb24iOm51bGwsInpvb20iOjgsImZpbHRlciI6IldTUi04OEQiLCJsYXllciI6ImJyZWZfcmF3Iiwic3RhdGlvbiI6IktDQ1gifSwiYW5pbWF0aW5nIjpmYWxzZSwiYmFzZSI6InN0YW5kYXJkIiwiYXJ0Y2MiOmZhbHNlLCJjb3VudHkiOmZhbHNlLCJjd2EiOmZhbHNlLCJyZmMiOmZhbHNlLCJzdGF0ZSI6ZmFsc2UsIm1lbnUiOnRydWUsInNob3J0RnVzZWRPbmx5Ijp0cnVlLCJvcGFjaXR5Ijp7ImFsZXJ0cyI6MC44LCJsb2NhbCI6MC42LCJsb2NhbFN0YXRpb25zIjowLjgsIm5hdGlvbmFsIjowLjZ9fQ%3D%3D#/"
+
+                title="Current Local Radar"><img src="https://radar.weather.gov/ridge/standard/KCCX_loop.gif"
+
+                  title="Click for larger image" alt="Local Radar" style="width: 251px; height: 230px; border-width: 1px; border-style: solid;"></a></div>
+          </div>
+          <div style="text-align: center;"><br>
+          </div>
+          <div style="text-align: center;"><br>
+          </div>
+          <div style="text-align: center;"><br>
+          </div>
+          <div style="text-align: center; font-size: 14px;"><strong>Regional&nbsp;
+              Precipitation Outlook</strong>
+            <div><a href="https://www.weather.gov/images/erh/gis/MA_QPF.png" title="Click for more information"><img
+
+                  src="https://www.weather.gov/images/erh/gis/MA_QPF.png" alt="3-Day Precipitation"
+
+                  style="width: 250px; height: 185.938px; border-width: 1px; border-style: solid;"></a></div>
+            <div style="text-align: center;"><br>
+            </div>
+          </div>
+          <div style="text-align: center;"><br>
+          </div>
+          <div style="text-align: center;"><strong style="font-size: 14px;">Regional
+              Snowfall Outlook<br>
+            </strong></div>
+          <div style="text-align: center;"><a href="https://www.weather.gov/images/erh/gis/GL_Snow.png"
+
+              title="Click for larger image"><img src="https://www.weather.gov/images/erh/gis/GL_Snow.png"
+
+                alt="Regional Snow Accumulation" style="width: 256px; height: 190px;"></a></div>
+          <div style="text-align: center;"><br>
+          </div>
+          <div style="text-align: center;"><br>
+          </div>
+          <div style="text-align: center;"><strong style="font-size: 14px;">Regional
+Ice
+              Accumulation Outlook</strong>
+            <div style="text-align: center;"><a href="http://www.spia-index.com/WDP-files/NE_total_ice04.png"
+
+                title="Click for larger image"><img src="http://www.spia-index.com/WDP-files/NE_total_ice04.png"
+
+                  alt="Regional Ice Accumulation" style="width: 256px; height: 190px;"></a></div>
+          </div>
+          <div style="text-align: center;"><br>
+          </div>
+          <div style="text-align: center;"><br>
+          </div>
+          <div style="text-align: center;"><strong style="font-size: 14px;">NE
+              Wind Gusts </strong><br>
+            <a href="https://www.nrcc.cornell.edu/services/blog/2025/05/02/20250502_pdpt.png"
+
+              title="Click for more information"><img src="https://www.weather.gov/images/erh/gis/NE_WGust.png"
+
+                alt="NE Wind Gusts" style="width: 253px; height: 220px; border-width: 1px; border-style: solid;"
+
+                title="Click for larger image"></a></div>
+          <div style="text-align: center;"><br>
+          </div>
+          <div style="text-align: center;"><br>
+          </div>
+          <div style="text-align: center;">
+            <div style="font-size: 14px;">
+              <div><strong>Pennsylvania Drought Monitor</strong></div>
+              <div><a href="https://droughtmonitor.unl.edu/CurrentMap/StateDroughtMonitor.aspx?PA"
+
+                  title="Click for more information"><img src="https://droughtmonitor.unl.edu/data/png/current/current_pa_trd.png"
+
+                    alt="State Drought Monitor: PA" style="width: 246px; height: 210px; border-width: 1px; border-style: solid;"></a></div>
+            </div>
+          </div>
+          <div style="text-align: center;"><br>
+          </div>
+          <div style="text-align: center;"><strong style="font-size: 14px;">Total
+              Monthly Precipitation<br>
+            </strong></div>
+          <div style="text-align: center;"><a href="https://www.weather.gov/images/erh/gis/CTP_MTDobs_precip.png"><img
+
+                src="https://www.weather.gov/images/erh/gis/CTP_MTDobs_precip.png"
+
+                alt="30-Day Total Precipitation" title="Click for larger imate"
+
+                style="width: 246px; height: 182.962px;"></a></div>
+          <div style="text-align: center;"><strong style="font-size: 14px;"><br>
+            </strong></div>
+          <div style="text-align: center;"><strong style="font-size: 14px;"></strong><br>
+            <strong style="font-size: 14px;">72-Hour Precipitation Outlook<br>
+            </strong>
+            <div style="text-align: center;"><a href="https://www.weather.gov/images/marfc/qpf/qpf_72hr_72.png"><img
+
+                  src="https://www.weather.gov/images/marfc/qpf/qpf_72hr_72.png"
+
+                  alt="72-Hour Precipitation Outlook" title="Click for larger image"
+
+                  style="width: 246px; height: 182.962px;"></a></div>
+          </div>
+          <div style="text-align: center;"><strong style="font-size: 14px;"><br>
+            </strong></div>
+          <div style="text-align: center;"><strong style="font-size: 14px;"><br>
+            </strong></div>
+          <div style="text-align: center;"><strong style="font-size: 14px;">Conestoga
+              River at Lancaster</strong><em><strong><br>
+              </strong></em> <a href="https://water.noaa.gov/gauges/LNCP1"><img
+
+                src="https://water.weather.gov/resources/hydrographs/lncp1_hg.png"
+
+                title="Click for larger image" alt="Conestoga River at Lancaster"
+
+                style="width: 251px; height: 141px; border-width: 1px; border-style: solid;"></a>
+          </div>
+          <div style="text-align: center;"><br>
+          </div>
+          <div style="text-align: center;"><br>
+          </div>
+          <div style="text-align: center;"><strong style="font-size: 14px;">Susquehanna
+              River at Marietta</strong><em><strong><br>
+              </strong></em> <a href="https://water.noaa.gov/resources/hydrographs/mrtp1_hg.png"><img
+
+                src="https://water.noaa.gov/resources/hydrographs/mrtp1_hg.png"
+
+                title="Click for larger image" alt="Susquehanna River at Marietta"
+
+                style="width: 251px; height: 141px; border-width: 1px; border-style: solid;"></a></div>
+          <div style="text-align: center;"><br>
+          </div>
+          <div style="text-align: center;"><br>
+          </div>
+          <div style="text-align: center;">
+            <div style="font-size: 14px;"><strong>Regional Satellite</strong></div>
+            <div style="font-size: 14px;"><strong></strong><strong></strong><a href="https://www.star.nesdis.noaa.gov/GOES/sector.php?sat=G16&amp;sector=ne"
+
+                title="Regional Satellite"><img src="https://cdn.star.nesdis.noaa.gov/GOES16/ABI/SECTOR/ne/GEOCOLOR/thumbnail.jpg"
+
+                  title="Click for larger image" alt="Regional Satellite" style="width: 251px; height: 251px; border-width: 1px; border-style: solid;"></a></div>
+          </div>
+          <div style="text-align: center;"><br>
+          </div>
+          <div style="text-align: center;"><strong style="font-size: 14px;">Today's
+              Sun</strong><em><strong><br>
+              </strong></em> <a href="https://sdo.gsfc.nasa.gov/assets/img/latest/latest_1024_HMIIF.jpg"><img
+
+                src="https://sdo.gsfc.nasa.gov/assets/img/latest/latest_1024_HMIIF.jpg"
+
+                title="Click for larger image" alt="Today's Sun" style="border-width: 1px; border-style: solid; width: 251px; height: 251px;"></a><br>
+            <div style="font-size: 12px;">Dark areas are sunspots<em><br>
+              </em></div>
+          </div>
+          <div style="text-align: center;"><br>
+          </div>
+          <div>
+            <div style="text-align: center; font-size: 14px;"><strong>Aurora
+                Outlook</strong><em><strong></strong></em><br>
+              <em><strong></strong></em></div>
+            <div style="text-align: center;"><em><strong> </strong></em><a href="https://www.swpc.noaa.gov/products/aurora-30-minute-forecast"><img
+
+                  src="https://services.swpc.noaa.gov/images/animations/ovation/north/latest.jpg"
+
+                  title="Click for larger image" alt="Aurora Outlook" style="width: 251px; height: 251px;"></a></div>
+            <div style="font-size: 12px; text-align: center;"><em><span style="font-size: 12px;">Learn
+                  more about <a href="https://www.weather.gov/images/wrn/Infographics/2022/geomagnetic-storm-scales.png">Geomagnetic
+                    Storm Impacts</a></span></em></div>
+            <div style="text-align: center;"><em style="font-size: 12px;"></em><br>
+              <em style="font-size: 12px;"> </em></div>
+          </div>
+          <div style="text-align: center;"><br>
+          </div>
+          <div>
+            <div style="font-size: 14px; text-align: center;"><strong>Bird
+                Migration Forecast Map</strong><em><strong><br>
+                  <a href="https://birdcast.info/migration-tools/migration-forecast-maps/"
+
+                    title="Click for more information"><img src="https://s3.amazonaws.com/is-birdcast-predicted-prod/images/day1.jpg"
+
+                      alt="Bird Migration Forecast Map" style="width: 251px;"></a></strong><br>
+              </em></div>
+            <div style="font-size: 14px; text-align: center;"><em style="font-size: 12px;">Live
+                March 1 to June 15 &amp; Aug. 1 to Nov.15. <br>
+              </em></div>
+            <div style="font-size: 14px; text-align: center;"><em style="font-size: 12px;"><br>
+              </em></div>
+            <div style="font-size: 14px; text-align: center;"><em style="font-size: 12px;"><br>
+              </em></div>
+          </div>
+          <div style="text-align: center;"><!-- end of RIGHT side column: put your navigation menu, etc, above this line --></div>
+        </div>
+      </div>
+      <div style="clear: both;"></div>
+      <div id="tswfooter">
+        <!-- start of footer section: insert your copyright notice, etc, here -->
+        <p style="text-align: center;"><strong><strong><a href="https://www.thesitewizard.com/"
+
+                target="_top"><img src="https://www.thesitewizard.com/images/tsw88x31pow.gif"
+
+                  alt="Get free CGI scripts, PHP scripts, web pages at thesitewizard.com"
+
+                  style="border: medium none; margin: 10px;" height="31" width="88"></a></strong></strong><strong><strong><a
+
+                href="https://jigsaw.w3.org/css-validator/validator?lang=en&amp;profile=css3svg&amp;uri=https%3A%2F%2Fapexwx.github.io%2F&amp;usermedium=all&amp;vextwarning=&amp;warning=1"><strong><strong></strong></strong></a><strong><strong><a
+
+                    href="https://html5.validator.nu/?doc=https://apexwx.github.io/Fawkes"><img
+
+                      src="https://apexwx.github.io/validhtml5.png" alt="W3C Validated HTML 5"
+
+                      style="width: 112px; height: 49px; margin: 0px;" title="Click for more information"></a></strong></strong>
+              <a href="http://jigsaw.w3.org/css-validator/validator?lang=en&amp;profile=css3svg&amp;uri=https%3A%2F%2Fapexwx.github.io%2F&amp;usermedium=all&amp;vextwarning=&amp;warning=1">
+                <img style="border: 0px none; width: 88px; height: 31px; margin: 10px;"
+
+                  src="https://jigsaw.w3.org/css-validator/images/vcss-blue" alt="Valid CSS!">
+              </a> </strong></strong> </p>
+        <div style="text-align: center;">Follow Apex Wx on Social Media </div>
+        <div style="text-align: center;"><a style="font-size: 12px; text-align: center;"
+
+            href="https://www.facebook.com/ApexWx/"><img style="border: medium none; max-width: 100%; margin: 0px; padding-bottom: 5px;"
+
+              title="Apex Wx on Facebook" src="https://raw.githubusercontent.com/ApexWx/ApexWx.github.io/master/outline-dark-facebook-48.png"
+
+              alt="Apex Wx on Facebook"></a> <a href="https://universeodon.com/@ApexWx"
+
+            title="Apex Wx on Mastodon"><img src="https://apexwx.github.io/mastodon.png"
+
+              alt="Mastodon" style="width: 44px; height: 47px; padding: 5px; margin: 0px;"
+
+              title="Apex Wx on Mastodon"></a><a href="https://www.threads.net/@apexwx"
+
+            title="Apex Wx on Threads"><img src="https://apexwx.github.io/threadslogo.png"
+
+              alt="Threads" style="width: 47px; height: 47px; padding: 5px;"></a><a
+
+            href="https://www.instagram.com/apexwx/" title="Apex Wx on Instagram"><img
+
+              src="https://apexwx.github.io/instagram48.png" alt="Instagram" style="width: 47px; height: 47px; padding: 5px;"></a><a
+
+            href="https://bsky.app/profile/apexwx.bsky.social" title="Apex Wx on Blue Sky social "><img
+
+              src="https://apexwx.github.io/Bsky75.png" alt="Bluesky" style="width: 47px; height: 47px; padding: 5px;"></a></div>
+        <!-- end of footer section: insert your copyright notice, etc, above this line --><!-- end of footer section: insert your copyright notice, etc, above this line -->
+      </div>
+    </div>
+    <script>
+                     //<![CDATA[
+                         var myDate = new Date();
+                         var hrs = myDate.getHours();
+                     
+                         var greet;
+                     
+                         if (hrs < 12 && hrs >= 3) 
+                             greet = 'Good Morning!';
+                         else if (hrs >= 12 && hrs <= 17)
+                             greet = 'Good Afternoon!';
+                         else if (hrs >= 17 && hrs <= 24)
+                             greet = 'Good Evening!';
+                         else if (hrs >=0 && hrs <= 3)
+                             greet = 'Good Early Morning!';
+                     
+                         document.getElementById('lblGreetings').innerHTML =
+                             '<b>' + greet + '<\/b>';
+                       //]]>
+                       
+                  </script>
+    <script>
+  async function fetchForecast() {
+    try {
+      const response = await fetch('https://api.weather.gov/points/40.0379,-76.3055');
+      const pointData = await response.json();
+      const forecastUrl = pointData.properties.forecast;
+
+      const forecastResponse = await fetch(forecastUrl);
+      const forecastData = await forecastResponse.json();
+
+      const periods = forecastData.properties.periods;
+
+      const forecastHtml = periods.map(p => `
+        <div class="fw-item">
+          <img src="${p.icon}" alt="${p.shortForecast}" />
+          <div class="fw-text">
+            <span class="fw-day">${p.name}:</span> ${p.detailedForecast}
+          </div>
+        </div>
+      `).join('');
+
+      document.getElementById('forecast').innerHTML = forecastHtml;
+    } catch (error) {
+      console.error('Error fetching weather:', error);
+      document.getElementById('forecast').textContent = 'Failed to load forecast.';
+    }
+  }
+
+  // Initial call
+  fetchForecast();
+
+  // Refresh every 3 hours (3 * 60 * 60 * 1000 ms = 10,800,000 ms)
+  setInterval(fetchForecast, 10800000);
+</script> <script>
+  async function fetchSunriseSunset() {
+    // Lancaster, PA coordinates
+    const lat = 40.0379;  
+    const lng = -76.3055;
+    const apiURL = `https://api.sunrise-sunset.org/json?lat=${lat}&lng=${lng}&formatted=0`;
+
+    try {
+      const response = await fetch(apiURL);
+      const data = await response.json();
+
+      const sunriseUTC = new Date(data.results.sunrise);
+      const sunsetUTC = new Date(data.results.sunset);
+      const dayLengthSec = data.results.day_length;
+
+      // Convert UTC times to local (Eastern Time)
+      const options = { hour: 'numeric', minute: '2-digit', timeZone: 'America/New_York' };
+      const sunriseLocal = sunriseUTC.toLocaleTimeString('en-US', options);
+      const sunsetLocal = sunsetUTC.toLocaleTimeString('en-US', options);
+
+      // Get EDT/EST abbreviation safely
+      const tzString = new Date().toLocaleTimeString('en-US', {
+        timeZone: 'America/New_York',
+        timeZoneName: 'short'
+      });
+      const tzAbbr = tzString.match(/\b(EDT|EST)\b/)?.[0] || "ET";
+
+      // Format current date
+      const now = new Date();
+      const dateStr = now.toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+
+      // Convert daylight length from seconds to hh:mm
+      const hours = Math.floor(dayLengthSec / 3600);
+      const minutes = Math.floor((dayLengthSec % 3600) / 60);
+      const dayLengthStr = `${hours}h ${minutes}m`;
+
+     document.getElementById("sunriseSunset").innerHTML = `
+  <div><strong>${dateStr}</strong></div>
+  <div class="sun-info">
+    <div>🌅 <strong>Sunrise</strong>: ${sunriseLocal} ${tzAbbr} |</div>
+    <div>🌇 <strong>Sunset</strong>: ${sunsetLocal} ${tzAbbr} |</div>
+    <div><strong>Day Length</strong>: ${dayLengthStr}</div>
+  </div>
+`;
+    } catch (error) {
+      console.error("Sunrise/Sunset fetch error:", error);
+      document.getElementById("sunriseSunset").innerText = "Unable to load sunrise/sunset.";
+    }
+  }
+
+  fetchSunriseSunset();
+  setInterval(fetchSunriseSunset, 3600000); // Refresh every hour
+</script> </body>
+</html>

@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+    <title>Weather Links</title>
+    <style>
+    body  {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: url('https://github.com/ApexWx/ApexWx.github.io/blob/master/seamless-background-simply-sky.jpg?raw=true') repeat;
+    }
+  </style>
+  </head>
+  <body topmargin="5" leftmargin="10">
+    <div align="left"> <font size="3"> <b>Quick Links</b> </font> <br>
+      <br>
+      <font size="2"> <b>Satellite</b><br>
+        <br>
+        <div align="left">
+          <table width="800">
+            <tbody>
+              <tr>
+                <td width="200"><a href="https://weather.cod.edu/satrad/?parms=global-northamerica-09-12-0-100-1&amp;checked=map&amp;colorbar=undefined">DuPage
+                    East</a> </td>
+                <td width="200"><a href="https://weather.cod.edu/satrad/?parms=global-npacwestlarge-09-12-0-100-1&amp;checked=map&amp;colorbar=undefined">DuPage
+                    West</a> </td>
+                <td width="200"><a href="https://weather.cod.edu/satrad/?parms=continental-conus-09-12-0-100-1&amp;checked=map&amp;colorbar=undefined">United
+                    States</a> </td>
+                <td width="200"><a href="https://weather.cod.edu/satrad/?parms=regional-northeast-09-12-0-100-1&amp;checked=map&amp;colorbar=undefined">North
+                    East</a> </td>
+              </tr>
+              <tr>
+                <td><a href="https://weather.ndc.nasa.gov/sport/viewer/?dataset=goeseastabiconus&amp;product=10p35um">Nasa
+                    Sport</a> </td>
+                <td><a href="https://weather.ndc.nasa.gov/GOES/">MSFC</a> </td>
+                <td><a href="https://zoom.earth/">Zoom.Earth</a> </td>
+              </tr>
+              <tr>
+                <td><a href="https://rammb-slider.cira.colostate.edu/?sat=goes-16&amp;sec=full_disk&amp;x=10837.251953125&amp;y=10848.565612792969&amp;z=0&amp;angle=0&amp;im=6&amp;ts=1&amp;st=0&amp;et=0&amp;speed=130&amp;motion=loop&amp;maps%5Bborders%5D=white&amp;p%5B0%5D=geocolor&amp;opacity%5B0%5D=1&amp;pause=0&amp;slider=-1&amp;hide_controls=0&amp;mouse_draw=0&amp;follow_feature=0&amp;follow_hide=0&amp;s=rammb-slider&amp;draw_color=FFD700&amp;draw_width=6">RAMMB
+                    East</a> </td>
+                <td><a href="https://rammb-slider.cira.colostate.edu/?sat=goes-18&amp;sec=full_disk&amp;x=10842.50390625&amp;y=10848.161560058594&amp;z=0&amp;angle=0&amp;im=6&amp;ts=1&amp;st=0&amp;et=0&amp;speed=130&amp;motion=loop&amp;maps%5Bborders%5D=white&amp;p%5B0%5D=geocolor&amp;opacity%5B0%5D=1&amp;pause=0&amp;slider=-1&amp;hide_controls=0&amp;mouse_draw=0&amp;follow_feature=0&amp;follow_hide=0&amp;s=rammb-slider&amp;draw_color=FFD700&amp;draw_width=6">RAMMB
+                    West</a> </td>
+              </tr>
+              <tr>
+                <td><a href="https://www.ssec.wisc.edu/data/geo/#/animation?satellite=goes-east&amp;end_datetime=latest&amp;n_images=8&amp;coverage=conus&amp;channel=13&amp;image_quality=gif&amp;anim_method=flash">SSEC
+                    Wisconsin</a> </td>
+                <td><a href="https://www.star.nesdis.noaa.gov/GOES/index.php">Star
+                    Nesdis</a> </td>
+              </tr>
+              <tr>
+                <td><a href="https://tropic.ssec.wisc.edu/real-time/mtpw2/product.php?color_type=tpw_nrl_colors&amp;prod=global2&amp;timespan=24hrs&amp;anim=html5">Mimic
+                    TPW</a> </td>
+                <td><a href="https://tropic.ssec.wisc.edu/real-time/mtpw2/product.php?color_type=tpw_nrl_colors&amp;prod=conus&amp;timespan=24hrs&amp;anim=html5">Conus</a>
+                </td>
+                <td><a href="https://tropic.ssec.wisc.edu/real-time/mtpw2/product.php?color_type=tpw_nrl_colors&amp;prod=natl&amp;timespan=24hrs&amp;anim=html5">Atlantic</a>
+                </td>
+                <td><a href="https://tropic.ssec.wisc.edu/real-time/mtpw2/product.php?color_type=tpw_nrl_colors&amp;prod=epac&amp;timespan=24hrs&amp;anim=html5">Pacific</a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <br>
+        <br>
+        <b>Radar</b><br>
+        <br>
+        <div align="left">
+          <table width="800">
+            <tbody>
+              <tr>
+                <td width="200"> <a href="https://weather.cod.edu/satrad/?parms=continental-conus-comp_radar-12-0-100-1&amp;checked=map&amp;colorbar=undefined">DuPage
+                    USA</a> </td>
+                <td width="200"><a href="https://weather.cod.edu/satrad/?parms=regional-northeast-comp_radar-12-0-100-1&amp;checked=map&amp;colorbar=undefined">North
+                    East US</a> </td>
+                <td width="200"><a href="https://www.meteo.psu.edu/ewall/WXTYPE/loop25ne.html">PSU
+                    NE</a> </td>
+                <td width="200"> <br>
+                </td>
+              </tr>
+              <tr>
+                <td> <a href="https://weather.cod.edu/satrad/nexrad/?parms=OKX-N0B-0-24-100-usa-rad">Nexrad
+                    DuPage</a> </td>
+                <td><a href="https://weather.rap.ucar.edu/radar/">UCAR/NCAR</a>
+                </td>
+                <td><a href="https://vortex.plymouth.edu/myowxp/rad/tdwr.html">TDWR
+                    Radars</a> </td>
+              </tr>
+              <tr>
+                <td> <a href="https://s.w-x.co/staticmaps/wu/wxtype/none/usa/animate.png">Intellicast
+                    US</a> </td>
+                <td><a href="https://s.w-x.co/staticmaps/wu/wxtype/county_loc/bgm/animate.png">North
+                    East</a></td>
+                <td><a href="https://www.wjhg.com/weather/radar/">WJHG Radar</a>
+                </td>
+              </tr>
+              <tr>
+                <td> <a href="https://map.blitzortung.org/#1/52/8">Blitzortung
+                    Lightning</a> </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <br>
+        <br>
+        <b>Maps</b><br>
+        <br>
+        <div align="left">
+          <table width="800">
+            <tbody>
+              <tr>
+                <td width="200"> <a href="https://www.spc.noaa.gov/exper/mesoanalysis/">SPC
+                    Mesoanalysis</a> </td>
+                <td width="200"><a href="https://www.spc.noaa.gov/exper/mesoanalysis/new/mobile.php">SPC
+                    Mobile</a> </td>
+                <td width="200"><a href="https://weather.cod.edu/buildmap/analysis/rapmeso_build.php">RAP
+                    Meso</a> </td>
+                <td width="200"> <br>
+                </td>
+              </tr>
+              <tr>
+                <td> <a href="https://www.meteoblue.com/en/weather-maps/">Meteoblue</a>
+                </td>
+                <td><a href="https://earth.nullschool.net/">Nullschool</a> </td>
+                <td><a href="https://www.ventusky.com/">Ventusky</a> </td>
+              </tr>
+              <tr>
+                <td> <a href="https://www.wpc.ncep.noaa.gov/exper/change/change.html">WPC
+                    24hr Changes</a> </td>
+                <td><a href="http://coolwx.com/analysis/">CoolWX</a> </td>
+              </tr>
+              <tr>
+                <td> <a href="https://weather.cod.edu/analysis/">College of
+                    DuPage</a> </td>
+                <td><a href="https://weather.rap.ucar.edu/">RAP Ucar EDU</a> </td>
+                <td><a href="https://vortex.plymouth.edu/">Plymouth EDU</a> </td>
+              </tr>
+              <tr>
+                <td> <a href="https://www.mesonet.org/data/public/noaa/metar/maps/realtime/latest.tdew.png">Mesonet
+                    Dewpoint</a> </td>
+                <td><a href="https://weather.rap.ucar.edu/model/ruc00hr_sfc_dewp.gif">RUC
+                    Dewpoint</a> </td>
+              </tr>
+              <tr>
+                <td> <a href="https://www.mesonet.org/data/public/noaa/metar/maps/realtime/latest.tair.png">Mesonet
+                    Temps</a> </td>
+                <td><a href="https://weather.rap.ucar.edu/model/ruc00hr_sfc_temp.gif">RUC
+                    Temps</a> </td>
+                <td><a href="https://www.meteociel.fr/cartes_obs/temp_na.png">MC
+                    Temps</a> </td>
+              </tr>
+              <tr>
+                <td> <a href="https://www.wrh.noaa.gov/map/?wfo=&amp;obs_type=weather&amp;obs=true">NWS
+                    Observations</a> </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <br>
+        <br>
+        <b>Modeling</b><br>
+        <br>
+        <div align="left">
+          <table width="800">
+            <tbody>
+              <tr>
+                <td width="200"> <a href="https://weather.cod.edu/forecast/">College
+                    of DuPage</a> </td>
+                <td width="200"><a href="https://home.pivotalweather.com/">Pivotal
+                    Weather</a> </td>
+                <td width="200"><a href="https://www.tropicaltidbits.com/analysis/models/">Tropical
+                    Tidbits</a> </td>
+                <td width="200"><a href="https://mapwall.met.psu.edu/ewall/">PSU
+                    EWall</a> </td>
+              </tr>
+              <tr>
+                <td><a href="https://www.atmos.albany.edu/student/abentley/realtime.html">Bentley</a>
+                </td>
+                <td><a href="http://arctic.som.ou.edu/tburg/models/">Burg</a> </td>
+              </tr>
+              <tr>
+                <td><a href="http://www.meteor.iastate.edu/%7Eckarsten/bufkit/data/">Bufkit
+                    Warehouse</a> </td>
+                <td><a href="http://moe.met.fsu.edu/cyclonephase/index.html">Cyclone
+                    Phase Evolution</a> </td>
+                <td><a href="https://www.weather.gov/unr/uac">NAM PWat Climo</a>
+                </td>
+              </tr>
+              <tr>
+                <td><a href="http://www.spc.noaa.gov/exper/href/">HREF</a> </td>
+                <td><a href="http://www.spc.noaa.gov/exper/sref/fplumes/index2.php">SREF
+                    Plumes</a> </td>
+                <td><a href="https://meteocentre.com/numerical-weather-prediction/forecast-systems.php?&amp;lang=en">Meteocentre
+                    OP</a> </td>
+                <td><a href="https://meteocentre.com/cyclone-tracking/index_e.html">Meteocentre
+                    ENS</a> </td>
+              </tr>
+              <tr>
+                <td><a href="https://digital.weather.gov/">NWS Digital Graphics</a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <br>
+        <br>
+        <strong> <b>Precip</b>itation</strong><br>
+        <br>
+        <div align="left">
+          <table width="800">
+            <tbody>
+              <tr>
+                <td width="200"><a href="http://www.spc.noaa.gov/products/md/">Severe
+                    MD</a> </td>
+                <td width="200"><a href="http://www.wpc.ncep.noaa.gov/metwatch/metwatch_mpd.php">Precip
+                    MD</a> </td>
+                <td width="200"><a href="https://www.spc.noaa.gov/partners/outlooks/"
+                    target="blank">SPC State Outlooks</a> </td>
+                <td width="200"> <br>
+                </td>
+              </tr>
+              <tr>
+                <td><a href="https://www.wpc.ncep.noaa.gov/qpf/qpf2.shtml">WPC
+                    Rain</a> </td>
+                <td><a href="https://origin.wpc.ncep.noaa.gov/pwpf/wwd_accum_probs.php?fpd=24&amp;ptype=snow&amp;amt=1&amp;day=1&amp;ftype=probabilities">WPC
+                    Snow</a> </td>
+              </tr>
+              <tr>
+                <td><a href="https://www.weather.gov/marfc/Precipitation_Forecasts">MidATL
+                    RFC Rain</a> </td>
+                <td><a href="https://www.weather.gov/marfc/snow">MidATL RFC Snow</a>
+                </td>
+              </tr>
+              <tr>
+                <td><a href="https://www.weather.gov/nerfc/ForecastPrecipitation">NEast
+                    RFC Rain</a> </td>
+                <td><a href="https://www.weather.gov/nerfc/snow">NEast RFC Snow</a>
+                </td>
+              </tr>
+              <tr>
+                <td><a href="http://www.weather.gov/images/erh/gis/CONUS_QPF.png">US
+                    72hr QPF</a> </td>
+                <td><a href="http://www.weather.gov/images/erh/gis/ERH_QPF.png">East
+                    US QPF</a> </td>
+                <td><a href="http://www.weather.gov/images/erh/gis/NE_QPF.png">North
+                    East</a> </td>
+                <td><a href="http://www.weather.gov/images/erh/gis/MA_QPF.png">Mid-Atlantic</a>
+                </td>
+              </tr>
+              <tr>
+                <td><a href="http://www.weather.gov/images/erh/gis/CONUS_Snow.png">US
+                    Snow</a> </td>
+                <td><a href="http://www.weather.gov/images/erh/gis/ERH_Snow.png">East
+                    US Snow</a> </td>
+                <td><a href="http://www.weather.gov/images/erh/gis/NE_Snow.png">North
+                    East</a> </td>
+                <td><a href="http://www.weather.gov/images/erh/gis/MA_Snow.png">Mid-Atlantic</a>
+                </td>
+              </tr>
+              <tr>
+                <td><a href="http://www.weather.gov/images/erh/gis/CONUS_Ice.png">US
+                    Ice</a> </td>
+                <td><a href="http://www.weather.gov/images/erh/gis/ERH_Ice.png">East
+                    Ice</a> </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <br>
+        <br>
+        <b>Tropics</b><br>
+        <br>
+        <div align="left">
+          <table width="800">
+            <tbody>
+              <tr>
+                <td width="200"> <a href="https://web.uwm.edu/hurricane-models/models/">Hurricane
+                    Models</a> </td>
+                <td width="200"><a href="https://www.tropicaltidbits.com/storminfo/">Tropical
+                    Tidbits</a> </td>
+                <td width="200"><a href="https://www.nrlmry.navy.mil/tc_pages/tc_home.html">Navy
+                    NRL</a> </td>
+                <td width="200"> <br>
+                </td>
+              </tr>
+              <tr>
+                <td><a href="https://tropic.ssec.wisc.edu/">CIMSS Tropical</a> </td>
+                <td><a href="http://rammb-data.cira.colostate.edu/tc_realtime/">RAMMB
+                    Real Time</a> </td>
+              </tr>
+              <tr>
+                <td><a href="http://arctic.som.ou.edu/tburg/products/realtime/tropical/">Burg</a>
+                </td>
+                <td><a href="https://www.atmos.albany.edu/facstaff/tang/tcguidance/">Tang</a>
+                </td>
+              </tr>
+              <tr>
+                <td><a href="http://www.nhc.noaa.gov/text/MIAREPRPD_last.shtml">Recon
+                    Day 1</a> </td>
+                <td><a href="http://www.nhc.noaa.gov/text/MIAREPRPD.shtml">Recon
+                    Day 2</a> </td>
+                <td><a href="https://www.tropicaltidbits.com/recon/">Cowan</a> </td>
+                <td><a href="https://cyclonicwx.com/recon/">Cyclonic</a> </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <br>
+        <br>
+        <b>Sites</b><br>
+        <br>
+        <div align="left">
+          <table width="800">
+            <tbody>
+              <tr>
+                <td width="200"> <a href="https://www.nhc.noaa.gov/">National
+                    Hurricane Center</a> </td>
+                <td width="200"> <br>
+                </td>
+                <td width="200"> <br>
+                </td>
+                <td width="200"> <br>
+                </td>
+              </tr>
+              <tr>
+                <td><a href="https://www.weather.gov/">National Weather Service</a>
+                </td>
+                <td><a href="https://www.weather.gov/erh/">Eastern Region</a> </td>
+                <td><a href="http://www.wrh.noaa.gov/" target="blank">Western
+                    Region</a> </td>
+              </tr>
+              <tr>
+                <td><a href="https://ocean.weather.gov/">Ocean Prediction Center</a>
+                </td>
+              </tr>
+              <tr>
+                <td><a href="https://www.spc.noaa.gov/">Storm Prediction Center</a>
+                </td>
+              </tr>
+              <tr>
+                <td><a href="https://www.wpc.ncep.noaa.gov/">Weather Prediction
+                    Center</a> </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <br>
+        <br>
+        <b>Climate</b><br>
+        <br>
+        <div align="left">
+          <table width="800">
+            <tbody>
+              <tr>
+                <td width="200"><a href="https://turf.eas.cornell.edu/">Cornell
+                    Turfgrass</a> </td>
+                <td width="200"><a href="https://www.epa.gov/sunsafety/uv-index-applications">UV
+                    Index</a> </td>
+                <td width="200"> <br>
+                </td>
+                <td width="200"> <br>
+                </td>
+              </tr>
+              <tr>
+                <td><a href="https://weather.ndc.nasa.gov/sport/viewer/?dataset=sst&amp;product=sport_conusa&amp;location=sstcomp00to12">SST
+                    Nasa Sport</a> </td>
+                <td><a href="https://soto.podaac.earthdatacloud.nasa.gov/">SST
+                    Podaac</a> </td>
+                <td><a href="https://www.senamhi.gob.pe/?&amp;p=satelites-TSM" target="blank">ENSO
+                    SST</a> </td>
+              </tr>
+              <tr>
+                <td><a href="https://hprcc.unl.edu/maps.php?map=ACISClimateMaps">RCC-ACIS</a>
+                </td>
+                <td><a href="https://xmacis.rcc-acis.org/">xmACIS2</a><br>
+                </td>
+              </tr>
+              <tr>
+                <td><a href="https://climatetoolbox.org/tool/climate-mapper">Climate
+                    Mapper</a> </td>
+                <td><a href="https://climatereanalyzer.org/">Climate Reanalyzer</a><br>
+                </td>
+              </tr>
+              <tr>
+                <td><a href="https://sercc.oasis.unc.edu/Map.php?region=us">United
+                    States Rankings</a> </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <br>
+        <br>
+        <b>Stratosphere</b><br>
+        <br>
+        <div align="left">
+          <table width="800">
+            <tbody>
+              <tr>
+                <td width="200"> <a href="https://www.geo.fu-berlin.de/en/met/ag/strat/produkte/winterdiagnostics/index.html">U-Berlin
+                    Stratosphere</a><br>
+                </td>
+                <td width="200"> <br>
+                </td>
+                <td width="200"> <br>
+                </td>
+                <td width="200"> <br>
+                </td>
+              </tr>
+              <tr>
+                <td><a href="https://acd-ext.gsfc.nasa.gov/Data_services/Current/seasonal_strat/seasonal_strat.html">ACD
+                    Strat Evolution</a> </td>
+              </tr>
+              <tr>
+                <td><a href="https://acd-ext.gsfc.nasa.gov/Data_services/met/ann_data.html">ACD
+                    Merra Charts</a> </td>
+              </tr>
+              <tr>
+                <td><a href="https://www.pa.op.dlr.de/arctic/ecmwf.php">Dornbrack
+                    Tropopause</a> </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <br>
+        <br>
+        <b>Expanded Weather Links</b><br>
+        <br>
+        <a href="resources.html">Weather Resources</a><br>
+        <br>
+        <div align="left">
+          <table width="500">
+            <tbody>
+              <tr>
+                <td> <a href="old/aloft.htm">Aloft</a> </td>
+                <td><a href="old/climate.htm">Climate</a> </td>
+                <td><a href="old/gis.htm">GIS</a><br>
+                </td>
+              </tr>
+              <tr>
+                <td><a href="old/maps.htm">Maps</a> </td>
+                <td><a href="old/marine.htm">Marine</a> </td>
+                <td><a href="old/models.htm">Models</a> </td>
+                <td><a href="old/nws.htm">NWS</a><br>
+                </td>
+              </tr>
+              <tr>
+                <td><a href="old/rad.htm">Radar</a> </td>
+                <td><a href="old/rain.htm">Rain</a> </td>
+                <td><a href="old/sat.htm">Satellite</a><br>
+                </td>
+              </tr>
+              <tr>
+                <td><a href="old/snow.htm">Snow</a> </td>
+                <td><a href="old/surface.htm">Surface</a> </td>
+                <td><a href="old/temps.htm">Temps</a><br>
+                </td>
+              </tr>
+              <tr>
+                <td><a href="old/thunder.htm">Thunder</a> </td>
+                <td><a href="old/tropical.htm">Tropical</a> </td>
+                <td><a href="old/wind.htm">Wind</a><br>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        Back to <a href="https://apexwx.github.io/">https://apexwx.github.io/</a><br>
+        <br>
+      </font> </div>
+  </body>
+</html>

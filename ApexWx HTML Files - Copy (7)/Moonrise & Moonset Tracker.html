@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Fort Kent, Maine — Moon &amp; Sun Tracker</title>
+    <script src="https://unpkg.com/suncalc/suncalc.js"></script>
+    <style>
+    body {
+      font-family: system-ui, sans-serif;
+      background: radial-gradient(circle at top, #0b1a2a, #000);
+      color: #fff;
+      text-align: center;
+      padding: 2rem;
+    }
+    h1 {
+      margin-bottom: 0.5rem;
+      font-size: 1.9rem;
+      color: #d2ecff;
+    }
+    #info {
+      font-size: 1.1rem;
+      margin-top: 1.5rem;
+      line-height: 1.6;
+    }
+    .time {
+      font-weight: bold;
+      color: #f0e68c;
+    }
+    .status {
+      margin-top: 1rem;
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+    .above { color: #9eff9e; }
+    .below { color: #ff9999; }
+    .phase {
+      margin-top: 1rem;
+      font-size: 1.3rem;
+    }
+    .section {
+      margin-top: 1.5rem;
+    }
+    footer {
+      margin-top: 3rem;
+      font-size: 0.8rem;
+      color: #aaa;
+    }
+    a { color: #6cf; }
+  </style>
+  </head>
+  <body>
+    <h1>🌕 Moon &amp; ☀️ Sun Tracker — Fort Kent, Maine</h1>
+    <div id="info">Loading celestial data...</div>
+    <footer> Powered by <a href="https://github.com/mourner/suncalc" target="_blank">SunCalc</a>
+    </footer>
+    <script>
+    const lat = 47.258;
+    const lon = -68.589;
+    const timeZone = "America/New_York";
+    let currentDateKey = getDateKey(new Date());
+
+    function getPhaseEmoji(phase) {
+      if (phase < 0.03 || phase > 0.97) return "🌑";
+      if (phase < 0.22) return "🌒";
+      if (phase < 0.28) return "🌓";
+      if (phase < 0.47) return "🌔";
+      if (phase < 0.53) return "🌕";
+      if (phase < 0.72) return "🌖";
+      if (phase < 0.78) return "🌗";
+      if (phase < 0.97) return "🌘";
+      return "🌑";
+    }
+
+    function formatTime(date) {
+      if (!date) return "—";
+      const opts = { hour: "2-digit", minute: "2-digit", second: "2-digit", timeZone };
+      return new Intl.DateTimeFormat([], opts).format(date);
+    }
+
+    function getDateKey(date) {
+      return date.toLocaleDateString("en-CA", { timeZone });
+    }
+
+    function showData() {
+      const now = new Date();
+      const todayKey = getDateKey(now);
+      if (todayKey !== currentDateKey) currentDateKey = todayKey;
+
+      const dateLocal = new Date(now.toLocaleString("en-US", { timeZone }));
+
+      // 🌕 Moon Data
+      const moonTimes = SunCalc.getMoonTimes(dateLocal, lat, lon);
+      const rise = moonTimes.alwaysUp ? "🌙 Always above" :
+                   moonTimes.alwaysDown ? "🌑 Always below" :
+                   formatTime(moonTimes.rise);
+      const set = moonTimes.alwaysUp ? "—" :
+                  moonTimes.alwaysDown ? "—" :
+                  formatTime(moonTimes.set);
+
+      const pos = SunCalc.getMoonPosition(now, lat, lon);
+      const altitude = pos.altitude * (180 / Math.PI);
+      const status = altitude > 0
+        ? `<span class="status above">🌝 The Moon is currently above the horizon</span>`
+        : `<span class="status below">🌚 The Moon is currently below the horizon</span>`;
+
+      const illum = SunCalc.getMoonIllumination(now);
+      const phaseEmoji = getPhaseEmoji(illum.phase);
+      const phasePct = Math.round(illum.fraction * 100);
+
+      // ☀️ Sun Data
+      const sunTimes = SunCalc.getTimes(dateLocal, lat, lon);
+      const sunrise = formatTime(sunTimes.sunrise);
+      const sunset = formatTime(sunTimes.sunset);
+
+      // Render Info
+      document.getElementById("info").innerHTML = `
+        <div>📍 Location: Fort Kent, Maine</div>
+        <div>📅 Date: ${todayKey}</div>
+
+        <div class="section">
+          <div>🌕 <strong>Moon Data</strong></div>
+          <div>⬆️ Moonrise: <span class="time">${rise}</span></div>
+          <div>⬇️ Moonset: <span class="time">${set}</span></div>
+          <div class="phase">Phase: ${phaseEmoji} ${phasePct}% illuminated</div>
+          ${status}
+        </div>
+
+        <div class="section">
+          <div>☀️ <strong>Sun Data</strong></div>
+          <div🌇 Sunrise: <span class="time">${sunrise}</span></div>
+          <div🌇 Sunset: <span class="time">${sunset}</span></div>
+        </div>
+
+        <div class="section">🕒 Timezone: ${timeZone}</div>
+      `;
+    }
+
+    showData();
+    setInterval(showData, 60000);
+  </script>
+  </body>
+</html>

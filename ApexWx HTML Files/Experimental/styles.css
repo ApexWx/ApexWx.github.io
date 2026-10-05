@@ -1,0 +1,47 @@
+ /* Responsive Table */ 
+#resp-table {
+width: 50%;
+display: table;
+border: 1px solid;
+
+}
+#resp-table-caption{
+display: table-caption;
+text-align: center;
+font-size: 16px;
+font-weight: bold;
+}
+#resp-table-header{
+display: table-header-group;
+background-color: #fff;
+font-weight: bold;
+font-size: 14px;
+}
+.table-header-cell{
+display: table-cell;
+padding: 14px;
+text-align: justify;
+border-bottom: 1px solid black;
+}
+#resp-table-body{
+display: table-row-group;
+}
+.resp-table-row{
+display: table-row;
+}
+.table-body-cell{
+display: table-cell;
+}
+#resp-table-footer {
+display: table-footer-group;
+background-color: #fff;
+font-weight: bold;
+font-size: 14px;
+color: #fff;
+}
+.table-footer-cell{
+display: table-cell;
+padding: 14px;
+text-align: justify;
+border-bottom: 0px solid black;
+}

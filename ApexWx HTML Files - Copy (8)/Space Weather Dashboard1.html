@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Space Weather Dashboard</title>
+    <style>
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #0d1117;
+        color: #c9d1d9;
+    }
+    .dashboard-header {
+        background-color: #161b22;
+        padding: 20px;
+        text-align: center;
+        border-bottom: 2px solid #30363d;
+    }
+    .dashboard-container {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        gap: 20px;
+        padding: 20px;
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+    .data-panel, .chart-panel {
+        background-color: #161b22;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    .data-panel h3, .chart-panel h3 {
+        color: #58a6ff;
+        margin-top: 0;
+        padding-bottom: 10px;
+        border-bottom: 1px solid #30363d;
+    }
+    .metric-group {
+        margin-bottom: 15px;
+        padding: 10px 0;
+        border-bottom: 1px dashed #30363d;
+    }
+    .metric-group:last-child {
+        border-bottom: none;
+    }
+    .metric-label {
+        font-weight: bold;
+        color: #c9d1d9;
+        display: block;
+        margin-bottom: 3px;
+    }
+    .metric-value {
+        font-size: 1.5em;
+        color: #ffffff;
+    }
+    .alert-box {
+        grid-column: 1 / 3;
+        padding: 15px;
+        border-radius: 5px;
+        text-align: center;
+        font-weight: bold;
+        margin-bottom: 20px;
+        background-color: #490200;
+        color: #ffb4a6;
+        border: 1px solid #8e0000;
+    }
+    canvas {
+        background-color: #0d1117;
+        border: 1px solid #30363d;
+        border-radius: 5px;
+    }
+</style>
+  </head>
+  <body>
+    <div class="dashboard-header">
+      <h1>🌌 Space Weather Monitoring</h1>
+      <p id="last-updated">Last Updated: Loading...</p>
+    </div>
+    <div class="dashboard-container">
+      <div id="alerts-container" class="alert-box" style="display: none;"></div>
+      <div class="data-panel">
+        <h3>Current Conditions (Real-Time)</h3>
+        <div id="solar-wind-speed" class="metric-group"> <span class="metric-label">Solar
+            Wind Speed</span> <span class="metric-value">... km/s</span> </div>
+        <div id="solar-wind-density" class="metric-group"> <span class="metric-label">Solar
+            Wind Density</span> <span class="metric-value">... p/cc</span> </div>
+        <div id="imf-bt" class="metric-group"> <span class="metric-label">IMF
+            Bt</span> <span class="metric-value">... nT</span> </div>
+        <div id="imf-bz" class="metric-group"> <span class="metric-label">IMF
+            Bz</span> <span class="metric-value">... nT</span> </div>
+        <div id="kp-index" class="metric-group"> <span class="metric-label">Kp
+            Index</span> <span class="metric-value">...</span> </div>
+      </div>
+      <div class="chart-panel">
+        <h3>Graphical Trends (Last 24 Hours)</h3>
+        <div class="chart-section">
+          <h4>Solar Wind Speed</h4>
+          <canvas id="chart-speed" height="200"></canvas> </div>
+        <div class="chart-section">
+          <h4>X-Ray Flux (Solar Flares)</h4>
+          <canvas id="chart-xray" height="200"></canvas> </div>
+      </div>
+    </div>
+    <!-- Chart.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+const CORS_PROXY = "https://api.allorigins.win/raw?url=";
+
+// --- Fetch Functions ---
+async function fetchSolarWind() {
+    const url = CORS_PROXY + encodeURIComponent("https://services.swpc.noaa.gov/json/solar-wind/solar-wind-1-day.json");
+    const response = await fetch(url);
+    const data = await response.json();
+    const latest = data[data.length - 1];
+    return {
+        speed: latest.speed?.toFixed(0) || 'N/A',
+        density: latest.density?.toFixed(1) || 'N/A',
+        bt: latest.bt?.toFixed(1) || 'N/A',
+        bz: latest.bz?.toFixed(1) || 'N/A',
+        history: data.map(d => ({ time: d.time_tag, speed: d.speed }))
+    };
+}
+
+async function fetchKpIndex() {
+    const url = CORS_PROXY + encodeURIComponent("https://services.swpc.noaa.gov/json/planetary-k-index.json");
+    const response = await fetch(url);
+    const data = await response.json();
+    const latest = data[data.length - 1];
+    return latest.kp_index ?? 'N/A';
+}
+
+async function fetchXRayFlux() {
+    const url = CORS_PROXY + encodeURIComponent("https://services.swpc.noaa.gov/json/goes/primary/xray-flares-1-day.json");
+    const response = await fetch(url);
+    const data = await response.json();
+    return data.map(d => ({ time: d.time_tag, flux: d.flux }));
+}
+
+async function fetchAlerts() {
+    const url = CORS_PROXY + encodeURIComponent("https://services.swpc.noaa.gov/json/alerts.json");
+    const response = await fetch(url);
+    const data = await response.json();
+    if (data.length > 0) {
+        const alert = data[0];
+        return { active: true, message: `${alert.phenomena} (${alert.significance})` };
+    } else {
+        return { active: false, message: 'All systems nominal.' };
+    }
+}
+
+// --- Update Dashboard ---
+function updateMetric(id, value, unit = '') {
+    const element = document.getElementById(id);
+    if (element) {
+        element.querySelector('.metric-value').textContent = `${value} ${unit}`;
+    }
+}
+
+let chartSpeed, chartXray;
+
+function initCharts(speedData, xrayData) {
+    const ctxSpeed = document.getElementById('chart-speed').getContext('2d');
+    chartSpeed = new Chart(ctxSpeed, {
+        type: 'line',
+        data: {
+            labels: speedData.map(d => new Date(d.time).toLocaleTimeString()),
+            datasets: [{
+                label: 'Solar Wind Speed (km/s)',
+                data: speedData.map(d => d.speed),
+                borderColor: '#58a6ff',
+                backgroundColor: 'rgba(88,166,255,0.2)',
+                tension: 0.3
+            }]
+        },
+        options: {
+            responsive: true,
+            scales: {
+                x: { ticks: { color: '#c9d1d9' } },
+                y: { ticks: { color: '#c9d1d9' } }
+            },
+            plugins: { legend: { labels: { color: '#c9d1d9' } } }
+        }
+    });
+
+    const ctxXray = document.getElementById('chart-xray').getContext('2d');
+    chartXray = new Chart(ctxXray, {
+        type: 'line',
+        data: {
+            labels: xrayData.map(d => new Date(d.time).toLocaleTimeString()),
+            datasets: [{
+                label: 'X-Ray Flux',
+                data: xrayData.map(d => d.flux),
+                borderColor: '#ff9f43',
+                backgroundColor: 'rgba(255,159,67,0.2)',
+                tension: 0.3
+            }]
+        },
+        options: {
+            responsive: true,
+            scales: {
+                x: { ticks: { color: '#c9d1d9' } },
+                y: { ticks: { color: '#c9d1d9' } }
+            },
+            plugins: { legend: { labels: { color: '#c9d1d9' } } }
+        }
+    });
+}
+
+function updateCharts(speedData, xrayData) {
+    if (chartSpeed && chartXray) {
+        chartSpeed.data.labels = speedData.map(d => new Date(d.time).toLocaleTimeString());
+        chartSpeed.data.datasets[0].data = speedData.map(d => d.speed);
+        chartSpeed.update();
+
+        chartXray.data.labels = xrayData.map(d => new Date(d.time).toLocaleTimeString());
+        chartXray.data.datasets[0].data = xrayData.map(d => d.flux);
+        chartXray.update();
+    }
+}
+
+// --- Main Update ---
+async function updateDashboard() {
+    try {
+        const solarWind = await fetchSolarWind();
+        updateMetric('solar-wind-speed', solarWind.speed, 'km/s');
+        updateMetric('solar-wind-density', solarWind.density, 'p/cc');
+        updateMetric('imf-bt', solarWind.bt, 'nT');
+        updateMetric('imf-bz', solarWind.bz, 'nT');
+
+        const kp = await fetchKpIndex();
+        updateMetric('kp-index', kp);
+
+        const xrayData = await fetchXRayFlux();
+
+        // Init charts first time
+        if (!chartSpeed || !chartXray) {
+            initCharts(solarWind.history, xrayData);
+        } else {
+            updateCharts(solarWind.history, xrayData);
+        }
+
+        const alerts = await fetchAlerts();
+        const alertBox = document.getElementById('alerts-container');
+        if (alerts.active) {
+            alertBox.style.display = 'block';
+            alertBox.textContent = `🚨 SPACE WEATHER ALERT: ${alerts.message}`;
+            alertBox.style.backgroundColor = '#6d1010';
+        } else {
+            alertBox.style.display = 'block';
+            alertBox.textContent = `✅ NO ACTIVE ALERTS: ${alerts.message}`;
+            alertBox.style.backgroundColor = '#103010';
+        }
+
+        document.getElementById('last-updated').textContent =
+            `Last Updated: ${new Date().toLocaleTimeString()} UTC`;
+
+    } catch (error) {
+        console.error('Error fetching space weather data:', error);
+        const alertBox = document.getElementById('alerts-container');
+        alertBox.style.display = 'block';
+        alertBox.textContent = '❌ ERROR: Failed to load data. Check console.';
+        alertBox.style.backgroundColor = '#6d1010';
+        document.getElementById('last-updated').textContent = 'Last Updated: Data Fetch Failed';
+    }
+}
+
+// --- Initialize ---
+document.addEventListener('DOMContentLoaded', () => {
+    updateDashboard();
+    setInterval(updateDashboard, 60000); // Refresh every 60s
+});
+</script>
+  </body>
+</html>

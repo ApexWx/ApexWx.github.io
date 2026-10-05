@@ -1,0 +1,208 @@
+export default {
+  async fetch(request, env, ctx) {
+    const corsHeaders = {
+      "Access-Control-Allow-Origin": "*",
+      "Access-Control-Allow-Methods": "GET, HEAD, POST, OPTIONS",
+      "Access-Control-Allow-Headers": "Content-Type",
+      "Content-Type": "application/json"
+    };
+
+    if (request.method === "OPTIONS") {
+      return new Response(null, { headers: corsHeaders });
+    }
+
+    try {
+      const url = new URL(request.url);
+      
+      // Default precisely to Fort Kent, Maine coordinates
+      const lat = url.searchParams.get("lat") || "47.2589";
+      const lon = url.searchParams.get("lon") || "-68.5891";
+      
+      const todayObj = new Date();
+      const defaultDate = todayObj.toISOString().split('T')[0];
+      const dateStr = url.searchParams.get("date") || defaultDate;
+
+      // 1. Calculate the exact Eastern Time timezone offset for the targeted date.
+      const targetDateObj = new Date(`${dateStr}T12:00:00`);
+      const formatter = new Intl.DateTimeFormat('en-US', {
+        timeZone: 'America/New_York',
+        timeZoneName: 'longOffset'
+      });
+      const parts = formatter.formatToParts(targetDateObj);
+      const offsetPart = parts.find(p => p.type === 'timeZoneName')?.value || "GMT-04:00";
+      const tzOffset = parseInt(offsetPart.replace("GMT", "").split(":")[0], 10) || -4;
+
+      // 2. Query USNO One-Day Rise/Set service using local timezone offset
+      const usnoRsttUrl = `https://aa.usno.navy.mil/api/rstt/oneday?date=${dateStr}&coords=${lat},${lon}&tz=${tzOffset}`;
+      const rsttResponse = await fetch(usnoRsttUrl, { 
+        headers: { 'User-Agent': 'GitHubPagesAstroApp/3.0' } 
+      });
+      if (!rsttResponse.ok) throw new Error("Failed fetching day data from USNO API.");
+      const rsttData = await rsttResponse.json();
+
+      // 3. Query USNO Primary Moon Phases service
+      const usnoPhaseUrl = `https://aa.usno.navy.mil/api/moon/phases/date?date=${dateStr}&nump=4`;
+      const phaseResponse = await fetch(usnoPhaseUrl, { 
+        headers: { 'User-Agent': 'GitHubPagesAstroApp/3.0' } 
+      });
+      let phaseData = null;
+      if (phaseResponse.ok) phaseData = await phaseResponse.json();
+
+      // Clean timezone text dynamically
+      const tzName = tzOffset === -4 ? 'EDT' : 'EST';
+
+      /**
+       * Helper: Converts raw USNO "HH:MM" local string into a clean localized Eastern string.
+       */
+      const processUtTime = (localTimeStr) => {
+        if (!localTimeStr || localTimeStr === "N/A") return null;
+        const [hours, minutes] = localTimeStr.split(':').map(Number);
+        
+        // Treat as a standard local calendar execution timestamp
+        const targetDate = new Date(`${dateStr}T00:00:00`);
+        targetDate.setHours(hours, minutes);
+        
+        // Formulate 12-hour clock components manually to bypass Cloudflare V8 environment string bugs
+        const ampm = hours >= 12 ? 'PM' : 'AM';
+        const displayHours = hours % 12 || 12; 
+        const displayMinutes = minutes.toString().padStart(2, '0');
+
+        const formattedTime = `${displayHours}:${displayMinutes} ${ampm} ${tzName}`;
+        return { absoluteDate: targetDate, formattedTime };
+      };
+
+      // Extract arrays from inside the nested properties.data wrapper
+      const apiData = rsttData.properties?.data || {};
+      const sundata = apiData.sundata || [];
+      const moondata = apiData.moondata || [];
+      const curPhaseName = apiData.curphase || "Waning Gibbous";
+
+      const rawSunrise = sundata.find(item => item.phen === "Rise" || item.phen === "R")?.time;
+      const rawSunset = sundata.find(item => item.phen === "Set" || item.phen === "S")?.time;
+      const rawMoonset = moondata.find(item => item.phen === "Set" || item.phen === "S")?.time;
+      const rawMoonrise = moondata.find(item => item.phen === "Rise" || item.phen === "R")?.time;
+
+      const emojiMap = {
+        "New Moon": "🌑 New Moon",
+        "First Quarter": "🌗 First Quarter",
+        "Full Moon": "🌕 Full Moon",
+        "Last Quarter": "🌗 Last Quarter",
+        "Waning Gibbous": "🌖 Waning Gibbous",
+        "Waxing Gibbous": "🌔 Waxing Gibbous",
+        "Waning Crescent": "🌘 Waning Crescent",
+        "Waxing Crescent": "🌒 Waxing Crescent"
+      };
+
+      // 4. Parse Next Phase Transition Point cleanly
+      let phaseDisplayStr = "N/A";
+      if (phaseData?.phasedata) {
+        const referenceTime = new Date(`${dateStr}T12:00:00Z`).getTime();
+        
+        const nextP = phaseData.phasedata.find(p => {
+          const pDate = new Date(Date.UTC(p.year, p.month - 1, p.day, ...p.time.split(':').map(Number)));
+          return pDate.getTime() >= referenceTime;
+        }) || phaseData.phasedata[0];
+
+        if (nextP) {
+          const currentEmojiName = emojiMap[curPhaseName] || `🌖 ${curPhaseName}`;
+          const nextPhaseEmojiName = emojiMap[nextP.phase] || nextP.phase;
+          
+          const phaseHours = nextP.time.split(':');
+          const nextPhaseDate = new Date(Date.UTC(
+            nextP.year, nextP.month - 1, nextP.day, 
+            parseInt(phaseHours[0], 10), parseInt(phaseHours[1], 10)
+          ));
+
+          const timePart = nextPhaseDate.toLocaleTimeString('en-US', {
+            timeZone: 'America/New_York', hour: 'numeric', minute: '2-digit'
+          });
+          const weekdayPart = nextPhaseDate.toLocaleDateString('en-US', { timeZone: 'America/New_York', weekday: 'short' });
+          const dayPart = nextPhaseDate.toLocaleDateString('en-US', { timeZone: 'America/New_York', day: 'numeric' });
+          const monthPart = nextPhaseDate.toLocaleDateString('en-US', { timeZone: 'America/New_York', month: 'short' });
+
+          phaseDisplayStr = `${currentEmojiName} → ${nextPhaseEmojiName} ${timePart} ${weekdayPart}. ${dayPart} ${monthPart}`;
+        }
+      }
+
+      // 5. Compute Accurate Day Length
+      let dayLengthStr = "N/A";
+      if (rawSunrise && rawSunset) {
+        const [rH, rM] = rawSunrise.split(':').map(Number);
+        const [sH, sM] = rawSunset.split(':').map(Number);
+        let totalMinutes = (sH * 60 + sM) - (rH * 60 + rM);
+        if (totalMinutes < 0) totalMinutes += 1440; 
+        dayLengthStr = `${Math.floor(totalMinutes / 60)}h ${totalMinutes % 60}m`;
+      }
+
+      // 6. Smart, Non-Confusing Relative Labels for Moon Path
+      const nowInEastern = new Date(new Date().toLocaleString("en-US", { timeZone: "America/New_York" }));
+      const currentHour = nowInEastern.getHours();
+      const currentMinute = nowInEastern.getMinutes();
+      const currentAbsoluteMinutes = (currentHour * 60) + currentMinute;
+
+      const targetDayDate = targetDateObj.getDate();
+
+      const sunriseData = processUtTime(rawSunrise);
+      const sunsetData = processUtTime(rawSunset);
+      const moonsetData = processUtTime(rawMoonset);
+      const moonriseData = processUtTime(rawMoonrise);
+
+      const getPublicFriendlyLabel = (processedTimeObj, fallbackLabel) => {
+        if (!processedTimeObj) return `N/A ${fallbackLabel}`;
+        
+        const localEventDate = processedTimeObj.absoluteDate;
+        const eventDay = localEventDate.getDate();
+        const eventHour = localEventDate.getHours();
+        const eventMinute = localEventDate.getMinutes();
+        const eventAbsoluteMinutes = (eventHour * 60) + eventMinute;
+
+        const cleanTime = processedTimeObj.formattedTime.replace(" EDT", "").replace(" EST", "");
+
+        if (eventDay !== targetDayDate) {
+          const nextDayName = localEventDate.toLocaleDateString('en-US', { weekday: 'short' });
+          if (eventHour === 0 || eventHour === 1) {
+            return `${cleanTime} ${tzName} late tonight (${nextDayName})`;
+          }
+          return `${cleanTime} ${tzName} tomorrow (${nextDayName})`;
+        }
+
+        const isPast = eventAbsoluteMinutes < currentAbsoluteMinutes;
+
+        if (isPast) {
+          if (eventHour < 5) {
+            return `${cleanTime} ${tzName} early this morning`;
+          }
+          return `${cleanTime} ${tzName} today`;
+        } else {
+          if (eventHour >= 18) {
+            return `${cleanTime} ${tzName} tonight`;
+          }
+          return `${cleanTime} ${tzName} today`;
+        }
+      };
+
+      const cleanJsonOutput = {
+        date_label: targetDateObj.toLocaleDateString('en-US', { 
+          weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' 
+        }),
+        sunrise: sunriseData ? sunriseData.formattedTime : "N/A",
+        sunset: sunsetData ? sunsetData.formattedTime : "N/A",
+        day_length: dayLengthStr,
+        moon_phase_display: phaseDisplayStr,
+        moonset_display: getPublicFriendlyLabel(moonsetData, "today"),
+        moonrise_display: getPublicFriendlyLabel(moonriseData, "tomorrow")
+      };
+
+      return new Response(JSON.stringify(cleanJsonOutput, null, 2), {
+        status: 200,
+        headers: corsHeaders
+      });
+
+    } catch (error) {
+      return new Response(JSON.stringify({ error: error.message }), {
+        status: 500,
+        headers: corsHeaders
+      });
+    }
+  }
+};

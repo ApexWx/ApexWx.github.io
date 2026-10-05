@@ -1,0 +1,227 @@
+07-01-2026 Lancaster Climate Table JSON Code Cloudflare Working
+
+export default {
+  async fetch(request, env, ctx) {
+    const corsHeaders = {
+      "Access-Control-Allow-Origin": "*",
+      "Access-Control-Allow-Methods": "GET, HEAD, POST, OPTIONS",
+      "Access-Control-Allow-Headers": "Content-Type",
+    };
+
+    if (request.method === "OPTIONS") {
+      return new Response(null, { headers: corsHeaders });
+    }
+
+    try {
+      const STATION = "LNS";
+      const API = "https://data.rcc-acis.org/StnData";
+      const META_API = "https://data.rcc-acis.org/StnMeta";
+
+      // -----------------------------
+      // DATE ENGINE (SINGLE SOURCE)
+      // -----------------------------
+      const pad = (n) => String(n).padStart(2, "0");
+
+      const fmt = (d) =>
+        `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`;
+
+      // ET-safe current date
+      const today = new Date(
+        new Date().toLocaleString("en-US", { timeZone: "America/New_York" })
+      );
+
+      // Yesterday (ACIS-safe end date)
+      const yesterday = new Date(today);
+      yesterday.setDate(today.getDate() - 1);
+
+      // YTD start
+      let ytdStartDate = new Date(`${today.getFullYear()}-01-01`);
+      let ytdEndDate = new Date(yesterday);
+
+      // Handle Jan 1 rollover edge case
+      if (ytdEndDate < ytdStartDate) {
+        ytdStartDate = new Date(`${today.getFullYear() - 1}-01-01`);
+      }
+
+      const ytdStart = fmt(ytdStartDate);
+      const obsEndDate = fmt(ytdEndDate);
+      const targetDate = fmt(today);
+
+     const snowSeasonStart =
+  yesterday.getMonth() < 6
+    ? `${yesterday.getFullYear() - 1}-07-01`
+    : `${yesterday.getFullYear()}-07-01`;
+
+      // -----------------------------
+      // ACIS FETCH HELPER
+      // -----------------------------
+      const fetchAcis = async (url, params) => {
+        const res = await fetch(
+          `${url}?params=${encodeURIComponent(JSON.stringify(params))}`
+        );
+
+        if (!res.ok) {
+          const text = await res.text().catch(() => "");
+          throw new Error(`ACIS HTTP ${res.status}: ${text}`);
+        }
+
+        return res.json();
+      };
+
+      // -----------------------------
+      // ACIS REQUESTS
+      // -----------------------------
+      const [ytdRaw, todayNrmRaw, snowRaw] = await Promise.all([
+        fetchAcis(API, {
+          sid: STATION,
+          sdate: ytdStart,
+          edate: targetDate, // Change from obsEndDate to targetDate
+          elems: [
+            "maxt",
+            "mint",
+            "pcpn",
+            "snow",
+            { name: "maxt", normal: "1" },
+            { name: "mint", normal: "1" },
+            { name: "pcpn", normal: "1" },
+            { name: "snow", normal: "1" },
+          ],
+        }),
+
+        fetchAcis(API, {
+          sid: STATION,
+          sdate: targetDate,
+          edate: targetDate,
+          elems: [
+            { name: "maxt", normal: "1" },
+            { name: "mint", normal: "1" },
+            { name: "pcpn", normal: "1" },
+          ],
+        }),
+
+        fetchAcis(API, {
+          sid: STATION,
+          sdate: snowSeasonStart,
+          edate: obsEndDate,
+          elems: ["snow"],
+        }),
+      ]);
+
+      // -----------------------------
+      // PARSER
+      // -----------------------------
+      const parse = (v) => {
+        if (v === "M" || v === "S" || v === undefined) return NaN;
+        if (v === "T") return 0;
+        const n = Number(v);
+        return Number.isFinite(n) ? n : NaN;
+      };
+
+      // -----------------------------
+      // VALIDATE YTD
+      // -----------------------------
+      const ytdData = Array.isArray(ytdRaw?.data) ? ytdRaw.data : [];
+
+      if (!ytdData.length) {
+        throw new Error("ACIS returned empty YTD dataset");
+      }
+
+      // -----------------------------
+      // PROCESS YTD
+      // -----------------------------
+      let ytdRain = 0;
+      let ytdRainNormal = 0;
+      const monthlyRows = [];
+
+// New Year Fix
+const isNewYear = today.getFullYear() !== yesterday.getFullYear();
+const targetMonthPrefix = isNewYear 
+  ? targetDate.substring(0, 7)    // On Jan 1, use "2027-01"
+  : obsEndDate.substring(0, 7);   // Any other day, use yesterday's month
+
+      for (const row of ytdData) {
+        const [
+          date,
+          maxt,
+          mint,
+          pcpn,
+          snow,
+          maxtN,
+          mintN,
+          pcpnN,
+        ] = row;
+
+        const obsPcpn = parse(pcpn);
+        const normPcpn = parse(pcpnN);
+
+        if (!Number.isNaN(obsPcpn)) ytdRain += obsPcpn;
+        if (!Number.isNaN(normPcpn)) ytdRainNormal += normPcpn;
+
+        if (date?.startsWith(targetMonthPrefix)) {
+          monthlyRows.push([date, maxt, mint, pcpn]);
+        }
+      }
+
+      const ytdRainDeparture = ytdRain - ytdRainNormal;
+
+      // -----------------------------
+      // TODAY NORMALS
+      // -----------------------------
+      const tmrRow = Array.isArray(todayNrmRaw?.data)
+        ? todayNrmRaw.data[0] || []
+        : [];
+
+      const todayNormals = {
+        normalHigh: Number.isFinite(parse(tmrRow[1]))
+          ? Math.round(parse(tmrRow[1]))
+          : null,
+
+        normalLow: Number.isFinite(parse(tmrRow[2]))
+          ? Math.round(parse(tmrRow[2]))
+          : null,
+
+        normalRain: Number.isFinite(parse(tmrRow[3]))
+          ? parse(tmrRow[3])
+          : null,
+      };
+
+      // -----------------------------
+      // SNOW
+      // -----------------------------
+      const seasonalRows = Array.isArray(snowRaw?.data)
+        ? snowRaw.data.map((r) => [r[0], r[1]])
+        : [];
+
+      // -----------------------------
+      // RESPONSE
+      // -----------------------------
+      const payload = {
+        station: STATION,
+        date: targetDate,
+        monthlyRows,
+        seasonalRows,
+        ytdRain,
+        ytdRainDeparture,
+        todayNormals,
+      };
+
+      return new Response(JSON.stringify(payload), {
+        headers: {
+          ...corsHeaders,
+          "Content-Type": "application/json",
+        },
+      });
+    } catch (err) {
+      return new Response(
+        JSON.stringify({ error: err.message }),
+        {
+          status: 500,
+          headers: {
+            ...corsHeaders,
+            "Content-Type": "application/json",
+          },
+        }
+      );
+    }
+  },
+};

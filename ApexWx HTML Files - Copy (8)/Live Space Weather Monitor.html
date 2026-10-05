@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unified Live Space Weather Dashboard</title>
+    <style>
+        /* --- General Styling --- */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #0d1a26;
+            color: #e6e6e6;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        h1 {
+            color: #64B5F6;
+            text-align: center;
+            margin-bottom: 5px;
+        }
+        #status {
+            font-size: 1.1em;
+            margin-bottom: 30px;
+            padding: 8px 15px;
+            border-radius: 5px;
+            background-color: #1a2f47;
+            border-left: 5px solid #64B5F6;
+        }
+        #dashboard {
+            width: 95%;
+            max-width: 1200px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        .monitor-panel {
+            flex: 1 1 45%; /* Allows two panels side-by-side on wide screens */
+            min-width: 300px;
+            margin: 15px;
+            background-color: #1a2f47;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+        
+        /* --- Panel-Specific Styling --- */
+        
+        /* Geomagnetic Storm (GST) Styling */
+        .gst-panel h2 {
+            color: #4CAF50; /* Green/Blue for Geomagnetic */
+            border-bottom: 2px solid #4CAF50;
+            padding-bottom: 5px;
+        }
+        .gst-panel .event-card {
+            border-left: 5px solid #4CAF50;
+        }
+        
+        /* Solar Flare (FLR) Styling */
+        .flr-panel h2 {
+            color: #FF7043; /* Orange/Red for Flares */
+            border-bottom: 2px solid #FF7043;
+            padding-bottom: 5px;
+        }
+        .flr-panel .event-card {
+            border-left: 5px solid #FF7043;
+        }
+
+        /* --- Event Card Styling (Shared) --- */
+        .event-card {
+            border: 1px solid #3a5775;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            background-color: #0d1a26;
+            transition: all 0.3s ease;
+        }
+        .event-card:hover {
+            box-shadow: 0 0 10px rgba(100, 181, 246, 0.5);
+            transform: translateY(-2px);
+        }
+        .event-card p {
+            margin: 5px 0;
+            font-size: 0.95em;
+        }
+        .event-card p strong {
+            color: #E6E6FA;
+            font-weight: bold;
+        }
+        .no-data {
+            text-align: center;
+            font-size: 1.2em;
+            color: #FFC107;
+            padding: 20px;
+        }
+
+        /* Flare Classification Colors */
+        .C-class { color: #81C784; }
+        .M-class { color: #FFD54F; }
+        .X-class { color: #E53935; font-weight: bold; }
+        
+        /* GST G-Scale Colors */
+        .G1 { color: #FFC107; }
+        .G2 { color: #FF9800; }
+        .G3 { color: #F44336; }
+        .G4 { color: #9C27B0; }
+        .G5 { color: #4A148C; }
+    </style>
+  </head>
+  <body>
+    <h1>🛰️ Unified Space Weather Dashboard</h1>
+    <div id="status"> Last Updated: <span id="last-updated">...</span> </div>
+    <div id="dashboard">
+      <div id="gst-monitor" class="monitor-panel gst-panel">
+        <h2>Geomagnetic Storm (GST) Monitor</h2>
+        <div id="gst-container">
+          <p class="no-data">Loading GST data...</p>
+        </div>
+      </div>
+      <div id="flr-monitor" class="monitor-panel flr-panel">
+        <h2>Solar Flare (FLR) Monitor</h2>
+        <div id="flr-container">
+          <p class="no-data">Loading FLR data...</p>
+        </div>
+      </div>
+    </div>
+    <script>
+        // --- Configuration ---
+        const NASA_DONKI_BASE_URL = "https://api.nasa.gov/DONKI/";
+        const API_KEY = "DEMO_KEY"; 
+        const UPDATE_INTERVAL = 300000; // 5 minutes
+
+        // Get the date range (last 7 days) for the API queries
+        const today = new Date().toISOString().split('T')[0];
+        const sevenDaysAgo = new Date(Date.now() - 7 * 24 * 60 * 60 * 1000).toISOString().split('T')[0];
+        const DATE_QUERY = `startDate=${sevenDaysAgo}&endDate=${today}&api_key=${API_KEY}`;
+
+        // --- Utility Functions ---
+
+        /**
+         * Renders an error message if the fetch fails.
+         */
+        function renderError(container, type) {
+            container.innerHTML = `<p class="no-data" style="color: #F44336;">
+                                       🚨 Error loading ${type} data. Check console. 🚨
+                                   </p>`;
+        }
+
+        // --- GST (Geomagnetic Storm) Functions ---
+
+        /**
+         * Fetches and displays Geomagnetic Storm (GST) data.
+         */
+        async function fetchGST() {
+            const container = document.getElementById('gst-container');
+            const apiUrl = `${NASA_DONKI_BASE_URL}GST?${DATE_QUERY}`;
+
+            try {
+                const response = await fetch(apiUrl);
+                if (!response.ok) throw new Error(`HTTP status: ${response.status}`);
+                const data = await response.json();
+                
+                container.innerHTML = '';
+                if (data.length === 0) {
+                    container.innerHTML = '<p class="no-data">No GST events reported recently.</p>';
+                    return;
+                }
+
+                data.forEach((event, index) => {
+                    const card = document.createElement('div');
+                    card.className = 'event-card';
+                    
+                    const kpIndex = event.allKpIndex?.[0] || { kpIndex: 'N/A', gScale: 'No Scale' };
+                    const gScaleClass = kpIndex.gScale === 'No Scale' ? '' : kpIndex.gScale;
+
+                    card.innerHTML = `
+                        <h4>Geomagnetic Storm Event #${data.length - index}</h4>
+                        <p><strong>Start Time (UTC):</strong> ${new Date(event.startTime).toUTCString()}</p>
+                        <p><strong>Max Kp Index:</strong> ${kpIndex.kpIndex} 
+                           (<span class="${gScaleClass}">${kpIndex.gScale}</span>)</p>
+                        <p><strong>Message:</strong> ${event.messageType || 'No message available.'}</p>
+                    `;
+                    container.appendChild(card);
+                });
+            } catch (error) {
+                console.error("Could not fetch GST data: ", error);
+                renderError(container, 'GST');
+            }
+        }
+        
+        // --- FLR (Solar Flare) Functions ---
+
+        /**
+         * Determines the CSS class and label based on the flare class string.
+         */
+        function getFlareClassification(flareClass) {
+            if (!flareClass) return { cssClass: '', label: 'Unknown' };
+            const mainClass = flareClass.charAt(0).toUpperCase();
+            
+            if (mainClass === 'X') return { cssClass: 'X-class', label: 'X-Class (Extreme)' };
+            if (mainClass === 'M') return { cssClass: 'M-class', label: 'M-Class (Significant)' };
+            if (mainClass === 'C') return { cssClass: 'C-class', label: 'C-Class (Minor)' };
+            
+            return { cssClass: '', label: 'B-Class or Below' };
+        }
+
+        /**
+         * Fetches and displays Solar Flare (FLR) data.
+         */
+        async function fetchFLR() {
+            const container = document.getElementById('flr-container');
+            const apiUrl = `${NASA_DONKI_BASE_URL}FLR?${DATE_QUERY}`;
+
+            try {
+                const response = await fetch(apiUrl);
+                if (!response.ok) throw new Error(`HTTP status: ${response.status}`);
+                const data = await response.json();
+                
+                container.innerHTML = '';
+                if (data.length === 0) {
+                    container.innerHTML = '<p class="no-data">No significant FLR events reported recently.</p>';
+                    return;
+                }
+                
+                data.forEach((event, index) => {
+                    const card = document.createElement('div');
+                    card.className = 'event-card';
+                    
+                    const flareInfo = getFlareClassification(event.flrClass);
+
+                    card.innerHTML = `
+                        <h4>Solar Flare Event #${data.length - index}</h4>
+                        <p><strong>Classification:</strong> 
+                           <span class="${flareInfo.cssClass}">
+                               ${event.flrClass || 'N/A'} (${flareInfo.label})
+                           </span>
+                        </p>
+                        <p><strong>Peak Time (UTC):</strong> ${new Date(event.peakTime).toUTCString()}</p>
+                        <p><strong>Source Region:</strong> ${event.sourceLocation || 'N/A'}</p>
+                    `;
+                    container.appendChild(card);
+                });
+            } catch (error) {
+                console.error("Could not fetch FLR data: ", error);
+                renderError(container, 'FLR');
+            }
+        }
+
+        // --- Initialization and Auto-Update ---
+
+        /**
+         * Main function to fetch and update all monitors.
+         */
+        async function updateAllMonitors() {
+            const lastUpdatedElement = document.getElementById('last-updated');
+            const statusElement = document.getElementById('status');
+            
+            // Set status to loading
+            statusElement.style.borderLeftColor = '#FFC107'; 
+            lastUpdatedElement.textContent = 'Updating...';
+
+            // Run both fetches concurrently for speed
+            await Promise.all([fetchGST(), fetchFLR()]);
+
+            // Set status to success
+            lastUpdatedElement.textContent = new Date().toLocaleTimeString();
+            statusElement.style.borderLeftColor = '#64B5F6'; 
+        }
+
+        // 1. Fetch data immediately upon page load
+        updateAllMonitors();
+
+        // 2. Set up regular updates
+        setInterval(updateAllMonitors, UPDATE_INTERVAL);
+
+    </script>
+  </body>
+</html>

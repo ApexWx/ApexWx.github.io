@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fort Kent, ME Forecast + U.S. High/Low</title>
+    <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 2em;
+      background: transparent;
+      color: #333;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    h2 {
+      text-align: center;
+      margin-top: 1em;
+    }
+
+    .alerts, .forecast, .national {
+      background: #fff;
+      padding: 1em;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      margin: 1.5em 0;
+    }
+
+    .alerts {
+      background: #fff3cd;
+      color: #856404;
+      border-left: 6px solid #ffc107;
+    }
+
+    .forecast .item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin-bottom: 1.5em;
+    }
+
+    .forecast img {
+      width: 48px;
+      height: 48px;
+      flex-shrink: 0;
+    }
+
+    .forecast .text {
+      font-size: 1rem;
+    }
+
+    .forecast .day {
+      font-weight: bold;
+    }
+
+    @media (max-width: 600px) {
+      .forecast .item {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+    }
+
+    .national .label {
+      font-weight: bold;
+    }
+  </style>
+  </head>
+  <body>
+    <h2>Fort Kent, ME Weather Forecast</h2>
+    <div id="alerts" class="alerts" style="display: none;"></div>
+    <div class="forecast" id="forecast">Loading forecast...</div>
+    <div class="national" id="national">Loading U.S. high/low temperatures...</div>
+    <script>
+    async function fetchFortKentForecast() {
+      try {
+        // 1. Get point metadata
+        const pointRes = await fetch('https://api.weather.gov/points/47.25,-68.58');
+        const pointData = await pointRes.json();
+        const forecastUrl = pointData.properties.forecast;
+        const alertsZone = pointData.properties.forecastZone;
+
+        // 2. Get forecast
+        const forecastRes = await fetch(forecastUrl);
+        const forecastData = await forecastRes.json();
+        const periods = forecastData.properties.periods;
+
+        const forecastHtml = periods.map(p => `
+          <div class="item">
+            <img src="${p.icon}" alt="${p.shortForecast}" />
+            <div class="text">
+              <span class="day">${p.name}:</span> ${p.detailedForecast}
+            </div>
+          </div>
+        `).join('');
+        document.getElementById('forecast').innerHTML = forecastHtml;
+
+        // 3. Get alerts
+        const zoneId = alertsZone.split('/').pop();
+        const alertsRes = await fetch(`https://api.weather.gov/alerts/active?zone=${zoneId}`);
+        const alertsData = await alertsRes.json();
+
+        if (alertsData.features.length > 0) {
+          const alertsHtml = alertsData.features.map(alert => `
+            <div>
+              <strong>${alert.properties.event}</strong><br/>
+              ${alert.properties.headline}<br/>
+              <small>${alert.properties.description}</small>
+            </div>
+          `).join('<hr/>');
+          const alertsDiv = document.getElementById('alerts');
+          alertsDiv.innerHTML = alertsHtml;
+          alertsDiv.style.display = 'block';
+        }
+      } catch (err) {
+        console.error('Forecast error:', err);
+        document.getElementById('forecast').textContent = 'Could not load forecast.';
+      }
+    }
+
+    async function fetchNationalHighLow() {
+      try {
+        const response = await fetch('https://www.wpc.ncep.noaa.gov/discussions/nathilo.html');
+        const html = await response.text();
+
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(html, 'text/html');
+        const pre = doc.querySelector('pre');
+
+        if (pre) {
+          const text = pre.textContent;
+
+          const highMatch = text.match(/HIGH TEMPERATURE.*?(\d{2,3})\s*at\s*([\w\s]+),/i);
+          const lowMatch = text.match(/LOW TEMPERATURE.*?(\d{2,3})\s*at\s*([\w\s]+),/i);
+
+          let output = '';
+          if (highMatch) {
+            output += `<div><span class="label">High:</span> ${highMatch[1]}°F at ${highMatch[2].trim()}</div>`;
+          }
+          if (lowMatch) {
+            output += `<div><span class="label">Low:</span> ${lowMatch[1]}°F at ${lowMatch[2].trim()}</div>`;
+          }
+
+          document.getElementById('national').innerHTML = output || 'No data available.';
+        } else {
+          document.getElementById('national').textContent = 'No temperature report found.';
+        }
+      } catch (err) {
+        console.error('National high/low error:', err);
+        document.getElementById('national').textContent = 'Failed to fetch national temperature data.';
+      }
+    }
+
+    fetchFortKentForecast();
+    fetchNationalHighLow();
+  </script>
+  </body>
+</html>

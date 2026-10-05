@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html style=" font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; box-sizing: border-box; font-size: 14px; margin: 0;">
+  <head>
+    <meta name="viewport" content="width=device-width">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Actionable emails e.g. reset password</title>
+    <style type="text/css">
+img {
+max-width: 100%;
+}
+body {
+-webkit-font-smoothing: antialiased; -webkit-text-size-adjust: none; width: 100% !important; height: 100%; line-height: 1.6em;
+}
+body {
+background-color: #f6f6f6;
+}
+@media only screen and (max-width: 640px) {
+  body {
+    padding: 0 !important;
+  }
+  h1 {
+    font-weight: 800 !important; margin: 20px 0 5px !important;
+  }
+  h2 {
+    font-weight: 800 !important; margin: 20px 0 5px !important;
+  }
+  h3 {
+    font-weight: 800 !important; margin: 20px 0 5px !important;
+  }
+  h4 {
+    font-weight: 800 !important; margin: 20px 0 5px !important;
+  }
+  h1 {
+    font-size: 22px !important;
+  }
+  h2 {
+    font-size: 18px !important;
+  }
+  h3 {
+    font-size: 16px !important;
+  }
+  .container {
+    padding: 0 !important; width: 100% !important;
+  }
+  .content {
+    padding: 0 !important;
+  }
+  .content-wrap {
+    padding: 10px !important;
+  }
+  .invoice {
+    width: 100% !important;
+  }
+}
+</style>
+  </head>
+  <body itemscope="" itemtype="http://schema.org/EmailMessage" style=" font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif; box-sizing: border-box; font-size: 14px; -webkit-font-smoothing: antialiased; -webkit-text-size-adjust: none; width: 100% !important; height: 100%; line-height: 1.6em; background-color: #f6f6f6; margin: 0;">
+    <table class="body-wrap" style="font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif; box-sizing: border-box; font-size: 14px; width: 100%; background-color: #f6f6f6; margin: 0;"
+      bgcolor="#f6f6f6">
+      <tbody>
+        <tr style="font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif; box-sizing: border-box; font-size: 14px; margin: 0;">
+          <td style="font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif; box-sizing: border-box; font-size: 14px; vertical-align: top; margin: 0;"
+            valign="top"><br>
+          </td>
+          <td class="container" style="font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif; box-sizing: border-box; font-size: 14px; vertical-align: top; display: block !important; max-width: 600px !important; clear: both !important; margin: 0 auto;"
+            width="600" valign="top">
+            <div class="content" style="font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif; box-sizing: border-box; font-size: 14px; max-width: 600px; display: block; margin: 0 auto; padding: 20px;">
+              <table class="main" itemprop="action" itemscope="" itemtype="http://schema.org/ConfirmAction"
+                style="font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif; box-sizing: border-box; font-size: 14px; border-radius: 3px; background-color: #fff; margin: 0; border: 1px solid #e9e9e9;"
+                width="100%" cellspacing="0" cellpadding="0" bgcolor="#fff">
+                <tbody>
+                  <tr style="font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif; box-sizing: border-box; font-size: 14px; margin: 0;">
+                    <td class="content-wrap" style="font-family: &quot;Helvetica Neue&quot;,Helvetica,Arial,sans-serif; box-sizing: border-box; font-size: 14px; vertical-align: top; margin: 0px; padding: 20px; text-align: center;"
+                      valign="top"><img src="https://raw.githubusercontent.com/ApexWx/ApexWx.github.io/master/Apex%20banner.jpg"
+                        alt="Banner"><br>
+                      <br>
+                      <h2 style="text-align: center;">Apex Wx <br>
+                        <br>
+                        Fort Kent &amp; the Saint John Valley, Maine<br>
+                        Weather Information</h2>
+                      <p><a href="https://en.wikipedia.org/wiki/Acadia" title="Flag of Acadia -- Click for more">
+                        </a><span style="font-size: 12px;">Weather information
+                          for the Saint John Valley since 2009</span></p>
+                      <p><br>
+                        Problems viewing as an email?<br>
+                        Need even more weather information?<strong><br>
+                        </strong> </p>
+                      <div style="text-align: center;"><strong></strong> <a href="https://apexwx.github.io"
+                          title="Click to view email as a webpage">Go to web
+                          page</a></div>
+                      <div style="text-align: center;"><br>
+                      </div>
+                      <div style="font-size: 12px; text-align: center;">Apex Wx
+                        is a private weather information service focusing on
+                        northern Maine's weather.<br>
+                        Always consult <a href="https://www.weather.gov/car/" title="NWS Caribou">NWS
+                          Caribou</a> for the latest official weather
+                        updates/information for northern Maine.</div>
+                      <div style="font-size: 12px; text-align: center;"><br>
+                      </div>
+                      <div style="font-size: 12px; text-align: center;"><a href="https://www.buymeacoffee.com/MaineApexWx"
+                          target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png"
+                            alt="Buy Me A Coffee" style="height: 60px !important; width: 217px !important;"></a></div>
+                      <em>Contributions support equipment and software
+                        maintenance.<br>
+                        <br>
+                      </em><br>
+                      <strong>Official Government Forecasts</strong>
+                      <div style="text-align: center;"> <a href="https://www.weather.gov/car/"
+                          title="NWS
+                                      Caribou (northern and eastern Maine">NWS
+                          Caribou</a> | <a href="https://www.weather.gov/gyx/"
+                          title="NWS Gray/Portland, ME (SW Maine and
+                                      most of New Hampshire)"> NWS Gray/Portland</a></div>
+                      <div style="text-align: center;"><br>
+                      </div>
+                      <div style="text-align: center;"><a href="https://weather.gc.ca/forecast/canada/index_e.html?id=NB"
+                          title="Environment
+                                      Canada New Brunswick Weather">Province of
+                          New Brunswick</a> | <a href="https://weather.gc.ca/forecast/canada/index_e.html?id=QC"
+                          title="Quebec
+                                      Weather from Environment Canada">Province
+                          of Québec</a></div>
+                      <div style="text-align: center;"><a href="https://weather.gc.ca/forecast/canada/index_e.html?id=QC"
+                          title="Quebec
+                                      Weather from Environment Canada"><br>
+                        </a></div>
+                      <div style="text-align: center;"><strong>Current
+                          Conditions in Fort Kent, Maine</strong><br>
+                        <em> </em></div>
+                      <div style="font-size: 12px; text-align: center;"><em>near
+                          real time data / daily highs / lows / precipitation</em></div>
+                      <div style="text-align: center;"><br>
+                      </div>
+                      <div style="text-align: center;"> <a title="Apex Wx on Weather Underground"
+                          href="https://www.wunderground.com/dashboard/pws/KMEFORTK7">Apex
+                          Wx on Weather Underground</a> | <a title="Personal Weather Station Dashboard"
+                          href="https://ambientweather.net/dashboard/16e0681b266993eb92230c42d89f3fd5">
+                          Personal Weather Station Dashboard</a> </div>
+                      <div style="text-align: center;"><strong><br>
+                        </strong></div>
+                      <div style="text-align: center;"><strong>Other Regional
+                          Resources</strong><a href="https://newengland511.org/"
+                          title="New England Road Conditions"><br>
+                        </a></div>
+                      <div style="text-align: center;"><a href="https://newengland511.org/"
+                          title="New
+                                          England Road Conditions">New England
+                          Road Conditions</a> | <a href="https://www.weather.gov/nerfc/"
+                          title="Northeast River Forecast Center">Northeast
+                          River Forecast Center</a> </div>
+                      <div style="text-align: center;"> <a href="https://www.weather.gov/nerfc/"
+                          title="Northeast River Forecast Center" style="color: #1855d9;
+                                          text-decoration: underline;"><br>
+                        </a> </div>
+                      <div style="text-align: center;"><a href="https://www.maine.gov/dacf/mfs/wildfire_danger_report/index.html">Maine
+                          Wildfire Danger Report&nbsp;</a> |&nbsp; <a href="https://xmountwashington.appspot.com/csc.html?data=more"
+                          title="Mount
+                                          Washington Observatory (New Hampshire)">Mount
+                          Washington Observatory</a>
+                        <div><br>
+                        </div>
+                      </div>
+                      <div style="text-align: center;"><a href="https://w2.weather.gov/climate/xmacis.php?wfo=car"
+                          title="NWS Caribou
+                                            Regional Climate Data">NWS Caribou
+                          Regional Climate Data</a><br>
+                        <div style="font-size: 12px;">regional weather records,
+                          averages, etc.</div>
+                      </div>
+                      <div style="text-align: center;">
+                        <div><br>
+                          <div><em style="font-size: 13px;"><strong>NWS Caribou
+                                Watches, Warnings, and Advisories</strong></em></div>
+                          <div style="width: 100%;"><em><span style="font-size: 12px;">Click
+                                map for more information</span></em></div>
+                          <img src="https://www.weather.gov/wwamap/png/car.png"
+                            alt="NWS Caribou Watches and Warnings"></div>
+                        <div><br>
+                        </div>
+                        <div><em><strong>NE Weather Chart</strong></em></div>
+                        <img src="https://www.wpc.ncep.noaa.gov/sfc/namnesfcwbg.gif"
+                          alt="NE Surface Weather Chart"></div>
+                      <div style="text-align: center;"><em style="font-size: 11px;">From
+                          "Z" time (upper left corner) subtract 4 hours summer /
+                          5 hours winter for ET.<br>
+                          <u>Example</u>: 1800 UTC subtract 4 hours in summer =
+                          1400 ET (2 pm ET)</em></div>
+                      <div style="text-align: center;"><em style="font-size: 11px;"></em><br>
+                        <em><strong>Liquid Precipitation Outlook <br>
+                          </strong></em></div>
+                      <img src="https://www.weather.gov/images/erh/gis/CAR_QPF24.png"
+                        alt="24-Hour Precipitation Outlook">
+                      <div style="text-align: center;"><em style="font-size: 12px;">From
+                          "UTC" time (lower right corner) subtract 4 hours
+                          summer / 5 hours winter for ET.</em></div>
+                      <div style="text-align: center;"><em style="font-size: 12px;"><br>
+                        </em></div>
+                      <div style="text-align: center;"><em style="font-size: 12px;"><br>
+                        </em> </div>
+                      <meta itemprop="name" content="Confirm Email" style="font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif; box-sizing: border-box; font-size: 14px; margin: 0;">
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <div class="footer" style="font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif; box-sizing: border-box; font-size: 14px; width: 100%; clear: both; color: #999; margin: 0; padding: 20px;">
+                <table style="font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif; box-sizing: border-box; font-size: 14px; margin: 0;"
+                  width="100%">
+                  <tbody>
+                    <tr style="font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif; box-sizing: border-box; font-size: 14px; margin: 0;">
+                      <td class="aligncenter content-block" style="font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif; box-sizing: border-box; font-size: 12px; vertical-align: top; color: #999; text-align: center; margin: 0; padding: 0 0 20px;"
+                        align="center" valign="top"><br>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </td>
+          <td style="font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif; box-sizing: border-box; font-size: 14px; vertical-align: top; margin: 0;"
+            valign="top"><br>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>
