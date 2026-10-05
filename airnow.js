@@ -18,11 +18,6 @@ async function loadAirNow(card) {
 
   const site = card.dataset.site;
 
-  /*
-   * Replace the URL below with the actual
-   * apexwx-airnow Cloudflare Worker URL.
-   */
-
   const workerUrl =
     "https://apexwx-airnow.maineapexwx.workers.dev/";
 
@@ -341,55 +336,92 @@ function renderForecast(container, days) {
       );
 
 
-     /* Numerical forecast AQI.
-   If AirNow supplies only a category,
-   display AQI N/A to preserve the
-   forecast-card layout. */
+      /*
+       * Numerical forecast AQI.
+       *
+       * Some AirNow forecast areas provide
+       * only a categorical forecast rather
+       * than a numerical AQI. In that case,
+       * display AQI N/A while preserving the
+       * forecast-card layout.
+       */
 
-const aqi =
-  document.createElement("span");
+      const aqi =
+        document.createElement("span");
 
-aqi.className =
-  "airnow-forecast-aqi";
+      aqi.className =
+        "airnow-forecast-aqi";
 
-if (
-  day.aqi !== null &&
-  day.aqi !== undefined
-) {
-  aqi.textContent =
-    "AQI " + day.aqi;
-} else {
-  aqi.textContent =
-    "AQI N/A";
-}
-
-category.appendChild(aqi);
 
       /*
-       * Show pollutant when it actually
-       * helps explain the forecast.
+       * Explicitly exclude null, undefined,
+       * and empty-string values before using
+       * Number(). This prevents null from
+       * being interpreted as AQI 0.
+       */
+
+      const hasNumericAQI =
+        day.aqi !== null &&
+        day.aqi !== undefined &&
+        day.aqi !== "" &&
+        Number.isFinite(
+          Number(day.aqi)
+        );
+
+
+      if (hasNumericAQI) {
+
+        aqi.textContent =
+          "AQI " + Number(day.aqi);
+
+      } else {
+
+        aqi.textContent =
+          "AQI N/A";
+      }
+
+      category.appendChild(aqi);
+
+
+      /*
+       * Show pollutant only when it adds
+       * useful information.
        *
        * Numerical AQI:
        * show the controlling pollutant.
        *
        * Category-only forecast:
-       * show pollutant only when categories
-       * differ among pollutants.
+       * show the controlling pollutant only
+       * when forecast categories differ
+       * among the available pollutants.
        */
 
       const categoryNumbers =
         Array.isArray(day.pollutants)
           ? day.pollutants.map(
-              item => item.categoryNumber
+              function (item) {
+                return item.categoryNumber;
+              }
             )
           : [];
 
+
       const categoriesDiffer =
         categoryNumbers.length > 1 &&
-        new Set(categoryNumbers).size > 1;
+        new Set(
+          categoryNumbers
+        ).size > 1;
+
 
       const showPollutant =
-  Boolean(day.primaryPollutant);
+        Boolean(
+          day.primaryPollutant
+        ) &&
+        (
+          hasNumericAQI ||
+          categoriesDiffer
+        );
+
 
       if (showPollutant) {
 
@@ -419,6 +451,7 @@ category.appendChild(aqi);
 
   container.appendChild(grid);
 }
+
 
 /* =========================================================
    HELPERS
@@ -549,7 +582,8 @@ function makeUnavailable(message) {
   div.className =
     "airnow-unavailable";
 
-  div.textContent = message;
+  div.textContent =
+    message;
 
   return div;
 }
@@ -570,6 +604,7 @@ function renderTotalFailure(card) {
   if (content) {
 
     content.style.display = "block";
+
     content.replaceChildren(
       makeUnavailable(
         "Air quality information is temporarily unavailable."
