@@ -1,12 +1,12 @@
 /*
-	tswnavbar.css	1.2.4
+	tswnavbar.css	2.0.0
 	Please use the Navigation Menu Wizard at
 		https://www.thesitewizard.com/wizards/css-menu-buttons.shtml
 	to generate your own customized menu buttons.
 */
 
 #tswcssbuttons {
-	width: 180px ;
+	width: 251px ;
 	max-width: 100% ;
 	text-align: center ;
 }
@@ -33,3 +33,4 @@
 	color: #ffff00 ;
 	background-color: #0000c0 ;
 }
+
