@@ -7,10 +7,13 @@
     <script defer="defer" src="https://cdnres.willyweather.com/widget/warning/loadView.html?id=157825"></script>
     <title>Fawkes House Weather Lancaster, PA</title>
     <link rel="stylesheet" href="lan-styles26.css">
+    <link rel="stylesheet" href="airnow26.css">
     <script src="fawkes-dashboard.js" defer="defer"></script>
+    <script src="airnow.js" defer="defer"></script>
   </head>
   <body>
-    <header id="page-header">&nbsp;<!-- Insert this in your HTML body where you want the menu -->
+    <!-- Insert this in your HTML body where you want the menu -->
+    <header id="page-header">
       <nav class="responsive-menu"> <button class="menu-toggle" onclick="toggleMenu()">☰
           Menu</button>
         <div class="menu-links" id="menuLinks"> <a href="https://apexwx.github.io/pareg.html">Regional
@@ -55,25 +58,16 @@
       <div class="column left" id="left-column">
         <div style="text-align: center;">
           <div style="text-align: center;"><strong style="font-size:
-              14px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-
-              <a href="https://www.airnow.gov/?city=Lancaster&amp;state=PA&amp;country=USA">Lancaster
-
-                Air Quality Index</a> </strong> </div>
-          <div style="text-align: center;"><strong><u><iframe loading="lazy" title="Example 3"
-                  src="https://widget.airnow.gov/aq-dial-widget/?city=Lancaster&amp;state=PA&amp;country=USA"
-                  style="border: none; border-radius: 25px;" height="230" width="230">
-                </iframe></u></strong></div>
-          <div style="font-size: 12px; text-align: center;"><br>
-          </div>
+              14px;"></strong><strong></strong><span style="font-size: 13px;"><strong>NWS
+                State College Watches &amp; Advisories</strong></span><em style="font-size:
+            13px;"><strong></strong></em></div>
         </div>
-        <div style="text-align: center;"><br>
-          <span style="font-size: 13px;"><strong></strong></span> </div>
-        <div style="font-size: 14px; text-align: center;"> <span style="font-size: 13px;"><strong>NWS
-              State College Watches &amp; Advisories</strong></span><em style="font-size:
-            13px;"><strong><br>
-            </strong></em><a href="https://www.weather.gov/ctp/"><img decoding="async"
-              loading="lazy" src="https://www.weather.gov/wwamap/png/ctp.png" alt="NWS
+        <em style="font-size:
+            13px;"><strong></strong></em>
+        <div style="font-size: 14px; text-align: center;"><em style="font-size:
+            13px;"><strong> </strong></em><a href="https://www.weather.gov/ctp/"><img
+              decoding="async" loading="lazy" src="https://www.weather.gov/wwamap/png/ctp.png"
+              alt="NWS
               State College Watches, Warnings, and Advisories" title="Clidk for more information"
               style="border-width:
               1px; border-style: solid; width: 251px; height: 195px;"></a><br>
@@ -269,6 +263,7 @@
               </div>
             </div>
             <div><br>
+              <br>
             </div>
             <div><br>
             </div>
@@ -296,6 +291,7 @@
         <div style="font-size: 14px; text-align: center;"><strong><br>
           </strong> </div>
         <div style="font-size: 14px; text-align: center;"><br>
+          <br>
         </div>
         <div style="font-size: 14px; text-align: center;"> <br>
           <strong>Today's Tornado Outlook</strong><em><br>
@@ -308,6 +304,7 @@
           <div><span style="color: #0000ee;"><br>
             </span> </div>
           <div><br>
+            <br>
           </div>
           <div> <br>
             <strong>Today's Severe Wind Outlook</strong><em><br>
@@ -320,6 +317,7 @@
           </div>
           <div><span style="color: #0000ee;"><br>
               <br>
+              <br>
             </span> </div>
           <div> <br>
             <strong>Today's Severe Hail Outlook</strong><em><br>
@@ -331,6 +329,7 @@
                   Hail Outlook" style="width: 251px; height: 187px;"></a></div>
           </div>
           <div><span style="color: #0000ee;"><br>
+              <br>
             </span> </div>
         </div>
         <div style="font-size: 14px;">
@@ -351,7 +350,10 @@
                 <em style="font-size: 12px;">6.7 mi northwest of Fawkes House</em></div>
             </div>
             <div style="font-size: 14px; text-align: left;"><br>
-              <br>
+            </div>
+            <div style="font-size: 14px; text-align: left;"><br>
+            </div>
+            <div style="font-size: 14px; text-align: left;"> <br>
               <div style="text-align: center;"><strong><span>College Park
                     Weather Station Camera</span></strong><strong><em> </em></strong></div>
               <div style="text-align: center;"><a href="https://images.ambientweather.net/F4CFA279EC77/latest.jpg"><img
@@ -361,26 +363,7 @@
                 </em> </div>
               <div style="font-size: 14px; text-align: center;"><em style="font-size: 12px;">Near
                   F&amp;M College, Lancaster, PA -- West view</em><br>
-                <br>
               </div>
-              <div style="font-size: 14px; text-align: center;"><br>
-              </div>
-              <div>
-                <div style="text-align: center;"><span style="font-size: 14px;"><strong>Downtown
-                      Lancaster Weather Cam<br>
-                    </strong></span> </div>
-                <div style="text-align: center;"><span style="font-size: 14px;"><strong></strong></span><a
-                    href="https://instacam.earthnetworks.com/instacamimg/LNCPC/LNCPC_l.jpg?rnd=0"
-                    title="Current Local Radar"><img src="https://instacam.earthnetworks.com/instacamimg/LNCPC/LNCPC_l.jpg?rnd=0"
-                      title="Click for larger image" alt="Downtown Lancaster
-                  Webcam" style="width: 251px; height: 141px;"></a></div>
-                <div style="font-size: 14px;">
-                  <div style="text-align: center;"><em><span style="font-size:
-                  12px;">The Holiday Inn in downtown Lancaster, PA<br>
-                        South view</span></em></div>
-                </div>
-              </div>
-              <br>
               <div style="text-align: center;"><a href="https://graphical.weather.gov/GraphicalNDFD.php?width=2000&amp;timezone=EDT&amp;sector=CONUS&amp;element=mint&amp;n=1"
                   title="Click for HD image"></a> </div>
             </div>
@@ -388,21 +371,20 @@
         </div>
       </div>
       <div class="column center" id="center-column"> <br>
-        <div style="text-align: center;"><strong style="font-size: 24px;">Apex
-            Wx<br>
-            <br>
+        <div style="text-align: center;"><img src="fawkesbanner26.png" alt="Apex Wx Banner -- Lancaster"
+            title="Fawkes House &amp; Lancaster Weather"><strong style="font-size: 24px;"><br>
             Fawkes House &amp; Lower Susquehanna Valley<br>
             Weather Information<br>
             <br>
           </strong></div>
         <div style="text-align: center;"><a href="https://en.wikipedia.org/wiki/Pennsylvania"><img
               decoding="async" loading="lazy" src="https://github.com/ApexWx/ApexWx.github.io/blob/master/pa.png?raw=true"
-              alt="Pennsylvania State Flag" style="width: 132px; height:
-              88px; left: 5px; right: 5px; padding: 5px;" title="Click
+              alt="Pennsylvania State Flag" style="width: 132px; height: 88px; left: 5px; right: 5px; padding: 10px;"
+              title="Click
               for more info"></a><a href="https://en.wikipedia.org/wiki/Lancaster,_Pennsylvania"><img
               decoding="async" loading="lazy" src="https://github.com/ApexWx/ApexWx.github.io/blob/master/us-palan.png?raw=true"
-              alt="Flag of Lancaster" style="width: 145px; height: 90px;
-              padding: 5px;" title="Click for more info"><br>
+              alt="Flag of Lancaster" style="width: 145px; height: 90px; padding: 10px;"
+              title="Click for more info"><br>
           </a><span style="font-size: 12px;">Weather information for the
             Lancaster since 2017</span> </div>
         <div style="text-align: center;"><span style="font-size: 12px;">Member <a
@@ -441,8 +423,43 @@
                 <div style="font-size: 12px; text-align: center;">
                   <div style="font-size: 12px; text-align: center;"><br>
                   </div>
+                  <div><br>
+                    <div style="text-align: center;"><span style="font-size: 14px;"><strong>Downtown
+                          Lancaster Weather Cam<br>
+                        </strong></span> </div>
+                    <div style="text-align: center;"><span style="font-size: 14px;"><strong></strong></span><a
+                        href="https://instacam.earthnetworks.com/instacamimg/LNCPC/LNCPC_l.jpg?rnd=0"
+                        title="Current Local Radar"><img src="https://instacam.earthnetworks.com/instacamimg/LNCPC/LNCPC_l.jpg?rnd=0"
+                          title="Click for larger image" alt="Downtown Lancaster                  Webcam"
+                          style="height: 141px; width: 75%;"></a></div>
+                    <div style="font-size: 14px;">
+                      <div style="text-align: center;"><em><span style="font-size:
+                  12px;">View of downtown Lancaster, including the Griest
+                            Building, Lancaster Marriott, and Cargas building.<br>
+                          </span></em></div>
+                    </div>
+                  </div>
                 </div>
               </div>
+              <section class="airnow-section">
+                <div class="airnow-card" data-site="lancaster">
+                  <div class="airnow-heading"> 🌿 Air Quality </div>
+                  <div class="airnow-area"> Lancaster &amp; Susquehanna Valley </div>
+                  <div class="airnow-loading"> Loading current air quality... </div>
+                  <div class="airnow-content" style="display: none;">
+                    <div class="airnow-section-title"> Current Air Quality </div>
+                    <div class="airnow-current-container"> </div>
+                    <div class="airnow-section-title"> Air Quality Forecast </div>
+                    <div class="airnow-forecast-container"> </div>
+                    <div class="airnow-footer"> EPA AirNow / Pennsylvania
+                      Department of Environmental Protection<br>
+                      Current observations are preliminary and subject to
+                      revision.<br>
+                      <a href="https://www.airnow.gov/" target="_blank" rel="noopener">
+                        Visit EPA AirNow </a> </div>
+                  </div>
+                </div>
+              </section>
               <div style="text-align: center;">
                 <hr> </div>
             </div>
@@ -455,8 +472,9 @@
               <span style="font-size: 13px; font-weight:
                 normal; color: #555; display: block; margin-top: 2px;">(Click to
                 Collapse/Expand)</span> </summary>
-            <div class="live-station" style="font-size:14px;"> <strong>NOAA
-                Climate Summary</strong><br>
+            <div style="font-size:14px;"> <strong><br>
+              </strong></div>
+            <div style="font-size:14px;"><strong>NOAA Climate Summary</strong><br>
               <br>
               <div style="font-size:12px;"> Updated: <span id="climate-update">Loading...</span>
               </div>
@@ -632,8 +650,8 @@
                 <summary class="astro-summary"> ☀️ Sun &amp; Moon Information
                   for Lancaster, Pennsylvania 🌕 <br>
                   <span style="font-size: 13px;
-                        font-weight: normal; color: #555; display: block;                margin-top: 2px;">(Click
-                    to Collapse/Expand)</span></summary>
+                        font-weight: normal; color: #555;">(Click to
+                    Collapse/Expand)</span></summary>
                 <div class="astro-card">
                   <div class="astro-date" id="astro-date">Loading date...</div>
                   <div class="sun-grid">
@@ -690,11 +708,12 @@
                     <div>
                       <div style="text-align: center;"><strong style="font-size: 18px;"><br>
                         </strong></div>
-                      <div style="text-align: center;"><strong style="font-size: 18px;"></strong><strong
-                          style="font-size: 18px;"><span>September 17–23, 2026</span></strong>
-                        <p class="isSelectedEnd" style="text-align: center;"><em
+                      <div style="text-align: center;"><strong style="font-size: 18px;"></strong><strong><span
+                            style="font-size: 18px;"><span>November 22 </span></span></strong><strong><span
+                            style="font-size: 18px;"><span>– 28, 2026</span></span></strong>
+                        <p class="isSelectedEnd" style="text-align: center;"><span
                             style="font-size: 14px;"><span style="font-size: 12px;">Updated
-                              Sep.17 at 7:35 AM EDT</span></em></p>
+                              November 22 at 9:45 AM EST</span></span></p>
                       </div>
                       <div style="text-align: center;"><strong>⚠️ <a href="https://forecast.weather.gov/product.php?site=NWS&amp;product=HWO&amp;issuedby=CTP">Regional
                             Hazardous Weather Outlook</a></strong></div>
@@ -714,177 +733,204 @@
                           <div style="text-align: left;"><strong data-start="47"
                               data-end="99"><br>
                             </strong></div>
-                          <div style="text-align: left;"><strong data-start="0"
-                              data-end="49"><br>
-                              📜🪶<a href="https://en.wikipedia.org/wiki/Constitution_Day_and_Citizenship_Day">Constitution
-                                &amp; Citizenship Day</a>📜🪶</strong></div>
-                          <div style="text-align: left;"><strong data-start="0"
-                              data-end="49"><br>
-                            </strong></div>
-                          <div style="text-align: left;"><strong>Thursday</strong><strong
-                              data-start="0" data-end="49">, September 17 –
-                              Saturday, September 19<br>
-                              <br>
-                            </strong></div>
-                          <div style="text-align: left;"><strong data-start="0"
-                              data-end="49">Overview: </strong>Warm and humid
-                            conditions will continue across Lancaster today
-                            ahead of a cold front approaching from the Great
-                            Lakes. Increasing moisture and daytime heating will
-                            support scattered showers and thunderstorms,
-                            particularly later this afternoon and evening.
-                            Locally heavy downpours are possible, but widespread
-                            severe weather is not expected, and substantial dry
-                            periods should occur between showers.<br>
-                            <br>
-                            The cold front will move south of Lancaster tonight,
-                            bringing a noticeable change for Friday as much
-                            drier air spreads into the Lower Susquehanna Valley.
-                            Temperatures will remain relatively warm, but lower
-                            humidity and increasing sunshine should make
-                            conditions considerably more comfortable. High
-                            pressure will remain influential through Saturday,
-                            providing a dry and pleasant start to the weekend.
-                            Clouds and moisture will begin returning Saturday
-                            night as the next weather system approaches, with
-                            showers becoming possible toward Sunday morning.<br>
-                            <br>
-                            <strong data-start="0" data-end="49">Thursday: </strong>Lancaster
-                            will be warm, humid, and increasingly unsettled.
-                            Mostly cloudy skies are expected, with a 40% chance
-                            of showers and thunderstorms becoming possible after
-                            mid-afternoon. Highs should reach the mid- to upper
-                            80s, with south winds around 5–10 mph. Rainfall
-                            should generally remain below 0.10 inch outside
-                            thunderstorms, although locally higher amounts are
-                            possible beneath heavier downpours. Showers and
-                            thunderstorms become more likely Thursday evening
-                            and early tonight, with a 60% chance of
-                            precipitation before activity diminishes after 2–3
-                            AM. Lows will remain unusually mild in the upper
-                            60s, with winds becoming calm.<strong data-start="0"
-                              data-end="49"><br>
-                              <br>
-                              Friday: </strong>The front will be south of
-                            Lancaster, bringing a marked improvement in
-                            humidity. Sunny skies are expected with highs in the
-                            lower 80s. North winds around 5–10 mph will
-                            reinforce the arrival of cooler and much drier air.
-                            Friday night will be partly to mostly clear and
-                            considerably cooler, with north winds around 5–10
-                            mph and lows in the mid-50s.<br>
-                            <strong data-start="0" data-end="49"><br>
-                              Saturday: </strong>High pressure will provide a
-                            pleasant and dry start to the weekend. Mostly sunny
-                            skies are expected, with highs in the upper 70s and
-                            relatively low humidity. Clouds will increase
-                            Saturday night as the next system approaches, with a
-                            40% chance of showers developing after 2 AM.
-                            Overnight temperatures will fall into the lower 60s.<span></span></div>
-                          <div style="text-align: left;"><strong data-start="0"
-                              data-end="49"></strong><strong data-start="0" data-end="49"><br>
-                            </strong><strong>Sunday, September 20 – Wednesday,
-                              September 23</strong></div>
-                          <div style="text-align: left;"><strong data-start="0"
-                              data-end="49"><br>
-                            </strong></div>
-                          <div style="text-align: left;"><strong data-start="0"
-                              data-end="49">Overview</strong>: The drier and
-                            more comfortable air arriving Friday should linger
-                            into Saturday as weak high pressure remains
-                            influential across Pennsylvania. Saturday currently
-                            looks like the quieter day of the period, with
-                            seasonably warm temperatures and lower humidity
-                            before clouds begin increasing Saturday night.<br>
-                            <br>
-                            The pattern turns more unsettled Sunday as the
-                            earlier frontal boundary begins lifting back toward
-                            Pennsylvania and deeper moisture returns ahead of
-                            another upper-level disturbance. Showers should
-                            become more numerous, although the location of the
-                            heaviest rainfall will depend on where the boundary
-                            ultimately settles. Rather than clearing quickly,
-                            the front may remain close enough to the region
-                            Monday and Tuesday to maintain considerable cloud
-                            cover and periodic shower chances. </div>
-                          <div style="text-align: left;"><br>
+                          <div style="text-align: left;"> <strong>Sunday,
+                              November 22 – Tuesday, November 24</strong><strong></strong>
+                            <div><br>
+                            </div>
+                            <strong> </strong></div>
+                          <div style="text-align: left;"><strong><span>Overview</span></strong><span></span><span></span><span></span><span></span><span><br>
+                            </span></div>
+                          <div style="text-align: left;">
+                            <p><span>The stretch of unusually mild weather
+                                across south-central Pennsylvania ends as a
+                                coastal low-pressure system passes east of the
+                                region, followed by an advancing cold front and
+                                a surge of colder Canadian air.<br>
+                              </span></p>
+                            <p><span>The storm's more easterly track limits
+                                rainfall across Lancaster and the Lower
+                                Susquehanna Valley, with <strong>precipitation
+                                  chances concentrated Sunday afternoon and
+                                  evening</strong>. Expected amounts remain
+                                light, providing little relief from the extended
+                                dry conditions.</span></p>
+                            <p><span>As the coastal system departs,
+                                strengthening west and northwest winds introduce
+                                drier air and a sharp temperature drop. Readings
+                                <strong>fall approximately 15–20°F by Tuesday</strong>,
+                                ending the recent period of above-normal warmth.
+                                <br>
+                              </span></p>
+                            <p><span>High pressure gradually restores more
+                                settled conditions, while clear skies and
+                                diminishing winds favor substantial nighttime
+                                cooling. Sheltered rural locations may
+                                experience locally colder temperatures, with
+                                widespread freezing conditions expected Tuesday
+                                night as readings fall into the middle 20s.</span></p>
                           </div>
-                          <div style="text-align: left;">There should still be
-                            dry intervals between showers. By Tuesday night,
-                            enough moisture and instability may remain near the
-                            lingering boundary for showers and thunderstorms.
-                            The position and movement of that front will be the
-                            main source of forecast uncertainty through the
-                            latter part of the period.</div>
-                          <div style="text-align: left;"><br>
-                            <strong>Sunday</strong>: A significant change from
-                            Saturday’s pleasant weather is expected. Showers
-                            become likely during the morning, followed by
-                            showers and possibly a thunderstorm after 2 PM.
-                            Current Lancaster point guidance carries a 90%
-                            chance of precipitation, with highs around the upper
-                            70s to around 80°F. Periods of heavier rain are
-                            possible within thunderstorms. Showers and possible
-                            thunder continue into Sunday evening before becoming
-                            less numerous, with an 80% precipitation chance
-                            Sunday night. Lows fall to around 60°F.<br>
+                          <div style="text-align: left;">
+                            <p><span><strong>Sunday:</strong></span> Cloudy
+                              skies and continued mild conditions prevail across
+                              the area. Afternoon temperatures reach the lower
+                              60s, with northeast winds around 6 mph. A 30%
+                              chance of rain develops after 2 PM, although
+                              expected amounts remain below 0.10 inch. Cloudy
+                              skies continue tonight, with a 40% chance of rain
+                              before 1 AM and additional rainfall below 0.10
+                              inch. Northwest winds around 5 mph accompany
+                              temperatures falling to around 50°F.</p>
+                            <p><span><strong>Monday:</strong></span> Partly
+                              sunny skies and relatively mild conditions
+                              continue as the coastal system departs and a cold
+                              front crosses Pennsylvania. Afternoon readings
+                              reach the middle 60s before dropping toward the
+                              upper 50s later in the day. West winds of 5–13
+                              mph, gusting to 21 mph, become noticeable as
+                              colder air begins spreading across the region.
+                              Mostly clear skies develop Monday night, with
+                              northwest winds of 6–10 mph and temperatures
+                              falling into the middle 30s. Sheltered rural
+                              locations may experience locally colder readings.</p>
+                            <p><span><strong>Tuesday:</strong></span> Sunny
+                              skies and considerably cooler temperatures prevail
+                              across the area as Canadian high pressure becomes
+                              more influential. Afternoon readings reach the
+                              upper 40s, approximately 15–20°F colder than
+                              Monday, with northwest winds of 6–10 mph. Dry
+                              conditions and abundant sunshine provide favorable
+                              weather for outdoor activities despite the colder
+                              air mass. Mostly clear skies continue Tuesday
+                              night, allowing temperatures to fall into the
+                              middle 20s. Widespread freezing conditions are
+                              expected, with locally colder readings possible in
+                              sheltered rural areas.</p>
+                            <strong></strong></div>
+                          <div style="text-align: left;">
+                            <p><span></span> </p>
+                            <div>
+                              <p> <strong>Wednesday, November 25 – Saturday,
+                                  November 28</strong></p>
+                              <p><strong><span>Overview</span></strong><span><br>
+                                </span></p>
+                              <p><span>The relatively quiet, seasonably cool
+                                  weather across south-central Pennsylvania
+                                  gives way to a wetter pattern as Canadian high
+                                  pressure shifts eastward and a developing
+                                  coastal low-pressure system advances northward
+                                  along the Atlantic seaboard. Increasing
+                                  atmospheric moisture supports <strong>widespread
+                                    rainfall Thanksgiving Day into Thursday
+                                    night</strong>, with an 80% precipitation
+                                  probability across Lancaster and the Lower
+                                  Susquehanna Valley. Regional rainfall amounts
+                                  of 0.50–1.00 inch are possible, although the
+                                  storm's track and placement of heavier
+                                  precipitation bands remain uncertain.</span></p>
+                              <p><span>The relatively mild air mass favors rain
+                                  rather than snow, while periods of steady
+                                  precipitation may create <strong>reduced
+                                    visibility and wet roadways during holiday
+                                    travel</strong>. As the coastal system
+                                  departs Friday, drier air gradually spreads
+                                  into the region, reducing precipitation
+                                  coverage. However, lingering atmospheric
+                                  moisture and weak disturbances maintain
+                                  limited shower opportunities into Saturday,
+                                  with temperatures remaining near seasonal
+                                  averages.</span></p>
+                              <p><span><span><strong>Wednesday:</strong></span></span><span>
+                                  Mostly sunny skies and seasonably cool
+                                  temperatures provide favorable conditions
+                                  across the region ahead of the Thanksgiving
+                                  holiday. Afternoon readings reach the upper
+                                  40s as Canadian high pressure maintains
+                                  predominantly dry weather. Increasing cloud
+                                  cover Wednesday night signals the approaching
+                                  coastal low-pressure system, with a 40% chance
+                                  of rain developing after 1 AM. Mostly cloudy
+                                  skies limit overnight cooling, keeping
+                                  temperatures in the middle 30s.</span></p>
+                              <p><span><span><strong>Thanksgiving Day:</strong></span></span><span>
+                                  Cloudy skies and widespread rain develop as a
+                                  coastal low-pressure system advances northward
+                                  along the Atlantic seaboard. An 80% chance of
+                                  precipitation accompanies temperatures
+                                  reaching the lower 50s, with wet conditions
+                                  potentially affecting holiday travel across
+                                  Lancaster County. Rain continues Thursday
+                                  night, maintaining an 80% precipitation
+                                  probability as temperatures fall into the
+                                  upper 30s. The relatively mild air mass favors
+                                  rain throughout the period, although rainfall
+                                  intensity and totals remain dependent on the
+                                  storm's track.</span></p>
+                              <p><span><span><strong>Friday:</strong></span></span><span>
+                                  A 40% chance of rain continues through the
+                                  morning as the coastal system gradually moves
+                                  northeastward. Precipitation opportunities
+                                  diminish after 1 PM, although mostly cloudy
+                                  skies persist across the Lower Susquehanna
+                                  Valley. Afternoon temperatures reach the
+                                  middle 50s as drier air begins spreading into
+                                  the region. Mostly cloudy skies continue
+                                  Friday night, with temperatures falling into
+                                  the middle 30s. Significant additional
+                                  precipitation is not currently indicated.</span></p>
+                              <p><span><span><strong>Saturday:</strong></span></span><span>
+                                  Partly sunny skies and temperatures reaching
+                                  the lower 50s provide generally improving
+                                  conditions across Lancaster County. A 20%
+                                  chance of light rain develops after 1 PM,
+                                  although precipitation coverage appears
+                                  limited. Mostly cloudy skies continue Saturday
+                                  night, with another slight chance of rain and
+                                  temperatures falling into the middle 30s. The
+                                  limited precipitation probabilities favor
+                                  predominantly dry conditions despite lingering
+                                  atmospheric moisture.</span></p>
+                            </div>
+                            <strong>Long Range Trends: Sunday, November 29 –
+                              Saturday, December 5</strong><strong></strong><strong></strong>
+                            <div><strong><br>
+                              </strong><span>The latest long-range trends favor
+                                <strong>above-normal temperatures and
+                                  precipitation</strong> across Lancaster and
+                                the Lower Susquehanna Valley into early
+                                December. A relatively mild air mass and an
+                                active storm track may support periodic rainfall
+                                as weather systems cross the eastern United
+                                States. Typical temperatures for this period
+                                feature daytime highs in the upper 40s to around
+                                50°F and overnight lows in the lower to middle
+                                30s.</span><strong><br>
+                              </strong></div>
                             <br>
-                            <strong>Monday</strong>: The more organized Sunday
-                            system should be moving away, leaving mostly cloudy
-                            but considerably quieter conditions. The current
-                            Lancaster point forecast is dry during the daytime,
-                            with highs in the lower 70s. Another weak
-                            disturbance or lingering boundary may bring a 30%
-                            chance of showers Monday night, when skies remain
-                            mostly cloudy and temperatures fall into the mid- to
-                            upper 50s.<br>
-                            <br>
-                            <strong>Tuesday</strong>: Mostly cloudy skies
-                            continue, with a 30% chance of showers as weak
-                            disturbances remain embedded in the broader flow.
-                            Highs should reach around the lower 70s. A 30%
-                            chance of showers continues Tuesday night, with
-                            mostly cloudy skies and lows in the mid-50s.<br>
-                            <br>
-                            <strong>Wednesday</strong>: The unsettled but
-                            relatively low-impact pattern continues. Current NWS
-                            guidance calls for partly sunny skies with a 30%
-                            chance of showers and highs in the lower 70s. A
-                            slight chance of showers continues Wednesday night
-                            under mostly cloudy skies, with lows in the mid-50s.
-                            Confidence in the exact timing and coverage of
-                            showers is lower by this point, but there is
-                            presently no indication of another organized rain
-                            event comparable to Sunday.</div>
-                          <div style="text-align: left;"><br>
                           </div>
-                          <div style="text-align: left;"> <strong>Long Range:
-                              Thursday, September 24 – Wednesday, September 30</strong><strong><br>
-                              <br>
-                            </strong></div>
-                          <div style="text-align: left;">Normal temperatures
-                            across the Lancaster and Lower Susquehanna Valley
-                            during this period are generally in the mid-70s for
-                            daytime highs and lower to mid-50s overnight, with
-                            temperatures gradually declining. CPC outlooks favor
-                            above-normal temperatures and equal chances for
-                            precipitation. Broad ridging centered over Canada
-                            favors the warmer tendency, although weaker ridging
-                            and possible onshore flow across the Mid-Atlantic
-                            reduce confidence. Equal chances means CPC does not
-                            favor a wetter, drier, or near-normal precipitation
-                            outcome.</div>
                         </div>
                         <div>
                           <div>
-                            <div style="text-align: left;"><span style="font-size: 12px;"><br>
-                              </span></div>
-                            <div style="text-align: left;"><span style="font-size: 12px;">Outlooks
-                                updated 7-9 AM weekdays &amp; 8-10 AM weekends
-                                and holidays. Long-range outlooks indicate
-                                broader temperature and precipitation trends
-                                rather than precise day-to-day forecasts.</span><span
-                                style="font-size: 12px;"> </span></div>
+                            <div style="text-align: left;"><em><span style="font-size: 12px;"
+                                  class="small-note"><strong>Outlooks </strong>updated
+                                  7-9 AM weekdays &amp; 8-10 AM weekends and
+                                  holidays.<strong> Long range outlooks</strong>
+                                  indicate broader temperature and precipitation
+                                  trends rather than precise day-to-day
+                                  forecasts.&nbsp;<strong><br>
+                                    <br>
+                                    Common abbreviations</strong>:&nbsp;</span></em><em><span
+                                  style="font-size: 12px;" class="small-note">CPC
+                                  = Climate Prediction Center;&nbsp;</span></em><em><span
+                                  style="font-size: 12px;" class="small-note">
+                                  NHC = National Hurricane Center;&nbsp;</span></em><em><span
+                                  style="font-size: 12px;" class="small-note">NOAA
+                                  = National Oceanic and Atmospheric
+                                  Administration; NWS = National Weather
+                                  Service;&nbsp;</span></em><em><span style="font-size: 12px;"
+                                  class="small-note"> SPC = Storm Prediction
+                                  Center;&nbsp;</span></em><em><span style="font-size: 12px;"
+                                  class="small-note">WPC = Weather Prediction
+                                  Center</span></em></div>
                           </div>
                         </div>
                         <div style="text-align: left;">
@@ -972,7 +1018,7 @@
                                 <hr style="margin-left: 0px;
                                   margin-right: auto;"> <u><strong><span style="font-variant: small-caps;"></span></strong></u>
                               </div>
-                              <details>
+                              <details open="">
                                 <summary style="cursor: pointer;
                                   text-align: center; font-size: 1.2em;                                  font-weight: bold;">
                                   <span style="font-size: 18px;">🇺🇸 </span><span
@@ -981,37 +1027,52 @@
                                   </span><em>&nbsp;<span style="font-size:
                                     12px; font-style: italic;                                    font-weight: normal;">(Click
                                       to expand/collapse) </span></em> </summary>
-                                <div style="text-align: left;"><strong></strong><strong></strong><strong><br>
-                                  </strong></div>
-                                <strong>Flash Flooding Threat Continues as
-                                  Southern Heat Persists<br>
-                                  <br>
-                                </strong>Flash flooding will remain a concern
-                                across portions of the Southwest, Northern
-                                Plains, and Upper Midwest through Saturday.
-                                After widespread flooding Wednesday, the
-                                heaviest Southwestern rainfall will shift toward
-                                the Southern Rockies, where unusually abundant
-                                moisture could still produce intense downpours
-                                and locally significant flooding. A developing
-                                low-pressure system will then focus additional
-                                heavy rain from the Northern Plains into the
-                                Upper Midwest Friday and Saturday.<strong><br>
-                                  <br>
-                                </strong>A pronounced temperature contrast will
-                                continue across the central United States.
-                                Cooler Canadian air spreading southward will
-                                hold temperatures in the upper 60s and lower 70s
-                                across portions of the northern Plains and
-                                Midwest. Farther south, persistent high pressure
-                                will maintain hazardous heat from the Southern
-                                Plains into the lower Mississippi Valley. Highs
-                                in the upper 90s to lower 100s may challenge
-                                daily records. Florida will also see scattered
-                                thunderstorms and locally heavy downpours along
-                                a stalled front.<br>
-                                <br>
-                                <strong> </strong><strong> </strong><strong></strong>
+                                <strong><br>
+                                </strong><span><strong>Heavy Rain and Localized
+                                    Flooding Threaten New England and the Gulf
+                                    Coast</strong></span>
+                                <p><span>An active weather pattern brings heavy
+                                    rainfall, localized flooding concerns, and
+                                    scattered snow across several regions
+                                    through Monday as multiple storm systems
+                                    move across the country.</span></p>
+                                <p><span>A low-pressure system tracking
+                                    northward from the Southeast spreads rain
+                                    into the Mid-Atlantic Sunday, reaching New
+                                    England Sunday night into Monday. </span><span><span><strong>Parts
+                                        of New England face an elevated risk of
+                                        localized flash flooding</strong></span></span><span>,
+                                    particularly along roads, near small
+                                    streams, and in urban and low-lying areas.
+                                    Rain gradually ends Monday as the system
+                                    moves into southeastern Canada.</span></p>
+                                <p><span>Along the western Gulf Coast, a frontal
+                                    boundary triggers showers and thunderstorms,
+                                    with heavy rainfall creating another
+                                    localized flash flooding threat through
+                                    Monday morning. Meanwhile, cold high
+                                    pressure spreading across the Upper Midwest
+                                    produces lake-effect snow across northern
+                                    Michigan.</span></p>
+                                <p><span>Across the Southwest, freezing
+                                    temperatures affect portions of Arizona, New
+                                    Mexico, and western Texas, while dense fog
+                                    develops across parts of the Lower
+                                    Mississippi Valley and Gulf Coast.</span></p>
+                                <p><span>Farther west, a Pacific disturbance
+                                    brings rain and mountain snow to the
+                                    Northwest, northern California, Sierra
+                                    Nevada, and northern Rockies. Additional
+                                    snow and lower-elevation rain develop across
+                                    the central and southern Rockies Monday.</span><span><strong></strong></span>
+                                </p>
+                                <div style="text-align: left;"><span><strong> <br>
+                                    </strong></span></div>
+                                <span> </span>
+                                <div style="text-align: left;"> <strong></strong>
+                                  <strong></strong></div>
+                                <strong> </strong> <strong> </strong><strong>
+                                </strong><strong></strong>
                                 <div style="text-align: center;"><a href="https://www.wpc.ncep.noaa.gov/NationalForecastChart/staticmaps/noaad1.png"><strong>Today's
                                       Forecast Chart</strong></a></div>
                                 <div class="text-center" style="text-align: center;"><a
@@ -1332,9 +1393,10 @@
                 Lower Susquehanna Valley.</span></p>
             <p class="isSelectedEnd"><span>Apex Wx is a private weather
                 information service unaffiliated with NOAA or the National
-                Weather Service and operated by Joseph Becker, PhD. Dr. Becker
-                earned a Certificate in Weather Forecasting from Penn State
-                University and is a trained NWS SKYWARN Storm Spotter.</span></p>
+                Weather Service and operated by Joseph Becker. Dr. Becker earned
+                a Certificate in Weather Forecasting from Penn State University
+                and is a trained NWS SKYWARN Storm Spotter.<br>
+              </span></p>
             <p class="isSelectedEnd"><strong><span>Credits</span></strong></p>
             <ul data-spread="false">
               <li><span>Sun and Moon data from the </span><a href="https://www.cnmoc.usff.navy.mil/Our-Commands/United-States-Naval-Observatory/Astronomical-Applications-Department/"><span>U.S.
@@ -1385,17 +1447,15 @@
                 may therefore differ from what a radar app appears to show. Use
                 radar together with current observations and official National
                 Weather Service warnings.</span></p>
-          </div>
-          <div style="text-align: left;">
-            <div style="text-align: center;"><a href="https://www.weather.gov/SKYWARN"
-                title="NWS
+            <p style="text-align: center;"><br>
+              <a href="https://www.weather.gov/SKYWARN" title="NWS
                 Skywarn Storm Spotter" target="_blank"><img src="https://raw.githubusercontent.com/ApexWx/ApexWx.github.io/master/nws%20skywarn%20storm%20spotter%20logo.jpg"
                   alt="NWS Skywarn Storm Spotter" style="width: 124px;
                   height: 72px; max-width: 100%; padding: 5px;"></a><a href="https://www.worldcampus.psu.edu/degrees-and-certificates/penn-state-online-weather-forecasting-undergraduate-certificate"
                 title="Penn State Certificate in Weather Forecasting" target="_blank"><img
                   src="https://github.com/ApexWx/ApexWx.github.io/blob/master/Penn%20State.png?raw=true"
                   alt="Penn State Certificate in Weather Forecasting" style="width: 124px; height: 72px; max-width: 100%;
-                  padding: 5px;"></a></div>
+                  padding: 5px;"></a></p>
           </div>
           <div style="text-align: left;"><strong></strong><br>
             <div style="text-align: left;"><br>
@@ -1407,75 +1467,81 @@
         </div>
       </div>
       <div class="column right" id="right-column">
-        <div style="text-align: center; font-size: 12px;"> <strong style="font-size: 14px;">US
-            Surface Weather Chart</strong>
-          <div style="text-align: center; font-size: 12px;"><strong style="font-size: 14px;"></strong><a
-              href="https://s.w-x.co/staticmaps/WEB_Current_Weather_Map_1280x720.jpg?crop=16:9&amp;width=800&amp;format=pjpg&amp;auto=webp&amp;quality=60">
-            </a><a href="https://www.wpc.ncep.noaa.gov/sfc/bwsfc.gif" title="Click for larger image"><img
-                alt="Current Surface Analysis/Weather Chart" src="https://www.wpc.ncep.noaa.gov/sfc/bwsfc.gif"
-                style="width: 251px; height: 188.586px;"></a> </div>
-          <div style="text-align: center; font-size: 12px;"> <a href="https://www.noaa.gov/jetstream/wxmaps"><em>How
-                to read weather maps</em></a></div>
-          <em></em><br>
-          <div style="text-align: center; font-size: 12px;"> <strong></strong></div>
+        <div style="text-align: center;"><strong style="font-size: 14px;">US
+            Surface Weather Chart</strong></div>
+        <div style="text-align: center; font-size: 12px;"><strong style="font-size: 14px;"></strong><a
+            href="https://s.w-x.co/staticmaps/WEB_Current_Weather_Map_1280x720.jpg?crop=16:9&amp;width=800&amp;format=pjpg&amp;auto=webp&amp;quality=60">
+          </a><a href="https://www.wpc.ncep.noaa.gov/sfc/bwsfc.gif" title="Click for larger image"><img
+              alt="Current Surface Analysis/Weather Chart" src="https://www.wpc.ncep.noaa.gov/sfc/bwsfc.gif"
+              style="width: 251px; height: 188.586px;"></a> </div>
+        <div style="text-align: center; font-size: 12px;"> <a href="https://www.noaa.gov/jetstream/wxmaps"><em>How
+              to read weather maps</em></a> </div>
+        <div style="text-align: center; font-size: 12px;"> </div>
+        <div class="text-center"><br>
         </div>
-        <div style="text-align: center;"><br>
+        <div class="text-center" style="font-size: 14px;"><br>
+          <div style="text-align: center;"><strong>U.S. Satellite</strong> 🛰️<strong
+              style="font-size: 14px;"></strong><br>
+            <strong style="font-size: 14px;"> </strong></div>
         </div>
-        <div style="text-align: center;"><br>
-          <strong style="font-size: 14px;">US Visible/Infrared Satellite<br>
-          </strong> </div>
-        <div style="text-align: center;"><strong></strong><strong></strong> <a
-            href="https://weather.cod.edu/data/satellite/continental/conus/current/conus.truecolor.jpg"
-            title="Click for larger image"><img decoding="async" loading="lazy"
-              src="https://weather.cod.edu/data/satellite/continental/conus/current/conus.truecolor.jpg"
-              alt="True Color Satellite Image of CONUS" style="width:
-              251px; height: 141.188px; border-radius: 1px / 0px;              border-width: 1px; border-style: solid;"
-              title="Click for
-              larger image"></a> </div>
-        <div style="text-align: center;"><em style="font-size: 12px;">College of
-            DuPage NEXLAB</em> </div>
-        <div style="text-align: center;"><br>
-        </div>
-        <div style="text-align: center;"><br>
-        </div>
-        <div style="font-size: 14px; text-align: center;"> <strong>US Weather
-            Radar<em><br>
-              <a href="https://s.w-x.co/staticmaps/wu/wu/wxtype1200_cur/conus/thumbnail.png"
-                title="Click for larger image"><img decoding="async" loading="lazy"
-                  src="https://s.w-x.co/staticmaps/wu/wu/wxtype1200_cur/conus/thumbnail.png"
-                  alt="US Weather Satellite" style="width: 254px;
-                  height: 197px;"></a></em></strong>
-          <div style="font-size: 14px; text-align: center;"><em style="font-size: 12px;">Weather
-              Underground</em><br>
+        <div class="text-center" style="text-align: center;"> <a href="https://weather.cod.edu/data/satellite/continental/conus/current/conus.truecolor.jpg"
+            title="Click for larger image"><img alt="[CONUS Satellite Image]" src="https://weather.cod.edu/data/satellite/continental/conus/current/conus.truecolor.jpg"
+              style="width: 251px; height: 141.188px; border-radius: 0px
+               / 0%; border-width: 0px; border-style: none; margin: 0px;              padding: 0px;"
+              title="Click for larger image"></a><em style="font-size: 12px;"><br>
+          </em> </div>
+        <div class="text-center" style="font-size: 12px; text-align: center;"><em>Visible/true
+            color (day) | Infrared (night)</em> </div>
+        <div class="text-center"><em style="font-size: 12px;"><br>
+          </em> </div>
+        <div class="text-center"><em style="font-size: 12px;"><br>
+          </em> </div>
+        <div>
+          <div style="font-size: 14px; text-align: center;"><a href="https://radar.weather.gov/ridge/standard/CONUS-LARGE_loop.gif"
+              title="Click for larger image"></a><strong>US Weather Radar<em><br>
+                <a href="https://s.w-x.co/staticmaps/wu/wu/wxtype1200_cur/conus/thumbnail.png"
+                  title="Click for larger image"><img src="https://s.w-x.co/staticmaps/wu/wu/wxtype1200_cur/conus/thumbnail.png"
+                    alt="US Weather Satellite" style="width: 254px;
+                  height: 197px;"></a></em></strong> <em style="font-size: 12px;"><br>
+              Weather Underground</em> </div>
+          <div style="font-size: 14px; text-align: center;"><br>
           </div>
           <div style="font-size: 14px; text-align: center;"><br>
           </div>
-        </div>
-        <div style="font-size: 14px; text-align: center;"><br>
-        </div>
-        <div style="font-size: 14px; text-align: center;"> <span style="font-size: 14px;"><strong
-              style="font-size: 13px;">US Advisories, Watches, &amp; Warnings</strong></span><br>
-          <a href="https://www.weather.gov/" title="Click for more
-            information"><img decoding="async" loading="lazy" src="https://www.weather.gov/wwamap/png/US.png"
-              alt="National Advisories, Watches, and Warnings" style="height: 156.25px; width: 250px;"></a>
+          <div style="font-size: 14px; text-align: center;"><span style="font-size: 14px;"><strong
+                style="font-size: 13px;">US Advisories, Watches, &amp; Warnings</strong></span><br>
+            <a href="https://www.weather.gov/" title="Click for more
+                     information"><img alt="National Advisories, Watches, and
+                     Warnings" src="https://www.weather.gov/wwamap/png/US.png" style="height: 156.25px; width: 250px;"></a>
+          </div>
+          <div style="font-size: 14px; text-align: center;"><strong><br>
+              <br>
+            </strong> </div>
+          <div class="text-center" style="text-align: center;"><span style="font-size: 14px;"><strong
+                style="font-size: 13px;">US Precipitation Outlook<br>
+              </strong></span> </div>
+          <div style="font-size: 14px; text-align: center;"> <a href="https://www.wpc.ncep.noaa.gov/Prob_Precip/idss-map/mapgen.php?office=None&amp;dataRegion=co&amp;pointpreferences=CONUS&amp;product=expected&amp;ptype=pqpf&amp;accum_period=72"
+              title="Excessive Rainfall Outlook"><img alt="US Precipitation Outlook"
+                src="https://www.wpc.ncep.noaa.gov/Prob_Precip/idss-map/mapgen.php?office=None&amp;dataRegion=co&amp;pointpreferences=CONUS&amp;product=expected&amp;ptype=pqpf&amp;accum_period=72"
+                style="width: 251px; height: 175.959px; border-width:
+                  0px; border-style: solid;"></a></div>
           <div style="font-size: 14px; text-align: center;"><br>
-            <em><strong></strong></em> </div>
+          </div>
+          <div style="font-size: 14px; text-align: center;"> <br>
+            <span style="font-size: 14px;"><strong style="font-size:
+                     13px;">US Snowfall Outlook<br>
+              </strong></span>
+            <div style="font-size: 14px; text-align: center;"> <a href="https://www.wpc.ncep.noaa.gov/Prob_Precip/idss-map/mapgen.php?office=None&amp;dataRegion=co&amp;pointpreferences=CONUS&amp;product=expected&amp;ptype=prob_sn&amp;accum_period=72"
+                title="Excessive Rainfall Outlook"><img alt="72-hour US Snow Outlook"
+                  src="https://www.wpc.ncep.noaa.gov/Prob_Precip/idss-map/mapgen.php?office=None&amp;dataRegion=co&amp;pointpreferences=CONUS&amp;product=expected&amp;ptype=prob_sn&amp;accum_period=72"
+                  style="width: 251px; height: 175.959px; border-width:
+                     0px; border-style: solid;"></a></div>
+            <div class="text-center"><br>
+            </div>
+          </div>
         </div>
-        <div style="font-size: 14px; text-align: center;"><strong><br>
-          </strong> </div>
-        <div style="font-size: 14px; text-align: center;"><strong>US Snow
-            Outlook<br>
-          </strong> </div>
-        <div style="font-size: 14px; text-align: center;"><strong></strong> <a
-            href="https://www.weather.gov/images/erh/gis/CONUS_Snow.png" title="Excessive Rainfall Outlook"><img
-              decoding="async" loading="lazy" src="https://www.weather.gov/images/erh/gis/CONUS_Snow.png"
-              alt="24-Hour US Snow Outlook" style="width: 251px; height:
-              175.959px; border-width: 0px; border-style: solid;"></a> </div>
         <div style="font-size: 14px; text-align: center;">
-          <div style="text-align: center;"><br>
-          </div>
-          <div style="text-align: center;"><br>
-            <br>
+          <div style="text-align: center;"> <br>
           </div>
           <div style="text-align: center;"><strong>Yesterday's Storm Reports</strong>
             <a href="https://www.spc.noaa.gov/climo/reports/"><img decoding="async"
@@ -1653,30 +1719,10 @@
 
                 Storm Impacts</a></span></em> </div>
         <div style="text-align: center;"><strong style="font-size:
-            14px;"><br>
-          </strong> </div>
-        <div style="text-align: center; font-size: 14px;"> <br>
+            14px;"></strong><br>
         </div>
         <div>
-          <div style="text-align: center;"> <strong style="font-size: 16px;">Today's
-              High Temperatures<br>
-            </strong>
-            <div style="text-align: center;"> <a href="https://graphical.weather.gov/GraphicalNDFD.php?width=2000&amp;timezone=EDT&amp;sector=CONUS&amp;element=maxt&amp;n=1"
-                title="Click for HD image"><img decoding="async" loading="lazy"
-                  src="https://graphical.weather.gov/GraphicalNDFD.php?width=515&amp;timezone=EDT&amp;sector=CONUS&amp;element=maxt&amp;n=1"
-                  alt="US High Temeperature Outlook" style="height: 248px; width: 251px;"></a><a
-                href="https://graphical.weather.gov/GraphicalNDFD.php?width=2000&amp;timezone=EDT&amp;sector=CONUS&amp;element=mint&amp;n=1"
-                title="Click for HD image"><br>
-              </a> </div>
-            <div style="text-align: center;"> <strong><br>
-                <br>
-              </strong> </div>
-            <div style="text-align: center;"><strong>Tonight's Low Temperatures<br>
-              </strong> </div>
-            <a href="https://graphical.weather.gov/GraphicalNDFD.php?width=2000&amp;timezone=EDT&amp;sector=CONUS&amp;element=mint&amp;n=1"
-              title="Click for HD image"><img decoding="async" loading="lazy" src="https://graphical.weather.gov/GraphicalNDFD.php?width=515&amp;timezone=EDT&amp;sector=CONUS&amp;element=mint&amp;n=1"
-                alt="US Low Temperture Outlook" style="height:
-                    250px; width: 251px;"></a>
+          <div style="text-align: center;">
             <div style="text-align: left;"><br>
               <br>
             </div>
