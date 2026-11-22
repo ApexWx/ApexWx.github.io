@@ -160,6 +160,7 @@
             <span style="font-size: 12px;"><em></em></span><span style="font-size: 12px;"><em></em></span>
           </div>
           <div style="width: 100%;"><strong><br>
+              <br>
             </strong> </div>
           <strong>24-Hour Precipitation Outlook</strong><br>
           <strong></strong>
@@ -170,6 +171,7 @@
             <div><br>
             </div>
             <div><br>
+              <br>
             </div>
             <div><br>
             </div>
@@ -189,6 +191,7 @@
                 </strong></em> </div>
             <div><em style="font-size: 14px;"><strong> </strong></em><strong style="font-size: 14px;"><br>
                 <br>
+                <br>
               </strong> </div>
             <div><strong style="font-size: 14px;"><br>
               </strong> </div>
@@ -205,6 +208,7 @@
                   12px;"><br>
                 </span></span> </div>
             <div><em style="font-size: 14px;"><strong><br>
+                  <br>
                 </strong></em> </div>
             <div><em style="font-size: 14px;"><strong><br>
                 </strong></em> </div>
@@ -223,6 +227,7 @@
             <div><em style="font-size: 14px;"><strong><br>
                 </strong></em> </div>
             <div><em style="font-size: 14px;"><strong><br>
+                  <br>
                 </strong></em> </div>
             <div> <strong style="font-size: 14px;">Winter Storm Severity Index
                 (WSSI)<br>
@@ -235,6 +240,7 @@
             <div><br>
             </div>
             <div><br>
+              <br>
             </div>
             <div><br>
             </div>
@@ -248,6 +254,7 @@
               <div><em style="font-size: 14px;"><strong><br>
                   </strong></em> </div>
               <div><em style="font-size: 14px;"><strong><br>
+                    <br>
                     <br>
                   </strong></em> </div>
               <div><span style="font-size: 14px;"><strong>Ice Accumulation
@@ -1517,27 +1524,44 @@
           <div style="font-size: 14px; text-align: center;"><strong><br>
               <br>
             </strong> </div>
-          <div class="text-center" style="text-align: center;"><span style="font-size: 14px;"><strong
-                style="font-size: 13px;">US Precipitation Outlook<br>
-              </strong></span> </div>
-          <div style="font-size: 14px; text-align: center;"> <a href="https://www.wpc.ncep.noaa.gov/Prob_Precip/idss-map/mapgen.php?office=None&amp;dataRegion=co&amp;pointpreferences=CONUS&amp;product=expected&amp;ptype=pqpf&amp;accum_period=72"
-              title="Excessive Rainfall Outlook"><img alt="US Precipitation Outlook"
-                src="https://www.wpc.ncep.noaa.gov/Prob_Precip/idss-map/mapgen.php?office=None&amp;dataRegion=co&amp;pointpreferences=CONUS&amp;product=expected&amp;ptype=pqpf&amp;accum_period=72"
+          <div style="text-align: center;"><span style="font-size: 14px;"><strong
+                style="font-size: 13px;">US Precipitation Outlook</strong></span><br>
+            <span style="font-size: 14px;"><strong style="font-size: 13px;"> </strong></span></div>
+          <div style="font-size: 14px; text-align: center;"> <a href="https://www.wpc.ncep.noaa.gov/Prob_Precip/idss-map/mapgen.php?office=None&amp;dataRegion=co&amp;pointpreferences=CONUS&amp;product=expected&amp;ptype=pqpf&amp;accum"
+              title="72-hour US Precipitation Outlook"><img alt="US Precipitation Outlook"
+                src="https://www.wpc.ncep.noaa.gov/Prob_Precip/idss-map/mapgen.php?office=None&amp;dataRegion=co&amp;pointpreferences=CONUS&amp;product=expected&amp;ptype=pqpf&amp;accum"
                 style="width: 251px; height: 175.959px; border-width:
                   0px; border-style: solid;"></a></div>
           <div style="font-size: 14px; text-align: center;"><br>
           </div>
           <div style="font-size: 14px; text-align: center;"> <br>
             <span style="font-size: 14px;"><strong style="font-size:
-                     13px;">US Snowfall Outlook<br>
+                     13px;">US Snow Outlook<br>
               </strong></span>
-            <div style="font-size: 14px; text-align: center;"> <a href="https://www.wpc.ncep.noaa.gov/Prob_Precip/idss-map/mapgen.php?office=None&amp;dataRegion=co&amp;pointpreferences=CONUS&amp;product=expected&amp;ptype=prob_sn&amp;accum_period=72"
-                title="Excessive Rainfall Outlook"><img alt="72-hour US Snow Outlook"
-                  src="https://www.wpc.ncep.noaa.gov/Prob_Precip/idss-map/mapgen.php?office=None&amp;dataRegion=co&amp;pointpreferences=CONUS&amp;product=expected&amp;ptype=prob_sn&amp;accum_period=72"
+            <div style="font-size: 14px; text-align: center;"> <a href="https://www.wpc.ncep.noaa.gov/Prob_Precip/idss-map/mapgen.php?office=None&amp;dataRegion=co&amp;pointpreferences=CONUS&amp;product=expected&amp;ptype=prob_sn&amp;accum"
+                title="72-hour US Snow Outlook"><img alt="72-hour US Snow Outlook"
+                  src="https://www.wpc.ncep.noaa.gov/Prob_Precip/idss-map/mapgen.php?office=None&amp;dataRegion=co&amp;pointpreferences=CONUS&amp;product=expected&amp;ptype=prob_sn&amp;accum"
                   style="width: 251px; height: 175.959px; border-width:
                      0px; border-style: solid;"></a></div>
             <div class="text-center"><br>
             </div>
+            <div class="text-center"><br>
+            </div>
+            <div class="text-center"><br>
+            </div>
+            <div class="text-center"><span style="font-size: 14px;"><strong style="font-size:
+                     13px;">US Ice Accumulation Outlook<br>
+                </strong></span>
+              <div style="font-size: 14px; text-align: center;"> <a href="https://www.wpc.ncep.noaa.gov/Prob_Precip/idss-map/mapgen.php?office=None&amp;dataRegion=co&amp;pointpreferences=CONUS&amp;product=expected&amp;ptype=prob_ice&amp;accum"
+                  title="72-hour Ice Accumulation Outlook"><img alt="72-hour US Snow Outlook"
+                    src="https://www.wpc.ncep.noaa.gov/Prob_Precip/idss-map/mapgen.php?office=None&amp;dataRegion=co&amp;pointpreferences=CONUS&amp;product=expected&amp;ptype=prob_ice&amp;accum"
+                    style="width: 251px; height: 175.959px; border-width:
+                     0px; border-style: solid;"></a></div>
+            </div>
+            <div class="text-center"><br>
+            </div>
+          </div>
+          <div class="text-center"><br>
           </div>
         </div>
         <div style="font-size: 14px; text-align: center;">
