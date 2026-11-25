@@ -453,3 +453,21 @@ div[style*="width: 800px"] {
     grid-template-columns: 1fr;
   }
 }
+
+/* ======================================================
+   Sidebar Widget
+   ====================================================== */
+.sidebar-widget {
+  margin-bottom: 26px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.sidebar-widget img {
+  max-width: 100%;
+}
+
+.sidebar-widget .widget-caption {
+  font-size: 12px;
+  margin-top: 3px;
+}

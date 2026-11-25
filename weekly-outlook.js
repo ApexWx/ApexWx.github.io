@@ -1,25 +1,27 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const container = document.getElementById("weekly-outlook");
-  if (!container) return;
+  const partials = [
+    { id: "weekly-outlook", file: "weekly-outlook.html", fallback: "Unable to load weekly outlook." },
+    { id: "left-column",    file: "left-sidebar.html",   fallback: "" },
+    { id: "right-column",   file: "right-sidebar.html",  fallback: "" }
+  ];
 
-  async function loadWeeklyOutlook() {
-    try {
-      const response = await fetch(`forecasts/weekly-outlook.html?v=${Date.now()}`, {
-        cache: "no-store"
+  const cacheBuster = Date.now();
+
+  partials.forEach(({ id, file, fallback }) => {
+    const container = document.getElementById(id);
+    if (!container) return;
+
+    fetch(`${file}?t=${cacheBuster}`)
+      .then(response => {
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        return response.text();
+      })
+      .then(html => {
+        container.innerHTML = html;
+      })
+      .catch(error => {
+        console.error(`Error loading ${file}:`, error);
+        if (fallback) container.textContent = fallback;
       });
-
-      if (!response.ok) {
-        throw new Error(`HTTP ${response.status}`);
-      }
-
-      const html = await response.text();
-      container.innerHTML = html;
-    } catch (error) {
-      console.error("Failed to load weekly outlook:", error);
-      container.innerHTML =
-        "<p><em>The Fort Kent &amp; Saint John Valley outlook is temporarily unavailable. Please check back shortly.</em></p>";
-    }
-  }
-
-  loadWeeklyOutlook();
+  });
 });
