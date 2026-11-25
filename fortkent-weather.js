@@ -350,24 +350,16 @@ async function updateStation() {
   }
 }
 
-// Unified USNO Astronomy & Upcoming Moon Phases Fetch (Direct Browser Fetch)
-async function loadFortKentAstroData() {
-  const setTxt = (id, val) => { const el = document.getElementById(id); if (el) el.textContent = val; };
-  const moonGrid = document.getElementById("moon-phase-grid");
+// =========================================================================
+// 2B. ASTRONOMY (PRIMARY WORKER + BUILT-IN NOAA/LUNAR OFFLINE BACKUP)
+// =========================================================================
 
-  const lat = "47.2589";
-  const lon = "-68.5891";
-  const timeZone = "America/New_York";
+function calculateFallbackAstroData(dateStr, timeZone) {
+  const lat = 47.2589;
+  const lon = -68.5891;
+  const rad = Math.PI / 180;
+  const deg = 180 / Math.PI;
 
-  const now = new Date();
-  const dateStr = new Intl.DateTimeFormat("en-CA", {
-    timeZone,
-    year: "numeric",
-    month: "2-digit",
-    day: "2-digit"
-  }).format(now);
-
-  // Determine exact EDT (-4) vs EST (-5) offset
   const targetDateObj = new Date(`${dateStr}T12:00:00`);
   const offsetPart = new Intl.DateTimeFormat("en-US", {
     timeZone,
@@ -376,206 +368,186 @@ async function loadFortKentAstroData() {
   const tzOffset = parseInt(offsetPart.replace("GMT", "").split(":")[0], 10) || -5;
   const tzName = tzOffset === -4 ? "EDT" : "EST";
 
-  const usnoRsttUrl = `https://aa.usno.navy.mil/api/rstt/oneday?date=${dateStr}&coords=${lat},${lon}&tz=${tzOffset}`;
-  const usnoPhaseUrl = `https://aa.usno.navy.mil/api/moon/phases/date?date=${dateStr}&nump=8`;
+  // NOAA Solar Equations for Civil Twilight (96°) & Sunrise/Sunset (90.833°)
+  const [y, m, d] = dateStr.split("-").map(Number);
+  const jd = Math.floor(365.25 * (y + 4716)) + Math.floor(30.6001 * ((m <= 2 ? m + 12 : m) + 1)) + d - 1524.5;
+  const jc = (jd - 2451545.0) / 36525.0;
 
-  const [rsttResult, phaseResult] = await Promise.allSettled([
-    fetch(usnoRsttUrl, { cache: "no-store" }),
-    fetch(usnoPhaseUrl, { cache: "no-store" })
-  ]);
+  const geomMeanLongSun = (280.46646 + jc * (36000.76983 + jc * 0.0003032)) % 360;
+  const geomMeanAnomSun = 357.52911 + jc * (35999.05029 - 0.0001537 * jc);
+  const eccentEarthOrbit = 0.016708634 - jc * (0.000042037 + 0.0000001267 * jc);
+  const sunEqOfCtr = Math.sin(rad * geomMeanAnomSun) * (1.914602 - jc * (0.004817 + 0.000014 * jc)) +
+                     Math.sin(rad * 2 * geomMeanAnomSun) * (0.019993 - 0.000101 * jc) +
+                     Math.sin(rad * 3 * geomMeanAnomSun) * 0.000289;
+  const sunTrueLong = geomMeanLongSun + sunEqOfCtr;
+  const sunAppLong = sunTrueLong - 0.00569 - 0.00478 * Math.sin(rad * (125.04 - 1934.136 * jc));
+  const meanObliqEcliptic = 23 + (26 + ((21.448 - jc * (46.815 + jc * (0.00059 - jc * 0.001813))) / 60)) / 60;
+  const obliqCorr = meanObliqEcliptic + 0.00256 * Math.cos(rad * (125.04 - 1934.136 * jc));
+  const sunDeclin = deg * Math.asin(Math.sin(rad * obliqCorr) * Math.sin(rad * sunAppLong));
 
-  let phaseData = null;
-  if (phaseResult.status === "fulfilled" && phaseResult.value.ok) {
-    try {
-      phaseData = await phaseResult.value.json();
-    } catch (e) {
-      console.error("Failed to parse USNO phase JSON:", e);
-    }
+  const varY = Math.tan(rad * (obliqCorr / 2)) ** 2;
+  const eqOfTime = 4 * deg * (
+    varY * Math.sin(2 * rad * geomMeanLongSun) -
+    2 * eccentEarthOrbit * Math.sin(rad * geomMeanAnomSun) +
+    4 * eccentEarthOrbit * varY * Math.sin(rad * geomMeanAnomSun) * Math.cos(2 * rad * geomMeanLongSun) -
+    0.5 * varY * varY * Math.sin(4 * rad * geomMeanLongSun) -
+    1.25 * eccentEarthOrbit * eccentEarthOrbit * Math.sin(2 * rad * geomMeanAnomSun)
+  );
+
+  const solarNoonMin = 720 - 4 * lon - eqOfTime + tzOffset * 60;
+
+  const getEventMinutes = (zenith) => {
+    const cosHA = (Math.cos(rad * zenith) / (Math.cos(rad * lat) * Math.cos(rad * sunDeclin))) -
+                  Math.tan(rad * lat) * Math.tan(rad * sunDeclin);
+    if (cosHA < -1 || cosHA > 1) return null;
+    const haDeg = deg * Math.acos(cosHA);
+    return {
+      riseMin: solarNoonMin - haDeg * 4,
+      setMin: solarNoonMin + haDeg * 4
+    };
+  };
+
+  const formatMins = (totalMins) => {
+    if (totalMins == null) return "N/A";
+    const mins = ((Math.round(totalMins) % 1440) + 1440) % 1440;
+    const h = Math.floor(mins / 60);
+    const m = mins % 60;
+    const ampm = h >= 12 ? "PM" : "AM";
+    const dispH = h % 12 || 12;
+    return `${dispH}:${String(m).padStart(2, "0")} ${ampm} ${tzName}`;
+  };
+
+  const sunEvents = getEventMinutes(90.833);
+  const civilEvents = getEventMinutes(96.0);
+
+  let dayLengthStr = "N/A";
+  if (sunEvents) {
+    const diffMins = Math.round(sunEvents.setMin - sunEvents.riseMin);
+    dayLengthStr = `${Math.floor(diffMins / 60)}h ${diffMins % 60}m`;
   }
 
-  // A. Populate Daily Sun & Moon Card
-  try {
-    if (rsttResult.status !== "fulfilled" || !rsttResult.value.ok) {
-      throw new Error(`USNO RSTT HTTP ${rsttResult.value?.status || "network error"}`);
-    }
-    const rsttData = await rsttResult.value.json();
+  // Synodic Lunar Phase Calculation (Reference New Moon: 2000-01-06 18:14 UTC)
+  const synodicMonth = 29.530588853;
+  const refNewMoonMs = Date.UTC(2000, 0, 6, 18, 14, 0);
+  const now = new Date();
+  const cycles = (now.getTime() - refNewMoonMs) / (synodicMonth * 86400000);
+  const age = ((cycles % 1) + 1) % 1; // 0.0 to 1.0
 
-    const processUtTime = (localTimeStr) => {
-      if (!localTimeStr || localTimeStr === "N/A") return null;
-      const [hours, minutes] = localTimeStr.split(":").map(Number);
-      const targetDate = new Date(`${dateStr}T00:00:00`);
-      targetDate.setHours(hours, minutes);
+  let curPhaseDisplay = "🌖 Waning Gibbous";
+  if (age < 0.03 || age >= 0.97) curPhaseDisplay = "🌑 New Moon";
+  else if (age < 0.22) curPhaseDisplay = "🌒 Waxing Crescent";
+  else if (age < 0.28) curPhaseDisplay = "🌓 First Quarter";
+  else if (age < 0.47) curPhaseDisplay = "🌔 Waxing Gibbous";
+  else if (age < 0.53) curPhaseDisplay = "🌕 Full Moon";
+  else if (age < 0.72) curPhaseDisplay = "🌖 Waning Gibbous";
+  else if (age < 0.78) curPhaseDisplay = "🌗 Last Quarter";
+  else curPhaseDisplay = "🌘 Waning Crescent";
 
-      const ampm = hours >= 12 ? "PM" : "AM";
-      const displayHours = hours % 12 || 12;
-      const displayMinutes = minutes.toString().padStart(2, "0");
-      return { absoluteDate: targetDate, formattedTime: `${displayHours}:${displayMinutes} ${ampm} ${tzName}` };
-    };
+  // Next 4 Major Lunar Quarters
+  const majorPhases = [
+    { frac: 0.0,  name: "New Moon",      emoji: "🌑" },
+    { frac: 0.25, name: "First Quarter", emoji: "🌓" },
+    { frac: 0.5,  name: "Full Moon",     emoji: "🌕" },
+    { frac: 0.75, name: "Last Quarter",  emoji: "🌗" }
+  ];
 
-    const apiData = rsttData.properties?.data || {};
-    const sundata = apiData.sundata || [];
-    const moondata = apiData.moondata || [];
-    const curPhaseName = apiData.curphase || "Waning Gibbous";
-
-    const rawSunrise = sundata.find(item => item.phen === "Rise" || item.phen === "R")?.time;
-    const rawSunset = sundata.find(item => item.phen === "Set" || item.phen === "S")?.time;
-    const rawDawn = sundata.find(item => item.phen === "Begin Civil Twilight")?.time;
-    const rawDusk = sundata.find(item => item.phen === "End Civil Twilight")?.time;
-    const rawMoonset = moondata.find(item => item.phen === "Set" || item.phen === "S")?.time;
-    const rawMoonrise = moondata.find(item => item.phen === "Rise" || item.phen === "R")?.time;
-
-    const emojiMap = {
-      "New Moon": "🌑 New Moon",
-      "First Quarter": "🌓 First Quarter",
-      "Full Moon": "🌕 Full Moon",
-      "Last Quarter": "🌗 Last Quarter",
-      "Waning Gibbous": "🌖 Waning Gibbous",
-      "Waxing Gibbous": "🌔 Waxing Gibbous",
-      "Waning Crescent": "🌘 Waning Crescent",
-      "Waxing Crescent": "🌒 Waxing Crescent"
-    };
-
-    let phaseDisplayStr = emojiMap[curPhaseName] || `🌖 ${curPhaseName}`;
-    if (phaseData && Array.isArray(phaseData.phasedata)) {
-      const phasesWithLocalDates = phaseData.phasedata.map(p => {
-        const [pH, pM] = p.time.split(":").map(Number);
-        const utcDate = new Date(Date.UTC(p.year, p.month - 1, p.day, pH, pM));
-        const localDateStr = utcDate.toLocaleDateString("en-CA", { timeZone });
-        return { ...p, localDateStr, absoluteDate: utcDate };
-      });
-
-      const exactMatchPhase = phasesWithLocalDates.find(p => p.localDateStr === dateStr);
-      if (exactMatchPhase) {
-        const phaseEmojiName = emojiMap[exactMatchPhase.phase] || exactMatchPhase.phase;
-        const timePart = exactMatchPhase.absoluteDate.toLocaleTimeString("en-US", { timeZone, hour: "numeric", minute: "2-digit" });
-        const weekdayPart = exactMatchPhase.absoluteDate.toLocaleDateString("en-US", { timeZone, weekday: "short" });
-        const dayPart = exactMatchPhase.absoluteDate.toLocaleDateString("en-US", { timeZone, day: "numeric" });
-        const monthPart = exactMatchPhase.absoluteDate.toLocaleDateString("en-US", { timeZone, month: "short" });
-        phaseDisplayStr = `${phaseEmojiName} ${timePart} ${weekdayPart}. ${monthPart}. ${dayPart}`;
-      } else {
-        const referenceTime = new Date(`${dateStr}T12:00:00Z`).getTime();
-        const nextP = phasesWithLocalDates.find(p => p.absoluteDate.getTime() >= referenceTime) || phasesWithLocalDates[0];
-        if (nextP) {
-          const currentEmojiName = emojiMap[curPhaseName] || `🌖 ${curPhaseName}`;
-          const nextPhaseEmojiName = emojiMap[nextP.phase] || nextP.phase;
-          const timePart = nextP.absoluteDate.toLocaleTimeString("en-US", { timeZone, hour: "numeric", minute: "2-digit" });
-          const weekdayPart = nextP.absoluteDate.toLocaleDateString("en-US", { timeZone, weekday: "short" });
-          const dayPart = nextP.absoluteDate.toLocaleDateString("en-US", { timeZone, day: "numeric" });
-          const monthPart = nextP.absoluteDate.toLocaleDateString("en-US", { timeZone, month: "short" });
-          phaseDisplayStr = `${currentEmojiName} → ${nextPhaseEmojiName} ${timePart} ${weekdayPart}. ${monthPart}. ${dayPart}`;
-        }
+  const baseCycle = Math.floor(cycles);
+  const upcoming = [];
+  for (let c = baseCycle; c <= baseCycle + 2; c++) {
+    for (const mp of majorPhases) {
+      const eventMs = refNewMoonMs + (c + mp.frac) * synodicMonth * 86400000;
+      if (eventMs > now.getTime()) {
+        const dt = new Date(eventMs);
+        upcoming.push({
+          emoji: mp.emoji,
+          date: dt.toLocaleDateString("en-US", { timeZone, month: "short", day: "numeric" }),
+          name: mp.name,
+          ts: eventMs
+        });
       }
     }
+  }
+  upcoming.sort((a, b) => a.ts - b.ts);
 
-    let dayLengthStr = "N/A";
-    if (rawSunrise && rawSunset) {
-      const [rH, rM] = rawSunrise.split(":").map(Number);
-      const [sH, sM] = rawSunset.split(":").map(Number);
-      let totalMinutes = (sH * 60 + sM) - (rH * 60 + rM);
-      if (totalMinutes < 0) totalMinutes += 1440;
-      dayLengthStr = `${Math.floor(totalMinutes / 60)}h ${totalMinutes % 60}m`;
-    }
-
-    const targetDayDate = targetDateObj.getDate();
-    const dawnData = processUtTime(rawDawn);
-    const sunriseData = processUtTime(rawSunrise);
-    const sunsetData = processUtTime(rawSunset);
-    const duskData = processUtTime(rawDusk);
-    const moonsetData = processUtTime(rawMoonset);
-    const moonriseData = processUtTime(rawMoonrise);
-
-    const getPublicFriendlyLabel = (processedTimeObj, fallbackLabel) => {
-      if (!processedTimeObj) return `N/A ${fallbackLabel}`;
-      const localEventDate = processedTimeObj.absoluteDate;
-      const eventDay = localEventDate.getDate();
-      const eventHour = localEventDate.getHours();
-      const cleanTime = processedTimeObj.formattedTime.replace(" EDT", "").replace(" EST", "");
-
-      if (eventDay !== targetDayDate) {
-        const nextDayName = localEventDate.toLocaleDateString("en-US", { weekday: "short" });
-        if (eventHour === 0 || eventHour === 1) {
-          return `${cleanTime} ${tzName} late tonight (${nextDayName})`;
-        }
-        return `${cleanTime} ${tzName} tomorrow (${nextDayName})`;
-      }
-
-      let timeframe = "today";
-      if (eventHour < 8) timeframe = "this morning";
-      else if (eventHour >= 17 && eventHour <= 20) timeframe = "this evening";
-      else if (eventHour >= 21 || eventHour === 0) timeframe = "tonight";
-      return `${cleanTime} ${tzName} ${timeframe}`;
-    };
-
-    setTxt("astro-date", targetDateObj.toLocaleDateString("en-US", {
+  return {
+    date_label: targetDateObj.toLocaleDateString("en-US", {
       weekday: "long", month: "long", day: "numeric", year: "numeric"
-    }));
-    setTxt("astro-dawn", dawnData ? dawnData.formattedTime : "N/A");
-    setTxt("astro-sunrise", sunriseData ? sunriseData.formattedTime : "N/A");
-    setTxt("astro-sunset", sunsetData ? sunsetData.formattedTime : "N/A");
-    setTxt("astro-dusk", duskData ? duskData.formattedTime : "N/A");
-    setTxt("astro-day-length", dayLengthStr);
-    setTxt("astro-moon-phase", phaseDisplayStr);
-    setTxt("astro-moonset", getPublicFriendlyLabel(moonsetData, "today"));
-    setTxt("astro-moonrise", getPublicFriendlyLabel(moonriseData, "tomorrow"));
-  } catch (error) {
-    console.error("Astronomy daily error:", error);
-    setTxt("astro-date", "Data Temporarily Offline");
-  }
+    }),
+    dawn: civilEvents ? formatMins(civilEvents.riseMin) : "N/A",
+    sunrise: sunEvents ? formatMins(sunEvents.riseMin) : "N/A",
+    sunset: sunEvents ? formatMins(sunEvents.setMin) : "N/A",
+    dusk: civilEvents ? formatMins(civilEvents.setMin) : "N/A",
+    day_length: dayLengthStr,
+    moon_phase_display: curPhaseDisplay,
+    moonset_display: "Unavailable (USNO offline)",
+    moonrise_display: "Unavailable (USNO offline)",
+    upcoming_phases: upcoming.slice(0, 4)
+  };
+}
 
-  // B. Populate Upcoming Moon Phases 4-Box Grid
-  if (moonGrid) {
-    try {
-      if (!phaseData || !Array.isArray(phaseData.phasedata)) {
-        throw new Error("USNO API returned no phase data.");
-      }
+function renderAstroData(data) {
+  const setTxt = (id, val) => { const el = document.getElementById(id); if (el) el.textContent = val; };
+  setTxt("astro-date", data.date_label);
+  setTxt("astro-sunrise", data.sunrise);
+  setTxt("astro-sunset", data.sunset);
+  setTxt("astro-dawn", data.dawn);
+  setTxt("astro-dusk", data.dusk);
+  setTxt("astro-day-length", data.day_length);
+  setTxt("astro-moon-phase", data.moon_phase_display);
+  setTxt("astro-moonset", data.moonset_display);
+  setTxt("astro-moonrise", data.moonrise_display);
 
-      const shortEmoji = {
-        "New Moon": "🌑",
-        "First Quarter": "🌓",
-        "Full Moon": "🌕",
-        "Last Quarter": "🌗"
-      };
-
-      const upcomingPhases = phaseData.phasedata
-        .map(item => {
-          const [hour, minute] = String(item.time).split(":").map(Number);
-          return {
-            name: item.phase,
-            date: new Date(Date.UTC(Number(item.year), Number(item.month) - 1, Number(item.day), hour, minute, 0))
-          };
-        })
-        .filter(item => item.date > now)
-        .slice(0, 4);
-
-      if (upcomingPhases.length < 4) {
-        throw new Error("Fewer than four upcoming moon phases were returned.");
-      }
-
-      moonGrid.innerHTML = upcomingPhases
-        .map(item => {
-          const emoji = shortEmoji[item.name] || "🌙";
-          const displayDate = new Intl.DateTimeFormat("en-US", {
-            timeZone,
-            month: "short",
-            day: "numeric"
-          }).format(item.date);
-
-          return `
-            <div class="moon-phase-item">
-              ${emoji} <strong>${displayDate}</strong><br>
-              ${item.name}
-            </div>
-          `;
-        })
-        .join("");
-    } catch (error) {
-      console.error("Unable to load upcoming moon phases:", error);
-      moonGrid.innerHTML = `
+  const moonGrid = document.getElementById("moon-phase-grid");
+  if (moonGrid && Array.isArray(data.upcoming_phases) && data.upcoming_phases.length > 0) {
+    moonGrid.innerHTML = data.upcoming_phases
+      .map(item => `
         <div class="moon-phase-item">
-          Moon phase information temporarily unavailable.
+          ${item.emoji} <strong>${item.date}</strong><br>
+          ${item.name}
         </div>
-      `;
-    }
+      `)
+      .join("");
+  }
+}
+
+// USNO Astronomy Fetch Loop with Cache & Mathematical Fallback
+async function loadFortKentAstroData() {
+  const workerEndpoint = "https://moon-api.maineapexwx.workers.dev/";
+  const timeZone = "America/New_York";
+  const todayStr = new Intl.DateTimeFormat("en-CA", {
+    timeZone,
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit"
+  }).format(new Date());
+
+  try {
+    const response = await fetch(workerEndpoint);
+    if (!response.ok) throw new Error(`Worker HTTP ${response.status}`);
+    const data = await response.json();
+    if (data.error) throw new Error(data.error);
+
+    // Save good USNO data to localStorage for today
+    try {
+      localStorage.setItem("apexwx_astro_cache", JSON.stringify({ date: todayStr, payload: data }));
+    } catch (e) {}
+
+    renderAstroData(data);
+  } catch (error) {
+    console.warn("Primary USNO Worker unavailable, checking cache/math fallback:", error);
+
+    // 1. Check if we already cached official USNO data earlier today
+    try {
+      const cached = JSON.parse(localStorage.getItem("apexwx_astro_cache") || "null");
+      if (cached && cached.date === todayStr && cached.payload) {
+        renderAstroData(cached.payload);
+        return;
+      }
+    } catch (e) {}
+
+    // 2. Otherwise compute accurate Fort Kent astronomical times locally
+    const fallbackData = calculateFallbackAstroData(todayStr, timeZone);
+    renderAstroData(fallbackData);
   }
 }
 
@@ -615,7 +587,7 @@ document.addEventListener("DOMContentLoaded", () => {
   updateStation();
   setInterval(updateStation, 60000);
 
-  // Astronomy computations setup (Daily Sun/Moon + 4 Upcoming Moon Phases)
+  // Astronomy computations setup (Worker + Cache + Offline Math Backup)
   loadFortKentAstroData();
 
   // Integrated execution of climate data tracking file if present 
