@@ -7,6 +7,8 @@
 // 1. GLOBAL UTILITY FUNCTIONS & EVENT HANDLERS
 // =========================================================================
 
+const NO_ALERTS_HTML = `<span style="font-size: 14px; color: #555555;">No Active Hazardous Weather Conditions issued by NWS</span>`;
+
 // Seasons calculations
 function getCurrentSeason(date = new Date()) {
   const month = date.getMonth() + 1;
@@ -53,6 +55,12 @@ function dismissAlert(alertId) {
   const alertBox = document.querySelector(`[data-alert-id="${alertId}"]`);
   if (alertBox) {
     alertBox.remove(); // Removes the alert container from view entirely
+  }
+
+  // Restore default message if no alert boxes remain visible
+  const alertDiv = document.getElementById("weatherAlert");
+  if (alertDiv && alertDiv.children.length === 0) {
+    alertDiv.innerHTML = NO_ALERTS_HTML;
   }
 }
 
@@ -153,14 +161,16 @@ async function fetchNWSAlerts() {
     const data = await response.json();
     const storedDismissedIds = JSON.parse(localStorage.getItem("dismissedAlertIds") || "[]");
 
-    if (data.features && data.features.length > 0) {
+    const activeFeatures = (data.features || []).filter(
+      (feature) => !storedDismissedIds.includes(feature.id)
+    );
+
+    if (activeFeatures.length > 0) {
       alertDiv.innerHTML = "";
 
-      data.features.forEach((feature) => {
+      activeFeatures.forEach((feature) => {
         const alert = feature.properties;
         const alertId = feature.id;
-
-        if (storedDismissedIds.includes(alertId)) return;
 
         const title = alert.headline;
         const description = alert.description || "";
@@ -212,7 +222,7 @@ async function fetchNWSAlerts() {
         }
       });
     } else {
-      alertDiv.innerHTML = "";
+      alertDiv.innerHTML = NO_ALERTS_HTML;
     }
   } catch (error) {
     console.error("NWS Alert fetch error:", error);
