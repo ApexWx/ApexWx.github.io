@@ -6,9 +6,10 @@
 }
 
 body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: url('seamless-background-simply-sky.jpg') repeat;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: url('https://github.com/ApexWx/ApexWx.github.io/blob/master/seamless-background-simply-sky.jpg?raw=true') no-repeat center center fixed;
+    background-size: cover;
 }
 
 body, div, span, p {

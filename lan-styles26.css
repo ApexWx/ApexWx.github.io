@@ -5,7 +5,8 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background: url('https://github.com/ApexWx/ApexWx.github.io/blob/master/seamless-background-simply-sky.jpg?raw=true') repeat;
+    background: url('https://github.com/ApexWx/ApexWx.github.io/blob/master/seamless-background-simply-sky.jpg?raw=true') no-repeat center center fixed;
+    background-size: cover;
 }
 
 header, footer {
@@ -319,7 +320,7 @@ responsive-menu {
         display: block;
         border-top: 1px solid #444;
     }
-    .responsive-menu .menu-links.show {
+    .responsive-menu .menu-links.active {
         display: flex;
     }
 }
