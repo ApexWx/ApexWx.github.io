@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="x-apple-disable-message-reformatting">
+    <meta name="format-detection" content="telephone=no,address=no,email=no,date=no,url=no">
+    <meta name="color-scheme" content="light dark">
+    <meta name="supported-color-schemes" content="light dark">
+    <title>Apex Wx — Fort Kent &amp; Saint John Valley Weather Update</title>
+    <!--[if gte mso 9]>
+      <xml>         <o:OfficeDocumentSettings>            <o:PixelsPerInch>96</o:PixelsPerInch>         </o:OfficeDocumentSettings>      </xml>      <![endif]-->
+    <!--[if mso]>
+      <style> * { font-family: sans-serif !important; } </style>      <![endif]-->
+    <style>
+        :root {
+                 color-scheme: light dark;
+                 supported-color-schemes: light dark;
+                 }html, body {
+                 margin: 0 auto !important;
+                 padding: 0 !important;
+                 height: 100% !important;
+                 width: 100% !important;
+                 }* {
+                 -ms-text-size-adjust: 100%;
+                 -webkit-text-size-adjust: 100%;
+                 box-sizing: border-box;
+                 }div[style*="margin: 16px 0"] {
+                 margin: 0 !important;
+                 }#MessageViewBody, #MessageWebViewDiv{
+                 width: 100% !important;
+                 }table, td {
+                 mso-table-lspace: 0pt !important;
+                 mso-table-rspace: 0pt !important;
+                 }table {
+                 border-spacing: 0 !important;
+                 border-collapse: collapse !important;
+                 table-layout: fixed !important;
+                 margin: 0 auto !important;
+                 }img {
+                 -ms-interpolation-mode: bicubic;
+                 max-width: 100%;
+                 height: auto !important;
+                 display: inline-block;
+                 vertical-align: middle;
+                 }a {
+                 text-decoration: none;
+                 }a[x-apple-data-detectors], .unstyle-auto-detected-links a, .aBn {
+                 border-bottom: 0 !important;
+                 cursor: default !important;
+                 color: inherit !important;
+                 text-decoration: none !important;
+                 font-size: inherit !important;
+                 font-family: inherit !important;
+                 font-weight: inherit !important;
+                 line-height: inherit !important;
+                 }.a6S {
+                 display: none !important;
+                 opacity: 0.01 !important;
+                 }.im {
+                 color: inherit !important;
+                 }.section-title {
+                 font-size: 16px;
+                 font-weight: bold;
+                 text-align: center;
+                 margin-top: 25px;
+                 margin-bottom: 12px;
+                 }.weather-image {
+                 max-width: 100%;
+                 height: auto !important;
+                 border: 1px solid #cccccc;
+                 margin: 10px 0;
+                 }.small-note {
+                 font-size: 12px;
+                 color: #666666;
+                 text-align: center;
+                 line-height: 16px;
+                 margin-top: 4px;
+                 margin-bottom: 12px;
+                 }.forecast-day {
+                 margin-bottom: 15px;
+                 text-align: left;
+                 line-height: 22px;
+                 }.social-cell {
+                 text-align: center;
+                 vertical-align: top;
+                 background-color: #ffffff;
+                 padding: 10px;
+                 }
+    </style>
+  </head>
+  <body width="100%" style="                                                                                                                                    margin: 0; padding: 0 !important;
+    mso-line-height-rule: exactly; background-color: #222222;" class="email-bg">
+    <center role="article" aria-roledescription="email" style="width:
+      100%; background-color: #222222;" class="email-bg" lang="en">
+      <!--[if mso | IE]>
+         <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #222222;" class="email-bg">            <tr>               <td>                  <![endif]-->
+      <div style="max-height:0; overflow:hidden; mso-hide:all;" aria-hidden="true">
+        Fort Kent &amp; Saint John Valley Weather Updates. Private weather
+        information service focusing on northern Maine's weather. </div>
+      <div style="max-width: 600px; margin: 0 auto;" class="email-container">
+        <table role="presentation" style="margin: auto;" align="center" width="100%"
+          cellspacing="0" cellpadding="0" border="0">
+          <tbody>
+            <tr>
+              <td style="background-color: white; padding: 20px; font-family: &quot;Arial&quot;,&quot;Helvetica&quot;,sans-serif; font-size: 15px; line-height: 20px; color: #555555;"
+                class="darkmode-bg">
+                <!-- Banner Block -->
+                <div style="text-align: center; margin-bottom: 15px;"> <img src="https://raw.githubusercontent.com/ApexWx/ApexWx.github.io/master/Apex%20banner.jpg"
+                    alt="Apex Wx Banner" style="border: none; max-width:
+                    525px; width: 100%;" moz-do-not-send="true"> </div>
+                <h1 style="text-align: center; font-size: 24px; margin:
+                  10px 0;">Apex Wx</h1>
+                <h2 style="text-align: center; font-size: 18px; margin:
+                  5px 0 15px 0;">Fort Kent &amp; the Saint John Valley of Maine<br>
+                  Weather Information </h2>
+                <p style="text-align: center;"><a href="https://en.wikipedia.org/wiki/Maine"
+                    title="Flag of Maine -- Click for more"><img alt="Maine State Flag"
+                      class="img-center" src="https://apexwx.github.io/me.png" style="width: 60px; height: 44px; left: 5px; right: 5px; padding: 5px;"></a><a
+                    href="https://en.wikipedia.org/wiki/Acadia" title="Flag of Acadia -- Click for more"><img
+                      alt="Flag of Acadia" class="img-center" src="https://apexwx.github.io/Flag_of_Acadia.svg.png"
+                      style="width: 60px; height: 43px; padding: 5px;"></a></p>
+                <div style="text-align: center; font-weight: bold;
+                  font-size: 12px; margin-bottom: 4px;">Weather Information for
+                  the Valley since 2009 </div>
+                <div class="small-note">Member <a href="https://madis.ncep.noaa.gov/snow_project.shtml"
+                    moz-do-not-send="true">APRSWXNET/CWOP</a> Program -- Station
+                  EW0429 </div>
+                <div style="text-align: center; margin: 15px 0;
+                  font-size: 13px; color: #333333;" class="darkmode-text"> 🌐
+                  For more weather information, visit <a href="https://apexwx.github.io"
+                    title="Click to view email as a webpage" style="color: #0066CC; text-decoration: none;"
+                    moz-do-not-send="true">Apex Wx</a> 🌐 </div>
+                <div class="small-note" style="margin-bottom: 15px;"> Apex Wx is
+                  a private weather information service focusing on northern
+                  Maine's weather.<br>
+                  Always consult <a href="https://www.weather.gov/car/" title="NWS Caribou"
+                    moz-do-not-send="true">NWS Caribou</a> for the latest
+                  official weather updates/information for northern Maine.</div>
+                <div style="text-align: center; margin-bottom: 5px;"> <a href="https://www.buymeacoffee.com/MaineApexWx"
+                    target="_blank" moz-do-not-send="true"> <img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png"
+                      alt="Buy Me A Coffee" style="width: 217px; height:
+                      60px;" moz-do-not-send="true"> </a> </div>
+                <div class="small-note" style="font-style: italic;
+                  margin-bottom: 25px;"> Contributions support this weather
+                  information service.<br>
+                  Apex Wx is committed to no-hype forecasting based on
+                  meteorological science. </div>
+                <!-- Links Sections -->
+                <div class="section-title">Official Government Forecasts</div>
+                <div style="text-align: center; margin-bottom: 10px;"> <a href="https://www.weather.gov/car/"
+                    title="NWS
+                    Caribou" moz-do-not-send="true">NWS Caribou</a> | <a href="https://www.weather.gov/gyx/"
+                    title="NWS
+                    Gray/Portland" moz-do-not-send="true">NWS Gray/Portland</a>
+                </div>
+                <div style="text-align: center; margin-bottom: 20px;"> <a href="https://weather.gc.ca/forecast/canada/index_e.html?id=NB"
+                    title="Environment Canada New Brunswick" moz-do-not-send="true">Province
+                    of New Brunswick</a> | <a href="https://weather.gc.ca/forecast/canada/index_e.html?id=QC"
+                    title="Environment Canada Quebec" moz-do-not-send="true">Province
+                    of Québec</a> </div>
+                <div class="section-title">Current Conditions in Fort Kent,
+                  Maine </div>
+                <div style="text-align: center; margin-bottom: 20px;"> <a title="Apex Wx on Weather Underground"
+                    href="https://www.wunderground.com/dashboard/pws/KMEFORTK7"
+                    moz-do-not-send="true">Apex Wx on Weather Underground</a> |
+                  <a title="Personal
+                    Weather Station Dashboard" href="https://ambientweather.net/dashboard/16e0681b266993eb92230c42d89f3fd5"
+                    moz-do-not-send="true">Personal Weather Station Live
+                    Dashboard</a> </div>
+                <div class="section-title">Other Regional Resources</div>
+                <div style="text-align: center; margin-bottom: 10px;"> <a href="https://newengland511.org/"
+                    title="New England
+                    Road Conditions" moz-do-not-send="true">⚠️ <b></b></a><b><a
+                      href="https://forecast.weather.gov/showsigwx.php?warnzone=MEZ001&amp;warncounty=MEC003&amp;firewxzone=MEZ001&amp;local_place1=Fort%20Kent%20ME&amp;product1=Winter+Weather+Advisory&amp;lat=47.2632&amp;lon=-68.5774#.YbS2er1Ki3A">Regional
+                      Hazardous Weather Outlook</a></b> ⚠️ </div>
+                <div style="text-align: center; margin-bottom: 10px;"><a href="https://newengland511.org/"
+                    title="New England
+                    Road Conditions" moz-do-not-send="true">New England Road
+                    Conditions</a> | <a href="https://www.weather.gov/nerfc/" title="Northeast River Forecast Center"
+                    moz-do-not-send="true">Northeast River Forecast Center</a> </div>
+                <div style="text-align: center; margin-bottom: 10px;"> <a href="https://www.maine.gov/dacf/mfs/wildfire_danger_report/index.html"
+                    moz-do-not-send="true">Maine Wildfire Danger Report</a> | <a
+                    href="https://xmountwashington.appspot.com/csc.html?data=more"
+                    title="Mount Washington Observatory" moz-do-not-send="true">Mount
+                    Washington Observatory</a> </div>
+                <div style="text-align: center; margin-bottom: 25px;"> <a href="https://w2.weather.gov/climate/xmacis.php?wfo=car"
+                    title="NWS
+                    Caribou Regional Climate Data" moz-do-not-send="true">NWS
+                    Caribou Regional Climate Data</a>
+                  <div class="small-note">regional weather records, averages,
+                    etc. </div>
+                </div>
+                <hr style="border: 0; border-top: 1px solid #eeeeee;
+                  margin: 20px 0;">
+                <!-- Weather Imagery Block -->
+                <div style="text-align: center;">
+                  <div style="font-weight: bold; margin-top: 15px;">National
+                    Weather Service Caribou Watches, Warnings, and Advisories </div>
+                  <a href="https://www.weather.gov/car/" moz-do-not-send="true">
+                    <img src="https://www.weather.gov/wwamap/png/car.png" alt="NWS Caribou Watches/Warnings"
+                      class="weather-image" style="width: 484px;" moz-do-not-send="true"
+                      title="click for more information"><br>
+                  </a></div>
+                <div style="text-align: center;"><a href="https://www.weather.gov/car/"
+                    moz-do-not-send="true"><br>
+                  </a></div>
+                <div style="text-align: center;"><a href="https://www.weather.gov/car/"
+                    moz-do-not-send="true"> </a>
+                  <div style="font-weight: bold; margin-top: 20px;">Northeast U.
+                    S. Weather Chart </div>
+                  <a href="https://www.wpc.ncep.noaa.gov/sfc/namnesfcwbg.gif" title="Click for larger image"
+                    moz-do-not-send="true"> <img src="https://www.wpc.ncep.noaa.gov/sfc/namnesfcwbg.gif"
+                      alt="Northeast Weather Chart" class="weather-image" style="width: 499px;"
+                      moz-do-not-send="true"> </a><br>
+                  <div class="small-note" style="font-style: italic;"><a href="https://www.noaa.gov/jetstream/wxmaps">How
+                      to read weather maps<br>
+                    </a></div>
+                  <div class="small-note" style="font-style: italic;"> <strong><span><br>
+                        Note:</span></strong><span> Precipitation and snowfall
+                      charts may cover different forecast periods. Each map
+                      displays its ending date and time; totals represent
+                      accumulation through that time.</span> <a href="https://www.noaa.gov/jetstream/wxmaps">
+                    </a></div>
+                  <div style="font-weight: bold; margin-top: 20px;">💧72-hour
+                    Forecast Precipitation</div>
+                </div>
+                <div style="text-align: center;"><a href="https://www.wpc.ncep.noaa.gov/Prob_Precip/idss-map/mapgen.php?office=CAR&amp;dataRegion=co&amp;pointpreferences=CAR&amp;product=expected&amp;ptype=pqpf&amp;accum"><img
+                      src="https://www.wpc.ncep.noaa.gov/Prob_Precip/idss-map/mapgen.php?office=CAR&amp;dataRegion=co&amp;pointpreferences=CAR&amp;product=expected&amp;ptype=pqpf&amp;accum"
+                      alt="72-Hour Precipitation Outlook" style="width: 477px;"></a><br>
+                  <a href="https://www.weather.gov/images/erh/gis/CAR_QPF.png" title="Click for larger image"
+                    moz-do-not-send="true"> </a>
+                  <div class="small-note" style="font-style: italic;">
+                    <p data-pm-slice="1 1 []"><em><span>Locally higher
+                          precipitation amounts are possible, particularly where
+                          heavier precipitation develops.</span></em></p>
+                  </div>
+                  <br>
+                  <strong>❄️72-Hour Snowfall Outlook </strong>
+                  <div style="text-align: center;"><a href="https://www.wpc.ncep.noaa.gov/Prob_Precip/idss-map/mapgen.php?office=CAR&amp;dataRegion=co&amp;pointpreferences=CAR&amp;ptype=prob_sn&amp;accum_period=72&amp;product=expected"><img
+                        src="https://www.wpc.ncep.noaa.gov/Prob_Precip/idss-map/mapgen.php?office=CAR&amp;dataRegion=co&amp;pointpreferences=CAR&amp;ptype=prob_sn&amp;accum_period=72&amp;product=expected"
+                        alt="72-hour Snowfall Outlook" title="Click for larger image"
+                        class="weather-image" style="height: 355px; max-width: 100%; width: 479px;"></a></div>
+                  <div class="small-note"><em>Locally higher amounts are
+                      possible where banding occurs </em></div>
+                  <div><br>
+                  </div>
+                  <div style="text-align: center;">
+                    <div><strong>🧊72-Hour Ice Accumulation Outlook</strong><span
+                        style="font-size: 14px;"><strong><br>
+                        </strong></span></div>
+                    <a href="https://www.wpc.ncep.noaa.gov/Prob_Precip/idss-map/mapgen.php?office=CAR&amp;dataRegion=co&amp;pointpreferences=CAR&amp;ptype=prob_ice&amp;accum_period=72&amp;product=expected"
+                      title="Click for larger image"><img src="https://www.wpc.ncep.noaa.gov/Prob_Precip/idss-map/mapgen.php?office=CAR&amp;dataRegion=co&amp;pointpreferences=CAR&amp;ptype=prob_ice&amp;accum_period=72&amp;product=expected"
+                        alt="72-hour Ice Accumulation Outlook" class="weather-image"
+                        style="max-width: 100%; width: 479px; height: 355px;"><br>
+                    </a></div>
+                  <div style="text-align: center;"><br>
+                  </div>
+                  <div style="text-align: center;"><br>
+                    <strong>🌨️Winter Storm Severity Index</strong><br>
+                    <a href="https://www.weather.gov/images/erh/gis/CAR_Ice.png"
+                      title="Click for larger image"> </a></div>
+                  <div style="text-align: center;"><a href="https://www.wpc.ncep.noaa.gov/wwd/wssi/images/WSSI_Overall_Day1_CAR_Day1.png"><img
+                        src="https://www.wpc.ncep.noaa.gov/wwd/wssi/images/WSSI_Overall_Day1_CAR_Day1.png"
+                        alt="Winter Storm Severity Index" class="weather-image"
+                        style="max-width: 100%; width: 475px; border-radius: 1px; border-style: solid; border-width: 1px;"></a></div>
+                </div>
+                <div style="text-align: center;" class="small-note">
+                  <p data-pm-slice="1 1 []"><em><strong><span>Note:</span></strong><span>
+                        The Winter Storm Severity Index (WSSI) illustrates the
+                        potential severity of winter weather impacts, not
+                        snowfall amounts or the probability of a storm
+                        occurring. This Day 1 outlook covers a 24-hour forecast
+                        period; consult the chart for its valid times.<br>
+                      </span></em></p>
+                </div>
+                <hr style="border: 0; border-top: 1px solid #eeeeee;
+                  margin: 25px 0;">
+                <!-- Narrative Forecasting -->
+                <div style="text-align: center;"><strong style="font-size: 20px;"><span>The
+                      Week Ahead for Fort Kent &amp; the Saint John Valley<br>
+                    </span></strong><strong style="font-size: 18px;"><span><br>
+                    </span></strong>
+                  <div style="text-align: center; font-size: 15px;"><strong style="font-size: 18px;">November
+                      26 – December 2, 2026</strong>
+                    <div style="text-align: center;"><strong style="font-size: 18px;"></strong><br>
+                      <span style="font-size: 12px;">Updated November 26 at 7:50
+                        AM EST</span></div>
+                  </div>
+                  <div style="text-align: left; font-size: 15px;"><strong><span
+                        style="font-size: 18px;"><span><br>
+                        </span></span></strong></div>
+                  <div style="text-align: left; font-size: 15px;"><strong><span
+                        style="font-size: 18px;"><span></span></span></strong><strong>Thursday,
+                      November 26 – Saturday, November 28</strong>
+                    <p>🦃🍂 <b data-path-to-node="3,0" data-index-in-node="5">Happy
+                        Thanksgiving from Apex Wx!</b> Wishing you a safe and
+                      warm holiday! 🥧🍁</p>
+                    <p><strong>Overview</strong></p>
+                    <p><span><span>Following another frigid start to the day,
+                          with temperatures reaching 10°F at the Apex Wx station
+                          this morning, Canadian high pressure maintains quiet
+                          Thanksgiving weather. An approaching low-pressure
+                          system then draws warmer, moisture-rich air northward
+                          over the colder air mass established earlier in the
+                          week.</span>The resulting temperature contrast
+                        supports <strong>freezing rain Friday morning</strong>,
+                        with warmer air aloft overriding a shallow subfreezing
+                        layer near the surface. Sheltered portions of the Saint
+                        John and Fish River valleys may retain colder
+                        temperatures longer, potentially extending freezing
+                        precipitation in low-lying areas.</span></p>
+                    <p><span><span>As surface temperatures rise, freezing rain
+                          gradually transitions to ordinary rain. Colder air
+                          returning Friday night supports a <strong>mixture of
+                            rain and snow </strong>that lingers into Saturday.</span>
+                        Although little or no ice accumulation is expected, even
+                        brief freezing rain may create slippery untreated
+                        surfaces. Lingering precipitation diminishes Saturday as
+                        the system departs, although overnight cooling
+                        introduces additional refreezing concerns. The
+                        persistence of shallow cold air and timing of
+                        precipitation transitions remain the primary
+                        uncertainties for holiday travel.</span></p>
+                    <ul>
+                      <li><span><span><strong>Thanksgiving Day:</strong></span></span><span>
+                        </span><span>Sunny skies and relatively quiet conditions
+                          prevail as Canadian high pressure maintains its
+                          influence, providing favorable weather for daytime
+                          holiday travel.</span><span> Afternoon temperatures
+                          reach the upper 30s before falling toward 30°F later
+                          in the day, with light south winds of 0–3 mph.
+                          Increasing cloud cover develops Thursday night as
+                          another low-pressure system approaches, with
+                          temperatures falling into the lower 20s and east winds
+                          around 2 mph. A 30% chance of snow develops after 5 AM
+                          Friday. Little or no ice accumulation is expected
+                          overnight, although the approaching system introduces
+                          more substantial winter-weather concerns for Friday
+                          morning.</span></li>
+                    </ul>
+                    <ul>
+                      <li><span><span><strong>Friday:</strong></span></span><span>
+                          Freezing rain develops as warmer air advances over the
+                          colder surface layer, creating potentially <strong>slippery
+                            conditions during the morning</strong>. A 90% chance
+                          of precipitation persists, with freezing rain expected
+                          before 10 AM, followed by freezing rain mixed with
+                          ordinary rain as temperatures rise into the upper 30s.
+                          Northeast winds of 2–8 mph remain relatively light.
+                          Little or no ice accumulation is expected, although <strong>untreated
+                            roads, bridges, and walkways may become slippery</strong>.
+                          Cloudy skies and widespread precipitation continue
+                          Friday night, with a 100% precipitation probability.
+                          Rain before 7 PM transitions to rain showers through 1
+                          AM, followed by rain and snow showers as temperatures
+                          fall into the lower 30s. Northeast winds around 6 mph
+                          accompany additional liquid precipitation amounts of
+                          0.10–0.25 inch.</span></li>
+                    </ul>
+                    <ul>
+                      <li><span><span><strong>Saturday:</strong></span></span><span>
+                          Lingering rain and snow showers gradually diminish as
+                          the low-pressure system moves away. Showers remain
+                          likely before 8 AM, with a chance of <strong>additional
+                            mixed precipitation </strong>through noon. A 60%
+                          precipitation probability accompanies mostly cloudy
+                          skies and temperatures reaching the upper 30s. North
+                          winds of 5–8 mph reinforce the cooler conditions,
+                          while additional liquid precipitation amounts remain
+                          below 0.10 inch. Improving conditions develop during
+                          the afternoon as precipitation becomes less
+                          widespread. Cloudy skies continue Saturday night, with
+                          temperatures falling into the upper 20s and west winds
+                          of 1–7 mph. A 20% chance of snow showers develops
+                          after 2 AM. Residual moisture may <strong>refreeze on
+                            untreated surfaces </strong>where temperatures fall
+                          below freezing.</span></li>
+                    </ul>
+                    <p><strong>Sunday, November 29 – Wednesday, December 2</strong></p>
+                    <p><strong>Overview</strong></p>
+                    <p><span>The <strong>unsettled Thanksgiving holiday pattern
+                          continues</strong> as another low-pressure system
+                        approaches the Saint John Valley, bringing renewed
+                        opportunities for widespread rain and snow. Relatively
+                        mild air ahead of the disturbance maintains temperatures
+                        near or above freezing, complicating precipitation type
+                        as atmospheric moisture increases late Sunday night. </span><span>A
+                        100% precipitation probability Monday indicates <strong>widespread
+                          rain and snow</strong>, although precipitation amounts
+                        and the distribution of rain versus snow remain
+                        uncertain.</span></p>
+                    <p><span>Sheltered portions of the Saint John and Fish River
+                        valleys may retain colder near-surface air, supporting
+                        wet snow where precipitation persists or becomes
+                        heavier. As the system departs Monday night, colder air
+                        spreads across the region, increasing the potential for
+                        <strong>wet or slushy surfaces to refreeze</strong>.
+                        High pressure gradually restores drier, more seasonable
+                        conditions through midweek, with nighttime cooling
+                        becoming more pronounced. The primary uncertainties
+                        involve precipitation type, accumulation amounts, and
+                        potential travel impacts.</span></p>
+                    <ul>
+                      <li><span><span><strong>Sunday:</strong></span></span><span>
+                          Mostly cloudy skies and relatively mild temperatures
+                          provide a temporary break from the unsettled
+                          Thanksgiving weather. Afternoon readings reach the
+                          lower 40s, with southwest winds of 1–6 mph and
+                          predominantly dry conditions. Mostly cloudy skies
+                          continue Sunday night, with temperatures falling to
+                          around 32°F. A slight chance of rain develops between
+                          3 and 4 AM, followed by a 30% chance of rain and snow
+                          as another low-pressure system approaches.
+                          Precipitation type remains sensitive to small
+                          temperature differences near freezing.</span></li>
+                    </ul>
+                    <ul>
+                      <li><span><span><strong>Monday:</strong></span></span><span>
+                          Widespread rain and snow develop as the approaching
+                          disturbance spreads moisture across the region. Cloudy
+                          skies and a 100% precipitation probability accompany
+                          temperatures reaching the lower 40s. Rain becomes more
+                          prevalent where temperatures rise above freezing,
+                          although wet snow remains possible in colder locations
+                          and during heavier precipitation. Snowfall and
+                          rainfall amounts remain uncertain. Mostly cloudy skies
+                          continue Monday night, with a 60% chance of
+                          precipitation. Rain remains likely before 7 PM,
+                          followed by a chance of rain and snow through 2 AM.
+                          Temperatures fall into the upper 20s, creating the
+                          potential for slippery untreated surfaces as residual
+                          moisture freezes</span></li>
+                    </ul>
+                    <ul>
+                      <li><span><span><strong>Tuesday:</strong></span></span><span>
+                          Partly sunny skies and colder temperatures prevail as
+                          the departing disturbance allows drier air to spread
+                          across the region. Afternoon readings reach the middle
+                          30s, with predominantly dry conditions returning.
+                          Partly cloudy skies continue Tuesday night, allowing
+                          temperatures to fall into the lower 20s. Sheltered
+                          portions of the Valley may experience locally colder
+                          readings where winds diminish and nighttime cooling
+                          becomes more efficient.</span></li>
+                    </ul>
+                    <ul>
+                      <li><span><span><strong>Wednesday:</strong></span></span><span>
+                          Mostly sunny skies and seasonably cold conditions
+                          continue as high pressure maintains predominantly dry
+                          weather. Afternoon temperatures reach the middle 30s,
+                          providing favorable conditions for outdoor activities.
+                          Mostly cloudy skies develop Wednesday night, with
+                          temperatures falling into the middle 20s. No
+                          significant precipitation is indicated through the
+                          overnight period.</span></li>
+                    </ul>
+                    <p><strong>Long Range Trends: Thursday, December 3 –
+                        Wednesday, December 9</strong></p>
+                    <p><span>Long-range trends favor<strong> above-normal
+                          temperatures and precipitation</strong> across the
+                        Saint John Valley into early December. A relatively mild
+                        air mass and an active storm track across the Northeast
+                        support periodic opportunities for rain, snow, or mixed
+                        precipitation as disturbances move through the region.
+                        Typical temperatures for this period feature daytime
+                        highs in the upper 20s to lower 30s and overnight lows
+                        in the mid-teens to lower 20s.</span></p>
+                    <em><span style="font-size: 12px;" class="small-note"><strong></strong></span></em>
+                    <div><em><span style="font-size: 12px;" class="small-note"><strong>Outlooks
+                            </strong>updated 7-9 AM weekdays &amp; 8-10 AM
+                          weekends and holidays.<strong> Long range outlooks</strong>
+                          indicate broader temperature and precipitation trends
+                          rather than precise day-to-day forecasts.&nbsp;<strong><br>
+                            <br>
+                            Common abbreviations</strong>:&nbsp;</span></em><em><span
+                          style="font-size: 12px;" class="small-note">CPC =
+                          Climate Prediction Center;&nbsp;</span></em><em><span
+                          style="font-size: 12px;" class="small-note"> NHC =
+                          National Hurricane Center;&nbsp;</span></em><em><span
+                          style="font-size: 12px;" class="small-note">NOAA =
+                          National Oceanic and Atmospheric Administration; NWS =
+                          National Weather Service; </span></em><em><span style="font-size: 12px;"
+                          class="small-note"></span></em><em><span style="font-size: 12px;"
+                          class="small-note">SJV = Saint John Valley; S</span></em><em><span
+                          style="font-size: 12px;" class="small-note">PC = Storm
+                          Prediction Center;&nbsp;</span></em><em><span style="font-size: 12px;"
+                          class="small-note">WPC = Weather Prediction Center</span></em></div>
+                  </div>
+                </div>
+                <div style="text-align: center;"> </div>
+                <hr style="border: 0; border-top: 1px solid #eeeeee;
+                  margin: 25px 0;">
+                <!-- Daily Grid Overview -->
+                <div style="text-align: center; margin-bottom: 15px;">
+                  <div style="text-align: center;"><strong style="font-size: 18px;">🌤️
+                      7-Day Weather Summary for Fort Kent &amp; Vicinity <br>
+                    </strong></div>
+                  <div class="small-note"><span style="color: black;"><em>Updated
+                        every 3-6 hours on the <a href="https://apexwx.github.io/"
+                          moz-do-not-send="true">Apex Wx</a> website<br>
+                        <br>
+                      </em></span></div>
+                </div>
+                <b>Tonight: </b>A chance of snow after 5am. Mostly cloudy, with
+                a low around 22. Calm wind. Chance of precipitation is 30%.<br>
+                <br>
+                <b>Friday: </b>Freezing rain before 10am, then rain or freezing
+                rain between 10am and 11am, then rain after 11am. High near 38.
+                Northeast wind 3 to 8 mph. Chance of precipitation is 90%. New
+                ice accumulation of less than a 0.1 of an inch possible. <br>
+                <br>
+                <b>Friday Night: </b>Rain showers before 1am, then rain,
+                possibly mixed with snow showers. Low around 33. Northeast wind
+                around 6 mph. Chance of precipitation is 100%. Little or no snow
+                accumulation expected. <br>
+                <br>
+                <b>Saturday: </b>Rain and snow showers likely before 9am, then
+                a slight chance of rain showers between 9am and noon. Mostly
+                cloudy, with a high near 39. Northwest wind 5 to 8 mph. Chance
+                of precipitation is 60%. Little or no snow accumulation
+                expected. <br>
+                <br>
+                <b>Saturday Night: </b>A slight chance of snow showers after
+                2am. Cloudy, with a low around 28. Northwest wind around 6 mph
+                becoming calm in the evening. Chance of precipitation is 20%.<br>
+                <br>
+                <b>Sunday: </b>Mostly cloudy, with a high near 41. Calm wind
+                becoming southwest around 6 mph in the afternoon. <br>
+                <br>
+                <b>Sunday Night: </b>A slight chance of rain between 3am and
+                4am, then a chance of rain and snow. Mostly cloudy, with a low
+                around 32. Chance of precipitation is 30%.<br>
+                <br>
+                <b>Monday: </b>Rain and snow, becoming all rain after 10am.
+                High near 42. Chance of precipitation is 100%.<br>
+                <br>
+                <b>Monday Night: </b>Rain and snow likely before 1am, then a
+                slight chance of snow between 1am and 2am. Mostly cloudy, with a
+                low around 28. Chance of precipitation is 60%.<br>
+                <br>
+                <b>Tuesday: </b>Mostly sunny, with a high near 34.<br>
+                <br>
+                <b>Tuesday Night: </b>Partly cloudy, with a low around 20.<br>
+                <br>
+                <b>Wednesday: </b>Mostly sunny, with a high near 35.<br>
+                <br>
+                <b>Wednesday Night:</b><span class="fw-day"></span>&nbsp; Mostly
+                cloudy, with a low around 24.
+                <div class="small-note" style="margin-top: 15px; text-align: left;"><em>Daily
+                    Weather Summary data provided by <a href="https://www.weather.gov/car/"
+                      moz-do-not-send="true">National Weather Service Forecast
+                      Office</a> in <a href="https://en.wikipedia.org/wiki/Caribou,_Maine"
+                      moz-do-not-send="true">Caribou, Maine</a></em> </div>
+                <hr style="border: 0; border-top: 1px solid #eeeeee;
+                  margin: 25px 0;">
+                <!-- National Weather Outlook Summary Section -->
+                <div style="text-align: center; font-size: 18px;"> <strong style="font-size: 18px;">🇺🇸
+                    US National Weather Outlook</strong> </div>
+                <div style="text-align: left; margin-top: 15px;
+                  line-height: 22px;">
+                  <div style="text-align: left;">
+                    <div style="text-align: center;">
+                      <div style="text-align: left;"><span style="
+                                                      font-size:13px; font-weight:normal;                                    color:#555; display:block;                                                      margin-top:2px;"></span><strong></strong>
+                        <dl>
+                        </dl>
+                        <span><strong>Heavy Rain, Localized Flooding, and Snow
+                            Across Several Regions</strong></span>
+                        <p><span>A low-pressure system moving northward from the
+                            Southeast toward southeastern Canada brings heavy
+                            rain to parts of New England Sunday into Monday.
+                            Localized flash flooding threatens urban areas,
+                            roads, small streams, and low-lying locations.
+                            Scattered thunderstorms develop across the
+                            Southeast, while additional showers reach southern
+                            Florida Monday.</span></p>
+                        <p><span>Another front spreads rain from the Upper
+                            Midwest into the Mississippi Valley, while colder
+                            air produces snow showers across Michigan's Upper
+                            Peninsula and northern Lower Peninsula overnight
+                            Sunday into Monday.</span></p>
+                        <p><span>Along the western Gulf Coast, thunderstorms
+                            bring heavy rainfall and localized flash-flooding
+                            concerns through Monday morning. Meanwhile, high
+                            pressure supports freezing temperatures across
+                            portions of the Southwest, with freeze alerts
+                            affecting New Mexico, Arizona, and western Texas.
+                            Dense fog also develops along portions of the Gulf
+                            Coast and Lower Mississippi Valley.</span></p>
+                        <p><span>Across the West, a Pacific front produces rain
+                            and mountain snow from the Northwest into northern
+                            California and the Rockies. Snow reaches the Sierra
+                            Nevada Sunday, followed by additional mountain snow
+                            and lower-elevation rain across the central and
+                            southern Rockies Monday.</span></p>
+                        <div style="text-align: left;"><strong></strong></div>
+                        <dl>
+                        </dl>
+                        <span></span> </div>
+                    </div>
+                    <div>
+                      <div><span></span><span></span><span> </span><span></span>
+                      </div>
+                    </div>
+                    <strong></strong><strong></strong><strong></strong><strong></strong><strong></strong><strong></strong><strong></strong><strong></strong>
+                    <dl style="text-align: left;">
+                    </dl>
+                  </div>
+                  <strong></strong> <strong> </strong> <strong></strong></div>
+                <div style="text-align: center; margin-top: 20px;"> <a href="https://www.wpc.ncep.noaa.gov/NationalForecastChart/staticmaps/noaad1.png"
+                    moz-do-not-send="true"><strong>Today's Forecast Chart</strong></a>
+                  <div> <a href="https://www.wpc.ncep.noaa.gov/NationalForecastChart/map.php"
+                      title="Click for larger image" moz-do-not-send="true"> <img
+                        src="https://www.wpc.ncep.noaa.gov/NationalForecastChart/staticmaps/noaad1.png"
+                        alt="National Forecast Chart" style="max-width:100%; padding: 5px; border: 0;"
+                        moz-do-not-send="true"> </a> </div>
+                </div>
+                <br>
+                <div style="text-align: center; margin-top: 15px;"> <a href="https://www.spc.noaa.gov/products/outlook/day1otlk.html"
+                    moz-do-not-send="true"><strong><strong>⛈️</strong>Today's
+                      Severe Weather Chart</strong></a>
+                  <div> <a href="https://www.spc.noaa.gov/products/outlook/day1otlk.html"
+                      moz-do-not-send="true"> <img src="https://www.spc.noaa.gov/partners/outlooks/state/swody1.png?1678542573998"
+                        alt="Thunderstorm / Severe Weather Outlook" style="border: 0; padding: 5px; max-width:
+                        100%;" moz-do-not-send="true"> </a> </div>
+                </div>
+                <div style="text-align: center;"><span class="small-note">Learn
+                    more about <a href="https://www.spc.noaa.gov/new/images/SPC_outlook_final_updated.png"
+                      title="Click for more information">Severe Thunderstorm
+                      Outlooks</a><br>
+                  </span></div>
+                <div style="text-align: center;"><span class="small-note"></span><br>
+                </div>
+                <div style="text-align: center; margin-top: 15px;"> <a href="https://www.wpc.ncep.noaa.gov/qpf/excessive_rainfall_outlook_ero.php"
+                    moz-do-not-send="true"><strong>🌧️Today's Excessive Rainfall
+                      Chart</strong></a>
+                  <div style="margin-top: 5px;"> <a href="https://www.wpc.ncep.noaa.gov/#page=ero"
+                      title="Excessive Rainfall Outlook" moz-do-not-send="true">
+                      <img src="https://www.wpc.ncep.noaa.gov/qpf/94ewbg.gif" alt="Day 1 Excessive Rainfall Outlook"
+                        style="width: 553px; border: 1px solid #cccccc;
+                        height: auto;" moz-do-not-send="true"> </a> </div>
+                </div>
+                <div style="text-align: center;"><span class="small-note">Learn
+                    more about <a href="https://www.wpc.ncep.noaa.gov/para/para_images/ERO_Categories.png">Excessive
+                      Rainfall Risk Categories</a></span></div>
+                <br>
+                <div style="text-align: center; margin-top: 15px;"><a href="https://www.spc.noaa.gov/products/fire_wx/fwdy1.html"
+                    moz-do-not-send="true"><strong>🔥Today's Fire Weather Chart</strong></a>
+                  <div style="margin-top: 5px;"> <a href="https://www.spc.noaa.gov/products/fire_wx/fwdy1.html"
+                      title="Click for more information" moz-do-not-send="true">
+                      <img src="https://www.spc.noaa.gov/products/fire_wx/day1otlk_fire.gif"
+                        alt="Day 1 Fire Weather Outlook" style="width:
+                        555px; border: 1px solid #cccccc; height: auto;" moz-do-not-send="true">
+                      <br>
+                    </a></div>
+                  <div style="margin-top: 5px; font-size: 12px;"><a href="https://www.spc.noaa.gov/products/fire_wx/fwdy1.html"
+                      title="Click for more information" moz-do-not-send="true"><span
+                        class="small-note">Learn more about </span></a><a href="https://www.spc.noaa.gov/misc/about.html#FireWx">Fire
+                      Weather Outlooks</a></div>
+                </div>
+                <div style="text-align: center; margin-top: 15px;"><em style="font-size: 12px;"><a
+                      href="https://www.spc.noaa.gov/" target="_blank" rel="noopener noreferrer"><br>
+                    </a></em></div>
+                <div style="text-align: center;"><a href="https://www.nhc.noaa.gov/gtwo.php?basin=atlc&amp;fdays=7"
+                    title="Atlantic 7-Day Graphical Tropical Weather
+                      Outlook"></a><strong><a href="https://www.nhc.noaa.gov/gtwo.php?basin=atlc&amp;fdays=7"
+                      title="Atlantic 7-Day Graphical Tropical Weather
+                      Outlook">🌀 NHC 7-Day </a></strong><strong></strong><strong><a
+                      href="https://www.nhc.noaa.gov/gtwo.php?basin=atlc&amp;fdays=7"
+                      title="Atlantic 7-Day Graphical Tropical Weather
+                      Outlook">Tropical </a></strong><strong><a href="https://www.nhc.noaa.gov/gtwo.php?basin=atlc&amp;fdays=7"
+                      title="Atlantic 7-Day Graphical Tropical Weather
+                      Outlook">Atlantic</a><span style="color: #0000ee;"> </span></strong><strong><a
+                      href="https://www.nhc.noaa.gov/gtwo.php?basin=atlc&amp;fdays=7"
+                      title="Atlantic 7-Day Graphical Tropical Weather
+                      Outlook">Outlook</a></strong></div>
+                <div style="text-align: center; font-size: 12px;">
+                  <div style="margin-top: 10px;"> <a href="https://www.nhc.noaa.gov/gtwo.php?basin=atlc&amp;fdays=7"
+                      moz-do-not-send="true"><img src="https://www.nhc.noaa.gov/xgtwo/two_atl_7d0.png"
+                        alt="National Hurricane Center 7-Day Atlantic Tropical Weather Outlook"
+                        style="width: 100%; border: 0px solid #cccccc; height: auto;"
+                        moz-do-not-send="true"></a> </div>
+                  <div class="small-note" style="font-style: italic;
+                    margin-bottom: 25px;">The Atlantic hurricane season runs
+                    from June 1 through November 30. Outside the regular season,
+                    this graphic may not update unless the National Hurricane
+                    Center issues a special tropical weather outlook.</div>
+                </div>
+                <hr style="border: 0; border-top: 1px solid #eeeeee;
+                  margin: 25px 0;">
+                <p class="isSelectedEnd" style="text-align: center;"><strong><span>📝Weather
+                      Notice</span></strong><span><br>
+                  </span></p>
+                <p class="isSelectedEnd"><span>This information is compiled by
+                    Apex Wx using available weather observations, computer
+                    models, and forecast data and may not reflect current
+                    conditions or subsequent forecast updates. For the latest
+                    official watches, warnings, and advisories for northern
+                    Maine, especially during severe or extreme weather, always
+                    consult </span><a href="https://www.weather.gov/car/"><span>NWS
+                      Caribou</span></a><span>.</span></p>
+                <p class="isSelectedEnd"><span>Apex Wx makes no guarantee
+                    regarding the accuracy or completeness of information
+                    presented here. Weather observations, data feeds,
+                    instruments, and computer models may contain errors or
+                    experience interruptions beyond the forecaster's control.
+                    Apex Wx is also not responsible for the accuracy,
+                    timeliness, or availability of information provided by
+                    linked external websites.</span></p>
+                <p class="isSelectedEnd" style="text-align: center;"><strong><span>Apex
+                      Wx | Dr. Joseph E. Becker</span></strong><br>
+                  <span>NWS Trained Storm Spotter AR 122</span><br>
+                  <span>Penn State Certificate in Weather Forecasting</span></p>
+                <p class="isSelectedEnd" style="text-align: center;"><span>Apex
+                    Wx logo by Joanna Becker © 2016<br>
+                    Visit </span><a href="https://www.bushiandbrush.com/"><span>Bushi
+                      and Brush Arts Dojo</span></a></p>
+                <p class="isSelectedEnd" style="text-align: center;"><strong><span>☁️☁️☁️</span></strong></p>
+                <p class="isSelectedEnd" style="text-align: left;"><strong><span>Traveling
+                      and need to pause the emails?</span></strong><br>
+                  <span>Reply and indicate </span><strong><span>“Pause until
+                      DATE”</span></strong><span> in the subject line.</span></p>
+                <p class="isSelectedEnd" style="text-align: left;"><strong><span>Know
+                      someone who wants to subscribe?</span></strong><br>
+                  <a href="mailto:maineapexwx@gmail.com"><span>Subscribe</span></a><span>
+                    by placing </span><strong><span>“Subscribe”</span></strong><span>
+                    in the subject line.</span></p>
+                <p style="text-align: left;"><strong><span>No longer need these
+                      emails?</span></strong><br>
+                  <a href="mailto:maineapexwx@gmail.com"><span>Unsubscribe</span></a><span>
+                    by placing </span><strong><span>“Unsubscribe”</span></strong><span>
+                    in the subject line.</span></p>
+                <hr style="border: 0; border-top: 1px solid #eeeeee;
+                  margin: 25px 0;">
+                <hr style="border: 0; border-top: 1px solid #eeeeee;
+                  margin: 25px 0;">
+                <table role="presentation" style="margin-top: 20px;" width="100%"
+                  cellspacing="0" cellpadding="0" border="0">
+                  <tbody>
+                    <tr>
+                      <td class="three-col" style="padding: 10px;
+                        text-align: center;" width="33%" valign="top"> <a href="https://apexwx.github.io/"
+                          title="Apex
+                          Wx Logo by Joanna Becker ©2016" target="_blank" moz-do-not-send="true">
+                          <img src="https://raw.githubusercontent.com/ApexWx/ApexWx.github.io/master/ApexWxlogo75px.jpg"
+                            alt="Apex Wx Logo ©Joanna Becker, 2016" style="display: block; margin: 0 auto 25px
+                            auto;" moz-do-not-send="true"> </a> <a href="http://wxqa.com/"
+                          title="Citizen Weather Observation Program
+                          (CWOP)" target="_blank" moz-do-not-send="true"> </a><br>
+                        <a href="http://wxqa.com/" title="Citizen
+                          Weather Observation Program (CWOP)" target="_blank" moz-do-not-send="true"><img
+                            src="https://raw.githubusercontent.com/ApexWx/ApexWx.github.io/master/cwp_logo%20200pxtrans.gif"
+                            alt="Citizens Weather Observation Program" style="width: 93px; height: 93px; border:
+                            1px solid #cccccc; display: block; margin: 0                            auto 25px auto;"
+                            moz-do-not-send="true"></a><br>
+                        <br>
+                        <a href="https://www.weather.gov/SKYWARN" title="NWS Skywarn Storm Spotter"
+                          target="_blank" moz-do-not-send="true"><img src="https://raw.githubusercontent.com/ApexWx/ApexWx.github.io/master/nws%20skywarn%20storm%20spotter%20logo.jpg"
+                            alt="NWS Skywarn Storm Spotter" style="width: 124px; height: 72px; display:
+                            block; margin: 0 auto 25px auto;" moz-do-not-send="true"></a><br>
+                        <a href="https://www.weather.gov/SKYWARN" title="NWS Skywarn Storm Spotter"
+                          target="_blank" moz-do-not-send="true"> </a> <a href="https://www.worldcampus.psu.edu/degrees-and-certificates/penn-state-online-weather-forecasting-undergraduate-certificate"
+                          title="Penn State Certificate in Weather
+                          Forecasting" target="_blank" moz-do-not-send="true"> </a><a
+                          href="https://www.worldcampus.psu.edu/degrees-and-certificates/penn-state-online-weather-forecasting-undergraduate-certificate"
+                          title="Penn State Certificate in Weather
+                          Forecasting" target="_blank" moz-do-not-send="true"><img
+                            src="https://github.com/ApexWx/ApexWx.github.io/blob/master/Penn%20State.png?raw=true"
+                            alt="Penn State Certificate in Weather
+                            Forecasting" style="width: 124px; height:
+                            72px; display: block; margin: 0 auto;" moz-do-not-send="true">
+                        </a> </td>
+                      <td class="three-col" style="padding: 10px;
+                        text-align: center; font-family: 'Arial',                        sans-serif;"
+                        width="33%" valign="top"> <strong class="darkmode-text"
+                          style="display: block; font-size: 18px; margin-bottom: 15px; color: #555555;"><br>
+                          Apex Wx on <br>
+                          Social Media</strong> <a href="https://www.facebook.com/ApexWx/"
+                          title="Apex Wx on Facebook" target="_blank" moz-do-not-send="true">
+                          <img src="https://raw.githubusercontent.com/ApexWx/ApexWx.github.io/master/outline-dark-facebook-48.png"
+                            alt="Apex Wx on Facebook" style="margin-bottom: 20px;"
+                            moz-do-not-send="true"> </a> <br>
+                        <a href="https://www.threads.net/@apexwx" title="Apex Wx on Threads"
+                          target="_blank" moz-do-not-send="true"> <img src="https://github.com/ApexWx/ApexWx.github.io/blob/master/threads.png?raw=true"
+                            alt="Apex Wx on Threads" style="width: 53px;
+                            height: 53px; margin-bottom: 20px;" moz-do-not-send="true">
+                        </a> <br>
+                        <a href="https://www.instagram.com/apexwx/" title="Apex Wx on Instagram"
+                          target="_blank" moz-do-not-send="true"> <img src="https://apexwx.github.io/instagram48.png"
+                            alt="Apex Wx on Instagram" style="margin-bottom: 20px;"
+                            moz-do-not-send="true"> </a> <br>
+                        <a rel="me" href="https://universeodon.com/@ApexWx" title="Apex Wx on Mastadon at Universeodon"
+                          target="_blank" moz-do-not-send="true"> <img src="https://apexwx.github.io/mastodon.png"
+                            alt="Mastodon" style="width: 59px; height:
+                            59px; padding: 5px; margin: 0px auto 20px;" moz-do-not-send="true">
+                        </a> <br>
+                        <a href="https://bsky.app/profile/apexwx.bsky.social" title="Apex Wx on Bluesky"
+                          target="_blank" moz-do-not-send="true"> <img src="https://github.com/ApexWx/ApexWx.github.io/blob/master/bsky1.png?raw=true"
+                            alt="Blue Sky Social Media" style="margin-bottom: 20px;"
+                            moz-do-not-send="true" height="51" width="51" border="0">
+                        </a> <br>
+                        <a href="https://www.weather.gov/safety/flood-turn-around-dont-drown"
+                          title="Turn Around Don't Drown!" target="_blank" moz-do-not-send="true">
+                        </a> </td>
+                      <td class="three-col" style="padding: 10px;
+                        text-align: center;" width="34%" valign="top"> <a href="https://apod.nasa.gov/apod/astropix.html"
+                          title="Click for APOD
+                          from NASA" target="_blank" moz-do-not-send="true"> <img
+                            src="https://apexwx.github.io/apod.png" alt="NASA Astronomy Picture of the Day"
+                            style="width: 75px; height: 75px; display:
+                            block; margin: 0 auto 35px auto;" moz-do-not-send="true"></a><a
+                          href="https://www.weather.gov/safetycampaign/" title="NWS Seasonal Safety Campaigns"
+                          target="_blank" moz-do-not-send="true"><img src="https://www.weather.gov/images/nws/202003_img04.png"
+                            alt="NWS Seasonal Safety Campaigns" style="width: 126px; height: 126px; display:
+                            block; margin: 0 auto 25px auto;" moz-do-not-send="true"></a><a
+                          href="https://www.weather.gov/learning" title="NWS Educational Resources"
+                          target="_blank" moz-do-not-send="true"><img src="https://raw.githubusercontent.com/ApexWx/ApexWx.github.io/master/learning-thumbnail.png"
+                            alt="NOAA Educational Resources" style="width: 100px; height: 100px; display:
+                            block; margin: 0 auto;" moz-do-not-send="true"></a><a
+                          href="https://apod.nasa.gov/apod/astropix.html" title="Click for APOD from NASA"
+                          target="_blank" moz-do-not-send="true"> </a><strong class="darkmode-text"
+                          style="display: block;
+                          font-size: 14px; margin-bottom: 15px; color:                          #555555;"><br>
+                          <a href="https://www.weather.gov/safety/flood-turn-around-dont-drown"
+                            title="Turn Around Don't Drown!" target="_blank" moz-do-not-send="true"><img
+                              src="https://raw.githubusercontent.com/ApexWx/ApexWx.github.io/master/TADDHighRes-sm.gif"
+                              alt="Turn Around Don't Drown!" style="width: 86px; height: 86px;"
+                              moz-do-not-send="true"></a></strong>&nbsp;<a href="https://www.weather.gov/learning"
+                          title="NWS Educational Resources" target="_blank" moz-do-not-send="true">
+                        </a> </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <!--[if mso | IE]>
+                              </td>                           </tr>                     </table>                     <![endif]-->
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </center>
+  </body>
+</html>
