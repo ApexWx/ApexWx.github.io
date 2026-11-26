@@ -537,46 +537,90 @@ const jc = (jdNoon - 2451545.0) / 36525.0;
       name: p.name
     }));
 
-  // --- 3. Local Fort Kent Moonrise & Moonset (Horizon Search) ---
+  // --- 3. High-Precision Topocentric Meeus Moonrise & Moonset ---
   function getMoonAlt(utcMs) {
     const dDays = (utcMs - Date.UTC(2000, 0, 1, 12, 0, 0)) / 86400000;
-    const L = rad * ((218.316 + 13.176396 * dDays) % 360);
-    const Mm = rad * ((134.963 + 13.064993 * dDays) % 360);
-    const F = rad * ((93.272 + 13.229350 * dDays) % 360);
+    const T = dDays / 36525.0;
 
-    const lonEcl = L + rad * (6.289 * Math.sin(Mm));
-    const latEcl = rad * (5.128 * Math.sin(F));
-    const obl = rad * (23.4397 - 0.0000004 * dDays);
+    const L = rad * ((218.3164477 + 481267.88123421 * T) % 360);
+    const D = rad * ((297.8501921 + 445267.1114034 * T) % 360);
+    const Ms = rad * ((357.5291092 + 35999.0502909 * T) % 360);
+    const Mm = rad * ((134.9633964 + 477198.8675055 * T) % 360);
+    const F = rad * ((93.2720950 + 483202.0175233 * T) % 360);
 
-    const ra = Math.atan2(Math.sin(lonEcl) * Math.cos(obl) - Math.tan(latEcl) * Math.sin(obl), Math.cos(lonEcl));
-    const dec = Math.asin(Math.sin(latEcl) * Math.cos(obl) + Math.cos(latEcl) * Math.sin(obl) * Math.sin(lonEcl));
+    // Meeus Chapter 47 periodic terms for geocentric ecliptic longitude & latitude
+    const lonEcl = L + rad * (
+      6.288774 * Math.sin(Mm) +
+      1.274027 * Math.sin(2 * D - Mm) +
+      0.658314 * Math.sin(2 * D) +
+      0.213618 * Math.sin(2 * Mm) -
+      0.185116 * Math.sin(Ms) -
+      0.114332 * Math.sin(2 * F) +
+      0.058793 * Math.sin(2 * D - 2 * Mm) +
+      0.057066 * Math.sin(2 * D - Ms - Mm) +
+      0.053322 * Math.sin(2 * D + Mm) +
+      0.045758 * Math.sin(2 * D - Ms) -
+      0.040923 * Math.sin(Ms - Mm) -
+      0.034720 * Math.sin(D) -
+      0.030383 * Math.sin(Ms + Mm)
+    );
 
-    const gmst = ((280.46061837 + 360.98564736629 * dDays) % 360) * rad;
+    const latEcl = rad * (
+      5.128122 * Math.sin(F) +
+      0.280602 * Math.sin(Mm + F) +
+      0.277693 * Math.sin(Mm - F) +
+      0.173237 * Math.sin(2 * D - F) +
+      0.055413 * Math.sin(2 * D - Mm + F) +
+      0.046271 * Math.sin(2 * D - Mm - F)
+    );
+
+    // Equatorial horizontal parallax (degrees)
+    const parallaxDeg =
+      0.950724 +
+      0.051818 * Math.cos(Mm) +
+      0.009531 * Math.cos(2 * D - Mm) +
+      0.007843 * Math.cos(2 * D) +
+      0.002824 * Math.cos(2 * Mm);
+
+    const obl = rad * (23.439291 - 0.0130042 * T);
+    const ra = Math.atan2(
+      Math.sin(lonEcl) * Math.cos(obl) - Math.tan(latEcl) * Math.sin(obl),
+      Math.cos(lonEcl)
+    );
+    const dec = Math.asin(
+      Math.sin(latEcl) * Math.cos(obl) + Math.cos(latEcl) * Math.sin(obl) * Math.sin(lonEcl)
+    );
+
+    const gmst = ((280.46061837 + 360.98564736629 * dDays + 0.000387933 * T * T) % 360) * rad;
     const ha = gmst + lon * rad - ra;
 
     const sinAlt = Math.sin(lat * rad) * Math.sin(dec) + Math.cos(lat * rad) * Math.cos(dec) * Math.cos(ha);
-    return deg * Math.asin(Math.max(-1, Math.min(1, sinAlt)));
+    const geoAltDeg = deg * Math.asin(Math.max(-1, Math.min(1, sinAlt)));
+
+    // Topocentric altitude = geocentric altitude minus horizontal parallax * cos(alt)
+    return geoAltDeg - parallaxDeg * Math.cos(rad * Math.max(0, geoAltDeg));
   }
 
   function findMoonRiseSet(dayOffset) {
     const startUtcMs = Date.UTC(y, m - 1, d + dayOffset, -tzOffset, 0, 0);
     let riseStr = null;
     let setStr = null;
-    const targetAlt = 0.125; // Topocentric lunar limb + atmospheric refraction
+    // Upper-limb refraction (-34') minus lunar semidiameter (-16') = -0.833 deg
+    const targetAlt = -0.833;
 
     let prevAlt = getMoonAlt(startUtcMs) - targetAlt;
-    for (let min = 5; min <= 1440; min += 5) {
+    for (let min = 1; min <= 1440; min += 1) {
       const curMs = startUtcMs + min * 60000;
       const curAlt = getMoonAlt(curMs) - targetAlt;
       if (prevAlt < 0 && curAlt >= 0 && !riseStr) {
         const frac = -prevAlt / (curAlt - prevAlt);
-        const exactMs = curMs - (1 - frac) * 300000;
+        const exactMs = curMs - (1 - frac) * 60000;
         riseStr = new Date(exactMs).toLocaleTimeString("en-US", {
           timeZone, hour: "numeric", minute: "2-digit"
         }) + ` ${tzName}`;
       } else if (prevAlt >= 0 && curAlt < 0 && !setStr) {
         const frac = prevAlt / (prevAlt - curAlt);
-        const exactMs = curMs - (1 - frac) * 300000;
+        const exactMs = curMs - (1 - frac) * 60000;
         setStr = new Date(exactMs).toLocaleTimeString("en-US", {
           timeZone, hour: "numeric", minute: "2-digit"
         }) + ` ${tzName}`;
@@ -585,73 +629,6 @@ const jc = (jdNoon - 2451545.0) / 36525.0;
     }
     return { riseStr, setStr };
   }
-
-  const todayMoon = findMoonRiseSet(0);
-  const tomorrowMoon = findMoonRiseSet(1);
-
-  const moonriseDisplay = todayMoon.riseStr
-    ? `${todayMoon.riseStr} today`
-    : (tomorrowMoon.riseStr ? `${tomorrowMoon.riseStr} tomorrow` : "None today");
-
-  const moonsetDisplay = todayMoon.setStr
-    ? `${todayMoon.setStr} today`
-    : (tomorrowMoon.setStr ? `${tomorrowMoon.setStr} tomorrow` : "None today");
-
-  return {
-    date_label: targetDateObj.toLocaleDateString("en-US", {
-      timeZone, weekday: "long", month: "long", day: "numeric", year: "numeric"
-    }),
-    dawn: civilEvents ? formatMins(civilEvents.riseMin) : "N/A",
-    sunrise: sunEvents ? formatMins(sunEvents.riseMin) : "N/A",
-    sunset: sunEvents ? formatMins(sunEvents.setMin) : "N/A",
-    dusk: civilEvents ? formatMins(civilEvents.setMin) : "N/A",
-    day_length: dayLengthStr,
-    moon_phase_display: curPhaseDisplay,
-    moonrise_display: moonriseDisplay,
-    moonset_display: moonsetDisplay,
-    upcoming_phases: upcoming
-  };
-}
-
-function renderAstroData(data) {
-  const setTxt = (id, val) => { const el = document.getElementById(id); if (el) el.textContent = val; };
-  setTxt("astro-date", data.date_label);
-  setTxt("astro-sunrise", data.sunrise);
-  setTxt("astro-sunset", data.sunset);
-  setTxt("astro-dawn", data.dawn);
-  setTxt("astro-dusk", data.dusk);
-  setTxt("astro-day-length", data.day_length);
-  setTxt("astro-moon-phase", data.moon_phase_display);
-  setTxt("astro-moonset", data.moonset_display);
-  setTxt("astro-moonrise", data.moonrise_display);
-
-  const moonGrid = document.getElementById("moon-phase-grid");
-  if (moonGrid && Array.isArray(data.upcoming_phases) && data.upcoming_phases.length > 0) {
-    moonGrid.innerHTML = data.upcoming_phases
-      .map(item => `
-        <div class="moon-phase-item">
-          ${item.emoji} <strong>${item.date}</strong><br>
-          ${item.name}
-        </div>
-      `)
-      .join("");
-  }
-}
-
-// Astronomy Loader (Exact Fort Kent 47.2558° N, -68.5946° W Engine)
-async function loadFortKentAstroData() {
-  const timeZone = "America/New_York";
-  const todayStr = new Intl.DateTimeFormat("en-CA", {
-    timeZone,
-    year: "numeric",
-    month: "2-digit",
-    day: "2-digit"
-  }).format(new Date());
-
-  // Render exact Fort Kent astronomical data immediately (zero network delay)
-  const astroData = calculateFortKentAstroData(todayStr, timeZone);
-  renderAstroData(astroData);
-}
 
 // =========================================================================
 // 3. UNIFIED LIFECYCLE & EXECUTION TIMERS
