@@ -367,6 +367,8 @@ img {
 .responsive-menu {
   padding: 10px;
   font-family: Arial, sans-serif;
+  position: relative;
+  z-index: 1000;
 }
 
 .responsive-menu .menu-toggle {
