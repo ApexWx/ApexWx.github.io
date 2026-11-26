@@ -629,6 +629,72 @@ const jc = (jdNoon - 2451545.0) / 36525.0;
     }
     return { riseStr, setStr };
   }
+  const todayMoon = findMoonRiseSet(0);
+  const tomorrowMoon = findMoonRiseSet(1);
+
+  const moonriseDisplay = todayMoon.riseStr
+    ? `${todayMoon.riseStr} today`
+    : (tomorrowMoon.riseStr ? `${tomorrowMoon.riseStr} tomorrow` : "None today");
+
+  const moonsetDisplay = todayMoon.setStr
+    ? `${todayMoon.setStr} today`
+    : (tomorrowMoon.setStr ? `${tomorrowMoon.setStr} tomorrow` : "None today");
+
+  return {
+    date_label: targetDateObj.toLocaleDateString("en-US", {
+      timeZone, weekday: "long", month: "long", day: "numeric", year: "numeric"
+    }),
+    dawn: civilEvents ? formatMins(civilEvents.riseMin) : "N/A",
+    sunrise: sunEvents ? formatMins(sunEvents.riseMin) : "N/A",
+    sunset: sunEvents ? formatMins(sunEvents.setMin) : "N/A",
+    dusk: civilEvents ? formatMins(civilEvents.setMin) : "N/A",
+    day_length: dayLengthStr,
+    moon_phase_display: curPhaseDisplay,
+    moonrise_display: moonriseDisplay,
+    moonset_display: moonsetDisplay,
+    upcoming_phases: upcoming
+  };
+}
+
+function renderAstroData(data) {
+  const setTxt = (id, val) => { const el = document.getElementById(id); if (el) el.textContent = val; };
+  setTxt("astro-date", data.date_label);
+  setTxt("astro-sunrise", data.sunrise);
+  setTxt("astro-sunset", data.sunset);
+  setTxt("astro-dawn", data.dawn);
+  setTxt("astro-dusk", data.dusk);
+  setTxt("astro-day-length", data.day_length);
+  setTxt("astro-moon-phase", data.moon_phase_display);
+  setTxt("astro-moonset", data.moonset_display);
+  setTxt("astro-moonrise", data.moonrise_display);
+
+  const moonGrid = document.getElementById("moon-phase-grid");
+  if (moonGrid && Array.isArray(data.upcoming_phases) && data.upcoming_phases.length > 0) {
+    moonGrid.innerHTML = data.upcoming_phases
+      .map(item => `
+        <div class="moon-phase-item">
+          ${item.emoji} <strong>${item.date}</strong><br>
+          ${item.name}
+        </div>
+      `)
+      .join("");
+  }
+}
+
+// Astronomy Loader (Exact Fort Kent 47.2558° N, -68.5946° W Engine)
+async function loadFortKentAstroData() {
+  const timeZone = "America/New_York";
+  const todayStr = new Intl.DateTimeFormat("en-CA", {
+    timeZone,
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit"
+  }).format(new Date());
+
+  // Render exact Fort Kent astronomical data immediately (zero network delay)
+  const astroData = calculateFortKentAstroData(todayStr, timeZone);
+  renderAstroData(astroData);
+}
 
 // =========================================================================
 // 3. UNIFIED LIFECYCLE & EXECUTION TIMERS
