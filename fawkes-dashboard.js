@@ -1,5 +1,15 @@
 /* ==========================================================================
-   1. GREETING FOR TIME OF DAY
+0. RESPONSIVE NAVIGATION MENU TOGGLE
+   ========================================================================== */
+function toggleMenu() {
+    const menuLinks = document.getElementById("menuLinks");
+    if (menuLinks) {
+        menuLinks.classList.toggle("active");
+    }
+}
+
+/* ==========================================================================
+1. GREETING FOR TIME OF DAY
    ========================================================================== */
 function initGreeting() {
     const greetingEl = document.getElementById('lblGreetings');
@@ -22,7 +32,7 @@ function initGreeting() {
 }
 
 /* ==========================================================================
-   2. 7-DAY WEATHER FORECAST
+2. 7-DAY WEATHER FORECAST
    ========================================================================== */
 async function fetchForecast() {
     const forecastEl = document.getElementById('forecast');
@@ -54,7 +64,7 @@ async function fetchForecast() {
 }
 
 /* ==========================================================================
-   3. LOCAL TIME CLOCK
+3. LOCAL TIME CLOCK
    ========================================================================== */
 function updateLocalTime() {
     const timeEl = document.getElementById("localTime");
@@ -86,7 +96,7 @@ function updateLocalTime() {
 }
 
 /* ==========================================================================
-   4. 24-HOUR CLOCKS (LOCAL & UTC)
+4. 24-HOUR CLOCKS (LOCAL & UTC)
    ========================================================================== */
 function updateDualTime() {
     const dualTimeEl = document.getElementById("dualTime");
@@ -108,7 +118,7 @@ function updateDualTime() {
 }
 
 /* ==========================================================================
-   5. SEASONS DISPLAY
+5. SEASONS DISPLAY
    ========================================================================== */
 function getCurrentSeason(date = new Date()) {
     const month = date.getMonth() + 1;
@@ -148,7 +158,7 @@ function updateSeasonDisplay() {
 }
 
 /* ==========================================================================
-   6. NWS ALERTS
+6. NWS ALERTS
    ========================================================================== */
 async function fetchNWSAlerts() {
     const zone = "PAZ066";
@@ -211,7 +221,6 @@ async function fetchNWSAlerts() {
                 `;
                 alertDiv.appendChild(alertBox);
 
-                // Safe internal memory registration to prevent quote/backtick syntax crashes
                 if (shouldCollapse) {
                     const toggleBtn = alertBox.querySelector(".alert-toggle");
                     if (toggleBtn) {
@@ -228,7 +237,6 @@ async function fetchNWSAlerts() {
     }
 }
 
-// Dismiss handler optimized to drop elements cleanly by dataset attribute
 window.dismissAlert = function(alertId) {
     let dismissed = JSON.parse(localStorage.getItem("dismissedAlertIds") || "[]");
     if (!dismissed.includes(alertId)) {
@@ -236,10 +244,9 @@ window.dismissAlert = function(alertId) {
         localStorage.setItem("dismissedAlertIds", JSON.stringify(dismissed));
     }
     const alertBox = document.querySelector(`[data-alert-id="${alertId}"]`);
-    if (alertBox) alertBox.remove(); // Drops the box out of the layout seamlessly
+    if (alertBox) alertBox.remove();
 };
 
-// Safe container-scoped toggle that completely skips breaking global #ID URL lookups
 window.toggleAlert = function(alertId, fullDescription) {
     const alertBox = document.querySelector(`[data-alert-id="${alertId}"]`);
     if (!alertBox) return;
@@ -260,13 +267,13 @@ window.toggleAlert = function(alertId, fullDescription) {
 };
 
 /* ==========================================================================
-   7. LANCASTER ASTRONOMICAL DATA
+7. LANCASTER ASTRONOMICAL DATA
    ========================================================================== */
 async function loadLancasterAstroData() {
     const workerEndpoint = 'https://moon-api.maineapexwx.workers.dev/?lat=40.0379&lon=-76.3055';
     
     try {
-        const response = await fetch(workerEndpoint);
+        const response = await fetch(workerEndpoint, { cache: "no-store" });
         if (!response.ok) throw new Error("Astro API returned an error status.");
         
         const data = await response.json();
@@ -287,12 +294,24 @@ async function loadLancasterAstroData() {
             const el = document.getElementById(id);
             if (el) el.textContent = value;
         }
+
+        const moonGrid = document.getElementById('moon-phase-grid');
+        if (moonGrid && Array.isArray(data.upcoming_phases) && data.upcoming_phases.length > 0) {
+            moonGrid.innerHTML = data.upcoming_phases
+                .map(phase => `
+                    <div class="moon-phase-item">
+                        ${phase.emoji} <strong>${phase.date}</strong><br>
+                        ${phase.name}
+                    </div>
+                `)
+                .join('');
+        }
     } catch (error) {
         console.error("Failed to inject Lancaster astronomical predictions:", error);
         const dateEl = document.getElementById('astro-date');
         const phaseEl = document.getElementById('astro-moon-phase');
         if (dateEl) dateEl.textContent = "Data Temporarily Offline";
-        if (phaseEl) phaseEl.textContent = "Unable to connect to USNO source.";
+        if (phaseEl) phaseEl.textContent = "Unable to connect to astronomical source.";
     }
 }
 
@@ -300,7 +319,6 @@ async function loadLancasterAstroData() {
    MASTER INITIALIZATION ON DOM CONTENT LOADED
    ========================================================================== */
 document.addEventListener("DOMContentLoaded", () => {
-    // Run everything immediately on document ready
     initGreeting();
     updateLocalTime();
     updateDualTime();
@@ -309,7 +327,6 @@ document.addEventListener("DOMContentLoaded", () => {
     fetchNWSAlerts();
     loadLancasterAstroData();
     
-    // Set up repeating timers
     setInterval(updateLocalTime, 60000);
     setInterval(updateDualTime, 60000);
     setInterval(fetchForecast, 10800000);
