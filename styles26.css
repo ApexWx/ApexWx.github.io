@@ -472,3 +472,19 @@ div[style*="width: 800px"] {
   font-size: 12px;
   margin-top: 4px;
 }
+
+/* ==========================================================================
+   MOBILE SIDEBAR SPACER CLEANUP
+   ========================================================================== */
+@media (max-width: 768px) {
+  /* Collapse spacer divs that contain only <br> tags */
+  .column div:has(> br:only-child),
+  .column div:has(> br:first-child:nth-last-child(2)) {
+    display: none;
+  }
+
+  /* Add clean spacing between the remaining chart cards */
+  .column > div {
+    margin-bottom: 16px;
+  }
+}
