@@ -1,8 +1,9 @@
 document.addEventListener("DOMContentLoaded", () => {
   const partials = [
-    { id: "weekly-outlook", file: "weekly-outlook.html", fallback: "Unable to load weekly outlook." },
-    { id: "left-column",    file: "left-sidebar.html",   fallback: "" },
-    { id: "right-column",   file: "right-sidebar.html",  fallback: "" }
+    { id: "weekly-outlook",           file: "weekly-outlook.html",      fallback: "Unable to load weekly outlook." },
+    { id: "us-national-outlook-text", file: "us-national-outlook.html", fallback: "Unable to load national outlook." },
+    { id: "left-column",              file: "left-sidebar.html",        fallback: "" },
+    { id: "right-column",             file: "right-sidebar.html",       fallback: "" }
   ];
 
   const cacheBuster = Date.now();

@@ -12,7 +12,8 @@ async function loadLancasterPartials() {
     const partials = [
         { id: "left-column", url: "lan-left-column.html", cacheMode: "default" },
         { id: "right-column", url: "lan-right-column.html", cacheMode: "default" },
-        { id: "pa-weekly-outlook-container", url: "pa-weekly-outlook.html", cacheMode: "no-store" }
+        { id: "pa-weekly-outlook-container", url: "pa-weekly-outlook.html", cacheMode: "no-store" },
+        { id: "us-national-outlook-text", url: "us-national-outlook.html", cacheMode: "no-store" }
     ];
 
     await Promise.all(
@@ -628,10 +629,9 @@ document.addEventListener("DOMContentLoaded", async () => {
     updateSeasonDisplay();
     loadLancasterAstroData();
     fetchForecast();
-
-    // Load sidebars and daily PA Week Ahead outlook, then populate NWS alerts inside it
-    await loadLancasterPartials();
     fetchNWSAlerts();
+
+    await loadLancasterPartials();
 
     setInterval(updateLocalTime, 60000);
     setInterval(updateDualTime, 60000);
