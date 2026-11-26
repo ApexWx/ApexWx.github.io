@@ -351,16 +351,18 @@ async function updateStation() {
 }
 
 // =========================================================================
-// 2B. ASTRONOMY (PRIMARY WORKER + BUILT-IN NOAA/LUNAR OFFLINE BACKUP)
+// 2B. ASTRONOMY (EXACT FORT KENT 47.2558° N, -68.5946° W + MEEUS LUNAR)
 // =========================================================================
 
-function calculateFallbackAstroData(dateStr, timeZone) {
-  const lat = 47.2589;
-  const lon = -68.5891;
+function calculateFortKentAstroData(dateStr, timeZone) {
+  const lat = 47.2558;
+  const lon = -68.5946;
   const rad = Math.PI / 180;
   const deg = 180 / Math.PI;
 
-  const targetDateObj = new Date(`${dateStr}T12:00:00`);
+  const [y, m, d] = dateStr.split("-").map(Number);
+  const targetDateObj = new Date(Date.UTC(y, m - 1, d, 12, 0, 0));
+
   const offsetPart = new Intl.DateTimeFormat("en-US", {
     timeZone,
     timeZoneName: "longOffset"
@@ -368,10 +370,11 @@ function calculateFallbackAstroData(dateStr, timeZone) {
   const tzOffset = parseInt(offsetPart.replace("GMT", "").split(":")[0], 10) || -5;
   const tzName = tzOffset === -4 ? "EDT" : "EST";
 
-  // NOAA Solar Equations for Civil Twilight (96°) & Sunrise/Sunset (90.833°)
-  const [y, m, d] = dateStr.split("-").map(Number);
-  const jd = Math.floor(365.25 * (y + 4716)) + Math.floor(30.6001 * ((m <= 2 ? m + 12 : m) + 1)) + d - 1524.5;
-  const jc = (jd - 2451545.0) / 36525.0;
+  // --- 1. NOAA High-Precision Solar Times (evaluated at ~local noon) ---
+  const adjY = m <= 2 ? y - 1 : y;
+  const adjM = m <= 2 ? m + 12 : m;
+  const jdNoon = Math.floor(365.25 * (adjY + 4716)) + Math.floor(30.6001 * (adjM + 1)) + d - 1524.5 + (12 - tzOffset) / 24;
+  const jc = (jdNoon - 2451545.0) / 36525.0;
 
   const geomMeanLongSun = (280.46646 + jc * (36000.76983 + jc * 0.0003032)) % 360;
   const geomMeanAnomSun = 357.52911 + jc * (35999.05029 - 0.0001537 * jc);
@@ -396,7 +399,7 @@ function calculateFallbackAstroData(dateStr, timeZone) {
 
   const solarNoonMin = 720 - 4 * lon - eqOfTime + tzOffset * 60;
 
-  const getEventMinutes = (zenith) => {
+  const getSunEvents = (zenith) => {
     const cosHA = (Math.cos(rad * zenith) / (Math.cos(rad * lat) * Math.cos(rad * sunDeclin))) -
                   Math.tan(rad * lat) * Math.tan(rad * sunDeclin);
     if (cosHA < -1 || cosHA > 1) return null;
@@ -417,8 +420,8 @@ function calculateFallbackAstroData(dateStr, timeZone) {
     return `${dispH}:${String(m).padStart(2, "0")} ${ampm} ${tzName}`;
   };
 
-  const sunEvents = getEventMinutes(90.833);
-  const civilEvents = getEventMinutes(96.0);
+  const sunEvents = getSunEvents(90.833);
+  const civilEvents = getSunEvents(96.0);
 
   let dayLengthStr = "N/A";
   if (sunEvents) {
@@ -426,52 +429,177 @@ function calculateFallbackAstroData(dateStr, timeZone) {
     dayLengthStr = `${Math.floor(diffMins / 60)}h ${diffMins % 60}m`;
   }
 
-  // Synodic Lunar Phase Calculation (Reference New Moon: 2000-01-06 18:14 UTC)
-  const synodicMonth = 29.530588853;
-  const refNewMoonMs = Date.UTC(2000, 0, 6, 18, 14, 0);
+  // --- 2. Meeus High-Precision Lunar Phase Instants (Accurate to ~1 min) ---
+  function getMeeusPhaseDate(k) {
+    const T = k / 1236.85;
+    const T2 = T * T;
+    const T3 = T2 * T;
+    const T4 = T3 * T;
+
+    let JDE = 2451550.09766 + 29.530588861 * k + 0.00015437 * T2 - 0.000000150 * T3 + 0.00000000073 * T4;
+    const E = 1 - 0.002516 * T - 0.0000074 * T2;
+
+    const M = rad * ((2.5534 + 29.10535670 * k - 0.0000014 * T2 - 0.00000011 * T3) % 360);
+    const Mp = rad * ((201.5643 + 385.81693528 * k + 0.0107582 * T2 + 0.00001238 * T3 - 0.000000058 * T4) % 360);
+    const F = rad * ((160.7108 + 390.67050284 * k - 0.0016118 * T2 - 0.00000227 * T3 + 0.000000011 * T4) % 360);
+    const Om = rad * ((124.7746 - 1.56375588 * k + 0.0020672 * T2 + 0.00000215 * T3) % 360);
+
+    const quarter = Math.round((k - Math.floor(k)) * 4);
+    let corr = 0;
+
+    if (quarter === 0 || quarter === 2) {
+      // New Moon (0) or Full Moon (2)
+      const isNew = quarter === 0;
+      corr = (isNew ? -0.40720 : -0.40614) * Math.sin(Mp) +
+             (isNew ? 0.17241 : 0.17302) * E * Math.sin(M) +
+             (isNew ? 0.01608 : 0.01614) * Math.sin(2 * Mp) +
+             (isNew ? 0.01039 : 0.01043) * Math.sin(2 * F) +
+             (isNew ? 0.00739 : 0.00734) * E * Math.sin(Mp - M) +
+             (isNew ? -0.00514 : -0.00515) * E * Math.sin(Mp + M) +
+             (isNew ? 0.00208 : 0.00209) * E * E * Math.sin(2 * M) -
+             0.00111 * Math.sin(Mp - 2 * F) -
+             0.00057 * Math.sin(Mp + 2 * F) +
+             0.00056 * E * Math.sin(2 * Mp + M) -
+             0.00042 * Math.sin(3 * Mp) +
+             0.00042 * E * Math.sin(M + 2 * F) +
+             0.00038 * E * Math.sin(M - 2 * F) -
+             0.00024 * E * Math.sin(2 * Mp - M) -
+             0.00017 * Math.sin(Om);
+    } else {
+      // First Quarter (1) or Last Quarter (3)
+      corr = -0.62801 * Math.sin(Mp) +
+             0.17172 * E * Math.sin(M) -
+             0.01183 * E * Math.sin(Mp + M) +
+             0.00862 * Math.sin(2 * Mp) +
+             0.00804 * Math.sin(2 * F) +
+             0.00454 * E * Math.sin(Mp - M) +
+             0.00204 * E * E * Math.sin(2 * M) -
+             0.00180 * Math.sin(Mp - 2 * F) -
+             0.00070 * Math.sin(Mp + 2 * F) -
+             0.00040 * Math.sin(3 * Mp) -
+             0.00034 * E * Math.sin(2 * Mp - M) +
+             0.00032 * E * Math.sin(M + 2 * F) +
+             0.00032 * E * Math.sin(M - 2 * F) -
+             0.00028 * E * E * Math.sin(Mp + 2 * M) +
+             0.00027 * E * Math.sin(2 * Mp + M) -
+             0.00017 * Math.sin(Om);
+      const W = 0.00306 - 0.00038 * E * Math.cos(M) + 0.00026 * Math.cos(Mp) -
+                0.00002 * Math.cos(Mp - M) + 0.00002 * Math.cos(Mp + M) + 0.00002 * Math.cos(2 * F);
+      corr += (quarter === 1 ? W : -W);
+    }
+
+    JDE += corr;
+    return new Date((JDE - 2440587.5) * 86400000);
+  }
+
   const now = new Date();
-  const cycles = (now.getTime() - refNewMoonMs) / (synodicMonth * 86400000);
-  const age = ((cycles % 1) + 1) % 1; // 0.0 to 1.0
+  const decimalYear = y + (m - 0.5) / 12;
+  const baseK = Math.floor((decimalYear - 2000) * 12.3685) - 2;
 
-  let curPhaseDisplay = "🌖 Waning Gibbous";
-  if (age < 0.03 || age >= 0.97) curPhaseDisplay = "🌑 New Moon";
-  else if (age < 0.22) curPhaseDisplay = "🌒 Waxing Crescent";
-  else if (age < 0.28) curPhaseDisplay = "🌓 First Quarter";
-  else if (age < 0.47) curPhaseDisplay = "🌔 Waxing Gibbous";
-  else if (age < 0.53) curPhaseDisplay = "🌕 Full Moon";
-  else if (age < 0.72) curPhaseDisplay = "🌖 Waning Gibbous";
-  else if (age < 0.78) curPhaseDisplay = "🌗 Last Quarter";
-  else curPhaseDisplay = "🌘 Waning Crescent";
-
-  // Next 4 Major Lunar Quarters
-  const majorPhases = [
-    { frac: 0.0,  name: "New Moon",      emoji: "🌑" },
-    { frac: 0.25, name: "First Quarter", emoji: "🌓" },
-    { frac: 0.5,  name: "Full Moon",     emoji: "🌕" },
-    { frac: 0.75, name: "Last Quarter",  emoji: "🌗" }
+  const phaseDefs = [
+    { offset: 0.0,  name: "New Moon",      emoji: "🌑" },
+    { offset: 0.25, name: "First Quarter", emoji: "🌓" },
+    { offset: 0.5,  name: "Full Moon",     emoji: "🌕" },
+    { offset: 0.75, name: "Last Quarter",  emoji: "🌗" }
   ];
 
-  const baseCycle = Math.floor(cycles);
-  const upcoming = [];
-  for (let c = baseCycle; c <= baseCycle + 2; c++) {
-    for (const mp of majorPhases) {
-      const eventMs = refNewMoonMs + (c + mp.frac) * synodicMonth * 86400000;
-      if (eventMs > now.getTime()) {
-        const dt = new Date(eventMs);
-        upcoming.push({
-          emoji: mp.emoji,
-          date: dt.toLocaleDateString("en-US", { timeZone, month: "short", day: "numeric" }),
-          name: mp.name,
-          ts: eventMs
-        });
-      }
+  const allPhases = [];
+  for (let i = 0; i <= 5; i++) {
+    for (const p of phaseDefs) {
+      const kVal = baseK + i + p.offset;
+      const dt = getMeeusPhaseDate(kVal);
+      allPhases.push({ ...p, dateObj: dt, ts: dt.getTime() });
     }
   }
-  upcoming.sort((a, b) => a.ts - b.ts);
+  allPhases.sort((a, b) => a.ts - b.ts);
+
+  // Current phase & illumination from surrounding Meeus phase instants
+  const prevPhase = [...allPhases].reverse().find(p => p.ts <= now.getTime()) || allPhases[0];
+  const nextPhase = allPhases.find(p => p.ts > now.getTime()) || allPhases[allPhases.length - 1];
+  const fracInQuarter = (now.getTime() - prevPhase.ts) / Math.max(1, nextPhase.ts - prevPhase.ts);
+  const phaseAngle = (prevPhase.offset + fracInQuarter * 0.25) * 2 * Math.PI;
+  const illumPct = Math.round(((1 - Math.cos(phaseAngle)) / 2) * 100);
+
+  let curPhaseDisplay = `🌖 Waning Gibbous (${illumPct}%)`;
+  if (illumPct <= 2) curPhaseDisplay = `🌑 New Moon (${illumPct}%)`;
+  else if (illumPct >= 98) curPhaseDisplay = `🌕 Full Moon (${illumPct}%)`;
+  else if (prevPhase.offset === 0.0) curPhaseDisplay = `🌒 Waxing Crescent (${illumPct}%)`;
+  else if (prevPhase.offset === 0.25) curPhaseDisplay = `🌔 Waxing Gibbous (${illumPct}%)`;
+  else if (prevPhase.offset === 0.5) curPhaseDisplay = `🌖 Waning Gibbous (${illumPct}%)`;
+  else curPhaseDisplay = `🌘 Waning Crescent (${illumPct}%)`;
+
+  const upcoming = allPhases
+    .filter(p => p.ts > now.getTime())
+    .slice(0, 4)
+    .map(p => ({
+      emoji: p.emoji,
+      date: p.dateObj.toLocaleDateString("en-US", { timeZone, month: "short", day: "numeric" }),
+      name: p.name
+    }));
+
+  // --- 3. Local Fort Kent Moonrise & Moonset (Horizon Search) ---
+  function getMoonAlt(utcMs) {
+    const dDays = (utcMs - Date.UTC(2000, 0, 1, 12, 0, 0)) / 86400000;
+    const L = rad * ((218.316 + 13.176396 * dDays) % 360);
+    const Mm = rad * ((134.963 + 13.064993 * dDays) % 360);
+    const F = rad * ((93.272 + 13.229350 * dDays) % 360);
+
+    const lonEcl = L + rad * (6.289 * Math.sin(Mm));
+    const latEcl = rad * (5.128 * Math.sin(F));
+    const obl = rad * (23.4397 - 0.0000004 * dDays);
+
+    const ra = Math.atan2(Math.sin(lonEcl) * Math.cos(obl) - Math.tan(latEcl) * Math.sin(obl), Math.cos(lonEcl));
+    const dec = Math.asin(Math.sin(latEcl) * Math.cos(obl) + Math.cos(latEcl) * Math.sin(obl) * Math.sin(lonEcl));
+
+    const gmst = ((280.46061837 + 360.98564736629 * dDays) % 360) * rad;
+    const ha = gmst + lon * rad - ra;
+
+    const sinAlt = Math.sin(lat * rad) * Math.sin(dec) + Math.cos(lat * rad) * Math.cos(dec) * Math.cos(ha);
+    return deg * Math.asin(Math.max(-1, Math.min(1, sinAlt)));
+  }
+
+  function findMoonRiseSet(dayOffset) {
+    const startUtcMs = Date.UTC(y, m - 1, d + dayOffset, -tzOffset, 0, 0);
+    let riseStr = null;
+    let setStr = null;
+    const targetAlt = 0.125; // Topocentric lunar limb + atmospheric refraction
+
+    let prevAlt = getMoonAlt(startUtcMs) - targetAlt;
+    for (let min = 5; min <= 1440; min += 5) {
+      const curMs = startUtcMs + min * 60000;
+      const curAlt = getMoonAlt(curMs) - targetAlt;
+      if (prevAlt < 0 && curAlt >= 0 && !riseStr) {
+        const frac = -prevAlt / (curAlt - prevAlt);
+        const exactMs = curMs - (1 - frac) * 300000;
+        riseStr = new Date(exactMs).toLocaleTimeString("en-US", {
+          timeZone, hour: "numeric", minute: "2-digit"
+        }) + ` ${tzName}`;
+      } else if (prevAlt >= 0 && curAlt < 0 && !setStr) {
+        const frac = prevAlt / (prevAlt - curAlt);
+        const exactMs = curMs - (1 - frac) * 300000;
+        setStr = new Date(exactMs).toLocaleTimeString("en-US", {
+          timeZone, hour: "numeric", minute: "2-digit"
+        }) + ` ${tzName}`;
+      }
+      prevAlt = curAlt;
+    }
+    return { riseStr, setStr };
+  }
+
+  const todayMoon = findMoonRiseSet(0);
+  const tomorrowMoon = findMoonRiseSet(1);
+
+  const moonriseDisplay = todayMoon.riseStr
+    ? `${todayMoon.riseStr} today`
+    : (tomorrowMoon.riseStr ? `${tomorrowMoon.riseStr} tomorrow` : "None today");
+
+  const moonsetDisplay = todayMoon.setStr
+    ? `${todayMoon.setStr} today`
+    : (tomorrowMoon.setStr ? `${tomorrowMoon.setStr} tomorrow` : "None today");
 
   return {
     date_label: targetDateObj.toLocaleDateString("en-US", {
-      weekday: "long", month: "long", day: "numeric", year: "numeric"
+      timeZone, weekday: "long", month: "long", day: "numeric", year: "numeric"
     }),
     dawn: civilEvents ? formatMins(civilEvents.riseMin) : "N/A",
     sunrise: sunEvents ? formatMins(sunEvents.riseMin) : "N/A",
@@ -479,9 +607,9 @@ function calculateFallbackAstroData(dateStr, timeZone) {
     dusk: civilEvents ? formatMins(civilEvents.setMin) : "N/A",
     day_length: dayLengthStr,
     moon_phase_display: curPhaseDisplay,
-    moonset_display: "Unavailable (USNO offline)",
-    moonrise_display: "Unavailable (USNO offline)",
-    upcoming_phases: upcoming.slice(0, 4)
+    moonrise_display: moonriseDisplay,
+    moonset_display: moonsetDisplay,
+    upcoming_phases: upcoming
   };
 }
 
@@ -510,9 +638,8 @@ function renderAstroData(data) {
   }
 }
 
-// USNO Astronomy Fetch Loop with Cache & Mathematical Fallback
+// Astronomy Loader (Exact Fort Kent 47.2558° N, -68.5946° W Engine)
 async function loadFortKentAstroData() {
-  const workerEndpoint = "https://moon-api.maineapexwx.workers.dev/";
   const timeZone = "America/New_York";
   const todayStr = new Intl.DateTimeFormat("en-CA", {
     timeZone,
@@ -521,34 +648,9 @@ async function loadFortKentAstroData() {
     day: "2-digit"
   }).format(new Date());
 
-  try {
-    const response = await fetch(workerEndpoint);
-    if (!response.ok) throw new Error(`Worker HTTP ${response.status}`);
-    const data = await response.json();
-    if (data.error) throw new Error(data.error);
-
-    // Save good USNO data to localStorage for today
-    try {
-      localStorage.setItem("apexwx_astro_cache", JSON.stringify({ date: todayStr, payload: data }));
-    } catch (e) {}
-
-    renderAstroData(data);
-  } catch (error) {
-    console.warn("Primary USNO Worker unavailable, checking cache/math fallback:", error);
-
-    // 1. Check if we already cached official USNO data earlier today
-    try {
-      const cached = JSON.parse(localStorage.getItem("apexwx_astro_cache") || "null");
-      if (cached && cached.date === todayStr && cached.payload) {
-        renderAstroData(cached.payload);
-        return;
-      }
-    } catch (e) {}
-
-    // 2. Otherwise compute accurate Fort Kent astronomical times locally
-    const fallbackData = calculateFallbackAstroData(todayStr, timeZone);
-    renderAstroData(fallbackData);
-  }
+  // Render exact Fort Kent astronomical data immediately (zero network delay)
+  const astroData = calculateFortKentAstroData(todayStr, timeZone);
+  renderAstroData(astroData);
 }
 
 // =========================================================================
