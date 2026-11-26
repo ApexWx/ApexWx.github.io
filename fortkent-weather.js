@@ -373,8 +373,8 @@ function calculateFortKentAstroData(dateStr, timeZone) {
   // --- 1. NOAA High-Precision Solar Times (evaluated at ~local noon) ---
   const adjY = m <= 2 ? y - 1 : y;
   const adjM = m <= 2 ? m + 12 : m;
-  const jdNoon = Math.floor(365.25 * (adjY + 4716)) + Math.floor(30.6001 * (adjM + 1)) + d - 1524.5 + (12 - tzOffset) / 24;
-  const jc = (jdNoon - 2451545.0) / 36525.0;
+  const jdNoon = Date.UTC(y, m - 1, d, 12 - tzOffset, 0, 0) / 86400000 + 2440587.5;
+const jc = (jdNoon - 2451545.0) / 36525.0;
 
   const geomMeanLongSun = (280.46646 + jc * (36000.76983 + jc * 0.0003032)) % 360;
   const geomMeanAnomSun = 357.52911 + jc * (35999.05029 - 0.0001537 * jc);
