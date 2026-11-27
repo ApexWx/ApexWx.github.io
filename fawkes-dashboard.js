@@ -182,6 +182,8 @@ function updateSeasonDisplay() {
 /* ==========================================================================
 6. NWS ALERTS
    ========================================================================== */
+const NO_ALERTS_HTML = '<span style="font-size: 14px; color: #555555;">No Active Hazardous Weather Conditions issued by NWS</span>';
+
 async function fetchNWSAlerts() {
     const zone = "PAZ066";
     const apiURL = `https://api.weather.gov/alerts/active/zone/${zone}`;
@@ -253,7 +255,7 @@ async function fetchNWSAlerts() {
                 }
             });
         } else {
-            alertDiv.innerHTML = "";
+            alertDiv.innerHTML = NO_ALERTS_HTML;
         }
     } catch (error) {
         console.error("NWS Alert fetch error:", error);
@@ -269,6 +271,11 @@ window.dismissAlert = function(alertId) {
     }
     const alertBox = document.querySelector(`[data-alert-id="${alertId}"]`);
     if (alertBox) alertBox.remove();
+
+    const alertDiv = document.getElementById("weatherAlert");
+    if (alertDiv && alertDiv.querySelectorAll(".alert-box").length === 0) {
+        alertDiv.innerHTML = NO_ALERTS_HTML;
+    }
 };
 
 window.toggleAlert = function(alertId, fullDescription) {
